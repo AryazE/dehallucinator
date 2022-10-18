@@ -1,4 +1,3 @@
-import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 tokenizer = AutoTokenizer.from_pretrained("Salesforce/codegen-2B-mono")
