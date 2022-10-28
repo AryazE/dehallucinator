@@ -2,3 +2,6 @@ requests
 python-dotenv
 libcst
 openai
+fasttext
+scipy
+levenshtein

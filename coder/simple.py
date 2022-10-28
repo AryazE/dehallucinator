@@ -1,38 +1,98 @@
+from typing import Tuple
 from os import path
-from typing import Collection, List
+import subprocess
+import tempfile
 from coder.backend import get_completion
 import libcst as cst
-from libcst.metadata import FullRepoManager, FullyQualifiedNameProvider
-from libcst.metadata import QualifiedNameProvider, PositionProvider
+from libcst.metadata import PositionProvider
 import libcst.matchers as m
-from importlib.machinery import PathFinder
-from coder.CodeVisitor import CodeVisitor
+# import fasttext
+# import fasttext.util
+# from scipy import spatial
+import Levenshtein
 
 class SimpleCompletion:
-    def __init__(self, project_root: str, important_files: Collection[str], model: str = "Codex"):
+    def __init__(self, project_root: str, model: str = "Codex"):
         self.project_root = path.abspath(project_root)
-        self.important_files = important_files
-        self.fqn_to_context = {}
-        for file in important_files:
-            filepath = path.join(self.project_root, file)
-            with open(filepath, 'r') as f:
-                content = f.read()
-                ast = cst.parse_module(content)
-                visitor = CodeVisitor(self.project_root, file[:-3])
-                cst.MetadataWrapper(ast).visit(visitor)
-                self.fqn_to_context.update(visitor.contents)
-
-        self.manager = FullRepoManager(project_root, paths=important_files, providers={FullyQualifiedNameProvider})
+        self.tmp_dir = tempfile.mkdtemp()
+        self.database = path.join(self.tmp_dir, 'database')
+        subprocess.run(['codeql', 'database', 'create',
+                        '--language=python',
+                        f'--source-root={self.project_root}',
+                        '--', self.database])
+        subprocess.run(['codeql', 'query', 'run',
+            f'--database={self.database}',
+            # f'--external=names={path.join(self.tmp_dir, "names.csv")}',
+            f'--output={path.join(self.tmp_dir, "functionRes.bqrs")}',
+            '--', f'{path.join(path.dirname(__file__), "ql", "functionContext.ql")}'])
+        subprocess.run(['codeql', 'bqrs', 'decode',
+            '--format=csv',
+            '--no-titles',
+            f'--output={path.join(self.tmp_dir, "functionRes.csv")}',
+            '--', f'{path.join(self.tmp_dir, "functionRes.bqrs")}'])
+        subprocess.run(['codeql', 'query', 'run',
+            f'--database={self.database}',
+            # f'--external=names={path.join(self.tmp_dir, "names.csv")}',
+            f'--output={path.join(self.tmp_dir, "classRes.bqrs")}',
+            '--', f'{path.join(path.dirname(__file__), "ql", "classContext.ql")}'])
+        subprocess.run(['codeql', 'bqrs', 'decode',
+            '--format=csv',
+            '--no-titles',
+            f'--output={path.join(self.tmp_dir, "classRes.csv")}',
+            '--result-set=#select',
+            '--', f'{path.join(self.tmp_dir, "classRes.bqrs")}'])
+        
+        self.additional_context = dict()
+        with open(path.join(self.tmp_dir, 'functionRes.csv'), 'r') as f:
+            functionRes = f.read().replace('"', '').splitlines()
+        with open(path.join(self.tmp_dir, 'classRes.csv'), 'r') as f:
+            classRes = f.read().replace('"', '').splitlines()
+        print(functionRes)
+        print(classRes)
+        for line in functionRes:
+            ind = line.find(',')
+            name = line[:ind]
+            ind2 = line[ind + 1:].find(',')
+            module = line[ind + 1:ind + ind2 + 1]
+            module = module[len(self.project_root):].replace('/', '.')[:-3]
+            if name not in self.additional_context:
+                self.additional_context[name] = []
+            self.additional_context[name].append((module, line[ind + ind2 + 1:]))
+        for line in classRes:
+            ind = line.find(',')
+            name = line[:ind]
+            ind2 = line[ind + 1:].find(',')
+            module = line[ind + 1:ind + ind2 + 1]
+            module = module[len(self.project_root):].replace('/', '.')[:-3]
+            if name not in self.additional_context:
+                self.additional_context[name] = []
+            self.additional_context[name].append((module, line[ind + ind2 + 1:]))
+        print(self.additional_context)
         self.model = model
+        # fasttext.util.download_model('en', if_exists='ignore')
+        # self.ft = fasttext.util.reduce_model(fasttext.load_model('cc.en.300.bin'), 100)
     
-    def closest_fqn(self, name: str) -> str:
-        res = ''
-        for k, v in self.fqn_to_context.items():
-            if name in k and len(v) > 0:
-                res += v + '\n'
-        return res
+    def context_for(self, name: str) -> Tuple[str, str]:
+        if name in self.additional_context and name not in self.used:
+            result = ''
+            imps = ''
+            self.used.add(name)
+            for m, c in self.additional_context[name]:
+                result += '\n# ' + c
+                imps += 'from ' + m + ' import ' + name + '\n'
+            return imps, result
+        else:
+            result = ''
+            imps = ''
+            for k, v in self.additional_context.items():
+                if Levenshtein.ratio(name, k) > 0.5 and k not in self.used:
+                    self.used.add(k)
+                    for m, c in v:
+                        result += '\n# ' + c
+                        imps += 'from ' + m + ' import ' + name + '\n'
+            return imps, result
 
-    def add_to_context(self, file: str, context: str, completion: str) -> str:
+    def get_context(self, context: str, completion: str) -> str:
         code = context + completion
         ast = None
         while ast is None:
@@ -43,39 +103,39 @@ class SimpleCompletion:
                 if '\n' not in code:
                     return context
                 code = code[:code.rfind('\n')]
-        # qnames_in_completion = cst.MetadataWrapper(ast).resolve(QualifiedNameProvider)
-        position = {k.value: v for k, v in cst.MetadataWrapper(ast).resolve(PositionProvider).items() if m.matches(k, m.Name())}
-        # wrapper = self.manager.get_metadata_wrapper_for_path(file)
-        # fqnames = wrapper.resolve(FullyQualifiedNameProvider)
-        new_context = context
-        # for k, v in {k.value: v for k, v in qnames_in_completion.items() if m.matches(k, m.Name())}.items():
-        #     if k in position.keys() and position[k].start.line >= len(context.splitlines()):
-        #         if k in fqnames.keys():
-        #             fqn = fqnames[k]
-        #         else:
-        #             fqn = v() if callable(v) else v
-        #         for i in fqn:
-        #             if i.name not in self.used:
-        #                 self.used.add(i.name)
-        #                 new_context = self.closest_fqn(i.name) + '\n' + new_context
-        for k, v in position.items():
-            if v.start.line >= len(context.splitlines()):
-                ctx = self.closest_fqn(k)
-                if len(ctx) > 0:
-                    new_context += '\n' + ctx
-        return new_context
+        new_code_start = len(context.splitlines())
+        position = {
+            k.value: v 
+                for k, v in cst.MetadataWrapper(ast).resolve(PositionProvider).items() 
+                if m.matches(k, m.Name()) and v.start.line >= new_code_start
+        }
 
-    def completion(self, context: str, file: str) -> str:
+        new_context = ''
+        new_imports = ''
+        for k, v in position.items():
+            if k not in self.used:
+                imps, ctx = self.context_for(k)
+                if len(ctx) > 0:
+                    new_context = ctx + new_context
+                    new_imports = imps + new_imports
+        if len(new_context) > 0:
+            new_context = '# API reference:' + new_context + '\n\n'
+        return new_imports, new_context
+
+    def completion(self, prompt: str) -> str:
         BUDGET = 3
         attempts = 0
         self.used = set()
         prev_completion = ''
-        completion = get_completion(self.model, context)
+        context = ''
+        completion = get_completion(self.model, prompt)
+        print(f'Initial completion:\n{completion}\n')
         while attempts < BUDGET:# and prev_completion != completion:
             prev_completion = completion
-            context = self.add_to_context(file, context, completion)
-            completion = get_completion(self.model, context)
-            print(f'For context: {context}, got completion: {completion}')
+            new_imports, new_context = self.get_context(context, completion)
+            context = new_imports + '\n' + new_context + context
+            completion = get_completion(self.model, context + prompt)
+            print(f'For prompt:\n{context + prompt}\n, got completion:\n{completion}\n')
             attempts += 1
         return completion
 
