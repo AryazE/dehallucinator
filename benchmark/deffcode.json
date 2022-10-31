@@ -1,0 +1,28 @@
+{
+    "name": "deffcode",
+    "project_root": "GitHubProjects/deffcode-master",
+    "evaluations": [
+        {
+            "id": 1,
+            "file": "deffcode/ffdecoder.py",
+            "function": "__launch_FFdecoderline",
+            "target": "tests/test_ffdecoder.py",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 828,
+                    "start_column": 1,
+                    "end_line": 861,
+                    "end_column": 1
+                },
+                {
+                    "description": "import",
+                    "start_line": 28,
+                    "start_column": 20,
+                    "end_line": 28,
+                    "end_column": 31
+                }
+            ]
+        }
+    ]
+}
