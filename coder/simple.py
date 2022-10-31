@@ -52,21 +52,21 @@ class SimpleCompletion:
         for line in functionRes:
             ind = line.find(',')
             name = line[:ind]
-            ind2 = line[ind + 1:].find(',')
-            module = line[ind + 1:ind + ind2 + 1]
-            module = module[len(self.project_root):].replace('/', '.')[:-3]
+            ind2 = line[ind + 2:].find(',')
+            module = line[ind + 2:ind + 2 + ind2]
+            module = '.' + module[len(self.project_root):].replace('/', '.')[:-3]
             if name not in self.additional_context:
                 self.additional_context[name] = []
-            self.additional_context[name].append((module, line[ind + ind2 + 1:]))
+            self.additional_context[name].append((module, line[ind + 2 + ind2 + 1:]))
         for line in classRes:
             ind = line.find(',')
             name = line[:ind]
-            ind2 = line[ind + 1:].find(',')
-            module = line[ind + 1:ind + ind2 + 1]
-            module = module[len(self.project_root):].replace('/', '.')[:-3]
+            ind2 = line[ind + 2:].find(',')
+            module = line[ind + 2:ind + 2 + ind2 + 1]
+            module = '.' + module[len(self.project_root):].replace('/', '.')[:-3]
             if name not in self.additional_context:
                 self.additional_context[name] = []
-            self.additional_context[name].append((module, line[ind + ind2 + 1:]))
+            self.additional_context[name].append((module, line[ind + 2 + ind2 + 1:]))
         print(self.additional_context)
         self.model = model
         # fasttext.util.download_model('en', if_exists='ignore')
@@ -89,7 +89,7 @@ class SimpleCompletion:
                     self.used.add(k)
                     for m, c in v:
                         result += '\n# ' + c
-                        imps += 'from ' + m + ' import ' + name + '\n'
+                        imps += 'from ' + m + ' import ' + k + '\n'
             return imps, result
 
     def get_context(self, context: str, completion: str) -> str:
@@ -130,7 +130,7 @@ class SimpleCompletion:
         context = ''
         completion = get_completion(self.model, prompt)
         print(f'Initial completion:\n{completion}\n')
-        while attempts < BUDGET:# and prev_completion != completion:
+        while attempts < BUDGET and prev_completion != completion:
             prev_completion = completion
             new_imports, new_context = self.get_context(context, completion)
             context = new_imports + '\n' + new_context + context
