@@ -1,5 +1,0 @@
-black
-isort
-pytest
-pytest-mock
-responses
