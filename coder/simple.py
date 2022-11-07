@@ -24,31 +24,29 @@ class SimpleCompletion:
             f'--database={self.database}',
             # f'--external=names={path.join(self.tmp_dir, "names.csv")}',
             f'--output={path.join(self.tmp_dir, "functionRes.bqrs")}',
-            '--', f'{path.join(path.dirname(__file__), "ql", "functionContext.ql")}'])
+            '--', f'{path.join(path.dirname(__file__), "ql", "functionContext.ql")}'], check=True)
         subprocess.run(['codeql', 'bqrs', 'decode',
             '--format=csv',
             '--no-titles',
             f'--output={path.join(self.tmp_dir, "functionRes.csv")}',
-            '--', f'{path.join(self.tmp_dir, "functionRes.bqrs")}'])
+            '--', f'{path.join(self.tmp_dir, "functionRes.bqrs")}'], check=True)
         subprocess.run(['codeql', 'query', 'run',
             f'--database={self.database}',
             # f'--external=names={path.join(self.tmp_dir, "names.csv")}',
             f'--output={path.join(self.tmp_dir, "classRes.bqrs")}',
-            '--', f'{path.join(path.dirname(__file__), "ql", "classContext.ql")}'])
+            '--', f'{path.join(path.dirname(__file__), "ql", "classContext.ql")}'], check=True)
         subprocess.run(['codeql', 'bqrs', 'decode',
             '--format=csv',
             '--no-titles',
             f'--output={path.join(self.tmp_dir, "classRes.csv")}',
             '--result-set=#select',
-            '--', f'{path.join(self.tmp_dir, "classRes.bqrs")}'])
+            '--', f'{path.join(self.tmp_dir, "classRes.bqrs")}'], check=True)
         
         self.additional_context = dict()
         with open(path.join(self.tmp_dir, 'functionRes.csv'), 'r') as f:
             functionRes = f.read().replace('"', '').splitlines()
         with open(path.join(self.tmp_dir, 'classRes.csv'), 'r') as f:
             classRes = f.read().replace('"', '').splitlines()
-        print(functionRes)
-        print(classRes)
         for line in functionRes:
             ind = line.find(',')
             name = line[:ind]
@@ -67,7 +65,6 @@ class SimpleCompletion:
             if name not in self.additional_context:
                 self.additional_context[name] = []
             self.additional_context[name].append((module, line[ind + 2 + ind2 + 1:]))
-        print(self.additional_context)
         self.model = model
         # fasttext.util.download_model('en', if_exists='ignore')
         # self.ft = fasttext.util.reduce_model(fasttext.load_model('cc.en.300.bin'), 100)
@@ -92,7 +89,7 @@ class SimpleCompletion:
                         imps += 'from ' + m + ' import ' + k + '\n'
             return imps, result
 
-    def get_context(self, context: str, completion: str) -> str:
+    def get_context(self, context: str, completion: str) -> Tuple[str, str]:
         code = context + completion
         ast = None
         while ast is None:
@@ -101,7 +98,7 @@ class SimpleCompletion:
             except:
                 ast = None
                 if '\n' not in code:
-                    return context
+                    return '', context
                 code = code[:code.rfind('\n')]
         new_code_start = len(context.splitlines())
         position = {
@@ -129,11 +126,14 @@ class SimpleCompletion:
         prev_completion = ''
         context = ''
         completion = get_completion(self.model, prompt)
+        print(f'Initial prompt: \n{prompt}\n')
         print(f'Initial completion:\n{completion}\n')
         while attempts < BUDGET and prev_completion != completion:
             prev_completion = completion
-            new_imports, new_context = self.get_context(context, completion)
+            new_imports, new_context = self.get_context(context + prompt, completion)
             context = new_imports + '\n' + new_context + context
+            if len(context) > 2000:
+                context = context[-2000:]
             completion = get_completion(self.model, context + prompt)
             print(f'For prompt:\n{context + prompt}\n, got completion:\n{completion}\n')
             attempts += 1

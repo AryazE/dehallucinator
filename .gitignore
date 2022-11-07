@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 benchmark/GitHubProjects/
+benchmark/experiment/

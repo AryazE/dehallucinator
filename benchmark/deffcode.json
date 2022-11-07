@@ -16,7 +16,7 @@
                     "end_column": 1
                 },
                 {
-                    "description": "import",
+                    "description": "imports",
                     "start_line": 28,
                     "start_column": 20,
                     "end_line": 28,

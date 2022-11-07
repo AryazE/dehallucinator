@@ -1,0 +1,5 @@
+    data = read_csv('data.csv')
+    credit_scores = []
+    for i in range(len(data)):
+        credit_scores.append(calculate_credit_score(data, i))
+    return credit_scores

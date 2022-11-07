@@ -20,9 +20,9 @@ def get_completion(model: str, context: str) -> str:
             engine="code-cushman-001",
             prompt=context,
             temperature=0,
-            max_tokens=300,
+            max_tokens=500,
             top_p=1,
             frequency_penalty=0,
             presence_penalty=0,
-            stop=["\n\n\n"]
+            stop=["\n\n\n", "def ", "class "]
         ).choices[0].text

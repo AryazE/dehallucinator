@@ -1,0 +1,28 @@
+{
+    "name": "doculog",
+    "project_root": "GitHubProjects/doculog-master",
+    "evaluations": [
+        {
+            "id": 1,
+            "file": "doculog/config.py",
+            "function": "configure_api",
+            "target": "tests/test_config.py",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 1,
+                    "end_line": 34,
+                    "end_column": 1
+                },
+                {
+                    "description": "imports",
+                    "start_line": 11,
+                    "start_column": 1,
+                    "end_line": 12,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}
