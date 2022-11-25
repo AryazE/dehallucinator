@@ -13,12 +13,15 @@ if __name__ == '__main__':
     args = parser.parse_args()
     with open(args.config, 'r') as f:
         config = json.load(f)
-    here = Path(__file__).parent
+    here = Path(__file__).resolve().parent
     try:
         dir_util.remove_tree(here/'experiment'/config['name'])
     except:
         pass
     prepare(config)
+    run_tests(config, 0)
     for i in config["evaluations"]:
+        if len(i['file']) == 0:
+            continue
         run_completion(config, i["id"], args.mode)
         run_tests(config, i["id"])

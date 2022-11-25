@@ -6,3 +6,7 @@ fasttext
 scipy
 levenshtein
 pytest
+pytest-reportlog
+autoimport
+transformers
+coverage

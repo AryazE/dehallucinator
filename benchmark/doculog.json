@@ -1,26 +1,514 @@
 {
     "name": "doculog",
-    "project_root": "GitHubProjects/doculog-master",
+    "project_root": "GitHubProjects/doculog",
     "evaluations": [
         {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
             "id": 1,
-            "file": "doculog/config.py",
-            "function": "configure_api",
-            "target": "tests/test_config.py",
+            "file": "doculog/main.py",
+            "function": "generate_changelog",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 28,
-                    "start_column": 1,
-                    "end_line": 34,
-                    "end_column": 1
-                },
+                    "start_line": 10,
+                    "start_column": 0,
+                    "end_line": 21,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "doculog/changelog.py",
+            "function": "__init__",
+            "remove": [
                 {
-                    "description": "imports",
-                    "start_line": 11,
-                    "start_column": 1,
-                    "end_line": 12,
-                    "end_column": 1
+                    "description": "code",
+                    "start_line": 29,
+                    "start_column": 4,
+                    "end_line": 31,
+                    "end_column": 27
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "doculog/changelog.py",
+            "function": "add_commit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 33,
+                    "start_column": 4,
+                    "end_line": 37,
+                    "end_column": 52
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "doculog/changelog.py",
+            "function": "has_content",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 39,
+                    "start_column": 4,
+                    "end_line": 40,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "doculog/changelog.py",
+            "function": "remove_duplicates",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 42,
+                    "start_column": 4,
+                    "end_line": 48,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "doculog/changelog.py",
+            "function": "__str__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 50,
+                    "start_column": 4,
+                    "end_line": 56,
+                    "end_column": 23
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "doculog/changelog.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 76,
+                    "start_column": 4,
+                    "end_line": 88,
+                    "end_column": 35
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "doculog/changelog.py",
+            "function": "read",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 90,
+                    "start_column": 4,
+                    "end_line": 101,
+                    "end_column": 30
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "doculog/changelog.py",
+            "function": "generate",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 103,
+                    "start_column": 4,
+                    "end_line": 114,
+                    "end_column": 56
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "doculog/changelog.py",
+            "function": "track_commit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 129,
+                    "start_column": 8,
+                    "end_line": 132,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "doculog/changelog.py",
+            "function": "post_classification",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 143,
+                    "start_column": 8,
+                    "end_line": 151,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "doculog/changelog.py",
+            "function": "_update_log",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 153,
+                    "start_column": 4,
+                    "end_line": 156,
+                    "end_column": 67
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "doculog/changelog.py",
+            "function": "catalog_commit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 173,
+                    "start_column": 8,
+                    "end_line": 250,
+                    "end_column": 32
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "file": "doculog/changelog.py",
+            "function": "header",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 252,
+                    "start_column": 4,
+                    "end_line": 253,
+                    "end_column": 52
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "doculog/changelog.py",
+            "function": "__str__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 255,
+                    "start_column": 4,
+                    "end_line": 262,
+                    "end_column": 23
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "doculog/changelog.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 273,
+                    "start_column": 4,
+                    "end_line": 277,
+                    "end_column": 53
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "doculog/changelog.py",
+            "function": "header",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 279,
+                    "start_column": 4,
+                    "end_line": 280,
+                    "end_column": 37
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "file": "doculog/changelog.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 299,
+                    "start_column": 4,
+                    "end_line": 304,
+                    "end_column": 33
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "file": "doculog/changelog.py",
+            "function": "_get_tag_date",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 306,
+                    "start_column": 4,
+                    "end_line": 309,
+                    "end_column": 32
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "doculog/changelog.py",
+            "function": "read",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 311,
+                    "start_column": 4,
+                    "end_line": 353,
+                    "end_column": 24
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "doculog/changelog.py",
+            "function": "_read_release",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 322,
+                    "start_column": 8,
+                    "end_line": 330,
+                    "end_column": 59
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "file": "doculog/changelog.py",
+            "function": "generate",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 355,
+                    "start_column": 4,
+                    "end_line": 390,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "file": "doculog/changelog.py",
+            "function": "__str__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 392,
+                    "start_column": 4,
+                    "end_line": 408,
+                    "end_column": 23
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "doculog/changelog.py",
+            "function": "save",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 410,
+                    "start_column": 4,
+                    "end_line": 413,
+                    "end_column": 35
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "file": "doculog/requests.py",
+            "function": "post",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 44,
+                    "start_column": 4,
+                    "end_line": 87,
+                    "end_column": 20
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "file": "doculog/requests.py",
+            "function": "validate_key",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 92,
+                    "start_column": 4,
+                    "end_line": 125,
+                    "end_column": 21
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "file": "doculog/config.py",
+            "function": "set_env_vars",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 14,
+                    "start_column": 0,
+                    "end_line": 16,
+                    "end_column": 26
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "doculog/config.py",
+            "function": "configure",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 19,
+                    "start_column": 0,
+                    "end_line": 24,
+                    "end_column": 18
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "file": "doculog/config.py",
+            "function": "configure_api",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 27,
+                    "start_column": 0,
+                    "end_line": 33,
+                    "end_column": 46
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "file": "doculog/config.py",
+            "function": "parse_config",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 36,
+                    "start_column": 0,
+                    "end_line": 96,
+                    "end_column": 62
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "file": "doculog/git.py",
+            "function": "_get_git_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 13,
+                    "start_column": 0,
+                    "end_line": 33,
+                    "end_column": 21
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "doculog/git.py",
+            "function": "get_commits",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 61,
+                    "start_column": 4,
+                    "end_line": 123,
+                    "end_column": 19
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "doculog/git.py",
+            "function": "save_current_commit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 86,
+                    "start_column": 4,
+                    "end_line": 99,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "doculog/git.py",
+            "function": "_get_tag_date",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 126,
+                    "start_column": 0,
+                    "end_line": 134,
+                    "end_column": 6
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "file": "doculog/git.py",
+            "function": "list_tags",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 146,
+                    "start_column": 4,
+                    "end_line": 160,
+                    "end_column": 16
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "file": "doculog/git.py",
+            "function": "has_git",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 163,
+                    "start_column": 0,
+                    "end_line": 169,
+                    "end_column": 20
                 }
             ]
         }

@@ -16,6 +16,8 @@ def prepare(config):
         dir_util.copy_tree(str(here/config['project_root']), str(temp_dir))
         dir_util.remove_tree(str(temp_dir/'tests'))
         os.remove(str(temp_dir/'setup.py'))
+        if len(i['file']) == 0:
+            continue
         with open(temp_dir/i["file"]) as f:
             code = f.readlines()
         for j in i["remove"]:

@@ -9,11 +9,11 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=str, required=True)
     parser.add_argument("--prompt", help="The context to complete", type=str)
     args = parser.parse_args()
+    prompt = args.prompt.replace('\\n', '\n')
     if args.mode == 'baseline':
-        completion = baseline.completion(args.prompt.replace('\\n', '\n'))
+        completion = baseline.completion(prompt)
     else:
         simple_completion = SimpleCompletion(args.project_root)
-        completion = simple_completion.completion(args.prompt.replace('\\n', '\n'))
-    print(completion)
+        completion = simple_completion.completion(prompt)
     with open(args.output, 'w') as f:
         f.write(completion)

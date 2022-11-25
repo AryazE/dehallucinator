@@ -1,19 +1,22 @@
 import argparse
 from pathlib import Path
+import logging
 import subprocess
 import json
+from autoimport import fix_code
+from coder.utils import clip_prompt
 
-PROMPT_LIMIT = 1000
+PROMPT_LIMIT = 500
 
 def run_completion(config, id, mode):
     global PROMPT_LIMIT
     here = Path(__file__).parent
     project_root = here/'experiment'/config["name"]/f'temp{id}'/config['project_root']
-    with open(project_root/config["evaluations"][id-1]["file"]) as f:
+    with open(project_root/config["evaluations"][id]["file"]) as f:
         code = f.read()
     splited_code = code.split('<CURSOR>')
-    prompt = splited_code[0][-PROMPT_LIMIT:]
-    print(f'Running completion for {config["name"]} {id} with prompt: \n{prompt}')
+    prompt = clip_prompt(splited_code[0], PROMPT_LIMIT)
+    logging.debug(f'Running completion for {config["name"]} {id} with prompt: \n{prompt}')
     subprocess.run([
         'python', '-m', 'coder.main',
         '--mode', mode,
@@ -23,8 +26,10 @@ def run_completion(config, id, mode):
     ], check=True)
     with open(project_root/f'completion.out') as f:
         completion = f.read()
-    with open(project_root/config["evaluations"][id-1]["file"], 'w') as f:
-        f.write(splited_code[0] + completion + splited_code[1])
+    final_code = splited_code[0] + completion + splited_code[1]
+    with open(project_root/config["evaluations"][id]["file"], 'w') as f:
+        f.write(fix_code(final_code))
+    
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
