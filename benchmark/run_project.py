@@ -19,9 +19,12 @@ if __name__ == '__main__':
     except:
         pass
     prepare(config)
-    run_tests(config, 0)
+    orig_results = run_tests(config, 0)
+    results = []
     for i in config["evaluations"]:
         if len(i['file']) == 0:
             continue
         run_completion(config, i["id"], args.mode)
-        run_tests(config, i["id"])
+        results.append(run_tests(config, i["id"]))
+    print(orig_results)
+    print(results)

@@ -1,8 +1,10 @@
 import logging
 import subprocess
+import os
 from os import path
 from transformers import GPT2TokenizerFast
 
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 tokenizer = GPT2TokenizerFast.from_pretrained('gpt2')
 
 def clip_prompt(prompt, prompt_limit=500):
@@ -18,10 +20,10 @@ def run_query(database, ql_file, res_file, tmp_dir):
     subprocess.run(['codeql', 'query', 'run',
         f'--database={database}',
         f'--output={path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}',
-        '--', f'{path.join(path.dirname(__file__), "ql", ql_file)}'], check=True, stdout=subprocess.DEVNULL)
+        '--', f'{path.join(path.dirname(__file__), "ql", ql_file)}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     subprocess.run(['codeql', 'bqrs', 'decode',
         '--format=csv',
         '--no-titles',
         f'--output={path.join(tmp_dir, res_file)}',
         '--result-set=#select',
-        '--', f'{path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}'], check=True, stdout=subprocess.DEVNULL)
+        '--', f'{path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)

@@ -19,7 +19,7 @@ class SimpleCompletion:
         subprocess.run(['codeql', 'database', 'create',
                         '--language=python',
                         f'--source-root={self.project_root}',
-                        '--', self.database], stdout=subprocess.DEVNULL)
+                        '--', self.database], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         run_query(self.database, 'functionContext.ql', 'functionRes.csv', self.tmp_dir)
         run_query(self.database, 'classContext.ql', 'classRes.csv', self.tmp_dir)
         self.additional_context = dict()
