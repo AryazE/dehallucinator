@@ -26,9 +26,13 @@ def run_completion(config, id, mode):
     ], check=True)
     with open(project_root/f'completion.out') as f:
         completion = f.read()
-    final_code = splited_code[0] + completion + splited_code[1]
+    final_code = splited_code[0] + completion + '\n' + splited_code[1]
+    fixed_code = fix_code(final_code)
+    # print(final_code)
+    # print('-------------------')
+    # print(fixed_code)
     with open(project_root/config["evaluations"][id]["file"], 'w') as f:
-        f.write(fix_code(final_code))
+        f.write(fixed_code)
     
 
 if __name__ == '__main__':

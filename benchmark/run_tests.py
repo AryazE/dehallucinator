@@ -1,3 +1,4 @@
+import sys
 import shutil
 import subprocess
 import json
@@ -11,7 +12,9 @@ def run_tests(config, id):
     temp_dir = here/'experiment'/config['name']/f'temp{id}'/config['project_root']
     dir_util.copy_tree(str(here/config['project_root']/'tests'), str(temp_dir/'tests'))
     shutil.copyfile(str(here/config['project_root']/'setup.py'), str(temp_dir/'setup.py'))
-    subprocess.run(['pip', 'install', str(temp_dir)], check=True, stdout=subprocess.DEVNULL)
+    install_res = subprocess.run([sys.executable, '-m', 'pip', 'install', str(temp_dir)], check=True, capture_output=True)
+    print(install_res.stdout.decode('utf-8'))
+    subprocess.run([sys.executable, '-c', f'import {config["name"]}'], check=True)
     pytest_command = [
         '--tb=no', 
         '-q', 
@@ -19,9 +22,10 @@ def run_tests(config, id):
         f"{here/'experiment'/config['name']/f'temp{id}'}/log.json"
     ]
     pytest_command.append(str(temp_dir/'tests'))
-    exit_code = subprocess.run(['pytest'] + pytest_command)
-    logging.debug(f'Exit code: {exit_code}')
-    subprocess.run(['pip', 'uninstall', '-y', config['name']], check=True, stdout=subprocess.DEVNULL)
+    test_res = subprocess.run([sys.executable, '-m', 'pytest'] + pytest_command, capture_output=True)
+    print(test_res.stdout.decode('utf-8'))
+    uninstall_res = subprocess.run([sys.executable, '-m', 'pip', 'uninstall', '-y', config['name']], check=True, capture_output=True)
+    print(uninstall_res.stdout.decode('utf-8'))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

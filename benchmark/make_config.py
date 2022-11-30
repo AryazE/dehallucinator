@@ -12,7 +12,7 @@ class FunctionFinder(cst.CSTVisitor):
     def __init__(self):
         self.functions = []
     def visit_FunctionDef(self, node):
-        pos = self.get_metadata(cst.metadata.PositionProvider, node)
+        pos = self.get_metadata(cst.metadata.PositionProvider, node.body)
         start = pos.start
         end = pos.end
         if m.matches(node.body.body[0], m.SimpleStatementLine(body=[m.Expr(value=m.SimpleString())])) and len(node.body.body) > 1:

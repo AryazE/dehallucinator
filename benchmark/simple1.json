@@ -3,10 +3,17 @@
     "project_root": "simple1",
     "evaluations": [
         {
-            "id": 1,
-            "function": "get_credit_score",
+            "id": 0,
+            "function": "",
+            "file": "",
             "target": "",
-            "file": "main.py",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "function": "get_credit_scores",
+            "target": "",
+            "file": "simple1/main.py",
             "remove": [
                 {
                     "description": "imports",
@@ -17,9 +24,9 @@
                 },
                 {
                     "description": "code",
-                    "start_line": 5,
+                    "start_line": 8,
                     "start_column": 1,
-                    "end_line": 14,
+                    "end_line": 16,
                     "end_column": 1
                 }
             ]

@@ -9,7 +9,7 @@ import libcst as cst
 from libcst.metadata import PositionProvider
 import libcst.matchers as m
 import Levenshtein
-from .utils import clip_prompt
+from .utils import clip_prompt, run_query
 
 class SimpleCompletion:
     def __init__(self, project_root: str, model: str = "Codex"):
@@ -20,49 +20,27 @@ class SimpleCompletion:
                         '--language=python',
                         f'--source-root={self.project_root}',
                         '--', self.database], stdout=subprocess.DEVNULL)
-        subprocess.run(['codeql', 'query', 'run',
-            f'--database={self.database}',
-            f'--output={path.join(self.tmp_dir, "functionRes.bqrs")}',
-            '--', f'{path.join(path.dirname(__file__), "ql", "functionContext.ql")}'], check=True, stdout=subprocess.DEVNULL)
-        subprocess.run(['codeql', 'bqrs', 'decode',
-            '--format=csv',
-            '--no-titles',
-            f'--output={path.join(self.tmp_dir, "functionRes.csv")}',
-            '--', f'{path.join(self.tmp_dir, "functionRes.bqrs")}'], check=True, stdout=subprocess.DEVNULL)
-        subprocess.run(['codeql', 'query', 'run',
-            f'--database={self.database}',
-            f'--output={path.join(self.tmp_dir, "classRes.bqrs")}',
-            '--', f'{path.join(path.dirname(__file__), "ql", "classContext.ql")}'], check=True, stdout=subprocess.DEVNULL)
-        subprocess.run(['codeql', 'bqrs', 'decode',
-            '--format=csv',
-            '--no-titles',
-            f'--output={path.join(self.tmp_dir, "classRes.csv")}',
-            '--result-set=#select',
-            '--', f'{path.join(self.tmp_dir, "classRes.bqrs")}'], check=True, stdout=subprocess.DEVNULL)
-        
+        run_query(self.database, 'functionContext.ql', 'functionRes.csv', self.tmp_dir)
+        run_query(self.database, 'classContext.ql', 'classRes.csv', self.tmp_dir)
         self.additional_context = dict()
         with open(path.join(self.tmp_dir, 'functionRes.csv'), 'r') as f:
             functionRes = f.read().replace('"', '').splitlines()
         with open(path.join(self.tmp_dir, 'classRes.csv'), 'r') as f:
             classRes = f.read().replace('"', '').splitlines()
-        for line in functionRes:
-            ind = line.find(',')
-            name = line[:ind]
-            ind2 = line[ind + 2:].find(',')
-            module = line[ind + 2:ind + 2 + ind2]
-            module = '.' + module[len(self.project_root):].replace('/', '.')[:-3]
-            if name not in self.additional_context:
-                self.additional_context[name] = []
-            self.additional_context[name].append((module, line[ind + 2 + ind2 + 1:]))
-        for line in classRes:
-            ind = line.find(',')
-            name = line[:ind]
-            ind2 = line[ind + 2:].find(',')
-            module = line[ind + 2:ind + 2 + ind2 + 1]
-            module = '.' + module[len(self.project_root):].replace('/', '.')[:-3]
-            if name not in self.additional_context:
-                self.additional_context[name] = []
-            self.additional_context[name].append((module, line[ind + 2 + ind2 + 1:]))
+        
+        def parse_results_into_context(self, res):
+            for line in res:
+                ind = line.find(',')
+                name = line[:ind]
+                ind2 = line[ind + 2:].find(',')
+                module = line[ind + 2:ind + 2 + ind2]
+                module = module[len(self.project_root):].replace('/', '.')[:-3]
+                if name not in self.additional_context:
+                    self.additional_context[name] = []
+                self.additional_context[name].append((module, line[ind + 2 + ind2 + 1:]))
+        
+        parse_results_into_context(self, functionRes)
+        parse_results_into_context(self, classRes)
         self.model = model
         self.modules = { i.name for i in pkgutil.iter_modules() }
     
@@ -124,15 +102,17 @@ class SimpleCompletion:
         self.used = set()
         prev_completion = ''
         context = ''
+        imports = ''
         completion = get_completion(self.model, prompt)
         logging.debug(f'Initial prompt: \n{prompt}\n')
         logging.debug(f'Initial completion:\n{completion}\n')
         while attempts < BUDGET and prev_completion != completion:
             prev_completion = completion
             new_imports, new_context = self.get_context(context + prompt, completion)
+            imports += new_imports
             context += new_context + '\n' + new_imports
             context = clip_prompt(context, 1000)
             completion = get_completion(self.model, context + prompt)
             logging.debug(f'For prompt:\n{context + prompt}\n, got completion:\n{completion}\n')
             attempts += 1
-        return completion
+        return imports + '\n' + completion

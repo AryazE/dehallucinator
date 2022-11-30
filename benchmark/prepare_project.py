@@ -1,4 +1,5 @@
 import argparse
+import copy
 import json
 from distutils import dir_util
 import os
@@ -20,15 +21,25 @@ def prepare(config):
             continue
         with open(temp_dir/i["file"]) as f:
             code = f.readlines()
-        for j in i["remove"]:
-            if j["start_line"] == j["end_line"]:
-                code[j["start_line"] - 1] = code[j["start_line"] - 1][:j["start_column"] - 1] + (CURSOR if j['description'] != 'imports' else '') + code[j["start_line"] - 1][j["end_column"] - 1:]
-            else:
-                code[j["start_line"] - 1] = code[j["start_line"] - 1][:j["start_column"] - 1]
-                code[j["end_line"] - 1] = code[j["end_line"] - 1][j["end_column"] - 1:]
-                code = code[:j["start_line"]] + ([CURSOR] if j['description'] != 'imports' else []) + code[j["end_line"] - 1:]
+        new_code = []
+        for l in range(len(code)):
+            temp = code[l]
+            for j in i['remove']:
+                if j['start_line'] - 1 <= l <= j['end_line'] - 1:
+                    if j['start_line'] == j['end_line']:
+                        temp = code[l][:j['start_column'] - 1] + (CURSOR if j['description'] != 'imports' else '') + code[l][j['end_column'] - 1:]
+                    else:
+                        if l == j['start_line'] - 1:
+                            temp = code[l][:j['start_column'] - 1] + (CURSOR if j['description'] != 'imports' else '')
+                        elif l == j['end_line'] - 1:
+                            temp = code[l][j['end_column'] - 1:]
+                        else:
+                            temp = None
+            if temp:
+                new_code.append(temp)
         with open(temp_dir/i["file"], 'w') as f:
-            f.writelines(code)
+            f.writelines(new_code)
+        print(''.join(new_code))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

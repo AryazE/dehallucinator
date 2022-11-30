@@ -1,8 +1,10 @@
 from .logic import calculate_credit_score
 from .utils import read_csv
 
-# Get personal data from the data.csv file and calculate credit scores
 def get_credit_scores():
+    """
+    Read personal data from the data.csv file and return credit scores
+    """
     # Read the csv file
     data = read_csv('data.csv')
     # Calculate credit scores
