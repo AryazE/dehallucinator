@@ -1,6 +1,7 @@
 {
     "name": "plux",
     "project_root": "GitHubProjects/plux",
+    "tests_path": "tests",
     "evaluations": [
         {
             "id": 0,

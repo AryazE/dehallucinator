@@ -4,7 +4,6 @@ import logging
 import subprocess
 import pkgutil
 import tempfile
-from coder.backend import get_completion
 import libcst as cst
 from libcst.metadata import PositionProvider
 import libcst.matchers as m
@@ -96,14 +95,14 @@ class SimpleCompletion:
             new_context = '# API reference:' + new_context + '\n\n'
         return new_imports, new_context
 
-    def completion(self, prompt: str) -> str:
+    def completion(self, completor, prompt: str) -> str:
         BUDGET = 3
         attempts = 0
         self.used = set()
         prev_completion = ''
         context = ''
         imports = ''
-        completion = get_completion(self.model, prompt)
+        completion = completor.get_completion(self.model, prompt)
         logging.debug(f'Initial prompt: \n{prompt}\n')
         logging.debug(f'Initial completion:\n{completion}\n')
         while attempts < BUDGET and prev_completion != completion:
@@ -112,7 +111,7 @@ class SimpleCompletion:
             imports += new_imports
             context += new_context + '\n' + new_imports
             context = clip_prompt(context, 1000)
-            completion = get_completion(self.model, context + prompt)
+            completion = completor.get_completion(self.model, context + prompt)
             logging.debug(f'For prompt:\n{context + prompt}\n, got completion:\n{completion}\n')
             attempts += 1
         return imports + '\n' + completion

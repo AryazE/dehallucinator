@@ -1,6 +1,7 @@
 {
     "name": "deffcode",
     "project_root": "GitHubProjects/deffcode",
+    "tests_path": "tests",
     "evaluations": [
         {
             "id": 0,

@@ -68,6 +68,7 @@ if __name__ == '__main__':
     config = {
         'name': project_name,
         'project_root': project_path.as_posix().lstrip(benchmark_dir.as_posix()),
+        'tests_path': 'tests',
         'evaluations': evaluations
     }
     with open(Path(__file__).parent/f'{project_name}.json', 'w') as f:

@@ -14,17 +14,20 @@ def run_tests(config, id):
     dir_util.copy_tree(str(here/config['project_root']/'tests'), str(temp_dir/'tests'))
     shutil.copyfile(str(here/config['project_root']/'setup.py'), str(temp_dir/'setup.py'))
     if (temp_dir/'requirements.txt').exists():
-        subprocess.run(['pip', 'install', '-r', str(temp_dir/'requirements.txt')], check=True, stdout=subprocess.DEVNULL)
-    install_res = subprocess.run([sys.executable, '-m', 'pip', 'install', str(temp_dir)], check=True, stdout=subprocess.DEVNULL)
+        subprocess.run(['pip', 'install', '-r', str(temp_dir/'requirements.txt')], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    try:
+        install_res = subprocess.run([sys.executable, '-m', 'pip', 'install', str(temp_dir)], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    except subprocess.CalledProcessError as e:
+        subprocess.run([sys.executable, '-m', 'pip', 'install', '--pre', str(temp_dir)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     pytest_command = [
         '--tb=no', 
         '-q', 
         '--junitxml', 
         f"{here/'experiment'/config['name']/f'temp{id}'}/results.xml",
     ]
-    pytest_command.append(str(temp_dir/'tests'))
+    pytest_command.append(str(temp_dir/config['tests_path']))
     test_res = subprocess.run([sys.executable, '-m', 'pytest'] + pytest_command, capture_output=True)
-    uninstall_res = subprocess.run([sys.executable, '-m', 'pip', 'uninstall', '-y', config['name']], check=True, stdout=subprocess.DEVNULL)
+    uninstall_res = subprocess.run([sys.executable, '-m', 'pip', 'uninstall', '-y', config['name']], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     results = dict()
     tree = ET.parse(here/'experiment'/config['name']/f'temp{id}'/'results.xml')
     root = tree.getroot()

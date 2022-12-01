@@ -1,6 +1,7 @@
 {
     "name": "doculog",
     "project_root": "GitHubProjects/doculog",
+    "tests_path": "tests",
     "evaluations": [
         {
             "id": 0,

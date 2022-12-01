@@ -1,5 +1,4 @@
-from coder.backend import get_completion
 from .utils import clip_prompt
 
-def completion(context):
-    return get_completion('Codex', clip_prompt(context, 1000))
+def completion(completor, context):
+    return completor.get_completion('Codex', clip_prompt(context, 1000))

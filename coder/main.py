@@ -1,4 +1,5 @@
 import argparse
+from coder.backend import Completion
 import coder.baseline as baseline
 from coder.simple import SimpleCompletion
 
@@ -10,10 +11,11 @@ if __name__ == "__main__":
     parser.add_argument("--prompt", help="The context to complete", type=str)
     args = parser.parse_args()
     prompt = args.prompt.replace('\\n', '\n')
+    completor = Completion()
     if args.mode == 'baseline':
-        completion = baseline.completion(prompt)
+        completion = baseline.completion(completor, prompt)
     else:
         simple_completion = SimpleCompletion(args.project_root)
-        completion = simple_completion.completion(prompt)
+        completion = simple_completion.completion(completor, prompt)
     with open(args.output, 'w') as f:
         f.write(completion)

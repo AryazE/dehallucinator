@@ -1,6 +1,7 @@
 {
     "name": "simple1",
     "project_root": "simple1",
+    "tests_path": "tests",
     "evaluations": [
         {
             "id": 0,

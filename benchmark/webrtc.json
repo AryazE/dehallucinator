@@ -1,6 +1,7 @@
 {
     "name": "webrtc",
     "project_root": "GitHubProjects/webrtc",
+    "tests_path": "tests",
     "evaluations": [
         {
             "id": 0,

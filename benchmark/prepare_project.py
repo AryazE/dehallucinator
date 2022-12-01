@@ -39,7 +39,6 @@ def prepare(config):
                 new_code.append(temp)
         with open(temp_dir/i["file"], 'w') as f:
             f.writelines(new_code)
-        print(''.join(new_code))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

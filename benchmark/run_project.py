@@ -20,11 +20,17 @@ if __name__ == '__main__':
         pass
     prepare(config)
     orig_results = run_tests(config, 0)
+    print(f'original: {orig_results}')
     results = []
     for i in config["evaluations"]:
         if len(i['file']) == 0:
             continue
-        run_completion(config, i["id"], args.mode)
-        results.append(run_tests(config, i["id"]))
-    print(orig_results)
-    print(results)
+        try:
+            run_completion(config, i["id"], args.mode)
+            results.append(run_tests(config, i["id"]))
+            print(results[-1])
+        except Exception as e:
+            print(e.with_traceback())
+            pass
+    with open(here/'experiment'/config['name']/f'{args.mode}.json', 'w') as f:
+        json.dump([orig_results] + results, f)

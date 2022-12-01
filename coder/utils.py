@@ -1,19 +1,15 @@
 import logging
 import subprocess
-import os
 from os import path
-from transformers import GPT2TokenizerFast
-
-os.environ['TOKENIZERS_PARALLELISM'] = 'false'
-tokenizer = GPT2TokenizerFast.from_pretrained('gpt2')
+import tokenize
+from io import BytesIO
 
 def clip_prompt(prompt, prompt_limit=500):
-    global tokenizer
-    tokens = tokenizer(prompt)['input_ids']
-    logging.debug(f'Prompt length: {len(tokens)}')
+    # tokens = list(tokenize.tokenize(BytesIO(prompt.encode('utf-8')).readline))
+    # logging.debug(f'Prompt length: {len(tokens)}')
     lines = prompt.splitlines()
-    if len(tokens) > prompt_limit:
-        lines = lines[-int(len(lines)*prompt_limit/len(tokens)):]
+    if len(prompt)/3 > prompt_limit:
+        lines = lines[-int(len(lines)*prompt_limit*3/len(prompt)):]
     return '\n'.join(lines)
 
 def run_query(database, ql_file, res_file, tmp_dir):
