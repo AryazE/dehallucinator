@@ -31,7 +31,7 @@ def run_tests(config, id, mode, executable):
         print(test_res.stderr.decode('utf-8'))
     uninstall_res = subprocess.run([executable, '-m', 'pip', 'uninstall', '-y', config['name']], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     results = dict()
-    if test_res.returncode == 0:
+    if (here/'experiment'/config['name']/mode/f'temp{id}'/'results.xml').exists():
         tree = ET.parse(here/'experiment'/config['name']/mode/f'temp{id}'/'results.xml')
         root = tree.getroot()
         for child in list(root):
