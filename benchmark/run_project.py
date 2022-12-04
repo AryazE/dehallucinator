@@ -15,11 +15,11 @@ if __name__ == '__main__':
         config = json.load(f)
     here = Path(__file__).resolve().parent
     try:
-        dir_util.remove_tree(here/'experiment'/config['name'])
+        dir_util.remove_tree(here/'experiment'/config['name']/args.mode)
     except:
         pass
-    prepare(config)
-    orig_results = run_tests(config, 0)
+    executable = prepare(config, args.mode)
+    orig_results = run_tests(config, 0, args.mode, executable)
     print(f'original: {orig_results}')
     results = []
     for i in config["evaluations"]:
@@ -27,10 +27,10 @@ if __name__ == '__main__':
             continue
         try:
             run_completion(config, i["id"], args.mode)
-            results.append(run_tests(config, i["id"]))
+            results.append(run_tests(config, i["id"], args.mode, executable))
             print(results[-1])
         except Exception as e:
             print(e.with_traceback())
             pass
-    with open(here/'experiment'/config['name']/f'{args.mode}.json', 'w') as f:
+    with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:
         json.dump([orig_results] + results, f)

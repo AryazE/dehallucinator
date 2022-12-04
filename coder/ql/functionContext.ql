@@ -4,5 +4,5 @@ string params(Function f) {
     result = concat(f.getAnArg().getName(), ", ") + ""
 }
 
-from Function f
-select f.getName(), f.getEnclosingModule().getPath().toString(), f.getName() + "(" + params(f) + ")"
+from FunctionDef f
+select f.getDefinedFunction().getName(), f.getEnclosingModule().getPath().toString(), f.getDefinedFunction().getName() + "(" + params(f.getDefinedFunction()) + ")"

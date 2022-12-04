@@ -23,5 +23,5 @@ string classContext(Class c) {
     result = members(c)
 }
 
-from Class c
-select c.getName(), c.getEnclosingModule().getPath().toString(), classContext(c)
+from ClassDef c
+select c.getDefinedClass().getName(), c.getEnclosingModule().getPath().toString(), classContext(c.getDefinedClass())
