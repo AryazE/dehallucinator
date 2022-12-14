@@ -14,10 +14,6 @@ if __name__ == '__main__':
     with open(args.config, 'r') as f:
         config = json.load(f)
     here = Path(__file__).resolve().parent
-    try:
-        dir_util.remove_tree(here/'experiment'/config['name']/args.mode)
-    except:
-        pass
     executable = prepare(config, args.mode)
     orig_results = run_tests(config, 0, args.mode, executable)
     print(f'original: {orig_results}')

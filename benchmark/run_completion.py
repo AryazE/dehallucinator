@@ -4,7 +4,7 @@ import logging
 import subprocess
 import json
 import sys
-from autoimport import fix_code
+# from autoimport import fix_code
 from coder.utils import clip_prompt
 
 PROMPT_LIMIT = 500
@@ -17,7 +17,7 @@ def run_completion(config, id, mode):
         code = f.read()
     splited_code = code.split('<CURSOR>')
     prompt = clip_prompt(splited_code[0], PROMPT_LIMIT)
-    logging.debug(f'Running completion for {config["name"]} {id} with prompt: \n{prompt}')
+    logging.info(f'Running completion for {config["name"]} {id} with prompt: \n{prompt}')
     subprocess.run([
         sys.executable, '-m', 'coder.main',
         '--mode', mode,

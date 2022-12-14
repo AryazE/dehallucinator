@@ -1,4 +1,5 @@
 import argparse
+import logging
 from coder.backend import Completion
 import coder.baseline as baseline
 from coder.simple import SimpleCompletion
@@ -11,6 +12,7 @@ if __name__ == "__main__":
     parser.add_argument("--imports", type=str, required=True)
     parser.add_argument("--prompt", help="The context to complete", type=str)
     args = parser.parse_args()
+    logging.basicConfig(level=logging.INFO,filename=f'benchmark/{args.project_root.split("/")[-1]}-{args.mode}.log', filemode='a')
     prompt = args.prompt.replace('\\n', '\n')
     prompt_lines = prompt.splitlines()
     prompt = '\n'.join([l for l in prompt_lines if not (l.strip().startswith('import ') or l.strip().startswith('from '))])

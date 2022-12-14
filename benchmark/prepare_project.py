@@ -13,6 +13,10 @@ def prepare(config, mode):
     global CURSOR
 
     here = Path(__file__).resolve().parent
+    try:
+        dir_util.remove_tree(here/'experiment'/config['name']/args.mode)
+    except:
+        pass
     for i in config['evaluations']:
         dir_util.mkpath(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
         temp_dir = here/'experiment'/config['name']/mode/f'temp{i["id"]}'/config['project_root']

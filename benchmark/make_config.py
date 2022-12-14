@@ -15,9 +15,12 @@ class FunctionFinder(cst.CSTVisitor):
         pos = self.get_metadata(cst.metadata.PositionProvider, node.body)
         start = pos.start
         end = pos.end
+        if end.line - start.line > 25:
+            return
         if m.matches(node.body.body[0], m.SimpleStatementLine(body=[m.Expr(value=m.SimpleString())])) and len(node.body.body) > 1:
             start = self.get_metadata(cst.metadata.PositionProvider, node.body.body[1]).start
         self.functions.append(FunctionInfo(node.name.value, start.line, start.column, end.line, end.column))
+        return False
         
 
 def extract_evaluations(file):
@@ -38,6 +41,7 @@ if __name__ == '__main__':
     tests_path = Path(args.tests).resolve()
     files_to_ignore = set(tests_path.glob('**/*.py'))
     files_to_ignore.add(project_path/'setup.py')
+    files_to_ignore.add(project_path/'__init__.py')
     files_to_ignore.update(project_path.glob('**/__init__.py'))
     python_files = [f for f in project_path.glob('**/*.py') if f not in files_to_ignore]
     evaluations = [{

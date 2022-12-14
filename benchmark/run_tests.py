@@ -3,7 +3,7 @@ import shutil
 import subprocess
 import json
 import argparse
-import logging
+# import logging
 from distutils import dir_util
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -17,6 +17,7 @@ def run_tests(config, id, mode, executable):
         subprocess.run([executable, '-m', 'pip', 'install', '-r', str(temp_dir/'requirements.txt')], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     try:
         install_res = subprocess.run([executable, '-m', 'pip', 'install', str(temp_dir)], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        # logging.info(f"Installing {config['name']} in {temp_dir}: {install_res.returncode}")
     except subprocess.CalledProcessError as e:
         subprocess.run([executable, '-m', 'pip', 'install', '--pre', str(temp_dir)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     pytest_command = [
@@ -29,6 +30,8 @@ def run_tests(config, id, mode, executable):
     test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True)
     if test_res.returncode != 0:
         print(test_res.stderr.decode('utf-8'))
+        # logging.error(test_res.stderr.decode('utf-8'))
+        # logging.error(test_res.stdout.decode('utf-8'))
     uninstall_res = subprocess.run([executable, '-m', 'pip', 'uninstall', '-y', config['name']], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     results = dict()
     if (here/'experiment'/config['name']/mode/f'temp{id}'/'results.xml').exists():

@@ -19,7 +19,6 @@ def run_query(database, ql_file, res_file, tmp_dir):
         '--', f'{path.join(path.dirname(__file__), "ql", ql_file)}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     subprocess.run(['codeql', 'bqrs', 'decode',
         '--format=csv',
-        '--no-titles',
         f'--output={path.join(tmp_dir, res_file)}',
         '--result-set=#select',
         '--', f'{path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
