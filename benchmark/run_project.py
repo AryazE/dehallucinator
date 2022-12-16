@@ -10,16 +10,17 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str, required=True)
     parser.add_argument('--mode', type=str, required=True)
+    parser.add_argument('--id', nargs='*', type=int, default=[])
     args = parser.parse_args()
     with open(args.config, 'r') as f:
         config = json.load(f)
     here = Path(__file__).resolve().parent
-    executable = prepare(config, args.mode)
+    executable = prepare(config, args.mode, args.id)
     orig_results = run_tests(config, 0, args.mode, executable)
     print(f'original: {orig_results}')
     results = []
     for i in config["evaluations"]:
-        if len(i['file']) == 0:
+        if (len(i['file']) == 0) or (len(args.id) > 0 and i['id'] not in args.id):
             continue
         try:
             run_completion(config, i["id"], args.mode)

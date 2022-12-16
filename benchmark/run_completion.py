@@ -24,7 +24,12 @@ def run_completion(config, id, mode):
         '--project-root', str(project_root),
         '--output', str(project_root/f'completion.out'),
         '--imports', str(project_root/f'imports.out'),
-        '--prompt', prompt
+        '--prompt', prompt,
+        '--file', config["project_root"] + '/' + config["evaluations"][id]["file"],
+        '--sLine', str(config["evaluations"][id]["remove"][0]["start_line"]),
+        '--sCol', str(config["evaluations"][id]["remove"][0]["start_column"]),
+        '--eLine', str(config["evaluations"][id]["remove"][0]["end_line"]),
+        '--eCol', str(config["evaluations"][id]["remove"][0]["end_column"])
     ], check=True)
     with open(project_root/f'completion.out') as f:
         completion = f.read()

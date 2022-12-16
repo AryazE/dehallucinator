@@ -72,7 +72,7 @@ string getFunctionHeader(Function f) {
 
 string getDocString(Function f) {
     if f.getMetrics().getDocString().getText() != "" then
-        result = " - " + f.getMetrics().getDocString().getText().regexpFind("^[^\r\n]+", _, _)
+        result = " - " + f.getMetrics().getDocString().getText().regexpFind("^[^\r\n]+", _, _).trim()
     else
         result = ""
 }

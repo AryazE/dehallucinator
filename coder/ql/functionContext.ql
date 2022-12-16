@@ -3,4 +3,11 @@ import utils
 
 from FunctionDef fd, Function f
 where f = fd.getDefinedFunction() and f.inSource()
-select f.getName() as name, f.getQualifiedName() as qualifiedName, fd.getEnclosingModule().getPath().toString() as path, getFunctionContext(f) as context
+select f.getName() as name, 
+    f.getQualifiedName() as qualifiedName, 
+    fd.getLocation().getFile().getAbsolutePath() as file,
+    fd.getLocation().getStartLine() as start_line,
+    fd.getLocation().getStartColumn() as start_column,
+    fd.getLocation().getEndLine() as end_line,
+    fd.getLocation().getEndColumn() as end_column, 
+    getFunctionContext(f) as context

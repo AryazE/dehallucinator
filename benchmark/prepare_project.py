@@ -9,7 +9,7 @@ import venv
 
 CURSOR = '<CURSOR>'
 
-def prepare(config, mode):
+def prepare(config, mode, ids=[]):
     global CURSOR
 
     here = Path(__file__).resolve().parent
@@ -18,6 +18,8 @@ def prepare(config, mode):
     except:
         pass
     for i in config['evaluations']:
+        if i['id'] > 0 and len(ids) > 0 and i['id'] not in ids:
+            continue
         dir_util.mkpath(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
         temp_dir = here/'experiment'/config['name']/mode/f'temp{i["id"]}'/config['project_root']
         dir_util.copy_tree(str(here/config['project_root']), str(temp_dir))
