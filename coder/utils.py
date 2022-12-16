@@ -1,12 +1,7 @@
-import logging
 import subprocess
 from os import path
-import tokenize
-from io import BytesIO
 
 def clip_prompt(prompt, prompt_limit=500):
-    # tokens = list(tokenize.tokenize(BytesIO(prompt.encode('utf-8')).readline))
-    # logging.debug(f'Prompt length: {len(tokens)}')
     lines = prompt.splitlines()
     if len(prompt)/3 > prompt_limit:
         lines = lines[-int(len(lines)*prompt_limit*3/len(prompt)):]
@@ -31,12 +26,12 @@ def same_location(line, location):
             return False
     if not line['file'].endswith(location['file']):
         return False
-    if line['start_line'] > location['end_line']:
+    if int(line['start_line']) > location['end_line']:
         return False
-    if line['end_line'] < location['start_line']:
+    if int(line['end_line']) < location['start_line']:
         return False
-    if line['start_line'] == location['end_line'] and line['start_column'] > location['end_column']:
+    if int(line['start_line']) == location['end_line'] and int(line['start_column']) > location['end_column']:
         return False
-    if line['end_line'] == location['start_line'] and line['end_column'] < location['start_column']:
+    if int(line['end_line']) == location['start_line'] and int(line['end_column']) < location['start_column']:
         return False
     return True

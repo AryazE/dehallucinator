@@ -52,6 +52,7 @@ def run_tests(config, id, mode, executable):
             'failures': 0,
             'skipped': 0
         })
+    results.update({'id': id})
     return results
 
 if __name__ == '__main__':
