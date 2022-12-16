@@ -11,7 +11,7 @@ openai.api_key = os.environ.get('openai-api-key')
 
 class Completion:
     def __init__(self):
-        self.last_time = time.time()
+        self.last_time = time.monotonic()
 
     def get_completion(self, model: str, context: str) -> str:
         """Get code completion from the model"""
@@ -21,9 +21,9 @@ class Completion:
             response = requests.post(url, data=data)
             return response.text
         elif model == "Codex":
-            now = time.time()
-            if now - self.last_time < 4: # This is done to prevent going over the API rate limit
-                time.sleep(4 - (now - self.last_time))
+            now = time.monotonic()
+            if now - self.last_time < 4.5: # This is done to prevent going over the API rate limit
+                time.sleep(4.5 - (now - self.last_time))
             res = openai.Completion.create(
                 engine="code-cushman-001",
                 prompt=context,
@@ -34,5 +34,5 @@ class Completion:
                 presence_penalty=0,
                 stop=["\n\n\n", "def ", "class "]
             ).choices[0].text
-            self.last_time = time.time()
+            self.last_time = time.monotonic()
             return res
