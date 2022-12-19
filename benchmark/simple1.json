@@ -17,17 +17,17 @@
             "file": "simple1/main.py",
             "remove": [
                 {
-                    "description": "imports",
-                    "start_line": 1,
-                    "start_column": 1,
-                    "end_line": 3,
-                    "end_column": 1
-                },
-                {
                     "description": "code",
                     "start_line": 8,
                     "start_column": 1,
                     "end_line": 16,
+                    "end_column": 1
+                },
+                {
+                    "description": "imports",
+                    "start_line": 1,
+                    "start_column": 1,
+                    "end_line": 3,
                     "end_column": 1
                 }
             ]

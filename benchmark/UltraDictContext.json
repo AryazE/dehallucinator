@@ -581,6 +581,12 @@
                     "end_line": 955,
                     "end_column": 117
                 }
+            ],
+            "best_context": [
+                "Exceptions.AlreadyClosed"
+            ],
+            "possible_context": [
+                "Exceptions.AlreadyClosed"
             ]
         },
         {
@@ -595,6 +601,12 @@
                     "end_line": 959,
                     "end_column": 32
                 }
+            ],
+            "best_context": [
+                "UltraDict.apply_update("
+            ],
+            "possible_context": [
+                "UltraDict.apply_update("
             ]
         },
         {
@@ -623,6 +635,12 @@
                     "end_line": 966,
                     "end_column": 32
                 }
+            ],
+            "best_context": [
+                "UltraDict.close("
+            ],
+            "possible_context": [
+                "UltraDict.close("
             ]
         },
         {
@@ -637,6 +655,17 @@
                     "end_line": 1015,
                     "end_column": 49
                 }
+            ],
+            "best_context": [
+                "UltraDict.recurse",
+                "UltraDict.recurse_register",
+                "UltraDict.unlink_by_name(",
+                "UltraDict.close("
+            ],
+            "possible_context": [
+                "UltraDict.recurse",
+                "UltraDict.recurse_register",
+                "UltraDict.unlink_by_name("
             ]
         },
         {
@@ -651,6 +680,16 @@
                     "end_line": 1032,
                     "end_column": 21
                 }
+            ],
+            "best_context": [
+                "multiprocessing.shared_memory.SharedMemory.__init__(",
+                "multiprocessing.shared_memory.SharedMemory.unlink(",
+                "multiprocessing.shared_memory.SharedMemory.close(",
+                "UltraDict.get_memory("
+            ],
+            "possible_context": [
+                "multiprocessing.shared_memory.SharedMemory.unlink()",
+                "UltraDict.get_memory(create, name) -> multiprocessing.shared_memory.SharedMemory"
             ]
         },
         {

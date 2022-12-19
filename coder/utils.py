@@ -1,11 +1,15 @@
 import subprocess
 from os import path
 
-def clip_prompt(prompt, prompt_limit=500):
-    lines = prompt.splitlines()
+def clip_prompt(context: str, prompt: str, prompt_limit=500):
+    prompt_limit /= 2
+    p_lines = prompt.splitlines()
+    c_lines = context.splitlines()
     if len(prompt)/3 > prompt_limit:
-        lines = lines[-int(len(lines)*prompt_limit*3/len(prompt)):]
-    return '\n'.join(lines)
+        p_lines = p_lines[-int(len(p_lines)*prompt_limit*3/len(prompt)):]
+    if len(context)/3 > prompt_limit:
+        c_lines = c_lines[-int(len(c_lines)*prompt_limit*3/len(context)):]
+    return '\n'.join(c_lines + p_lines)
 
 def run_query(database, ql_file, res_file, tmp_dir):
     subprocess.run(['codeql', 'query', 'run',

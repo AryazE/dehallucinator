@@ -180,20 +180,6 @@
         {
             "id": 13,
             "file": "doculog/changelog.py",
-            "function": "catalog_commit",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 173,
-                    "start_column": 8,
-                    "end_line": 250,
-                    "end_column": 32
-                }
-            ]
-        },
-        {
-            "id": 14,
-            "file": "doculog/changelog.py",
             "function": "header",
             "remove": [
                 {
@@ -206,7 +192,7 @@
             ]
         },
         {
-            "id": 15,
+            "id": 14,
             "file": "doculog/changelog.py",
             "function": "__str__",
             "remove": [
@@ -220,7 +206,7 @@
             ]
         },
         {
-            "id": 16,
+            "id": 15,
             "file": "doculog/changelog.py",
             "function": "__init__",
             "remove": [
@@ -234,7 +220,7 @@
             ]
         },
         {
-            "id": 17,
+            "id": 16,
             "file": "doculog/changelog.py",
             "function": "header",
             "remove": [
@@ -248,7 +234,7 @@
             ]
         },
         {
-            "id": 18,
+            "id": 17,
             "file": "doculog/changelog.py",
             "function": "__init__",
             "remove": [
@@ -262,7 +248,7 @@
             ]
         },
         {
-            "id": 19,
+            "id": 18,
             "file": "doculog/changelog.py",
             "function": "_get_tag_date",
             "remove": [
@@ -276,21 +262,7 @@
             ]
         },
         {
-            "id": 20,
-            "file": "doculog/changelog.py",
-            "function": "read",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 312,
-                    "start_column": 8,
-                    "end_line": 353,
-                    "end_column": 24
-                }
-            ]
-        },
-        {
-            "id": 21,
+            "id": 19,
             "file": "doculog/changelog.py",
             "function": "_read_release",
             "remove": [
@@ -304,21 +276,7 @@
             ]
         },
         {
-            "id": 22,
-            "file": "doculog/changelog.py",
-            "function": "generate",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 356,
-                    "start_column": 8,
-                    "end_line": 390,
-                    "end_column": 48
-                }
-            ]
-        },
-        {
-            "id": 23,
+            "id": 20,
             "file": "doculog/changelog.py",
             "function": "__str__",
             "remove": [
@@ -332,7 +290,7 @@
             ]
         },
         {
-            "id": 24,
+            "id": 21,
             "file": "doculog/changelog.py",
             "function": "save",
             "remove": [
@@ -346,35 +304,7 @@
             ]
         },
         {
-            "id": 25,
-            "file": "doculog/requests.py",
-            "function": "post",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 44,
-                    "start_column": 4,
-                    "end_line": 87,
-                    "end_column": 20
-                }
-            ]
-        },
-        {
-            "id": 26,
-            "file": "doculog/requests.py",
-            "function": "validate_key",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 92,
-                    "start_column": 4,
-                    "end_line": 125,
-                    "end_column": 21
-                }
-            ]
-        },
-        {
-            "id": 27,
+            "id": 22,
             "file": "doculog/config.py",
             "function": "set_env_vars",
             "remove": [
@@ -388,7 +318,7 @@
             ]
         },
         {
-            "id": 28,
+            "id": 23,
             "file": "doculog/config.py",
             "function": "configure",
             "remove": [
@@ -402,7 +332,7 @@
             ]
         },
         {
-            "id": 29,
+            "id": 24,
             "file": "doculog/config.py",
             "function": "configure_api",
             "remove": [
@@ -416,21 +346,7 @@
             ]
         },
         {
-            "id": 30,
-            "file": "doculog/config.py",
-            "function": "parse_config",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 37,
-                    "start_column": 4,
-                    "end_line": 96,
-                    "end_column": 62
-                }
-            ]
-        },
-        {
-            "id": 31,
+            "id": 25,
             "file": "doculog/git.py",
             "function": "_get_git_command",
             "remove": [
@@ -444,21 +360,7 @@
             ]
         },
         {
-            "id": 32,
-            "file": "doculog/git.py",
-            "function": "get_commits",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 61,
-                    "start_column": 4,
-                    "end_line": 123,
-                    "end_column": 19
-                }
-            ]
-        },
-        {
-            "id": 33,
+            "id": 26,
             "file": "doculog/git.py",
             "function": "save_current_commit",
             "remove": [
@@ -472,7 +374,7 @@
             ]
         },
         {
-            "id": 34,
+            "id": 27,
             "file": "doculog/git.py",
             "function": "_get_tag_date",
             "remove": [
@@ -486,7 +388,7 @@
             ]
         },
         {
-            "id": 35,
+            "id": 28,
             "file": "doculog/git.py",
             "function": "list_tags",
             "remove": [
@@ -500,7 +402,7 @@
             ]
         },
         {
-            "id": 36,
+            "id": 29,
             "file": "doculog/git.py",
             "function": "has_git",
             "remove": [

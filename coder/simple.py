@@ -6,10 +6,6 @@ import re
 import logging
 import subprocess
 import pkgutil
-import tempfile
-import libcst as cst
-from libcst.metadata import PositionProvider
-import libcst.matchers as m
 import Levenshtein
 from .utils import clip_prompt, run_query, same_location
 
@@ -69,27 +65,15 @@ class SimpleCompletion:
                         result.add(c)
             return imps, result
 
-    def get_context(self, context: str, completion: str) -> Tuple[str, Set[str]]:
-        code = context + completion
-        ast = None
-        while ast is None:
-            try:
-                ast = cst.parse_module(code)
-            except:
-                ast = None
-                if '\n' not in code:
-                    return '', set()
-                code = code[:code.rfind('\n')]
-        new_code_start = len(context.splitlines())
-        position = {
-            k.value: v 
-                for k, v in cst.MetadataWrapper(ast).resolve(PositionProvider).items() 
-                if m.matches(k, m.Name()) and v.start.line >= new_code_start
-        }
-
+    def get_context(self, prompt: str, completion: str) -> Tuple[str, Set[str]]:
+        code = prompt + completion
+        last_line = code.rfind('\n')
+        if last_line != -1:
+            code = code[:last_line]
+        tokens = re.split('\W+', code)
         new_context = set()
         new_imports = ''
-        for k, v in position.items():
+        for k in tokens:
             if k not in self.used:
                 imps, ctx = self.context_for(k)
                 if len(ctx) > 0:
@@ -105,7 +89,7 @@ class SimpleCompletion:
         new_imports, new_context = self.get_context(prompt, completion)
         new_context = new_context.union(context)
         full_context = self.format_context(new_context)
-        new_prompt = clip_prompt(full_context + prompt, 1500)
+        new_prompt = clip_prompt(full_context, prompt, 1500)
         return new_prompt, new_context
 
     def modify_prompt(self, prompt: str) -> str:

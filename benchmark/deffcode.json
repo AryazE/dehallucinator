@@ -12,146 +12,62 @@
         {
             "id": 1,
             "file": "deffcode/ffdecoder.py",
-            "function": "__init__",
+            "function": "generateFrame",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 94,
+                    "start_line": 688,
                     "start_column": 8,
-                    "end_line": 279,
-                    "end_column": 44
+                    "end_line": 701,
+                    "end_column": 28
                 }
             ]
         },
         {
             "id": 2,
             "file": "deffcode/ffdecoder.py",
-            "function": "formulate",
+            "function": "__enter__",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 289,
+                    "start_line": 709,
                     "start_column": 8,
-                    "end_line": 619,
-                    "end_column": 20
+                    "end_line": 709,
+                    "end_column": 32
                 }
             ]
         },
         {
             "id": 3,
             "file": "deffcode/ffdecoder.py",
-            "function": "__fetchNextfromPipeline",
+            "function": "__exit__",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 625,
+                    "start_line": 715,
                     "start_column": 8,
-                    "end_line": 651,
-                    "end_column": 10
+                    "end_line": 715,
+                    "end_column": 25
                 }
             ]
         },
         {
             "id": 4,
             "file": "deffcode/ffdecoder.py",
-            "function": "__fetchNextFrame",
+            "function": "metadata",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 658,
+                    "start_line": 725,
                     "start_column": 8,
-                    "end_line": 681,
-                    "end_column": 21
+                    "end_line": 735,
+                    "end_column": 10
                 }
             ]
         },
         {
             "id": 5,
             "file": "deffcode/ffdecoder.py",
-            "function": "generateFrame",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 688,
-                    "start_column": 8,
-                    "end_line": 701,
-                    "end_column": 28
-                }
-            ]
-        },
-        {
-            "id": 6,
-            "file": "deffcode/ffdecoder.py",
-            "function": "__enter__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 709,
-                    "start_column": 8,
-                    "end_line": 709,
-                    "end_column": 32
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "file": "deffcode/ffdecoder.py",
-            "function": "__exit__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 715,
-                    "start_column": 8,
-                    "end_line": 715,
-                    "end_column": 25
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "file": "deffcode/ffdecoder.py",
-            "function": "metadata",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 725,
-                    "start_column": 8,
-                    "end_line": 735,
-                    "end_column": 10
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "file": "deffcode/ffdecoder.py",
-            "function": "metadata",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 746,
-                    "start_column": 8,
-                    "end_line": 817,
-                    "end_column": 78
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "file": "deffcode/ffdecoder.py",
-            "function": "__launch_FFdecoderline",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 829,
-                    "start_column": 8,
-                    "end_line": 860,
-                    "end_column": 14
-                }
-            ]
-        },
-        {
-            "id": 11,
-            "file": "deffcode/ffdecoder.py",
             "function": "terminate",
             "remove": [
                 {
@@ -164,21 +80,7 @@
             ]
         },
         {
-            "id": 12,
-            "file": "deffcode/utils.py",
-            "function": "logger_handler",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 42,
-                    "start_column": 4,
-                    "end_line": 77,
-                    "end_column": 19
-                }
-            ]
-        },
-        {
-            "id": 13,
+            "id": 6,
             "file": "deffcode/utils.py",
             "function": "dict2Args",
             "remove": [
@@ -192,7 +94,7 @@
             ]
         },
         {
-            "id": 14,
+            "id": 7,
             "file": "deffcode/utils.py",
             "function": "delete_file_safe",
             "remove": [
@@ -206,7 +108,7 @@
             ]
         },
         {
-            "id": 15,
+            "id": 8,
             "file": "deffcode/utils.py",
             "function": "validate_device_index",
             "remove": [
@@ -220,7 +122,7 @@
             ]
         },
         {
-            "id": 16,
+            "id": 9,
             "file": "deffcode/ffhelper.py",
             "function": "__init__",
             "remove": [
@@ -234,7 +136,7 @@
             ]
         },
         {
-            "id": 17,
+            "id": 10,
             "file": "deffcode/ffhelper.py",
             "function": "send",
             "remove": [
@@ -248,497 +150,147 @@
             ]
         },
         {
-            "id": 18,
+            "id": 11,
             "file": "deffcode/ffhelper.py",
-            "function": "get_valid_ffmpeg_path",
+            "function": "get_supported_vdecoders",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 81,
+                    "start_line": 315,
                     "start_column": 4,
-                    "end_line": 155,
-                    "end_column": 81
+                    "end_line": 328,
+                    "end_column": 60
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "deffcode/ffhelper.py",
+            "function": "get_supported_demuxers",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 342,
+                    "start_column": 4,
+                    "end_line": 350,
+                    "end_column": 88
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "deffcode/ffhelper.py",
+            "function": "validate_imgseqdir",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 552,
+                    "start_column": 4,
+                    "end_line": 564,
+                    "end_column": 21
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "file": "deffcode/sourcer.py",
+            "function": "enumerate_devices",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 417,
+                    "start_column": 8,
+                    "end_line": 427,
+                    "end_column": 10
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "build/lib/deffcode/ffdecoder.py",
+            "function": "generateFrame",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 688,
+                    "start_column": 8,
+                    "end_line": 701,
+                    "end_column": 28
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "build/lib/deffcode/ffdecoder.py",
+            "function": "__enter__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 709,
+                    "start_column": 8,
+                    "end_line": 709,
+                    "end_column": 32
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "build/lib/deffcode/ffdecoder.py",
+            "function": "__exit__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 715,
+                    "start_column": 8,
+                    "end_line": 715,
+                    "end_column": 25
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "file": "build/lib/deffcode/ffdecoder.py",
+            "function": "metadata",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 725,
+                    "start_column": 8,
+                    "end_line": 735,
+                    "end_column": 10
                 }
             ]
         },
         {
             "id": 19,
-            "file": "deffcode/ffhelper.py",
-            "function": "download_ffmpeg_binaries",
+            "file": "build/lib/deffcode/ffdecoder.py",
+            "function": "terminate",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 171,
-                    "start_column": 4,
-                    "end_line": 236,
-                    "end_column": 22
+                    "start_line": 868,
+                    "start_column": 8,
+                    "end_line": 886,
+                    "end_column": 57
                 }
             ]
         },
         {
             "id": 20,
-            "file": "deffcode/ffhelper.py",
-            "function": "validate_ffmpeg",
+            "file": "build/lib/deffcode/utils.py",
+            "function": "dict2Args",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 251,
+                    "start_line": 100,
                     "start_column": 4,
-                    "end_line": 269,
+                    "end_line": 115,
                     "end_column": 16
                 }
             ]
         },
         {
             "id": 21,
-            "file": "deffcode/ffhelper.py",
-            "function": "get_supported_pixfmts",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 283,
-                    "start_column": 4,
-                    "end_line": 301,
-                    "end_column": 6
-                }
-            ]
-        },
-        {
-            "id": 22,
-            "file": "deffcode/ffhelper.py",
-            "function": "get_supported_vdecoders",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 315,
-                    "start_column": 4,
-                    "end_line": 328,
-                    "end_column": 60
-                }
-            ]
-        },
-        {
-            "id": 23,
-            "file": "deffcode/ffhelper.py",
-            "function": "get_supported_demuxers",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 342,
-                    "start_column": 4,
-                    "end_line": 350,
-                    "end_column": 88
-                }
-            ]
-        },
-        {
-            "id": 24,
-            "file": "deffcode/ffhelper.py",
-            "function": "extract_device_n_demuxer",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 368,
-                    "start_column": 4,
-                    "end_line": 536,
-                    "end_column": 10
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "file": "deffcode/ffhelper.py",
-            "function": "validate_imgseqdir",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 552,
-                    "start_column": 4,
-                    "end_line": 564,
-                    "end_column": 21
-                }
-            ]
-        },
-        {
-            "id": 26,
-            "file": "deffcode/ffhelper.py",
-            "function": "is_valid_image_seq",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 581,
-                    "start_column": 4,
-                    "end_line": 606,
-                    "end_column": 21
-                }
-            ]
-        },
-        {
-            "id": 27,
-            "file": "deffcode/ffhelper.py",
-            "function": "is_valid_url",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 623,
-                    "start_column": 4,
-                    "end_line": 644,
-                    "end_column": 21
-                }
-            ]
-        },
-        {
-            "id": 28,
-            "file": "deffcode/ffhelper.py",
-            "function": "check_sp_output",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 660,
-                    "start_column": 4,
-                    "end_line": 691,
-                    "end_column": 60
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "file": "deffcode/sourcer.py",
-            "function": "__init__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 91,
-                    "start_column": 8,
-                    "end_line": 223,
-                    "end_column": 39
-                }
-            ]
-        },
-        {
-            "id": 30,
-            "file": "deffcode/sourcer.py",
-            "function": "probe_stream",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 234,
-                    "start_column": 8,
-                    "end_line": 320,
-                    "end_column": 20
-                }
-            ]
-        },
-        {
-            "id": 31,
-            "file": "deffcode/sourcer.py",
-            "function": "retrieve_metadata",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 333,
-                    "start_column": 8,
-                    "end_line": 406,
-                    "end_column": 88
-                }
-            ]
-        },
-        {
-            "id": 32,
-            "file": "deffcode/sourcer.py",
-            "function": "enumerate_devices",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 417,
-                    "start_column": 8,
-                    "end_line": 427,
-                    "end_column": 10
-                }
-            ]
-        },
-        {
-            "id": 33,
-            "file": "deffcode/sourcer.py",
-            "function": "__validate_source",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 440,
-                    "start_column": 8,
-                    "end_line": 574,
-                    "end_column": 24
-                }
-            ]
-        },
-        {
-            "id": 34,
-            "file": "deffcode/sourcer.py",
-            "function": "__extract_video_bitrate",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 585,
-                    "start_column": 8,
-                    "end_line": 607,
-                    "end_column": 18
-                }
-            ]
-        },
-        {
-            "id": 35,
-            "file": "deffcode/sourcer.py",
-            "function": "__extract_video_decoder",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 618,
-                    "start_column": 8,
-                    "end_line": 636,
-                    "end_column": 18
-                }
-            ]
-        },
-        {
-            "id": 36,
-            "file": "deffcode/sourcer.py",
-            "function": "__extract_video_pixfmt",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 647,
-                    "start_column": 8,
-                    "end_line": 672,
-                    "end_column": 18
-                }
-            ]
-        },
-        {
-            "id": 37,
-            "file": "deffcode/sourcer.py",
-            "function": "__extract_audio_bitrate_nd_samplerate",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 683,
-                    "start_column": 8,
-                    "end_line": 718,
-                    "end_column": 63
-                }
-            ]
-        },
-        {
-            "id": 38,
-            "file": "deffcode/sourcer.py",
-            "function": "__extract_resolution_framerate",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 730,
-                    "start_column": 8,
-                    "end_line": 778,
-                    "end_column": 63
-                }
-            ]
-        },
-        {
-            "id": 39,
-            "file": "deffcode/sourcer.py",
-            "function": "__extract_duration",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 789,
-                    "start_column": 8,
-                    "end_line": 809,
-                    "end_column": 17
-                }
-            ]
-        },
-        {
-            "id": 40,
-            "file": "build/lib/deffcode/ffdecoder.py",
-            "function": "__init__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 94,
-                    "start_column": 8,
-                    "end_line": 279,
-                    "end_column": 44
-                }
-            ]
-        },
-        {
-            "id": 41,
-            "file": "build/lib/deffcode/ffdecoder.py",
-            "function": "formulate",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 289,
-                    "start_column": 8,
-                    "end_line": 619,
-                    "end_column": 20
-                }
-            ]
-        },
-        {
-            "id": 42,
-            "file": "build/lib/deffcode/ffdecoder.py",
-            "function": "__fetchNextfromPipeline",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 625,
-                    "start_column": 8,
-                    "end_line": 651,
-                    "end_column": 10
-                }
-            ]
-        },
-        {
-            "id": 43,
-            "file": "build/lib/deffcode/ffdecoder.py",
-            "function": "__fetchNextFrame",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 658,
-                    "start_column": 8,
-                    "end_line": 681,
-                    "end_column": 21
-                }
-            ]
-        },
-        {
-            "id": 44,
-            "file": "build/lib/deffcode/ffdecoder.py",
-            "function": "generateFrame",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 688,
-                    "start_column": 8,
-                    "end_line": 701,
-                    "end_column": 28
-                }
-            ]
-        },
-        {
-            "id": 45,
-            "file": "build/lib/deffcode/ffdecoder.py",
-            "function": "__enter__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 709,
-                    "start_column": 8,
-                    "end_line": 709,
-                    "end_column": 32
-                }
-            ]
-        },
-        {
-            "id": 46,
-            "file": "build/lib/deffcode/ffdecoder.py",
-            "function": "__exit__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 715,
-                    "start_column": 8,
-                    "end_line": 715,
-                    "end_column": 25
-                }
-            ]
-        },
-        {
-            "id": 47,
-            "file": "build/lib/deffcode/ffdecoder.py",
-            "function": "metadata",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 725,
-                    "start_column": 8,
-                    "end_line": 735,
-                    "end_column": 10
-                }
-            ]
-        },
-        {
-            "id": 48,
-            "file": "build/lib/deffcode/ffdecoder.py",
-            "function": "metadata",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 746,
-                    "start_column": 8,
-                    "end_line": 817,
-                    "end_column": 78
-                }
-            ]
-        },
-        {
-            "id": 49,
-            "file": "build/lib/deffcode/ffdecoder.py",
-            "function": "__launch_FFdecoderline",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 829,
-                    "start_column": 8,
-                    "end_line": 860,
-                    "end_column": 14
-                }
-            ]
-        },
-        {
-            "id": 50,
-            "file": "build/lib/deffcode/ffdecoder.py",
-            "function": "terminate",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 868,
-                    "start_column": 8,
-                    "end_line": 886,
-                    "end_column": 57
-                }
-            ]
-        },
-        {
-            "id": 51,
-            "file": "build/lib/deffcode/utils.py",
-            "function": "logger_handler",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 42,
-                    "start_column": 4,
-                    "end_line": 77,
-                    "end_column": 19
-                }
-            ]
-        },
-        {
-            "id": 52,
-            "file": "build/lib/deffcode/utils.py",
-            "function": "dict2Args",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 100,
-                    "start_column": 4,
-                    "end_line": 115,
-                    "end_column": 16
-                }
-            ]
-        },
-        {
-            "id": 53,
             "file": "build/lib/deffcode/utils.py",
             "function": "delete_file_safe",
             "remove": [
@@ -752,7 +304,7 @@
             ]
         },
         {
-            "id": 54,
+            "id": 22,
             "file": "build/lib/deffcode/utils.py",
             "function": "validate_device_index",
             "remove": [
@@ -766,7 +318,7 @@
             ]
         },
         {
-            "id": 55,
+            "id": 23,
             "file": "build/lib/deffcode/ffhelper.py",
             "function": "__init__",
             "remove": [
@@ -780,7 +332,7 @@
             ]
         },
         {
-            "id": 56,
+            "id": 24,
             "file": "build/lib/deffcode/ffhelper.py",
             "function": "send",
             "remove": [
@@ -794,63 +346,7 @@
             ]
         },
         {
-            "id": 57,
-            "file": "build/lib/deffcode/ffhelper.py",
-            "function": "get_valid_ffmpeg_path",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 81,
-                    "start_column": 4,
-                    "end_line": 155,
-                    "end_column": 81
-                }
-            ]
-        },
-        {
-            "id": 58,
-            "file": "build/lib/deffcode/ffhelper.py",
-            "function": "download_ffmpeg_binaries",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 171,
-                    "start_column": 4,
-                    "end_line": 236,
-                    "end_column": 22
-                }
-            ]
-        },
-        {
-            "id": 59,
-            "file": "build/lib/deffcode/ffhelper.py",
-            "function": "validate_ffmpeg",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 251,
-                    "start_column": 4,
-                    "end_line": 269,
-                    "end_column": 16
-                }
-            ]
-        },
-        {
-            "id": 60,
-            "file": "build/lib/deffcode/ffhelper.py",
-            "function": "get_supported_pixfmts",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 283,
-                    "start_column": 4,
-                    "end_line": 301,
-                    "end_column": 6
-                }
-            ]
-        },
-        {
-            "id": 61,
+            "id": 25,
             "file": "build/lib/deffcode/ffhelper.py",
             "function": "get_supported_vdecoders",
             "remove": [
@@ -864,7 +360,7 @@
             ]
         },
         {
-            "id": 62,
+            "id": 26,
             "file": "build/lib/deffcode/ffhelper.py",
             "function": "get_supported_demuxers",
             "remove": [
@@ -878,21 +374,7 @@
             ]
         },
         {
-            "id": 63,
-            "file": "build/lib/deffcode/ffhelper.py",
-            "function": "extract_device_n_demuxer",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 368,
-                    "start_column": 4,
-                    "end_line": 536,
-                    "end_column": 10
-                }
-            ]
-        },
-        {
-            "id": 64,
+            "id": 27,
             "file": "build/lib/deffcode/ffhelper.py",
             "function": "validate_imgseqdir",
             "remove": [
@@ -906,91 +388,7 @@
             ]
         },
         {
-            "id": 65,
-            "file": "build/lib/deffcode/ffhelper.py",
-            "function": "is_valid_image_seq",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 581,
-                    "start_column": 4,
-                    "end_line": 606,
-                    "end_column": 21
-                }
-            ]
-        },
-        {
-            "id": 66,
-            "file": "build/lib/deffcode/ffhelper.py",
-            "function": "is_valid_url",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 623,
-                    "start_column": 4,
-                    "end_line": 644,
-                    "end_column": 21
-                }
-            ]
-        },
-        {
-            "id": 67,
-            "file": "build/lib/deffcode/ffhelper.py",
-            "function": "check_sp_output",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 660,
-                    "start_column": 4,
-                    "end_line": 691,
-                    "end_column": 60
-                }
-            ]
-        },
-        {
-            "id": 68,
-            "file": "build/lib/deffcode/sourcer.py",
-            "function": "__init__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 91,
-                    "start_column": 8,
-                    "end_line": 223,
-                    "end_column": 39
-                }
-            ]
-        },
-        {
-            "id": 69,
-            "file": "build/lib/deffcode/sourcer.py",
-            "function": "probe_stream",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 234,
-                    "start_column": 8,
-                    "end_line": 320,
-                    "end_column": 20
-                }
-            ]
-        },
-        {
-            "id": 70,
-            "file": "build/lib/deffcode/sourcer.py",
-            "function": "retrieve_metadata",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 333,
-                    "start_column": 8,
-                    "end_line": 406,
-                    "end_column": 88
-                }
-            ]
-        },
-        {
-            "id": 71,
+            "id": 28,
             "file": "build/lib/deffcode/sourcer.py",
             "function": "enumerate_devices",
             "remove": [
@@ -1000,104 +398,6 @@
                     "start_column": 8,
                     "end_line": 427,
                     "end_column": 10
-                }
-            ]
-        },
-        {
-            "id": 72,
-            "file": "build/lib/deffcode/sourcer.py",
-            "function": "__validate_source",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 440,
-                    "start_column": 8,
-                    "end_line": 574,
-                    "end_column": 24
-                }
-            ]
-        },
-        {
-            "id": 73,
-            "file": "build/lib/deffcode/sourcer.py",
-            "function": "__extract_video_bitrate",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 585,
-                    "start_column": 8,
-                    "end_line": 607,
-                    "end_column": 18
-                }
-            ]
-        },
-        {
-            "id": 74,
-            "file": "build/lib/deffcode/sourcer.py",
-            "function": "__extract_video_decoder",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 618,
-                    "start_column": 8,
-                    "end_line": 636,
-                    "end_column": 18
-                }
-            ]
-        },
-        {
-            "id": 75,
-            "file": "build/lib/deffcode/sourcer.py",
-            "function": "__extract_video_pixfmt",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 647,
-                    "start_column": 8,
-                    "end_line": 672,
-                    "end_column": 18
-                }
-            ]
-        },
-        {
-            "id": 76,
-            "file": "build/lib/deffcode/sourcer.py",
-            "function": "__extract_audio_bitrate_nd_samplerate",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 683,
-                    "start_column": 8,
-                    "end_line": 718,
-                    "end_column": 63
-                }
-            ]
-        },
-        {
-            "id": 77,
-            "file": "build/lib/deffcode/sourcer.py",
-            "function": "__extract_resolution_framerate",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 730,
-                    "start_column": 8,
-                    "end_line": 778,
-                    "end_column": 63
-                }
-            ]
-        },
-        {
-            "id": 78,
-            "file": "build/lib/deffcode/sourcer.py",
-            "function": "__extract_duration",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 789,
-                    "start_column": 8,
-                    "end_line": 809,
-                    "end_column": 17
                 }
             ]
         }
