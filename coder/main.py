@@ -1,8 +1,8 @@
 import argparse
-import logging
 from coder.backend import Completion
 import coder.baseline as baseline
 from coder.simple import SimpleCompletion
+import logging
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -16,14 +16,15 @@ if __name__ == "__main__":
     parser.add_argument("--sCol", help="The start column number of the cursor", type=int, default=-1)
     parser.add_argument("--eLine", help="The end line number of the cursor", type=int, default=-1)
     parser.add_argument("--eCol", help="The end column number of the cursor", type=int, default=-1)
+    parser.add_argument("--log", help="The log file suffix", type=str, default='')
     args = parser.parse_args()
-    logging.basicConfig(level=logging.INFO,filename=f'benchmark/{args.project_root.split("/")[-1]}-{args.mode}.log', filemode='a')
+    logging.basicConfig(level=logging.INFO,filename=f'benchmark/{args.project_root.split("/")[-1]}-{args.mode}{args.log}.log', filemode='a')
     prompt = args.prompt.replace('\\n', '\n')
     prompt_lines = prompt.splitlines()
     prompt = '\n'.join([l for l in prompt_lines if not (l.strip().startswith('import ') or l.strip().startswith('from '))])
     completor = Completion()
     if args.mode == 'baseline':
-        imports, completion = baseline.completion(completor, prompt)
+        context, imports, completion = baseline.completion(completor, prompt)
     else:
         loc = {
             'file': args.file,
@@ -33,8 +34,10 @@ if __name__ == "__main__":
             'end_column': args.eCol
         }
         simple_completion = SimpleCompletion(args.project_root, model='Codex', location=loc)
-        imports, completion = simple_completion.completion(completor, prompt)
+        context, imports, completion = simple_completion.completion(completor, prompt)
     with open(args.output, 'w') as f:
         f.write(completion)
     with open(args.imports, 'w') as f:
         f.write(imports)
+    with open(args.output.split('.')[0] + '.context', 'w') as f:
+        f.write(context)

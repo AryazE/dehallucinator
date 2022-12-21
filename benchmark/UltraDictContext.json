@@ -385,6 +385,16 @@
                     "end_line": 538,
                     "end_column": 131
                 }
+            ],
+            "best_context": [
+                "functools.partial",
+                "UltraDict.name",
+                "UltraDict.auto_unlink",
+                "UltraDict.recurse_register"
+            ],
+            "possible_context": [
+                "UltraDict.name",
+                "UltraDict.recurse_register"
             ]
         },
         {
@@ -399,6 +409,12 @@
                     "end_line": 666,
                     "end_column": 24
                 }
+            ],
+            "best_context": [
+                "UltraDict"
+            ],
+            "possible_context": [
+                "UltraDict"
             ]
         },
         {
@@ -553,6 +569,26 @@
                     "end_line": 907,
                     "end_column": 19
                 }
+            ],
+            "best_context": [
+                "UltraDict.update_stream_position_remote",
+                "UltraDict.lock_pid_remote",
+                "UltraDict.lock_remote",
+                "UltraDict.shared_lock_remote",
+                "UltraDict.recurse_remote",
+                "UltraDict.lock",
+                "UltraDict.full_dump_counter_remote",
+                "UltraDict.full_dump_memory_name_remote"
+            ],
+            "possible_context": [
+                "UltraDict.update_stream_position_remote",
+                "UltraDict.lock_pid_remote",
+                "UltraDict.lock_remote",
+                "UltraDict.shared_lock_remote",
+                "UltraDict.recurse_remote",
+                "UltraDict.lock",
+                "UltraDict.full_dump_counter_remote",
+                "UltraDict.full_dump_memory_name_remote"
             ]
         },
         {

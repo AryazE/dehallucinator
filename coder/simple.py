@@ -9,12 +9,31 @@ import pkgutil
 import Levenshtein
 from .utils import clip_prompt, run_query, same_location
 
+logger = logging.getLogger(__name__)
+
+def merge(project_root: str, file: str) -> str:
+    p_r = project_root.split('/')
+    f = file.split('/')
+    max_common = 0
+    for i in range(1, min(len(p_r), len(f))):
+        if '/'.join(p_r[-i:]) == '/'.join(f[:i]):
+            max_common = i
+    return '/'.join(p_r[:-max_common] + f)
+
 class SimpleCompletion:
     def __init__(self, project_root: str, model: str = "Codex", location: Dict[str, int] = {}):
         self.project_root = Path(project_root)
         print(f'Project root: {self.project_root.as_posix()}')
         self.database = self.project_root/'..'/'..'/'..'/'codeqldb'
         self.location = location
+        with open(merge(project_root, self.location["file"]), 'r') as f:
+            code = f.read()
+            lines = code.splitlines()
+            for i in range(self.location["start_line"] - 1, -1, -1):
+                cls = re.match('class (?P<class>[a-zA-Z0-9_]+)', lines[i])
+                if cls:
+                    self.self_name = cls.group('class')
+                    break
         if not self.database.exists():
             working_dir = os.getcwd()
             os.chdir(self.project_root)
@@ -46,6 +65,8 @@ class SimpleCompletion:
         # TODO Which import to choose?
         result = set()
         imps = set()
+        if name == 'self':
+            name = self.self_name
         if name in self.additional_context:
             self.used.add(name)
             m, c = self.additional_context[name][0]
@@ -105,12 +126,12 @@ class SimpleCompletion:
         imports = ''
         # indentation = re.match('\s*', prompt.split('\n')[-1]).group(0)
         completion = completor.get_completion(self.model, prompt)
-        logging.info(f'Initial prompt: \n{prompt}\n')
-        logging.info(f'Initial completion:\n{completion}\n')
+        logger.info(f'Initial prompt: \n{prompt}\n')
+        logger.info(f'Initial completion:\n{completion}\n')
         while attempts < BUDGET and prev_completion != completion:
             prev_completion = completion
             new_prompt, context = self.generate_new_prompt(prompt, context, completion)
             completion = completor.get_completion(self.model, new_prompt)
-            logging.info(f'For prompt:\n{new_prompt}\n, got completion:\n{completion}\n')
+            logger.info(f'For prompt:\n{new_prompt}\n, got completion:\n{completion}\n')
             attempts += 1
-        return imports, completion
+        return new_prompt, imports, completion
