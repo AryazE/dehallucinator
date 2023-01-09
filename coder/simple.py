@@ -1,4 +1,5 @@
 from typing import Tuple, List, Set, Dict
+from collections import Counter
 import os
 import csv
 from pathlib import Path
@@ -37,6 +38,7 @@ class SimpleCompletion:
         if not self.database.exists():
             working_dir = os.getcwd()
             os.chdir(self.project_root)
+            logger.info(os.getcwd())
             subprocess.run(['codeql', 'database', 'create',
                             '--language=python',
                             '--overwrite',
@@ -59,14 +61,17 @@ class SimpleCompletion:
                     continue
                 if line['name'] not in self.additional_context:
                     self.additional_context[line['name']] = []
-                self.additional_context[line['name']].append((line['qualifiedName'], line['context']))
+                tmp_context = line['context'].split('\n')
+                ctx = []
+                for i in range(len(tmp_context)):
+                    if tmp_context[i] not in tmp_context[:i]:
+                        ctx.append(tmp_context[i])
+                self.additional_context[line['name']].append((line['qualifiedName'], '\n'.join(ctx)))
 
     def context_for(self, name: str) -> Tuple[Set[str], Set[str]]:
         # TODO Which import to choose?
         result = set()
         imps = set()
-        if name == 'self':
-            name = self.self_name
         if name in self.additional_context:
             self.used.add(name)
             m, c = self.additional_context[name][0]
@@ -88,23 +93,36 @@ class SimpleCompletion:
 
     def get_context(self, prompt: str, completion: str) -> Tuple[str, Set[str]]:
         code = prompt + completion
-        last_line = code.rfind('\n')
-        if last_line != -1:
-            code = code[:last_line]
-        tokens = re.split('\W+', code)
+        # last_line = code.rfind('\n')
+        # if last_line != -1:
+        #     code = code[:last_line]
+        tokens = Counter(re.split('[^a-zA-Z0-9]+', code))
+        if tokens['self'] > 0:
+            tokens[self.self_name] += tokens['self']
+            del tokens['self']
         new_context = set()
         new_imports = ''
-        for k in tokens:
-            if k not in self.used:
+        for k, _ in tokens.most_common():
+            if len(k) > 0 and k not in self.used:
+                if k == 'self':
+                    logger.info(f'self is {self.self_name}')
                 imps, ctx = self.context_for(k)
+                if k == 'self':
+                    logger.info(f'context for self is {ctx}')
                 if len(ctx) > 0:
+                    dont_add = False
+                    for c in ctx:
+                        if c.strip().split('.')[0] in tokens:
+                            dont_add = True
+                    if dont_add:
+                        continue
                     new_context  = new_context.union(ctx)
                     new_imports = '\n'.join(imps) + new_imports
         return new_imports, new_context
     
     def format_context(self, context: Set[str]) -> str:
         commented_context = ['# ' + '\n#'.join(i.split('\n')) for i in context]
-        return '# API REFERENCE:\n' + '\n'.join(commented_context) + '\n'
+        return '# API REFERENCE:\n' + '\n'.join(commented_context)[:2000] + '\n'
 
     def generate_new_prompt(self, prompt: str, context: Set[str], completion: str) -> Tuple[str, Set[str]]:
         new_imports, new_context = self.get_context(prompt, completion)

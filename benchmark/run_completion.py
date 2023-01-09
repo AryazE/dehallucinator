@@ -61,7 +61,8 @@ def run_completion(config, id, mode, log_suffix=''):
                     best_temp = len(c)
             if best_temp > 0:
                 possible_context += 1
-    return best_context, possible_context, len(context.splitlines())
+        return best_context, possible_context, len(context.splitlines())
+    return -1, -1, -1
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

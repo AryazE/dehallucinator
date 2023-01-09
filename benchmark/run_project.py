@@ -34,7 +34,7 @@ if __name__ == '__main__':
             continue
         try:
             best_context, possible_context, given_context = run_completion(config, i["id"], args.mode, args.log)
-            if best_context > 0:
+            if best_context > -1:
                 logger.info(f'best_context: {best_context}, possible_context: {possible_context}, given_context: {given_context}')
             new_res = run_tests(config, i["id"], args.mode, executable)
             with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'r') as f:

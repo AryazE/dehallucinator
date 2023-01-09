@@ -3,22 +3,20 @@ import utils
 
 string memberNames(Class c) {
     result = concat(AssignStmt a, Expr target | 
-        a = c.getInitMethod().getBody().getAnItem() and a.getATarget() = target and target.(Attribute).getObject() instanceof Name and target.(Attribute).getObject().(Name).toString() = "self" | 
-        target.(Attribute).getAttr(),
-        "\n\t"
-    )
+        a = c.getAMethod().getBody().getAnItem() and a.getATarget() = target and target.(Attribute).getObject() instanceof Name and target.(Attribute).getObject().(Name).toString() = "self" | 
+        c.getQualifiedName() + "." + target.(Attribute).getAttr(), "\n\t\t")
 }
 
 string memberContext(Class c) {
-    if count( |  | memberNames(c)) = 0 then
+    if memberNames(c) = "" then
         result = ""
     else
-        result = memberNames(c)
+        result = "\tvariables:\n" + "\t\t" + memberNames(c)
 }
 
 string docStringContext(Class c) {
     if c.getDocString().getText() != "" then
-        result = c.getDocString().getText()
+        result = "\t" + c.getDocString().getText() + "\n"
     else
         result = ""
 }
@@ -30,18 +28,24 @@ string getHeritage(Class c) {
         result = concat(Expr e | e = c.getABase() | getString(e), ", ")
 }
 
+string functionsContext(Class c) {
+    if count( |  | c.getAMethod()) = 0 then
+        result = ""
+    else
+        result = "\tfunctions:\n" +
+        "\t\t" + concat(Function f | f = c.getAMethod() | getFunctionContext(f), "\n\t\t") + "\n"
+}
+
 string classContext(Class c) {
     result = "class " + c.getQualifiedName() + "(" + getHeritage(c) + "):\n" +
-        "\t" + docStringContext(c) + "\n" +
-        "\tfunctions:\n" +
-        "\t" + concat(Function f | f = c.getAMethod() | getFunctionContext(f), "\n\t") + "\n" +
-        "\tvariables:\n" +
-        "\t" + memberContext(c)
+        docStringContext(c) +
+        functionsContext(c) +
+        memberContext(c)
 }
 
 from ClassDef cd, Class c
 where cd.getDefinedClass() = c and c.inSource()
-select c.getName() as name, 
+select c.getName() as name,
     c.getQualifiedName() as qualifiedName, 
     cd.getLocation().getFile().getAbsolutePath() as file,
     cd.getLocation().getStartLine() as start_line,
