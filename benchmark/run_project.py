@@ -11,6 +11,7 @@ import time
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument('--model', type=str, default='Codex', help='CodeGen or Codex')
     parser.add_argument('--config', type=str, required=True)
     parser.add_argument('--mode', type=str, required=True)
     parser.add_argument('--ids', nargs='*', type=int, default=[])
@@ -33,7 +34,7 @@ if __name__ == '__main__':
         if (len(i['file']) == 0) or (args.fromId > i['id']) or (len(args.ids) > 0 and i['id'] not in args.ids):
             continue
         try:
-            best_context, possible_context, given_context = run_completion(config, i["id"], args.mode, args.log)
+            best_context, possible_context, given_context = run_completion(args.model, config, i["id"], args.mode, args.log)
             if best_context > -1:
                 logger.info(f'best_context: {best_context}, possible_context: {possible_context}, given_context: {given_context}')
             new_res = run_tests(config, i["id"], args.mode, executable)

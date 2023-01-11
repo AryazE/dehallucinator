@@ -10,7 +10,7 @@ from coder.utils import clip_prompt
 PROMPT_LIMIT = 500
 logger = logging.getLogger(__name__)
 
-def run_completion(config, id, mode, log_suffix=''):
+def run_completion(model, config, id, mode, log_suffix=''):
     global PROMPT_LIMIT
     here = Path(__file__).resolve().parent
     project_root = here/'experiment'/config["name"]/mode/f'temp{id}'/config['project_root']
@@ -22,6 +22,7 @@ def run_completion(config, id, mode, log_suffix=''):
     result = subprocess.run([
         sys.executable, '-m', 'coder.main',
         '--mode', mode,
+        '--model', model,
         '--project-root', str(project_root),
         '--output', str(project_root/f'completion.out'),
         '--imports', str(project_root/f'imports.out'),
@@ -66,6 +67,7 @@ def run_completion(config, id, mode, log_suffix=''):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
+    parser.add_argument('--model', type=str, default='Codex')
     parser.add_argument('--config', type=str, required=True)
     parser.add_argument('--id', type=int, required=True)
     parser.add_argument('--mode', type=str, required=True)
@@ -73,5 +75,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     with open(args.config, 'r') as f:
         config = json.load(f)
-    bc, pc, l = run_completion(config, args.id, args.mode, args.log)
+    bc, pc, l = run_completion(args.model, config, args.id, args.mode, args.log)
     print(f'Best context: {bc}, possible context: {pc}, total context: {l}')

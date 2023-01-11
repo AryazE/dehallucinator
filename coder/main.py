@@ -7,6 +7,7 @@ import logging
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--mode', type=str, default='baseline', help='baseline or simple')
+    parser.add_argument('--model', type=str, default='Codex', help='CodeGen or Codex')
     parser.add_argument("--project-root", type=str, required=True)
     parser.add_argument("--output", type=str, required=True)
     parser.add_argument("--imports", type=str, required=True)
@@ -24,7 +25,7 @@ if __name__ == "__main__":
     prompt = '\n'.join([l for l in prompt_lines if not (l.strip().startswith('import ') or l.strip().startswith('from '))])
     completor = Completion()
     if args.mode == 'baseline':
-        context, imports, completion = baseline.completion(completor, prompt)
+        context, imports, completion = baseline.completion(args.model, completor, prompt)
     else:
         loc = {
             'file': args.file,
@@ -33,7 +34,7 @@ if __name__ == "__main__":
             'end_line': args.eLine,
             'end_column': args.eCol
         }
-        simple_completion = SimpleCompletion(args.project_root, model='Codex', location=loc)
+        simple_completion = SimpleCompletion(args.project_root, model=args.model, location=loc)
         context, imports, completion = simple_completion.completion(completor, prompt)
     with open(args.output, 'w') as f:
         f.write(completion)
