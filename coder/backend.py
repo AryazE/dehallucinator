@@ -16,7 +16,12 @@ class Completion:
     def get_completion(self, model: str, context: str) -> str:
         """Get code completion from the model"""
         if model == "CodeGen":
-            url = API_URL + "/completion"
+            url = API_URL + "/codegen"
+            data = {"accessToken": access_token, "context": context}
+            response = requests.post(url, data=data)
+            return response.text
+        elif model == "PolyCoder":
+            url = API_URL + "/polycoder"
             data = {"accessToken": access_token, "context": context}
             response = requests.post(url, data=data)
             return response.text
