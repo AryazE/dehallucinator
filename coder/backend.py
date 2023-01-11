@@ -27,8 +27,8 @@ class Completion:
             return response.text
         elif model == "Codex":
             now = time.monotonic()
-            if now - self.last_time < 4.5: # This is done to prevent going over the API rate limit
-                time.sleep(4.5 - (now - self.last_time))
+            if now - self.last_time < 6: # This is done to prevent going over the API rate limit
+                time.sleep(6 - (now - self.last_time))
             res = openai.Completion.create(
                 engine="code-cushman-001",
                 prompt=context,
