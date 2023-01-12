@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-tokenizer = AutoTokenizer.from_pretrained("Salesforce/codegen-2B-mono")
-model = AutoModelForCausalLM.from_pretrained("Salesforce/codegen-2B-mono").to(0)
+tokenizer = AutoTokenizer.from_pretrained("Salesforce/codegen-350M-mono")
+model = AutoModelForCausalLM.from_pretrained("Salesforce/codegen-350M-mono").to(0)
 
 def get_completion(context):
     inputs = tokenizer(context, return_tensors="pt").to(0)
