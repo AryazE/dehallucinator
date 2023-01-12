@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-tokenizer = AutoTokenizer.from_pretrained("NinedayWang/PolyCoder-2.7B")
-model = AutoModelForCausalLM.from_pretrained("NinedayWang/PolyCoder-2.7B").to(0)
+tokenizer = AutoTokenizer.from_pretrained("NinedayWang/PolyCoder-0.4B")
+model = AutoModelForCausalLM.from_pretrained("NinedayWang/PolyCoder-0.4B").to(0)
 
 def get_completion(context):
     inputs = tokenizer.encode(context, return_tensors="pt").to(0)
