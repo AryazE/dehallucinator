@@ -28,12 +28,16 @@ string getHeritage(Class c) {
         result = concat(Expr e | e = c.getABase() | getString(e), ", ")
 }
 
+predicate filtered(Function f) {
+    f.getName().regexpMatch("__.+__")
+}
+
 string functionsContext(Class c) {
     if count( |  | c.getAMethod()) = 0 then
         result = ""
     else
         result = "\tfunctions:\n" +
-        "\t\t" + concat(Function f | f = c.getAMethod() | getFunctionContext(f), "\n\t\t") + "\n"
+        "\t\t" + concat(Function f | f = c.getAMethod() and not filtered(f) | getFunctionContext(f), "\n\t\t") + "\n"
 }
 
 string classContext(Class c) {

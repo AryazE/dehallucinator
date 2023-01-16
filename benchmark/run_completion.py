@@ -25,7 +25,6 @@ def run_completion(model, config, id, mode, log_suffix=''):
         '--model', model,
         '--project-root', str(project_root),
         '--output', str(project_root/f'completion.out'),
-        '--imports', str(project_root/f'imports.out'),
         '--prompt', prompt,
         '--file', config["project_root"] + '/' + config["evaluations"][id]["file"],
         '--sLine', str(config["evaluations"][id]["remove"][0]["start_line"]),
@@ -38,9 +37,7 @@ def run_completion(model, config, id, mode, log_suffix=''):
     logger.info(result.stdout.decode('utf-8'))
     with open(project_root/f'completion.out') as f:
         completion = f.read()
-    with open(project_root/f'imports.out') as f:
-        imports = f.read()
-    final_code = imports + '\n' + splited_code[0] + completion + '\n' + splited_code[1]
+    final_code = splited_code[0] + completion + '\n' + splited_code[1]
     fixed_code = final_code #fix_code(final_code)
     with open(project_root/config["evaluations"][id]["file"], 'w') as f:
         f.write(fixed_code)

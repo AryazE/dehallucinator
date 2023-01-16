@@ -4,9 +4,11 @@ libcst
 openai
 fasttext
 scipy
+numpy
 levenshtein
 pytest
 pytest-reportlog
 autoimport
 transformers
 coverage
+sentence-transformers

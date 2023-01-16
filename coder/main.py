@@ -10,7 +10,6 @@ if __name__ == "__main__":
     parser.add_argument('--model', type=str, default='Codex', help='CodeGen or Codex')
     parser.add_argument("--project-root", type=str, required=True)
     parser.add_argument("--output", type=str, required=True)
-    parser.add_argument("--imports", type=str, required=True)
     parser.add_argument("--prompt", help="The context to complete", type=str)
     parser.add_argument("--file", help="The file path", type=str, default='')
     parser.add_argument("--sLine", help="The start line number of the cursor", type=int, default=-1)
@@ -25,7 +24,7 @@ if __name__ == "__main__":
     prompt = '\n'.join([l for l in prompt_lines if not (l.strip().startswith('import ') or l.strip().startswith('from '))])
     completor = Completion()
     if args.mode == 'baseline':
-        context, imports, completion = baseline.completion(args.model, completor, prompt)
+        context, completion = baseline.completion(args.model, completor, prompt)
     else:
         loc = {
             'file': args.file,
@@ -35,10 +34,8 @@ if __name__ == "__main__":
             'end_column': args.eCol
         }
         simple_completion = SimpleCompletion(args.project_root, model=args.model, location=loc)
-        context, imports, completion = simple_completion.completion(completor, prompt)
+        context, completion = simple_completion.completion(completor, prompt)
     with open(args.output, 'w') as f:
         f.write(completion)
-    with open(args.imports, 'w') as f:
-        f.write(imports)
     with open(args.output.split('.')[0] + '.context', 'w') as f:
         f.write(context)
