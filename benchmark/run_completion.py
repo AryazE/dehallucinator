@@ -1,11 +1,10 @@
 import argparse
 from pathlib import Path
 import logging
-import subprocess
 import json
-import sys
 # from autoimport import fix_code
 from coder.utils import clip_prompt
+from coder.main import main
 
 PROMPT_LIMIT = 500
 logger = logging.getLogger(__name__)
@@ -19,22 +18,13 @@ def run_completion(model, config, id, mode, log_suffix=''):
     splited_code = code.split('<CURSOR>')
     prompt = clip_prompt('', splited_code[0], PROMPT_LIMIT)
     logger.info(f'Running completion for {config["name"]} {id} with prompt: \n{prompt}')
-    result = subprocess.run([
-        sys.executable, '-m', 'coder.main',
-        '--mode', mode,
-        '--model', model,
-        '--project-root', str(project_root),
-        '--output', str(project_root/f'completion.out'),
-        '--prompt', prompt,
-        '--file', config["project_root"] + '/' + config["evaluations"][id]["file"],
-        '--sLine', str(config["evaluations"][id]["remove"][0]["start_line"]),
-        '--sCol', str(config["evaluations"][id]["remove"][0]["start_column"]),
-        '--eLine', str(config["evaluations"][id]["remove"][0]["end_line"]),
-        '--eCol', str(config["evaluations"][id]["remove"][0]["end_column"]),
-        '--log', log_suffix,
-    ], check=True, capture_output=True)
-    print(result.stderr.decode('utf-8'))
-    logger.info(result.stdout.decode('utf-8'))
+    main(str(project_root), prompt, mode, model, 
+        file=config["project_root"] + '/' + config["evaluations"][id]["file"],
+        sLine=int(config["evaluations"][id]["remove"][0]["start_line"]),
+        sCol=int(config["evaluations"][id]["remove"][0]["start_column"]),
+        eLine=int(config["evaluations"][id]["remove"][0]["end_line"]),
+        eCol=int(config["evaluations"][id]["remove"][0]["end_column"]),
+        output=str(project_root/f'completion.out'), log=log_suffix)
     with open(project_root/f'completion.out') as f:
         completion = f.read()
     final_code = splited_code[0] + completion + '\n' + splited_code[1]

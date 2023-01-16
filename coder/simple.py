@@ -11,12 +11,9 @@ import subprocess
 import pkgutil
 import pydoc
 import importlib
-from sentence_transformers import SentenceTransformer
-from .utils import clip_prompt, run_query, same_location
+from .utils import clip_prompt, run_query, same_location, embeddings
 
 logger = logging.getLogger(__name__)
-
-similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 def cos_sim(emb_a: List[float], emb_b: List[float]) -> float:
     return dot(emb_a, emb_b) / (norm(emb_a) * norm(emb_b))
@@ -62,8 +59,12 @@ class SimpleCompletion:
         self.model = model
         self.embeddings = dict()
         for k, v in self.additional_context.items():
-            self.embeddings[k] = similarity_model.encode(v)
+            self.embeddings[k] = embeddings(v)
         self.modules = set(i.name for i in pkgutil.iter_modules())
+        for i in self.modules:
+            if i not in self.additional_context:
+                self.additional_context[i] = []
+            self.additional_context[i].append('import ' + i)
     
     def parse_results_into_context(self, file):
         with open(file, newline='') as csvfile:
@@ -76,13 +77,13 @@ class SimpleCompletion:
                 tmp_context = line['context'].split('\n')
                 ctx = []
                 for i in range(len(tmp_context)):
-                    if tmp_context[i] not in tmp_context[:i]:
+                    if tmp_context[i] not in ctx:
                         ctx.append(tmp_context[i])
-                self.additional_context[line['qualifiedName']].append(ctx)
+                self.additional_context[line['qualifiedName']].extend(ctx)
 
     def context_for(self, name: str) -> List[str]:
         result = []
-        name_embedding = similarity_model.encode([name])[0]
+        name_embedding = embeddings([name])[0]
         for k, v in self.additional_context.items():
             for i in v:
                 if k not in self.used and cos_sim(name_embedding, self.embeddings[i]) > 0.6:
@@ -124,7 +125,13 @@ class SimpleCompletion:
         #             new_context  = new_context.union(ctx)
         lines = code.splitlines()
         new_context = set()
-
+        tmp = []
+        tmp.extend(self.additional_context.keys())
+        line_embeddings = embeddings(lines)
+        for i in tmp:
+            for j in lines:
+                if i not in self.used and cos_sim(self.embeddings[i], line_embeddings[j]) > 0.6:
+                    new_context.add(self.additional_context[i])
         return new_context
     
     def format_context(self, context: Set[str]) -> str:

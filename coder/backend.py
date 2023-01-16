@@ -1,13 +1,14 @@
 import os
 import requests
 import openai
-from dotenv import load_dotenv
+from dotenv import dotenv_values
 import time
 
-load_dotenv()
-API_URL = os.environ.get('api-url')
-access_token = os.environ.get('access-token')
-openai.api_key = os.environ.get('openai-api-key')
+env_vars = dotenv_values('.env')
+API_URL = env_vars['api-url']
+access_token = env_vars['access-token']
+openai.api_key = env_vars['openai-api-key']
+print(env_vars)
 
 class Completion:
     def __init__(self):

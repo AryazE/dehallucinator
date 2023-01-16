@@ -1,5 +1,12 @@
 import subprocess
+from typing import List
 from os import path
+from sentence_transformers import SentenceTransformer
+
+similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+
+def embeddings(batch: List[str]) -> List[List[float]]:
+    return similarity_model.encode(batch)
 
 def clip_prompt(context: str, prompt: str, prompt_limit=500):
     prompt_limit /= 2
@@ -12,15 +19,16 @@ def clip_prompt(context: str, prompt: str, prompt_limit=500):
     return '\n'.join(c_lines + p_lines)
 
 def run_query(database, ql_file, res_file, tmp_dir):
-    subprocess.run(['codeql', 'query', 'run',
+    res = subprocess.run(['codeql', 'query', 'run',
         f'--database={database}',
         f'--output={path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}',
-        '--', f'{path.join(path.dirname(__file__), "ql", ql_file)}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        '--', f'{path.join(path.dirname(__file__), "ql", ql_file)}'], check=True)#, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    print(f'here: {res}')
     subprocess.run(['codeql', 'bqrs', 'decode',
         '--format=csv',
         f'--output={path.join(tmp_dir, res_file)}',
         '--result-set=#select',
-        '--', f'{path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        '--', f'{path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}'], check=True)#, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def same_location(line, location):
     if len(location['file']) == 0:

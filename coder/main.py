@@ -1,8 +1,33 @@
 import argparse
-from coder.backend import Completion
-import coder.baseline as baseline
-from coder.simple import SimpleCompletion
+from .backend import Completion
+from . import baseline
+from .simple import SimpleCompletion
 import logging
+
+def main(project_root: str, prompt: str, mode: str, 
+        model: str, file: str, sLine: int, sCol: int, 
+        eLine: int, eCol: int, output: str, log: str):
+    logging.basicConfig(level=logging.INFO,filename=f'benchmark/{project_root.split("/")[-1]}-{mode}{log}.log', filemode='a')
+    prompt = prompt.replace('\\n', '\n')
+    prompt_lines = prompt.splitlines()
+    prompt = '\n'.join([l for l in prompt_lines if not (l.strip().startswith('import ') or l.strip().startswith('from '))])
+    completor = Completion()
+    if mode == 'baseline':
+        context, completion = baseline.completion(model, completor, prompt)
+    else:
+        loc = {
+            'file': file,
+            'start_line': sLine,
+            'start_column': sCol,
+            'end_line': eLine,
+            'end_column': eCol
+        }
+        simple_completion = SimpleCompletion(project_root, model=model, location=loc)
+        context, completion = simple_completion.completion(completor, prompt)
+    with open(output, 'w') as f:
+        f.write(completion)
+    with open(output.split('.')[0] + '.context', 'w') as f:
+        f.write(context)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -18,24 +43,4 @@ if __name__ == "__main__":
     parser.add_argument("--eCol", help="The end column number of the cursor", type=int, default=-1)
     parser.add_argument("--log", help="The log file suffix", type=str, default='')
     args = parser.parse_args()
-    logging.basicConfig(level=logging.INFO,filename=f'benchmark/{args.project_root.split("/")[-1]}-{args.mode}{args.log}.log', filemode='a')
-    prompt = args.prompt.replace('\\n', '\n')
-    prompt_lines = prompt.splitlines()
-    prompt = '\n'.join([l for l in prompt_lines if not (l.strip().startswith('import ') or l.strip().startswith('from '))])
-    completor = Completion()
-    if args.mode == 'baseline':
-        context, completion = baseline.completion(args.model, completor, prompt)
-    else:
-        loc = {
-            'file': args.file,
-            'start_line': args.sLine,
-            'start_column': args.sCol,
-            'end_line': args.eLine,
-            'end_column': args.eCol
-        }
-        simple_completion = SimpleCompletion(args.project_root, model=args.model, location=loc)
-        context, completion = simple_completion.completion(completor, prompt)
-    with open(args.output, 'w') as f:
-        f.write(completion)
-    with open(args.output.split('.')[0] + '.context', 'w') as f:
-        f.write(context)
+    main(args.project_root, args.prompt, args.mode, args.model, args.file, args.sLine, args.sCol, args.eLine, args.eCol, args.output, args.log)
