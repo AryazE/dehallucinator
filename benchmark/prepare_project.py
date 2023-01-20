@@ -1,11 +1,9 @@
 import argparse
-import copy
 import json
 from distutils import dir_util
-import os
 from pathlib import Path
-import sys
 import venv
+import virtualenv
 
 CURSOR = '<CURSOR>'
 
@@ -55,10 +53,12 @@ def prepare(config, mode, ids=[]):
                 new_code.append(temp)
         with open(temp_dir/i["file"], 'w') as f:
             f.writelines(new_code)
-    env_obj = venv.EnvBuilder(with_pip=True)
-    env_obj.create(str(here/'experiment'/config['name']/mode/'venv'))
-    context = env_obj.ensure_directories(str(here/'experiment'/config['name']/mode/'venv'))
-    return context.executable
+    # env_obj = venv.EnvBuilder(with_pip=True)
+    env_session = virtualenv.cli_run([str(here/'experiment'/config['name']/mode/'venv')])
+    # env_obj.create(str(here/'experiment'/config['name']/mode/'venv'))
+    # context = env_obj.ensure_directories(str(here/'experiment'/config['name']/mode/'venv'))
+    # return context.executable
+    return env_session.interpreter.executable
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
