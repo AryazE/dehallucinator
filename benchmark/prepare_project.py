@@ -27,6 +27,12 @@ def prepare(config, mode, ids=[]):
         # os.remove(str(temp_dir/'setup.py'))
         if len(i['file']) == 0:
             continue
+        exclude = []
+        for j in i['remove']:
+            exclude.append([j['start_line'], j['start_column'], j['end_line'], j['end_column']])
+        with open(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'exclude.csv'), 'w') as f:
+            for j in exclude:
+                f.write(','.join([str(k) for k in j]) + '\n')
         with open(temp_dir/i["file"]) as f:
             code = f.readlines()
         new_code = []

@@ -3,6 +3,7 @@ import argparse
 import json
 import logging
 from distutils import dir_util
+import traceback
 from prepare_project import prepare
 from run_completion import run_completion
 from run_tests import run_tests
@@ -26,7 +27,7 @@ if __name__ == '__main__':
     executable = prepare(config, args.mode, args.ids)
     orig_results = run_tests(config, 0, args.mode, executable)
     print(f'original: {orig_results}')
-    if args.fromId == 0:
+    if args.fromId == 0 and len(args.ids) == 0:
         with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:
             json.dump([orig_results], f)
     results = []
@@ -47,6 +48,3 @@ if __name__ == '__main__':
             print(new_res)
         except Exception as e:
             print(e)
-            if isinstance(e, openai.error.RateLimitError):
-                time.sleep(60)
-            pass

@@ -11,7 +11,7 @@ import subprocess
 import pkgutil
 import pydoc
 import importlib
-from .utils import clip_prompt, run_query, same_location, embeddings
+from .utils import clip_prompt, run_query, same_location, embeddings, postprocess
 
 logger = logging.getLogger(__name__)
 
@@ -51,20 +51,22 @@ class SimpleCompletion:
                             '--threads=0',
                             '--', self.database], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             os.chdir(working_dir)
-            run_query(self.database, 'functionContext.ql', 'functionRes.csv', str(self.database/'..'))
-            run_query(self.database, 'classContext.ql', 'classRes.csv', str(self.database/'..'))
+        run_query(self.database, 'functionContext.ql', 'functionRes.csv', str(self.project_root/'..'/'..'), str(self.project_root/'..'/'..'/'exclude.csv'))
+        run_query(self.database, 'classContext.ql', 'classRes.csv', str(self.project_root/'..'/'..'), str(self.project_root/'..'/'..'/'exclude.csv'))
         self.additional_context = dict()
-        self.parse_results_into_context(self.database/'..'/'functionRes.csv')
-        self.parse_results_into_context(self.database/'..'/'classRes.csv')
+        self.parse_results_into_context(self.project_root/'..'/'..'/'functionRes.csv')
+        self.parse_results_into_context(self.project_root/'..'/'..'/'classRes.csv')
         self.model = model
-        self.embeddings = dict()
-        for k, v in self.additional_context.items():
-            self.embeddings[k] = embeddings(v)
+
         self.modules = set(i.name for i in pkgutil.iter_modules())
         for i in self.modules:
             if i not in self.additional_context:
                 self.additional_context[i] = []
-            self.additional_context[i].append('import ' + i)
+            self.additional_context[i].append('package ' + i)
+        
+        self.embeddings = dict()
+        for k, v in self.additional_context.items():
+            self.embeddings[k] = embeddings(v)
     
     def parse_results_into_context(self, file):
         with open(file, newline='') as csvfile:
@@ -94,55 +96,39 @@ class SimpleCompletion:
         for i in self.modules:
             if i not in self.used and cos_sim(name_embedding, self.embeddings[i]) > 0.6:
                 self.used.add(i)
-                result.append('import ' + i)
+                result.append('package ' + i)
         return result
 
     def get_context(self, prompt: str, completion: str) -> Set[str]:
         code = prompt + completion
-        # last_line = code.rfind('\n')
-        # if last_line != -1:
-        #     code = code[:last_line]
-
-        # tokens = Counter(re.split('[^a-zA-Z0-9]+', code))
-        # if tokens['self'] > 0:
-        #     tokens[self.self_name] += tokens['self']
-        #     del tokens['self']
-        # new_context = set()
-        # for k, _ in tokens.most_common():
-        #     if len(k) > 0 and k not in self.used:
-        #         if k == 'self':
-        #             logger.info(f'self is {self.self_name}')
-        #         ctx = self.context_for(k)
-        #         if k == 'self':
-        #             logger.info(f'context for self is {ctx}')
-        #         if len(ctx) > 0:
-        #             dont_add = False
-        #             for c in ctx:
-        #                 if c.strip().split('.')[0] in tokens:
-        #                     dont_add = True
-        #             if dont_add:
-        #                 continue
-        #             new_context  = new_context.union(ctx)
         lines = code.splitlines()
         new_context = set()
         tmp = []
         tmp.extend(self.additional_context.keys())
         line_embeddings = embeddings(lines)
         for i in tmp:
-            for j in lines:
-                if i not in self.used and cos_sim(self.embeddings[i], line_embeddings[j]) > 0.6:
-                    new_context.add(self.additional_context[i])
+            for l in range(len(lines)):
+                for j in range(len(self.embeddings[i])):
+                    if cos_sim(self.embeddings[i][j], line_embeddings[l]) > 0.5:
+                        new_context.add(self.additional_context[i][j])
         return new_context
     
     def format_context(self, context: Set[str]) -> str:
         commented_context = ['# ' + '\n#'.join(i.split('\n')) for i in context]
+        if len(commented_context) == 0:
+            return ''
+        if max([len(i) for i in commented_context]) < 3:
+            return ''
         return '# API REFERENCE:\n' + '\n'.join(commented_context)[:2000] + '\n'
 
     def generate_new_prompt(self, prompt: str, context: Set[str], completion: str) -> Tuple[str, Set[str]]:
         new_context = self.get_context(prompt, completion)
         new_context = new_context.union(context)
         full_context = self.format_context(new_context)
-        new_prompt = clip_prompt(full_context, prompt, 1500)
+        func_start = prompt.rfind('\n', 0, prompt.rfind('def '))
+        prompt_1 = prompt[:func_start] + '\n'
+        prompt_2 = prompt[func_start:]
+        new_prompt = clip_prompt(full_context, prompt_1, 1500 - int(len(prompt_2)/3)) + prompt_2
         return new_prompt, new_context
 
     def modify_prompt(self, prompt: str) -> str:
@@ -162,6 +148,7 @@ class SimpleCompletion:
             prev_completion = completion
             new_prompt, context = self.generate_new_prompt(prompt, context, completion)
             completion = completor.get_completion(self.model, new_prompt)
+            completion = postprocess(completion)
             logger.info(f'For prompt:\n{new_prompt}\n, got completion:\n{completion}\n')
             attempts += 1
         return new_prompt, completion

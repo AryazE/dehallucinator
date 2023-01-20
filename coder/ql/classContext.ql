@@ -2,21 +2,26 @@ import python
 import utils
 
 string memberNames(Class c) {
-    result = concat(AssignStmt a, Expr target | 
-        a = c.getAMethod().getBody().getAnItem() and a.getATarget() = target and target.(Attribute).getObject() instanceof Name and target.(Attribute).getObject().(Name).toString() = "self" | 
-        c.getQualifiedName() + "." + target.(Attribute).getAttr(), "\n\t\t")
+    result = concat(AssignStmt a, Expr target, FunctionDef f|
+        f.getDefinedFunction() = c.getAMethod() and 
+        // not engulfs(f, file, startLine, startColumn, endLine, endColumn) and
+        a = f.getDefinedFunction().getBody().getAnItem() and 
+        a.getATarget() = target and 
+        target.(Attribute).getObject() instanceof Name and 
+        target.(Attribute).getObject().(Name).toString() = "self" | 
+        c.getQualifiedName() + "." + target.(Attribute).getAttr(), "\n")
 }
 
 string memberContext(Class c) {
     if memberNames(c) = "" then
         result = ""
     else
-        result = "\tvariables:\n" + "\t\t" + memberNames(c)
+        result = "variables:\n" + memberNames(c)
 }
 
 string docStringContext(Class c) {
     if c.getDocString().getText() != "" then
-        result = "\t" + c.getDocString().getText() + "\n"
+        result = c.getDocString().getText().regexpReplaceAll("\n", "<NL>") + "\n"
     else
         result = ""
 }
@@ -36,12 +41,12 @@ string functionsContext(Class c) {
     if count( |  | c.getAMethod()) = 0 then
         result = ""
     else
-        result = "\tfunctions:\n" +
-        "\t\t" + concat(Function f | f = c.getAMethod() and not filtered(f) | getFunctionContext(f), "\n\t\t") + "\n"
+        result = "functions:\n" +
+        concat(Function f | f = c.getAMethod() and not filtered(f) | getFunctionContext(f), "\n") + "\n"
 }
 
 string classContext(Class c) {
-    result = "class " + c.getQualifiedName() + "(" + getHeritage(c) + "):\n" +
+    result = "class " + c.getQualifiedName() + "(" + getHeritage(c) + "): " +
         docStringContext(c) +
         functionsContext(c) +
         memberContext(c)

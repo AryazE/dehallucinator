@@ -1,4 +1,5 @@
-from .utils import clip_prompt
+from .utils import clip_prompt, postprocess
 
 def completion(model, completor, context):
-    return context, completor.get_completion(model, clip_prompt('', context, 1500))
+    comp = postprocess(completor.get_completion(model, clip_prompt('', context, 1500)))
+    return context, comp

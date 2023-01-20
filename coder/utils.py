@@ -8,27 +8,35 @@ similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 def embeddings(batch: List[str]) -> List[List[float]]:
     return similarity_model.encode(batch)
 
-def clip_prompt(context: str, prompt: str, prompt_limit=500):
-    prompt_limit /= 2
-    p_lines = prompt.splitlines()
-    c_lines = context.splitlines()
-    if len(prompt)/3 > prompt_limit:
-        p_lines = p_lines[-int(len(p_lines)*prompt_limit*3/len(prompt)):]
-    if len(context)/3 > prompt_limit:
-        c_lines = c_lines[-int(len(c_lines)*prompt_limit*3/len(context)):]
-    return '\n'.join(c_lines + p_lines)
+def clip_prompt(context: str, prompt: str, prompt_limit=500, alpha=0.5):
+    '''
+    Clip context from the beginning and prompt from the end 
+    to fit in prompt_limit with ratio alpha:1-alpha (context:prompt).
+    Return clipped prompt + clipped context.
+    '''
+    if len(context) > 0:
+        c_lines = context.splitlines()
+        c_lines = c_lines[:int(len(c_lines)*prompt_limit*alpha*3/len(context))]
+    else:
+        c_lines = []
+    if len(prompt) > 0:
+        p_lines = prompt.splitlines()
+        p_lines = p_lines[-int(len(p_lines)*prompt_limit*(1-alpha)*3/len(prompt)):]
+    else:
+        p_lines = []
+    return '\n'.join(p_lines + c_lines)
 
-def run_query(database, ql_file, res_file, tmp_dir):
-    res = subprocess.run(['codeql', 'query', 'run',
+def run_query(database, ql_file, res_file, tmp_dir, exclusion_file=None):
+    subprocess.run(['codeql', 'query', 'run',
         f'--database={database}',
+        f'{("--external=dontLook=" + exclusion_file) if exclusion_file else ""}',
         f'--output={path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}',
-        '--', f'{path.join(path.dirname(__file__), "ql", ql_file)}'], check=True)#, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    print(f'here: {res}')
+        '--', f'{path.join(path.dirname(__file__), "ql", ql_file)}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     subprocess.run(['codeql', 'bqrs', 'decode',
         '--format=csv',
         f'--output={path.join(tmp_dir, res_file)}',
         '--result-set=#select',
-        '--', f'{path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}'], check=True)#, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        '--', f'{path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def same_location(line, location):
     if len(location['file']) == 0:
@@ -47,3 +55,11 @@ def same_location(line, location):
     if int(line['end_line']) == location['start_line'] and int(line['end_column']) < location['start_column']:
         return False
     return True
+
+def postprocess(code):
+    if code.endswith('\n') or '\n' not in code:
+        return code
+    code = code[:code.rfind('\n')]
+    if code.endswith(':'):
+        code = code[:code.rfind('\n')]
+    return code
