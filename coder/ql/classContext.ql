@@ -4,7 +4,7 @@ import utils
 string memberNames(Class c) {
     result = concat(AssignStmt a, Expr target, FunctionDef f|
         f.getDefinedFunction() = c.getAMethod() and 
-        // not engulfs(f, file, startLine, startColumn, endLine, endColumn) and
+        okayToLook(f) and
         a = f.getDefinedFunction().getBody().getAnItem() and 
         a.getATarget() = target and 
         target.(Attribute).getObject() instanceof Name and 
@@ -33,8 +33,8 @@ string getHeritage(Class c) {
         result = concat(Expr e | e = c.getABase() | getString(e), ", ")
 }
 
-predicate filtered(Function f) {
-    f.getName().regexpMatch("__.+__")
+predicate passedFilter(Function f) {
+    not f.getName().regexpMatch("__.+__")
 }
 
 string functionsContext(Class c) {
@@ -42,7 +42,12 @@ string functionsContext(Class c) {
         result = ""
     else
         result = "functions:\n" +
-        concat(Function f | f = c.getAMethod() and not filtered(f) | getFunctionContext(f), "\n") + "\n"
+        concat(
+            Function f, FunctionDef fd | 
+            f = c.getAMethod() and fd.getDefinedFunction() = f and 
+            passedFilter(f) and okayToLook(fd) | 
+            getFunctionContext(f), "\n"
+        ) + "\n"
 }
 
 string classContext(Class c) {
