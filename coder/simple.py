@@ -1,16 +1,14 @@
 from typing import Tuple, List, Set, Dict
-from collections import Counter
 import os
 import csv
 from pathlib import Path
 import re
+import json
 from numpy import dot
 from numpy.linalg import norm
 import logging
 import subprocess
 import pkgutil
-import pydoc
-import importlib
 from .utils import clip_prompt, run_query, same_location, embeddings, postprocess
 
 logger = logging.getLogger(__name__)
@@ -67,6 +65,8 @@ class SimpleCompletion:
         self.embeddings = dict()
         for k, v in self.additional_context.items():
             self.embeddings[k] = embeddings(v)
+        
+        self.artifacts = self.project_root/'..'/'..'/'artifacts.md'
     
     def parse_results_into_context(self, file):
         with open(file, newline='') as csvfile:
@@ -140,10 +140,12 @@ class SimpleCompletion:
         self.used = set()
         prev_completion = ''
         context = []
+        artifact = ''
         # indentation = re.match('\s*', prompt.split('\n')[-1]).group(0)
         completion = completor.get_completion(self.model, prompt)
         logger.info(f'Initial prompt: \n{prompt}\n')
         logger.info(f'Initial completion:\n{completion}\n')
+        artifact += f'prompt {attempts}:\n```python\n{prompt}\n```\ncompletion {attempts}:\n```python\n{completion}\n```\n'
         while attempts < budget and prev_completion != completion:
             prev_completion = completion
             new_prompt, context = self.generate_new_prompt(prompt, context, completion)
@@ -151,4 +153,7 @@ class SimpleCompletion:
             completion = postprocess(completion)
             logger.info(f'For prompt:\n{new_prompt}\n, got completion:\n{completion}\n')
             attempts += 1
+            artifact += f'prompt {attempts}:\n```python\n{new_prompt}\n```\ncompletion {attempts}:\n```python\n{completion}\n```\n'
+        with open(self.artifacts, 'w') as f:
+            f.write(artifact)
         return new_prompt, completion

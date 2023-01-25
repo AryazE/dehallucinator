@@ -36,9 +36,6 @@ class Completion:
                         prompt=context,
                         temperature=0,
                         max_tokens=500,
-                        top_p=1,
-                        frequency_penalty=0,
-                        presence_penalty=0,
                         stop=["\n\n\n", "def ", "class "]
                     ).choices[0].text
                     break

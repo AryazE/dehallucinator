@@ -3,6 +3,7 @@ from .backend import Completion
 from . import baseline
 from .simple import SimpleCompletion
 import logging
+from pathlib import Path
 
 def main(project_root: str, prompt: str, mode: str, 
         model: str, file: str, sLine: int, sCol: int, 
@@ -14,6 +15,8 @@ def main(project_root: str, prompt: str, mode: str,
     completor = Completion()
     if mode == 'baseline':
         context, completion = baseline.completion(model, completor, prompt)
+        with open(str(Path(project_root)/'..'/'..'/'artifact.md'), 'w') as f:
+            f.write(f'prompt:\n```python\n{prompt}\n```\ncompletion:\n```python\n{completion}\n```\n')
     else:
         loc = {
             'file': file,

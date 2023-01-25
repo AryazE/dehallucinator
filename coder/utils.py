@@ -27,9 +27,13 @@ def clip_prompt(context: str, prompt: str, prompt_limit=500, alpha=0.5):
     return '\n'.join(p_lines + c_lines)
 
 def run_query(database, ql_file, res_file, tmp_dir, exclusion_file=None):
+    if exclusion_file is None:
+        with open(path.join(tmp_dir, 'empty.csv'), 'w') as f:
+            f.write('')
+        exclusion_file = path.join(tmp_dir, 'empty.csv')
     subprocess.run(['codeql', 'query', 'run',
         f'--database={database}',
-        f'{("--external=dontLook=" + exclusion_file) if exclusion_file else ""}',
+        f'--external=dontLook={exclusion_file}',
         f'--output={path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}',
         '--', f'{path.join(path.dirname(__file__), "ql", ql_file)}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     subprocess.run(['codeql', 'bqrs', 'decode',
