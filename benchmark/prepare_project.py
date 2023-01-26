@@ -22,6 +22,7 @@ def prepare(config, mode, ids=[]):
     for i in config['evaluations']:
         if i['id'] > 0 and len(ids) > 0 and i['id'] not in ids:
             continue
+        print(f'Preparing {i["id"]}')
         dir_util.mkpath(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
         temp_dir = here/'experiment'/config['name']/mode/f'temp{i["id"]}'/config['project_root']
         dir_util.copy_tree(str(here/config['project_root']), str(temp_dir))

@@ -42,6 +42,7 @@ if __name__ == '__main__':
             continue
         if not (here/'experiment'/config['name']/args.mode/f'temp{i["id"]}').exists():
             continue
+        print(f'Running {i["id"]}')
         try:
             best_context, possible_context, given_context = run_completion(args.model, config, i["id"], args.mode, args.log)
             if best_context > -1:
