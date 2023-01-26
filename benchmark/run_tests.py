@@ -7,6 +7,7 @@ import argparse
 from distutils import dir_util
 from pathlib import Path
 import xml.etree.ElementTree as ET
+from read_test_results import read_test_results
 
 def run_tests(config, id, mode, executable):
     here = Path(__file__).resolve().parent
@@ -33,27 +34,7 @@ def run_tests(config, id, mode, executable):
         # logging.error(test_res.stderr.decode('utf-8'))
         # logging.error(test_res.stdout.decode('utf-8'))
     uninstall_res = subprocess.run([executable, '-m', 'pip', 'uninstall', '-y', config['name']], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    results = dict()
-    if (here/'experiment'/config['name']/mode/f'temp{id}'/'results.xml').exists():
-        tree = ET.parse(here/'experiment'/config['name']/mode/f'temp{id}'/'results.xml')
-        root = tree.getroot()
-        for child in list(root):
-            if child.tag == 'testsuite':
-                results.update({
-                    'tests': int(child.attrib['tests']),
-                    'errors': int(child.attrib['errors']),
-                    'failures': int(child.attrib['failures']),
-                    'skipped': int(child.attrib['skipped'])
-                })
-    else:
-        results.update({
-            'tests': -1,
-            'errors': -1,
-            'failures': 0,
-            'skipped': 0
-        })
-    results.update({'id': id})
-    return results
+    return read_test_results(str(here/'experiment'/config['name']/mode/f'temp{id}'/'results.xml'), id)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

@@ -49,7 +49,11 @@ if __name__ == '__main__':
     for k, v in report.items():
         print(f'{k}, ' + ', '.join([str(x) for x in v]))
         if k != 0:
-            shutil.copy(str(here/args.project/mode/f'temp{k}'/'artifacts.md'), str(here/args.output/f'{mode}-{k}.md'))
+            for i, mode in enumerate(args.modes):
+                try:
+                    shutil.copy(str(here/args.project/mode/f'temp{k}'/'artifact.md'), str(here/args.output/f'{mode}-{k}.md'))
+                except FileNotFoundError:
+                    shutil.copy(str(here/args.project/mode/f'temp{k}'/'artifacts.md'), str(here/args.output/f'{mode}-{k}.md'))
     
     with open(here/args.output/'README.md', 'w') as f:
         f.write('| id | ' + ' | '.join(args.modes) + ' |\n')
@@ -57,5 +61,8 @@ if __name__ == '__main__':
         for k, v in report.items():
             f.write(f'| {k} | ' + ' | '.join([f'[{v[x]}]({args.modes[x]}-{k}.md)' for x in range(len(v))]) + ' |\n')
 
-    from grip import serve
-    serve(str(here/args.output), port=5000)
+    try:
+        from grip import serve
+        serve(str(here/args.output), port=5000)
+    except ImportError:
+        print('Done! You can install grip to serve the report')

@@ -1,15 +1,12 @@
 from typing import Tuple, List, Set, Dict
-import os
 import csv
 from pathlib import Path
 import re
-import json
 from numpy import dot
 from numpy.linalg import norm
 import logging
-import subprocess
 import pkgutil
-from .utils import clip_prompt, run_query, same_location, embeddings, postprocess
+from .utils import clip_prompt, same_location, embeddings, postprocess
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +26,6 @@ class SimpleCompletion:
     def __init__(self, project_root: str, model: str = "Codex", location: Dict[str, int] = {}):
         self.project_root = Path(project_root)
         print(f'Project root: {self.project_root.as_posix()}')
-        self.database = self.project_root/'..'/'..'/'..'/'codeqldb'
         self.location = location
         with open(merge(project_root, self.location["file"]), 'r') as f:
             code = f.read()
@@ -39,18 +35,7 @@ class SimpleCompletion:
                 if cls:
                     self.self_name = cls.group('class')
                     break
-        if not self.database.exists():
-            working_dir = os.getcwd()
-            os.chdir(self.project_root)
-            logger.info(os.getcwd())
-            subprocess.run(['codeql', 'database', 'create',
-                            '--language=python',
-                            '--overwrite',
-                            '--threads=0',
-                            '--', self.database], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            os.chdir(working_dir)
-        run_query(self.database, 'functionContext.ql', 'functionRes.csv', str(self.project_root/'..'/'..'), str(self.project_root/'..'/'..'/'exclude.csv'))
-        run_query(self.database, 'classContext.ql', 'classRes.csv', str(self.project_root/'..'/'..'), str(self.project_root/'..'/'..'/'exclude.csv'))
+
         self.additional_context = dict()
         self.parse_results_into_context(self.project_root/'..'/'..'/'functionRes.csv')
         self.parse_results_into_context(self.project_root/'..'/'..'/'classRes.csv')
@@ -125,7 +110,15 @@ class SimpleCompletion:
         new_context = self.get_context(prompt, completion)
         new_context = new_context.union(context)
         full_context = self.format_context(new_context)
-        func_start = prompt.rfind('\n', 0, prompt.rfind('def '))
+        def_start = prompt.rfind('def ')
+        while True:
+            func_start = prompt.rfind('\n', 0, def_start)
+            if prompt[func_start + 1: def_start].strip().startswith('#') or \
+                prompt[func_start + 1: def_start].strip().startswith('\'\'\'') or \
+                prompt[func_start + 1: def_start].strip().startswith('\"\"\"'):
+                def_start = prompt.rfind('def ', 0, def_start)
+            else:
+                break
         prompt_1 = prompt[:func_start] + '\n'
         prompt_2 = prompt[func_start:]
         new_prompt = clip_prompt(full_context, prompt_1, 1500 - int(len(prompt_2)/3)) + prompt_2

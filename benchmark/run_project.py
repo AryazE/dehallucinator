@@ -7,6 +7,7 @@ import traceback
 from prepare_project import prepare
 from run_completion import run_completion
 from run_tests import run_tests
+from read_test_results import read_test_results
 import openai
 import time
 
@@ -24,8 +25,13 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO,filename=f'benchmark/{config["project_root"].split("/")[-1]}-{args.mode}{args.log}.log', filemode='a')
     logger = logging.getLogger(__name__)
     here = Path(__file__).resolve().parent
-    executable = prepare(config, args.mode, args.ids)
-    orig_results = run_tests(config, 0, args.mode, executable)
+    if not (here/'experiment'/config['name']/'base').exists():
+        executable, orig_results = prepare(config, 'base', [])
+    else:
+        orig_results = read_test_results(str(here/'experiment'/config['name']/'base'/'temp0'/'results.xml'), 0)
+        with open(str(here/'experiment'/config['name']/'base'/'interpreter.txt'), 'r') as f:
+            executable = f.read()
+    dir_util.copy_tree(str(here/'experiment'/config['name']/'base'), str(here/'experiment'/config['name']/args.mode))
     print(f'original: {orig_results}')
     if args.fromId == 0 and len(args.ids) == 0:
         with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:
@@ -33,6 +39,8 @@ if __name__ == '__main__':
     results = []
     for i in config["evaluations"]:
         if (len(i['file']) == 0) or (args.fromId > i['id']) or (len(args.ids) > 0 and i['id'] not in args.ids):
+            continue
+        if not (here/'experiment'/config['name']/args.mode/f'temp{i["id"]}').exists():
             continue
         try:
             best_context, possible_context, given_context = run_completion(args.model, config, i["id"], args.mode, args.log)
