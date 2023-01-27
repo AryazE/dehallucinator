@@ -2,14 +2,11 @@ from pathlib import Path
 import argparse
 import json
 import logging
-from distutils import dir_util
-import traceback
+import shutil
 from prepare_project import prepare
 from run_completion import run_completion
 from run_tests import run_tests
 from read_test_results import read_test_results
-import openai
-import time
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -31,7 +28,7 @@ if __name__ == '__main__':
         orig_results = read_test_results(str(here/'experiment'/config['name']/'base'/'temp0'/'results.xml'), 0)
         with open(str(here/'experiment'/config['name']/'base'/'interpreter.txt'), 'r') as f:
             executable = f.read()
-    dir_util.copy_tree(str(here/'experiment'/config['name']/'base'), str(here/'experiment'/config['name']/args.mode))
+    shutil.copy_tree(str(here/'experiment'/config['name']/'base'), str(here/'experiment'/config['name']/args.mode), ignore=shutil.ignore_patterns('codeqldb'))
     print(f'original: {orig_results}')
     if args.fromId == 0 and len(args.ids) == 0:
         with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:

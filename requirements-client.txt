@@ -3,7 +3,6 @@ requests
 python-dotenv
 libcst
 openai
-scipy
 numpy
 pytest
 pytest-reportlog

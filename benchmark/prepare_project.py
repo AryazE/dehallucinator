@@ -4,7 +4,6 @@ import os
 import subprocess
 from distutils import dir_util
 from pathlib import Path
-import venv
 import virtualenv
 from run_tests import run_tests
 from coder.utils import run_query
@@ -27,7 +26,6 @@ def prepare(config, mode, ids=[]):
         temp_dir = here/'experiment'/config['name']/mode/f'temp{i["id"]}'/config['project_root']
         dir_util.copy_tree(str(here/config['project_root']), str(temp_dir))
         dir_util.remove_tree(str(temp_dir/'tests'))
-        # os.remove(str(temp_dir/'setup.py'))
         if i['id'] == 0:
             orig_results = run_tests(config, 0, mode, env_session.interpreter.executable)
         if len(i['file']) == 0:
