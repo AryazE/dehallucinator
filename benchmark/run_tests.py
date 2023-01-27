@@ -1,5 +1,5 @@
 import sys
-import shutil
+from distutils import dir_util
 import subprocess
 import json
 import argparse
@@ -9,7 +9,7 @@ from read_test_results import read_test_results
 def run_tests(config, id, mode, executable):
     here = Path(__file__).resolve().parent
     temp_dir = here/'experiment'/config['name']/mode/f'temp{id}'/config['project_root']
-    shutil.copytree(str(here/config['project_root']/'tests'), str(temp_dir/'tests'))
+    dir_util.copy_tree(str(here/config['project_root']/'tests'), str(temp_dir/'tests'))
     if (temp_dir/'requirements.txt').exists():
         subprocess.run([executable, '-m', 'pip', 'install', '-r', str(temp_dir/'requirements.txt')], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     try:
