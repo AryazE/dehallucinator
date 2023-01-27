@@ -28,6 +28,8 @@ if __name__ == '__main__':
         orig_results = read_test_results(str(here/'experiment'/config['name']/'base'/'temp0'/'results.xml'), 0)
         with open(str(here/'experiment'/config['name']/'base'/'interpreter.txt'), 'r') as f:
             executable = f.read()
+    if (here/'experiment'/config['name']/args.mode).exists():
+        shutil.rmtree(str(here/'experiment'/config['name']/args.mode))
     shutil.copytree(str(here/'experiment'/config['name']/'base'), str(here/'experiment'/config['name']/args.mode), ignore=shutil.ignore_patterns('codeqldb'))
     print(f'original: {orig_results}')
     if args.fromId == 0 and len(args.ids) == 0:
