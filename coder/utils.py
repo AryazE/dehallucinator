@@ -14,6 +14,7 @@ def clip_prompt(context: str, prompt: str, prompt_limit=500, alpha=0.5):
     to fit in prompt_limit with ratio alpha:1-alpha (context:prompt).
     Return clipped prompt + clipped context.
     '''
+    alpha = len(context) / (len(context) + len(prompt))
     if len(context) > 0:
         c_lines = context.splitlines()
         c_lines = c_lines[:int(len(c_lines)*prompt_limit*alpha*3/len(context))]
