@@ -6,7 +6,7 @@ import json
 from coder.utils import clip_prompt
 from coder.main import main
 
-PROMPT_LIMIT = 500
+PROMPT_LIMIT = 1500
 logger = logging.getLogger(__name__)
 
 def run_completion(model, config, id, mode, log_suffix=''):
