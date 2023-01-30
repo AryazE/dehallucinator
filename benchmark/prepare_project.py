@@ -30,12 +30,12 @@ def prepare(config, mode, ids=[]):
             orig_results = run_tests(config, 0, mode, env_session.interpreter.executable)
         if len(i['file']) == 0:
             continue
-        exclude = []
-        for j in i['remove']:
-            exclude.append([i['file'], j['start_line'], j['start_column'], j['end_line'], j['end_column']])
-        with open(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'exclude.csv'), 'w') as f:
-            for j in exclude:
-                f.write(','.join([str(k) for k in j]) + '\n')
+        # exclude = []
+        # for j in i['remove']:
+        #     exclude.append([i['file'], j['start_line'], j['start_column'], j['end_line'], j['end_column']])
+        # with open(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'exclude.csv'), 'w') as f:
+        #     for j in exclude:
+        #         f.write(','.join([str(k) for k in j]) + '\n')
         with open(temp_dir/i["file"]) as f:
             code = f.readlines()
         new_code = []
@@ -86,8 +86,8 @@ def prepare(config, mode, ids=[]):
                         '--threads=0',
                         '--', str(database)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         os.chdir(working_dir)
-        run_query(database, 'functionContext.ql', 'functionRes.csv', str(database/'..'), str(database/'..'/'exclude.csv'))
-        run_query(database, 'classContext.ql', 'classRes.csv', str(database/'..'), str(database/'..'/'exclude.csv'))
+        run_query(database, 'functionContext.ql', 'functionRes.csv', str(database/'..'))#, str(database/'..'/'exclude.csv'))
+        run_query(database, 'classContext.ql', 'classRes.csv', str(database/'..'))#, str(database/'..'/'exclude.csv'))
         new_code = []
         cursor = CURSOR
         for l in range(len(code)):

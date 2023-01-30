@@ -10,6 +10,8 @@ from .utils import clip_prompt, same_location, embeddings, postprocess
 
 logger = logging.getLogger(__name__)
 
+similarity_threshold = 0.6
+
 def cos_sim(emb_a: List[float], emb_b: List[float]) -> float:
     return dot(emb_a, emb_b) / (norm(emb_a) * norm(emb_b))
 
@@ -68,37 +70,30 @@ class SimpleCompletion:
                         ctx.append(tmp_context[i])
                 self.additional_context[line['qualifiedName']].extend(ctx)
 
-    def context_for(self, name: str) -> List[str]:
-        result = []
-        name_embedding = embeddings([name])[0]
-        for k, v in self.additional_context.items():
-            for i in v:
-                if k not in self.used and cos_sim(name_embedding, self.embeddings[i]) > 0.6:
-                    self.used.add(k)
-                    c = v[0]
-                    for c in v:
-                        result.append(c)
-        for i in self.modules:
-            if i not in self.used and cos_sim(name_embedding, self.embeddings[i]) > 0.6:
-                self.used.add(i)
-                result.append('package ' + i)
-        return result
-
-    def get_context(self, prompt: str, completion: str) -> Set[str]:
+    def get_context(self, prompt: str, completion: str) -> List[str]:
         code = prompt + completion
         lines = code.splitlines()
-        new_context = set()
+        new_context = []
         tmp = []
         tmp.extend(self.additional_context.keys())
         line_embeddings = embeddings(lines)
         for i in tmp:
             for l in range(len(lines)):
                 for j in range(len(self.embeddings[i])):
-                    if cos_sim(self.embeddings[i][j], line_embeddings[l]) > 0.5:
-                        new_context.add(self.additional_context[i][j])
-        return new_context
+                    similarity = cos_sim(self.embeddings[i][j], line_embeddings[l])
+                    if similarity > similarity_threshold:
+                        found = False
+                        for m in range(len(new_context)):
+                            if new_context[m][1] == self.additional_context[i][j]:
+                                found = True
+                                if new_context[m][0] < similarity:
+                                    new_context[m] = (similarity, self.additional_context[i][j])
+                                break
+                        if not found:
+                            new_context.append((similarity, self.additional_context[i][j]))
+        return [i[1] for i in sorted(new_context, key=lambda x: x[0], reverse=True)]
     
-    def format_context(self, context: Set[str]) -> str:
+    def format_context(self, context: List[str]) -> str:
         commented_context = ['# ' + '\n#'.join(i.split('\n')) for i in context]
         if len(commented_context) == 0:
             return ''
@@ -108,7 +103,7 @@ class SimpleCompletion:
 
     def generate_new_prompt(self, prompt: str, context: Set[str], completion: str) -> Tuple[str, Set[str]]:
         new_context = self.get_context(prompt, completion)
-        new_context = new_context.union(context)
+        # new_context = new_context.union(context)
         full_context = self.format_context(new_context)
         def_start = prompt.rfind('def ')
         while True:
