@@ -1,6 +1,7 @@
 import subprocess
 from typing import List
 from os import path
+import openai
 from sentence_transformers import SentenceTransformer
 
 similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
@@ -68,3 +69,19 @@ def postprocess(code):
     if code.endswith(':'):
         code = code[:code.rfind('\n')]
     return code
+
+def get_completion_safely(model, completor, context, prompt):
+        prompt_size = 1500
+        while prompt_size > 0:
+            try:
+                completion = completor.get_completion(model, clip_prompt(context, prompt, prompt_size))
+                break
+            except openai.error.InvalidRequestError as e:
+                print(e)
+                prompt_size -= 100
+                continue
+            except Exception as e:
+                print(e)
+                prompt_size -= 100
+                continue
+        return completion

@@ -6,7 +6,7 @@ from numpy import dot
 from numpy.linalg import norm
 import logging
 import pkgutil
-from .utils import clip_prompt, same_location, embeddings, postprocess
+from .utils import clip_prompt, same_location, embeddings, postprocess, get_completion_safely
 
 logger = logging.getLogger(__name__)
 
@@ -130,28 +130,14 @@ class SimpleCompletion:
         context = []
         artifact = ''
         # indentation = re.match('\s*', prompt.split('\n')[-1]).group(0)
-        prompt_size = 1500
-        while True:
-            try:
-                completion = completor.get_completion(self.model, clip_prompt('', prompt, prompt_size))
-                break
-            except openai.error.InvalidRequestError:
-                prompt_size -= 100
-                continue
+        completion = get_completion_safely(self.model, completor, '', prompt)
         logger.info(f'Initial prompt: \n{prompt}\n')
         logger.info(f'Initial completion:\n{completion}\n')
         artifact += f'prompt {attempts}:\n```python\n{prompt}\n```\ncompletion {attempts}:\n```python\n{completion}\n```\n'
         while attempts < budget and prev_completion != completion:
             prev_completion = completion
             new_prompt, context = self.generate_new_prompt(prompt, context, completion)
-            prompt_size = 1500
-            while True:
-                try:
-                    completion = completor.get_completion(self.model, clip_prompt('', new_prompt, prompt_size))
-                    break
-                except openai.error.InvalidRequestError:
-                    prompt_size -= 100
-                    continue
+            completion = get_completion_safely(self.model, completor, '', new_prompt)
             completion = postprocess(completion)
             logger.info(f'For prompt:\n{new_prompt}\n, got completion:\n{completion}\n')
             attempts += 1
