@@ -1,7 +1,5 @@
 import python
 
-external predicate dontLook(string file, int startLine, int startColumn, int endLine, int endColumn);
-
 string getQualifiedName(Function f) {
     if f.getQualifiedName() != "" then
         result = f.getQualifiedName()
@@ -81,15 +79,4 @@ string getDocString(Function f) {
 
 string getFunctionContext(Function f) {
     result = getFunctionHeader(f) + getDocString(f)
-}
-
-predicate okayToLook(FunctionDef f) {
-    not exists(string file, int startLine, int startColumn, int endLine, int endColumn |
-        dontLook(file, startLine, startColumn, endLine, endColumn) and
-        f.getLocation().getFile().getRelativePath() = file and
-        f.getLocation().getStartLine() <= startLine and
-        f.getLocation().getStartColumn() <= startColumn and
-        f.getLocation().getEndLine() >= endLine and
-        f.getLocation().getEndColumn() >= endColumn
-    )
 }

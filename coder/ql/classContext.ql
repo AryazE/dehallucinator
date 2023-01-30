@@ -4,7 +4,6 @@ import utils
 string memberNames(Class c) {
     result = concat(AssignStmt a, Expr target, FunctionDef f|
         f.getDefinedFunction() = c.getAMethod() and 
-        okayToLook(f) and
         a = f.getDefinedFunction().getBody().getAnItem() and 
         a.getATarget() = target and 
         target.(Attribute).getObject() instanceof Name and 
@@ -33,19 +32,14 @@ string getHeritage(Class c) {
         result = concat(Expr e | e = c.getABase() | getString(e), ", ")
 }
 
-predicate passedFilter(Function f) {
-    not f.getName().regexpMatch("__.+__")
-}
-
 string functionsContext(Class c) {
     if count( |  | c.getAMethod()) = 0 then
         result = ""
     else
         result = "functions:\n" +
         concat(
-            Function f, FunctionDef fd | 
-            f = c.getAMethod() and fd.getDefinedFunction() = f and 
-            passedFilter(f) and okayToLook(fd) | 
+            Function f | 
+            f = c.getAMethod() | 
             getFunctionContext(f), "\n"
         ) + "\n"
 }

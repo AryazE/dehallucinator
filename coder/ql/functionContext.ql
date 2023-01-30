@@ -2,7 +2,7 @@ import python
 import utils
 
 from FunctionDef fd, Function f
-where f = fd.getDefinedFunction() and f.inSource() and okayToLook(fd)
+where f = fd.getDefinedFunction() and f.inSource()
 select f.getName() as name, 
     f.getQualifiedName() as qualifiedName, 
     fd.getLocation().getFile().getAbsolutePath() as file,
