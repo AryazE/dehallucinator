@@ -6,7 +6,7 @@ from numpy import dot
 from numpy.linalg import norm
 import logging
 import pkgutil
-from .utils import clip_prompt, same_location, embeddings, postprocess, get_completion_safely
+from .utils import clip_prompt, same_location, embeddings, postprocess, get_completion_safely, get_indentation
 
 logger = logging.getLogger(__name__)
 
@@ -129,8 +129,11 @@ class SimpleCompletion:
         prev_completion = ''
         context = []
         artifact = ''
-        # indentation = re.match('\s*', prompt.split('\n')[-1]).group(0)
+        indent_style, indent_count = get_indentation(prompt)
+        logger.info(f'indent_style: {indent_style}, indent_count: {indent_count}')
         completion = get_completion_safely(self.model, completor, '', prompt)
+        logger.info(f'completion w/o postprocessing:\n{completion}\n')
+        completion = postprocess(completion, indent_style, indent_count)
         logger.info(f'Initial prompt: \n{prompt}\n')
         logger.info(f'Initial completion:\n{completion}\n')
         artifact += f'prompt {attempts}:\n```python\n{prompt}\n```\ncompletion {attempts}:\n```python\n{completion}\n```\n'
@@ -138,7 +141,8 @@ class SimpleCompletion:
             prev_completion = completion
             new_prompt, context = self.generate_new_prompt(prompt, context, completion)
             completion = get_completion_safely(self.model, completor, '', new_prompt)
-            completion = postprocess(completion)
+            logger.info(f'completion w/o postprocessing:\n{completion}\n')
+            completion = postprocess(completion, indent_style, indent_count)
             logger.info(f'For prompt:\n{new_prompt}\n, got completion:\n{completion}\n')
             attempts += 1
             artifact += f'prompt {attempts}:\n```python\n{new_prompt}\n```\ncompletion {attempts}:\n```python\n{completion}\n```\n'

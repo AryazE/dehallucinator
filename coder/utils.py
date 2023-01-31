@@ -1,6 +1,8 @@
 import subprocess
 from typing import List
 from os import path
+import ast
+import re
 import openai
 from sentence_transformers import SentenceTransformer
 
@@ -57,13 +59,21 @@ def same_location(line, location):
         return False
     return True
 
-def postprocess(code):
-    if code.endswith('\n') or '\n' not in code:
+def postprocess(code, indent_style='\t', indent_count=0):
+    if '\n' not in code or code.endswith('\n'):
         return code
-    code = code[:code.rfind('\n')]
-    if code.endswith(':'):
-        code = code[:code.rfind('\n')]
-    return code
+    prefix = (indent_style * indent_count) + 'def foo():\n' + (indent_style * (indent_count+1))
+    extra = len(indent_style) * indent_count
+    code = prefix + code
+    temp_lines = code.splitlines()
+    lines = [l[extra:] for l in temp_lines]
+    while len(lines) > 1:
+        try:
+            ast.parse('\n'.join(lines))
+            return lines[1][len(indent_style):] + '\n' + '\n'.join([(indent_style * indent_count)+l for l in lines[2:]])
+        except:
+            lines.pop()
+    return ''
 
 def get_completion_safely(model, completor, context, prompt):
         prompt_size = 1500
@@ -80,3 +90,15 @@ def get_completion_safely(model, completor, context, prompt):
                 prompt_size -= 100
                 continue
         return completion
+
+def get_indentation(prompt):
+    lines = prompt.splitlines()
+    indents = [re.match('^\s*', i).group(0) for i in lines]
+    indent_style = ''
+    indent_count = 0
+    for i in range(1, len(indents)):
+        if len(lines[i-1]) > 0 and len(indents[i]) > len(indents[i - 1]) and not re.match('^\s*#', lines[i]) and not re.match('^\s*#', lines[i-1]):
+            indent_style = indents[i][len(indents[i - 1]):]
+            break
+    indent_count = len(indents[-1]) // len(indent_style) - 1
+    return indent_style, indent_count
