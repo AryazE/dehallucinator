@@ -17,6 +17,10 @@ def run_completion(model, config, id, mode, log_suffix=''):
         code = f.read()
     splited_code = code.split('<CURSOR>')
     prompt = clip_prompt('', splited_code[0], PROMPT_LIMIT)
+    with open(here/config['project_root']/config["evaluations"][id]["file"], 'r') as f:
+        orig_code = f.read()
+    with open(here/'experiment'/config["name"]/mode/f'temp{id}'/'gt.md', 'w') as f:
+        f.write(f'prompt:\n```python\n{prompt}\n```\nground truth:\n```python\n{orig_code[len(splited_code[0]):-len(splited_code[1])]}\n```\n')
     logger.info(f'Running completion for {config["name"]} {id} with prompt: \n{prompt}')
     main(str(project_root), prompt, mode, model, 
         file=config["project_root"] + '/' + config["evaluations"][id]["file"],

@@ -47,6 +47,8 @@ if __name__ == '__main__':
     (here/args.output).mkdir(parents=True, exist_ok=True)
     for k, v in report.items():
         print(f'{k}, ' + ', '.join([str(x) for x in v]))
+        if (here/args.project/mode/f'temp{k}'/'gt.md').exists():
+            shutil.copy(str(here/args.project/mode/f'temp{k}'/'gt.md'), str(here/args.output/f'gt-{k}.md'))
         if k != 0:
             for i, mode in enumerate(args.modes):
                 try:
@@ -55,10 +57,10 @@ if __name__ == '__main__':
                     shutil.copy(str(here/args.project/mode/f'temp{k}'/'artifacts.md'), str(here/args.output/f'{mode}-{k}.md'))
     
     with open(here/args.output/'README.md', 'w') as f:
-        f.write('| id | ' + ' | '.join(args.modes) + ' |\n')
-        f.write('| --- | ' + ' | '.join(['---'] * len(args.modes)) + ' |\n')
+        f.write('| id | ' + ' | '.join(args.modes) + ' | ground truth ' + ' |\n')
+        f.write('| --- | ' + ' | '.join(['---'] * (len(args.modes) + 1)) + ' |\n')
         for k, v in report.items():
-            f.write(f'| {k} | ' + ' | '.join([f'[{v[x]}]({args.modes[x]}-{k}.md)' for x in range(len(v))]) + ' |\n')
+            f.write(f'| {k} | ' + ' | '.join([f'[{v[x]}]({args.modes[x]}-{k}.md)' for x in range(len(v))]) + f' | [0](gt-{k}.md)' + ' |\n')
 
     try:
         from grip import serve

@@ -10,7 +10,7 @@ from .utils import clip_prompt, same_location, embeddings, postprocess, get_comp
 
 logger = logging.getLogger(__name__)
 
-similarity_threshold = 0.6
+similarity_threshold = 0.7
 
 def cos_sim(emb_a: List[float], emb_b: List[float]) -> float:
     return dot(emb_a, emb_b) / (norm(emb_a) * norm(emb_b))
