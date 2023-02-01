@@ -12,7 +12,7 @@ class Completion:
     def __init__(self):
         self.last_time = time.monotonic()
 
-    def get_completion(self, model: str, context: str) -> str:
+    def get_completion(self, model: str, context: str, **kwargs) -> str:
         """Get code completion from the model"""
         if model == "CodeGen":
             url = API_URL + "/codegen"
@@ -25,18 +25,20 @@ class Completion:
             response = requests.post(url, data=data)
             return response.text
         elif model == "Codex":
+            params = {
+                'engine': 'code-cushman-001',
+                'prompt': context,
+                'temperature': 0,
+                'max_tokens': 500,
+                'stop': ['\n\n\n', 'def ', 'class ']
+            }
+            params.update(kwargs)
             now = time.monotonic()
             if now - self.last_time < 6: # This is done to prevent going over the API rate limit
                 time.sleep(6 - (now - self.last_time))
             while True:
                 try:
-                    res = openai.Completion.create(
-                        engine="code-cushman-001",
-                        prompt=context,
-                        temperature=0,
-                        max_tokens=500,
-                        stop=["\n\n\n", "def ", "class "]
-                    ).choices[0].text
+                    res = openai.Completion.create(**params).choices[0].text
                     break
                 except Exception as e:
                     print(e)
