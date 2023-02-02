@@ -3,6 +3,7 @@ from .backend import Completion
 from . import baseline
 from .simple import SimpleCompletion
 from .explicit import ExplicitCompletion
+from .cstSimple import CSTSimpleCompletion
 import logging
 from pathlib import Path
 
@@ -28,6 +29,8 @@ def main(project_root: str, prompt: str, mode: str,
         }
         if mode.startswith('simple'):
             completion_model = SimpleCompletion(project_root, model=model, location=loc)
+        elif mode.startswith('cstSimple'):
+            completion_model = CSTSimpleCompletion(project_root, model=model, location=loc)
         elif mode.startswith('explicit'):
             completion_model = ExplicitCompletion(project_root, model=model, location=loc)
         else:

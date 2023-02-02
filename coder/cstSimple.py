@@ -1,17 +1,31 @@
-import textwrap
 from typing import Tuple, List, Set, Dict
+import keyword
 import csv
 from pathlib import Path
 import re
+from numpy import dot
+from numpy.linalg import norm
 import logging
 import pkgutil
-from .utils import clip_prompt, same_location, embeddings, postprocess, get_completion_safely, get_indentation, merge, cos_sim
+from .utils import clip_prompt, same_location, embeddings, postprocess, get_completion_safely, get_indentation
 
 logger = logging.getLogger(__name__)
 
-similarity_threshold = 0.7
+similarity_threshold = 0.6
 
-class ExplicitCompletion:
+def cos_sim(emb_a: List[float], emb_b: List[float]) -> float:
+    return dot(emb_a, emb_b) / (norm(emb_a) * norm(emb_b))
+
+def merge(project_root: str, file: str) -> str:
+    p_r = project_root.split('/')
+    f = file.split('/')
+    max_common = 0
+    for i in range(1, min(len(p_r), len(f))):
+        if '/'.join(p_r[-i:]) == '/'.join(f[:i]):
+            max_common = i
+    return '/'.join(p_r[:-max_common] + f)
+
+class CSTSimpleCompletion:
     def __init__(self, project_root: str, model: str = "Codex", location: Dict[str, int] = {}):
         self.project_root = Path(project_root)
         print(f'Project root: {self.project_root.as_posix()}')
@@ -59,20 +73,15 @@ class ExplicitCompletion:
 
     def get_context(self, prompt: str, completion: str) -> List[str]:
         code = completion #prompt + completion
-        lines = code.splitlines()
+        matches = set(re.findall('(?P<names>[a-zA-Z_][a-zA-Z0-9_]*)', code))
+        lines = [i for i in matches if i not in keyword.kwlist]
+        # lines = code.splitlines()
         new_context = []
         tmp = []
         tmp.extend(self.additional_context.keys())
         line_embeddings = embeddings(lines)
         for i in tmp:
-            ctx = False
             for l in range(len(lines)):
-                if '# need context for' in lines[l]:
-                    ctx = True
-                elif ctx and not lines[l].strip().startswith('#'):
-                    break
-                elif not ctx:
-                    continue
                 for j in range(len(self.embeddings[i])):
                     similarity = cos_sim(self.embeddings[i][j], line_embeddings[l])
                     if similarity > similarity_threshold:
@@ -88,30 +97,12 @@ class ExplicitCompletion:
         return [i[1] for i in sorted(new_context, key=lambda x: x[0], reverse=True)]
     
     def format_context(self, context: List[str]) -> str:
-        instructions = '''
-        # Example for requesting extra context when completing a function:
-        # prompt:
-        # def get_credit_scores():
-        # """
-        # Reads personal data from the data.csv file, calculates credit scores, and returns the list of scores
-        # """
-        #
-        # completion:
-        # # need context for
-        # # read_csv
-        # data = pd.read_csv('data.csv')
-        # credit_scores = data['income'] * 0.4 + data['age'] * 0.3 + data['loan'] * 0.3
-        # return credit_scores
-        # 
-        # Now complete the function below and add a commented line at the beginning for each function you use.
-        '''
-        instructions = textwrap.dedent(instructions)
         commented_context = ['# ' + '\n#'.join(i.split('\n')) for i in context]
         if len(commented_context) == 0:
-            return instructions + ''
+            return ''
         if max([len(i) for i in commented_context]) < 3:
-            return instructions + ''
-        return instructions + '# API REFERENCE:\n' + '\n'.join(commented_context)[:2000] + '\n'
+            return ''
+        return '# API REFERENCE:\n' + '\n'.join(commented_context)[:2000] + '\n'
 
     def generate_new_prompt(self, prompt: str, context: Set[str], completion: str) -> Tuple[str, Set[str]]:
         new_context = self.get_context(prompt, completion)
