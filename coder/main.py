@@ -2,6 +2,7 @@ import argparse
 from .backend import Completion
 from . import baseline
 from .simple import SimpleCompletion
+from .explicit import ExplicitCompletion
 import logging
 from pathlib import Path
 
@@ -25,8 +26,13 @@ def main(project_root: str, prompt: str, mode: str,
             'end_line': eLine,
             'end_column': eCol
         }
-        simple_completion = SimpleCompletion(project_root, model=model, location=loc)
-        context, completion = simple_completion.completion(completor, prompt)
+        if mode.startswith('simple'):
+            completion_model = SimpleCompletion(project_root, model=model, location=loc)
+        elif mode.startswith('explicit'):
+            completion_model = ExplicitCompletion(project_root, model=model, location=loc)
+        else:
+            raise ValueError(f'Unknown mode: {mode}')
+        context, completion = completion_model.completion(completor, prompt)
     with open(output, 'w') as f:
         f.write(completion)
     with open(output.split('.')[0] + '.context', 'w') as f:

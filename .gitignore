@@ -133,3 +133,5 @@ dmypy.json
 benchmark/GitHubProjects/
 benchmark/*experiment*/
 benchmark/db/
+benchmark/*Res/
+benchmark/res*/

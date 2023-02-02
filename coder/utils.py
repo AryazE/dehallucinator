@@ -3,6 +3,8 @@ from typing import List
 from os import path
 import ast
 import re
+from numpy import dot
+from numpy.linalg import norm
 import openai
 from sentence_transformers import SentenceTransformer
 
@@ -20,7 +22,7 @@ def clip_prompt(context: str, prompt: str, prompt_limit=500, alpha=0.5):
     alpha = len(context) / (len(context) + len(prompt))
     if len(context) > 0:
         c_lines = context.splitlines()
-        c_lines = c_lines[:min(6, int(len(c_lines)*prompt_limit*alpha*3/len(context)))]
+        c_lines = c_lines[:min(16, int(len(c_lines)*prompt_limit*alpha*3/len(context)))]
     else:
         c_lines = []
     if len(prompt) > 0:
@@ -102,3 +104,15 @@ def get_indentation(prompt):
             break
     indent_count = len(indents[-1]) // len(indent_style) - 1
     return indent_style, indent_count
+
+def cos_sim(emb_a: List[float], emb_b: List[float]) -> float:
+    return dot(emb_a, emb_b) / (norm(emb_a) * norm(emb_b))
+
+def merge(project_root: str, file: str) -> str:
+    p_r = project_root.split('/')
+    f = file.split('/')
+    max_common = 0
+    for i in range(1, min(len(p_r), len(f))):
+        if '/'.join(p_r[-i:]) == '/'.join(f[:i]):
+            max_common = i
+    return '/'.join(p_r[:-max_common] + f)
