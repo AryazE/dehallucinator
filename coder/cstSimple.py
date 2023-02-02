@@ -3,27 +3,13 @@ import keyword
 import csv
 from pathlib import Path
 import re
-from numpy import dot
-from numpy.linalg import norm
 import logging
 import pkgutil
-from .utils import clip_prompt, same_location, embeddings, postprocess, get_completion_safely, get_indentation
+from .utils import clip_prompt, same_location, embeddings, postprocess, get_completion_safely, get_indentation, cos_sim, merge
 
 logger = logging.getLogger(__name__)
 
 similarity_threshold = 0.6
-
-def cos_sim(emb_a: List[float], emb_b: List[float]) -> float:
-    return dot(emb_a, emb_b) / (norm(emb_a) * norm(emb_b))
-
-def merge(project_root: str, file: str) -> str:
-    p_r = project_root.split('/')
-    f = file.split('/')
-    max_common = 0
-    for i in range(1, min(len(p_r), len(f))):
-        if '/'.join(p_r[-i:]) == '/'.join(f[:i]):
-            max_common = i
-    return '/'.join(p_r[:-max_common] + f)
 
 class CSTSimpleCompletion:
     def __init__(self, project_root: str, model: str = "Codex", location: Dict[str, int] = {}):
