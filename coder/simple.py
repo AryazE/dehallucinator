@@ -71,7 +71,7 @@ class SimpleCompletion:
                 self.additional_context[line['qualifiedName']].extend(ctx)
 
     def get_context(self, prompt: str, completion: str) -> List[str]:
-        code = prompt + completion
+        code = completion #prompt + completion
         lines = code.splitlines()
         new_context = []
         tmp = []
