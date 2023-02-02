@@ -6,7 +6,7 @@ import re
 import openai
 from sentence_transformers import SentenceTransformer
 
-similarity_model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+similarity_model = SentenceTransformer('flax-sentence-embeddings/st-codesearch-distilroberta-base')
 
 def embeddings(batch: List[str]) -> List[List[float]]:
     return similarity_model.encode(batch, show_progress_bar=False)
