@@ -126,7 +126,7 @@ class CSTSimpleCompletion:
         logger.info(f'Initial prompt: \n{prompt}\n')
         logger.info(f'Initial completion:\n{completion}\n')
         artifact += f'prompt {attempts}:\n```python\n{prompt}\n```\ncompletion {attempts}:\n```python\n{completion}\n```\n'
-        while attempts < budget and prev_completion != completion:
+        while attempts == 0 or (attempts < budget and prev_completion != completion):
             prev_completion = completion
             new_prompt, context = self.generate_new_prompt(prompt, context, completion)
             completion = get_completion_safely(self.model, completor, '', new_prompt)
