@@ -68,6 +68,10 @@ def postprocess(code, indent_style='\t', indent_count=0):
     extra = len(indent_style) * indent_count
     code = prefix + code
     temp_lines = code.splitlines()
+    for l in range(1, len(temp_lines)):
+        if (len(temp_lines[l]) - len(temp_lines[l].lstrip())) // len(indent_style) <= indent_count:
+            temp_lines = temp_lines[:l]
+            break
     lines = [l[extra:] for l in temp_lines]
     while len(lines) > 1:
         try:
