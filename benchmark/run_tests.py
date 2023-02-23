@@ -9,7 +9,7 @@ from read_test_results import read_test_results
 def run_tests(config, id, mode, executable):
     here = Path(__file__).resolve().parent
     temp_dir = here/'experiment'/config['name']/mode/f'temp{id}'/config['project_root']
-    dir_util.copy_tree(str(here/config['project_root']/'tests'), str(temp_dir/'tests'))
+    dir_util.copy_tree(str(here/config['project_root']/config['tests_path']), str(temp_dir/config['tests_path']))
     if (temp_dir/'requirements.txt').exists():
         subprocess.run([executable, '-m', 'pip', 'install', '-r', str(temp_dir/'requirements.txt')], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     try:
@@ -20,7 +20,7 @@ def run_tests(config, id, mode, executable):
         '--tb=no', 
         '-q', 
         '--junitxml', 
-        f"{here/'experiment'/config['name']/mode/f'temp{id}'}/results.xml",
+        str(here/'experiment'/config['name']/mode/f'temp{id}'/'results.xml'),
     ]
     pytest_command.append(str(temp_dir/config['tests_path']))
     test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True)

@@ -7,30 +7,27 @@ from numpy import dot
 from numpy.linalg import norm
 import openai
 from sentence_transformers import SentenceTransformer
+from transformers import GPT2TokenizerFast
+
+tokenizer = GPT2TokenizerFast.from_pretrained("gpt2")
 
 similarity_model = SentenceTransformer('flax-sentence-embeddings/st-codesearch-distilroberta-base')
 
 def embeddings(batch: List[str]) -> List[List[float]]:
     return similarity_model.encode(batch, show_progress_bar=False)
 
-def clip_prompt(context: str, prompt: str, prompt_limit=500, alpha=0.5):
+def clip_prompt(prompt: str, prompt_limit=1500):
     '''
-    Clip context from the beginning and prompt from the end 
-    to fit in prompt_limit with ratio alpha:1-alpha (context:prompt).
-    Return clipped prompt + clipped context.
+    Clip prompt from the beginning to fit in prompt_limit.
     '''
-    # alpha = len(context) / (len(context) + len(prompt))
-    if len(context) > 0:
-        c_lines = context.splitlines()
-        c_lines = c_lines[:min(20, int(len(c_lines)*prompt_limit*alpha*3/len(context)))]
-    else:
-        c_lines = []
-    if len(prompt) > 0:
-        p_lines = prompt.splitlines()
-        p_lines = p_lines[-int(len(p_lines)*prompt_limit*(1-alpha)*3/len(prompt)):]
-    else:
-        p_lines = []
-    return '\n'.join(p_lines + c_lines)
+    prompt_lines = prompt.splitlines(keepends=True)
+    tokenized = 0
+    for prompt_line in prompt_lines:
+        tokenized += len(tokenizer(prompt_line)['input_ids'])
+    if tokenized > prompt_limit:
+        new_len_prompt = len(prompt_lines) * prompt_limit / tokenized
+        prompt = ''.join(prompt_lines[-int(new_len_prompt):])
+    return prompt
 
 def run_query(database, ql_file, res_file, tmp_dir):
     subprocess.run(['codeql', 'query', 'run',
@@ -81,11 +78,11 @@ def postprocess(code, indent_style='\t', indent_count=0):
             lines.pop()
     return ''
 
-def get_completion_safely(model, completor, context, prompt):
+def get_completion_safely(model, completor, prompt):
         prompt_size = 1500
         while prompt_size > 0:
             try:
-                completion = completor.get_completion(model, clip_prompt(context, prompt, prompt_size))
+                completion = completor.get_completion(model, clip_prompt(prompt, prompt_size))
                 break
             except openai.error.InvalidRequestError as e:
                 print(e)

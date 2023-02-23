@@ -30,7 +30,7 @@ class Completion:
                 'prompt': context,
                 'temperature': 0,
                 'max_tokens': 500,
-                'stop': ['\n\n\n', 'def ', 'class ']
+                'stop': ['\n\n\n', 'def ', 'async def ', 'class ']
             }
             params.update(kwargs)
             now = time.monotonic()

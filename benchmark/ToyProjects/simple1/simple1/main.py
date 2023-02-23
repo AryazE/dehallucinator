@@ -3,7 +3,7 @@ from .utils import read_csv
 
 def get_credit_scores():
     """
-    Reads personal data from the data.csv file, calculates credit scores, and returns the list of scores
+    Reads personal data from the data.csv file, calculates credit scores for each row, and returns the list of scores
     """
     # Read the csv file
     data = read_csv('data.csv')

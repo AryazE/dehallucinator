@@ -16,16 +16,20 @@ if __name__ == '__main__':
     parser.add_argument('--ids', nargs='*', type=int, default=[])
     parser.add_argument('--fromId', type=int, default=0)
     parser.add_argument('--log', type=str, default='')
+    parser.add_argument('--noTests', action='store_true')
     args = parser.parse_args()
     with open(args.config, 'r') as f:
         config = json.load(f)
     logging.basicConfig(level=logging.INFO,filename=f'benchmark/{config["project_root"].split("/")[-1]}-{args.mode}{args.log}.log', filemode='a')
     logger = logging.getLogger(__name__)
     here = Path(__file__).resolve().parent
-    if not (here/'experiment'/config['name']/'base').exists():
-        executable, orig_results = prepare(config, 'base', [])
+    if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in args.ids]):
+        executable, orig_results = prepare(config, 'base', args.ids, args.noTests)
     else:
-        orig_results = read_test_results(str(here/'experiment'/config['name']/'base'/'temp0'/'results.xml'), 0)
+        if args.noTests:
+            orig_results = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": 0}
+        else:
+            orig_results = read_test_results(str(here/'experiment'/config['name']/'base'/'temp0'/'results.xml'), 0)
         with open(str(here/'experiment'/config['name']/'base'/'interpreter.txt'), 'r') as f:
             executable = f.read()
     if (here/'experiment'/config['name']/args.mode).exists():
@@ -46,7 +50,10 @@ if __name__ == '__main__':
             best_context, possible_context, given_context = run_completion(args.model, config, i["id"], args.mode, args.log)
             if best_context > -1:
                 logger.info(f'best_context: {best_context}, possible_context: {possible_context}, given_context: {given_context}')
-            new_res = run_tests(config, i["id"], args.mode, executable)
+            if not args.noTests:
+                new_res = run_tests(config, i["id"], args.mode, executable)
+            else:
+                new_res = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": i["id"]}
             with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'r') as f:
                 results = json.load(f)
             if new_res['id'] not in [j['id'] for j in results]:

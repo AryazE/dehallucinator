@@ -1,7 +1,7 @@
 {
     "name": "UltraDict",
     "project_root": "GitHubProjects/UltraDict",
-    "tests_path": "tests/tests.py",
+    "tests_path": "tests",
     "evaluations": [
         {
             "id": 0,
