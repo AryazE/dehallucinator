@@ -1,0 +1,914 @@
+{
+    "name": "UltraDict",
+    "project_root": "GitHubProjects/UltraDict",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "file": "Exceptions.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 8,
+                    "end_line": 30,
+                    "end_column": 55
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "Exceptions.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 34,
+                    "start_column": 8,
+                    "end_line": 35,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "UltraDict.py",
+            "function": "remove_shm_from_resource_tracker",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 56,
+                    "start_column": 4,
+                    "end_line": 68,
+                    "end_column": 61
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "UltraDict.py",
+            "function": "after_fork",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 118,
+                    "start_column": 16,
+                    "end_line": 122,
+                    "end_column": 32
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "UltraDict.py",
+            "function": "init_pid",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 128,
+                    "start_column": 12,
+                    "end_line": 129,
+                    "end_column": 60
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "UltraDict.py",
+            "function": "acquire_with_timeout",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 133,
+                    "start_column": 12,
+                    "end_line": 156,
+                    "end_column": 129
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "UltraDict.py",
+            "function": "test_and_inc",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 193,
+                    "start_column": 12,
+                    "end_line": 197,
+                    "end_column": 24
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "UltraDict.py",
+            "function": "test_and_dec",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 201,
+                    "start_column": 12,
+                    "end_line": 204,
+                    "end_column": 24
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "UltraDict.py",
+            "function": "release",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 209,
+                    "start_column": 12,
+                    "end_line": 221,
+                    "end_column": 25
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "UltraDict.py",
+            "function": "reset",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 225,
+                    "start_column": 12,
+                    "end_line": 227,
+                    "end_column": 30
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "UltraDict.py",
+            "function": "reset_acquire_parameters",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 230,
+                    "start_column": 12,
+                    "end_line": 230,
+                    "end_column": 46
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "UltraDict.py",
+            "function": "steal",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 233,
+                    "start_column": 12,
+                    "end_line": 253,
+                    "end_column": 34
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "UltraDict.py",
+            "function": "steal_from_dead",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 260,
+                    "start_column": 12,
+                    "end_line": 276,
+                    "end_column": 66
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "file": "UltraDict.py",
+            "function": "status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 279,
+                    "start_column": 12,
+                    "end_line": 284,
+                    "end_column": 14
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "UltraDict.py",
+            "function": "print_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 287,
+                    "start_column": 12,
+                    "end_line": 290,
+                    "end_column": 34
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "UltraDict.py",
+            "function": "cleanup",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 293,
+                    "start_column": 12,
+                    "end_line": 306,
+                    "end_column": 25
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "UltraDict.py",
+            "function": "get_remote_pid",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 309,
+                    "start_column": 12,
+                    "end_line": 309,
+                    "end_column": 61
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "file": "UltraDict.py",
+            "function": "get_remote_lock",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 312,
+                    "start_column": 12,
+                    "end_line": 312,
+                    "end_column": 62
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "file": "UltraDict.py",
+            "function": "__repr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 315,
+                    "start_column": 12,
+                    "end_line": 315,
+                    "end_column": 221
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "UltraDict.py",
+            "function": "__enter__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 318,
+                    "start_column": 12,
+                    "end_line": 320,
+                    "end_column": 24
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "UltraDict.py",
+            "function": "__exit__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 323,
+                    "start_column": 12,
+                    "end_line": 325,
+                    "end_column": 25
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "file": "UltraDict.py",
+            "function": "__call__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 328,
+                    "start_column": 12,
+                    "end_line": 330,
+                    "end_column": 24
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "file": "UltraDict.py",
+            "function": "finalize",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 380,
+                    "start_column": 12,
+                    "end_line": 383,
+                    "end_column": 57
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "UltraDict.py",
+            "function": "__del__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 507,
+                    "start_column": 8,
+                    "end_line": 511,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "file": "UltraDict.py",
+            "function": "init_remotes",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 516,
+                    "start_column": 8,
+                    "end_line": 523,
+                    "end_column": 70
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "file": "UltraDict.py",
+            "function": "del_remotes",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 531,
+                    "start_column": 8,
+                    "end_line": 534,
+                    "end_column": 33
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "file": "UltraDict.py",
+            "function": "__reduce__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 537,
+                    "start_column": 8,
+                    "end_line": 538,
+                    "end_column": 131
+                }
+            ],
+            "best_context": [
+                "functools.partial",
+                "UltraDict.name",
+                "UltraDict.auto_unlink",
+                "UltraDict.recurse_register"
+            ],
+            "possible_context": [
+                "UltraDict.name",
+                "UltraDict.recurse_register"
+            ]
+        },
+        {
+            "id": 28,
+            "file": "UltraDict.py",
+            "function": "get_full_dump_memory",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 653,
+                    "start_column": 8,
+                    "end_line": 666,
+                    "end_column": 24
+                }
+            ],
+            "best_context": [
+                "UltraDict"
+            ],
+            "possible_context": [
+                "UltraDict"
+            ]
+        },
+        {
+            "id": 29,
+            "file": "UltraDict.py",
+            "function": "update",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 813,
+                    "start_column": 8,
+                    "end_line": 817,
+                    "end_column": 24
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "file": "UltraDict.py",
+            "function": "__delitem__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 821,
+                    "start_column": 8,
+                    "end_line": 827,
+                    "end_column": 54
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "file": "UltraDict.py",
+            "function": "__setitem__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 832,
+                    "start_column": 8,
+                    "end_line": 857,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "UltraDict.py",
+            "function": "__getitem__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 862,
+                    "start_column": 8,
+                    "end_line": 863,
+                    "end_column": 30
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "UltraDict.py",
+            "function": "has_key",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 867,
+                    "start_column": 8,
+                    "end_line": 868,
+                    "end_column": 32
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "UltraDict.py",
+            "function": "__eq__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 871,
+                    "start_column": 8,
+                    "end_line": 871,
+                    "end_column": 59
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "file": "UltraDict.py",
+            "function": "__contains__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 874,
+                    "start_column": 8,
+                    "end_line": 875,
+                    "end_column": 32
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "file": "UltraDict.py",
+            "function": "__len__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 878,
+                    "start_column": 8,
+                    "end_line": 879,
+                    "end_column": 30
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "file": "UltraDict.py",
+            "function": "__iter__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 882,
+                    "start_column": 8,
+                    "end_line": 883,
+                    "end_column": 31
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "file": "UltraDict.py",
+            "function": "__repr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 886,
+                    "start_column": 8,
+                    "end_line": 892,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "file": "UltraDict.py",
+            "function": "status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 896,
+                    "start_column": 8,
+                    "end_line": 907,
+                    "end_column": 19
+                }
+            ],
+            "best_context": [
+                "UltraDict.update_stream_position_remote",
+                "UltraDict.lock_pid_remote",
+                "UltraDict.lock_remote",
+                "UltraDict.shared_lock_remote",
+                "UltraDict.recurse_remote",
+                "UltraDict.lock",
+                "UltraDict.full_dump_counter_remote",
+                "UltraDict.full_dump_memory_name_remote"
+            ],
+            "possible_context": [
+                "UltraDict.update_stream_position_remote",
+                "UltraDict.lock_pid_remote",
+                "UltraDict.lock_remote",
+                "UltraDict.shared_lock_remote",
+                "UltraDict.recurse_remote",
+                "UltraDict.lock",
+                "UltraDict.full_dump_counter_remote",
+                "UltraDict.full_dump_memory_name_remote"
+            ]
+        },
+        {
+            "id": 40,
+            "file": "UltraDict.py",
+            "function": "print_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 911,
+                    "start_column": 8,
+                    "end_line": 914,
+                    "end_column": 75
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "UltraDict.py",
+            "function": "raise_already_closed",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 955,
+                    "start_column": 8,
+                    "end_line": 955,
+                    "end_column": 117
+                }
+            ],
+            "best_context": [
+                "Exceptions.AlreadyClosed"
+            ],
+            "possible_context": [
+                "Exceptions.AlreadyClosed"
+            ]
+        },
+        {
+            "id": 42,
+            "file": "UltraDict.py",
+            "function": "keys",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 958,
+                    "start_column": 8,
+                    "end_line": 959,
+                    "end_column": 32
+                }
+            ],
+            "best_context": [
+                "UltraDict.apply_update("
+            ],
+            "possible_context": [
+                "UltraDict.apply_update("
+            ]
+        },
+        {
+            "id": 43,
+            "file": "UltraDict.py",
+            "function": "values",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 962,
+                    "start_column": 8,
+                    "end_line": 963,
+                    "end_column": 34
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "file": "UltraDict.py",
+            "function": "unlink",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 966,
+                    "start_column": 8,
+                    "end_line": 966,
+                    "end_column": 32
+                }
+            ],
+            "best_context": [
+                "UltraDict.close("
+            ],
+            "possible_context": [
+                "UltraDict.close("
+            ]
+        },
+        {
+            "id": 45,
+            "file": "UltraDict.py",
+            "function": "unlink_recursed",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1006,
+                    "start_column": 8,
+                    "end_line": 1015,
+                    "end_column": 49
+                }
+            ],
+            "best_context": [
+                "UltraDict.recurse",
+                "UltraDict.recurse_register",
+                "UltraDict.unlink_by_name(",
+                "UltraDict.close("
+            ],
+            "possible_context": [
+                "UltraDict.recurse",
+                "UltraDict.recurse_register",
+                "UltraDict.unlink_by_name("
+            ]
+        },
+        {
+            "id": 46,
+            "file": "UltraDict.py",
+            "function": "unlink_by_name",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1023,
+                    "start_column": 8,
+                    "end_line": 1032,
+                    "end_column": 21
+                }
+            ],
+            "best_context": [
+                "multiprocessing.shared_memory.SharedMemory.__init__(",
+                "multiprocessing.shared_memory.SharedMemory.unlink(",
+                "multiprocessing.shared_memory.SharedMemory.close(",
+                "UltraDict.get_memory("
+            ],
+            "possible_context": [
+                "multiprocessing.shared_memory.SharedMemory.unlink()",
+                "UltraDict.get_memory(create, name) -> multiprocessing.shared_memory.SharedMemory"
+            ]
+        },
+        {
+            "id": 47,
+            "file": "examples/oop.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 14,
+                    "start_column": 8,
+                    "end_line": 14,
+                    "end_column": 77
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "examples/oop.py",
+            "function": "x",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 18,
+                    "start_column": 8,
+                    "end_line": 18,
+                    "end_column": 23
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "file": "examples/oop.py",
+            "function": "__getattr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 21,
+                    "start_column": 8,
+                    "end_line": 21,
+                    "end_column": 35
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "file": "examples/oop.py",
+            "function": "__setattr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 24,
+                    "start_column": 8,
+                    "end_line": 24,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "file": "examples/mccoydj1.py",
+            "function": "P1",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 16,
+                    "start_column": 4,
+                    "end_line": 19,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "file": "examples/mccoydj1.py",
+            "function": "P2",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 22,
+                    "start_column": 4,
+                    "end_line": 26,
+                    "end_column": 28
+                }
+            ]
+        },
+        {
+            "id": 53,
+            "file": "examples/fork.py",
+            "function": "run",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 18,
+                    "start_column": 4,
+                    "end_line": 24,
+                    "end_column": 30
+                }
+            ]
+        },
+        {
+            "id": 54,
+            "file": "examples/recover_from_stale_lock.py",
+            "function": "possibly_simulate_crash",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 38,
+                    "start_column": 4,
+                    "end_line": 56,
+                    "end_column": 113
+                }
+            ]
+        },
+        {
+            "id": 55,
+            "file": "examples/recover_from_stale_lock.py",
+            "function": "run",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 59,
+                    "start_column": 4,
+                    "end_line": 79,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 56,
+            "file": "examples/mccoydj1_nested.py",
+            "function": "P1",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 18,
+                    "start_column": 4,
+                    "end_line": 24,
+                    "end_column": 27
+                }
+            ]
+        },
+        {
+            "id": 57,
+            "file": "examples/mccoydj1_nested.py",
+            "function": "P2",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 31,
+                    "start_column": 4,
+                    "end_line": 37,
+                    "end_column": 27
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "file": "examples/parallel.py",
+            "function": "run",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 22,
+                    "start_column": 4,
+                    "end_line": 30,
+                    "end_column": 30
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "file": "examples/recover_from_stale_lock_manual.py",
+            "function": "possibly_simulate_crash",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 36,
+                    "start_column": 4,
+                    "end_line": 48,
+                    "end_column": 60
+                }
+            ]
+        }
+    ]
+}

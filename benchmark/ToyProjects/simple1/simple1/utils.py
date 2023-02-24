@@ -1,5 +1,7 @@
-# Parse csv string into a list of dictionaries
 def parse_csv(contents):
+    """
+    Parse csv string into a list of dictionaries
+    """
     # Split the csv string into lines
     lines = contents.splitlines()
     # Split the first line into headers
@@ -21,8 +23,10 @@ def parse_csv(contents):
     # Return the list of dictionaries
     return data
 
-# Read a csv file into a list of dictionaries
 def read_csv(file_name):
+    """
+    Read a csv file into a list of dictionaries
+    """
     # Open the csv file
     with open(file_name, 'r') as f:
         # Read the csv file

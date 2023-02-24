@@ -1,0 +1,104 @@
+{
+    "name": "supervisor",
+    "project_root": "GitHubProjects/supervisor-main",
+    "tests_path": "supervisor/tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "function": "",
+            "file": "",
+            "target": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "function": "_show_statuses",
+            "file": "supervisor/supervisorctl.py",
+            "target": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 644,
+                    "start_column": 8,
+                    "end_line": 655,
+                    "end_column": 34
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "function": "getRPCTransport",
+            "file": "supervisor/childutils.py",
+            "target": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 13,
+                    "start_column": 4,
+                    "end_line": 15,
+                    "end_column": 67
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "function": "authorize",
+            "file": "supervisor/http.py",
+            "target": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 889,
+                    "start_column": 8,
+                    "end_line": 898,
+                    "end_column": 25
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "function": "logging_level",
+            "file": "supervisor/datatypes.py",
+            "target": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 361,
+                    "start_column": 4,
+                    "end_line": 365,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "function": "payload",
+            "file": "supervisor/events.py",
+            "target": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 123,
+                    "start_column": 8,
+                    "end_line": 130,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "function": "emit",
+            "file": "supervisor/loggers.py",
+            "target": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 90,
+                    "start_column": 8,
+                    "end_line": 111,
+                    "end_column": 31
+                }
+            ]
+        }
+    ]
+}

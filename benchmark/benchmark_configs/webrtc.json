@@ -1,0 +1,1819 @@
+{
+    "name": "webrtc",
+    "project_root": "GitHubProjects/webrtc",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "file": "python-webrtc/python/tgcalls_test.py",
+            "function": "parse_sdp",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 37,
+                    "start_column": 4,
+                    "end_line": 55,
+                    "end_column": 16
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "python-webrtc/python/tgcalls_test.py",
+            "function": "lookup",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 40,
+                    "start_column": 8,
+                    "end_line": 42,
+                    "end_column": 43
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "python-webrtc/python/tgcalls_test.py",
+            "function": "get_params_from_parsed_sdp",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 59,
+                    "start_column": 4,
+                    "end_line": 65,
+                    "end_column": 6
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "python-webrtc/python/tgcalls_test.py",
+            "function": "add_candidates",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 70,
+                    "start_column": 8,
+                    "end_line": 78,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "python-webrtc/python/tgcalls_test.py",
+            "function": "group_call_participants_update_callback",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 107,
+                    "start_column": 4,
+                    "end_line": 107,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "python-webrtc/python/tgcalls_test.py",
+            "function": "group_call_update_callback",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 111,
+                    "start_column": 4,
+                    "end_line": 114,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "python-webrtc/python/tgcalls_test.py",
+            "function": "get_ms_time",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 119,
+                    "start_column": 8,
+                    "end_line": 119,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "python-webrtc/python/tgcalls_test.py",
+            "function": "pre_update_processing",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 168,
+                    "start_column": 8,
+                    "end_line": 168,
+                    "end_column": 13
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "python-webrtc/python/test.py",
+            "function": "get_dir",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 18,
+                    "start_column": 4,
+                    "end_line": 18,
+                    "end_column": 57
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "python-webrtc/python/test.py",
+            "function": "idle",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 22,
+                    "start_column": 4,
+                    "end_line": 23,
+                    "end_column": 13
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "python-webrtc/python/wrtc.py",
+            "function": "__bootstrap__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 5,
+                    "start_column": 4,
+                    "end_line": 11,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "python-webrtc/python/webrtc/base.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 17,
+                    "start_column": 8,
+                    "end_line": 19,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "python-webrtc/python/webrtc/base.py",
+            "function": "_native_obj",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 23,
+                    "start_column": 8,
+                    "end_line": 23,
+                    "end_column": 26
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "file": "python-webrtc/python/webrtc/base.py",
+            "function": "_set_native_obj",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 26,
+                    "start_column": 8,
+                    "end_line": 26,
+                    "end_column": 27
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "python-webrtc/python/webrtc/base.py",
+            "function": "_wrap",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 30,
+                    "start_column": 8,
+                    "end_line": 30,
+                    "end_column": 25
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "python-webrtc/python/webrtc/base.py",
+            "function": "_wrap_many",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 34,
+                    "start_column": 8,
+                    "end_line": 34,
+                    "end_column": 45
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "python-webrtc/python/webrtc/base.py",
+            "function": "__repr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 37,
+                    "start_column": 8,
+                    "end_line": 37,
+                    "end_column": 78
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "file": "python-webrtc/python/webrtc/base.py",
+            "function": "__eq__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 40,
+                    "start_column": 8,
+                    "end_line": 43,
+                    "end_column": 37
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "file": "python-webrtc/python/webrtc/models/rtc_on_data_event.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 24,
+                    "start_column": 8,
+                    "end_line": 24,
+                    "end_column": 72
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "python-webrtc/python/webrtc/models/rtc_on_data_event.py",
+            "function": "audio_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 30,
+                    "start_column": 8,
+                    "end_line": 30,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "python-webrtc/python/webrtc/models/rtc_on_data_event.py",
+            "function": "audio_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 34,
+                    "start_column": 8,
+                    "end_line": 34,
+                    "end_column": 43
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "file": "python-webrtc/python/webrtc/models/rtc_on_data_event.py",
+            "function": "number_of_frames",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 39,
+                    "start_column": 8,
+                    "end_line": 39,
+                    "end_column": 47
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "file": "python-webrtc/python/webrtc/models/rtc_on_data_event.py",
+            "function": "number_of_frames",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 43,
+                    "start_column": 8,
+                    "end_line": 43,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "python-webrtc/python/webrtc/models/rtc_on_data_event.py",
+            "function": "sample_rate",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 8,
+                    "end_line": 48,
+                    "end_column": 43
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "file": "python-webrtc/python/webrtc/models/rtc_on_data_event.py",
+            "function": "sample_rate",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 52,
+                    "start_column": 8,
+                    "end_line": 52,
+                    "end_column": 44
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "file": "python-webrtc/python/webrtc/models/rtc_on_data_event.py",
+            "function": "bits_per_sample",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 57,
+                    "start_column": 8,
+                    "end_line": 57,
+                    "end_column": 46
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "file": "python-webrtc/python/webrtc/models/rtc_on_data_event.py",
+            "function": "bits_per_sample",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 61,
+                    "start_column": 8,
+                    "end_line": 61,
+                    "end_column": 47
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "python-webrtc/python/webrtc/models/rtc_on_data_event.py",
+            "function": "channel_count",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 66,
+                    "start_column": 8,
+                    "end_line": 66,
+                    "end_column": 45
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "file": "python-webrtc/python/webrtc/models/rtc_on_data_event.py",
+            "function": "channel_count",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 70,
+                    "start_column": 8,
+                    "end_line": 70,
+                    "end_column": 46
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "file": "python-webrtc/python/webrtc/models/rtc_session_description.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 44,
+                    "start_column": 8,
+                    "end_line": 47,
+                    "end_column": 59
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "file": "python-webrtc/python/webrtc/models/rtc_session_description.py",
+            "function": "type",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 52,
+                    "start_column": 8,
+                    "end_line": 52,
+                    "end_column": 37
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "python-webrtc/python/webrtc/models/rtc_session_description.py",
+            "function": "sdp",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 57,
+                    "start_column": 8,
+                    "end_line": 57,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "python-webrtc/python/webrtc/models/rtc_session_description_init.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 23,
+                    "start_column": 8,
+                    "end_line": 23,
+                    "end_column": 53
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "python-webrtc/python/webrtc/models/rtc_session_description_init.py",
+            "function": "type",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 8,
+                    "end_line": 28,
+                    "end_column": 37
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "file": "python-webrtc/python/webrtc/models/rtc_session_description_init.py",
+            "function": "type",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 32,
+                    "start_column": 8,
+                    "end_line": 32,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "file": "python-webrtc/python/webrtc/models/rtc_session_description_init.py",
+            "function": "sdp",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 38,
+                    "start_column": 8,
+                    "end_line": 38,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "file": "python-webrtc/python/webrtc/models/rtc_session_description_init.py",
+            "function": "sdp",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 42,
+                    "start_column": 8,
+                    "end_line": 42,
+                    "end_column": 37
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "file": "python-webrtc/python/webrtc/models/rtp_transceiver_init.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 8,
+                    "end_line": 37,
+                    "end_column": 35
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "file": "python-webrtc/python/webrtc/models/rtp_transceiver_init.py",
+            "function": "direction",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 44,
+                    "start_column": 8,
+                    "end_line": 44,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "file": "python-webrtc/python/webrtc/models/rtp_transceiver_init.py",
+            "function": "direction",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 8,
+                    "end_line": 48,
+                    "end_column": 43
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "python-webrtc/python/webrtc/models/rtp_transceiver_init.py",
+            "function": "send_encodings",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 54,
+                    "start_column": 8,
+                    "end_line": 56,
+                    "end_column": 80
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "file": "python-webrtc/python/webrtc/models/rtp_transceiver_init.py",
+            "function": "send_encodings",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 60,
+                    "start_column": 8,
+                    "end_line": 60,
+                    "end_column": 80
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "file": "python-webrtc/python/webrtc/models/rtp_transceiver_init.py",
+            "function": "streams",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 67,
+                    "start_column": 8,
+                    "end_line": 67,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "file": "python-webrtc/python/webrtc/models/rtp_transceiver_init.py",
+            "function": "streams",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 71,
+                    "start_column": 8,
+                    "end_line": 73,
+                    "end_column": 69
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "file": "python-webrtc/python/webrtc/models/rtp_encoding_parameters.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 27,
+                    "start_column": 8,
+                    "end_line": 37,
+                    "end_column": 65
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "file": "python-webrtc/python/webrtc/models/rtp_encoding_parameters.py",
+            "function": "active",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 44,
+                    "start_column": 8,
+                    "end_line": 44,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "file": "python-webrtc/python/webrtc/models/rtp_encoding_parameters.py",
+            "function": "active",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 8,
+                    "end_line": 48,
+                    "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "python-webrtc/python/webrtc/models/rtp_encoding_parameters.py",
+            "function": "max_bitrate",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 55,
+                    "start_column": 8,
+                    "end_line": 55,
+                    "end_column": 43
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "file": "python-webrtc/python/webrtc/models/rtp_encoding_parameters.py",
+            "function": "max_bitrate",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 59,
+                    "start_column": 8,
+                    "end_line": 59,
+                    "end_column": 44
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "file": "python-webrtc/python/webrtc/models/rtp_encoding_parameters.py",
+            "function": "max_framerate",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 65,
+                    "start_column": 8,
+                    "end_line": 65,
+                    "end_column": 45
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "file": "python-webrtc/python/webrtc/models/rtp_encoding_parameters.py",
+            "function": "max_framerate",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 69,
+                    "start_column": 8,
+                    "end_line": 69,
+                    "end_column": 46
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "file": "python-webrtc/python/webrtc/models/rtp_encoding_parameters.py",
+            "function": "rid",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 76,
+                    "start_column": 8,
+                    "end_line": 76,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 53,
+            "file": "python-webrtc/python/webrtc/models/rtp_encoding_parameters.py",
+            "function": "rid",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 80,
+                    "start_column": 8,
+                    "end_line": 83,
+                    "end_column": 37
+                }
+            ]
+        },
+        {
+            "id": 54,
+            "file": "python-webrtc/python/webrtc/models/rtp_encoding_parameters.py",
+            "function": "scale_resolution_down_by",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 93,
+                    "start_column": 8,
+                    "end_line": 93,
+                    "end_column": 54
+                }
+            ]
+        },
+        {
+            "id": 55,
+            "file": "python-webrtc/python/webrtc/models/rtp_encoding_parameters.py",
+            "function": "scale_resolution_down_by",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 97,
+                    "start_column": 8,
+                    "end_line": 97,
+                    "end_column": 55
+                }
+            ]
+        },
+        {
+            "id": 56,
+            "file": "python-webrtc/python/webrtc/utils/callbacks_to_async.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 15,
+                    "start_column": 8,
+                    "end_line": 16,
+                    "end_column": 27
+                }
+            ]
+        },
+        {
+            "id": 57,
+            "file": "python-webrtc/python/webrtc/utils/callbacks_to_async.py",
+            "function": "set",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 19,
+                    "start_column": 8,
+                    "end_line": 19,
+                    "end_column": 52
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "file": "python-webrtc/python/webrtc/utils/callbacks_to_async.py",
+            "function": "__init__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 24,
+                    "start_column": 8,
+                    "end_line": 30,
+                    "end_column": 44
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "file": "python-webrtc/python/webrtc/utils/callbacks_to_async.py",
+            "function": "set",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 33,
+                    "start_column": 8,
+                    "end_line": 33,
+                    "end_column": 27
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "file": "python-webrtc/python/webrtc/utils/callbacks_to_async.py",
+            "function": "_on_success",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 36,
+                    "start_column": 8,
+                    "end_line": 37,
+                    "end_column": 19
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "file": "python-webrtc/python/webrtc/utils/callbacks_to_async.py",
+            "function": "_on_failure",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 40,
+                    "start_column": 8,
+                    "end_line": 41,
+                    "end_column": 19
+                }
+            ]
+        },
+        {
+            "id": 62,
+            "file": "python-webrtc/python/webrtc/utils/callbacks_to_async.py",
+            "function": "run",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 44,
+                    "start_column": 8,
+                    "end_line": 50,
+                    "end_column": 29
+                }
+            ]
+        },
+        {
+            "id": 63,
+            "file": "python-webrtc/python/webrtc/utils/callbacks_to_async.py",
+            "function": "__call__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 53,
+                    "start_column": 8,
+                    "end_line": 56,
+                    "end_column": 20
+                }
+            ]
+        },
+        {
+            "id": 64,
+            "file": "python-webrtc/python/webrtc/utils/callbacks_to_async.py",
+            "function": "__await__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 59,
+                    "start_column": 8,
+                    "end_line": 59,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 65,
+            "file": "python-webrtc/python/webrtc/utils/convert_exceptions.py",
+            "function": "__init_callback_exception_to_exception_dict",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 12,
+                    "start_column": 4,
+                    "end_line": 20,
+                    "end_column": 6
+                }
+            ]
+        },
+        {
+            "id": 66,
+            "file": "python-webrtc/python/webrtc/utils/convert_exceptions.py",
+            "function": "convert_from_callback_exception_to_exception",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 24,
+                    "start_column": 4,
+                    "end_line": 28,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 67,
+            "file": "python-webrtc/python/webrtc/functions/get_user_media.py",
+            "function": "get_user_media",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 26,
+                    "start_column": 4,
+                    "end_line": 26,
+                    "end_column": 50
+                }
+            ]
+        },
+        {
+            "id": 68,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_audio_source.py",
+            "function": "create_track",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 29,
+                    "start_column": 8,
+                    "end_line": 29,
+                    "end_column": 70
+                }
+            ]
+        },
+        {
+            "id": 69,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_audio_source.py",
+            "function": "on_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 41,
+                    "start_column": 8,
+                    "end_line": 41,
+                    "end_column": 57
+                }
+            ]
+        },
+        {
+            "id": 70,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream_track.py",
+            "function": "enabled",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 8,
+                    "end_line": 28,
+                    "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 71,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream_track.py",
+            "function": "enabled",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 32,
+                    "start_column": 8,
+                    "end_line": 32,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 72,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream_track.py",
+            "function": "id",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 37,
+                    "start_column": 8,
+                    "end_line": 37,
+                    "end_column": 35
+                }
+            ]
+        },
+        {
+            "id": 73,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream_track.py",
+            "function": "kind",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 43,
+                    "start_column": 8,
+                    "end_line": 43,
+                    "end_column": 37
+                }
+            ]
+        },
+        {
+            "id": 74,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream_track.py",
+            "function": "ready_state",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 8,
+                    "end_line": 48,
+                    "end_column": 43
+                }
+            ]
+        },
+        {
+            "id": 75,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream_track.py",
+            "function": "muted",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 54,
+                    "start_column": 8,
+                    "end_line": 54,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 76,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream_track.py",
+            "function": "clone",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 58,
+                    "start_column": 8,
+                    "end_line": 58,
+                    "end_column": 52
+                }
+            ]
+        },
+        {
+            "id": 77,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream_track.py",
+            "function": "stop",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 63,
+                    "start_column": 8,
+                    "end_line": 63,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 78,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_sender.py",
+            "function": "track",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 8,
+                    "end_line": 34,
+                    "end_column": 20
+                }
+            ]
+        },
+        {
+            "id": 79,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_sender.py",
+            "function": "transport",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 40,
+                    "start_column": 8,
+                    "end_line": 46,
+                    "end_column": 20
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_ice_transport.py",
+            "function": "component",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 27,
+                    "start_column": 8,
+                    "end_line": 27,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 81,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_ice_transport.py",
+            "function": "gathering_state",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 33,
+                    "start_column": 8,
+                    "end_line": 33,
+                    "end_column": 47
+                }
+            ]
+        },
+        {
+            "id": 82,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_ice_transport.py",
+            "function": "role",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 39,
+                    "start_column": 8,
+                    "end_line": 39,
+                    "end_column": 37
+                }
+            ]
+        },
+        {
+            "id": 83,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_ice_transport.py",
+            "function": "state",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 8,
+                    "end_line": 48,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 84,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_dtls_transport.py",
+            "function": "ice_transport",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 26,
+                    "start_column": 8,
+                    "end_line": 28,
+                    "end_column": 68
+                }
+            ]
+        },
+        {
+            "id": 85,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_dtls_transport.py",
+            "function": "state",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 34,
+                    "start_column": 8,
+                    "end_line": 34,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 86,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_receiver.py",
+            "function": "track",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 26,
+                    "start_column": 8,
+                    "end_line": 28,
+                    "end_column": 62
+                }
+            ]
+        },
+        {
+            "id": 87,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_receiver.py",
+            "function": "transport",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 34,
+                    "start_column": 8,
+                    "end_line": 40,
+                    "end_column": 20
+                }
+            ]
+        },
+        {
+            "id": 88,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream.py",
+            "function": "id",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 29,
+                    "start_column": 8,
+                    "end_line": 29,
+                    "end_column": 35
+                }
+            ]
+        },
+        {
+            "id": 89,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream.py",
+            "function": "active",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 34,
+                    "start_column": 8,
+                    "end_line": 34,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 90,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream.py",
+            "function": "get_audio_tracks",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 41,
+                    "start_column": 8,
+                    "end_line": 41,
+                    "end_column": 78
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream.py",
+            "function": "get_video_tracks",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 8,
+                    "end_line": 48,
+                    "end_column": 78
+                }
+            ]
+        },
+        {
+            "id": 92,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream.py",
+            "function": "get_tracks",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 55,
+                    "start_column": 8,
+                    "end_line": 55,
+                    "end_column": 73
+                }
+            ]
+        },
+        {
+            "id": 93,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream.py",
+            "function": "get_track_by_id",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 62,
+                    "start_column": 8,
+                    "end_line": 62,
+                    "end_column": 79
+                }
+            ]
+        },
+        {
+            "id": 94,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream.py",
+            "function": "add_track",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 68,
+                    "start_column": 8,
+                    "end_line": 68,
+                    "end_column": 60
+                }
+            ]
+        },
+        {
+            "id": 95,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream.py",
+            "function": "remove_track",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 74,
+                    "start_column": 8,
+                    "end_line": 74,
+                    "end_column": 63
+                }
+            ]
+        },
+        {
+            "id": 96,
+            "file": "python-webrtc/python/webrtc/interfaces/media_stream.py",
+            "function": "clone",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 79,
+                    "start_column": 8,
+                    "end_line": 79,
+                    "end_column": 52
+                }
+            ]
+        },
+        {
+            "id": 97,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_transceiver.py",
+            "function": "mid",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 8,
+                    "end_line": 28,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 98,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_transceiver.py",
+            "function": "receiver",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 34,
+                    "start_column": 8,
+                    "end_line": 36,
+                    "end_column": 63
+                }
+            ]
+        },
+        {
+            "id": 99,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_transceiver.py",
+            "function": "sender",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 42,
+                    "start_column": 8,
+                    "end_line": 44,
+                    "end_column": 59
+                }
+            ]
+        },
+        {
+            "id": 100,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_transceiver.py",
+            "function": "stopped",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 55,
+                    "start_column": 8,
+                    "end_line": 55,
+                    "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 101,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_transceiver.py",
+            "function": "direction",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 64,
+                    "start_column": 8,
+                    "end_line": 64,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 102,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_transceiver.py",
+            "function": "direction",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 68,
+                    "start_column": 8,
+                    "end_line": 68,
+                    "end_column": 51
+                }
+            ]
+        },
+        {
+            "id": 103,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_transceiver.py",
+            "function": "current_direction",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 74,
+                    "start_column": 8,
+                    "end_line": 74,
+                    "end_column": 49
+                }
+            ]
+        },
+        {
+            "id": 104,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_rtp_transceiver.py",
+            "function": "stop",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 86,
+                    "start_column": 8,
+                    "end_line": 86,
+                    "end_column": 32
+                }
+            ]
+        },
+        {
+            "id": 105,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "create_offer",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 35,
+                    "start_column": 8,
+                    "end_line": 37,
+                    "end_column": 89
+                }
+            ]
+        },
+        {
+            "id": 106,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "create_answer",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 45,
+                    "start_column": 8,
+                    "end_line": 47,
+                    "end_column": 90
+                }
+            ]
+        },
+        {
+            "id": 107,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "set_local_description",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 62,
+                    "start_column": 8,
+                    "end_line": 62,
+                    "end_column": 85
+                }
+            ]
+        },
+        {
+            "id": 108,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "set_remote_description",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 77,
+                    "start_column": 8,
+                    "end_line": 77,
+                    "end_column": 86
+                }
+            ]
+        },
+        {
+            "id": 109,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "add_track",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 96,
+                    "start_column": 8,
+                    "end_line": 106,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 110,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "add_transceiver",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 128,
+                    "start_column": 8,
+                    "end_line": 138,
+                    "end_column": 52
+                }
+            ]
+        },
+        {
+            "id": 111,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "get_transceivers",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 150,
+                    "start_column": 8,
+                    "end_line": 152,
+                    "end_column": 80
+                }
+            ]
+        },
+        {
+            "id": 112,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "get_senders",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 167,
+                    "start_column": 8,
+                    "end_line": 169,
+                    "end_column": 70
+                }
+            ]
+        },
+        {
+            "id": 113,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "get_receivers",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 184,
+                    "start_column": 8,
+                    "end_line": 186,
+                    "end_column": 74
+                }
+            ]
+        },
+        {
+            "id": 114,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "remove_track",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 193,
+                    "start_column": 8,
+                    "end_line": 193,
+                    "end_column": 64
+                }
+            ]
+        },
+        {
+            "id": 115,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "restart_ice",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 199,
+                    "start_column": 8,
+                    "end_line": 199,
+                    "end_column": 45
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "close",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 203,
+                    "start_column": 8,
+                    "end_line": 203,
+                    "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 117,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_peer_connection.py",
+            "function": "sctp",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 209,
+                    "start_column": 8,
+                    "end_line": 215,
+                    "end_column": 20
+                }
+            ]
+        },
+        {
+            "id": 118,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_sctp_transport.py",
+            "function": "transport",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 8,
+                    "end_line": 30,
+                    "end_column": 66
+                }
+            ]
+        },
+        {
+            "id": 119,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_sctp_transport.py",
+            "function": "state",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 35,
+                    "start_column": 8,
+                    "end_line": 35,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_sctp_transport.py",
+            "function": "max_message_size",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 41,
+                    "start_column": 8,
+                    "end_line": 41,
+                    "end_column": 47
+                }
+            ]
+        },
+        {
+            "id": 121,
+            "file": "python-webrtc/python/webrtc/interfaces/rtc_sctp_transport.py",
+            "function": "max_channels",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 47,
+                    "start_column": 8,
+                    "end_line": 47,
+                    "end_column": 44
+                }
+            ]
+        },
+        {
+            "id": 122,
+            "file": "examples/telegram_group_calls.py",
+            "function": "parse_sdp",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 18,
+                    "start_column": 4,
+                    "end_line": 36,
+                    "end_column": 16
+                }
+            ]
+        },
+        {
+            "id": 123,
+            "file": "examples/telegram_group_calls.py",
+            "function": "lookup",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 21,
+                    "start_column": 8,
+                    "end_line": 23,
+                    "end_column": 43
+                }
+            ]
+        },
+        {
+            "id": 124,
+            "file": "examples/telegram_group_calls.py",
+            "function": "get_params_from_parsed_sdp",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 40,
+                    "start_column": 4,
+                    "end_line": 46,
+                    "end_column": 6
+                }
+            ]
+        },
+        {
+            "id": 125,
+            "file": "examples/telegram_group_calls.py",
+            "function": "add_candidates",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 51,
+                    "start_column": 8,
+                    "end_line": 59,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 126,
+            "file": "examples/telegram_group_calls.py",
+            "function": "group_call_participants_update_callback",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 88,
+                    "start_column": 4,
+                    "end_line": 88,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 127,
+            "file": "examples/telegram_group_calls.py",
+            "function": "group_call_update_callback",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 92,
+                    "start_column": 4,
+                    "end_line": 95,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 128,
+            "file": "examples/telegram_group_calls.py",
+            "function": "get_ms_time",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 100,
+                    "start_column": 8,
+                    "end_line": 100,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 129,
+            "file": "examples/telegram_group_calls.py",
+            "function": "pre_update_processing",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 144,
+                    "start_column": 8,
+                    "end_line": 144,
+                    "end_column": 13
+                }
+            ]
+        }
+    ]
+}

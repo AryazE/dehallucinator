@@ -20,7 +20,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     with open(args.config, 'r') as f:
         config = json.load(f)
-    logging.basicConfig(level=logging.INFO,filename=f'benchmark/{config["project_root"].split("/")[-1]}-{args.mode}{args.log}.log', filemode='a')
+    logging.basicConfig(level=logging.INFO,filename=f'benchmark/logs/{config["project_root"].split("/")[-1]}-{args.mode}{args.log}.log', filemode='a')
     logger = logging.getLogger(__name__)
     here = Path(__file__).resolve().parent
     if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in args.ids]):

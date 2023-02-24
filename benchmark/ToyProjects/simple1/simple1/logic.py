@@ -1,5 +1,7 @@
-# Calculate credit score based on salary and age
 def calculate_credit_score(data, index):
+    """
+    Calculate credit score based on salary and age
+    """
     # Get salary and age from the data
     salary = data[index]['salary']
     age = data[index]['age']

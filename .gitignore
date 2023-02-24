@@ -135,3 +135,4 @@ benchmark/*experiment*/
 benchmark/db/
 benchmark/*Res/
 benchmark/res*/
+benchmark/logs/
