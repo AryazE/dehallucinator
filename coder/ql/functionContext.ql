@@ -2,9 +2,9 @@ import python
 import utils
 
 from FunctionDef fd, Function f
-where f = fd.getDefinedFunction() and f.inSource()
+where f = fd.getDefinedFunction() and f.inSource() and not fd.getLocation().getFile().getShortName().matches("%test%")
 select f.getName() as name, 
-    f.getQualifiedName() as qualifiedName, 
+    getQualifiedName(f) as qualifiedName, 
     fd.getLocation().getFile().getAbsolutePath() as file,
     fd.getLocation().getStartLine() as start_line,
     fd.getLocation().getStartColumn() as start_column,

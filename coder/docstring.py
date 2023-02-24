@@ -5,13 +5,13 @@ from .BaseDiCompletion import BaseDiCompletion
 
 logger = logging.getLogger(__name__)
 
-similarity_threshold = 0.7
+similarity_threshold = 0.5
 
-class SimpleCompletion(BaseDiCompletion):
+class DocstringCompletion(BaseDiCompletion):
     def __init__(self, project_root: str, model: str = "Codex", location: Dict[str, int] = {}):
         super().__init__(project_root, model, location)
 
-    def get_context(self, prompt: str, completion: str) -> List[str]:
+    def get_context(self, prompt: str, completion: str) -> List[Tuple[str, float]]:
         code = completion #prompt + completion
         lines = code.splitlines()
         new_context = []
@@ -32,30 +32,31 @@ class SimpleCompletion(BaseDiCompletion):
                                 break
                         if not found:
                             new_context.append((similarity, self.additional_context[i][j]))
-        return [i[1] for i in sorted(new_context, key=lambda x: x[0], reverse=True)]
+        return sorted(new_context, key=lambda x: x[0], reverse=True)
     
-    def format_context(self, context: List[str]) -> str:
-        commented_context = ['# ' + '\n#'.join(i.split('\n')) for i in context]
-        if len(commented_context) == 0:
+    def format_context(self, context: List[Tuple[str, float]]) -> str:
+        if len(context) == 0:
             return ''
-        if max([len(i) for i in commented_context]) < 3:
-            return ''
-        return '# API REFERENCE:\n' + '\n'.join(commented_context[:5]) + '\n'
+        context = ['Uses:'] + [i[1] for i in context]
+        return self.indent_style*(self.indent_count+1) + f'\n{self.indent_style*(self.indent_count+1)}'.join(context[:5])
 
     def generate_new_prompt(self, prompt: str, context: Set[str], completion: str) -> Tuple[str, Set[str]]:
         new_context = self.get_context(prompt, completion)
         # new_context = new_context.union(context)
         full_context = self.format_context(new_context)
-        def_start = prompt.rfind('def ')
-        while True:
-            func_start = prompt.rfind('\n', 0, def_start)
-            if prompt[func_start + 1: def_start].strip().startswith('#') or \
-                prompt[func_start + 1: def_start].strip().startswith('\'\'\'') or \
-                prompt[func_start + 1: def_start].strip().startswith('\"\"\"'):
-                def_start = prompt.rfind('def ', 0, def_start)
-            else:
-                break
-        prompt_1 = prompt[:func_start] + '\n'
-        prompt_2 = prompt[func_start:]
-        new_prompt = clip_prompt(prompt_1 + full_context, 1500 - int(len(prompt_2)/3)) + prompt_2
+        prompt_lines = prompt.splitlines(keepends=True)
+        i = 1
+        while i < len(prompt_lines) and (prompt_lines[-i].strip().startswith('#') or len(prompt_lines[-i].strip()) == 0):
+            i += 1
+        logger.info(f'Indent count: {self.indent_count}, Indent style: <{self.indent_style}>')
+        logger.info(f'Found {i} lines of comments')
+        logger.info(f'Last line: {"".join(prompt_lines[:-i])}')
+        if prompt_lines[-i].strip().endswith('"""') or prompt_lines[-i].strip().endswith("'''"):
+            new_prompt = ''.join(prompt_lines[:-i]) + prompt_lines[-i].rstrip()[:-3]
+            new_prompt += '\n' + full_context + '\n' + self.indent_style*(self.indent_count+1) + '"""\n' + ''.join(prompt_lines[-i+1:])
+        else:
+            new_prompt = ''.join(prompt_lines[:-i]) + prompt_lines[-i]
+            new_prompt += self.indent_style*(self.indent_count+1) + '"""\n'
+            new_prompt += '\n' + full_context + '\n' + self.indent_style*(self.indent_count+1) + '"""\n' + ''.join(prompt_lines[-i+1:])
+        new_prompt = clip_prompt(new_prompt, 1500)
         return new_prompt, new_context

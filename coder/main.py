@@ -4,6 +4,7 @@ from . import baseline
 from .simple import SimpleCompletion
 from .explicit import ExplicitCompletion
 from .cstSimple import CSTSimpleCompletion
+from .docstring import DocstringCompletion
 import logging
 from pathlib import Path
 
@@ -33,6 +34,8 @@ def main(project_root: str, prompt: str, mode: str,
             completion_model = CSTSimpleCompletion(project_root, model=model, location=loc)
         elif mode.startswith('explicit'):
             completion_model = ExplicitCompletion(project_root, model=model, location=loc)
+        elif mode.startswith('docstring'):
+            completion_model = DocstringCompletion(project_root, model=model, location=loc)
         else:
             raise ValueError(f'Unknown mode: {mode}')
         context, completion = completion_model.completion(completor, prompt)

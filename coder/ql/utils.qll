@@ -1,7 +1,7 @@
 import python
 
 string getQualifiedName(Function f) {
-    if f.getQualifiedName() != "" then
+    if exists(string s | s = f.getQualifiedName()) then
         result = f.getQualifiedName()
     else
         result = f.getName()
@@ -35,14 +35,14 @@ string getString(Expr a) {
 }
 
 string getDefault(Parameter p) {
-    if p.getDefault().toString() != "" then
+    if exists(Expr e | e = p.getDefault()) then
         result = "=" + getString(p.getDefault())
     else
         result = ""
 }
 
 string getParamAnnotation(Parameter p) {
-    if p.getAnnotation().toString() != "" then
+    if exists(Expr e | e = p.getAnnotation()) then
         result = ": " + getString(p.getAnnotation())
     else
         result = ""
@@ -57,7 +57,7 @@ string getParams(Function f) {
 }
 
 string getReturnAnnotation(Function f) {
-    if f.getDefinition().(FunctionExpr).getReturns().toString() != "" then
+    if exists(Expr e | e = f.getDefinition().(FunctionExpr).getReturns()) then
         result = " -> " + getString(f.getDefinition().(FunctionExpr).getReturns())
     else
         result = ""
@@ -72,7 +72,7 @@ string getFunctionHeader(Function f) {
 
 string getDocString(Function f) {
     if f.getMetrics().getDocString().getText() != "" then
-        result = " - " + f.getMetrics().getDocString().getText().regexpFind("^[^\r\n]+", _, _).trim()
+        result = " - " + f.getMetrics().getDocString().getText().trim().regexpCapture("^([^\r\n]+)", 1)
     else
         result = ""
 }

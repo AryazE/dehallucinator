@@ -80,17 +80,19 @@ def postprocess(code, indent_style='\t', indent_count=0):
 
 def get_completion_safely(model, completor, prompt):
         prompt_size = 1500
+        clipped_prompt = prompt
         while prompt_size > 0:
+            clipped_prompt = clip_prompt(clipped_prompt, prompt_size)
             try:
-                completion = completor.get_completion(model, clip_prompt(prompt, prompt_size))
+                completion = completor.get_completion(model, clipped_prompt)
                 break
             except openai.error.InvalidRequestError as e:
                 print(e)
-                prompt_size -= 100
+                prompt_size -= 10
                 continue
             except Exception as e:
                 print(e)
-                prompt_size -= 100
+                prompt_size -= 10
                 continue
         return completion
 

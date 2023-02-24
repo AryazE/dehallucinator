@@ -19,27 +19,27 @@ string memberContext(Class c) {
 }
 
 string docStringContext(Class c) {
-    if c.getDocString().getText() != "" then
-        result = c.getDocString().getText().regexpReplaceAll("\n", "<NL>") + "\n"
+    if exists(StrConst s | s = c.getDocString()) then
+        result = c.getDocString().getText().trim().regexpCapture("^([^\r\n]+)", 1) + "\n"
     else
         result = ""
 }
 
 string getHeritage(Class c) {
-    if count( |  | c.getABase()) = 0 then
+    if not exists(Expr e | e = c.getABase()) then
         result = ""
     else
         result = concat(Expr e | e = c.getABase() | getString(e), ", ")
 }
 
 string functionsContext(Class c) {
-    if count( |  | c.getAMethod()) = 0 then
+    if not exists(Function f | f = c.getAMethod()) then
         result = ""
     else
         result = "functions:\n" +
         concat(
             Function f | 
-            f = c.getAMethod() | 
+            f = c.getAMethod() and not c.getLocation().getFile().getShortName().matches("%test%") | 
             getFunctionContext(f), "\n"
         ) + "\n"
 }
