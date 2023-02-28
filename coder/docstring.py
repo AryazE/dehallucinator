@@ -1,5 +1,6 @@
 from typing import Tuple, List, Set, Dict
 import logging
+import re
 from .utils import clip_prompt, embeddings, cos_sim
 from .BaseDiCompletion import BaseDiCompletion
 
@@ -21,22 +22,45 @@ class DocstringCompletion(BaseDiCompletion):
         for i in tmp:
             for l in range(len(lines)):
                 for j in range(len(self.embeddings[i])):
+                    if j >= len(self.additional_context[i]):
+                        jj = 0
                     similarity = cos_sim(self.embeddings[i][j], line_embeddings[l])
                     if similarity > similarity_threshold:
                         found = False
                         for m in range(len(new_context)):
-                            if new_context[m][1] == self.additional_context[i][j]:
+                            if new_context[m][1] == self.additional_context[i][jj]:
                                 found = True
                                 if new_context[m][0] < similarity:
-                                    new_context[m] = (similarity, self.additional_context[i][j])
+                                    new_context[m] = (similarity, self.additional_context[i][jj])
                                 break
                         if not found:
-                            new_context.append((similarity, self.additional_context[i][j]))
+                            new_context.append((similarity, self.additional_context[i][jj]))
         return sorted(new_context, key=lambda x: x[0], reverse=True)
     
     def format_context(self, context: List[Tuple[str, float]]) -> str:
         if len(context) == 0:
             return ''
+        for i in range(len(context)):
+            tmp = context[i][1]
+            open_bracket = 0
+            ann = False
+            res = ''
+            for j in range(len(tmp)):
+                if tmp[j] == ':':
+                    ann = True
+                elif tmp[j] == '[':
+                    open_bracket += 1
+                elif tmp[j] == ']':
+                    open_bracket -= 1
+                elif tmp[j] == '-' and j+1 < len(tmp) and tmp[j+1] == '>':
+                    res += tmp[j:]
+                    break
+                elif tmp[j] ==',' and open_bracket == 0:
+                    ann = False
+                    res += tmp[j]
+                elif open_bracket == 0 and not ann:
+                    res += tmp[j]
+            context[i] = (context[i][0], res)
         context = ['Uses:'] + [i[1] for i in context]
         return self.indent_style*(self.indent_count+1) + f'\n{self.indent_style*(self.indent_count+1)}'.join(context[:5])
 

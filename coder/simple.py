@@ -21,17 +21,19 @@ class SimpleCompletion(BaseDiCompletion):
         for i in tmp:
             for l in range(len(lines)):
                 for j in range(len(self.embeddings[i])):
+                    if j >= len(self.additional_context[i]):
+                        jj = 0
                     similarity = cos_sim(self.embeddings[i][j], line_embeddings[l])
                     if similarity > similarity_threshold:
                         found = False
                         for m in range(len(new_context)):
-                            if new_context[m][1] == self.additional_context[i][j]:
+                            if new_context[m][1] == self.additional_context[i][jj]:
                                 found = True
                                 if new_context[m][0] < similarity:
-                                    new_context[m] = (similarity, self.additional_context[i][j])
+                                    new_context[m] = (similarity, self.additional_context[i][jj])
                                 break
                         if not found:
-                            new_context.append((similarity, self.additional_context[i][j]))
+                            new_context.append((similarity, self.additional_context[i][jj]))
         return [i[1] for i in sorted(new_context, key=lambda x: x[0], reverse=True)]
     
     def format_context(self, context: List[str]) -> str:

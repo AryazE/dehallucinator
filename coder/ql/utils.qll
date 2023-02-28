@@ -52,8 +52,23 @@ string getParam(Parameter p) {
     result = p.getName() + getDefault(p) + getParamAnnotation(p)
 }
 
-string getParams(Function f) {
+string getPosParams(Function f) {
     result = concat(int i |  | getParam(f.getArg(i)), ", " order by i)
+}
+
+string getKwParams(Function f) {
+    result = concat(int i |  | getParam(f.getKwonlyarg(i)), ", " order by i)
+}
+
+string getParams(Function f) {
+    if getPosParams(f) != "" and getKwParams(f) != "" then
+        result = getPosParams(f) + ", *, " + getKwParams(f)
+    else if getPosParams(f) != "" then
+        result = getPosParams(f)
+    else if getKwParams(f) != "" then
+        result = getKwParams(f)
+    else
+        result = ""
 }
 
 string getReturnAnnotation(Function f) {

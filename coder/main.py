@@ -12,7 +12,7 @@ def main(project_root: str, prompt: str, mode: str,
         model: str, file: str, sLine: int, sCol: int, 
         eLine: int, eCol: int, output: str, log: str):
     logging.basicConfig(level=logging.INFO,filename=f'benchmark/{project_root.split("/")[-1]}-{mode}{log}.log', filemode='a')
-    prompt = prompt.replace('\\n', '\n')
+    # prompt = prompt.replace('\\n', '\n')
     prompt_lines = prompt.splitlines()
     prompt = '\n'.join([l for l in prompt_lines if not (l.strip().startswith('import ') or l.strip().startswith('from '))])
     completor = Completion()

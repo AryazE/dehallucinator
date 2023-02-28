@@ -1,0 +1,29 @@
+{
+    "name": "pypiup",
+    "project_root": "GitHubProjects/pypiup",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "function": "",
+            "file": "",
+            "target": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "function": "show_details",
+            "file": "pypiup/requirements.py",
+            "target": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 44,
+                    "start_column": 8,
+                    "end_line": 46,
+                    "end_column": 41
+                }
+            ]
+        }
+    ]
+}

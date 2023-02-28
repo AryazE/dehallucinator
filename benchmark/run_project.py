@@ -2,6 +2,7 @@ from pathlib import Path
 import argparse
 import json
 import logging
+import traceback
 import shutil
 from prepare_project import prepare
 from run_completion import run_completion
@@ -63,3 +64,5 @@ if __name__ == '__main__':
             print(new_res)
         except Exception as e:
             print(e)
+            print(traceback.format_exc())
+            

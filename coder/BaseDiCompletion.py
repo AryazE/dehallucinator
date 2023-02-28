@@ -35,7 +35,7 @@ class BaseDiCompletion:
         
         self.embeddings = dict()
         for k, v in self.additional_context.items():
-            self.embeddings[k] = embeddings(v)
+            self.embeddings[k] = embeddings(v + [k])
         
         self.artifacts = self.project_root/'..'/'..'/'artifacts.md'
     
