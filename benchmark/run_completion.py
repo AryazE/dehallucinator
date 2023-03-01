@@ -3,6 +3,8 @@ from pathlib import Path
 import logging
 import json
 from distutils import dir_util
+from pygments.lexers.python import PythonLexer
+from crystalbleu import corpus_bleu
 # from autoimport import fix_code
 from coder.utils import clip_prompt, DELIMITER
 from coder.main import main
@@ -10,8 +12,18 @@ from coder.main import main
 PROMPT_LIMIT = 1500
 logger = logging.getLogger(__name__)
 
-def similarity_evaluation(ground_truth, completion):
-    return 0
+with open(Path(__file__).resolve().parent/'python_top_500.json') as f:
+    content = json.load(f)
+    trivially_shared_ngrams = {tuple(i[0]): i[1] for i in content}
+
+def similarity_evaluation(ground_truth, completions):
+    result = 0
+    for i in range(len(completions)):
+        tmp_result = corpus_bleu([[ground_truth]], [completions[i]], ignoring=trivially_shared_ngrams)
+        if tmp_result > result:
+            result = tmp_result
+            best = i
+    return result, best
 
 def run_completion(model, config, id, mode, log_suffix=''):
     global PROMPT_LIMIT
@@ -37,8 +49,8 @@ def run_completion(model, config, id, mode, log_suffix=''):
     with open(project_root/f'completion.out') as f:
         completions = f.read().split(DELIMITER)
 
-    similarity_results = similarity_evaluation(ground_truth, completions)
-    print(f'Best similarity: {similarity_results}')
+    similarity, best = similarity_evaluation(ground_truth, completions)
+    print(f'Best similarity: {similarity} -> {best}')
     
     for i in range(len(completions)):
         final_code = splited_code[0] + completions[i] + '\n' + splited_code[1]
