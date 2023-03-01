@@ -62,6 +62,8 @@ if __name__ == '__main__':
                 results.append(new_res)
             with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:
                 json.dump(results, f)
+            with open(here/'experiment'/config['name']/args.mode/f'temp{i["id"]}'/'best.md', 'a') as f:
+                f.write(f'{new_res} -> {best}')
             print(f'{new_res} -> {best}')
         except Exception as e:
             print(e)
