@@ -1,6 +1,7 @@
 import argparse
 from .backend import Completion
 from . import baseline
+from .utils import DELIMITER
 from .simple import SimpleCompletion
 from .explicit import ExplicitCompletion
 from .cstSimple import CSTSimpleCompletion
@@ -10,16 +11,16 @@ from pathlib import Path
 
 def main(project_root: str, prompt: str, mode: str, 
         model: str, file: str, sLine: int, sCol: int, 
-        eLine: int, eCol: int, output: str, log: str):
+        eLine: int, eCol: int, output: str, log: str, k=4):
     logging.basicConfig(level=logging.INFO,filename=f'benchmark/{project_root.split("/")[-1]}-{mode}{log}.log', filemode='a')
     # prompt = prompt.replace('\\n', '\n')
     prompt_lines = prompt.splitlines()
     prompt = '\n'.join([l for l in prompt_lines if not (l.strip().startswith('import ') or l.strip().startswith('from '))])
     completor = Completion()
     if mode == 'baseline':
-        context, completion = baseline.completion(model, completor, prompt)
+        context, completions = baseline.completion(model, completor, prompt, k=k)
         with open(str(Path(project_root)/'..'/'..'/'artifact.md'), 'w') as f:
-            f.write(f'prompt:\n```python\n{prompt}\n```\ncompletion:\n```python\n{completion}\n```\n')
+            f.write(f'prompt:\n```python\n{prompt}\n```\ncompletion:\n```python\n{DELIMITER.join(completions)}\n```\n')
     else:
         loc = {
             'file': file,
@@ -38,9 +39,9 @@ def main(project_root: str, prompt: str, mode: str,
             completion_model = DocstringCompletion(project_root, model=model, location=loc)
         else:
             raise ValueError(f'Unknown mode: {mode}')
-        context, completion = completion_model.completion(completor, prompt)
+        context, completions = completion_model.completion(completor, prompt, k=k)
     with open(output, 'w') as f:
-        f.write(completion)
+        f.write(DELIMITER.join(completions))
     with open(output.split('.')[0] + '.context', 'w') as f:
         f.write(context)
 

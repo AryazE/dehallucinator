@@ -1,7 +1,8 @@
+from typing import Dict
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
-def read_test_results(test_res_path: str, id: int):
+def read_test_results(test_res_path: str, id: int) -> Dict[str, int]:
     p = Path(test_res_path)
     results = dict()
     if p.exists():

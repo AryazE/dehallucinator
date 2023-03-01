@@ -28,7 +28,7 @@ def prepare(config, mode, ids=[], noTests=False):
         dir_util.remove_tree(str(temp_dir/config['tests_path']))
         orig_results = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": 0}
         if i['id'] == 0 and not noTests:
-            orig_results = run_tests(config, 0, mode, env_session.interpreter.executable)
+            orig_results, best = run_tests(config, 0, mode, env_session.interpreter.executable)
         if len(i['file']) == 0:
             continue
         # exclude = []
@@ -62,7 +62,7 @@ def prepare(config, mode, ids=[], noTests=False):
             with open(temp_dir/i["file"], 'w') as f:
                 f.writelines(new_code)
             
-            test_results = run_tests(config, i['id'], mode, env_session.interpreter.executable)
+            test_results, best = run_tests(config, i['id'], mode, env_session.interpreter.executable)
             try:
                 with open(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'checkTest.txt'), 'r') as f:
                     content = f.read()

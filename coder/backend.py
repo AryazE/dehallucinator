@@ -1,3 +1,4 @@
+from typing import List
 import requests
 import openai
 from dotenv import dotenv_values
@@ -12,7 +13,7 @@ class Completion:
     def __init__(self):
         self.last_time = time.monotonic()
 
-    def get_completion(self, model: str, context: str, **kwargs) -> str:
+    def get_completion(self, model: str, context: str, **kwargs) -> List[str]:
         """Get code completion from the model"""
         if model == "CodeGen":
             url = API_URL + "/codegen"
@@ -25,20 +26,29 @@ class Completion:
             response = requests.post(url, data=data)
             return response.text
         elif model == "Codex":
+            if 'k' in kwargs:
+                k = kwargs['k']
+                del kwargs['k']
+                temperature = 0.2
+            else:
+                k = 1
+                temperature = 0
             params = {
                 'engine': 'code-cushman-001',
                 'prompt': context,
-                'temperature': 0,
+                'n': k,
+                'temperature': temperature,
                 'max_tokens': 500,
                 'stop': ['\n\n\n', 'def ', 'async def ', 'class ']
             }
             params.update(kwargs)
             now = time.monotonic()
-            if now - self.last_time < 6: # This is done to prevent going over the API rate limit
-                time.sleep(6 - (now - self.last_time))
+            delay = 2*k + 3
+            if now - self.last_time < delay: # This is done to prevent going over the API rate limit
+                time.sleep(delay - (now - self.last_time))
             while True:
                 try:
-                    res = openai.Completion.create(**params).choices[0].text
+                    res = [i.text for i in openai.Completion.create(**params).choices]
                     break
                 except Exception as e:
                     print(e)

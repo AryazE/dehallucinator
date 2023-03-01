@@ -2,12 +2,16 @@ import argparse
 from pathlib import Path
 import logging
 import json
+from distutils import dir_util
 # from autoimport import fix_code
-from coder.utils import clip_prompt
+from coder.utils import clip_prompt, DELIMITER
 from coder.main import main
 
 PROMPT_LIMIT = 1500
 logger = logging.getLogger(__name__)
+
+def similarity_evaluation(ground_truth, completion):
+    return 0
 
 def run_completion(model, config, id, mode, log_suffix=''):
     global PROMPT_LIMIT
@@ -19,8 +23,9 @@ def run_completion(model, config, id, mode, log_suffix=''):
     prompt = clip_prompt(splited_code[0], PROMPT_LIMIT)
     with open(here/config['project_root']/config["evaluations"][id]["file"], 'r') as f:
         orig_code = f.read()
+    ground_truth = orig_code[len(splited_code[0]):-len(splited_code[1])]
     with open(here/'experiment'/config["name"]/mode/f'temp{id}'/'gt.md', 'w') as f:
-        f.write(f'prompt:\n```python\n{prompt}\n```\nground truth:\n```python\n{orig_code[len(splited_code[0]):-len(splited_code[1])]}\n```\n')
+        f.write(f'prompt:\n```python\n{prompt}\n```\nground truth:\n```python\n{ground_truth}\n```\n')
     logger.info(f'Running completion for {config["name"]} {id} with prompt: \n{prompt}')
     main(str(project_root), prompt, mode, model, 
         file=config["project_root"] + '/' + config["evaluations"][id]["file"],
@@ -30,11 +35,18 @@ def run_completion(model, config, id, mode, log_suffix=''):
         eCol=int(config["evaluations"][id]["remove"][0]["end_column"]),
         output=str(project_root/f'completion.out'), log=log_suffix)
     with open(project_root/f'completion.out') as f:
-        completion = f.read()
-    final_code = splited_code[0] + completion + '\n' + splited_code[1]
-    fixed_code = final_code #fix_code(final_code)
-    with open(project_root/config["evaluations"][id]["file"], 'w') as f:
-        f.write(fixed_code)
+        completions = f.read().split(DELIMITER)
+
+    similarity_results = similarity_evaluation(ground_truth, completions)
+    print(f'Best similarity: {similarity_results}')
+    
+    for i in range(len(completions)):
+        final_code = splited_code[0] + completions[i] + '\n' + splited_code[1]
+        fixed_code = final_code #fix_code(final_code)
+        dir_util.copy_tree(str(here/'experiment'/config["name"]/mode/f'temp{id}'), str(here/'experiment'/config["name"]/mode/f'temp{id}-{i}'))
+        with open(here/'experiment'/config["name"]/mode/f'temp{id}-{i}'/config['project_root']/config["evaluations"][id]["file"], 'w') as f:
+            f.write(fixed_code)
+        
     with open(project_root/f'completion.context') as f:
         context = f.read()
     best_context = 0

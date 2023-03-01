@@ -35,6 +35,8 @@ class ExplicitCompletion(BaseDiCompletion):
                 for j in range(len(self.embeddings[i])):
                     if j >= len(self.additional_context[i]):
                         jj = 0
+                    else:
+                        jj = j
                     similarity = cos_sim(self.embeddings[i][j], line_embeddings[l])
                     if similarity > similarity_threshold:
                         found = False

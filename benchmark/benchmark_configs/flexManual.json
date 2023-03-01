@@ -1,0 +1,29 @@
+{
+    "name": "flex",
+    "project_root": "GitHubProjects/flex",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "function": "",
+            "file": "",
+            "target": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "function": "validate",
+            "file": "flex/core.py",
+            "target": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 109,
+                    "start_column": 4,
+                    "end_line": 111,
+                    "end_column": 57
+                }
+            ]
+        }
+    ]
+}

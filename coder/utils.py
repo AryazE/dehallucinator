@@ -78,13 +78,13 @@ def postprocess(code, indent_style='\t', indent_count=0):
             lines.pop()
     return ''
 
-def get_completion_safely(model, completor, prompt):
+def get_completion_safely(model, completor, prompt, k=4):
         prompt_size = 1500
         clipped_prompt = prompt
         while prompt_size > 0:
             clipped_prompt = clip_prompt(clipped_prompt, prompt_size)
             try:
-                completion = completor.get_completion(model, clipped_prompt)
+                completion = completor.get_completion(model, clipped_prompt, k=k)
                 break
             except openai.error.InvalidRequestError as e:
                 print(e)
@@ -119,3 +119,5 @@ def merge(project_root: str, file: str) -> str:
         if '/'.join(p_r[-i:]) == '/'.join(f[:i]):
             max_common = i
     return '/'.join(p_r[:-max_common] + f)
+
+DELIMITER = '--------=======DiCoder=======--------'

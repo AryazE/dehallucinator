@@ -52,16 +52,17 @@ if __name__ == '__main__':
             if best_context > -1:
                 logger.info(f'best_context: {best_context}, possible_context: {possible_context}, given_context: {given_context}')
             if not args.noTests:
-                new_res = run_tests(config, i["id"], args.mode, executable)
+                new_res, best = run_tests(config, i["id"], args.mode, executable)
             else:
                 new_res = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": i["id"]}
+                best = -1
             with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'r') as f:
                 results = json.load(f)
             if new_res['id'] not in [j['id'] for j in results]:
                 results.append(new_res)
             with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:
                 json.dump(results, f)
-            print(new_res)
+            print(f'{new_res} -> {best}')
         except Exception as e:
             print(e)
             print(traceback.format_exc())
