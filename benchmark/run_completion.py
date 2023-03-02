@@ -52,7 +52,7 @@ def run_completion(model, config, id, mode, log_suffix=''):
     similarity, best = similarity_evaluation(ground_truth, completions)
     print(f'Best similarity: {similarity} -> {best}')
     with open(here/'experiment'/config["name"]/mode/f'temp{id}'/'best.md', 'w') as f:
-        f.write(f'Similarity {similarity} from completion number {best}\nprompt:\n```python\n{prompt}\n```\nground truth:\n```python\n{ground_truth}\n```\ncompletion:\n```python\n{completions[best]}\n```\n')
+        f.write(f'Similarity {similarity} from completion number {best}  \nprompt:\n```python\n{prompt}\n```\nground truth:\n```python\n{ground_truth}\n```\ncompletion:\n```python\n{completions[best]}\n```\n')
     
     for i in range(len(completions)):
         final_code = splited_code[0] + completions[i] + '\n' + splited_code[1]
