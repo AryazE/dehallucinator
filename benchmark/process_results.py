@@ -41,6 +41,8 @@ if __name__ == '__main__':
                 with open(here/args.project/mode/f'temp{id}'/'best.md') as f:
                     similarity = float(f.read().split(' from ')[0][11:])
                 report[id][-1] = (report[id][-1], similarity)
+            elif id > 0:
+                report[id][-1] = (report[id][-1], 0)
         final.append(final_row)
         if id > 0 and final_row != final[0]:
             print(f'Bad completion on {id}: {final_row}')

@@ -44,8 +44,12 @@ string functionsContext(Class c) {
         ) + "\n"
 }
 
+string classHeader(Class c) {
+    result = "class " + c.getQualifiedName() + "(" + getHeritage(c) + "):"
+}
+
 string classContext(Class c) {
-    result = "class " + c.getQualifiedName() + "(" + getHeritage(c) + "): " +
+    result = classHeader(c) +
         docStringContext(c) +
         functionsContext(c) +
         memberContext(c)
@@ -60,4 +64,5 @@ select c.getName() as name,
     cd.getLocation().getStartColumn() as start_column,
     cd.getLocation().getEndLine() as end_line,
     cd.getLocation().getEndColumn() as end_column,
-    classContext(c) as context
+    classHeader(c) as header,
+    classContext(c) as docstring

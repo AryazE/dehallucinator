@@ -16,7 +16,17 @@ string tupleToString(Tuple t) {
 }
 
 string getString(Expr a) {
-    if a instanceof ImmutableLiteral then
+    if a instanceof BooleanLiteral then
+        result = a.(BooleanLiteral).toString()
+    else if a instanceof IntegerLiteral then
+        result = a.(IntegerLiteral).toString()
+    else if a instanceof FloatLiteral then
+        result = a.(FloatLiteral).toString()
+    else if a instanceof ImaginaryLiteral then
+        result = a.(ImaginaryLiteral).toString()
+    else if a instanceof None then
+        result = a.(None).toString()
+    else if a instanceof ImmutableLiteral then
         result = a.(ImmutableLiteral).getLiteralValue().toString()
     else if a instanceof Name then
         result = a.(Name).toString()
@@ -87,7 +97,7 @@ string getFunctionHeader(Function f) {
 
 string getDocString(Function f) {
     if f.getMetrics().getDocString().getText() != "" then
-        result = " - " + f.getMetrics().getDocString().getText().trim().regexpCapture("^([^\r\n]+)", 1)
+        result = f.getMetrics().getDocString().getText().trim().regexpReplaceAll("\\s+", " ")
     else
         result = ""
 }

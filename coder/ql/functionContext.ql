@@ -10,4 +10,5 @@ select f.getName() as name,
     fd.getLocation().getStartColumn() as start_column,
     fd.getLocation().getEndLine() as end_line,
     fd.getLocation().getEndColumn() as end_column, 
-    getFunctionContext(f) as context
+    getFunctionHeader(f) as header,
+    getDocString(f) as docstring

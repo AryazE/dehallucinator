@@ -1,0 +1,44 @@
+{
+    "name": "eth-mimblewimble",
+    "project_root": "GitHubProjects/eth-mimblewimble",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "function": "",
+            "file": "",
+            "target": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "function": "new",
+            "file": "py934/mimblewimble.py",
+            "target": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 70,
+                    "start_column": 8,
+                    "end_line": 72,
+                    "end_column": 19
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "function": "zk_proof",
+            "file": "py934/mmr.py",
+            "target": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 86,
+                    "start_column": 8,
+                    "end_line": 88,
+                    "end_column": 24
+                }
+            ]
+        }
+    ]
+}
