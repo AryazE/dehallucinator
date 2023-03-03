@@ -43,6 +43,9 @@ if __name__ == '__main__':
     files_to_ignore.add(project_path/'setup.py')
     files_to_ignore.add(project_path/'__init__.py')
     files_to_ignore.update(project_path.glob('**/__init__.py'))
+    files_to_ignore.update(project_path.glob('.*/**/*.py'))
+    files_to_ignore.update(project_path.glob('docs*/**/*.py'))
+    files_to_ignore.update(project_path.glob('examples*/**/*.py'))
     python_files = [f for f in project_path.glob('**/*.py') if f not in files_to_ignore]
     evaluations = [{
         'id': 0,
@@ -75,5 +78,5 @@ if __name__ == '__main__':
         'tests_path': 'tests',
         'evaluations': evaluations
     }
-    with open(Path(__file__).parent/f'{project_name}.json', 'w') as f:
+    with open(Path(__file__).parent/'benchmark_configs'/f'{project_name}.json', 'w') as f:
         json.dump(config, f, indent=4)
