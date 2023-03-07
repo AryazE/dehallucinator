@@ -83,11 +83,15 @@ def prepare(config, mode, ids=[], noTests=False):
         database = temp_dir/'..'/'..'/'codeqldb'
         working_dir = os.getcwd()
         os.chdir(str(temp_dir))
-        subprocess.run(['codeql', 'database', 'create',
-                        '--language=python',
-                        '--overwrite',
-                        '--threads=0',
-                        '--', str(database)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        try:
+            subprocess.run(['codeql', 'database', 'create',
+                            '--language=python',
+                            '--overwrite',
+                            '--threads=0',
+                            '--', str(database)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=600)
+        except subprocess.TimeoutExpired:
+            print('Timeout at 10 minutes: project is probably too big')
+            raise
         os.chdir(working_dir)
         run_query(database, 'functionContext.ql', 'functionRes.csv', str(database/'..'))#, str(database/'..'/'exclude.csv'))
         run_query(database, 'classContext.ql', 'classRes.csv', str(database/'..'))#, str(database/'..'/'exclude.csv'))

@@ -47,7 +47,11 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Tu
             str(temp_dir/'results.xml'),
         ]
         pytest_command.append(str(temp_dir/config['project_root']/config['tests_path']))
-        test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True)
+        try:
+            test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
+        except subprocess.TimeoutExpired:
+            print('Timeout at 10 minutes: Tests take too long to run.')
+            (temp_dir/'results.xml').unlink(missing_ok=True)
         if test_res.returncode != 0:
             print(test_res.stderr.decode('utf-8'))
         uninstall_res = subprocess.run([executable, '-m', 'pip', 'uninstall', '-y', config['name']], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
