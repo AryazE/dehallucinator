@@ -21,11 +21,16 @@ if __name__ == '__main__':
     args = parser.parse_args()
     with open(args.config, 'r') as f:
         config = json.load(f)
+    ids = args.ids
+    if len(ids) == 0 and args.fromId > 0:
+        for i in config['evaluations']:
+            if i['id'] >= args.fromId:
+                ids.append(i['id'])
     logging.basicConfig(level=logging.INFO,filename=f'benchmark/logs/{config["project_root"].split("/")[-1]}-{args.mode}{args.log}.log', filemode='a')
     logger = logging.getLogger(__name__)
     here = Path(__file__).resolve().parent
-    if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in args.ids]):
-        executable, orig_results = prepare(config, 'base', args.ids, args.noTests)
+    if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in ids]):
+        executable, orig_results = prepare(config, 'base', ids, args.noTests)
     else:
         if args.noTests:
             orig_results = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": 0}
@@ -37,12 +42,12 @@ if __name__ == '__main__':
         shutil.rmtree(str(here/'experiment'/config['name']/args.mode))
     shutil.copytree(str(here/'experiment'/config['name']/'base'), str(here/'experiment'/config['name']/args.mode), ignore=shutil.ignore_patterns('codeqldb'))
     print(f'original: {orig_results}')
-    if args.fromId == 0 and len(args.ids) == 0:
+    if len(ids) == 0:
         with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:
             json.dump([orig_results], f)
     results = []
     for i in config["evaluations"]:
-        if (len(i['file']) == 0) or (args.fromId > i['id']) or (len(args.ids) > 0 and i['id'] not in args.ids):
+        if (len(i['file']) == 0) or (len(ids) > 0 and i['id'] not in ids):
             continue
         if not (here/'experiment'/config['name']/args.mode/f'temp{i["id"]}').exists():
             continue
