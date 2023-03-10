@@ -18,8 +18,11 @@ with open(Path(__file__).resolve().parent/'python_top_500.json') as f:
 
 def similarity_evaluation(ground_truth, completions):
     result = 0
+    best = 0
+    tok_ground_truth = [t[1] for t in PythonLexer().get_tokens(ground_truth)]
     for i in range(len(completions)):
-        tmp_result = corpus_bleu([[ground_truth]], [completions[i]], ignoring=trivially_shared_ngrams)
+        tokenized = [t[1] for t in PythonLexer().get_tokens(completions[i])]
+        tmp_result = corpus_bleu([[tok_ground_truth]], [tokenized], ignoring=trivially_shared_ngrams)
         if tmp_result > result:
             result = tmp_result
             best = i
