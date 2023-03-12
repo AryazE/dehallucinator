@@ -2,6 +2,7 @@ import argparse
 from pathlib import Path
 import logging
 import json
+import traceback
 import libcst as cst
 import libcst.matchers as matchers
 from distutils import dir_util
@@ -33,21 +34,29 @@ def similarity_evaluation(ground_truth, completions):
 def as_module(code: str) -> str:
     lines = code.splitlines(keepends=True)
     if len(lines) <= 1:
-        return f'def foo():\n   {code}'
+        return code
     ind_style, ind_count = get_indentation(code)
     if ind_count < 0:
         ind_count = 0
-    if ind_count == 0:
-        return f'def foo():\n{ind_style}{code}'
-    return f'def foo():\n{ind_style + lines[0]}{ind_style}{ind_style.join([l[len(ind_style)*ind_count:] for l in lines[1:]])}'
+    return lines[0] + ''.join([l[len(ind_style)*(ind_count+1):] for l in lines[1:]])
 
 def API_similarity(ground_truth, completions):
     result = 0
     best = 0
-    gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
+    try:
+        gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
+    except Exception as e:
+        gt_apis = []
+        print(e)
+        print(traceback.format_exc())
     for i in range(len(completions)):
         tmp_result = 0
-        apis = matchers.findall(cst.parse_module(as_module(completions[i])), matchers.Call() | matchers.Attribute())
+        try:
+            apis = matchers.findall(cst.parse_module(as_module(completions[i])), matchers.Call() | matchers.Attribute())
+        except Exception as e:
+            apis = []
+            print(e)
+            print(traceback.format_exc())
         for api in apis:
             for gt_api in gt_apis:
                 if equal_apis(api, gt_api): #api.deep_equals(gt_api):

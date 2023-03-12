@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 import argparse
 import json
 import logging
@@ -26,6 +27,7 @@ if __name__ == '__main__':
         for i in config['evaluations']:
             if i['id'] >= args.fromId:
                 ids.append(i['id'])
+    os.environ['TOKENIZERS_PARALLELISM'] = 'false'
     logging.basicConfig(level=logging.INFO,filename=f'benchmark/logs/{config["project_root"].split("/")[-1]}-{args.mode}{args.log}.log', filemode='a')
     logger = logging.getLogger(__name__)
     here = Path(__file__).resolve().parent
