@@ -29,7 +29,10 @@ class Completion:
             if 'k' in kwargs:
                 k = kwargs['k']
                 del kwargs['k']
-                temperature = 0.2
+                if k > 1:
+                    temperature = 0.2
+                else:
+                    temperature = 0
             else:
                 k = 1
                 temperature = 0

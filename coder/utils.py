@@ -5,6 +5,8 @@ import ast
 import re
 from numpy import dot
 from numpy.linalg import norm
+import libcst as cst
+import libcst.matchers as matchers
 import openai
 from sentence_transformers import SentenceTransformer
 from transformers import GPT2TokenizerFast
@@ -121,3 +123,26 @@ def merge(project_root: str, file: str) -> str:
     return '/'.join(p_r[:-max_common] + f)
 
 DELIMITER = '--------=======DiCoder=======--------'
+
+def equal_apis(a: cst.CSTNode, b: cst.CSTNode) -> bool:
+    if (matchers.matches(a, matchers.Call()) and matchers.matches(b, matchers.Call())):
+        if (matchers.matches(a.func, matchers.Attribute()) and matchers.matches(b.func, matchers.Attribute())):
+            result = a.func.attr.deep_equals(b.func.attr)
+        elif (matchers.matches(a.func, matchers.Name()) and matchers.matches(b.func, matchers.Name())):
+            result = a.func.value == b.func.value
+        else:
+            result = a.func.deep_equals(b.func)
+        if not result:
+            return False
+        if len(a.args) != len(b.args):
+            return False
+        comparison = lambda x: x.keyword.value if x.keyword is not None else ''
+        a_args = sorted(a.args, key=comparison)
+        b_args = sorted(b.args, key=comparison)
+        for i in range(len(a_args)):
+            if type(a_args[i].value) is not type(b_args[i].value):
+                return False
+        return True
+    elif (matchers.matches(a, matchers.Attribute()) and matchers.matches(b, matchers.Attribute())):
+        return a.attr.deep_equals(b.attr)
+    return False

@@ -8,7 +8,7 @@ from distutils import dir_util
 from pygments.lexers.python import PythonLexer
 from crystalbleu import corpus_bleu
 # from autoimport import fix_code
-from coder.utils import clip_prompt, DELIMITER, get_indentation
+from coder.utils import clip_prompt, DELIMITER, get_indentation, equal_apis
 from coder.main import main
 
 PROMPT_LIMIT = 1500
@@ -50,7 +50,7 @@ def API_similarity(ground_truth, completions):
         apis = matchers.findall(cst.parse_module(as_module(completions[i])), matchers.Call() | matchers.Attribute())
         for api in apis:
             for gt_api in gt_apis:
-                if api.deep_equals(gt_api):
+                if equal_apis(api, gt_api): #api.deep_equals(gt_api):
                     tmp_result += 1
         if tmp_result == 0:
             f1 = 0
