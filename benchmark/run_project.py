@@ -53,9 +53,10 @@ if __name__ == '__main__':
             continue
         print(f'Running {i["id"]}')
         try:
-            best_context, possible_context, given_context = run_completion(args.model, config, i["id"], args.mode, args.log)
-            if best_context > -1:
-                logger.info(f'best_context: {best_context}, possible_context: {possible_context}, given_context: {given_context}')
+            # best_context, possible_context, given_context = run_completion(args.model, config, i["id"], args.mode, args.log)
+            completions = run_completion(args.model, config, i["id"], args.mode, args.log)
+            # if best_context > -1:
+            #     logger.info(f'best_context: {best_context}, possible_context: {possible_context}, given_context: {given_context}')
             if not args.noTests:
                 new_res, best = run_tests(config, i["id"], args.mode, executable)
             else:
@@ -68,7 +69,7 @@ if __name__ == '__main__':
             with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:
                 json.dump(results, f)
             with open(here/'experiment'/config['name']/args.mode/f'temp{i["id"]}'/'best.md', 'a') as f:
-                f.write(f'{new_res} -> {best}')
+                f.write(f'best test:  \n```python\n{completions[int(best)]}\n```\n')
             print(f'{new_res} -> {best}')
         except Exception as e:
             print(e)

@@ -39,10 +39,12 @@ if __name__ == '__main__':
                     report[id].append(final_row[-1][3] - final[0][len(final_row)-1][3])
             if (here/args.project/mode/f'temp{id}'/'best.md').exists():
                 with open(here/args.project/mode/f'temp{id}'/'best.md') as f:
-                    similarity = float(f.read().split(' from ')[0][11:])
-                report[id][-1] = (report[id][-1], similarity)
+                    lines = f.readlines()
+                ngram_similarity = float(lines[0].split(' from ')[0][len('N-gram similarity '):])
+                api_similarity = float(lines[1].split(' from ')[0][len('API similarity '):])
+                report[id][-1] = (report[id][-1], ngram_similarity, api_similarity)
             elif id > 0:
-                report[id][-1] = (report[id][-1], 0)
+                report[id][-1] = (report[id][-1], 0, 0)
         final.append(final_row)
         if id > 0 and final_row != final[0]:
             print(f'Bad completion on {id}: {final_row}')
@@ -64,11 +66,12 @@ if __name__ == '__main__':
                 except FileNotFoundError:
                     shutil.copy(str(here/args.project/mode/f'temp{k}'/'artifacts.md'), str(here/args.output/f'{mode}-{k}.md'))
     
+    headers = ['Test results', 'N-gram similarity', 'API similarity']
     with open(here/args.output/'README.md', 'w') as f:
-        f.write('| id | ' + ' | '.join([args.modes[int(i/2)] for i in range(2*len(args.modes))]) + ' | ground truth ' + ' |\n')
-        f.write('| --- | ' + ' | '.join(['---'] * (2*len(args.modes) + 1)) + ' |\n')
+        f.write('| id | ' + ' | '.join([args.modes[int(i/3)] + headers[i%3] for i in range(3*len(args.modes))]) + ' | ground truth ' + ' |\n')
+        f.write('| --- | ' + ' | '.join(['---'] * (3*len(args.modes) + 1)) + ' |\n')
         for k, v in report.items():
-            f.write(f'| {k} | ' + ' | '.join([f'[{v[x][0]}]({args.modes[x]}-{k}.md) | [{v[x][1]:.2f}](best-{args.modes[x]}-{k}.md)' for x in range(len(v))]) + f' | [0](gt-{k}.md)' + ' |\n')
+            f.write(f'| {k} | ' + ' | '.join([f'[{v[x][0]}]({args.modes[x]}-{k}.md) | [{v[x][1]:.2f}](best-{args.modes[x]}-{k}.md) | [{v[x][2]:.2f}](best-{args.modes[x]}-{k}.md)' for x in range(len(v))]) + f' | [0](gt-{k}.md)' + ' |\n')
 
     try:
         from grip import serve

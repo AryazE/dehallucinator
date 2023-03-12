@@ -2,11 +2,13 @@ import argparse
 from pathlib import Path
 import logging
 import json
+import libcst as cst
+import libcst.matchers as matchers
 from distutils import dir_util
 from pygments.lexers.python import PythonLexer
 from crystalbleu import corpus_bleu
 # from autoimport import fix_code
-from coder.utils import clip_prompt, DELIMITER
+from coder.utils import clip_prompt, DELIMITER, get_indentation
 from coder.main import main
 
 PROMPT_LIMIT = 1500
@@ -25,6 +27,39 @@ def similarity_evaluation(ground_truth, completions):
         tmp_result = corpus_bleu([[tok_ground_truth]], [tokenized], ignoring=trivially_shared_ngrams)
         if tmp_result > result:
             result = tmp_result
+            best = i
+    return result, best
+
+def as_module(code: str) -> str:
+    lines = code.splitlines(keepends=True)
+    if len(lines) <= 1:
+        return f'def foo():\n   {code}'
+    ind_style, ind_count = get_indentation(code)
+    if ind_count < 0:
+        ind_count = 0
+    if ind_count == 0:
+        return f'def foo():\n{ind_style}{code}'
+    return f'def foo():\n{ind_style + lines[0]}{ind_style}{ind_style.join([l[len(ind_style)*ind_count:] for l in lines[1:]])}'
+
+def API_similarity(ground_truth, completions):
+    result = 0
+    best = 0
+    gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
+    for i in range(len(completions)):
+        tmp_result = 0
+        apis = matchers.findall(cst.parse_module(as_module(completions[i])), matchers.Call() | matchers.Attribute())
+        for api in apis:
+            for gt_api in gt_apis:
+                if api.deep_equals(gt_api):
+                    tmp_result += 1
+        if tmp_result == 0:
+            f1 = 0
+        else:
+            recall = tmp_result / len(gt_apis)
+            precision = tmp_result / len(apis)
+            f1 = 2 * recall * precision / (recall + precision)
+        if f1 > result:
+            result = f1
             best = i
     return result, best
 
@@ -52,10 +87,16 @@ def run_completion(model, config, id, mode, log_suffix=''):
     with open(project_root/f'completion.out') as f:
         completions = f.read().split(DELIMITER)
 
-    similarity, best = similarity_evaluation(ground_truth, completions)
-    print(f'Best similarity: {similarity} -> {best}')
+    token_similarity, token_best = similarity_evaluation(ground_truth, completions)
+    api_similarity, api_best = API_similarity(ground_truth, completions)
+    print(f'Best token similarity: {token_similarity} -> {token_best}')
     with open(here/'experiment'/config["name"]/mode/f'temp{id}'/'best.md', 'w') as f:
-        f.write(f'Similarity {similarity} from completion number {best}  \nprompt:\n```python\n{prompt}\n```\nground truth:\n```python\n{ground_truth}\n```\ncompletion:\n```python\n{completions[best]}\n```\n')
+        f.write(f'N-gram similarity {token_similarity} from completion number {token_best}  \n'
+                f'API similarity {api_similarity} from completion number {api_best}  \n'
+                f'prompt:\n```python\n{prompt}\n```\n'
+                f'ground truth:\n```python\n{ground_truth}\n```\n'
+                f'best n-gram:\n```python\n{completions[token_best]}\n```\n'
+                f'best API:\n```python\n{completions[api_best]}\n```\n')
     
     for i in range(len(completions)):
         final_code = splited_code[0] + completions[i] + '\n' + splited_code[1]
@@ -63,27 +104,27 @@ def run_completion(model, config, id, mode, log_suffix=''):
         dir_util.copy_tree(str(here/'experiment'/config["name"]/mode/f'temp{id}'), str(here/'experiment'/config["name"]/mode/f'temp{id}-{i}'))
         with open(here/'experiment'/config["name"]/mode/f'temp{id}-{i}'/config['project_root']/config["evaluations"][id]["file"], 'w') as f:
             f.write(fixed_code)
-        
-    with open(project_root/f'completion.context') as f:
-        context = f.read()
-    best_context = 0
-    possible_context = 0
-    if 'best_context' in config["evaluations"][id] or 'possible_context' in config["evaluations"][id]:
-        for l in context.splitlines():
-            best_temp = 0
-            for c in config["evaluations"][id]["best_context"]:
-                if c in l and len(c) > best_temp:
-                    best_temp = len(c)
-            if best_temp > 0:
-                best_context += 1
-            best_temp = 0
-            for c in config["evaluations"][id]["possible_context"]:
-                if c in l and len(c) > best_temp:
-                    best_temp = len(c)
-            if best_temp > 0:
-                possible_context += 1
-        return best_context, possible_context, len(context.splitlines())
-    return -1, -1, -1
+    return completions
+    # with open(project_root/f'completion.context') as f:
+    #     context = f.read()
+    # best_context = 0
+    # possible_context = 0
+    # if 'best_context' in config["evaluations"][id] or 'possible_context' in config["evaluations"][id]:
+    #     for l in context.splitlines():
+    #         best_temp = 0
+    #         for c in config["evaluations"][id]["best_context"]:
+    #             if c in l and len(c) > best_temp:
+    #                 best_temp = len(c)
+    #         if best_temp > 0:
+    #             best_context += 1
+    #         best_temp = 0
+    #         for c in config["evaluations"][id]["possible_context"]:
+    #             if c in l and len(c) > best_temp:
+    #                 best_temp = len(c)
+    #         if best_temp > 0:
+    #             possible_context += 1
+    #     return best_context, possible_context, len(context.splitlines())
+    # return -1, -1, -1
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
