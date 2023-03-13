@@ -9,7 +9,7 @@ from distutils import dir_util
 from pygments.lexers.python import PythonLexer
 from crystalbleu import corpus_bleu
 # from autoimport import fix_code
-from coder.utils import clip_prompt, DELIMITER, get_indentation, equal_apis
+from coder.utils import clip_prompt, DELIMITER, dedent, equal_apis
 from coder.main import main
 
 PROMPT_LIMIT = 1500
@@ -35,10 +35,7 @@ def as_module(code: str) -> str:
     lines = code.splitlines(keepends=True)
     if len(lines) <= 1:
         return code
-    ind_style, ind_count = get_indentation(code)
-    if ind_count < 0:
-        ind_count = 0
-    return lines[0] + ''.join([l[len(ind_style)*ind_count:] for l in lines[1:]])
+    return lines[0] + dedent(''.join(lines[1:]))
 
 def API_similarity(ground_truth, completions):
     result = 0

@@ -98,6 +98,28 @@ def get_completion_safely(model, completor, prompt, k=4):
                 continue
         return completion
 
+def dedent(code):
+    lines = code.splitlines(keepends=True)
+    indents = [re.match('^\s*', i).group(0) for i in lines]
+    indent_style = ' '*10000
+    indent_count = 10000
+    for i in range(len(indents)):
+        if len(indents[i]) > 0 and len(indent_style) > len(indents[i]) and '\n' not in indents[i]:
+            indent_style = indents[i]
+    for i in range(1, len(indents)):
+        if len(lines[i]) - len(indents[i]) == 0 or len(lines[i-1]) - len(indents[i-1]) == 0:
+            continue
+        if len(lines[i-1]) > 0 and len(indents[i]) > len(indents[i - 1]) and not re.match('^\s*#', lines[i]) and not re.match('^\s*#', lines[i-1]):
+            if len(indent_style) > len(indents[i][len(indents[i - 1]):]) and '\n' not in indents[i]:
+                indent_style = indents[i][len(indents[i - 1]):]
+        elif len(lines[i]) > 0 and len(indents[i]) < len(indents[i - 1]) and not re.match('^\s*#', lines[i]) and not re.match('^\s*#', lines[i-1]):
+            if len(indent_style) > len(indents[i-1][len(indents[i]):]) and '\n' not in indents[i-1]:
+                indent_style = indents[i-1][len(indents[i]):]
+    for i in range(len(indents)):
+        if '\n' not in indents[i]:
+            indent_count = min(indent_count, len(indents[i]) // len(indent_style))
+    return ''.join([l[len(indent_style)*indent_count:] for l in lines])
+
 def get_indentation(prompt):
     lines = prompt.splitlines()
     indents = [re.match('^\s*', i).group(0) for i in lines]
