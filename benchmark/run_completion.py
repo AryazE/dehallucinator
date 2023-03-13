@@ -38,7 +38,7 @@ def as_module(code: str) -> str:
     ind_style, ind_count = get_indentation(code)
     if ind_count < 0:
         ind_count = 0
-    return lines[0] + ''.join([l[len(ind_style)*(ind_count+1):] for l in lines[1:]])
+    return lines[0] + ''.join([l[len(ind_style)*ind_count:] for l in lines[1:]])
 
 def API_similarity(ground_truth, completions):
     result = 0
