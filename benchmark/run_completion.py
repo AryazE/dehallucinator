@@ -47,6 +47,7 @@ def API_similarity(ground_truth, completions):
         gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
     except Exception as e:
         gt_apis = []
+        print(ground_truth)
         print(e)
         print(traceback.format_exc())
     for i in range(len(completions)):
@@ -55,6 +56,7 @@ def API_similarity(ground_truth, completions):
             apis = matchers.findall(cst.parse_module(as_module(completions[i])), matchers.Call() | matchers.Attribute())
         except Exception as e:
             apis = []
+            print(completions[i])
             print(e)
             print(traceback.format_exc())
         for api in apis:
