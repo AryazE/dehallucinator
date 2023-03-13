@@ -101,12 +101,18 @@ def get_completion_safely(model, completor, prompt, k=4):
 def get_indentation(prompt):
     lines = prompt.splitlines()
     indents = [re.match('^\s*', i).group(0) for i in lines]
-    indent_style = ''
+    indent_style = ' '*10000
     indent_count = 0
     for i in range(1, len(indents)):
+        if len(indents[i]) > 0 and len(indent_style) > len(indents[i]):
+            indent_style = indents[i]
+    for i in range(1, len(indents)):
         if len(lines[i-1]) > 0 and len(indents[i]) > len(indents[i - 1]) and not re.match('^\s*#', lines[i]) and not re.match('^\s*#', lines[i-1]):
-            indent_style = indents[i][len(indents[i - 1]):]
-            break
+            if len(indent_style) > len(indents[i][len(indents[i - 1]):]):
+                indent_style = indents[i][len(indents[i - 1]):]
+        elif len(lines[i]) > 0 and len(indents[i]) < len(indents[i - 1]) and not re.match('^\s*#', lines[i]) and not re.match('^\s*#', lines[i-1]):
+            if len(indent_style) > len(indents[i-1][len(indents[i]):]):
+                indent_style = indents[i-1][len(indents[i]):]
     indent_count = len(indents[-1]) // len(indent_style) - 1
     return indent_style, indent_count
 
