@@ -35,6 +35,10 @@ def as_module(code: str) -> str:
     lines = code.splitlines(keepends=True)
     if len(lines) <= 1:
         return code
+    if lines[0].startswith('if ') or lines[0].startswith('for ') or lines[0].startswith('while '):
+        tmp = dedent(code).splitlines(keepends=True)
+        if not (tmp[0].startswith(' ') or tmp[0].startswith('\t')):
+            return lines[0] + ['    ' + l for l in tmp]
     return lines[0] + dedent(''.join(lines[1:]))
 
 def API_similarity(ground_truth, completions):
@@ -56,10 +60,13 @@ def API_similarity(ground_truth, completions):
             print(completions[i])
             print(e)
             print(traceback.format_exc())
+        copy_apis = gt_apis.copy()
         for api in apis:
-            for gt_api in gt_apis:
-                if equal_apis(api, gt_api): #api.deep_equals(gt_api):
+            for ind in range(len(copy_apis)):
+                if equal_apis(api, copy_apis[ind]): #api.deep_equals(gt_api):
                     tmp_result += 1
+                    copy_apis.pop(ind)
+                    break
         if tmp_result == 0:
             f1 = 0
         else:
