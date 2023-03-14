@@ -7,13 +7,14 @@ import libcst as cst
 import libcst.matchers as matchers
 from distutils import dir_util
 from pygments.lexers.python import PythonLexer
-from crystalbleu import corpus_bleu
+from crystalbleu import corpus_bleu, SmoothingFunction
 # from autoimport import fix_code
 from coder.utils import clip_prompt, DELIMITER, dedent, equal_apis
 from coder.main import main
 
 PROMPT_LIMIT = 1500
 logger = logging.getLogger(__name__)
+sm_func = SmoothingFunction().method1
 
 with open(Path(__file__).resolve().parent/'python_top_500.json') as f:
     content = json.load(f)
@@ -25,7 +26,7 @@ def similarity_evaluation(ground_truth, completions):
     tok_ground_truth = [t[1] for t in PythonLexer().get_tokens(ground_truth)]
     for i in range(len(completions)):
         tokenized = [t[1] for t in PythonLexer().get_tokens(completions[i])]
-        tmp_result = corpus_bleu([[tok_ground_truth]], [tokenized], ignoring=trivially_shared_ngrams)
+        tmp_result = corpus_bleu([[tok_ground_truth]], [tokenized], ignoring=trivially_shared_ngrams, smoothing_function=sm_func)
         if tmp_result > result:
             result = tmp_result
             best = i
@@ -36,9 +37,9 @@ def as_module(code: str) -> str:
     if len(lines) <= 1:
         return code
     if lines[0].startswith('if ') or lines[0].startswith('for ') or lines[0].startswith('while '):
-        tmp = dedent(code).splitlines(keepends=True)
+        tmp = dedent(''.join(lines[1:])).splitlines(keepends=True)
         if not (tmp[0].startswith(' ') or tmp[0].startswith('\t')):
-            return lines[0] + ['    ' + l for l in tmp]
+            return lines[0] + ''.join([('    ' + l) for l in tmp])
     return lines[0] + dedent(''.join(lines[1:]))
 
 def API_similarity(ground_truth, completions):
