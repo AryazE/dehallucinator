@@ -54,6 +54,7 @@ if __name__ == '__main__':
         'remove': []
     }]
     id = 1
+    print(len(python_files))
     for f in python_files:
         e = extract_evaluations(f)
         for i in e:
@@ -70,6 +71,7 @@ if __name__ == '__main__':
                 }]
             })
             id += 1
+            print('-', end='', flush=True)
     project_name = project_path.as_posix().split('/')[-1]
     benchmark_dir = Path(__file__).resolve().parent
     config = {

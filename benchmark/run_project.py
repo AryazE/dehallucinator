@@ -44,7 +44,7 @@ if __name__ == '__main__':
         shutil.rmtree(str(here/'experiment'/config['name']/args.mode))
     shutil.copytree(str(here/'experiment'/config['name']/'base'), str(here/'experiment'/config['name']/args.mode), ignore=shutil.ignore_patterns('codeqldb'))
     print(f'original: {orig_results}')
-    if len(ids) == 0:
+    if not (here/'experiment'/config['name']/args.mode/'test_results.json').exists():
         with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:
             json.dump([orig_results], f)
     results = []
