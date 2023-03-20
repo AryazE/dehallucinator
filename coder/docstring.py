@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 similarity_threshold = 0.5
 
 class DocstringCompletion(BaseDiCompletion):
-    def __init__(self, project_root: str, model: str = "Codex", location: Dict[str, int] = {}):
+    def __init__(self, project_root: str, model: str = "Codex", location: Dict = {}):
         super().__init__(project_root, model, location)
 
     def get_context(self, prompt: str, completion: str) -> List[Tuple[str, float]]:

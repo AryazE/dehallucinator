@@ -136,3 +136,5 @@ benchmark/db/
 benchmark/*Res/
 benchmark/res*/
 benchmark/logs/
+benchmark/CodeQLDBs/
+benchmark/benchmark.sh

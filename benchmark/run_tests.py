@@ -7,16 +7,20 @@ import argparse
 from pathlib import Path
 from read_test_results import read_test_results
 
-projects_with_special_setup = ['fastapi']
-
-def project_specific(project: str, project_dir: str):
-    if project == 'fastapi':
-        return [['uvicorn[standard]'],
-            ['-e', f'{project_dir}"[dev,doc,test]"']]
-
-
 def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Tuple[Dict[str, int], str]:
     here = Path(__file__).resolve().parent
+    with open(here/'repo_list.txt') as f:
+        content = f.read().splitlines()
+    req = None
+    for i in content:
+        parts = i.strip().split(' ')
+        if config['name'] == parts[0][19:-4].replace('/', '_'):
+            if 'r' in parts[1]:
+                req = parts[2]
+                test = parts[3]
+            else:
+                test = parts[2]
+            break
     temp_dirs = list((here/'experiment'/config['name']/mode).glob(f'temp{id}-*/'))
     if len(temp_dirs) == 0:
         temp_dirs = [here/'experiment'/config['name']/mode/f'temp{id}']
@@ -25,19 +29,25 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Tu
     # temp_dir = here/'experiment'/config['name']/mode/f'temp{id}'/config['project_root']
     for temp_dir in temp_dirs:
         dir_util.copy_tree(str(here/config['project_root']/config['tests_path']), str(temp_dir/config['project_root']/config['tests_path']))
-        special = None
-        if config['name'] in projects_with_special_setup:
-            special = project_specific(config['name'], str(temp_dir/config['project_root']))
-        if special and len(special) == 2:
-            subprocess.run([executable, '-m', 'pip', 'install'] + special[0], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            special.pop(0)
+        
         if (temp_dir/config['project_root']/'requirements.txt').exists():
-            subprocess.run([executable, '-m', 'pip', 'install', '-r', str(temp_dir/config['project_root']/'requirements.txt')], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            res = subprocess.run([executable, '-m', 'pip', 'install', '-r', str(temp_dir/config['project_root']/'requirements.txt')], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            # if res.returncode != 0:
+            #     print(res.stderr.decode('utf-8'))
+            # else:
+            #     print(res.stdout.decode('utf-8'))
+        elif req is not None:
+            res = subprocess.run([executable, '-m', 'pip', 'install', '-r', str(temp_dir/config['project_root']/req)], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            # if res.returncode != 0:
+            #     print(res.stderr.decode('utf-8'))
+            # else:
+            #     print(res.stdout.decode('utf-8'))
         try:
-            if special:
-                install_res = subprocess.run([executable, '-m', 'pip', 'install'] + special[0], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            else:
-                install_res = subprocess.run([executable, '-m', 'pip', 'install', str(temp_dir/config['project_root'])], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            install_res = subprocess.run([executable, '-m', 'pip', 'install', str(temp_dir/config['project_root'])], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            # if install_res.returncode != 0:
+            #     print(install_res.stderr.decode('utf-8'))
+            # else:
+            #     print(install_res.stdout.decode('utf-8'))
         except subprocess.CalledProcessError as e:
             subprocess.run([executable, '-m', 'pip', 'install', '--pre', str(temp_dir/config['project_root'])], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         pytest_command = [

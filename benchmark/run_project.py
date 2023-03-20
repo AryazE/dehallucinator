@@ -32,7 +32,16 @@ if __name__ == '__main__':
     logger = logging.getLogger(__name__)
     here = Path(__file__).resolve().parent
     if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in ids]):
-        executable, orig_results = prepare(config, 'base', ids, args.noTests)
+        executable, orig_results, sample = prepare(config, 'base', ids, args.noTests)
+        if len(sample) == 20:
+            new_eval = []
+            for i in config['evaluations']:
+                if i['id'] in sample:
+                    new_eval.append(i)
+            config['evaluations'] = new_eval
+            Path(args.config).unlink()
+            with open(args.config, 'w') as f:
+                json.dump(config, f, indent=2)
     else:
         if args.noTests:
             orig_results = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": 0}

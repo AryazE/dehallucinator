@@ -32,13 +32,9 @@ def extract_evaluations(file):
     return finder.functions
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--project', type=str, required=True)
-    parser.add_argument('--tests', type=str, required=True)
-    args = parser.parse_args()
-    project_path = Path(args.project).resolve()
-    tests_path = Path(args.tests).resolve()
+def make_config(project, tests):
+    project_path = Path(project).resolve()
+    tests_path = Path(tests).resolve()
     files_to_ignore = set(tests_path.glob('**/*.py'))
     files_to_ignore.add(project_path/'setup.py')
     files_to_ignore.add(project_path/'__init__.py')
@@ -58,6 +54,8 @@ if __name__ == '__main__':
     for f in python_files:
         e = extract_evaluations(f)
         for i in e:
+            if i.function == '__init__':
+                continue
             evaluations.append({
                 'id': id, 
                 'file': f.relative_to(project_path).as_posix(), 
@@ -77,8 +75,15 @@ if __name__ == '__main__':
     config = {
         'name': project_name,
         'project_root': project_path.as_posix().lstrip(benchmark_dir.as_posix()),
-        'tests_path': args.tests[len(args.project):].strip('/'),
+        'tests_path': tests[len(project):].strip('/'),
         'evaluations': evaluations
     }
     with open(Path(__file__).parent/'benchmark_configs'/f'{project_name}.json', 'w') as f:
         json.dump(config, f, indent=4)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--project', type=str, required=True)
+    parser.add_argument('--tests', type=str, required=True)
+    args = parser.parse_args()
+    make_config(args.project, args.tests)

@@ -1,9 +1,11 @@
 import argparse
 import json
 import os
+import random
 import subprocess
 from distutils import dir_util
 from pathlib import Path
+import traceback
 import virtualenv
 from run_tests import run_tests
 from coder.utils import run_query
@@ -12,7 +14,9 @@ CURSOR = '<CURSOR>'
 
 def prepare(config, mode, ids=[], noTests=False):
     global CURSOR
-
+    
+    orig_results = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": 0}
+    okay = ids
     here = Path(__file__).resolve().parent
     dir_util.mkpath(str(here/'experiment'/config['name']/mode))
     env_session = virtualenv.cli_run([str(here/'experiment'/config['name']/mode/'venv')])
@@ -21,12 +25,14 @@ def prepare(config, mode, ids=[], noTests=False):
     for i in config['evaluations']:
         if i['id'] > 0 and len(ids) > 0 and i['id'] not in ids:
             continue
+        if len(okay) == 21:
+            sample = okay
+            break
         print(f'Preparing {i["id"]}')
         dir_util.mkpath(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
         temp_dir = here/'experiment'/config['name']/mode/f'temp{i["id"]}'/config['project_root']
         dir_util.copy_tree(str(here/config['project_root']), str(temp_dir))
         dir_util.remove_tree(str(temp_dir/config['tests_path']))
-        orig_results = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": 0}
         if i['id'] == 0 and not noTests:
             orig_results, best = run_tests(config, 0, mode, env_session.interpreter.executable)
         if len(i['file']) == 0:
@@ -66,10 +72,13 @@ def prepare(config, mode, ids=[], noTests=False):
             try:
                 with open(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'checkTest.txt'), 'r') as f:
                     content = f.read()
-            except:
+            except Exception as e:
+                print('Test not covering function')
+                print(traceback.format_exc())
                 dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
                 continue
             if content != 'here':
+                print('Test not executing code in function')
                 dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
                 continue
             different = False
@@ -78,23 +87,10 @@ def prepare(config, mode, ids=[], noTests=False):
                     different = True
                     break
             if not different:
+                print('Test is trivial')
                 dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
                 continue
-        database = temp_dir/'..'/'..'/'codeqldb'
-        working_dir = os.getcwd()
-        os.chdir(str(temp_dir))
-        try:
-            subprocess.run(['codeql', 'database', 'create',
-                            '--language=python',
-                            '--overwrite',
-                            '--threads=0',
-                            '--', str(database)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=600)
-        except subprocess.TimeoutExpired:
-            print('Timeout at 10 minutes: project is probably too big')
-            raise
-        os.chdir(working_dir)
-        run_query(database, 'functionContext.ql', 'functionRes.csv', str(database/'..'))#, str(database/'..'/'exclude.csv'))
-        run_query(database, 'classContext.ql', 'classRes.csv', str(database/'..'))#, str(database/'..'/'exclude.csv'))
+            okay.append(i['id'])
         new_code = []
         cursor = CURSOR
         for l in range(len(code)):
@@ -116,7 +112,22 @@ def prepare(config, mode, ids=[], noTests=False):
                 new_code.append(temp)
         with open(temp_dir/i["file"], 'w') as f:
             f.writelines(new_code)
-    return env_session.interpreter.executable, orig_results
+    # if len(okay) > 20:
+    #     sample = random.sample(okay, 20)
+    #     for id in okay:
+    #         if id not in sample:
+    #             dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{id}'))
+    # else:
+    #     sample = okay
+    if len(okay) <= 21:
+        sample = okay
+    if mode == 'base':
+        database = here/'experiment'/config['name']/'codeqldb'
+        if not database.exists():
+            dir_util.copy_tree(str(here/'CodeQLDBs'/config['name']/'codeql_db'), str(database/'..'/'codeqldb'))
+        run_query(database, 'functionContext.ql', 'functionRes.csv', str(database/'..'))
+        run_query(database, 'classContext.ql', 'classRes.csv', str(database/'..'))
+    return env_session.interpreter.executable, orig_results, sample
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

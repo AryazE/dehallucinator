@@ -3,7 +3,7 @@ import utils
 
 string memberNames(Class c) {
     result = concat(AssignStmt a, Expr target, FunctionDef f|
-        f.getDefinedFunction() = c.getAMethod() and 
+        f.getDefinedFunction() = c.getInitMethod() and 
         a = f.getDefinedFunction().getBody().getAnItem() and 
         a.getATarget() = target and 
         target.(Attribute).getObject() instanceof Name and 
@@ -33,7 +33,7 @@ string getHeritage(Class c) {
 }
 
 string functionsContext(Class c) {
-    if not exists(Function f | f = c.getAMethod()) then
+    if not exists(Function f | f = c.getAMethod() and not c.getLocation().getFile().getShortName().matches("%test%")) then
         result = ""
     else
         result = "functions:\n" +

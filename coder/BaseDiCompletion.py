@@ -9,7 +9,7 @@ from .utils import same_location, embeddings, postprocess, get_completion_safely
 logger = logging.getLogger(__name__)
 
 class BaseDiCompletion:
-    def __init__(self, project_root: str, model: str = "Codex", location: Dict[str, int] = {}):
+    def __init__(self, project_root: str, model: str = "Codex", location: Dict = {}):
         self.project_root = Path(project_root)
         print(f'Project root: {self.project_root.as_posix()}')
         self.location = location
@@ -23,8 +23,8 @@ class BaseDiCompletion:
                     break
 
         self.additional_context = dict()
-        self.parse_results_into_context(self.project_root/'..'/'..'/'functionRes.csv')
-        self.parse_results_into_context(self.project_root/'..'/'..'/'classRes.csv')
+        self.parse_results_into_context(self.project_root/'..'/'..'/'..'/'..'/'functionRes.csv')
+        self.parse_results_into_context(self.project_root/'..'/'..'/'..'/'..'/'classRes.csv')
         self.model = model
 
         # self.modules = set(i.name for i in pkgutil.iter_modules())
