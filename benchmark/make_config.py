@@ -52,7 +52,10 @@ def make_config(project, tests):
     id = 1
     print(len(python_files))
     for f in python_files:
-        e = extract_evaluations(f)
+        try:
+            e = extract_evaluations(f)
+        except:
+            continue
         for i in e:
             if i.function == '__init__':
                 continue

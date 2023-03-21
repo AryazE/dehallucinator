@@ -62,6 +62,46 @@ class Completion:
                         raise e
             self.last_time = time.monotonic()
             return res
+        elif model == "GPT3.5":
+            if 'k' in kwargs:
+                k = kwargs['k']
+                del kwargs['k']
+                if k > 1:
+                    temperature = 0.2
+                else:
+                    temperature = 0
+            else:
+                k = 1
+                temperature = 0
+            params = {
+                'model': 'gpt-3.5-turbo',
+                'messages': [
+                    {'role': 'system', 'content': 'You complete Python code.'},
+                    {'role': 'user', 'content': context}
+                ],
+                'n': k,
+                'temperature': temperature,
+                'max_tokens': 500,
+                'stop': ['\n\n\n', 'def ', 'async def ', 'class ']
+            }
+            params.update(kwargs)
+            now = time.monotonic()
+            delay = 2*k + 3
+            if now - self.last_time < delay: # This is done to prevent going over the API rate limit
+                time.sleep(delay - (now - self.last_time))
+            while True:
+                try:
+                    res = [i['message']['content'] for i in openai.ChatCompletion.create(**params)['choices']]
+                    break
+                except Exception as e:
+                    print(e)
+                    if isinstance(e, openai.error.RateLimitError):
+                        print('Rate limit error, waiting 60 seconds')
+                        time.sleep(60)
+                    else:
+                        raise e
+            self.last_time = time.monotonic()
+            return res
         elif model == "CodeT5":
             url = "https://api-inference.huggingface.co/models/Salesforce/codet5-large"
             headers = {"Authorization": f"Bearer {env_vars['hf-codet5-api-key']}"}

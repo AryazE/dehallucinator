@@ -80,8 +80,11 @@ def postprocess(code, indent_style='\t', indent_count=0):
             lines.pop()
     return ''
 
-def get_completion_safely(model, completor, prompt, k=4):
-        prompt_size = 1500
+def get_completion_safely(model: str, completor, prompt, k=4):
+        if model == 'GPT3.5':
+            prompt_size = 3500
+        else:
+            prompt_size = 1500
         clipped_prompt = prompt
         while prompt_size > 0:
             clipped_prompt = clip_prompt(clipped_prompt, prompt_size)

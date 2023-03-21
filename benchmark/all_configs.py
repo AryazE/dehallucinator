@@ -4,7 +4,7 @@ import make_config
 here = Path(__file__).parent
 with open(here/'repo_list.txt', 'r') as f:
     lines = f.read().splitlines()
-for line in lines[:1]:
+for line in lines:
     parts = line.split(' ')
     url = parts[0]
     owner = url.split('/')[-2]

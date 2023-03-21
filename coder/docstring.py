@@ -6,13 +6,13 @@ from .BaseDiCompletion import BaseDiCompletion
 
 logger = logging.getLogger(__name__)
 
-similarity_threshold = 0.5
-
 class DocstringCompletion(BaseDiCompletion):
-    def __init__(self, project_root: str, model: str = "Codex", location: Dict = {}):
+    def __init__(self, project_root: str, model: str = "Codex", location: Dict = {}, context_size: int = 5, similarity_threshold: float = 0.5):
         super().__init__(project_root, model, location)
+        self.context_size = context_size
+        self.similarity_threshold = similarity_threshold
 
-    def get_context(self, prompt: str, completion: str) -> List[Tuple[str, float]]:
+    def get_context(self, prompt: str, completion: str) -> List[Tuple[float, str]]:
         code = completion #prompt + completion
         lines = code.splitlines()
         new_context = []
@@ -27,7 +27,7 @@ class DocstringCompletion(BaseDiCompletion):
                     else:
                         jj = j
                     similarity = cos_sim(self.embeddings[i][j], line_embeddings[l])
-                    if similarity > similarity_threshold:
+                    if similarity > self.similarity_threshold:
                         found = False
                         for m in range(len(new_context)):
                             if new_context[m][1] == self.additional_context[i][jj]:
@@ -39,32 +39,32 @@ class DocstringCompletion(BaseDiCompletion):
                             new_context.append((similarity, self.additional_context[i][jj]))
         return sorted(new_context, key=lambda x: x[0], reverse=True)
     
-    def format_context(self, context: List[Tuple[str, float]]) -> str:
+    def format_context(self, context: List[Tuple[float, str]]) -> str:
         if len(context) == 0:
             return ''
-        for i in range(len(context)):
-            tmp = context[i][1]
-            open_bracket = 0
-            ann = False
-            res = ''
-            for j in range(len(tmp)):
-                if tmp[j] == ':':
-                    ann = True
-                elif tmp[j] == '[':
-                    open_bracket += 1
-                elif tmp[j] == ']':
-                    open_bracket -= 1
-                elif tmp[j] == '-' and j+1 < len(tmp) and tmp[j+1] == '>':
-                    res += tmp[j:]
-                    break
-                elif tmp[j] ==',' and open_bracket == 0:
-                    ann = False
-                    res += tmp[j]
-                elif open_bracket == 0 and not ann:
-                    res += tmp[j]
-            context[i] = (context[i][0], res)
+        # for i in range(len(context)):
+        #     tmp = context[i][1]
+        #     open_bracket = 0
+        #     ann = False
+        #     res = ''
+        #     for j in range(len(tmp)):
+        #         if tmp[j] == ':':
+        #             ann = True
+        #         elif tmp[j] == '[':
+        #             open_bracket += 1
+        #         elif tmp[j] == ']':
+        #             open_bracket -= 1
+        #         elif tmp[j] == '-' and j+1 < len(tmp) and tmp[j+1] == '>':
+        #             res += tmp[j:]
+        #             break
+        #         elif tmp[j] ==',' and open_bracket == 0:
+        #             ann = False
+        #             res += tmp[j]
+        #         elif open_bracket == 0 and not ann:
+        #             res += tmp[j]
+        #     context[i] = (context[i][0], res)
         context = ['Uses:'] + [i[1] for i in context]
-        return self.indent_style*(self.indent_count+1) + f'\n{self.indent_style*(self.indent_count+1)}'.join(context[:5])
+        return self.indent_style*(self.indent_count+1) + f'\n{self.indent_style*(self.indent_count+1)}'.join(context[:self.context_size])
 
     def generate_new_prompt(self, prompt: str, context: Set[str], completion: str) -> Tuple[str, Set[str]]:
         new_context = self.get_context(prompt, completion)
@@ -84,5 +84,9 @@ class DocstringCompletion(BaseDiCompletion):
             new_prompt = ''.join(prompt_lines[:-i]) + prompt_lines[-i]
             new_prompt += self.indent_style*(self.indent_count+1) + '"""\n'
             new_prompt += '\n' + full_context + '\n' + self.indent_style*(self.indent_count+1) + '"""\n' + ''.join(prompt_lines[-i+1:])
-        new_prompt = clip_prompt(new_prompt, 1500)
+        if self.model == 'GPT3.5':
+            prompt_size = 3500
+        else:
+            prompt_size = 1500
+        new_prompt = clip_prompt(new_prompt, prompt_size)
         return new_prompt, new_context

@@ -16,7 +16,7 @@ def prepare(config, mode, ids=[], noTests=False):
     global CURSOR
     
     orig_results = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": 0}
-    okay = ids
+    okay = []
     here = Path(__file__).resolve().parent
     dir_util.mkpath(str(here/'experiment'/config['name']/mode))
     env_session = virtualenv.cli_run([str(here/'experiment'/config['name']/mode/'venv')])

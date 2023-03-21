@@ -86,6 +86,8 @@ def run_completion(model, config, id, mode, log_suffix=''):
     with open(project_root/config["evaluations"][id]["file"]) as f:
         code = f.read()
     splited_code = code.split('<CURSOR>')
+    if model == 'GPT3.5':
+        PROMPT_LIMIT = 3500
     prompt = clip_prompt(splited_code[0], PROMPT_LIMIT)
     with open(here/config['project_root']/config["evaluations"][id]["file"], 'r') as f:
         orig_code = f.read()
