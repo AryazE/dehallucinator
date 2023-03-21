@@ -1,3 +1,4 @@
+import time
 from pathlib import Path
 import os
 import argparse
@@ -32,7 +33,7 @@ if __name__ == '__main__':
     logger = logging.getLogger(__name__)
     here = Path(__file__).resolve().parent
     if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in ids]):
-        executable, orig_results, sample = prepare(config, 'base', ids, args.noTests)
+        executable, orig_results, sample = prepare(config, 'base', ids, args.noTests, args.model)
         if len(sample) == 20:
             new_eval = []
             for i in config['evaluations']:
@@ -65,7 +66,9 @@ if __name__ == '__main__':
         print(f'Running {i["id"]}')
         try:
             # best_context, possible_context, given_context = run_completion(args.model, config, i["id"], args.mode, args.log)
+            start = time.process_time()
             completions = run_completion(args.model, config, i["id"], args.mode, args.log)
+            end = time.process_time()
             # if best_context > -1:
             #     logger.info(f'best_context: {best_context}, possible_context: {possible_context}, given_context: {given_context}')
             if not args.noTests:
@@ -81,6 +84,8 @@ if __name__ == '__main__':
                 json.dump(results, f)
             with open(here/'experiment'/config['name']/args.mode/f'temp{i["id"]}'/'best.md', 'a') as f:
                 f.write(f'best test:  \n```python\n{completions[int(best)]}\n```\n')
+            with open(here/'experiment'/config['name']/args.mode/f'temp{i["id"]}'/'performance.md', 'w') as f:
+                f.write(str(end-start))
             print(f'{new_res} -> {best}')
         except Exception as e:
             print(e)

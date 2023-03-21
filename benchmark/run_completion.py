@@ -1,3 +1,4 @@
+import csv
 import argparse
 from pathlib import Path
 import logging
@@ -42,11 +43,23 @@ def as_module(code: str) -> str:
             return lines[0] + ''.join([('    ' + l) for l in tmp])
     return lines[0] + dedent(''.join(lines[1:]))
 
-def API_similarity(ground_truth, completions):
+def filter_external(apis, project_apis):
+    for node in apis:
+        if matchers.matches(node, matchers.Call()):
+            if matchers.matches(node.func, matchers.Name()):
+                if node.func.value is None or node.func.value not in project_apis:
+                    apis.remove(node)
+            elif matchers.matches(node.func, matchers.Attribute()):
+                if node.func.attr is None or node.func.attr.value not in project_apis:
+                    apis.remove(node)
+    return apis
+
+def API_similarity(ground_truth, completions, project_apis):
     result = 0
     best = 0
     try:
         gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
+        gt_apis = filter_external(gt_apis, project_apis)
     except Exception as e:
         gt_apis = []
         print(ground_truth)
@@ -56,6 +69,7 @@ def API_similarity(ground_truth, completions):
         tmp_result = 0
         try:
             apis = matchers.findall(cst.parse_module(as_module(completions[i])), matchers.Call() | matchers.Attribute())
+            apis = filter_external(apis, project_apis)
         except Exception as e:
             apis = []
             print(completions[i])
@@ -105,8 +119,13 @@ def run_completion(model, config, id, mode, log_suffix=''):
     with open(project_root/f'completion.out') as f:
         completions = f.read().split(DELIMITER)
 
+    project_apis = set()
+    with open(here/'experiment'/config["name"]/'functionRes.csv', newline='') as f:
+        csv_reader = csv.DictReader(f)
+        for line in csv_reader:
+            project_apis.add(line['name'])
     token_similarity, token_best = similarity_evaluation(ground_truth, completions)
-    api_similarity, api_best = API_similarity(ground_truth, completions)
+    api_similarity, api_best = API_similarity(ground_truth, completions, project_apis)
     print(f'Best token similarity: {token_similarity} -> {token_best}')
     with open(here/'experiment'/config["name"]/mode/f'temp{id}'/'best.md', 'w') as f:
         f.write(f'N-gram similarity {token_similarity} from completion number {token_best}  \n'

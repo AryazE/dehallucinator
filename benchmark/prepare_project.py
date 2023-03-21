@@ -9,10 +9,12 @@ import traceback
 import virtualenv
 from run_tests import run_tests
 from coder.utils import run_query
+from coder.utils import get_completion_safely
+from coder.backend import Completion
 
 CURSOR = '<CURSOR>'
 
-def prepare(config, mode, ids=[], noTests=False):
+def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
     global CURSOR
     
     orig_results = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": 0}
@@ -25,9 +27,6 @@ def prepare(config, mode, ids=[], noTests=False):
     for i in config['evaluations']:
         if i['id'] > 0 and len(ids) > 0 and i['id'] not in ids:
             continue
-        if len(okay) == 21:
-            sample = okay
-            break
         print(f'Preparing {i["id"]}')
         dir_util.mkpath(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
         temp_dir = here/'experiment'/config['name']/mode/f'temp{i["id"]}'/config['project_root']
@@ -46,6 +45,7 @@ def prepare(config, mode, ids=[], noTests=False):
         with open(temp_dir/i["file"]) as f:
             code = f.readlines()
         new_code = []
+        pre_context = ''
         if not noTests:
             cursor = 'with open("' + str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'checkTest.txt') + '", "w") as f: f.write("here")\n'
             for l in range(len(code)):
@@ -56,15 +56,20 @@ def prepare(config, mode, ids=[], noTests=False):
                     if j['start_line'] - 1 <= l <= j['end_line'] - 1:
                         if j['start_line'] == j['end_line']:
                             temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '') + code[l][j['end_column'] - 1:]
+                            pre_context = '\n'.join(new_code) + '\n' + code[l][:j['start_column']]
                         else:
                             if l == j['start_line'] - 1:
                                 temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '')
+                                pre_context = '\n'.join(new_code) + '\n' + code[l][:j['start_column']]
                             elif l == j['end_line'] - 1:
                                 temp = code[l][j['end_column'] - 1:]
                             else:
                                 temp = None
                 if temp:
                     new_code.append(temp)
+            init_comp = get_completion_safely(model, Completion(), pre_context, k=1)
+            if '\n'.join(code).startswith(pre_context + init_comp):
+                continue
             with open(temp_dir/i["file"], 'w') as f:
                 f.writelines(new_code)
             
@@ -119,8 +124,9 @@ def prepare(config, mode, ids=[], noTests=False):
     #             dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{id}'))
     # else:
     #     sample = okay
-    if len(okay) <= 21:
-        sample = okay
+    # if len(okay) <= 21:
+    #     sample = okay
+    sample = okay
     if mode == 'base':
         database = here/'experiment'/config['name']/'codeqldb'
         if not database.exists():
