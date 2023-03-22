@@ -25,6 +25,8 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
     with open(str(here/'experiment'/config['name']/mode/'interpreter.txt'), 'w') as f:
         f.write(env_session.interpreter.executable)
     for i in config['evaluations']:
+        if len(okay) > 20:
+            break
         if i['id'] > 0 and len(ids) > 0 and i['id'] not in ids:
             continue
         print(f'Preparing {i["id"]}')
