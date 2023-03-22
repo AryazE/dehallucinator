@@ -33,8 +33,9 @@ if __name__ == '__main__':
     logger = logging.getLogger(__name__)
     here = Path(__file__).resolve().parent
     if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in ids]):
+        print('Base or some eval are missing. Creating...')
         executable, orig_results, sample = prepare(config, 'base', ids, args.noTests, args.model)
-        if len(sample) == 20:
+        if len(sample) < len(ids):
             new_eval = []
             for i in config['evaluations']:
                 if i['id'] in sample:
