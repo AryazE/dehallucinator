@@ -91,7 +91,7 @@ class Completion:
             params = {
                 'model': 'gpt-3.5-turbo',
                 'messages': [
-                    {'role': 'system', 'content': 'You complete Python code.'},
+                    {'role': 'system', 'content': 'You complete the user\'s code.'},
                     {'role': 'user', 'content': context}
                 ],
                 'n': k,
