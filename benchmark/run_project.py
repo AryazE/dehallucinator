@@ -70,9 +70,7 @@ if __name__ == '__main__':
         print(f'Running {i["id"]}')
         try:
             # best_context, possible_context, given_context = run_completion(args.model, config, i["id"], args.mode, args.log)
-            start = time.process_time()
             completions = run_completion(args.model, config, i["id"], args.mode, args.log, k=args.k, t=args.t, c=args.c)
-            end = time.process_time()
             # if best_context > -1:
             #     logger.info(f'best_context: {best_context}, possible_context: {possible_context}, given_context: {given_context}')
             if not args.noTests:
@@ -98,8 +96,6 @@ if __name__ == '__main__':
                 json.dump(results, f)
             with open(here/'experiment'/config['name']/args.mode/f'temp{i["id"]}'/'best.md', 'a') as f:
                 f.write(f'best test:  \n```python\n{completions[int(best)]}\n```\n')
-            with open(here/'experiment'/config['name']/args.mode/f'temp{i["id"]}'/'performance.md', 'w') as f:
-                f.write(str(end-start))
             print(f'{new_res} -> {best}')
         except Exception as e:
             print(e)

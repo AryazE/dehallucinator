@@ -1,4 +1,5 @@
 import argparse
+import time
 import json
 import os
 import random
@@ -140,8 +141,12 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
         database = here/'experiment'/config['name']/'codeqldb'
         if not database.exists():
             dir_util.copy_tree(str(here/'CodeQLDBs'/config['name']/'codeql_db'), str(database/'..'/'codeqldb'))
+        start = time.process_time_ns()
         run_query(database, 'functionContext.ql', 'functionRes.csv', str(database/'..'))
         run_query(database, 'classContext.ql', 'classRes.csv', str(database/'..'))
+        end = time.process_time_ns()
+        with open(str(here/'experiment'/config['name']/mode/'preprocessing_time.txt'), 'w') as f:
+            f.write(f'{end - start} ns')
     return env_session.interpreter.executable, orig_results, sample
 
 if __name__ == '__main__':

@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import List
 import requests
 import openai
@@ -8,6 +9,13 @@ env_vars = dotenv_values('.env')
 API_URL = env_vars['api-url']
 access_token = env_vars['access-token']
 openai.api_key = env_vars['openai-api-key']
+root = Path(__file__).resolve().parent/'..'/'benchmark'/'experiment'
+if not (root/'time-Codex.txt').exists():
+    with open(root/'time-Codex.txt', 'w') as f:
+        f.write('0 0')
+if not (root/'time-GPT35.txt').exists():
+    with open(root/'time-GPT35.txt', 'w') as f:
+        f.write('0 0')
 
 class Completion:
     def __init__(self):
@@ -51,7 +59,14 @@ class Completion:
                 time.sleep(delay - (now - self.last_time))
             while True:
                 try:
-                    res = [i.text for i in openai.Completion.create(**params).choices]
+                    start = time.process_time_ns()
+                    tmp = openai.Completion.create(**params)
+                    end = time.process_time_ns()
+                    with open(root/'time-Codex.txt', 'r') as f:
+                        t, n = f.read().split(' ')
+                    with open(root/'time-Codex.txt', 'w') as f:
+                        f.write(f'{(float(t)*int(n) + (end - start)/1000)/(int(n) + 1)} {int(n) + 1}')
+                    res = [i.text for i in tmp.choices]
                     break
                 except Exception as e:
                     print(e)
@@ -91,7 +106,14 @@ class Completion:
                 time.sleep(delay - (now - self.last_time))
             while True:
                 try:
-                    res = [i['message']['content'] for i in openai.ChatCompletion.create(**params)['choices']]
+                    start = time.process_time_ns()
+                    tmp = openai.ChatCompletion.create(**params)
+                    end = time.process_time_ns()
+                    with open(root/'time-GPT35.txt', 'r') as f:
+                        t, n = f.read().split(' ')
+                    with open(root/'time-GPT35.txt', 'w') as f:
+                        f.write(f'{(float(t)*int(n) + (end - start)/1000)/(int(n) + 1)} {int(n) + 1}')
+                    res = [i['message']['content'] for i in tmp['choices']]
                     break
                 except Exception as e:
                     print(e)

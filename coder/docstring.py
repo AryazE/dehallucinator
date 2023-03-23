@@ -1,6 +1,7 @@
 from typing import Tuple, List, Set, Dict
 import logging
 import re
+import time
 from .utils import clip_prompt, embeddings, cos_sim
 from .BaseDiCompletion import BaseDiCompletion
 
@@ -67,7 +68,16 @@ class DocstringCompletion(BaseDiCompletion):
         return self.indent_style*(self.indent_count+1) + f'\n{self.indent_style*(self.indent_count+1)}'.join(context[:self.context_size])
 
     def generate_new_prompt(self, prompt: str, context: Set[str], completion: str) -> Tuple[str, Set[str]]:
+        start = time.process_time_ns()
         new_context = self.get_context(prompt, completion)
+        end = time.process_time_ns()
+        if not (self.project_root/'..'/'..'/'retrieval_time.txt').exists():
+            with open(self.project_root/'..'/'..'/'retrieval_time.txt', 'w') as f:
+                f.write(f'{end-start} 1')
+        with open(self.project_root/'..'/'..'/'retrieval_time.txt', 'r') as f:
+            rt, n = f.read().split(' ')
+        with open(self.project_root/'..'/'..'/'retrieval_time.txt', 'w') as f:
+            f.write(f'{(int(rt)*int(n)+end-start)/(int(n)+1)} {int(n)+1}')
         # new_context = new_context.union(context)
         full_context = self.format_context(new_context)
         prompt_lines = prompt.splitlines(keepends=True)
