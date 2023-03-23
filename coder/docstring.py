@@ -7,10 +7,10 @@ from .BaseDiCompletion import BaseDiCompletion
 logger = logging.getLogger(__name__)
 
 class DocstringCompletion(BaseDiCompletion):
-    def __init__(self, project_root: str, model: str = "Codex", location: Dict = {}, context_size: int = 5, similarity_threshold: float = 0.5):
+    def __init__(self, project_root: str, model: str = "Codex", location: Dict = {}, c: int = 5, t: float = 0.5):
         super().__init__(project_root, model, location)
-        self.context_size = context_size
-        self.similarity_threshold = similarity_threshold
+        self.context_size = c
+        self.similarity_threshold = t
 
     def get_context(self, prompt: str, completion: str) -> List[Tuple[float, str]]:
         code = completion #prompt + completion

@@ -20,6 +20,9 @@ if __name__ == '__main__':
     parser.add_argument('--fromId', type=int, default=0)
     parser.add_argument('--log', type=str, default='')
     parser.add_argument('--noTests', action='store_true')
+    parser.add_argument('--k', type=int, default=4)
+    parser.add_argument('--t', type=float, default=0.5)
+    parser.add_argument('--c', type=int, default=4)
     args = parser.parse_args()
     with open(args.config, 'r') as f:
         config = json.load(f)
@@ -68,12 +71,22 @@ if __name__ == '__main__':
         try:
             # best_context, possible_context, given_context = run_completion(args.model, config, i["id"], args.mode, args.log)
             start = time.process_time()
-            completions = run_completion(args.model, config, i["id"], args.mode, args.log)
+            completions = run_completion(args.model, config, i["id"], args.mode, args.log, k=args.k, t=args.t, c=args.c)
             end = time.process_time()
             # if best_context > -1:
             #     logger.info(f'best_context: {best_context}, possible_context: {possible_context}, given_context: {given_context}')
             if not args.noTests:
-                new_res, best = run_tests(config, i["id"], args.mode, executable)
+                tmp_res = run_tests(config, i["id"], args.mode, executable)
+                new_res = None
+                for r in range(len(tmp_res)):
+                    if new_res is None or (new_res['failures'] > tmp_res[r]['failures'] and new_res['tests'] <= tmp_res[r]['tests']):
+                        new_res = tmp_res[r]
+                        best = r
+                with open(here/'experiment'/config['name']/args.mode/f'temp{i["id"]}'/'res_numbers.txt', 'r') as f:
+                    content = f.read().splitlines()
+                with open(here/'experiment'/config['name']/args.mode/f'temp{i["id"]}'/'res_numbers.txt', 'w') as f:
+                    for l in range(len(content)):
+                        f.write(content[l] + ' ' + tmp_res[l]['tests'] + ' ' + tmp_res[l]['errors']+ ' ' + tmp_res[l]['failures']  + ' ' + tmp_res[l]['skipped'] + '\n')
             else:
                 new_res = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": i["id"]}
                 best = -1

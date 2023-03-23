@@ -62,7 +62,7 @@ class BaseDiCompletion:
     def modify_prompt(self, prompt: str) -> str:
         return prompt
 
-    def completion(self, completor, prompt: str, budget=3, k=4) -> Tuple[str, List[str]]:
+    def completion(self, completor, prompt: str, k=4) -> Tuple[str, List[str]]:
         prompt = self.modify_prompt(prompt)
         attempts = 0
         self.used = set()
@@ -78,7 +78,7 @@ class BaseDiCompletion:
         logger.info(f'Initial prompt: \n{prompt}\n')
         logger.info(f'Initial completion:\n{completion}\n')
         artifact += f'prompt {attempts}:\n```python\n{prompt}\n```\ncompletion {attempts}:\n```python\n{completion}\n```\n'
-        while attempts == 0 or (attempts < min(budget, k-1) and prev_completion != completion):
+        while attempts == 0 or attempts < k-1:
             prev_completion = completion
             new_prompt, context = self.generate_new_prompt(prompt, context, completion)
             completion = get_completion_safely(self.model, completor, new_prompt, k=1)[0]

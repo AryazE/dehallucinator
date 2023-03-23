@@ -1,4 +1,4 @@
-from typing import Dict, Any, Tuple
+from typing import Dict, Any, List
 import sys
 from distutils import dir_util
 import subprocess
@@ -7,7 +7,7 @@ import argparse
 from pathlib import Path
 from read_test_results import read_test_results
 
-def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Tuple[Dict[str, int], str]:
+def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> List[Dict]:
     here = Path(__file__).resolve().parent
     with open(here/'repo_list.txt') as f:
         content = f.read().splitlines()
@@ -24,7 +24,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Tu
     temp_dirs = list((here/'experiment'/config['name']/mode).glob(f'temp{id}-*/'))
     if len(temp_dirs) == 0:
         temp_dirs = [here/'experiment'/config['name']/mode/f'temp{id}']
-    test_result = None
+    test_result = []
     best = -1
     # temp_dir = here/'experiment'/config['name']/mode/f'temp{id}'/config['project_root']
     for temp_dir in temp_dirs:
@@ -66,10 +66,8 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Tu
             (temp_dir/'results.xml').unlink(missing_ok=True)
         uninstall_res = subprocess.run([executable, '-m', 'pip', 'uninstall', '-y', config['name']], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         temp_result = read_test_results(str(temp_dir/'results.xml'), id)
-        if test_result is None or (test_result['failures'] > temp_result['failures'] and test_result['tests'] <= temp_result['tests']):
-            test_result = temp_result
-            best = str(temp_dir).split('-')[-1].replace('/', '')
-    return test_result, best
+        test_result.append(temp_result)
+    return test_result
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

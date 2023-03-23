@@ -22,16 +22,12 @@ with open(Path(__file__).resolve().parent/'python_top_500.json') as f:
     trivially_shared_ngrams = {tuple(i[0]): i[1] for i in content}
 
 def similarity_evaluation(ground_truth, completions):
-    result = 0
-    best = 0
+    result = []
     tok_ground_truth = [t[1] for t in PythonLexer().get_tokens(ground_truth)]
     for i in range(len(completions)):
         tokenized = [t[1] for t in PythonLexer().get_tokens(completions[i])]
-        tmp_result = corpus_bleu([[tok_ground_truth]], [tokenized], ignoring=trivially_shared_ngrams, smoothing_function=sm_func)
-        if tmp_result > result:
-            result = tmp_result
-            best = i
-    return result, best
+        result.append(corpus_bleu([[tok_ground_truth]], [tokenized], ignoring=trivially_shared_ngrams, smoothing_function=sm_func))
+    return result
 
 def as_module(code: str) -> str:
     lines = code.splitlines(keepends=True)
@@ -55,8 +51,7 @@ def filter_external(apis, project_apis):
     return apis
 
 def API_similarity(ground_truth, completions, project_apis):
-    result = 0
-    best = 0
+    result = []
     try:
         gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
         gt_apis = filter_external(gt_apis, project_apis)
@@ -88,12 +83,10 @@ def API_similarity(ground_truth, completions, project_apis):
             recall = tmp_result / len(gt_apis)
             precision = tmp_result / len(apis)
             f1 = 2 * recall * precision / (recall + precision)
-        if f1 > result:
-            result = f1
-            best = i
-    return result, best
+        result.append(f1)
+    return result
 
-def run_completion(model, config, id, mode, log_suffix=''):
+def run_completion(model, config, id, mode, log_suffix='', k=4, t=0.5, c=4):
     global PROMPT_LIMIT
     here = Path(__file__).resolve().parent
     project_root = here/'experiment'/config["name"]/mode/f'temp{id}'/config['project_root']
@@ -115,7 +108,7 @@ def run_completion(model, config, id, mode, log_suffix=''):
         sCol=int(config["evaluations"][id]["remove"][0]["start_column"]),
         eLine=int(config["evaluations"][id]["remove"][0]["end_line"]),
         eCol=int(config["evaluations"][id]["remove"][0]["end_column"]),
-        output=str(project_root/f'completion.out'), log=log_suffix)
+        output=str(project_root/f'completion.out'), log=log_suffix, k=k, t=t, c=c)
     with open(project_root/f'completion.out') as f:
         completions = f.read().split(DELIMITER)
 
@@ -124,8 +117,10 @@ def run_completion(model, config, id, mode, log_suffix=''):
         csv_reader = csv.DictReader(f)
         for line in csv_reader:
             project_apis.add(line['name'])
-    token_similarity, token_best = similarity_evaluation(ground_truth, completions)
-    api_similarity, api_best = API_similarity(ground_truth, completions, project_apis)
+    token_similarity = similarity_evaluation(ground_truth, completions)
+    api_similarity = API_similarity(ground_truth, completions, project_apis)
+    token_best = token_similarity.index(max(token_similarity))
+    api_best = api_similarity.index(max(api_similarity))
     print(f'Best token similarity: {token_similarity} -> {token_best}')
     with open(here/'experiment'/config["name"]/mode/f'temp{id}'/'best.md', 'w') as f:
         f.write(f'N-gram similarity {token_similarity} from completion number {token_best}  \n'
@@ -135,6 +130,9 @@ def run_completion(model, config, id, mode, log_suffix=''):
                 f'best n-gram:\n```python\n{completions[token_best]}\n```\n'
                 f'best API:\n```python\n{completions[api_best]}\n```\n')
     
+    with open(here/'experiment'/config["name"]/mode/f'temp{id}'/'res_numbers.txt', 'w') as f:
+        for i in range(len(completions)):
+            f.write(f'{token_similarity[i]} {api_similarity[i]}\n')
     for i in range(len(completions)):
         final_code = splited_code[0] + completions[i] + '\n' + splited_code[1]
         fixed_code = final_code #fix_code(final_code)
