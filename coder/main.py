@@ -17,7 +17,7 @@ def main(project_root: str, prompt: str, mode: str,
     prompt_lines = prompt.splitlines()
     prompt = '\n'.join([l for l in prompt_lines if not (l.strip().startswith('import ') or l.strip().startswith('from '))])
     completor = Completion()
-    if mode == 'baseline':
+    if mode.startswith('baseline'):
         context, completions = baseline.completion(model, completor, prompt, k=k)
         with open(str(Path(project_root)/'..'/'..'/'artifact.md'), 'w') as f:
             f.write(f'prompt:\n```python\n{prompt}\n```\ncompletion:\n```python\n{DELIMITER.join(completions)}\n```\n')
