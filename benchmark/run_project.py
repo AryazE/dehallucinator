@@ -86,7 +86,7 @@ if __name__ == '__main__':
                     content = f.read().splitlines()
                 with open(here/'experiment'/config['name']/args.mode/f'temp{i["id"]}'/'res_numbers.txt', 'w') as f:
                     for l in range(len(content)):
-                        f.write(content[l] + ' ' + tmp_res[l]['tests'] + ' ' + tmp_res[l]['errors']+ ' ' + tmp_res[l]['failures']  + ' ' + tmp_res[l]['skipped'] + '\n')
+                        f.write(f"{content[l]} {tmp_res[l]['tests']} {tmp_res[l]['errors']} {tmp_res[l]['failures']} {tmp_res[l]['skipped']}\n")
             else:
                 new_res = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": i["id"]}
                 best = -1
