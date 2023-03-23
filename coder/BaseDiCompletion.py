@@ -47,8 +47,11 @@ class BaseDiCompletion:
                     continue
                 if line['qualifiedName'] not in self.additional_context:
                     self.additional_context[line['qualifiedName']] = []
-                tmp_context = line['header'] + ' # ' + line['docstring'][:100]
-                self.additional_context[line['qualifiedName']].append(tmp_context)
+                if '\nvariables\n' in line['docstring']:
+                    tmp_context = [line['header']] + line['docstring'].split('\nvariables\n')[1].split('\n')
+                else:
+                    tmp_context = [line['header'] + ' # ' + line['docstring'][:100]]
+                self.additional_context[line['qualifiedName']].extend(tmp_context)
 
     def get_context(self, prompt: str, completion: str) -> List[str]:
         pass
