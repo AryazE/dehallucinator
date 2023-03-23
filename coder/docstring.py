@@ -77,7 +77,7 @@ class DocstringCompletion(BaseDiCompletion):
         with open(self.project_root/'..'/'..'/'retrieval_time.txt', 'r') as f:
             rt, n = f.read().split(' ')
         with open(self.project_root/'..'/'..'/'retrieval_time.txt', 'w') as f:
-            f.write(f'{(int(rt)*int(n)+end-start)/(int(n)+1)} {int(n)+1}')
+            f.write(f'{(float(rt)*int(n)+end-start)/(int(n)+1)} {int(n)+1}')
         # new_context = new_context.union(context)
         full_context = self.format_context(new_context)
         prompt_lines = prompt.splitlines(keepends=True)
