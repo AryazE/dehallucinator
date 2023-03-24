@@ -90,6 +90,8 @@ if __name__ == '__main__':
                 best = -1
             with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'r') as f:
                 results = json.load(f)
+            #print(f'test results: {results}')
+            print(f'new_res: {new_res}')
             if new_res['id'] not in [j['id'] for j in results]:
                 results.append(new_res)
             with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:
