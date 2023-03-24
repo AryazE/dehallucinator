@@ -36,7 +36,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
         dir_util.copy_tree(str(here/config['project_root']), str(temp_dir))
         dir_util.remove_tree(str(temp_dir/config['tests_path']))
         if i['id'] == 0 and not noTests:
-            orig_results, best = run_tests(config, 0, mode, env_session.interpreter.executable)
+            orig_results = run_tests(config, 0, mode, env_session.interpreter.executable)
         if len(i['file']) == 0:
             continue
         # exclude = []
@@ -83,7 +83,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
             with open(temp_dir/i["file"], 'w') as f:
                 f.write(''.join(new_code))
             
-            test_results, best = run_tests(config, i['id'], mode, env_session.interpreter.executable)
+            test_results = run_tests(config, i['id'], mode, env_session.interpreter.executable)
             try:
                 with open(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'checkTest.txt'), 'r') as f:
                     content = f.read()
