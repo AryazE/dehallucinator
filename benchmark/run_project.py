@@ -60,7 +60,7 @@ if __name__ == '__main__':
     print(f'original: {orig_results}')
     if not (here/'experiment'/config['name']/args.mode/'test_results.json').exists():
         with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:
-            json.dump([orig_results], f)
+            json.dump(orig_results, f)
     results = []
     for i in config["evaluations"]:
         if (len(i['file']) == 0) or (len(ids) > 0 and i['id'] not in ids):
