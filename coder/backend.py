@@ -91,7 +91,7 @@ class Completion:
             params = {
                 'model': 'gpt-3.5-turbo',
                 'messages': [
-                    {'role': 'system', 'content': 'You are a programming assistant. Your role is to implement the function body requested by the user. Do not output any other text, just python code.'},
+                    {'role': 'system', 'content': 'You complete the user\'s code with only python code. Do not output any other text. Just continue the user\'s code with your best guess.'},
                     {'role': 'user', 'content': context}
                 ],
                 'n': k,
