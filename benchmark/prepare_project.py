@@ -36,7 +36,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
         dir_util.copy_tree(str(here/config['project_root']), str(temp_dir))
         dir_util.remove_tree(str(temp_dir/config['tests_path']))
         if i['id'] == 0 and not noTests:
-            orig_results = run_tests(config, 0, mode, env_session.interpreter.executable)
+            orig_results = run_tests(config, 0, mode, env_session.interpreter.executable)[0]
         if len(i['file']) == 0:
             continue
         # exclude = []
