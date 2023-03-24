@@ -101,7 +101,7 @@ class Completion:
             }
             params.update(kwargs)
             now = time.monotonic()
-            delay = 2*k + 3
+            delay = k + 4
             if now - self.last_time < delay: # This is done to prevent going over the API rate limit
                 time.sleep(delay - (now - self.last_time))
             while True:
@@ -113,7 +113,12 @@ class Completion:
                         t, n = f.read().split(' ')
                     with open(root/'time-GPT35.txt', 'w') as f:
                         f.write(f'{(float(t)*int(n) + (end - start)/1000)/(int(n) + 1)} {int(n) + 1}')
-                    res = [i['message']['content'] for i in tmp['choices']]
+                    res = []
+                    for i in tmp['choices']:
+                        if '```' in i['message']['content']:
+                            res.append(i['message']['content'].split('```')[1].lstrip())
+                        else:
+                            res.append(i['message']['content'])
                     break
                 except Exception as e:
                     print(e)
