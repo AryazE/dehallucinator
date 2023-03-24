@@ -84,7 +84,7 @@ def API_similarity(ground_truth, completions, project_apis):
             precision = tmp_result / len(apis)
             f1 = 2 * recall * precision / (recall + precision)
         result.append(f1)
-    return result
+    return result, len(gt_apis)
 
 def run_completion(model, config, id, mode, log_suffix='', k=4, t=0.5, c=4):
     global PROMPT_LIMIT
@@ -103,6 +103,7 @@ def run_completion(model, config, id, mode, log_suffix='', k=4, t=0.5, c=4):
         f.write(f'prompt:\n```python\n{prompt}\n```\nground truth:\n```python\n{ground_truth}\n```\n')
     logger.info(f'Running completion for {config["name"]} {id} with prompt: \n{prompt}')
     main(str(project_root), prompt, mode, model, 
+        func=config['evaluations'][id]['function'],
         file=config["project_root"] + '/' + config["evaluations"][id]["file"],
         sLine=int(config["evaluations"][id]["remove"][0]["start_line"]),
         sCol=int(config["evaluations"][id]["remove"][0]["start_column"]),
@@ -118,13 +119,13 @@ def run_completion(model, config, id, mode, log_suffix='', k=4, t=0.5, c=4):
         for line in csv_reader:
             project_apis.add(line['name'])
     token_similarity = similarity_evaluation(ground_truth, completions)
-    api_similarity = API_similarity(ground_truth, completions, project_apis)
+    api_similarity, n_apis = API_similarity(ground_truth, completions, project_apis)
     token_best = token_similarity.index(max(token_similarity))
     api_best = api_similarity.index(max(api_similarity))
     print(f'Best token similarity: {token_similarity} -> {token_best}')
     with open(here/'experiment'/config["name"]/mode/f'temp{id}'/'best.md', 'w') as f:
         f.write(f'N-gram similarity {token_similarity} from completion number {token_best}  \n'
-                f'API similarity {api_similarity} from completion number {api_best}  \n'
+                f'API similarity {api_similarity} from completion number {api_best} local APIs {n_apis} \n'
                 f'prompt:\n```python\n{prompt}\n```\n'
                 f'ground truth:\n```python\n{ground_truth}\n```\n'
                 f'best n-gram:\n```python\n{completions[token_best]}\n```\n'

@@ -9,10 +9,11 @@ from .utils import same_location, embeddings, postprocess, get_completion_safely
 logger = logging.getLogger(__name__)
 
 class BaseDiCompletion:
-    def __init__(self, project_root: str, model: str = "Codex", location: Dict = {}):
+    def __init__(self, project_root: str, model: str = "Codex", func: str = '', location: Dict = {}):
         self.project_root = Path(project_root)
         print(f'Project root: {self.project_root.as_posix()}')
         self.location = location
+        self.func = func
         with open(merge(project_root, self.location["file"]), 'r') as f:
             code = f.read()
             lines = code.splitlines()
@@ -45,12 +46,14 @@ class BaseDiCompletion:
             for line in csv_reader:
                 if same_location(line, self.location):
                     continue
+                if self.func == line['name']:
+                    print(f'Potentially wrong function: {self.func} {self.location} {line}')
                 if line['qualifiedName'] not in self.additional_context:
                     self.additional_context[line['qualifiedName']] = []
                 if '\nvariables\n' in line['docstring']:
                     tmp_context = [line['header']] + line['docstring'].split('\nvariables\n')[1].split('\n')
                 else:
-                    tmp_context = [line['header'] + ' # ' + line['docstring'][:100]]
+                    tmp_context = [(line['header'] + ' # ' + line['docstring'][:100]) if len(line['docstring']) > 0 else line['header']]
                 self.additional_context[line['qualifiedName']].extend(tmp_context)
 
     def get_context(self, prompt: str, completion: str) -> List[str]:

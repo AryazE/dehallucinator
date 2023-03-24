@@ -10,7 +10,7 @@ import logging
 from pathlib import Path
 
 def main(project_root: str, prompt: str, mode: str, 
-        model: str, file: str, sLine: int, sCol: int, 
+        model: str, func: str, file: str, sLine: int, sCol: int, 
         eLine: int, eCol: int, output: str, log: str, k=4, t=0.5, c=4):
     logging.basicConfig(level=logging.INFO,filename=f'benchmark/{project_root.split("/")[-1]}-{mode}{log}.log', filemode='a')
     # prompt = prompt.replace('\\n', '\n')
@@ -36,7 +36,7 @@ def main(project_root: str, prompt: str, mode: str,
         elif mode.startswith('explicit'):
             completion_model = ExplicitCompletion(project_root, model=model, location=loc, t=t, c=c)
         elif mode.startswith('docstring'):
-            completion_model = DocstringCompletion(project_root, model=model, location=loc, t=t, c=c)
+            completion_model = DocstringCompletion(project_root, model=model, func=func, location=loc, t=t, c=c)
         else:
             raise ValueError(f'Unknown mode: {mode}')
         context, completions = completion_model.completion(completor, prompt, k=k)
