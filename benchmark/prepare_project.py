@@ -97,7 +97,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
                 dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
                 continue
             different = False
-            for k, v in test_results.items():
+            for k, v in test_results[0].items():
                 if k not in orig_results or orig_results[k] != v:
                     different = True
                     break
