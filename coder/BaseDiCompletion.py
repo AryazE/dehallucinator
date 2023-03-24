@@ -44,7 +44,7 @@ class BaseDiCompletion:
         with open(file, newline='') as csvfile:
             csv_reader = csv.DictReader(csvfile)
             for line in csv_reader:
-                if same_location(line, self.location):
+                if same_location(line, self.location) and line['name'] == self.func:
                     continue
                 if self.func == line['name']:
                     print(f'Potentially wrong function: {self.func} {self.location} {line}')

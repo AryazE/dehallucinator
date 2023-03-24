@@ -48,11 +48,13 @@ def same_location(line, location):
     for i in ['start_line', 'end_line', 'start_column', 'end_column']:
         if location[i] == -1:
             return False
-    if not line['file'].endswith(location['file']):
+    line_parts = line['file'].split('/')
+    location_parts = location['file'].split('/')
+    if line_parts[-2:] != location_parts[-2:]:
         return False
     if int(line['start_line']) > location['end_line']:
         return False
-    if int(line['end_line']) < location['start_line']:
+    if int(line['end_line']) < location['start_line']-10:
         return False
     if int(line['start_line']) == location['end_line'] and int(line['start_column']) > location['end_column']:
         return False
