@@ -40,8 +40,13 @@ if __name__ == '__main__':
             if (here/args.project/mode/f'temp{id}'/'best.md').exists():
                 with open(here/args.project/mode/f'temp{id}'/'best.md') as f:
                     lines = f.readlines()
-                ngram_similarity = float(lines[0].split(' from ')[0][len('N-gram similarity '):])
-                api_similarity = float(lines[1].split(' from ')[0][len('API similarity '):])
+                
+                ngram_similarity = lines[0].split(' from ')[0][len('N-gram similarity '):].strip()
+                if ngram_similarity.startswith('['):
+                    ngram_similarity = max([float(ns.strip()) for ns in ngram_similarity[1:-1].split(',')])
+                api_similarity = lines[1].split(' from ')[0][len('API similarity '):].strip()
+                if api_similarity.startswith('['):
+                    api_similarity = max([float(ap.strip()) for ap in api_similarity[1:-1].split(',')])
                 report[id][-1] = (report[id][-1], ngram_similarity, api_similarity)
             elif id > 0:
                 report[id][-1] = (report[id][-1], 0, 0)
