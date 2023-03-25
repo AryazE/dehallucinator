@@ -47,9 +47,10 @@ if __name__ == '__main__':
                 api_similarity = lines[1].split(' from ')[0][len('API similarity '):].strip()
                 if api_similarity.startswith('['):
                     api_similarity = max([float(ap.strip()) for ap in api_similarity[1:-1].split(',')])
-                report[id][-1] = (report[id][-1], ngram_similarity, api_similarity)
+                api_count = int(lines[1].split('local APIs ')[1].strip())
+                report[id][-1] = (report[id][-1], ngram_similarity, api_similarity, api_count)
             elif id > 0:
-                report[id][-1] = (report[id][-1], 0, 0)
+                report[id][-1] = (report[id][-1], 0, 0, 0)
         final.append(final_row)
         if id > 0 and final_row != final[0]:
             print(f'Bad completion on {id}: {final_row}')
@@ -73,10 +74,10 @@ if __name__ == '__main__':
     
     headers = ['Test results', 'N-gram similarity', 'API similarity']
     with open(here/args.output/'README.md', 'w') as f:
-        f.write('| id | ' + ' | '.join([args.modes[int(i/3)] + headers[i%3] for i in range(3*len(args.modes))]) + ' | ground truth ' + ' |\n')
-        f.write('| --- | ' + ' | '.join(['---'] * (3*len(args.modes) + 1)) + ' |\n')
+        f.write('| id | ' + ' | '.join([args.modes[int(i/3)] + headers[i%3] for i in range(3*len(args.modes))]) + ' | ground truth | local APIs |\n')
+        f.write('| --- | ' + ' | '.join(['---'] * (3*len(args.modes) + 2)) + ' |\n')
         for k, v in report.items():
-            f.write(f'| {k} | ' + ' | '.join([f'[{v[x][0]}]({args.modes[x]}-{k}.md) | [{v[x][1]:.2f}](best-{args.modes[x]}-{k}.md) | [{v[x][2]:.2f}](best-{args.modes[x]}-{k}.md)' for x in range(len(v))]) + f' | [0](gt-{k}.md)' + ' |\n')
+            f.write(f'| {k} | ' + ' | '.join([f'[{v[x][0]}]({args.modes[x]}-{k}.md) | [{v[x][1]:.2f}](best-{args.modes[x]}-{k}.md) | [{v[x][2]:.2f}](best-{args.modes[x]}-{k}.md)' for x in range(len(v))]) + f' | [0](gt-{k}.md)' + f' | {v[-1][3]} ' + ' |\n')
 
     try:
         from grip import serve

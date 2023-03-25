@@ -82,7 +82,7 @@ class Completion:
                 k = kwargs['k']
                 del kwargs['k']
                 if k > 1:
-                    temperature = 0.4
+                    temperature = 0.2
                 else:
                     temperature = 0
             else:
@@ -91,7 +91,7 @@ class Completion:
             params = {
                 'model': 'gpt-3.5-turbo',
                 'messages': [
-                    {'role': 'system', 'content': 'You continue the user\'s code with your best guess. Do not write comments in the code. Your output should be valid python code when appended to the end of user\'s input.'},
+                    {'role': 'system', 'content': 'You continue the user\'s code. Do not leave the output empty. Do not write comments in the code. Your output should be valid python code when appended to the end of user\'s input.'},
                     {'role': 'user', 'content': context}
                 ],
                 'n': k,
