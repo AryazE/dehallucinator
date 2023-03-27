@@ -79,6 +79,11 @@ if __name__ == '__main__':
         for k, v in report.items():
             f.write(f'| {k} | ' + ' | '.join([f'[{v[x][0]}]({args.modes[x]}-{k}.md) | [{v[x][1]:.2f}](best-{args.modes[x]}-{k}.md) | [{v[x][2]:.2f}](best-{args.modes[x]}-{k}.md)' for x in range(len(v))]) + f' | [0](gt-{k}.md)' + f' | {v[-1][3]} ' + ' |\n')
 
+    with open(here/f'x_{args.output}.csv', 'w') as f:
+        f.write('id,' + ','.join([args.modes[int(i/3)] + headers[i%3] for i in range(3*len(args.modes))]) + ',local APIs\n')
+        for k, v in report.items():
+            f.write(f'{k},' + ','.join([f'{v[x][0]},{v[x][1]:.2f},{v[x][2]:.2f}' for x in range(len(v))]) + f',{v[-1][3]}\n')
+
     try:
         from grip import serve
         serve(str(here/args.output), port=5000)
