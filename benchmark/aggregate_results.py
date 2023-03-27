@@ -24,7 +24,7 @@ if __name__ == '__main__':
     headers = lines[0].split(',')[1:]
     cols = []
     for i in range(len(results[0])):
-        cols.append([results[j][i]/max_fails[jj[j]] if results[j][i] > -1 else 1 for j in range(len(results))])
+        cols.append([results[j][i] if 0 <= results[j][i] <= 1 else (results[j][i] if results[j][i] > -1 else max_fails[jj[j]])/max_fails[jj[j]] for j in range(len(results))])
     with open('aggregate.csv', 'w') as f:
         print('col, min, mean, max, std')
         f.write('col, min, mean, max, std\n')
