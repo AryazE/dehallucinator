@@ -24,7 +24,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
     temp_dirs = list((here/'experiment'/config['name']/mode).glob(f'temp{id}-*/'))
     if len(temp_dirs) == 0:
         temp_dirs = [here/'experiment'/config['name']/mode/f'temp{id}']
-    test_result = []
+    test_result = [{} for _ in range(len(temp_dirs))]
     best = -1
     # temp_dir = here/'experiment'/config['name']/mode/f'temp{id}'/config['project_root']
     for temp_dir in temp_dirs:
@@ -66,7 +66,10 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             (temp_dir/'results.xml').unlink(missing_ok=True)
         uninstall_res = subprocess.run([executable, '-m', 'pip', 'uninstall', '-y', config['name']], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         temp_result = read_test_results(str(temp_dir/'results.xml'), id)
-        test_result.append(temp_result)
+        if len(temp_dirs) > 1:
+            test_result[int(str(temp_dir).split(f'temp{id}-')[1].rstrip('/'))] = temp_result
+        else:
+            test_result[0] = temp_result
     return test_result
 
 if __name__ == '__main__':

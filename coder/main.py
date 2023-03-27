@@ -9,13 +9,25 @@ from .docstring import DocstringCompletion
 import logging
 from pathlib import Path
 
+def is_local_import(line: str, file: str) -> bool:
+    l = line.strip()
+    if not l.startswith('import ') and not l.startswith('from '):
+        return False
+    if l.startswith('import .') or l.startswith('from .'):
+        return True
+    possible_pkgs = file.split('/')
+    for pkg in possible_pkgs:
+        if l.startswith(f'import {pkg}') or l.startswith(f'from {pkg}'):
+            return True
+    return False
+
 def main(project_root: str, prompt: str, mode: str, 
         model: str, func: str, file: str, sLine: int, sCol: int, 
         eLine: int, eCol: int, output: str, log: str, k=4, t=0.5, c=4):
     logging.basicConfig(level=logging.INFO,filename=f'benchmark/{project_root.split("/")[-1]}-{mode}{log}.log', filemode='a')
     # prompt = prompt.replace('\\n', '\n')
     prompt_lines = prompt.splitlines()
-    prompt = '\n'.join([l for l in prompt_lines if not (l.strip().startswith('import ') or l.strip().startswith('from '))])
+    prompt = '\n'.join([l for l in prompt_lines if not is_local_import(l, file)])
     completor = Completion()
     if mode.startswith('baseline'):
         context, completions = baseline.completion(model, completor, prompt, k=k)

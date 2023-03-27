@@ -20,6 +20,18 @@ if __name__ == '__main__':
         results[mode] = {x['id']: (x['tests'], x['errors'], x['failures'], x['skipped']) for x in res_list}
         ids.update(set([x['id'] for x in res_list]))
     ids = sorted(list(ids))
+    complete = dict()
+    for mode in args.modes:
+        for id in ids:
+            result_path = here/args.project/mode/f'temp{id}'/'res_numbers.txt'
+            k_res = []
+            with open(result_path, 'r') as f:
+                res = f.read().splitlines()
+            for k in range(len(res)):
+                k_res.append(res[k].split(' '))
+            complete[mode][id] = k_res
+    with open(here/args.output/'complete.json', 'w') as f:
+        json.dump(complete, f)
     report = dict()
     for id in ids:
         final_row = []

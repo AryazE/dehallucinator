@@ -91,7 +91,8 @@ class Completion:
             params = {
                 'model': 'gpt-3.5-turbo',
                 'messages': [
-                    {'role': 'system', 'content': 'You continue the user\'s code. Do not leave the output empty. Do not write comments in the code. Your output should be valid python code when appended to the end of user\'s input.'},
+                    #{'role': 'system', 'content': 'You continue the user\'s code. Do not leave the output empty. Do not write comments in the code. Your output should be valid python code when appended to the end of user\'s input.'},
+                    {'role': 'system', 'content': 'Act like Codex. Just continue the Python code of the user.'},
                     {'role': 'user', 'content': context}
                 ],
                 'n': k,
