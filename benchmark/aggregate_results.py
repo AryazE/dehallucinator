@@ -15,7 +15,7 @@ if __name__ == '__main__':
             results.append([float(i) for i in line.split(',')[1:]])
     headers = lines[0].split(',')[1:]
     cols = []
-    for i in len(results[0]):
+    for i in range(len(results[0])):
         cols.append([results[j][i] for j in len(results)])
     with open('aggregate.csv', 'w') as f:
         print('col, min, mean, max, std')
