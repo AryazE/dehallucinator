@@ -75,9 +75,10 @@ if __name__ == '__main__':
             #     logger.info(f'best_context: {best_context}, possible_context: {possible_context}, given_context: {given_context}')
             if not args.noTests:
                 tmp_res = run_tests(config, i["id"], args.mode, executable)
-                new_res = None
-                for r in range(len(tmp_res)):
-                    if new_res is None or (new_res['failures'] > tmp_res[r]['failures'] and new_res['tests'] <= tmp_res[r]['tests']):
+                new_res = tmp_res[0]
+                best = 0
+                for r in range(1, len(tmp_res)):
+                    if new_res['tests'] > tmp_res[r]['tests'] or (new_res['failures'] > tmp_res[r]['failures'] and new_res['tests'] == tmp_res[r]['tests']):
                         new_res = tmp_res[r]
                         best = r
                 with open(here/'experiment'/config['name']/args.mode/f'temp{i["id"]}'/'res_numbers.txt', 'r') as f:
