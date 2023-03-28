@@ -21,8 +21,12 @@ if __name__ == '__main__':
         ids.update(set([x['id'] for x in res_list]))
     ids = sorted(list(ids))
     complete = dict()
+    (here/args.output).mkdir(parents=True, exist_ok=True)
     for mode in args.modes:
+        complete[mode] = dict()
         for id in ids:
+            if id == 0:
+                continue
             result_path = here/args.project/mode/f'temp{id}'/'res_numbers.txt'
             k_res = []
             with open(result_path, 'r') as f:
@@ -70,7 +74,6 @@ if __name__ == '__main__':
             if final_row[i][1:] != final_row[i + 1][1:]:
                 print(f'Different results for {id} : {final_row[i]} vs {final_row[i + 1]}')
     print('id, ' + ', '.join(args.modes))
-    (here/args.output).mkdir(parents=True, exist_ok=True)
     for k, v in report.items():
         print(f'{k}, ' + ', '.join([str(x) for x in v]))
         if (here/args.project/mode/f'temp{k}'/'gt.md').exists():
