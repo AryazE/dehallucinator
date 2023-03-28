@@ -91,14 +91,15 @@ class Completion:
             params = {
                 'model': 'gpt-3.5-turbo',
                 'messages': [
-                    {'role': 'system', 'content': 'You continue the user\'s code even if there are indentation errors or functions and classes are missing. Do not leave the output empty. Do not write comments in the code. Your output should be valid python code when appended to the end of user\'s input.'},
+                    # {'role': 'system', 'content': 'You continue the user\'s code even if there are indentation errors or functions and classes are missing. Do not leave the output empty. Do not write comments in the code. Your output should be valid python code when appended to the end of user\'s input.'},
                     # {'role': 'system', 'content': 'Act like Codex. Just continue the Python code of the user.'},
+                    {'role': 'system', 'content': 'Implement the body of the last function in user\'s prompt. Only use Python code and do not explain anything or produce comments. You can ignore any syntax errors, missing imports, etc. in the user\'s code.'},
                     {'role': 'user', 'content': context}
                 ],
                 'n': k,
                 'temperature': temperature,
                 'max_tokens': 500,
-                'stop': ['\n\n\n', 'def ', 'async def ', 'class ']
+                'stop': ['\n\n\n']
             }
             params.update(kwargs)
             now = time.monotonic()
@@ -120,6 +121,10 @@ class Completion:
                             res.append(i['message']['content'].split('```')[1].lstrip())
                         else:
                             res.append(i['message']['content'])
+                        if res[-1].startswith('def'):
+                            temp_body = res[-1].split('\n')
+                            if len(temp_body) > 1:
+                                res[-1] = '\n'.join(temp_body[1:])
                     break
                 except Exception as e:
                     print(e)
