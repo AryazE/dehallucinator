@@ -51,7 +51,7 @@ class SWSim:
                 f.write(f'{(float(rt)*int(n)+end-start)/(int(n)+1)} {int(n)+1}')
             new_context = set()
             for r in res:
-                new_context.add(self.code_lines[r])
+                new_context.add(self.code_lines[r[0]])
             text_context = '# '.join(new_context)
             new_prompt = clip_prompt(prompt, 3500 - len(text_context) - 20)
             new_prompt = f'# These are lines of code from other files that are relevant to the last function\n{text_context}\n{new_prompt}'
