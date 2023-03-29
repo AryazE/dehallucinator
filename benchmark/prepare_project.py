@@ -162,25 +162,25 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
                 new_code.append(temp)
         with open(temp_dir/i["file"], 'w') as f:
             f.writelines(new_code)
-    if mode == 'base':
-        start = time.process_time_ns()
-        all_py_files = list(temp_dir.glob('**/*.py'))
-        embd = []
-        for f in all_py_files:
-            with open(f, 'r') as f:
-                content = f.read()
-                lines = content.splitlines()
-            embd.extend(embeddings(lines))
-            with open(temp_dir/'all.py', 'a') as f:
-                f.write(content)
-                if not content.endswith('\n'):
-                    f.write('\n')
-        tree = BallTree(np.array(embd))
-        with open(temp_dir/'tree.pkl', 'wb') as f:
-            pickle.dump(tree, f)
-        end = time.process_time_ns()
-        with open(temp_dir/'BallTree_time.txt', 'w') as f:
-            f.write(str((end - start)/1000))
+        if mode == 'base':
+            start = time.process_time_ns()
+            all_py_files = list(temp_dir.glob('**/*.py'))
+            embd = []
+            for f in all_py_files:
+                with open(f, 'r') as f:
+                    content = f.read()
+                    lines = content.splitlines()
+                embd.extend(embeddings(lines))
+                with open(temp_dir/'all.py', 'a') as f:
+                    f.write(content)
+                    if not content.endswith('\n'):
+                        f.write('\n')
+            tree = BallTree(np.array(embd))
+            with open(temp_dir/'tree.pkl', 'wb') as f:
+                pickle.dump(tree, f)
+            end = time.process_time_ns()
+            with open(temp_dir/'BallTree_time.txt', 'w') as f:
+                f.write(str((end - start)/1000))
 
     # if len(okay) > 20:
     #     sample = random.sample(okay, 20)
