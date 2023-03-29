@@ -7,6 +7,7 @@ import logging
 import pkgutil
 from .utils import same_location, embeddings, postprocess, get_completion_safely, get_indentation, merge, clip_prompt
 import pickle
+import numpy as np
 from sklearn.neighbors import BallTree
 
 logger = logging.getLogger(__name__)
@@ -37,7 +38,7 @@ class SWSim:
 
     def generate_new_prompt(self, prompt: str, context: Set[str], completion: str) -> Tuple[str, Set[str]]:
         start = time.process_time_ns()
-        comp_embd = embeddings(completion.splitlines())
+        comp_embd = embeddings(np.array(completion.splitlines(keepends=True)))
         res = self.ball_tree.query(comp_embd)
         end = time.process_time_ns()
         if not (self.project_root/'..'/'..'/'retrieval_time.txt').exists():
