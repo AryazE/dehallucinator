@@ -27,9 +27,9 @@ class SWSim:
                     self.self_name = cls.group('class')
                     break
 
-        with open(project_root/'tree.pkl', 'rb') as f:
+        with open(self.project_root/'tree.pkl', 'rb') as f:
             self.ball_tree = pickle.load(f)
-        with open(project_root/'all.py', 'r') as f:
+        with open(self.project_root/'all.py', 'r') as f:
             self.code_lines = f.read().splitlines()
         
         self.artifacts = self.project_root/'..'/'..'/'artifacts.md'
