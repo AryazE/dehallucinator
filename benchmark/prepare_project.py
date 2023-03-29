@@ -10,12 +10,15 @@ from pathlib import Path
 import traceback
 import virtualenv
 from run_tests import run_tests
-from coder.utils import run_query
+from coder.utils import run_query, embeddings
 from coder.utils import get_completion_safely
 from coder.backend import Completion
 from run_completion import filter_external, as_module
 import libcst as cst
 from libcst import matchers
+import numpy as np
+from sklearn.neighbors import BallTree
+import pickle
 
 CURSOR = '<CURSOR>'
 
@@ -39,6 +42,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
         end = time.process_time_ns()
         with open(str(here/'experiment'/config['name']/mode/'preprocessing_time.txt'), 'w') as f:
             f.write(f'{end - start} ns')
+
     project_apis = set()
     with open(here/'experiment'/config["name"]/'functionRes.csv', newline='') as f:
         csv_reader = csv.DictReader(f)
@@ -158,6 +162,26 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
                 new_code.append(temp)
         with open(temp_dir/i["file"], 'w') as f:
             f.writelines(new_code)
+    if mode == 'base':
+        start = time.process_time_ns()
+        all_py_files = list(temp_dir.glob('**/*.py'))
+        embd = []
+        for f in all_py_files:
+            with open(f, 'r') as f:
+                content = f.read()
+                lines = content.splitlines()
+            embd.extend(embeddings(lines))
+            with open(temp_dir/'all.py', 'a') as f:
+                f.write(content)
+                if not content.endswith('\n'):
+                    f.write('\n')
+        tree = BallTree(np.array(embd))
+        with open(temp_dir/'tree.pkl', 'wb') as f:
+            pickle.dump(tree, f)
+        end = time.process_time_ns()
+        with open(temp_dir/'BallTree_time.txt', 'w') as f:
+            f.write(str((end - start)/1000))
+
     # if len(okay) > 20:
     #     sample = random.sample(okay, 20)
     #     for id in okay:
