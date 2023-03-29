@@ -62,9 +62,9 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
         if i['id'] == 0 and not noTests:
             orig_results = run_tests(config, 0, mode, env_session.interpreter.executable)[0]
         if i['id'] == 0 and mode == 'base':
-            temp_dir = here/'experiment'/config['name']/mode/f'temp0'/config['project_root']
+            temp_dir = here/'experiment'/config['name']/mode/f'temp0'
             start = time.process_time_ns()
-            all_py_files = sorted(temp_dir.glob('**/*.py'))
+            all_py_files = sorted((temp_dir/config['project_root']).glob('**/*.py'))
             embd = []
             lens = []
             for fi in all_py_files:
