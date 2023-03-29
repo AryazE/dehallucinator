@@ -44,7 +44,7 @@ class SWSim:
             if p.endswith(self.location['file']):
                 for j in range(self.location['start_line'] - 6, self.location['end_line']):
                     self.invalid_indices.add(total + j)
-            total += n
+            total += int(n)
         
         self.artifacts = self.project_root/'..'/'..'/'artifacts.md'
 

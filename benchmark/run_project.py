@@ -41,7 +41,7 @@ if __name__ == '__main__':
         if len(sample) < len(ids):
             new_eval = []
             for i in config['evaluations']:
-                if i['id'] in sample:
+                if i['id'] in sample or i['id'] == 0:
                     new_eval.append(i)
             config['evaluations'] = new_eval
             Path(args.config).unlink()
