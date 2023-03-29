@@ -170,7 +170,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
         lens = []
         for fi in all_py_files:
             with open(fi, 'r') as f:
-                content = fi.read()
+                content = f.read()
                 lines = content.splitlines(keepends=True)
             lens.append(len(lines))
             windows = [''.join(lines[i:i+5]) for i in range(len(lines) - 4)]
