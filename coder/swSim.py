@@ -29,11 +29,12 @@ class SWSim:
                     self.self_name = cls.group('class')
                     break
 
-        with open(self.project_root/'tree.pkl', 'rb') as f:
+        saved_path = self.project_root/'..'/'..'/'..'/'..'/'base'/'temp0'
+        with open(saved_path/'tree.pkl', 'rb') as f:
             self.ball_tree = pickle.load(f)
-        with open(self.project_root/'all.py', 'r') as f:
+        with open(saved_path/'all.py', 'r') as f:
             self.code_lines = f.read().splitlines(keepends=True)
-        with open(self.project_root/'all.files', 'r') as f:
+        with open(saved_path/'all.files', 'r') as f:
             tmp_files = f.read().splitlines()
 
         self.invalid_indices = set()
