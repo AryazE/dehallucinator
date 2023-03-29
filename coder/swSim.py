@@ -32,7 +32,7 @@ class SWSim:
         with open(self.project_root/'tree.pkl', 'rb') as f:
             self.ball_tree = pickle.load(f)
         with open(self.project_root/'all.py', 'r') as f:
-            self.code_lines = f.read().splitlines()
+            self.code_lines = f.read().splitlines(keepends=True)
         
         self.artifacts = self.project_root/'..'/'..'/'artifacts.md'
 
@@ -40,7 +40,7 @@ class SWSim:
         if len(completion) > 0:
             start = time.process_time_ns()
             comp_embd = np.array(embeddings(completion.splitlines(keepends=True)))
-            res = self.ball_tree.query(comp_embd)
+            dist, res = self.ball_tree.query(comp_embd)
             end = time.process_time_ns()
             if not (self.project_root/'..'/'..'/'retrieval_time.txt').exists():
                 with open(self.project_root/'..'/'..'/'retrieval_time.txt', 'w') as f:
@@ -51,7 +51,7 @@ class SWSim:
                 f.write(f'{(float(rt)*int(n)+end-start)/(int(n)+1)} {int(n)+1}')
             new_context = set()
             for r in res:
-                new_context.add(self.code_lines[r[1]])
+                new_context.add(self.code_lines[r])
             text_context = '# '.join(new_context)
             new_prompt = clip_prompt(prompt, 3500 - len(text_context) - 20)
             new_prompt = f'# These are lines of code from other files that are relevant to the last function\n{text_context}\n{new_prompt}'
