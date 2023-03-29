@@ -50,7 +50,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
         for line in csv_reader:
             project_apis.add(line['name'])
     for i in config['evaluations']:
-        if len(okay) > 20:
+        if len(okay) >= 20:
             break
         if i['id'] > 0 and len(ids) > 0 and i['id'] not in ids:
             continue
