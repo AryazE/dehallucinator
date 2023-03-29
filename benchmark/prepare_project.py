@@ -169,8 +169,9 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
             for f in all_py_files:
                 with open(f, 'r') as f:
                     content = f.read()
-                    lines = content.splitlines()
-                embd.extend(embeddings(lines))
+                    lines = content.splitlines(keepends=True)
+                windows = [''.join(lines[i:i+5]) for i in range(len(lines) - 4)]
+                embd.extend(embeddings(windows))
                 with open(temp_dir/'all.py', 'a') as f:
                     f.write(content)
                     if not content.endswith('\n'):
