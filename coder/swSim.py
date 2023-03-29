@@ -39,7 +39,7 @@ class SWSim:
     def generate_new_prompt(self, prompt: str, context: Set[str], completion: str) -> Tuple[str, Set[str]]:
         if len(completion) > 0:
             start = time.process_time_ns()
-            comp_embd = embeddings(np.array(completion.splitlines(keepends=True)))
+            comp_embd = np.array(embeddings(completion.splitlines(keepends=True)))
             res = self.ball_tree.query(comp_embd)
             end = time.process_time_ns()
             if not (self.project_root/'..'/'..'/'retrieval_time.txt').exists():
