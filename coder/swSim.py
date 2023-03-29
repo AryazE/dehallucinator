@@ -15,6 +15,7 @@ class SWSim:
     def __init__(self, project_root: str, model: str = "Codex", func: str = '', location: Dict = {}, similarity_threshold: float = 0.5):
         self.project_root = Path(project_root)
         self.similarity_threshold = similarity_threshold
+        self.model = model
         print(f'Project root: {self.project_root.as_posix()}')
         self.location = location
         self.func = func
