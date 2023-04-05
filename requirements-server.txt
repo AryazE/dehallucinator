@@ -1,5 +1,4 @@
 flask
 python-dotenv
---find-links https://download.pytorch.org/whl/torch_stable.html
-torch==1.12.1+cu112
-transformers==4.23.1
+torch
+transformers
