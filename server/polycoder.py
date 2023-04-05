@@ -12,8 +12,8 @@ class PolyCoder():
     def get_completion(self, context):
         if self.model is None:
             self.load_model()
-        inputs = self.tokenizer.encode(context, return_tensors="pt").to(0)
-        sample = self.model.generate(inputs, max_new_tokens=128, num_beams=4, num_return_sequences=1)
+        inputs = self.tokenizer(context, return_tensors="pt").to(0)
+        sample = self.model.generate(**inputs, max_new_tokens=128, num_beams=4, num_return_sequences=1)
         return self.tokenizer.decode(sample[0])
 
     def unload_model(self):
