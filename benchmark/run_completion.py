@@ -13,7 +13,7 @@ from crystalbleu import corpus_bleu, SmoothingFunction
 from coder.utils import clip_prompt, DELIMITER, dedent, equal_apis
 from coder.main import main
 
-PROMPT_LIMIT = 1500
+PROMPT_LIMIT = 1750
 logger = logging.getLogger(__name__)
 sm_func = SmoothingFunction().method1
 

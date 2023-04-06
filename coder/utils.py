@@ -86,7 +86,7 @@ def get_completion_safely(model: str, completor, prompt, k=4):
         if model == 'GPT3.5':
             prompt_size = 3500
         else:
-            prompt_size = 1500
+            prompt_size = 1750
         clipped_prompt = prompt
         while prompt_size > 0:
             clipped_prompt = clip_prompt(clipped_prompt, prompt_size)

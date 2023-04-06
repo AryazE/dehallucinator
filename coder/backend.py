@@ -27,12 +27,12 @@ class Completion:
             url = API_URL + "/codegen"
             data = {"accessToken": access_token, "context": context}
             response = requests.post(url, data=data)
-            return response.text
+            return [response.text]
         elif model == "PolyCoder":
             url = API_URL + "/polycoder"
             data = {"accessToken": access_token, "context": context}
             response = requests.post(url, data=data)
-            return response.text
+            return [response.text]
         elif model == "Codex":
             if 'k' in kwargs:
                 k = kwargs['k']

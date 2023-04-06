@@ -97,6 +97,6 @@ class DocstringCompletion(BaseDiCompletion):
         if self.model == 'GPT3.5':
             prompt_size = 3500
         else:
-            prompt_size = 1500
+            prompt_size = 1750
         new_prompt = clip_prompt(new_prompt, prompt_size)
         return new_prompt, new_context
