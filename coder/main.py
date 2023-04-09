@@ -6,6 +6,7 @@ from .simple import SimpleCompletion
 from .explicit import ExplicitCompletion
 from .cstSimple import CSTSimpleCompletion
 from .docstring import DocstringCompletion
+from .comment import CommentCompletion
 from .swSim import SWSim
 import logging
 from pathlib import Path
@@ -50,6 +51,8 @@ def main(project_root: str, prompt: str, mode: str,
             completion_model = ExplicitCompletion(project_root, model=model, location=loc, t=t, c=c)
         elif mode.startswith('docstring'):
             completion_model = DocstringCompletion(project_root, model=model, func=func, location=loc, t=t, c=c)
+        elif mode.startswith('comment'):
+            completion_model = CommentCompletion(project_root, model=model, func=func, location=loc, t=t, c=c)
         elif mode.startswith('sw'):
             completion_model = SWSim(project_root, model=model, func=func, location=loc, similarity_threshold=t)
         else:
