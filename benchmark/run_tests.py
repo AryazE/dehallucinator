@@ -59,7 +59,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             str(temp_dir/'results.xml'),
         ]
         if id == 0 and mode == 'base':
-            pytest_command = [f'--cov={str(temp_dir/config["project_root"])}', '--cov-context=test', f'--omit={str(temp_dir/config["project_root"])/config["tests_path"]}'] + pytest_command
+            pytest_command = [f'--cov={str(temp_dir/config["project_root"])}', '--cov-context=test', f'--omit={str(temp_dir/config["project_root"]/config["tests_path"])}/*'] + pytest_command
             os.environ['COVERAGE_FILE'] = str(here/'experiment'/config['name']/'.coverage')
         else:
             # run only tests that cover the function
