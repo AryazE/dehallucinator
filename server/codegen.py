@@ -10,7 +10,7 @@ class CodeGen():
             self.load_model()
         inputs = self.tokenizer(context, return_tensors="pt").to('cuda')
         sample = self.model.generate(**inputs, max_new_tokens=256)
-        res = self.tokenizer.decode(sample[0][inputs.input_ids.shape[1]:])#, truncate_before_pattern=["\n\n\n", "def ", "class "])
+        res = self.tokenizer.decode(sample[0][inputs.input_ids.shape[1]:], truncate_before_pattern=["\n\n\n", "def ", "class "])
         return res
     
     def load_model(self):

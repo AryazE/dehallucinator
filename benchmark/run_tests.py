@@ -1,4 +1,5 @@
 from typing import Dict, Any, List
+import os
 import sys
 from distutils import dir_util
 import subprocess
@@ -6,6 +7,7 @@ import json
 import argparse
 from pathlib import Path
 from read_test_results import read_test_results
+from coverage.data import CoverageData
 
 def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> List[Dict]:
     here = Path(__file__).resolve().parent
@@ -56,6 +58,19 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             '--junitxml', 
             str(temp_dir/'results.xml'),
         ]
+        if id == 0 and mode == 'base':
+            pytest_command = [f'--cov={str(temp_dir/config["project_root"])}', '--cov-context=test'] + pytest_command
+            os.environ['COVERAGE_FILE'] = str(here/'experiment'/config['name']/'.coverage')
+        else:
+            # run only tests that cover the function
+            for x in config['evaluations']:
+                if x['id'] == id:
+                    this = x
+                    break
+            cov_data = CoverageData(str(here/'experiment'/config['name']/'.coverage'))
+            line = this['remove'][0]['start_line']
+            tests = cov_data.contexts_by_lineno(this['file'])[line]
+            pytest_command += ['-k', '"' + ' or '.join(tests) + '"']
         pytest_command.append(str(temp_dir/config['project_root']/config['tests_path']))
         try:
             test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
