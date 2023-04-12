@@ -82,7 +82,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
         try:
             if id == 0 and mode == 'base':
                 with open(str(here/'experiment'/config['name']/'.coveragerc'), 'w') as f:
-                    f.write('[run]\ndynamic_context = test_function')
+                    f.write('[run]\n' f'source = {str(temp_dir/config["project_root"])}\n' 'dynamic_context = test_function')
                 test_res = subprocess.run(['coverage', 'run', '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
             else:
                 test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
