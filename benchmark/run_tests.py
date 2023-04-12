@@ -82,7 +82,8 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             if id == 0 and mode == 'base':
                 with open(str(here/'experiment'/config['name']/'.coveragerc'), 'w') as f:
                     f.write('[run]\n' f'source = {str(temp_dir/config["project_root"])}\n' f'data_file = {str(here/"experiment"/config["name"]/".coverage")}\n' 'dynamic_context = test_function')
-                test_res = subprocess.run(['coverage', 'run', '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
+                test_res = subprocess.run(['coverage', 'run', f'--rcfile={str(here/"experiment"/config["name"]/".coveragerc")}', '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
+                print(f'!!!!\n{test_res.stderr.decode("utf-8")}\n!!!!\n{test_res.stdout.decode("utf-8")}\n!!!!')
             else:
                 test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
             if test_res.returncode != 0:
