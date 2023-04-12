@@ -59,10 +59,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             '--junitxml', 
             str(temp_dir/'results.xml'),
         ]
-        if id == 0 and mode == 'base':
-            pytest_command = [f'--cov={str(temp_dir/config["project_root"])}'] + pytest_command
-            os.environ['COVERAGE_FILE'] = str(here/'experiment'/config['name']/'.coverage')
-        else:
+        if id != 0 or mode != 'base':
             # run only tests that cover the function
             for x in config['evaluations']:
                 if x['id'] == id:
@@ -82,7 +79,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
         try:
             if id == 0 and mode == 'base':
                 with open(str(here/'experiment'/config['name']/'.coveragerc'), 'w') as f:
-                    f.write('[run]\n' f'source = {str(temp_dir/config["project_root"])}\n' 'dynamic_context = test_function')
+                    f.write('[run]\n' f'source = {str(temp_dir/config["project_root"])}\n' f'data_file = {str(here/"experiment"/config["name"]/".coverage")}\n' 'dynamic_context = test_function')
                 test_res = subprocess.run(['coverage', 'run', '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
             else:
                 test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
