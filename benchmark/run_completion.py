@@ -90,25 +90,29 @@ def run_completion(model, config, id, mode, log_suffix='', k=4, t=0.5, c=4):
     global PROMPT_LIMIT
     here = Path(__file__).resolve().parent
     project_root = here/'experiment'/config["name"]/mode/f'temp{id}'/config['project_root']
-    with open(project_root/config["evaluations"][id]["file"]) as f:
+    for x in config['evaluations']:
+        if x['id'] == id:
+            this = x
+            break
+    with open(project_root/this["file"]) as f:
         code = f.read()
     splited_code = code.split('<CURSOR>')
     if model == 'GPT3.5':
         PROMPT_LIMIT = 3500
     prompt = clip_prompt(splited_code[0], PROMPT_LIMIT)
-    with open(here/config['project_root']/config["evaluations"][id]["file"], 'r') as f:
+    with open(here/config['project_root']/this["file"], 'r') as f:
         orig_code = f.read()
     ground_truth = orig_code[len(splited_code[0]):-len(splited_code[1])]
     with open(here/'experiment'/config["name"]/mode/f'temp{id}'/'gt.md', 'w') as f:
         f.write(f'prompt:\n```python\n{prompt}\n```\nground truth:\n```python\n{ground_truth}\n```\n')
     logger.info(f'Running completion for {config["name"]} {id} with prompt: \n{prompt}')
     main(str(project_root), prompt, mode, model, 
-        func=config['evaluations'][id]['function'],
-        file=config["project_root"] + '/' + config["evaluations"][id]["file"],
-        sLine=int(config["evaluations"][id]["remove"][0]["start_line"]),
-        sCol=int(config["evaluations"][id]["remove"][0]["start_column"]),
-        eLine=int(config["evaluations"][id]["remove"][0]["end_line"]),
-        eCol=int(config["evaluations"][id]["remove"][0]["end_column"]),
+        func=this['function'],
+        file=config["project_root"] + '/' + this["file"],
+        sLine=int(this["remove"][0]["start_line"]),
+        sCol=int(this["remove"][0]["start_column"]),
+        eLine=int(this["remove"][0]["end_line"]),
+        eCol=int(this["remove"][0]["end_column"]),
         output=str(project_root/f'completion.out'), log=log_suffix, k=k, t=t, c=c)
     with open(project_root/f'completion.out') as f:
         completions = f.read().split(DELIMITER)
@@ -138,23 +142,23 @@ def run_completion(model, config, id, mode, log_suffix='', k=4, t=0.5, c=4):
         final_code = splited_code[0] + completions[i] + '\n' + splited_code[1]
         fixed_code = final_code #fix_code(final_code)
         dir_util.copy_tree(str(here/'experiment'/config["name"]/mode/f'temp{id}'), str(here/'experiment'/config["name"]/mode/f'temp{id}-{i}'))
-        with open(here/'experiment'/config["name"]/mode/f'temp{id}-{i}'/config['project_root']/config["evaluations"][id]["file"], 'w') as f:
+        with open(here/'experiment'/config["name"]/mode/f'temp{id}-{i}'/config['project_root']/this["file"], 'w') as f:
             f.write(fixed_code)
     return completions
     # with open(project_root/f'completion.context') as f:
     #     context = f.read()
     # best_context = 0
     # possible_context = 0
-    # if 'best_context' in config["evaluations"][id] or 'possible_context' in config["evaluations"][id]:
+    # if 'best_context' in this or 'possible_context' in this:
     #     for l in context.splitlines():
     #         best_temp = 0
-    #         for c in config["evaluations"][id]["best_context"]:
+    #         for c in this["best_context"]:
     #             if c in l and len(c) > best_temp:
     #                 best_temp = len(c)
     #         if best_temp > 0:
     #             best_context += 1
     #         best_temp = 0
-    #         for c in config["evaluations"][id]["possible_context"]:
+    #         for c in this["possible_context"]:
     #             if c in l and len(c) > best_temp:
     #                 best_temp = len(c)
     #         if best_temp > 0:
