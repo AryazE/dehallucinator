@@ -75,6 +75,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             file = (file_parts[0] + 'temp0' + file_parts[1]).replace(f'/{mode}/', '/base/')
             tests_per_line = cov_data.contexts_by_lineno(file)
             tests = []
+            print(tests_per_line.keys())
             for t in tests_per_line[line]:
                 parts = t.split('.')
                 tests.append(f'{str(temp_dir/config["project_root"])}/{("/".join(parts[:-3]) + "/") if len(parts) > 3 else ""}{parts[-3]}.py::{parts[-2]}::{parts[-1]}')
