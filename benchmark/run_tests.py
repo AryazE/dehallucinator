@@ -83,7 +83,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             if id == 0 and mode == 'base':
                 with open(str(here/'experiment'/config['name']/'.coveragerc'), 'w') as f:
                     f.write('[run]\ndynamic_context = test_function')
-                test_res = subprocess.run(['coverage', '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
+                test_res = subprocess.run(['coverage', 'run', '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
             else:
                 test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
             if test_res.returncode != 0:
