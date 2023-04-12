@@ -10,11 +10,11 @@ API_URL = env_vars['api-url']
 access_token = env_vars['access-token']
 openai.api_key = env_vars['openai-api-key']
 root = Path(__file__).resolve().parent/'..'/'benchmark'/'experiment'
-if not (root/'time-Codex.txt').exists():
-    with open(root/'time-Codex.txt', 'w') as f:
+if not (root/'time-CodeGen.txt').exists():
+    with open(root/'time-CodeGen.txt', 'w') as f:
         f.write('0 0')
-if not (root/'time-GPT35.txt').exists():
-    with open(root/'time-GPT35.txt', 'w') as f:
+if not (root/'time-PolyCoder.txt').exists():
+    with open(root/'time-PolyCoder.txt', 'w') as f:
         f.write('0 0')
 
 class Completion:
@@ -26,12 +26,24 @@ class Completion:
         if model == "CodeGen":
             url = API_URL + "/codegen"
             data = {"accessToken": access_token, "context": context}
+            start = time.process_time_ns()
             response = requests.post(url, data=data)
+            end = time.process_time_ns()
+            with open(root/'time-CodeGen.txt', 'r') as f:
+                t, n = f.read().split(' ')
+            with open(root/'time-CodeGen.txt', 'w') as f:
+                f.write(f'{(float(t)*int(n) + (end - start)/1000)/(int(n) + 1)} {int(n) + 1}')
             return [response.text]
         elif model == "PolyCoder":
             url = API_URL + "/polycoder"
             data = {"accessToken": access_token, "context": context}
+            start = time.process_time_ns()
             response = requests.post(url, data=data)
+            end = time.process_time_ns()
+            with open(root/'time-PolyCoder.txt', 'r') as f:
+                t, n = f.read().split(' ')
+            with open(root/'time-PolyCoder.txt', 'w') as f:
+                f.write(f'{(float(t)*int(n) + (end - start)/1000)/(int(n) + 1)} {int(n) + 1}')
             return [response.text]
         elif model == "Codex":
             if 'k' in kwargs:
