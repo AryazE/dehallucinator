@@ -76,8 +76,8 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             tests_per_line = cov_data.contexts_by_lineno(file)
             tests = []
             for t in tests_per_line[line]:
-                parts = t.split('.')[-3:]
-                tests.append(f'{parts[0]}.py::{parts[1]}::{parts[2]}')
+                parts = t.split('.')
+                tests.append(f'{("/".join(parts[:-3]) + "/") if len(parts) > 3 else ""}{parts[-3]}.py::{parts[-2]}::{parts[-1]}')
             pytest_command += ['-v'] + tests
         pytest_command.append(str(temp_dir/config['project_root']/config['tests_path']))
         try:
