@@ -74,8 +74,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
                 file_parts[1] = '/'.join(file_parts[1].split('/')[1:])
             file = (file_parts[0] + 'temp0' + file_parts[1]).replace(f'/{mode}/', '/base/')
             tests_per_line = cov_data.contexts_by_lineno(file)
-            print(cov_data.measured_files(), file, tests_per_line)
-            tests = [line]
+            tests = tests_per_line[line]
             pytest_command += ['-k', '"' + ' or '.join(tests) + '"']
         pytest_command.append(str(temp_dir/config['project_root']/config['tests_path']))
         try:
