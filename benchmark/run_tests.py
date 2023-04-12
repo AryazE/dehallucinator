@@ -74,8 +74,11 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
                 file_parts[1] = '/'.join(file_parts[1].split('/')[1:])
             file = (file_parts[0] + 'temp0' + file_parts[1]).replace(f'/{mode}/', '/base/')
             tests_per_line = cov_data.contexts_by_lineno(file)
-            tests = tests_per_line[line]
-            pytest_command += ['-k', '"' + ' or '.join(tests) + '"']
+            tests = []
+            for t in tests_per_line[line]:
+                parts = t.split('.')[-3:]
+                tests.append(f'{parts[0]}.py::{parts[1]}::{parts[2]}')
+            pytest_command += ['-v'] + tests
         pytest_command.append(str(temp_dir/config['project_root']/config['tests_path']))
         try:
             if id == 0 and mode == 'base':
