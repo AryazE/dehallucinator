@@ -7,6 +7,7 @@ import json
 import argparse
 from pathlib import Path
 from read_test_results import read_test_results
+from coverage import Coverage
 from coverage.data import CoverageData
 
 def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> List[Dict]:
@@ -59,7 +60,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             str(temp_dir/'results.xml'),
         ]
         if id == 0 and mode == 'base':
-            pytest_command = [f'--cov={str(temp_dir/config["project_root"])}', '--cov-context=test'] + pytest_command
+            pytest_command = [f'--cov={str(temp_dir/config["project_root"])}'] + pytest_command
             os.environ['COVERAGE_FILE'] = str(here/'experiment'/config['name']/'.coverage')
         else:
             # run only tests that cover the function
@@ -67,13 +68,24 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
                 if x['id'] == id:
                     this = x
                     break
-            cov_data = CoverageData(str(here/'experiment'/config['name']/'.coverage'))
+            cov = Coverage(data_file=str(here/'experiment'/config['name']/'.coverage'))
+            cov.load()
+            cov_data = cov.get_data()
             line = this['remove'][0]['start_line']
-            tests = cov_data.contexts_by_lineno(this['file'])[line]
+            file_parts = str(temp_dir/config["project_root"]/this['file']).split(f'temp{id}')
+            if file_parts[1].startswith('-'):
+                file_parts[1] = '/'.join(file_parts[1].split('/')[1:])
+            file = (file_parts[0] + 'temp0' + file_parts[1]).replace(f'/{mode}/', '/base/')
+            tests = cov_data.contexts_by_lineno(file)[line]
             pytest_command += ['-k', '"' + ' or '.join(tests) + '"']
         pytest_command.append(str(temp_dir/config['project_root']/config['tests_path']))
         try:
-            test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
+            if id == 0 and mode == 'base':
+                with open(str(here/'experiment'/config['name']/'.coveragerc'), 'w') as f:
+                    f.write('[run]\ndynamic_context = test_function')
+                test_res = subprocess.run(['coverage', '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
+            else:
+                test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
             if test_res.returncode != 0:
                 print(test_res.stderr.decode('utf-8'))
         except subprocess.TimeoutExpired:
