@@ -71,7 +71,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             line = this['remove'][0]['start_line']
             file_parts = str(temp_dir/config["project_root"]/this['file']).split(f'temp{id}')
             if file_parts[1].startswith('-'):
-                file_parts[1] = '/'.join(file_parts[1].split('/')[1:])
+                file_parts[1] = '/' + '/'.join(file_parts[1].split('/')[1:])
             file = (file_parts[0] + 'temp0' + file_parts[1]).replace(f'/{mode}/', '/base/')
             tests_per_line = cov_data.contexts_by_lineno(file)
             tests = []
