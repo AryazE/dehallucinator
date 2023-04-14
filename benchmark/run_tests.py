@@ -59,6 +59,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             '--junitxml', 
             str(temp_dir/'results.xml'),
         ]
+        dontRun = False
         if id != 0 or mode != 'base':
             # run only tests that cover the function
             for x in config['evaluations']:
@@ -76,27 +77,36 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             tests_per_line = cov_data.contexts_by_lineno(file)
             tests = []
             print(tests_per_line.keys())
+            if line not in tests_per_line:
+                print('No test covers this line.')
+                dontRun = True
+            else:
+                dontRun = False
             for t in tests_per_line[line]:
                 parts = t.split('.')
                 tests.append(f'{str(temp_dir/config["project_root"])}/{("/".join(parts[:-3]) + "/") if len(parts) > 3 else ""}{parts[-3]}.py::{parts[-2]}::{parts[-1]}')
             pytest_command += tests
         else:
             pytest_command.append(str(temp_dir/config['project_root']/config['tests_path']))
-        try:
-            if id == 0 and mode == 'base':
-                with open(str(here/'experiment'/config['name']/'.coveragerc'), 'w') as f:
-                    f.write('[run]\n' f'source = {str(temp_dir/config["project_root"])}\n' f'data_file = {str(here/"experiment"/config["name"]/".coverage")}\n' 'dynamic_context = test_function')
-                test_res = subprocess.run(['coverage', 'run', f'--rcfile={str(here/"experiment"/config["name"]/".coveragerc")}', '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
-                print(f'!!!!\n{test_res.stderr.decode("utf-8")}\n!!!!\n{test_res.stdout.decode("utf-8")}\n!!!!')
-            else:
-                test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
-            if test_res.returncode != 0:
-                print(test_res.stderr.decode('utf-8'))
-        except subprocess.TimeoutExpired:
-            print('Timeout at 10 minutes: Tests take too long to run.')
-            (temp_dir/'results.xml').unlink(missing_ok=True)
+        if not dontRun:
+            try:
+                if id == 0 and mode == 'base':
+                    with open(str(here/'experiment'/config['name']/'.coveragerc'), 'w') as f:
+                        f.write('[run]\n' f'source = {str(temp_dir/config["project_root"])}\n' f'data_file = {str(here/"experiment"/config["name"]/".coverage")}\n' 'dynamic_context = test_function')
+                    test_res = subprocess.run(['coverage', 'run', f'--rcfile={str(here/"experiment"/config["name"]/".coveragerc")}', '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
+                    print(f'!!!!\n{test_res.stderr.decode("utf-8")}\n!!!!\n{test_res.stdout.decode("utf-8")}\n!!!!')
+                else:
+                    test_res = subprocess.run([executable, '-m', 'pytest'] + pytest_command, capture_output=True, timeout=600)
+                if test_res.returncode != 0:
+                    print(test_res.stderr.decode('utf-8'))
+            except subprocess.TimeoutExpired:
+                print('Timeout at 10 minutes: Tests take too long to run.')
+                (temp_dir/'results.xml').unlink(missing_ok=True)
         uninstall_res = subprocess.run([executable, '-m', 'pip', 'uninstall', '-y', config['name']], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        temp_result = read_test_results(str(temp_dir/'results.xml'), id)
+        if (temp_dir/'results.xml').exists():
+            temp_result = read_test_results(str(temp_dir/'results.xml'), id)
+        else:
+            temp_result = {}
         if len(temp_dirs) > 1:
             test_result[int(str(temp_dir).split(f'temp{id}-')[1].rstrip('/'))] = temp_result
         else:
