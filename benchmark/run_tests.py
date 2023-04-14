@@ -87,9 +87,8 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
                     test_id = ''
                     prev = temp_dir/config['project_root']/config['tests_path']
                     if (prev/'__init__.py').exists():
-                        i = 1
-                    else:
-                        i = 0
+                        parts = parts[1:]
+                    i = 0
                     while (prev/parts[i]).exists():
                         prev = prev/parts[i]
                         i += 1
