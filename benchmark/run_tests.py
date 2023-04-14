@@ -82,9 +82,9 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
                 dontRun = True
             else:
                 dontRun = False
-            for t in tests_per_line[line]:
-                parts = t.split('.')
-                tests.append(f'{str(temp_dir/config["project_root"])}/{("/".join(parts[:-3]) + "/") if len(parts) > 3 else ""}{parts[-3]}.py::{parts[-2]}::{parts[-1]}')
+                for t in tests_per_line[line]:
+                    parts = t.split('.')
+                    tests.append(f'{str(temp_dir/config["project_root"])}/{("/".join(parts[:-3]) + "/") if len(parts) > 3 else ""}{parts[-3]}.py::{parts[-2]}::{parts[-1]}')
             pytest_command += tests
         else:
             pytest_command.append(str(temp_dir/config['project_root']/config['tests_path']))
