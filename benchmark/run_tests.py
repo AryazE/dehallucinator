@@ -83,6 +83,7 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             else:
                 dontRun = False
                 for t in tests_per_line[line]:
+                    print(f'####### {t}')
                     if ']' in t or '[' in t:
                         tmp = t[t.find('['):]
                         parts = tmp[0].split('.')
