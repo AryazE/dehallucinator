@@ -2,3 +2,4 @@ flask
 python-dotenv
 torch
 transformers
+accelerate
