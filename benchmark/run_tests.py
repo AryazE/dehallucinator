@@ -83,14 +83,19 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             else:
                 dontRun = False
                 for t in tests_per_line[line]:
-                    print(f'####### {t}')
-                    if ']' in t or '[' in t:
-                        tmp = t[t.find('['):]
-                        parts = tmp[0].split('.')
+                    parts = t.split('.')
+                    test_id = ''
+                    prev = temp_dir/config['project_root']/config['tests_path']
+                    if (prev/'__init__.py').exists():
+                        i = 1
                     else:
-                        tmp = ''
-                        parts = t.split('.')
-                    tests.append(f'{str(temp_dir/config["project_root"])}/{("/".join(parts[:-3]) + "/") if len(parts) > 3 else ""}{parts[-3]}.py::{parts[-2]}::{parts[-1]}{tmp}')
+                        i = 0
+                    while (prev/parts[i]).exists():
+                        prev = prev/parts[i]
+                        i += 1
+                    print(f'{t} {str(prev)} {i}')
+                    test_id += str(temp_dir/config['project_root']/config['tests_path']) + '/' + '/'.join(parts[:i]) + '/' + parts[i] + '.py' + '::' + parts[i+1] + (('::' + parts[i+2]) if len(parts) > i+2 else '')
+                    tests.append(test_id)
             pytest_command += tests
         else:
             pytest_command.append(str(temp_dir/config['project_root']/config['tests_path']))
