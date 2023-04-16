@@ -1,6 +1,4 @@
-import torch
-from accelerate import init_empty_weights, load_checkpoint_and_dispatch
-from transformers import AutoTokenizer, AutoModelForCausalLM, AutoConfig
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
 class CodeGen():
     def __init__(self):
@@ -16,13 +14,9 @@ class CodeGen():
         return res
     
     def load_model(self):
-        checkpoint = "Salesforce/codegen-6B-mono"
-        config = AutoConfig.from_pretrained(checkpoint)
-
-        with init_empty_weights():
-            model = AutoModelForCausalLM.from_config(config)
+        checkpoint = "Salesforce/codegen-2B-mono"
         self.tokenizer = AutoTokenizer.from_pretrained(checkpoint, device_map='auto')
-        self.model = load_checkpoint_and_dispatch(model, device_map='auto', dtype=torch.float16, checkpoint=checkpoint)
+        self.model = AutoModelForCausalLM.from_pretrained(checkpoint, device_map='auto')
     
     def unload_model(self):
         del self.model
