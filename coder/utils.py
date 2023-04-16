@@ -62,7 +62,9 @@ def same_location(line, location):
         return False
     return True
 
-def postprocess(code, indent_style='\t', indent_count=0):
+def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
+    if mode.endswith('l') or mode.endswith('line'):
+        return code.splitlines(True)[0]
     if '\n' not in code or code.endswith('\n'):
         return code
     prefix = (indent_style * indent_count) + 'def foo():\n' + (indent_style * (indent_count+1))

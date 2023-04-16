@@ -9,8 +9,9 @@ from .utils import same_location, embeddings, postprocess, get_completion_safely
 logger = logging.getLogger(__name__)
 
 class BaseDiCompletion:
-    def __init__(self, project_root: str, model: str = "Codex", func: str = '', location: Dict = {}):
+    def __init__(self, project_root: str, model: str = "Codex", func: str = '', location: Dict = {}, mode: str = ''):
         self.project_root = Path(project_root)
+        self.mode = mode
         print(f'Project root: {self.project_root.as_posix()}')
         self.location = location
         self.func = func
@@ -89,7 +90,7 @@ class BaseDiCompletion:
             new_prompt, context = self.generate_new_prompt(prompt, context, completion)
             completion = get_completion_safely(self.model, completor, new_prompt, k=1)[0]
             logger.info(f'completion w/o postprocessing:\n{completion}\n')
-            completion = postprocess(completion, self.indent_style, self.indent_count)
+            completion = postprocess(completion, self.indent_style, self.indent_count, self.mode)
             completions.append(completion)
             logger.info(f'For prompt:\n{new_prompt}\n, got completion:\n{completion}\n')
             attempts += 1

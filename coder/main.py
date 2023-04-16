@@ -44,17 +44,17 @@ def main(project_root: str, prompt: str, mode: str,
             'end_column': eCol
         }
         if mode.startswith('simple'):
-            completion_model = SimpleCompletion(project_root, model=model, location=loc, t=t, c=c)
+            completion_model = SimpleCompletion(project_root, model=model, location=loc, t=t, c=c, mode=mode)
         elif mode.startswith('cstSimple'):
-            completion_model = CSTSimpleCompletion(project_root, model=model, location=loc, t=t, c=c)
+            completion_model = CSTSimpleCompletion(project_root, model=model, location=loc, t=t, c=c, mode=mode)
         elif mode.startswith('explicit'):
-            completion_model = ExplicitCompletion(project_root, model=model, location=loc, t=t, c=c)
+            completion_model = ExplicitCompletion(project_root, model=model, location=loc, t=t, c=c, mode=mode)
         elif mode.startswith('docstring'):
-            completion_model = DocstringCompletion(project_root, model=model, func=func, location=loc, t=t, c=c)
+            completion_model = DocstringCompletion(project_root, model=model, func=func, location=loc, t=t, c=c, mode=mode)
         elif mode.startswith('comment'):
-            completion_model = CommentCompletion(project_root, model=model, func=func, location=loc, t=t, c=c)
+            completion_model = CommentCompletion(project_root, model=model, func=func, location=loc, t=t, c=c, mode=mode)
         elif mode.startswith('sw'):
-            completion_model = SWSim(project_root, model=model, func=func, location=loc, similarity_threshold=t)
+            completion_model = SWSim(project_root, model=model, func=func, location=loc, similarity_threshold=t, mode=mode)
         else:
             raise ValueError(f'Unknown mode: {mode}')
         context, completions = completion_model.completion(completor, prompt, k=k)

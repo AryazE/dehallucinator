@@ -8,8 +8,8 @@ from .BaseDiCompletion import BaseDiCompletion
 logger = logging.getLogger(__name__)
 
 class CommentCompletion(BaseDiCompletion):
-    def __init__(self, project_root: str, model: str = "Codex", func: str = '', location: Dict = {}, c: int = 5, t: float = 0.5):
-        super().__init__(project_root, model, func, location)
+    def __init__(self, project_root: str, model: str = "Codex", func: str = '', location: Dict = {}, c: int = 5, t: float = 0.5, mode: str = ''):
+        super().__init__(project_root, model, func, location, mode)
         self.context_size = c
         self.similarity_threshold = t
 
