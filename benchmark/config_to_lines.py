@@ -15,7 +15,8 @@ if __name__ == '__main__':
             new_config['evaluations'].append(e)
             continue
         j = 0
-        for i in range(e['start_line'], e['end_line'] + 1):
+        rem = e['remove'][0]
+        for i in range(rem['start_line'], rem['end_line'] + 1):
             new_config['evaluations'].append({
                 'id': e['id']+j,
                 'file': e['file'],
@@ -24,7 +25,7 @@ if __name__ == '__main__':
                     'description': 'code',
                     'start_line': i,
                     'end_line': i+1,
-                    'start_column': e['start_column'],
+                    'start_column': rem['start_column'],
                     'end_column': 1
                 }]
             })
