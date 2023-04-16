@@ -10,15 +10,15 @@ if __name__ == '__main__':
         config = json.load(f)
     new_config = deepcopy(config)
     new_config['evaluations'] = []
+    j = 1
     for e in config['evaluations']:
         if e['id'] == 0:
             new_config['evaluations'].append(e)
             continue
-        j = 0
         rem = e['remove'][0]
         for i in range(rem['start_line'], rem['end_line'] + 1):
             new_config['evaluations'].append({
-                'id': e['id']+j,
+                'id': j,
                 'file': e['file'],
                 'function': e['function'],
                 'remove': [{
