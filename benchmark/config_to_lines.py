@@ -1,5 +1,6 @@
 import argparse
 import json
+from copy import deepcopy
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -7,10 +8,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
     with open(args.config) as f:
         config = json.load(f)
-    new_config = config
-    copy_evals = config['evaluations'].deepcopy()
+    new_config = deepcopy(config)
     new_config['evaluations'] = []
-    for e in copy_evals:
+    for e in config['evaluations']:
         if e['id'] == 0:
             new_config['evaluations'].append(e)
             continue
