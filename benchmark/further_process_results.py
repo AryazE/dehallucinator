@@ -10,11 +10,18 @@ if __name__ == '__main__':
     with open(Path(args.results)/'complete.json', 'r') as f:
         results = json.load(f)
     
+    baseline = ''
+    for mode in results.keys():
+        if mode.startswith('baseline'):
+            baseline = mode
+            break
     for mode, sub_res in results.items():
         ng_imp = 0
         ap_imp = 0
         ng_it = 0
         ap_it = 0
+        ng_dicoder_better = 0
+        ap_dicoder_better = 0
         for id, res in sub_res.items():
             if id == 0:
                 continue
@@ -27,6 +34,11 @@ if __name__ == '__main__':
                     ng_count += 1
                 if api[i] > api[i-1]:
                     ap_count += 1
+            if not mode.startswith('baseline'):
+                if ngram[-1] > float(results[baseline][id][0][0]):
+                    ng_dicoder_better += 1
+                if api[-1] > float(results[baseline][id][0][1]):
+                    ap_dicoder_better += 1
             if ng_count > 0:
                 ng_imp += 1
             if ap_count > 0:
@@ -40,3 +52,6 @@ if __name__ == '__main__':
         print(f'API improvement: {ap_imp}')
         print(f'N-gram improvement (iterative): {ng_it}')
         print(f'API improvement (iterative): {ap_it}')
+        if not mode.startswith('baseline'):
+            print(f'N-gram improvement (dicoder better): {ng_dicoder_better}')
+            print(f'API improvement (dicoder better): {ap_dicoder_better}')
