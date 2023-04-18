@@ -24,11 +24,11 @@ class Completion:
         if model == 'lCodeGen':
             self.device = device
             checkpoint = "Salesforce/codegen-2B-mono"
-            self.tokenizer = AutoTokenizer.from_pretrained(checkpoint).to(self.device)
+            self.tokenizer = AutoTokenizer.from_pretrained(checkpoint)
             self.model = AutoModelForCausalLM.from_pretrained(checkpoint).to(self.device)
         elif model == 'lPolyCoder':
             self.device = device
-            self.tokenizer = AutoTokenizer.from_pretrained("NinedayWang/PolyCoder-2.7B").to(self.device)
+            self.tokenizer = AutoTokenizer.from_pretrained("NinedayWang/PolyCoder-2.7B")
             self.model = AutoModelForCausalLM.from_pretrained("NinedayWang/PolyCoder-2.7B").to(self.device)
 
     def get_completion(self, model: str, context: str, **kwargs) -> List[str]:
