@@ -16,7 +16,7 @@ class CodeGen():
     def load_model(self):
         checkpoint = "Salesforce/codegen-2B-mono"
         self.tokenizer = AutoTokenizer.from_pretrained(checkpoint, device_map='auto')
-        self.model = AutoModelForCausalLM.from_pretrained(checkpoint, device_map='auto', load_in_8bit=True)
+        self.model = AutoModelForCausalLM.from_pretrained(checkpoint, device_map='auto')
     
     def unload_model(self):
         del self.model

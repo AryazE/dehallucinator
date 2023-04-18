@@ -4,6 +4,7 @@ import requests
 import openai
 from dotenv import dotenv_values
 import time
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
 env_vars = dotenv_values('.env')
 API_URL = env_vars['api-url']
@@ -18,12 +19,43 @@ if not (root/'time-PolyCoder.txt').exists():
         f.write('0 0')
 
 class Completion:
-    def __init__(self):
+    def __init__(self, model='lCodeGen', device='cuda'):
         self.last_time = time.monotonic()
+        if model == 'lCodeGen':
+            self.device = device
+            checkpoint = "Salesforce/codegen-2B-mono"
+            self.tokenizer = AutoTokenizer.from_pretrained(checkpoint).to(self.device)
+            self.model = AutoModelForCausalLM.from_pretrained(checkpoint).to(self.device)
+        elif model == 'lPolyCoder':
+            self.device = device
+            self.tokenizer = AutoTokenizer.from_pretrained("NinedayWang/PolyCoder-2.7B").to(self.device)
+            self.model = AutoModelForCausalLM.from_pretrained("NinedayWang/PolyCoder-2.7B").to(self.device)
 
     def get_completion(self, model: str, context: str, **kwargs) -> List[str]:
         """Get code completion from the model"""
-        if model == "CodeGen":
+        if model == 'lCodeGen':
+            start = time.perf_counter_ns()
+            inputs = self.tokenizer(context, return_tensors="pt").to(self.device)
+            sample = self.model.generate(**inputs, max_new_tokens=256)
+            res = self.tokenizer.decode(sample[0][inputs.input_ids.shape[1]:], truncate_before_pattern=["\n\n\n", "def ", "class "])
+            end = time.perf_counter_ns()
+            with open(root/'time-CodeGen.txt', 'r') as f:
+                t, n = f.read().split(' ')
+            with open(root/'time-CodeGen.txt', 'w') as f:
+                f.write(f'{(float(t)*int(n) + (end - start)/1000)/(int(n) + 1)} {int(n) + 1}')
+            return [res]
+        elif model == 'lPolyCoder':
+            start = time.perf_counter_ns()
+            inputs = self.tokenizer(context, return_tensors="pt").to(self.device)
+            sample = self.model.generate(**inputs, max_new_tokens=256)
+            res = self.tokenizer.decode(sample[0][inputs.input_ids.shape[1]:], truncate_before_pattern=["\n\n\n", "def ", "class "])
+            end = time.perf_counter_ns()
+            with open(root/'time-PolyCoder.txt', 'r') as f:
+                t, n = f.read().split(' ')
+            with open(root/'time-PolyCoder.txt', 'w') as f:
+                f.write(f'{(float(t)*int(n) + (end - start)/1000)/(int(n) + 1)} {int(n) + 1}')
+            return [res]
+        elif model == "CodeGen":
             url = API_URL + "/codegen"
             data = {"accessToken": access_token, "context": context}
             start = time.perf_counter_ns()
