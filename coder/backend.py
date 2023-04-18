@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import List
 import requests
 import openai
+import torch
 from dotenv import dotenv_values
 import time
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -25,11 +26,11 @@ class Completion:
             self.device = device
             checkpoint = "Salesforce/codegen-2B-mono"
             self.tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-            self.model = AutoModelForCausalLM.from_pretrained(checkpoint, load_in_8bit=True).to(self.device)
+            self.model = AutoModelForCausalLM.from_pretrained(checkpoint, dtype=torch.float16).to(self.device)
         elif model == 'lPolyCoder':
             self.device = device
             self.tokenizer = AutoTokenizer.from_pretrained("NinedayWang/PolyCoder-2.7B")
-            self.model = AutoModelForCausalLM.from_pretrained("NinedayWang/PolyCoder-2.7B", load_in_8bit=True).to(self.device)
+            self.model = AutoModelForCausalLM.from_pretrained("NinedayWang/PolyCoder-2.7B", dtype=torch.float16).to(self.device)
 
     def get_completion(self, model: str, context: str, **kwargs) -> List[str]:
         """Get code completion from the model"""
