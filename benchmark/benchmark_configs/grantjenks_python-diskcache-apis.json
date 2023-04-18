@@ -1,0 +1,167 @@
+{
+    "name": "grantjenks_python-diskcache",
+    "project_root": "GitHubProjects/grantjenks_python-diskcache",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "file": "diskcache/fanout.py",
+            "function": "cache",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 601,
+                    "start_column": 1,
+                    "end_line": 602,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "diskcache/fanout.py",
+            "function": "deque",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 629,
+                    "start_column": 1,
+                    "end_line": 630,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "diskcache/fanout.py",
+            "function": "deque",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 630,
+                    "start_column": 1,
+                    "end_line": 631,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "diskcache/fanout.py",
+            "function": "index",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 661,
+                    "start_column": 1,
+                    "end_line": 662,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "diskcache/fanout.py",
+            "function": "index",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 662,
+                    "start_column": 1,
+                    "end_line": 663,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "diskcache/djangocache.py",
+            "function": "decorator",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 421,
+                    "start_column": 1,
+                    "end_line": 422,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "diskcache/djangocache.py",
+            "function": "__cache_key__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 450,
+                    "start_column": 1,
+                    "end_line": 451,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "diskcache/recipes.py",
+            "function": "decorator",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 271,
+                    "start_column": 1,
+                    "end_line": 272,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "diskcache/recipes.py",
+            "function": "decorator",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 327,
+                    "start_column": 1,
+                    "end_line": 328,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "diskcache/recipes.py",
+            "function": "decorator",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 402,
+                    "start_column": 1,
+                    "end_line": 403,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "diskcache/recipes.py",
+            "function": "__cache_key__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 465,
+                    "start_column": 1,
+                    "end_line": 466,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}

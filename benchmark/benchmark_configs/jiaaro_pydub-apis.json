@@ -1,0 +1,293 @@
+{
+    "name": "jiaaro_pydub",
+    "project_root": "GitHubProjects/jiaaro_pydub",
+    "tests_path": "test/test.py",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 196,
+            "file": "test/test.py",
+            "function": "test_split_on_silence_no_silence",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1120,
+                    "start_column": 1,
+                    "end_line": 1121,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 228,
+            "file": "test/test.py",
+            "function": "test_opening_raw_file",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1231,
+                    "start_column": 1,
+                    "end_line": 1232,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 162,
+            "file": "test/test.py",
+            "function": "test_export_mp4_as_mp3",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 806,
+                    "start_column": 1,
+                    "end_line": 807,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "pydub/effects.py",
+            "function": "strip_silence",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 102,
+                    "start_column": 1,
+                    "end_line": 103,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 212,
+            "file": "test/test.py",
+            "function": "test_loudness",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1170,
+                    "start_column": 1,
+                    "end_line": 1171,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 123,
+            "file": "test/test.py",
+            "function": "test_24_bit_audio",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 236,
+                    "start_column": 1,
+                    "end_line": 237,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 84,
+            "file": "pydub/scipy_effects.py",
+            "function": "eq",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 164,
+                    "start_column": 1,
+                    "end_line": 165,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 259,
+            "file": "test/test.py",
+            "function": "test_partial_load_start_second_and_duration_equals_cropped_raw_audio_segment",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1393,
+                    "start_column": 1,
+                    "end_line": 1394,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 164,
+            "file": "test/test.py",
+            "function": "test_export_mp4_as_wav",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 813,
+                    "start_column": 1,
+                    "end_line": 814,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 237,
+            "file": "test/test.py",
+            "function": "setUp",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1302,
+                    "start_column": 1,
+                    "end_line": 1303,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "file": "pydub/audio_segment.py",
+            "function": "export",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 959,
+                    "start_column": 1,
+                    "end_line": 960,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "file": "pydub/audio_segment.py",
+            "function": "remove_data_dc",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1151,
+                    "start_column": 1,
+                    "end_line": 1152,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 76,
+            "file": "pydub/audio_segment.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1385,
+                    "start_column": 1,
+                    "end_line": 1386,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "file": "test/test.py",
+            "function": "setUp",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 194,
+                    "start_column": 1,
+                    "end_line": 196,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "file": "pydub/effects.py",
+            "function": "normalize",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 46,
+                    "start_column": 1,
+                    "end_line": 47,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 252,
+            "file": "test/test.py",
+            "function": "test_partial_load_start_second_equals_cropped_wav_audio_segment",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1370,
+                    "start_column": 1,
+                    "end_line": 1371,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "pydub/audio_segment.py",
+            "function": "read_wav_audio",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 128,
+                    "start_column": 1,
+                    "end_line": 129,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 153,
+            "file": "test/test.py",
+            "function": "test_duration",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 762,
+                    "start_column": 1,
+                    "end_line": 763,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 142,
+            "file": "test/test.py",
+            "function": "test_export_forced_codec",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 660,
+                    "start_column": 1,
+                    "end_line": 661,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 65,
+            "file": "pydub/audio_segment.py",
+            "function": "apply_gain",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1172,
+                    "start_column": 1,
+                    "end_line": 1174,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}

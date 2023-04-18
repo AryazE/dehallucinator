@@ -1,0 +1,139 @@
+{
+    "name": "AtsushiSakai_PythonRobotics",
+    "project_root": "GitHubProjects/AtsushiSakai_PythonRobotics",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "file": "SLAM/GraphBasedSLAM/graphslam/load.py",
+            "function": "load_g2o_se2",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 47,
+                    "start_column": 1,
+                    "end_line": 48,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "SLAM/GraphBasedSLAM/graphslam/load.py",
+            "function": "load_g2o_se2",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 1,
+                    "end_line": 49,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "SLAM/GraphBasedSLAM/graphslam/load.py",
+            "function": "load_g2o_se2",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 57,
+                    "start_column": 1,
+                    "end_line": 58,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "SLAM/GraphBasedSLAM/graphslam/load.py",
+            "function": "load_g2o_se2",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 58,
+                    "start_column": 1,
+                    "end_line": 59,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "SLAM/GraphBasedSLAM/graphslam/load.py",
+            "function": "load_g2o_se2",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 59,
+                    "start_column": 1,
+                    "end_line": 60,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "SLAM/GraphBasedSLAM/graphslam/load.py",
+            "function": "load_g2o_se2",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 66,
+                    "start_column": 1,
+                    "end_line": 67,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "SLAM/GraphBasedSLAM/graphslam/pose/se2.py",
+            "function": "__new__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 30,
+                    "start_column": 1,
+                    "end_line": 31,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "SLAM/GraphBasedSLAM/graphslam/pose/se2.py",
+            "function": "__add__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 164,
+                    "start_column": 1,
+                    "end_line": 165,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "SLAM/GraphBasedSLAM/graphslam/pose/se2.py",
+            "function": "__sub__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 184,
+                    "start_column": 1,
+                    "end_line": 185,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}

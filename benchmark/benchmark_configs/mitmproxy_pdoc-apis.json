@@ -1,0 +1,293 @@
+{
+    "name": "mitmproxy_pdoc",
+    "project_root": "GitHubProjects/mitmproxy_pdoc",
+    "tests_path": "test",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 58,
+            "file": "pdoc/render_helpers.py",
+            "function": "to_html",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 176,
+                    "start_column": 1,
+                    "end_line": 181,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 53,
+            "file": "pdoc/web.py",
+            "function": "render_search_index",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 116,
+                    "start_column": 1,
+                    "end_line": 117,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "file": "pdoc/web.py",
+            "function": "handle_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 73,
+                    "start_column": 1,
+                    "end_line": 74,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "pdoc/render.py",
+            "function": "html_index",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 118,
+                    "start_column": 1,
+                    "end_line": 119,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "file": "pdoc/doc.py",
+            "function": "annotation_str",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1082,
+                    "start_column": 1,
+                    "end_line": 1083,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "pdoc/doc.py",
+            "function": "_member_objects",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 501,
+                    "start_column": 1,
+                    "end_line": 502,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "file": "pdoc/doc.py",
+            "function": "_var_docstrings",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 590,
+                    "start_column": 1,
+                    "end_line": 591,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "pdoc/render.py",
+            "function": "html_module",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 103,
+                    "start_column": 1,
+                    "end_line": 104,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "pdoc/render.py",
+            "function": "html_module",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 104,
+                    "start_column": 1,
+                    "end_line": 109,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 64,
+            "file": "pdoc/doc_types.py",
+            "function": "_eval_type",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 164,
+                    "start_column": 1,
+                    "end_line": 165,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "pdoc/web.py",
+            "function": "handle_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 60,
+                    "start_column": 1,
+                    "end_line": 61,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "pdoc/render.py",
+            "function": "search_index",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 131,
+                    "start_column": 1,
+                    "end_line": 132,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "file": "pdoc/doc.py",
+            "function": "_declarations",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 644,
+                    "start_column": 1,
+                    "end_line": 645,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 63,
+            "file": "pdoc/doc_types.py",
+            "function": "safe_eval_type",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 145,
+                    "start_column": 1,
+                    "end_line": 146,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "pdoc/render.py",
+            "function": "search_index",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 155,
+                    "start_column": 1,
+                    "end_line": 156,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "pdoc/doc.py",
+            "function": "_var_annotations",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 619,
+                    "start_column": 1,
+                    "end_line": 622,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "file": "pdoc/doc.py",
+            "function": "bases",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 744,
+                    "start_column": 1,
+                    "end_line": 745,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "pdoc/render.py",
+            "function": "html_error",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 122,
+                    "start_column": 1,
+                    "end_line": 123,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "pdoc/doc.py",
+            "function": "from_name",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 392,
+                    "start_column": 1,
+                    "end_line": 393,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "file": "pdoc/web.py",
+            "function": "handle_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 1,
+                    "end_line": 49,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}

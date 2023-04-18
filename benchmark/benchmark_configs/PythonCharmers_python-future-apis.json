@@ -1,0 +1,293 @@
+{
+    "name": "PythonCharmers_python-future",
+    "project_root": "GitHubProjects/PythonCharmers_python-future",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 50,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1677,
+                    "start_column": 1,
+                    "end_line": 1678,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "ftp_open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1498,
+                    "start_column": 1,
+                    "end_line": 1499,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "file_open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1421,
+                    "start_column": 1,
+                    "end_line": 1422,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 56,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "open_unknown",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1713,
+                    "start_column": 1,
+                    "end_line": 1714,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "proxy_open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 832,
+                    "start_column": 1,
+                    "end_line": 833,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "open_local_file",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1464,
+                    "start_column": 1,
+                    "end_line": 1465,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "retrieve",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1728,
+                    "start_column": 1,
+                    "end_line": 1729,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "_parse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 306,
+                    "start_column": 1,
+                    "end_line": 307,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 99,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "open_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2017,
+                    "start_column": 1,
+                    "end_line": 2018,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "retry_https_basic_auth",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2234,
+                    "start_column": 1,
+                    "end_line": 2235,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 101,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "open_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2053,
+                    "start_column": 1,
+                    "end_line": 2054,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "open_local_file",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1933,
+                    "start_column": 1,
+                    "end_line": 1934,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 79,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "open_local_file",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1928,
+                    "start_column": 1,
+                    "end_line": 1929,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "ftp_open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1479,
+                    "start_column": 1,
+                    "end_line": 1480,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 119,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "retry_https_basic_auth",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2229,
+                    "start_column": 1,
+                    "end_line": 2230,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 84,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "open_local_file",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1954,
+                    "start_column": 1,
+                    "end_line": 1955,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 57,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "open_unknown_proxy",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1718,
+                    "start_column": 1,
+                    "end_line": 1719,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 75,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "_open_generic_http",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1868,
+                    "start_column": 1,
+                    "end_line": 1869,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "request_host",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 273,
+                    "start_column": 1,
+                    "end_line": 274,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "file": "src/future/backports/urllib/request.py",
+            "function": "http_error_302",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 712,
+                    "start_column": 1,
+                    "end_line": 714,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}

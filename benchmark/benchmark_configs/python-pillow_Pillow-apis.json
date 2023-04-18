@@ -1,0 +1,293 @@
+{
+    "name": "python-pillow_Pillow",
+    "project_root": "GitHubProjects/python-pillow_Pillow",
+    "tests_path": "Tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 256,
+            "file": "src/PIL/PdfImagePlugin.py",
+            "function": "_save",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 221,
+                    "start_column": 1,
+                    "end_line": 222,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 595,
+            "file": "src/PIL/PngImagePlugin.py",
+            "function": "_save",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1296,
+                    "start_column": 1,
+                    "end_line": 1297,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 68,
+            "file": "src/PIL/Image.py",
+            "function": "open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 3227,
+                    "start_column": 1,
+                    "end_line": 3228,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 133,
+            "file": "src/PIL/DdsImagePlugin.py",
+            "function": "_save",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 264,
+                    "start_column": 1,
+                    "end_line": 265,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 183,
+            "file": "src/PIL/PsdImagePlugin.py",
+            "function": "_layerinfo",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 224,
+                    "start_column": 1,
+                    "end_line": 225,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "file": "src/PIL/PyAccess.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 43,
+                    "start_column": 1,
+                    "end_line": 44,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 847,
+            "file": "src/PIL/SunImagePlugin.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 139,
+                    "start_column": 1,
+                    "end_line": 140,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 170,
+            "file": "src/PIL/PsdImagePlugin.py",
+            "function": "_open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 121,
+                    "start_column": 1,
+                    "end_line": 122,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 278,
+            "file": "src/PIL/WmfImagePlugin.py",
+            "function": "_open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 94,
+                    "start_column": 1,
+                    "end_line": 95,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 282,
+            "file": "src/PIL/WmfImagePlugin.py",
+            "function": "_open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 117,
+                    "start_column": 1,
+                    "end_line": 118,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 571,
+            "file": "src/PIL/PngImagePlugin.py",
+            "function": "load_end",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 993,
+                    "start_column": 1,
+                    "end_line": 994,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 308,
+            "file": "src/PIL/PcxImagePlugin.py",
+            "function": "_save",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 174,
+                    "start_column": 1,
+                    "end_line": 175,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 698,
+            "file": "src/PIL/ImageFont.py",
+            "function": "getmask2",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 760,
+                    "start_column": 1,
+                    "end_line": 761,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 311,
+            "file": "src/PIL/PcxImagePlugin.py",
+            "function": "_save",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 177,
+                    "start_column": 1,
+                    "end_line": 178,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 661,
+            "file": "src/PIL/PalmImagePlugin.py",
+            "function": "_save",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 186,
+                    "start_column": 1,
+                    "end_line": 187,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 263,
+            "file": "src/PIL/PdfImagePlugin.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 284,
+                    "start_column": 1,
+                    "end_line": 285,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 361,
+            "file": "src/PIL/FliImagePlugin.py",
+            "function": "_open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 60,
+                    "start_column": 1,
+                    "end_line": 61,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 262,
+            "file": "src/PIL/PdfImagePlugin.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 282,
+                    "start_column": 1,
+                    "end_line": 283,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 535,
+            "file": "src/PIL/PngImagePlugin.py",
+            "function": "chunk_tRNS",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 481,
+                    "start_column": 1,
+                    "end_line": 482,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 196,
+            "file": "src/PIL/GbrImagePlugin.py",
+            "function": "_accept",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 32,
+                    "start_column": 1,
+                    "end_line": 33,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}

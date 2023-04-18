@@ -1,0 +1,293 @@
+{
+    "name": "lorien_grab",
+    "project_root": "GitHubProjects/lorien_grab",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 3,
+            "file": "grab/document.py",
+            "function": "rex_text",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 263,
+                    "start_column": 1,
+                    "end_line": 264,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "grab/request.py",
+            "function": "_process_timeout_param",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 117,
+                    "start_column": 1,
+                    "end_line": 118,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "grab/transport.py",
+            "function": "wrap_transport_error",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 73,
+                    "start_column": 1,
+                    "end_line": 74,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "grab/transport.py",
+            "function": "prepare_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 228,
+                    "start_column": 1,
+                    "end_line": 231,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "grab/spider/task.py",
+            "function": "check_init_kwargs",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 134,
+                    "start_column": 1,
+                    "end_line": 135,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "grab/transport.py",
+            "function": "wrap_transport_error",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 79,
+                    "start_column": 1,
+                    "end_line": 80,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "grab/client.py",
+            "function": "request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 43,
+                    "start_column": 1,
+                    "end_line": 44,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "file": "grab/document.py",
+            "function": "text_assert",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 241,
+                    "start_column": 1,
+                    "end_line": 242,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "grab/document.py",
+            "function": "rex_search",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 290,
+                    "start_column": 1,
+                    "end_line": 291,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "grab/spider/base.py",
+            "function": "srv_process_service_result",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 629,
+                    "start_column": 1,
+                    "end_line": 630,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "grab/transport.py",
+            "function": "request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 151,
+                    "start_column": 1,
+                    "end_line": 152,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "file": "grab/spider/base.py",
+            "function": "find_task_handler",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 421,
+                    "start_column": 1,
+                    "end_line": 424,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "grab/client.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 18,
+                    "start_column": 1,
+                    "end_line": 19,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "grab/transport.py",
+            "function": "wrap_transport_error",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 75,
+                    "start_column": 1,
+                    "end_line": 76,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "file": "grab/spider/queue_backend/redis.py",
+            "function": "put",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 61,
+                    "start_column": 1,
+                    "end_line": 62,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "file": "grab/spider/base.py",
+            "function": "create_grab_instance",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 330,
+                    "start_column": 1,
+                    "end_line": 331,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "grab/spider/base.py",
+            "function": "load_proxylist",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 274,
+                    "start_column": 1,
+                    "end_line": 275,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "grab/extensions.py",
+            "function": "clone",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 67,
+                    "start_column": 1,
+                    "end_line": 68,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "file": "grab/spider/task.py",
+            "function": "clone",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 155,
+                    "start_column": 1,
+                    "end_line": 156,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "file": "grab/extensions.py",
+            "function": "process_retry",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 44,
+                    "start_column": 1,
+                    "end_line": 45,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}

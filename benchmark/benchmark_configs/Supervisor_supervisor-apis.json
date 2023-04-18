@@ -1,0 +1,293 @@
+{
+    "name": "Supervisor_supervisor",
+    "project_root": "GitHubProjects/Supervisor_supervisor",
+    "tests_path": "supervisor/tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 298,
+            "file": "supervisor/supervisorctl.py",
+            "function": "do_clear",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1294,
+                    "start_column": 1,
+                    "end_line": 1295,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 119,
+            "file": "supervisor/dispatchers.py",
+            "function": "_init_normallog",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 139,
+                    "start_column": 1,
+                    "end_line": 143,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 63,
+            "file": "supervisor/templating.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 38,
+                    "start_column": 1,
+                    "end_line": 39,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "file": "supervisor/http.py",
+            "function": "get_server_url",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 318,
+                    "start_column": 1,
+                    "end_line": 319,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 386,
+            "file": "supervisor/medusa/http_server.py",
+            "function": "done",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 343,
+                    "start_column": 1,
+                    "end_line": 346,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "file": "supervisor/http.py",
+            "function": "postbind",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 501,
+                    "start_column": 1,
+                    "end_line": 502,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 415,
+            "file": "supervisor/medusa/producers.py",
+            "function": "more",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 236,
+                    "start_column": 1,
+                    "end_line": 237,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 95,
+            "file": "supervisor/templating.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1239,
+                    "start_column": 1,
+                    "end_line": 1240,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 353,
+            "file": "supervisor/web.py",
+            "function": "make_callback",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 296,
+                    "start_column": 1,
+                    "end_line": 297,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 346,
+            "file": "supervisor/web.py",
+            "function": "__call__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 183,
+                    "start_column": 1,
+                    "end_line": 184,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 258,
+            "file": "supervisor/options.py",
+            "function": "realize",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1678,
+                    "start_column": 1,
+                    "end_line": 1679,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 391,
+            "file": "supervisor/medusa/http_server.py",
+            "function": "__repr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 487,
+                    "start_column": 1,
+                    "end_line": 488,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 78,
+            "file": "supervisor/templating.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 53,
+                    "start_column": 1,
+                    "end_line": 54,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "file": "supervisor/http.py",
+            "function": "found_terminator",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 454,
+                    "start_column": 1,
+                    "end_line": 455,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 277,
+            "file": "supervisor/supervisorctl.py",
+            "function": "onecmd",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 212,
+                    "start_column": 1,
+                    "end_line": 213,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 57,
+            "file": "supervisor/events.py",
+            "function": "payload",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 127,
+                    "start_column": 1,
+                    "end_line": 128,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 404,
+            "file": "supervisor/medusa/http_server.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 848,
+                    "start_column": 1,
+                    "end_line": 854,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 237,
+            "file": "supervisor/options.py",
+            "function": "_processes_from_section",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 930,
+                    "start_column": 1,
+                    "end_line": 931,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 159,
+            "file": "supervisor/rpcinterface.py",
+            "function": "signalProcess",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 502,
+                    "start_column": 1,
+                    "end_line": 503,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "supervisor/http.py",
+            "function": "prebind",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 483,
+                    "start_column": 1,
+                    "end_line": 484,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}

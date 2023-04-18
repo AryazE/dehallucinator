@@ -1,0 +1,293 @@
+{
+    "name": "Parsely_streamparse",
+    "project_root": "GitHubProjects/Parsely_streamparse",
+    "tests_path": "test",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 19,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "_create_or_update_virtualenv",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 50,
+                    "start_column": 1,
+                    "end_line": 51,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 122,
+            "file": "streamparse/cli/tail.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 100,
+                    "start_column": 1,
+                    "end_line": 101,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 117,
+            "file": "streamparse/cli/tail.py",
+            "function": "tail_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 64,
+                    "start_column": 1,
+                    "end_line": 65,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 141,
+            "file": "streamparse/cli/stats.py",
+            "function": "_get_topology_ui_detail",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 93,
+                    "start_column": 1,
+                    "end_line": 94,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 113,
+            "file": "streamparse/cli/tail.py",
+            "function": "tail_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 60,
+                    "start_column": 1,
+                    "end_line": 61,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 56,
+            "file": "streamparse/cli/list.py",
+            "function": "list_topologies",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 18,
+                    "start_column": 1,
+                    "end_line": 19,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 135,
+            "file": "streamparse/cli/visualize.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 195,
+                    "start_column": 1,
+                    "end_line": 196,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 114,
+            "file": "streamparse/cli/tail.py",
+            "function": "tail_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 61,
+                    "start_column": 1,
+                    "end_line": 62,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 171,
+                    "start_column": 1,
+                    "end_line": 172,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 165,
+                    "start_column": 1,
+                    "end_line": 166,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 77,
+            "file": "streamparse/cli/submit.py",
+            "function": "submit_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 211,
+                    "start_column": 1,
+                    "end_line": 212,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "file": "streamparse/cli/tail.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 98,
+                    "start_column": 1,
+                    "end_line": 99,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 162,
+            "file": "streamparse/cli/worker_uptime.py",
+            "function": "display_worker_uptime",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 25,
+                    "start_column": 1,
+                    "end_line": 28,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "file": "streamparse/cli/list.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 56,
+                    "start_column": 1,
+                    "end_line": 57,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 155,
+            "file": "streamparse/cli/stats.py",
+            "function": "_get_topology_id",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 308,
+                    "start_column": 1,
+                    "end_line": 309,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 178,
+            "file": "streamparse/dsl/stream.py",
+            "function": "custom_object",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 124,
+                    "start_column": 1,
+                    "end_line": 128,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 132,
+            "file": "streamparse/cli/jar.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 69,
+                    "start_column": 1,
+                    "end_line": 70,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "file": "streamparse/cli/tail.py",
+            "function": "tail_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 63,
+                    "start_column": 1,
+                    "end_line": 64,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 81,
+            "file": "streamparse/cli/submit.py",
+            "function": "submit_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 282,
+                    "start_column": 1,
+                    "end_line": 285,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 140,
+            "file": "streamparse/cli/stats.py",
+            "function": "_get_topology_ui_detail",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 90,
+                    "start_column": 1,
+                    "end_line": 91,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,293 @@
+{
+    "name": "pyeve_cerberus",
+    "project_root": "GitHubProjects/pyeve_cerberus",
+    "tests_path": "cerberus/tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 11,
+            "file": "cerberus/schema.py",
+            "function": "validate",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 261,
+                    "start_column": 1,
+                    "end_line": 262,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "cerberus/base.py",
+            "function": "_expand_generic_type_aliases",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 143,
+                    "start_column": 1,
+                    "end_line": 144,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "file": "cerberus/errors.py",
+            "function": "__repr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 165,
+                    "start_column": 1,
+                    "end_line": 166,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "file": "cerberus/benchmarks/test_overall_performance_1.py",
+            "function": "init_validator",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 102,
+                    "start_column": 1,
+                    "end_line": 103,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "file": "cerberus/errors.py",
+            "function": "__repr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 166,
+                    "start_column": 1,
+                    "end_line": 167,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "cerberus/schema.py",
+            "function": "_validate_logical",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 165,
+                    "start_column": 1,
+                    "end_line": 166,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "cerberus/schema.py",
+            "function": "_validate_logical",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 166,
+                    "start_column": 1,
+                    "end_line": 167,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "file": "cerberus/base.py",
+            "function": "__init_processing",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1005,
+                    "start_column": 1,
+                    "end_line": 1006,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "cerberus/base.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 51,
+                    "start_column": 1,
+                    "end_line": 52,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "cerberus/schema.py",
+            "function": "validate",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 261,
+                    "start_column": 1,
+                    "end_line": 262,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "file": "cerberus/base.py",
+            "function": "_error",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 676,
+                    "start_column": 1,
+                    "end_line": 679,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "cerberus/base.py",
+            "function": "_expand_generic_type_aliases",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 146,
+                    "start_column": 1,
+                    "end_line": 147,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "file": "cerberus/base.py",
+            "function": "_flatten_Union_and_Optional",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 207,
+                    "start_column": 1,
+                    "end_line": 208,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "file": "cerberus/benchmarks/test_overall_performance_1.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 27,
+                    "start_column": 1,
+                    "end_line": 43,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "cerberus/schema.py",
+            "function": "__setitem__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 233,
+                    "start_column": 1,
+                    "end_line": 234,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "file": "cerberus/base.py",
+            "function": "__init_processing",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1022,
+                    "start_column": 1,
+                    "end_line": 1023,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "cerberus/schema.py",
+            "function": "_check_with_rulesset",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 93,
+                    "start_column": 1,
+                    "end_line": 94,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "cerberus/validator.py",
+            "function": "allow_unknown",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 31,
+                    "start_column": 1,
+                    "end_line": 32,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "file": "cerberus/benchmarks/test_overall_performance_2.py",
+            "function": "init_validator",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 14,
+                    "start_column": 1,
+                    "end_line": 15,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "cerberus/schema.py",
+            "function": "_check_with_schema",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 124,
+                    "start_column": 1,
+                    "end_line": 125,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}

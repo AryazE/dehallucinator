@@ -5,14 +5,16 @@ import libcst as cst
 import libcst.matchers as m
 from typing import NamedTuple
 import json
+import random
 
 FunctionInfo = NamedTuple('FunctionInfo', [('function', str), ('start_line', int), ('start_column', int), ('end_line', int), ('end_column', int)])
 
 class APIFinder(cst.CSTVisitor):
     METADATA_DEPENDENCIES = (cst.metadata.PositionProvider, cst.metadata.QualifiedNameProvider,)
-    def __init__(self):
+    def __init__(self, package_name):
         self.function = ['']
         self.apis = []
+        self.package_name = package_name
 
     def visit_FunctionDef(self, node):
         self.function.append(node.name.value)
@@ -21,25 +23,26 @@ class APIFinder(cst.CSTVisitor):
         self.function.pop()
 
     def visit_Call(self, node: cst.Call) -> Optional[bool]:
-        qname = self.get_metadata(cst.metadata.QualifiedNameProvider, node)
-        if qname is cst.metadata.QualifiedNameSource.BUILTIN:
-            return False
-        pos = self.get_metadata(cst.metadata.PositionProvider, node)
-        start = pos.start
-        end = pos.end
-        self.apis.append(FunctionInfo(self.function[-1], start.line, start.column, end.line, end.column))
-        return False
+        qnames = self.get_metadata(cst.metadata.QualifiedNameProvider, node)
+        for qname in qnames:
+            if qname.source == cst.metadata.QualifiedNameSource.IMPORT:
+                if self.package_name in qname.name or qname.name.startswith('.'):
+                    pos = self.get_metadata(cst.metadata.PositionProvider, node)
+                    start = pos.start
+                    end = pos.end
+                    self.apis.append(FunctionInfo(self.function[-1], start.line, start.column, end.line, end.column))
+                    return False
 
-def extract_evaluations(file):
+def extract_evaluations(file, package_name):
     with open(file, 'r') as f:
         code = f.read()
     wrapper = cst.metadata.MetadataWrapper(cst.parse_module(code))
-    finder = APIFinder()
+    finder = APIFinder(package_name)
     wrapper.visit(finder)
     return finder.apis
 
 
-def make_config(project, tests):
+def make_config(project, tests, package_name):
     project_path = Path(project).resolve()
     tests_path = Path(tests).resolve()
     files_to_ignore = set(tests_path.glob('**/*.py'))
@@ -60,7 +63,7 @@ def make_config(project, tests):
     print(len(python_files))
     for f in python_files:
         try:
-            e = extract_evaluations(f)
+            e = extract_evaluations(f, package_name)
         except:
             continue
         for i in e:
@@ -73,13 +76,18 @@ def make_config(project, tests):
                 'remove': [{
                     'description': 'code',
                     'start_line': i.start_line,
-                    'start_column': i.start_column,
-                    'end_line': i.end_line,
-                    'end_column': i.end_column + 1
+                    'start_column': 1,
+                    'end_line': i.end_line + 1,
+                    'end_column': 1
                 }]
             })
             id += 1
             print('-', end='', flush=True)
+    if len(evaluations) == 1:
+        print(f'No APIs found in {package_name}')
+        return
+    if len(evaluations) > 20:
+        evaluations = [evaluations[0]] + random.sample(evaluations[1:], 20)
     project_name = project_path.as_posix().split('/')[-1]
     benchmark_dir = Path(__file__).resolve().parent
     config = {
@@ -88,12 +96,14 @@ def make_config(project, tests):
         'tests_path': tests[len(project):].strip('/'),
         'evaluations': evaluations
     }
-    with open(Path(__file__).parent/'benchmark_configs'/f'{project_name}.json', 'w') as f:
+    
+    with open(Path(__file__).parent/'benchmark_configs'/f'{project_name}-apis.json', 'w') as f:
         json.dump(config, f, indent=4)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--project', type=str, required=True)
     parser.add_argument('--tests', type=str, required=True)
+    parser.add_argument('--packageName', type=str, required=True)
     args = parser.parse_args()
-    make_config(args.project, args.tests)
+    make_config(args.project, args.tests, args.packageName)

@@ -1,0 +1,293 @@
+{
+    "name": "errbotio_errbot",
+    "project_root": "GitHubProjects/errbotio_errbot",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 60,
+            "file": "errbot/backends/text.py",
+            "function": "borderless_ansi",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 1,
+                    "end_line": 49,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 77,
+            "file": "errbot/core_plugins/help.py",
+            "function": "is_git_directory",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 18,
+                    "start_column": 1,
+                    "end_line": 19,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "errbot/plugin_info.py",
+            "function": "parse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 62,
+                    "start_column": 1,
+                    "end_line": 63,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "file": "errbot/backends/xmpp.py",
+            "function": "incoming_message",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 493,
+                    "start_column": 1,
+                    "end_line": 494,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 71,
+            "file": "errbot/core_plugins/flows.py",
+            "function": "flows_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 96,
+                    "start_column": 1,
+                    "end_line": 97,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 107,
+            "file": "errbot/core_plugins/plugins.py",
+            "function": "repos_update",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 110,
+                    "start_column": 1,
+                    "end_line": 111,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "file": "errbot/backends/xmpp.py",
+            "function": "occupants",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 270,
+                    "start_column": 1,
+                    "end_line": 271,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 99,
+            "file": "errbot/core_plugins/chatRoom.py",
+            "function": "room_topic",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 193,
+                    "start_column": 1,
+                    "end_line": 194,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "file": "errbot/plugin_manager.py",
+            "function": "update_plugin_places",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 337,
+                    "start_column": 1,
+                    "end_line": 338,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 75,
+            "file": "errbot/core_plugins/flows.py",
+            "function": "check_user",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 156,
+                    "start_column": 1,
+                    "end_line": 157,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 88,
+            "file": "errbot/core_plugins/health.py",
+            "function": "shutdown",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 95,
+                    "start_column": 1,
+                    "end_line": 102,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 84,
+            "file": "errbot/core_plugins/health.py",
+            "function": "uptime",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 72,
+                    "start_column": 1,
+                    "end_line": 73,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "file": "errbot/bootstrap.py",
+            "function": "get_storage_plugin",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 247,
+                    "start_column": 1,
+                    "end_line": 255,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 55,
+            "file": "errbot/backends/xmpp.py",
+            "function": "user_joined_chat",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 535,
+                    "start_column": 1,
+                    "end_line": 536,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "errbot/cli.py",
+            "function": "action",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 386,
+                    "start_column": 1,
+                    "end_line": 387,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 83,
+            "file": "errbot/core_plugins/health.py",
+            "function": "status_plugins",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 41,
+                    "start_column": 1,
+                    "end_line": 42,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 56,
+            "file": "errbot/backends/xmpp.py",
+            "function": "user_left_chat",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 541,
+                    "start_column": 1,
+                    "end_line": 542,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 74,
+            "file": "errbot/core_plugins/flows.py",
+            "function": "flows_kill",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 146,
+                    "start_column": 1,
+                    "end_line": 147,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 100,
+            "file": "errbot/core_plugins/webserver.py",
+            "function": "webstatus",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 141,
+                    "start_column": 1,
+                    "end_line": 142,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "file": "errbot/backends/irc.py",
+            "function": "destroy",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 244,
+                    "start_column": 1,
+                    "end_line": 245,
+                    "end_column": 1
+                }
+            ]
+        }
+    ]
+}
