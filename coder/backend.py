@@ -10,8 +10,8 @@ API_URL = env_vars['api-url']
 access_token = env_vars['access-token']
 openai.api_key = env_vars['openai-api-key']
 root = Path(__file__).resolve().parent/'..'/'benchmark'/'experiment'
-if not (root/'Predictiontime.txt').exists():
-    with open(root/'Predictiontime.txt', 'w') as f:
+if not (root/'PredictionTime.txt').exists():
+    with open(root/'PredictionTime.txt', 'w') as f:
         f.write('0 0')
 
 class Completion:
