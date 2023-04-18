@@ -26,9 +26,9 @@ class Completion:
         if model == "CodeGen":
             url = API_URL + "/codegen"
             data = {"accessToken": access_token, "context": context}
-            start = time.process_time_ns()
+            start = time.perf_counter_ns()
             response = requests.post(url, data=data)
-            end = time.process_time_ns()
+            end = time.perf_counter_ns()
             with open(root/'time-CodeGen.txt', 'r') as f:
                 t, n = f.read().split(' ')
             with open(root/'time-CodeGen.txt', 'w') as f:
@@ -37,9 +37,9 @@ class Completion:
         elif model == "PolyCoder":
             url = API_URL + "/polycoder"
             data = {"accessToken": access_token, "context": context}
-            start = time.process_time_ns()
+            start = time.perf_counter_ns()
             response = requests.post(url, data=data)
-            end = time.process_time_ns()
+            end = time.perf_counter_ns()
             with open(root/'time-PolyCoder.txt', 'r') as f:
                 t, n = f.read().split(' ')
             with open(root/'time-PolyCoder.txt', 'w') as f:
