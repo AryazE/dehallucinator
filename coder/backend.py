@@ -24,13 +24,21 @@ class Completion:
         self.last_time = time.monotonic()
         if model == 'lCodeGen':
             self.device = device
+            if device.endswith('0'):
+                max_mem = {0: '14GB', 1:'0GB'}
+            elif device.endswith('1'):
+                max_mem = {0: '0GB', 1:'14GB'}
             checkpoint = "Salesforce/codegen-2B-mono"
             self.tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-            self.model = AutoModelForCausalLM.from_pretrained(checkpoint, dtype=torch.float16).to(self.device)
+            self.model = AutoModelForCausalLM.from_pretrained(checkpoint, device_map='auto', max_memory=max_mem)
         elif model == 'lPolyCoder':
+            if device.endswith('0'):
+                max_mem = {0: '14GB', 1:'0GB'}
+            elif device.endswith('1'):
+                max_mem = {0: '0GB', 1:'14GB'}
             self.device = device
             self.tokenizer = AutoTokenizer.from_pretrained("NinedayWang/PolyCoder-2.7B")
-            self.model = AutoModelForCausalLM.from_pretrained("NinedayWang/PolyCoder-2.7B", dtype=torch.float16).to(self.device)
+            self.model = AutoModelForCausalLM.from_pretrained("NinedayWang/PolyCoder-2.7B", device_map='auto', max_memory=max_mem)
 
     def get_completion(self, model: str, context: str, **kwargs) -> List[str]:
         """Get code completion from the model"""
