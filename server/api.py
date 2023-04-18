@@ -1,3 +1,4 @@
+import time
 import os
 from dotenv import load_dotenv
 from flask import Flask, request
@@ -16,7 +17,11 @@ def codegen():
     if request.method == "POST" and request.form['accessToken'] == access_token:
         if polycoder_model.is_active():
             polycoder_model.unload_model()
-        return codegen_model.get_completion(request.form['context'])
+        start = time.perf_counter_ns()
+        res = codegen_model.get_completion(request.form['context'])
+        end = time.perf_counter_ns()
+        print(f'CodeGen: {(end - start)/1000000} ms')
+        return res
     else:
         return "Error\n"
 
