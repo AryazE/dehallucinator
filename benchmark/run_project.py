@@ -24,8 +24,10 @@ if __name__ == '__main__':
     parser.add_argument('--t', type=float, default=0.5)
     parser.add_argument('--c', type=int, default=4)
     args = parser.parse_args()
+    print(time.process_time())
     with open(args.config, 'r') as f:
         config = json.load(f)
+    print(time.process_time())
     ids = args.ids
     if len(ids) == 0 and args.fromId > 0:
         for i in config['evaluations']:
@@ -37,7 +39,9 @@ if __name__ == '__main__':
     here = Path(__file__).resolve().parent
     if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in ids]):
         print('Base or some eval are missing. Creating...')
+        print(time.process_time())
         executable, orig_results, sample = prepare(config, 'base', ids, args.noTests, args.model)
+        print(time.process_time())
         if len(sample) < len(ids):
             new_eval = []
             for i in config['evaluations']:
@@ -54,9 +58,11 @@ if __name__ == '__main__':
             orig_results = read_test_results(str(here/'experiment'/config['name']/'base'/'temp0'/'results.xml'), 0)
         with open(str(here/'experiment'/config['name']/'base'/'interpreter.txt'), 'r') as f:
             executable = f.read()
+    print(time.process_time())
     if (here/'experiment'/config['name']/args.mode).exists():
         shutil.rmtree(str(here/'experiment'/config['name']/args.mode))
     shutil.copytree(str(here/'experiment'/config['name']/'base'), str(here/'experiment'/config['name']/args.mode), ignore=shutil.ignore_patterns('codeqldb'))
+    print(time.process_time())
     print(f'original: {orig_results}')
     if not (here/'experiment'/config['name']/args.mode/'test_results.json').exists():
         with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'w') as f:
@@ -77,6 +83,7 @@ if __name__ == '__main__':
                 f.write(f'{end-start}\n')
             # if best_context > -1:
             #     logger.info(f'best_context: {best_context}, possible_context: {possible_context}, given_context: {given_context}')
+            print(time.process_time())
             if not args.noTests:
                 tmp_res = run_tests(config, i["id"], args.mode, executable)
                 new_res = tmp_res[0]
@@ -93,6 +100,7 @@ if __name__ == '__main__':
             else:
                 new_res = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": i["id"]}
                 best = -1
+            print(time.process_time())
             with open(here/'experiment'/config['name']/args.mode/'test_results.json', 'r') as f:
                 results = json.load(f)
             #print(f'test results: {results}')
@@ -104,6 +112,7 @@ if __name__ == '__main__':
             with open(here/'experiment'/config['name']/args.mode/f'temp{i["id"]}'/'best.md', 'a') as f:
                 f.write(f'best test:  \n```python\n{completions[int(best)]}\n```\n')
             print(f'{new_res} -> {best}')
+            print(time.process_time())
         except Exception as e:
             print(e)
             print(traceback.format_exc())
