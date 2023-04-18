@@ -10,6 +10,7 @@ from prepare_project import prepare
 from run_completion import run_completion
 from run_tests import run_tests
 from read_test_results import read_test_results
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -37,10 +38,13 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO,filename=f'benchmark/logs/{config["project_root"].split("/")[-1]}-{args.mode}{args.log}.log', filemode='a')
     logger = logging.getLogger(__name__)
     here = Path(__file__).resolve().parent
+    if args.model.startswith('l'):
+        llm_tok = AutoTokenizer.from_pretrained("Salesforce/codegen-2B-mono")
+        llm = AutoModelForCausalLM.from_pretrained("Salesforce/codegen-2B-mono", device_map='auto')
     if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in ids]):
         print('Base or some eval are missing. Creating...')
         print(time.perf_counter())
-        executable, orig_results, sample = prepare(config, 'base', ids, args.noTests, args.model)
+        executable, orig_results, sample = prepare(config, 'base', ids, args.noTests, args.model, llm=llm, llm_tok=llm_tok)
         print(time.perf_counter())
         if len(sample) < len(ids):
             new_eval = []
@@ -77,7 +81,7 @@ if __name__ == '__main__':
         try:
             # best_context, possible_context, given_context = run_completion(args.model, config, i["id"], args.mode, args.log)
             start = time.perf_counter_ns()
-            completions = run_completion(args.model, config, i["id"], args.mode, args.log, k=args.k, t=args.t, c=args.c)
+            completions = run_completion(args.model, config, i["id"], args.mode, args.log, k=args.k, t=args.t, c=args.c, llm=llm, llm_tok=llm_tok)
             end = time.perf_counter_ns()
             with open(here/'experiment'/config['name']/args.mode/'completion_times_ns.txt', 'a') as f:
                 f.write(f'{end-start}\n')

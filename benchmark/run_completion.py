@@ -86,7 +86,7 @@ def API_similarity(ground_truth, completions, project_apis):
         result.append(f1)
     return result, len(gt_apis)
 
-def run_completion(model, config, id, mode, log_suffix='', k=4, t=0.5, c=4):
+def run_completion(model, config, id, mode, log_suffix='', k=4, t=0.5, c=4, llm=None, llm_tok=None):
     global PROMPT_LIMIT
     here = Path(__file__).resolve().parent
     project_root = here/'experiment'/config["name"]/mode/f'temp{id}'/config['project_root']
@@ -113,7 +113,8 @@ def run_completion(model, config, id, mode, log_suffix='', k=4, t=0.5, c=4):
         sCol=int(this["remove"][0]["start_column"]),
         eLine=int(this["remove"][0]["end_line"]),
         eCol=int(this["remove"][0]["end_column"]),
-        output=str(project_root/f'completion.out'), log=log_suffix, k=k, t=t, c=c)
+        output=str(project_root/f'completion.out'), log=log_suffix, k=k, t=t, c=c,
+        llm=llm, llm_tok=llm_tok)
     with open(project_root/f'completion.out') as f:
         completions = f.read().split(DELIMITER)
 

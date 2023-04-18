@@ -23,7 +23,7 @@ import pickle
 
 CURSOR = '<CURSOR>'
 
-def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
+def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_tok=None):
     global CURSOR
     
     orig_results = {"tests": 0, "errors": 0, "failures": 0, "skipped": 0, "id": 0}
@@ -135,7 +135,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5'):
             except Exception as e:
                 pass
 
-            init_comp = get_completion_safely(model, Completion(), pre_context, k=1)[0]
+            init_comp = get_completion_safely(model, Completion(model=llm, tokenizer=llm_tok), pre_context, k=1)[0]
             if init_comp.startswith(ground_truth):
                 print('Function is too easy to complete')
                 dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
