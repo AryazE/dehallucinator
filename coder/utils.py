@@ -65,6 +65,19 @@ def same_location(line, location):
 def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
     if mode.endswith('l') or mode.endswith('line'):
         return code.splitlines(True)[0]
+    elif mode.endswith('api'):
+        lines = code.splitlines(True)
+        ind = len(lines[0]) - len(lines[0].lstrip())
+        curr = ''
+        i = 0
+        while i < len(lines):
+            curr += lines[i][ind:]
+            try:
+                cst.parse_module(curr)
+                break
+            except cst.ParserSyntaxError:
+                i += 1
+        return curr
     if '\n' not in code or code.endswith('\n'):
         return code
     prefix = (indent_style * indent_count) + 'def foo():\n' + (indent_style * (indent_count+1))

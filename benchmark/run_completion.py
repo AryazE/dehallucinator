@@ -39,6 +39,20 @@ def as_module(code: str) -> str:
             return lines[0] + ''.join([('    ' + l) for l in tmp])
     return lines[0] + dedent(''.join(lines[1:]))
 
+def as_statement(code: str) -> str:
+    lines = code.splitlines(True)
+    ind = len(lines[0]) - len(lines[0].lstrip())
+    curr = ''
+    i = 0
+    while i < len(lines):
+        curr += lines[i][ind:]
+        try:
+            cst.parse_module(curr)
+            break
+        except cst.ParserSyntaxError:
+            i += 1
+    return curr
+
 def filter_external(apis, project_apis):
     for node in apis:
         if matchers.matches(node, matchers.Call()):
@@ -53,7 +67,8 @@ def filter_external(apis, project_apis):
 def API_similarity(ground_truth, completions, project_apis):
     result = []
     try:
-        gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
+        # gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
+        gt_apis = matchers.findall(cst.parse_module(as_statement(ground_truth)), matchers.Call() | matchers.Attribute())
         gt_apis = filter_external(gt_apis, project_apis)
     except Exception as e:
         gt_apis = []
@@ -63,7 +78,8 @@ def API_similarity(ground_truth, completions, project_apis):
     for i in range(len(completions)):
         tmp_result = 0
         try:
-            apis = matchers.findall(cst.parse_module(as_module(completions[i])), matchers.Call() | matchers.Attribute())
+            # apis = matchers.findall(cst.parse_module(as_module(completions[i])), matchers.Call() | matchers.Attribute())
+            apis = matchers.findall(cst.parse_module(as_statement(completions[i])), matchers.Call() | matchers.Attribute())
             apis = filter_external(apis, project_apis)
         except Exception as e:
             apis = []
