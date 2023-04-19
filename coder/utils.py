@@ -141,6 +141,8 @@ def dedent(code):
     return ''.join([l[len(indent_style)*indent_count:] for l in lines])
 
 def get_indentation(prompt):
+    if len(prompt) == 0:
+        return '', 0
     lines = prompt.splitlines()
     indents = [re.match('^\s*', i).group(0) for i in lines]
     indent_style = ' '*10000
