@@ -1,0 +1,293 @@
+{
+    "name": "PyFilesystem_pyfilesystem2",
+    "project_root": "GitHubProjects/PyFilesystem_pyfilesystem2",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 278,
+            "file": "fs/wrapfs.py",
+            "function": "download",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 305,
+                    "start_column": 8,
+                    "end_line": 306,
+                    "end_column": 71
+                }
+            ]
+        },
+        {
+            "id": 109,
+            "file": "fs/osfs.py",
+            "function": "_gettarget",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 269,
+                    "start_column": 20,
+                    "end_line": 269,
+                    "end_column": 68
+                }
+            ]
+        },
+        {
+            "id": 87,
+            "file": "fs/memoryfs.py",
+            "function": "setinfo",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 650,
+                    "start_column": 16,
+                    "end_line": 650,
+                    "end_column": 51
+                }
+            ]
+        },
+        {
+            "id": 309,
+            "file": "fs/base.py",
+            "function": "copydir",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 466,
+                    "start_column": 12,
+                    "end_line": 467,
+                    "end_column": 57
+                }
+            ]
+        },
+        {
+            "id": 369,
+            "file": "fs/zipfs.py",
+            "function": "write_zip",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 325,
+                    "start_column": 12,
+                    "end_line": 330,
+                    "end_column": 13
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "fs/wrap.py",
+            "function": "create",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 261,
+                    "start_column": 8,
+                    "end_line": 261,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 238,
+            "file": "fs/tarfs.py",
+            "function": "openbin",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 424,
+                    "start_column": 8,
+                    "end_line": 424,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 67,
+            "file": "fs/memoryfs.py",
+            "function": "movedir",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 513,
+                    "start_column": 16,
+                    "end_line": 513,
+                    "end_column": 66
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "file": "fs/memoryfs.py",
+            "function": "getinfo",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 394,
+                    "start_column": 12,
+                    "end_line": 394,
+                    "end_column": 47
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "fs/wrap.py",
+            "function": "copy",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 256,
+                    "start_column": 8,
+                    "end_line": 256,
+                    "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 351,
+            "file": "fs/mirror.py",
+            "function": "mirror",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 89,
+                    "start_column": 8,
+                    "end_line": 89,
+                    "end_column": 55
+                }
+            ]
+        },
+        {
+            "id": 246,
+            "file": "fs/tarfs.py",
+            "function": "geturl",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 472,
+                    "start_column": 12,
+                    "end_line": 472,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 216,
+            "file": "fs/ftpfs.py",
+            "function": "scandir",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 829,
+                    "start_column": 12,
+                    "end_line": 829,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 312,
+            "file": "fs/base.py",
+            "function": "copydir",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 471,
+                    "start_column": 16,
+                    "end_line": 471,
+                    "end_column": 56
+                }
+            ]
+        },
+        {
+            "id": 84,
+            "file": "fs/memoryfs.py",
+            "function": "scandir",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 629,
+                    "start_column": 16,
+                    "end_line": 629,
+                    "end_column": 51
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "fs/wrap.py",
+            "function": "getinfo",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 136,
+                    "start_column": 8,
+                    "end_line": 136,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 100,
+            "file": "fs/copy.py",
+            "function": "copy_dir_if",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 448,
+                    "start_column": 4,
+                    "end_line": 462,
+                    "end_column": 70
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "fs/memoryfs.py",
+            "function": "makedir",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 430,
+                    "start_column": 20,
+                    "end_line": 430,
+                    "end_column": 54
+                }
+            ]
+        },
+        {
+            "id": 82,
+            "file": "fs/memoryfs.py",
+            "function": "removetree",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 608,
+                    "start_column": 16,
+                    "end_line": 608,
+                    "end_column": 51
+                }
+            ]
+        },
+        {
+            "id": 252,
+            "file": "fs/wrapfs.py",
+            "function": "getinfo",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 140,
+                    "start_column": 8,
+                    "end_line": 142,
+                    "end_column": 42
+                }
+            ]
+        }
+    ]
+}

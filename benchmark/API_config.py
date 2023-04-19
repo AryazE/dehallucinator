@@ -10,7 +10,7 @@ import random
 FunctionInfo = NamedTuple('FunctionInfo', [('function', str), ('start_line', int), ('start_column', int), ('end_line', int), ('end_column', int)])
 
 class APIFinder(cst.CSTVisitor):
-    METADATA_DEPENDENCIES = (cst.metadata.PositionProvider, cst.metadata.QualifiedNameProvider,)
+    METADATA_DEPENDENCIES = (cst.metadata.PositionProvider, cst.metadata.QualifiedNameProvider, cst.metadata.ParentNodeProvider,)
     def __init__(self, package_name):
         self.function = ['']
         self.apis = []
@@ -23,11 +23,16 @@ class APIFinder(cst.CSTVisitor):
         self.function.pop()
 
     def visit_Call(self, node: cst.Call) -> Optional[bool]:
+        if len(self.apis) > 40:
+            return False
         qnames = self.get_metadata(cst.metadata.QualifiedNameProvider, node)
         for qname in qnames:
             if qname.source == cst.metadata.QualifiedNameSource.IMPORT:
                 if self.package_name in qname.name or qname.name.startswith('.'):
-                    pos = self.get_metadata(cst.metadata.PositionProvider, node)
+                    par = self.get_metadata(cst.metadata.ParentNodeProvider, node)
+                    while par and not (isinstance(par, cst.BaseSmallStatement) or isinstance(par, cst.BaseCompoundStatement)):
+                        par = self.get_metadata(cst.metadata.ParentNodeProvider, par)
+                    pos = self.get_metadata(cst.metadata.PositionProvider, par)
                     start = pos.start
                     end = pos.end
                     self.apis.append(FunctionInfo(self.function[-1], start.line, start.column, end.line, end.column))
@@ -39,6 +44,7 @@ def extract_evaluations(file, package_name):
     wrapper = cst.metadata.MetadataWrapper(cst.parse_module(code))
     finder = APIFinder(package_name)
     wrapper.visit(finder)
+    print('.', end='', flush=True)
     return finder.apis
 
 
@@ -65,6 +71,7 @@ def make_config(project, tests, package_name):
         try:
             e = extract_evaluations(f, package_name)
         except:
+            print('x', end='', flush=True)
             continue
         for i in e:
             if i.function == '__init__':
@@ -76,13 +83,12 @@ def make_config(project, tests, package_name):
                 'remove': [{
                     'description': 'code',
                     'start_line': i.start_line,
-                    'start_column': 1,
-                    'end_line': i.end_line + 1,
-                    'end_column': 1
+                    'start_column': i.start_column,
+                    'end_line': i.end_line,
+                    'end_column': i.end_column
                 }]
             })
             id += 1
-            print('-', end='', flush=True)
     if len(evaluations) == 1:
         print(f'No APIs found in {package_name}')
         return

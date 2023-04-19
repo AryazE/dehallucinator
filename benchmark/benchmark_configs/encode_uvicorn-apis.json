@@ -10,212 +10,44 @@
             "remove": []
         },
         {
-            "id": 36,
-            "file": "uvicorn/protocols/websockets/wsproto_impl.py",
-            "function": "send",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 277,
-                    "start_column": 1,
-                    "end_line": 278,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 13,
+            "id": 19,
             "file": "uvicorn/config.py",
-            "function": "load",
+            "function": "setup_event_loop",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 468,
-                    "start_column": 1,
-                    "end_line": 469,
-                    "end_column": 1
+                    "start_line": 515,
+                    "start_column": 8,
+                    "end_line": 515,
+                    "end_column": 83
                 }
             ]
         },
         {
-            "id": 45,
-            "file": "uvicorn/supervisors/multiprocess.py",
-            "function": "startup",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 59,
-                    "start_column": 1,
-                    "end_line": 62,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 9,
+            "id": 8,
             "file": "uvicorn/main.py",
             "function": "run",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 566,
-                    "start_column": 1,
-                    "end_line": 567,
-                    "end_column": 1
+                    "start_line": 563,
+                    "start_column": 8,
+                    "end_line": 563,
+                    "end_column": 69
                 }
             ]
         },
         {
-            "id": 18,
-            "file": "uvicorn/config.py",
-            "function": "load",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 508,
-                    "start_column": 1,
-                    "end_line": 511,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 27,
+            "id": 30,
             "file": "uvicorn/protocols/http/httptools_impl.py",
             "function": "connection_made",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 129,
-                    "start_column": 1,
-                    "end_line": 130,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 16,
-            "file": "uvicorn/config.py",
-            "function": "load",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 503,
-                    "start_column": 1,
-                    "end_line": 504,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 23,
-            "file": "uvicorn/protocols/http/h11_impl.py",
-            "function": "connection_made",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 136,
-                    "start_column": 1,
-                    "end_line": 137,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 42,
-            "file": "uvicorn/protocols/websockets/websockets_impl.py",
-            "function": "asgi_send",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 306,
-                    "start_column": 1,
-                    "end_line": 307,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "file": "uvicorn/protocols/http/httptools_impl.py",
-            "function": "connection_made",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 131,
-                    "start_column": 1,
+                    "start_line": 132,
+                    "start_column": 8,
                     "end_line": 132,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "file": "uvicorn/protocols/http/h11_impl.py",
-            "function": "send",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 501,
-                    "start_column": 1,
-                    "end_line": 502,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 21,
-            "file": "uvicorn/protocols/http/h11_impl.py",
-            "function": "connection_made",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 134,
-                    "start_column": 1,
-                    "end_line": 135,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 32,
-            "file": "uvicorn/protocols/http/httptools_impl.py",
-            "function": "send",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 510,
-                    "start_column": 1,
-                    "end_line": 511,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "file": "uvicorn/workers.py",
-            "function": "_serve",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 91,
-                    "start_column": 1,
-                    "end_line": 92,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 14,
-            "file": "uvicorn/config.py",
-            "function": "load",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 471,
-                    "start_column": 1,
-                    "end_line": 472,
-                    "end_column": 1
+                    "end_column": 62
                 }
             ]
         },
@@ -227,37 +59,9 @@
                 {
                     "description": "code",
                     "start_line": 36,
-                    "start_column": 1,
-                    "end_line": 37,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 28,
-            "file": "uvicorn/protocols/http/httptools_impl.py",
-            "function": "connection_made",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 130,
-                    "start_column": 1,
-                    "end_line": 131,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 19,
-            "file": "uvicorn/config.py",
-            "function": "setup_event_loop",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 515,
-                    "start_column": 1,
-                    "end_line": 516,
-                    "end_column": 1
+                    "start_column": 0,
+                    "end_line": 36,
+                    "end_column": 52
                 }
             ]
         },
@@ -269,23 +73,219 @@
                 {
                     "description": "code",
                     "start_line": 99,
-                    "start_column": 1,
-                    "end_line": 100,
-                    "end_column": 1
+                    "start_column": 8,
+                    "end_line": 99,
+                    "end_column": 48
                 }
             ]
         },
         {
-            "id": 38,
-            "file": "uvicorn/protocols/websockets/websockets_impl.py",
+            "id": 29,
+            "file": "uvicorn/protocols/http/httptools_impl.py",
             "function": "connection_made",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 132,
-                    "start_column": 1,
-                    "end_line": 133,
-                    "end_column": 1
+                    "start_line": 131,
+                    "start_column": 8,
+                    "end_line": 131,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "uvicorn/config.py",
+            "function": "load",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 468,
+                    "start_column": 8,
+                    "end_line": 468,
+                    "end_column": 73
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "file": "uvicorn/loops/auto.py",
+            "function": "auto_loop_setup",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 7,
+                    "start_column": 8,
+                    "end_line": 7,
+                    "end_column": 49
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "file": "uvicorn/supervisors/basereload.py",
+            "function": "restart",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 87,
+                    "start_column": 8,
+                    "end_line": 89,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "uvicorn/main.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 35,
+                    "start_column": 0,
+                    "end_line": 35,
+                    "end_column": 56
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "uvicorn/workers.py",
+            "function": "_serve",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 91,
+                    "start_column": 8,
+                    "end_line": 91,
+                    "end_column": 43
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "uvicorn/config.py",
+            "function": "load",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 506,
+                    "start_column": 12,
+                    "end_line": 506,
+                    "end_column": 70
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "file": "uvicorn/protocols/http/httptools_impl.py",
+            "function": "connection_made",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 129,
+                    "start_column": 8,
+                    "end_line": 129,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "file": "uvicorn/protocols/http/h11_impl.py",
+            "function": "connection_made",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 136,
+                    "start_column": 8,
+                    "end_line": 136,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "file": "uvicorn/protocols/http/h11_impl.py",
+            "function": "connection_made",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 135,
+                    "start_column": 8,
+                    "end_line": 135,
+                    "end_column": 47
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "uvicorn/protocols/websockets/websockets_impl.py",
+            "function": "asgi_send",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 283,
+                    "start_column": 16,
+                    "end_line": 287,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "uvicorn/config.py",
+            "function": "load",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 463,
+                    "start_column": 12,
+                    "end_line": 463,
+                    "end_column": 73
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "file": "uvicorn/protocols/websockets/wsproto_impl.py",
+            "function": "connection_made",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 100,
+                    "start_column": 8,
+                    "end_line": 100,
+                    "end_column": 58
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "uvicorn/config.py",
+            "function": "load",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 457,
+                    "start_column": 12,
+                    "end_line": 457,
+                    "end_column": 79
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "uvicorn/protocols/websockets/wsproto_impl.py",
+            "function": "connection_made",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 98,
+                    "start_column": 8,
+                    "end_line": 98,
+                    "end_column": 47
                 }
             ]
         }

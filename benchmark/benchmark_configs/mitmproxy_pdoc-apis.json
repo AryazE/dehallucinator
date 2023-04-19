@@ -10,86 +10,142 @@
             "remove": []
         },
         {
-            "id": 58,
-            "file": "pdoc/render_helpers.py",
-            "function": "to_html",
+            "id": 5,
+            "file": "pdoc/render.py",
+            "function": "html_module",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 176,
-                    "start_column": 1,
-                    "end_line": 181,
-                    "end_column": 1
+                    "start_line": 100,
+                    "start_column": 4,
+                    "end_line": 110,
+                    "end_column": 5
                 }
             ]
         },
         {
-            "id": 53,
-            "file": "pdoc/web.py",
-            "function": "render_search_index",
+            "id": 43,
+            "file": "pdoc/__main__.py",
+            "function": "cli",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 116,
-                    "start_column": 1,
-                    "end_line": 117,
-                    "end_column": 1
+                    "start_line": 193,
+                    "start_column": 16,
+                    "end_line": 193,
+                    "end_column": 88
                 }
             ]
         },
         {
-            "id": 50,
+            "id": 51,
             "file": "pdoc/web.py",
             "function": "handle_request",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 73,
-                    "start_column": 1,
-                    "end_line": 74,
-                    "end_column": 1
+                    "start_line": 75,
+                    "start_column": 16,
+                    "end_line": 79,
+                    "end_column": 17
                 }
             ]
         },
         {
-            "id": 7,
+            "id": 21,
+            "file": "pdoc/doc.py",
+            "function": "_var_docstrings",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 412,
+                    "start_column": 8,
+                    "end_line": 412,
+                    "end_column": 53
+                }
+            ]
+        },
+        {
+            "id": 12,
             "file": "pdoc/render.py",
-            "function": "html_index",
+            "function": "search_index",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 118,
-                    "start_column": 1,
-                    "end_line": 119,
-                    "end_column": 1
+                    "start_line": 154,
+                    "start_column": 4,
+                    "end_line": 156,
+                    "end_column": 5
                 }
             ]
         },
         {
-            "id": 39,
-            "file": "pdoc/doc.py",
-            "function": "annotation_str",
+            "id": 10,
+            "file": "pdoc/render.py",
+            "function": "search_index",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1082,
-                    "start_column": 1,
-                    "end_line": 1083,
-                    "end_column": 1
+                    "start_line": 138,
+                    "start_column": 4,
+                    "end_line": 140,
+                    "end_column": 5
                 }
             ]
         },
         {
-            "id": 24,
-            "file": "pdoc/doc.py",
-            "function": "_member_objects",
+            "id": 16,
+            "file": "pdoc/extract.py",
+            "function": "invalidate_caches",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 501,
-                    "start_column": 1,
-                    "end_line": 502,
-                    "end_column": 1
+                    "start_line": 311,
+                    "start_column": 4,
+                    "end_line": 311,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "file": "pdoc/render_helpers.py",
+            "function": "link",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 391,
+                    "start_column": 8,
+                    "end_line": 391,
+                    "end_column": 64
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "file": "pdoc/doc.py",
+            "function": "members",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 320,
+                    "start_column": 12,
+                    "end_line": 320,
+                    "end_column": 58
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "pdoc/doc.py",
+            "function": "decorators",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 922,
+                    "start_column": 8,
+                    "end_line": 923,
+                    "end_column": 55
                 }
             ]
         },
@@ -101,65 +157,37 @@
                 {
                     "description": "code",
                     "start_line": 590,
-                    "start_column": 1,
+                    "start_column": 12,
                     "end_line": 591,
-                    "end_column": 1
+                    "end_column": 51
                 }
             ]
         },
         {
-            "id": 4,
-            "file": "pdoc/render.py",
-            "function": "html_module",
+            "id": 24,
+            "file": "pdoc/doc.py",
+            "function": "_member_objects",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 103,
-                    "start_column": 1,
-                    "end_line": 104,
-                    "end_column": 1
+                    "start_line": 501,
+                    "start_column": 24,
+                    "end_line": 501,
+                    "end_column": 78
                 }
             ]
         },
         {
-            "id": 5,
-            "file": "pdoc/render.py",
-            "function": "html_module",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 104,
-                    "start_column": 1,
-                    "end_line": 109,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 64,
-            "file": "pdoc/doc_types.py",
-            "function": "_eval_type",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 164,
-                    "start_column": 1,
-                    "end_line": 165,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 48,
+            "id": 49,
             "file": "pdoc/web.py",
             "function": "handle_request",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 60,
-                    "start_column": 1,
-                    "end_line": 61,
-                    "end_column": 1
+                    "start_line": 63,
+                    "start_column": 12,
+                    "end_line": 63,
+                    "end_column": 49
                 }
             ]
         },
@@ -170,24 +198,10 @@
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 131,
-                    "start_column": 1,
-                    "end_line": 132,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "file": "pdoc/doc.py",
-            "function": "_declarations",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 644,
-                    "start_column": 1,
-                    "end_line": 645,
-                    "end_column": 1
+                    "start_line": 132,
+                    "start_column": 0,
+                    "end_line": 156,
+                    "end_column": 5
                 }
             ]
         },
@@ -199,93 +213,79 @@
                 {
                     "description": "code",
                     "start_line": 145,
-                    "start_column": 1,
-                    "end_line": 146,
-                    "end_column": 1
+                    "start_column": 8,
+                    "end_line": 145,
+                    "end_column": 38
                 }
             ]
         },
         {
-            "id": 12,
-            "file": "pdoc/render.py",
-            "function": "search_index",
+            "id": 65,
+            "file": "pdoc/doc_types.py",
+            "function": "_eval_type",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 155,
-                    "start_column": 1,
-                    "end_line": 156,
-                    "end_column": 1
+                    "start_line": 199,
+                    "start_column": 12,
+                    "end_line": 199,
+                    "end_column": 54
                 }
             ]
         },
         {
-            "id": 28,
+            "id": 18,
             "file": "pdoc/doc.py",
-            "function": "_var_annotations",
+            "function": "source",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 619,
-                    "start_column": 1,
-                    "end_line": 622,
-                    "end_column": 1
+                    "start_line": 169,
+                    "start_column": 8,
+                    "end_line": 169,
+                    "end_column": 43
                 }
             ]
         },
         {
-            "id": 31,
+            "id": 32,
             "file": "pdoc/doc.py",
-            "function": "bases",
+            "function": "decorators",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 744,
-                    "start_column": 1,
-                    "end_line": 745,
-                    "end_column": 1
+                    "start_line": 759,
+                    "start_column": 8,
+                    "end_line": 760,
+                    "end_column": 55
                 }
             ]
         },
         {
-            "id": 8,
-            "file": "pdoc/render.py",
-            "function": "html_error",
+            "id": 14,
+            "file": "pdoc/doc_ast.py",
+            "function": "unparse",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 122,
-                    "start_column": 1,
-                    "end_line": 123,
-                    "end_column": 1
+                    "start_line": 81,
+                    "start_column": 4,
+                    "end_line": 81,
+                    "end_column": 28
                 }
             ]
         },
         {
-            "id": 20,
+            "id": 39,
             "file": "pdoc/doc.py",
-            "function": "from_name",
+            "function": "annotation_str",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 392,
-                    "start_column": 1,
-                    "end_line": 393,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 46,
-            "file": "pdoc/web.py",
-            "function": "handle_request",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 48,
-                    "start_column": 1,
-                    "end_line": 49,
-                    "end_column": 1
+                    "start_line": 1082,
+                    "start_column": 12,
+                    "end_line": 1082,
+                    "end_column": 59
                 }
             ]
         }

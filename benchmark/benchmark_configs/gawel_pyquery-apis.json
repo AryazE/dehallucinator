@@ -1,0 +1,27 @@
+{
+    "name": "gawel_pyquery",
+    "project_root": "GitHubProjects/gawel_pyquery",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "file": "pyquery/pyquery.py",
+            "function": "text",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1172,
+                    "start_column": 12,
+                    "end_line": 1175,
+                    "end_column": 13
+                }
+            ]
+        }
+    ]
+}

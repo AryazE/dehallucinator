@@ -10,58 +10,30 @@
             "remove": []
         },
         {
-            "id": 11,
+            "id": 10,
             "file": "cerberus/schema.py",
-            "function": "validate",
+            "function": "__setitem__",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 261,
-                    "start_column": 1,
-                    "end_line": 262,
-                    "end_column": 1
+                    "start_line": 233,
+                    "start_column": 8,
+                    "end_line": 233,
+                    "end_column": 41
                 }
             ]
         },
         {
-            "id": 20,
-            "file": "cerberus/base.py",
-            "function": "_expand_generic_type_aliases",
+            "id": 3,
+            "file": "cerberus/schema.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 143,
-                    "start_column": 1,
-                    "end_line": 144,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 35,
-            "file": "cerberus/errors.py",
-            "function": "__repr__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 165,
-                    "start_column": 1,
-                    "end_line": 166,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 40,
-            "file": "cerberus/benchmarks/test_overall_performance_1.py",
-            "function": "init_validator",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 102,
-                    "start_column": 1,
-                    "end_line": 103,
-                    "end_column": 1
+                    "start_line": 25,
+                    "start_column": 4,
+                    "end_line": 34,
+                    "end_column": 5
                 }
             ]
         },
@@ -72,24 +44,150 @@
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 166,
-                    "start_column": 1,
-                    "end_line": 167,
-                    "end_column": 1
+                    "start_line": 152,
+                    "start_column": 8,
+                    "end_line": 169,
+                    "end_column": 9
                 }
             ]
         },
         {
-            "id": 8,
+            "id": 13,
             "file": "cerberus/schema.py",
-            "function": "_validate_logical",
+            "function": "_validate",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 165,
-                    "start_column": 1,
-                    "end_line": 166,
-                    "end_column": 1
+                    "start_line": 283,
+                    "start_column": 12,
+                    "end_line": 283,
+                    "end_column": 59
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "cerberus/base.py",
+            "function": "__validate_logical",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1690,
+                    "start_column": 8,
+                    "end_line": 1690,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "cerberus/errors.py",
+            "function": "__lt__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 149,
+                    "start_column": 12,
+                    "end_line": 149,
+                    "end_column": 72
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "cerberus/errors.py",
+            "function": "__lt__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 147,
+                    "start_column": 12,
+                    "end_line": 147,
+                    "end_column": 76
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "file": "cerberus/base.py",
+            "function": "_expand_generic_type_aliases",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 156,
+                    "start_column": 12,
+                    "end_line": 175,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "cerberus/schema.py",
+            "function": "_check_with_schema",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 122,
+                    "start_column": 8,
+                    "end_line": 125,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "file": "cerberus/base.py",
+            "function": "__init_processing",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1006,
+                    "start_column": 8,
+                    "end_line": 1006,
+                    "end_column": 57
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "cerberus/schema.py",
+            "function": "_check_with_schema",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 122,
+                    "start_column": 8,
+                    "end_line": 125,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "file": "cerberus/schema.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 24,
+                    "start_column": 4,
+                    "end_line": 24,
+                    "end_column": 61
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "cerberus/schema.py",
+            "function": "_check_with_rulesset",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 91,
+                    "start_column": 8,
+                    "end_line": 94,
+                    "end_column": 9
                 }
             ]
         },
@@ -100,164 +198,10 @@
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 166,
-                    "start_column": 1,
+                    "start_line": 164,
+                    "start_column": 12,
                     "end_line": 167,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "file": "cerberus/base.py",
-            "function": "__init_processing",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1005,
-                    "start_column": 1,
-                    "end_line": 1006,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 17,
-            "file": "cerberus/base.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 51,
-                    "start_column": 1,
-                    "end_line": 52,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 12,
-            "file": "cerberus/schema.py",
-            "function": "validate",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 261,
-                    "start_column": 1,
-                    "end_line": 262,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "file": "cerberus/base.py",
-            "function": "_error",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 676,
-                    "start_column": 1,
-                    "end_line": 679,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 21,
-            "file": "cerberus/base.py",
-            "function": "_expand_generic_type_aliases",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 146,
-                    "start_column": 1,
-                    "end_line": 147,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 23,
-            "file": "cerberus/base.py",
-            "function": "_flatten_Union_and_Optional",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 207,
-                    "start_column": 1,
-                    "end_line": 208,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 39,
-            "file": "cerberus/benchmarks/test_overall_performance_1.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 27,
-                    "start_column": 1,
-                    "end_line": 43,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "file": "cerberus/schema.py",
-            "function": "__setitem__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 233,
-                    "start_column": 1,
-                    "end_line": 234,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 31,
-            "file": "cerberus/base.py",
-            "function": "__init_processing",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1022,
-                    "start_column": 1,
-                    "end_line": 1023,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 5,
-            "file": "cerberus/schema.py",
-            "function": "_check_with_rulesset",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 93,
-                    "start_column": 1,
-                    "end_line": 94,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 15,
-            "file": "cerberus/validator.py",
-            "function": "allow_unknown",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 31,
-                    "start_column": 1,
-                    "end_line": 32,
-                    "end_column": 1
+                    "end_column": 13
                 }
             ]
         },
@@ -269,23 +213,79 @@
                 {
                     "description": "code",
                     "start_line": 14,
-                    "start_column": 1,
-                    "end_line": 15,
-                    "end_column": 1
+                    "start_column": 4,
+                    "end_line": 14,
+                    "end_column": 56
                 }
             ]
         },
         {
-            "id": 7,
-            "file": "cerberus/schema.py",
-            "function": "_check_with_schema",
+            "id": 28,
+            "file": "cerberus/base.py",
+            "function": "__init_processing",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 124,
-                    "start_column": 1,
-                    "end_line": 125,
-                    "end_column": 1
+                    "start_line": 1003,
+                    "start_column": 8,
+                    "end_line": 1003,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "file": "cerberus/base.py",
+            "function": "_drop_nodes_from_errorpaths",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 759,
+                    "start_column": 16,
+                    "end_line": 761,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "cerberus/base.py",
+            "function": "_expand_generic_type_aliases",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 146,
+                    "start_column": 12,
+                    "end_line": 175,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "file": "cerberus/base.py",
+            "function": "_expand_generic_type_aliases",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 141,
+                    "start_column": 12,
+                    "end_line": 141,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "cerberus/base.py",
+            "function": "_flatten_Union_and_Optional",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 208,
+                    "start_column": 12,
+                    "end_line": 208,
+                    "end_column": 77
                 }
             ]
         }

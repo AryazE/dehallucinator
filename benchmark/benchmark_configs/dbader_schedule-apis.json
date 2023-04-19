@@ -10,114 +10,44 @@
             "remove": []
         },
         {
-            "id": 29,
+            "id": 43,
             "file": "test_schedule.py",
             "function": "test_at_time",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 249,
-                    "start_column": 1,
-                    "end_line": 250,
-                    "end_column": 1
+                    "start_line": 271,
+                    "start_column": 12,
+                    "end_line": 271,
+                    "end_column": 33
                 }
             ]
         },
         {
-            "id": 134,
-            "file": "test_schedule.py",
-            "function": "test_next_run_time_hour_end",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 489,
-                    "start_column": 1,
-                    "end_line": 490,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 21,
+            "id": 20,
             "file": "test_schedule.py",
             "function": "test_singular_time_units_match_plural_units",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 217,
-                    "start_column": 1,
-                    "end_line": 218,
-                    "end_column": 1
+                    "start_line": 216,
+                    "start_column": 8,
+                    "end_line": 216,
+                    "end_column": 54
                 }
             ]
         },
         {
-            "id": 225,
-            "file": "test_schedule.py",
-            "function": "test_misconfigured_job_wont_break_scheduler",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 896,
-                    "start_column": 1,
-                    "end_line": 897,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 154,
-            "file": "test_schedule.py",
-            "function": "test_run_all_with_decorator_defaultargs",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 620,
-                    "start_column": 1,
-                    "end_line": 621,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 219,
+            "id": 217,
             "file": "test_schedule.py",
             "function": "test_clear_by_tag",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 881,
-                    "start_column": 1,
-                    "end_line": 882,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 189,
-            "file": "test_schedule.py",
-            "function": "test_next_run_property",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 789,
-                    "start_column": 1,
-                    "end_line": 790,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 165,
-            "file": "test_schedule.py",
-            "function": "test_run_pending",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 702,
-                    "start_column": 1,
-                    "end_line": 703,
-                    "end_column": 1
+                    "start_line": 875,
+                    "start_column": 8,
+                    "end_line": 877,
+                    "end_column": 9
                 }
             ]
         },
@@ -129,163 +59,233 @@
                 {
                     "description": "code",
                     "start_line": 857,
-                    "start_column": 1,
-                    "end_line": 858,
-                    "end_column": 1
+                    "start_column": 8,
+                    "end_line": 857,
+                    "end_column": 40
                 }
             ]
         },
         {
-            "id": 186,
-            "file": "test_schedule.py",
-            "function": "test_run_every_n_days_at_specific_time",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 777,
-                    "start_column": 1,
-                    "end_line": 778,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 215,
-            "file": "test_schedule.py",
-            "function": "test_clear_by_tag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 873,
-                    "start_column": 1,
-                    "end_line": 874,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 46,
+            "id": 29,
             "file": "test_schedule.py",
             "function": "test_at_time",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 277,
-                    "start_column": 1,
-                    "end_line": 278,
-                    "end_column": 1
+                    "start_line": 249,
+                    "start_column": 8,
+                    "end_line": 249,
+                    "end_column": 73
                 }
             ]
         },
         {
-            "id": 111,
+            "id": 49,
+            "file": "test_schedule.py",
+            "function": "test_at_time",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 283,
+                    "start_column": 12,
+                    "end_line": 283,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 223,
+            "file": "test_schedule.py",
+            "function": "test_clear_by_tag",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 887,
+                    "start_column": 8,
+                    "end_line": 887,
+                    "end_column": 53
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "test_schedule.py",
+            "function": "test_singular_time_units_match_plural_units",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 214,
+                    "start_column": 8,
+                    "end_line": 214,
+                    "end_column": 58
+                }
+            ]
+        },
+        {
+            "id": 181,
+            "file": "test_schedule.py",
+            "function": "test_run_every_n_days_at_specific_time",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 757,
+                    "start_column": 12,
+                    "end_line": 757,
+                    "end_column": 34
+                }
+            ]
+        },
+        {
+            "id": 202,
+            "file": "test_schedule.py",
+            "function": "test_cancel_jobs",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 829,
+                    "start_column": 8,
+                    "end_line": 829,
+                    "end_column": 35
+                }
+            ]
+        },
+        {
+            "id": 131,
+            "file": "test_schedule.py",
+            "function": "test_next_run_time",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 456,
+                    "start_column": 12,
+                    "end_line": 456,
+                    "end_column": 65
+                }
+            ]
+        },
+        {
+            "id": 125,
+            "file": "test_schedule.py",
+            "function": "test_next_run_time",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 450,
+                    "start_column": 12,
+                    "end_line": 450,
+                    "end_column": 65
+                }
+            ]
+        },
+        {
+            "id": 185,
+            "file": "test_schedule.py",
+            "function": "test_run_every_n_days_at_specific_time",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 773,
+                    "start_column": 12,
+                    "end_line": 773,
+                    "end_column": 34
+                }
+            ]
+        },
+        {
+            "id": 119,
+            "file": "test_schedule.py",
+            "function": "test_next_run_time",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 444,
+                    "start_column": 12,
+                    "end_line": 444,
+                    "end_column": 70
+                }
+            ]
+        },
+        {
+            "id": 108,
             "file": "test_schedule.py",
             "function": "test_at_time_minute",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 432,
-                    "start_column": 1,
-                    "end_line": 433,
-                    "end_column": 1
+                    "start_line": 428,
+                    "start_column": 12,
+                    "end_line": 428,
+                    "end_column": 78
                 }
             ]
         },
         {
-            "id": 159,
-            "file": "test_schedule.py",
-            "function": "test_to_repr",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 655,
-                    "start_column": 1,
-                    "end_line": 656,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 130,
-            "file": "test_schedule.py",
-            "function": "test_next_run_time",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 455,
-                    "start_column": 1,
-                    "end_line": 456,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 120,
-            "file": "test_schedule.py",
-            "function": "test_next_run_time",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 445,
-                    "start_column": 1,
-                    "end_line": 446,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 173,
-            "file": "test_schedule.py",
-            "function": "test_run_every_weekday_at_specific_time_today",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 730,
-                    "start_column": 1,
-                    "end_line": 731,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 76,
-            "file": "test_schedule.py",
-            "function": "test_weekday_at_todady",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 379,
-                    "start_column": 1,
-                    "end_line": 380,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 93,
+            "id": 77,
             "file": "test_schedule.py",
             "function": "test_at_time_hour",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 407,
-                    "start_column": 1,
-                    "end_line": 408,
-                    "end_column": 1
+                    "start_line": 390,
+                    "start_column": 12,
+                    "end_line": 390,
+                    "end_column": 74
                 }
             ]
         },
         {
-            "id": 109,
+            "id": 35,
             "file": "test_schedule.py",
-            "function": "test_at_time_minute",
+            "function": "test_at_time",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 429,
-                    "start_column": 1,
-                    "end_line": 430,
-                    "end_column": 1
+                    "start_line": 256,
+                    "start_column": 8,
+                    "end_line": 256,
+                    "end_column": 67
+                }
+            ]
+        },
+        {
+            "id": 171,
+            "file": "test_schedule.py",
+            "function": "test_run_pending",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 719,
+                    "start_column": 12,
+                    "end_line": 719,
+                    "end_column": 34
+                }
+            ]
+        },
+        {
+            "id": 197,
+            "file": "test_schedule.py",
+            "function": "test_cancel_job",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 810,
+                    "start_column": 8,
+                    "end_line": 810,
+                    "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 53,
+            "file": "test_schedule.py",
+            "function": "test_until_time",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 296,
+                    "start_column": 12,
+                    "end_line": 298,
+                    "end_column": 71
                 }
             ]
         }

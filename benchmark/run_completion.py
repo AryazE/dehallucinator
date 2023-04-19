@@ -40,6 +40,8 @@ def as_module(code: str) -> str:
     return lines[0] + dedent(''.join(lines[1:]))
 
 def as_statement(code: str) -> str:
+    if len(code) == 0:
+        return code
     lines = code.splitlines(True)
     ind = len(lines[0]) - len(lines[0].lstrip())
     curr = ''

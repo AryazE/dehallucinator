@@ -10,86 +10,44 @@
             "remove": []
         },
         {
-            "id": 69,
-            "file": "jwt/algorithms.py",
-            "function": "from_jwk",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 537,
-                    "start_column": 1,
-                    "end_line": 538,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 44,
-            "file": "jwt/algorithms.py",
-            "function": "from_jwk",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 361,
-                    "start_column": 1,
-                    "end_line": 364,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 18,
+            "id": 6,
             "file": "jwt/api_jws.py",
-            "function": "_verify_signature",
+            "function": "_load",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 303,
-                    "start_column": 1,
-                    "end_line": 304,
-                    "end_column": 1
+                    "start_line": 251,
+                    "start_column": 12,
+                    "end_line": 251,
+                    "end_column": 77
                 }
             ]
         },
         {
-            "id": 90,
-            "file": "jwt/algorithms.py",
-            "function": "from_jwk",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 758,
-                    "start_column": 1,
-                    "end_line": 759,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 79,
+            "id": 58,
             "file": "jwt/algorithms.py",
             "function": "prepare_key",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 647,
-                    "start_column": 1,
-                    "end_line": 650,
-                    "end_column": 1
+                    "start_line": 445,
+                    "start_column": 12,
+                    "end_line": 445,
+                    "end_column": 40
                 }
             ]
         },
         {
-            "id": 40,
+            "id": 66,
             "file": "jwt/algorithms.py",
             "function": "to_jwk",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 336,
-                    "start_column": 1,
-                    "end_line": 337,
-                    "end_column": 1
+                    "start_line": 513,
+                    "start_column": 16,
+                    "end_line": 515,
+                    "end_column": 26
                 }
             ]
         },
@@ -101,23 +59,9 @@
                 {
                     "description": "code",
                     "start_line": 52,
-                    "start_column": 1,
-                    "end_line": 53,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 104,
-            "file": "jwt/api_jwt.py",
-            "function": "_validate_aud",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 318,
-                    "start_column": 1,
-                    "end_line": 319,
-                    "end_column": 1
+                    "start_column": 12,
+                    "end_line": 52,
+                    "end_column": 82
                 }
             ]
         },
@@ -129,37 +73,163 @@
                 {
                     "description": "code",
                     "start_line": 264,
-                    "start_column": 1,
-                    "end_line": 265,
-                    "end_column": 1
+                    "start_column": 12,
+                    "end_line": 264,
+                    "end_column": 52
                 }
             ]
         },
         {
-            "id": 57,
-            "file": "jwt/algorithms.py",
-            "function": "from_jwk",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 413,
-                    "start_column": 1,
-                    "end_line": 414,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 41,
+            "id": 35,
             "file": "jwt/algorithms.py",
             "function": "to_jwk",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 339,
-                    "start_column": 1,
-                    "end_line": 340,
-                    "end_column": 1
+                    "start_line": 315,
+                    "start_column": 16,
+                    "end_line": 326,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 77,
+            "file": "jwt/algorithms.py",
+            "function": "from_jwk",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 579,
+                    "start_column": 12,
+                    "end_line": 579,
+                    "end_column": 46
+                }
+            ]
+        },
+        {
+            "id": 105,
+            "file": "jwt/api_jwt.py",
+            "function": "_validate_aud",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 325,
+                    "start_column": 12,
+                    "end_line": 325,
+                    "end_column": 71
+                }
+            ]
+        },
+        {
+            "id": 78,
+            "file": "jwt/algorithms.py",
+            "function": "from_jwk",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 581,
+                    "start_column": 16,
+                    "end_line": 583,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "file": "jwt/algorithms.py",
+            "function": "to_jwk",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 315,
+                    "start_column": 16,
+                    "end_line": 326,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "file": "jwt/algorithms.py",
+            "function": "from_jwk",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 380,
+                    "start_column": 20,
+                    "end_line": 388,
+                    "end_column": 21
+                }
+            ]
+        },
+        {
+            "id": 97,
+            "file": "jwt/api_jwt.py",
+            "function": "_validate_iat",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 271,
+                    "start_column": 12,
+                    "end_line": 271,
+                    "end_column": 83
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "file": "jwt/api_jws.py",
+            "function": "encode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 145,
+                    "start_column": 8,
+                    "end_line": 145,
+                    "end_column": 54
+                }
+            ]
+        },
+        {
+            "id": 94,
+            "file": "jwt/api_jwt.py",
+            "function": "_decode_payload",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 177,
+                    "start_column": 12,
+                    "end_line": 177,
+                    "end_column": 61
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "file": "jwt/algorithms.py",
+            "function": "prepare_key",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 460,
+                    "start_column": 16,
+                    "end_line": 462,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "jwt/api_jws.py",
+            "function": "_load",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 280,
+                    "start_column": 12,
+                    "end_line": 280,
+                    "end_column": 64
                 }
             ]
         },
@@ -171,121 +241,51 @@
                 {
                     "description": "code",
                     "start_line": 297,
-                    "start_column": 1,
-                    "end_line": 298,
-                    "end_column": 1
+                    "start_column": 12,
+                    "end_line": 297,
+                    "end_column": 40
                 }
             ]
         },
         {
-            "id": 85,
-            "file": "jwt/algorithms.py",
-            "function": "from_jwk",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 738,
-                    "start_column": 1,
-                    "end_line": 739,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 51,
-            "file": "jwt/algorithms.py",
-            "function": "from_jwk",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 384,
-                    "start_column": 1,
-                    "end_line": 385,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 73,
-            "file": "jwt/algorithms.py",
-            "function": "from_jwk",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 554,
-                    "start_column": 1,
-                    "end_line": 555,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 56,
-            "file": "jwt/algorithms.py",
-            "function": "from_jwk",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 410,
-                    "start_column": 1,
-                    "end_line": 411,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 60,
-            "file": "jwt/algorithms.py",
-            "function": "sign",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 469,
-                    "start_column": 1,
-                    "end_line": 470,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 45,
-            "file": "jwt/algorithms.py",
-            "function": "from_jwk",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 370,
-                    "start_column": 1,
-                    "end_line": 373,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 46,
-            "file": "jwt/algorithms.py",
-            "function": "from_jwk",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 375,
-                    "start_column": 1,
-                    "end_line": 376,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 91,
+            "id": 100,
             "file": "jwt/api_jwt.py",
-            "function": "encode",
+            "function": "_validate_nbf",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 70,
-                    "start_column": 1,
-                    "end_line": 78,
-                    "end_column": 1
+                    "start_line": 287,
+                    "start_column": 12,
+                    "end_line": 287,
+                    "end_column": 76
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "jwt/algorithms.py",
+            "function": "to_jwk",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 315,
+                    "start_column": 16,
+                    "end_line": 326,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "jwt/algorithms.py",
+            "function": "to_jwk",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 315,
+                    "start_column": 16,
+                    "end_line": 326,
+                    "end_column": 17
                 }
             ]
         }

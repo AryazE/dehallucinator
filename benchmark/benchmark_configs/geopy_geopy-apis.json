@@ -1,0 +1,293 @@
+{
+    "name": "geopy_geopy",
+    "project_root": "GitHubProjects/geopy_geopy",
+    "tests_path": "test",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 109,
+            "file": "geopy/geocoders/smartystreets.py",
+            "function": "_geocoder_exception_handler",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 119,
+                    "start_column": 16,
+                    "end_line": 119,
+                    "end_column": 66
+                }
+            ]
+        },
+        {
+            "id": 200,
+            "file": "geopy/geocoders/geolake.py",
+            "function": "_parse_json",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 167,
+                    "start_column": 8,
+                    "end_line": 167,
+                    "end_column": 63
+                }
+            ]
+        },
+        {
+            "id": 98,
+            "file": "geopy/geocoders/algolia.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 264,
+                    "start_column": 8,
+                    "end_line": 264,
+                    "end_column": 68
+                }
+            ]
+        },
+        {
+            "id": 212,
+            "file": "geopy/geocoders/arcgis.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 171,
+                    "start_column": 8,
+                    "end_line": 171,
+                    "end_column": 68
+                }
+            ]
+        },
+        {
+            "id": 163,
+            "file": "geopy/geocoders/mapquest.py",
+            "function": "parse_feature",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 113,
+                    "start_column": 12,
+                    "end_line": 113,
+                    "end_column": 69
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "geopy/adapters.py",
+            "function": "_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 471,
+                    "start_column": 16,
+                    "end_line": 471,
+                    "end_column": 59
+                }
+            ]
+        },
+        {
+            "id": 136,
+            "file": "geopy/geocoders/baidu.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 161,
+                    "start_column": 8,
+                    "end_line": 161,
+                    "end_column": 68
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "file": "geopy/distance.py",
+            "function": "meters",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 421,
+                    "start_column": 8,
+                    "end_line": 421,
+                    "end_column": 55
+                }
+            ]
+        },
+        {
+            "id": 92,
+            "file": "geopy/geocoders/yandex.py",
+            "function": "_parse_json",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 183,
+                    "start_column": 12,
+                    "end_line": 183,
+                    "end_column": 63
+                }
+            ]
+        },
+        {
+            "id": 203,
+            "file": "geopy/geocoders/nominatim.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 295,
+                    "start_column": 8,
+                    "end_line": 295,
+                    "end_column": 68
+                }
+            ]
+        },
+        {
+            "id": 123,
+            "file": "geopy/geocoders/google.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 274,
+                    "start_column": 8,
+                    "end_line": 274,
+                    "end_column": 68
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "geopy/distance.py",
+            "function": "lonlat",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 176,
+                    "start_column": 4,
+                    "end_line": 176,
+                    "end_column": 25
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "file": "geopy/point.py",
+            "function": "parse_degrees",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 338,
+                    "start_column": 12,
+                    "end_line": 338,
+                    "end_column": 78
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "file": "geopy/distance.py",
+            "function": "destination",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 590,
+                    "start_column": 8,
+                    "end_line": 590,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 219,
+            "file": "geopy/geocoders/arcgis.py",
+            "function": "cb",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 320,
+                    "start_column": 16,
+                    "end_line": 323,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 148,
+            "file": "geopy/geocoders/baidu.py",
+            "function": "_check_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 254,
+                    "start_column": 12,
+                    "end_line": 256,
+                    "end_column": 13
+                }
+            ]
+        },
+        {
+            "id": 94,
+            "file": "geopy/geocoders/yandex.py",
+            "function": "parse_code",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 197,
+                    "start_column": 16,
+                    "end_line": 197,
+                    "end_column": 75
+                }
+            ]
+        },
+        {
+            "id": 184,
+            "file": "geopy/geocoders/base.py",
+            "function": "_format_bounding_box",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 326,
+                    "start_column": 12,
+                    "end_line": 326,
+                    "end_column": 77
+                }
+            ]
+        },
+        {
+            "id": 115,
+            "file": "geopy/geocoders/bing.py",
+            "function": "_parse_json",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 224,
+                    "start_column": 16,
+                    "end_line": 224,
+                    "end_column": 57
+                }
+            ]
+        },
+        {
+            "id": 199,
+            "file": "geopy/geocoders/geolake.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 153,
+                    "start_column": 8,
+                    "end_line": 153,
+                    "end_column": 68
+                }
+            ]
+        }
+    ]
+}

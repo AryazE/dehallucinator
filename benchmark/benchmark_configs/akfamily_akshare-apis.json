@@ -1,0 +1,293 @@
+{
+    "name": "akfamily_akshare",
+    "project_root": "GitHubProjects/akfamily_akshare",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 60,
+            "file": "akshare/futures/futures_daily_bar.py",
+            "function": "get_shfe_v_wap",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 486,
+                    "start_column": 8,
+                    "end_line": 488,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 224,
+            "file": "akshare/fund/fund_em.py",
+            "function": "fund_open_fund_info_em",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 351,
+                    "start_column": 12,
+                    "end_line": 357,
+                    "end_column": 13
+                }
+            ]
+        },
+        {
+            "id": 186,
+            "file": "akshare/economic/macro_usa.py",
+            "function": "macro_usa_cpi_monthly",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 148,
+                    "start_column": 4,
+                    "end_line": 152,
+                    "end_column": 5
+                }
+            ]
+        },
+        {
+            "id": 167,
+            "file": "akshare/economic/macro_china.py",
+            "function": "macro_china_postal_telecommunicational",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 3807,
+                    "start_column": 4,
+                    "end_line": 3807,
+                    "end_column": 67
+                }
+            ]
+        },
+        {
+            "id": 132,
+            "file": "akshare/index/index_stock_zh.py",
+            "function": "_get_tx_start_year",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 162,
+                    "start_column": 4,
+                    "end_line": 174,
+                    "end_column": 25
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "akshare/futures/futures_hq_sina.py",
+            "function": "futures_foreign_commodity_subscribe_exchange_symbol",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 45,
+                    "start_column": 4,
+                    "end_line": 49,
+                    "end_column": 5
+                }
+            ]
+        },
+        {
+            "id": 242,
+            "file": "akshare/stock_feature/stock_board_concept_ths.py",
+            "function": "stock_board_concept_hist_ths",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 265,
+                    "start_column": 12,
+                    "end_line": 265,
+                    "end_column": 63
+                }
+            ]
+        },
+        {
+            "id": 142,
+            "file": "akshare/index/index_kq_fz.py",
+            "function": "index_kq_fz",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 37,
+                    "start_column": 4,
+                    "end_line": 37,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 126,
+            "file": "akshare/index/index_sw.py",
+            "function": "sw_index_representation_spot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 39,
+                    "start_column": 4,
+                    "end_line": 39,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 129,
+            "file": "akshare/index/index_stock_zh.py",
+            "function": "stock_zh_index_spot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 66,
+                    "start_column": 4,
+                    "end_line": 66,
+                    "end_column": 67
+                }
+            ]
+        },
+        {
+            "id": 128,
+            "file": "akshare/index/drewry_index.py",
+            "function": "drewry_wci_index",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 39,
+                    "start_column": 4,
+                    "end_line": 39,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "akshare/futures/receipt.py",
+            "function": "get_receipt",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 361,
+                    "start_column": 12,
+                    "end_line": 389,
+                    "end_column": 78
+                }
+            ]
+        },
+        {
+            "id": 92,
+            "file": "akshare/bond/bond_zh_cov_sina.py",
+            "function": "bond_cov_comparison",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 489,
+                    "start_column": 4,
+                    "end_line": 489,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "file": "akshare/bond/bond_zh_cov_sina.py",
+            "function": "bond_zh_hs_cov_daily",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 75,
+                    "start_column": 4,
+                    "end_line": 79,
+                    "end_column": 5
+                }
+            ]
+        },
+        {
+            "id": 291,
+            "file": "akshare/stock/stock_zh_kcb_sina.py",
+            "function": "stock_zh_kcb_daily",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 217,
+                    "start_column": 8,
+                    "end_line": 217,
+                    "end_column": 68
+                }
+            ]
+        },
+        {
+            "id": 301,
+            "file": "akshare/stock/stock_zh_a_sina.py",
+            "function": "stock_zh_a_daily",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 260,
+                    "start_column": 8,
+                    "end_line": 260,
+                    "end_column": 66
+                }
+            ]
+        },
+        {
+            "id": 304,
+            "file": "akshare/stock/stock_zh_b_sina.py",
+            "function": "_fq_factor",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 159,
+                    "start_column": 12,
+                    "end_line": 159,
+                    "end_column": 70
+                }
+            ]
+        },
+        {
+            "id": 309,
+            "file": "akshare/stock/stock_zh_b_sina.py",
+            "function": "stock_zh_b_daily",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 230,
+                    "start_column": 8,
+                    "end_line": 230,
+                    "end_column": 66
+                }
+            ]
+        },
+        {
+            "id": 278,
+            "file": "akshare/stock/stock_us_sina.py",
+            "function": "get_us_stock_name",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 70,
+                    "start_column": 8,
+                    "end_line": 70,
+                    "end_column": 70
+                }
+            ]
+        },
+        {
+            "id": 118,
+            "file": "akshare/event/covid.py",
+            "function": "migration_scale_baidu",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 773,
+                    "start_column": 4,
+                    "end_line": 773,
+                    "end_column": 64
+                }
+            ]
+        }
+    ]
+}

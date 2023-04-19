@@ -1,0 +1,293 @@
+{
+    "name": "Suor_funcy",
+    "project_root": "GitHubProjects/Suor_funcy",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 23,
+            "file": "funcy/seqs.py",
+            "function": "split",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 255,
+                    "start_column": 4,
+                    "end_line": 255,
+                    "end_column": 26
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "file": "funcy/flow.py",
+            "function": "wrapper",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 177,
+                    "start_column": 8,
+                    "end_line": 183,
+                    "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "file": "funcy/colls.py",
+            "function": "_factory",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 35,
+                    "start_column": 8,
+                    "end_line": 36,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "funcy/seqs.py",
+            "function": "lfilter",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 127,
+                    "start_column": 4,
+                    "end_line": 127,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "file": "funcy/funcmakers.py",
+            "function": "make_func",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 17,
+                    "start_column": 8,
+                    "end_line": 17,
+                    "end_column": 53
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "file": "funcy/objects.py",
+            "function": "decorator",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 73,
+                    "start_column": 8,
+                    "end_line": 73,
+                    "end_column": 76
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "file": "funcy/funcs.py",
+            "function": "iffy",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 98,
+                    "start_column": 8,
+                    "end_line": 98,
+                    "end_column": 30
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "funcy/colls.py",
+            "function": "select_keys",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 160,
+                    "start_column": 4,
+                    "end_line": 160,
+                    "end_column": 26
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "file": "funcy/decorators.py",
+            "function": "get_arg",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 153,
+                    "start_column": 12,
+                    "end_line": 153,
+                    "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "file": "funcy/seqs.py",
+            "function": "group_by",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 310,
+                    "start_column": 4,
+                    "end_line": 310,
+                    "end_column": 20
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "funcy/funcolls.py",
+            "function": "some_fn",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 27,
+                    "start_column": 4,
+                    "end_line": 27,
+                    "end_column": 35
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "funcy/seqs.py",
+            "function": "lmap",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 122,
+                    "start_column": 4,
+                    "end_line": 122,
+                    "end_column": 37
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "file": "funcy/funcolls.py",
+            "function": "all_fn",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 10,
+                    "start_column": 4,
+                    "end_line": 10,
+                    "end_column": 34
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "file": "funcy/seqs.py",
+            "function": "filter",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 137,
+                    "start_column": 4,
+                    "end_line": 137,
+                    "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "funcy/seqs.py",
+            "function": "lsplit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 273,
+                    "start_column": 4,
+                    "end_line": 273,
+                    "end_column": 26
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "funcy/funcs.py",
+            "function": "autocurry",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 70,
+                    "start_column": 4,
+                    "end_line": 70,
+                    "end_column": 87
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "funcy/colls.py",
+            "function": "select",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 156,
+                    "start_column": 4,
+                    "end_line": 156,
+                    "end_column": 57
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "funcy/colls.py",
+            "function": "_factory",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 37,
+                    "start_column": 8,
+                    "end_line": 37,
+                    "end_column": 49
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "funcy/flow.py",
+            "function": "wrapper",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 145,
+                    "start_column": 8,
+                    "end_line": 161,
+                    "end_column": 29
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "file": "funcy/flow.py",
+            "function": "once_per_args",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 239,
+                    "start_column": 4,
+                    "end_line": 239,
+                    "end_column": 46
+                }
+            ]
+        }
+    ]
+}

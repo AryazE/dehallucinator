@@ -10,128 +10,128 @@
             "remove": []
         },
         {
-            "id": 156,
-            "file": "src/black/trans.py",
-            "function": "maybe_append_string_operators",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1419,
-                    "start_column": 1,
-                    "end_line": 1420,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 124,
+            "id": 193,
             "file": "src/black/trans.py",
             "function": "do_transform",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 447,
-                    "start_column": 1,
-                    "end_line": 448,
-                    "end_column": 1
+                    "start_line": 2178,
+                    "start_column": 8,
+                    "end_line": 2178,
+                    "end_column": 27
                 }
             ]
         },
         {
-            "id": 83,
-            "file": "src/black/linegen.py",
-            "function": "maybe_make_parens_invisible_in_atom",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1348,
-                    "start_column": 1,
-                    "end_line": 1349,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 88,
-            "file": "src/black/linegen.py",
-            "function": "maybe_make_parens_invisible_in_atom",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1362,
-                    "start_column": 1,
-                    "end_line": 1363,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 165,
+            "id": 190,
             "file": "src/black/trans.py",
             "function": "do_transform",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1600,
-                    "start_column": 1,
-                    "end_line": 1601,
-                    "end_column": 1
+                    "start_line": 2158,
+                    "start_column": 8,
+                    "end_line": 2158,
+                    "end_column": 29
                 }
             ]
         },
         {
-            "id": 106,
-            "file": "src/black/lines.py",
-            "function": "is_import",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 125,
-                    "start_column": 1,
-                    "end_line": 126,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 56,
+            "id": 53,
             "file": "src/black/linegen.py",
             "function": "_maybe_split_omitting_optional_parens",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 805,
-                    "start_column": 1,
-                    "end_line": 806,
-                    "end_column": 1
+                    "start_line": 786,
+                    "start_column": 12,
+                    "end_line": 802,
+                    "end_column": 24
                 }
             ]
         },
         {
-            "id": 118,
-            "file": "src/black/lines.py",
-            "function": "is_line_short_enough",
+            "id": 3,
+            "file": "scripts/fuzz.py",
+            "function": "test_idempotent_any_syntatically_valid_python",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 822,
-                    "start_column": 1,
-                    "end_line": 823,
-                    "end_column": 1
+                    "start_line": 68,
+                    "start_column": 4,
+                    "end_line": 68,
+                    "end_column": 62
                 }
             ]
         },
         {
-            "id": 133,
-            "file": "src/black/trans.py",
-            "function": "_merge_one_string_group",
+            "id": 64,
+            "file": "src/black/linegen.py",
+            "function": "delimiter_split",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 656,
-                    "start_column": 1,
-                    "end_line": 657,
-                    "end_column": 1
+                    "start_line": 1050,
+                    "start_column": 12,
+                    "end_line": 1052,
+                    "end_column": 13
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "file": "src/black/linegen.py",
+            "function": "append_to_line",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1014,
+                    "start_column": 12,
+                    "end_line": 1016,
+                    "end_column": 13
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "file": "src/black/linegen.py",
+            "function": "transform_line",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 519,
+                    "start_column": 4,
+                    "end_line": 592,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "file": "src/black/linegen.py",
+            "function": "visit_STRING",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 415,
+                    "start_column": 16,
+                    "end_line": 415,
+                    "end_column": 60
+                }
+            ]
+        },
+        {
+            "id": 90,
+            "file": "src/black/linegen.py",
+            "function": "maybe_make_parens_invisible_in_atom",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1380,
+                    "start_column": 4,
+                    "end_line": 1396,
+                    "end_column": 20
                 }
             ]
         },
@@ -143,135 +143,23 @@
                 {
                     "description": "code",
                     "start_line": 415,
-                    "start_column": 1,
-                    "end_line": 416,
-                    "end_column": 1
+                    "start_column": 12,
+                    "end_line": 415,
+                    "end_column": 37
                 }
             ]
         },
         {
-            "id": 110,
-            "file": "src/black/lines.py",
-            "function": "contains_unsplittable_type_ignore",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 291,
-                    "start_column": 1,
-                    "end_line": 292,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 96,
-            "file": "src/black/linegen.py",
-            "function": "run_transformer",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1530,
-                    "start_column": 1,
-                    "end_line": 1531,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 70,
-            "file": "src/black/linegen.py",
-            "function": "normalize_invisible_parens",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1174,
-                    "start_column": 1,
-                    "end_line": 1175,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 167,
+            "id": 179,
             "file": "src/black/trans.py",
-            "function": "_iter_fexpr_slices",
+            "function": "_assign_match",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1645,
-                    "start_column": 1,
-                    "end_line": 1646,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 47,
-            "file": "src/black/linegen.py",
-            "function": "_rhs",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 553,
-                    "start_column": 1,
-                    "end_line": 554,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 129,
-            "file": "src/black/trans.py",
-            "function": "_merge_string_group",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 544,
-                    "start_column": 1,
-                    "end_line": 545,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 74,
-            "file": "src/black/linegen.py",
-            "function": "_normalize_import_from",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1202,
-                    "start_column": 1,
-                    "end_line": 1203,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 155,
-            "file": "src/black/trans.py",
-            "function": "do_transform",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1390,
-                    "start_column": 1,
-                    "end_line": 1391,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 192,
-            "file": "src/black/trans.py",
-            "function": "do_transform",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 2175,
-                    "start_column": 1,
-                    "end_line": 2176,
-                    "end_column": 1
+                    "start_line": 1983,
+                    "start_column": 8,
+                    "end_line": 2013,
+                    "end_column": 45
                 }
             ]
         },
@@ -283,9 +171,121 @@
                 {
                     "description": "code",
                     "start_line": 188,
-                    "start_column": 1,
-                    "end_line": 189,
-                    "end_column": 1
+                    "start_column": 12,
+                    "end_line": 188,
+                    "end_column": 84
+                }
+            ]
+        },
+        {
+            "id": 84,
+            "file": "src/black/linegen.py",
+            "function": "maybe_make_parens_invisible_in_atom",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1346,
+                    "start_column": 4,
+                    "end_line": 1360,
+                    "end_column": 20
+                }
+            ]
+        },
+        {
+            "id": 78,
+            "file": "src/black/linegen.py",
+            "function": "remove_await_parens",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1239,
+                    "start_column": 20,
+                    "end_line": 1239,
+                    "end_column": 51
+                }
+            ]
+        },
+        {
+            "id": 188,
+            "file": "src/black/trans.py",
+            "function": "do_transform",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2113,
+                    "start_column": 8,
+                    "end_line": 2119,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 117,
+            "file": "src/black/lines.py",
+            "function": "append_leaves",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 745,
+                    "start_column": 8,
+                    "end_line": 745,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 134,
+            "file": "src/black/trans.py",
+            "function": "_merge_one_string_group",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 684,
+                    "start_column": 16,
+                    "end_line": 684,
+                    "end_column": 53
+                }
+            ]
+        },
+        {
+            "id": 195,
+            "file": "src/black/handle_ipynb_magics.py",
+            "function": "jupyter_dependencies_are_installed",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 69,
+                    "start_column": 12,
+                    "end_line": 69,
+                    "end_column": 20
+                }
+            ]
+        },
+        {
+            "id": 165,
+            "file": "src/black/trans.py",
+            "function": "do_transform",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1600,
+                    "start_column": 16,
+                    "end_line": 1600,
+                    "end_column": 41
+                }
+            ]
+        },
+        {
+            "id": 105,
+            "file": "src/black/lines.py",
+            "function": "append",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 82,
+                    "start_column": 12,
+                    "end_line": 84,
+                    "end_column": 13
                 }
             ]
         }

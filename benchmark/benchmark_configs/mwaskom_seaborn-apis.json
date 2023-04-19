@@ -1,0 +1,293 @@
+{
+    "name": "mwaskom_seaborn",
+    "project_root": "GitHubProjects/mwaskom_seaborn",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 341,
+            "file": "seaborn/_marks/text.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 33,
+                    "start_column": 4,
+                    "end_line": 33,
+                    "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 203,
+            "file": "seaborn/axisgrid.py",
+            "function": "_find_numeric_cols",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1668,
+                    "start_column": 12,
+                    "end_line": 1669,
+                    "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 421,
+            "file": "seaborn/_core/properties.py",
+            "function": "_get_values",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 718,
+                    "start_column": 16,
+                    "end_line": 718,
+                    "end_column": 50
+                }
+            ]
+        },
+        {
+            "id": 96,
+            "file": "seaborn/categorical.py",
+            "function": "countplot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 3201,
+                    "start_column": 4,
+                    "end_line": 3201,
+                    "end_column": 54
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "file": "seaborn/categorical.py",
+            "function": "barplot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2921,
+                    "start_column": 4,
+                    "end_line": 2921,
+                    "end_column": 85
+                }
+            ]
+        },
+        {
+            "id": 69,
+            "file": "seaborn/categorical.py",
+            "function": "establish_colors",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1134,
+                    "start_column": 20,
+                    "end_line": 1134,
+                    "end_column": 58
+                }
+            ]
+        },
+        {
+            "id": 189,
+            "file": "seaborn/axisgrid.py",
+            "function": "_get_palette",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 255,
+                    "start_column": 16,
+                    "end_line": 255,
+                    "end_column": 57
+                }
+            ]
+        },
+        {
+            "id": 139,
+            "file": "seaborn/widgets.py",
+            "function": "choose_light_palette_hls",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 286,
+                    "start_column": 16,
+                    "end_line": 286,
+                    "end_column": 63
+                }
+            ]
+        },
+        {
+            "id": 205,
+            "file": "seaborn/axisgrid.py",
+            "function": "jointplot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2232,
+                    "start_column": 4,
+                    "end_line": 2233,
+                    "end_column": 45
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "doc/sphinxext/tutorial_builder.py",
+            "function": "write_thumbnail",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 81,
+                    "start_column": 4,
+                    "end_line": 92,
+                    "end_column": 43
+                }
+            ]
+        },
+        {
+            "id": 270,
+            "file": "seaborn/_statistics.py",
+            "function": "_validate_errorbar_arg",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 550,
+                    "start_column": 4,
+                    "end_line": 550,
+                    "end_column": 61
+                }
+            ]
+        },
+        {
+            "id": 325,
+            "file": "seaborn/_marks/dot.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 128,
+                    "start_column": 4,
+                    "end_line": 128,
+                    "end_column": 71
+                }
+            ]
+        },
+        {
+            "id": 255,
+            "file": "seaborn/relational.py",
+            "function": "plot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 567,
+                    "start_column": 16,
+                    "end_line": 567,
+                    "end_column": 47
+                }
+            ]
+        },
+        {
+            "id": 183,
+            "file": "seaborn/axisgrid.py",
+            "function": "add_legend",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 190,
+                    "start_column": 12,
+                    "end_line": 190,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 187,
+            "file": "seaborn/axisgrid.py",
+            "function": "_get_palette",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 247,
+                    "start_column": 12,
+                    "end_line": 247,
+                    "end_column": 47
+                }
+            ]
+        },
+        {
+            "id": 299,
+            "file": "seaborn/_marks/area.py",
+            "function": "_legend_artist",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 74,
+                    "start_column": 8,
+                    "end_line": 74,
+                    "end_column": 57
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "file": "doc/sphinxext/tutorial_builder.py",
+            "function": "distributions",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 291,
+                    "start_column": 8,
+                    "end_line": 294,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 389,
+            "file": "seaborn/_core/properties.py",
+            "function": "infer_scale",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 184,
+                    "start_column": 12,
+                    "end_line": 184,
+                    "end_column": 31
+                }
+            ]
+        },
+        {
+            "id": 379,
+            "file": "seaborn/_stats/counting.py",
+            "function": "__call__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 214,
+                    "start_column": 16,
+                    "end_line": 214,
+                    "end_column": 55
+                }
+            ]
+        },
+        {
+            "id": 119,
+            "file": "seaborn/widgets.py",
+            "function": "choose_sequential",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 102,
+                    "start_column": 16,
+                    "end_line": 102,
+                    "end_column": 56
+                }
+            ]
+        }
+    ]
+}
