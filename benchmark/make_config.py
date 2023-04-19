@@ -68,7 +68,7 @@ def make_config(project, tests):
                     'start_line': i.start_line,
                     'start_column': i.start_column,
                     'end_line': i.end_line,
-                    'end_column': i.end_column + 1
+                    'end_column': i.end_column
                 }]
             })
             id += 1

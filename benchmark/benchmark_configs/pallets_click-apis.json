@@ -10,100 +10,30 @@
             "remove": []
         },
         {
-            "id": 18,
+            "id": 45,
             "file": "src/click/core.py",
-            "function": "abort",
+            "function": "_parse_decls",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 683,
-                    "start_column": 8,
-                    "end_line": 683,
-                    "end_column": 21
+                    "start_line": 2635,
+                    "start_column": 24,
+                    "end_line": 2635,
+                    "end_column": 63
                 }
             ]
         },
         {
-            "id": 22,
-            "file": "src/click/core.py",
-            "function": "main",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1065,
-                    "start_column": 12,
-                    "end_line": 1065,
-                    "end_column": 46
-                }
-            ]
-        },
-        {
-            "id": 118,
-            "file": "src/click/_termui_impl.py",
-            "function": "_pipepager",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 394,
-                    "start_column": 4,
-                    "end_line": 394,
-                    "end_column": 39
-                }
-            ]
-        },
-        {
-            "id": 99,
-            "file": "src/click/utils.py",
-            "function": "open",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 161,
-                    "start_column": 12,
-                    "end_line": 161,
-                    "end_column": 62
-                }
-            ]
-        },
-        {
-            "id": 133,
-            "file": "src/click/exceptions.py",
-            "function": "show",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 43,
-                    "start_column": 8,
-                    "end_line": 43,
-                    "end_column": 84
-                }
-            ]
-        },
-        {
-            "id": 71,
+            "id": 67,
             "file": "src/click/termui.py",
-            "function": "clear",
+            "function": "echo_via_pager",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 444,
+                    "start_line": 268,
                     "start_column": 4,
-                    "end_line": 445,
-                    "end_column": 14
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "file": "src/click/types.py",
-            "function": "convert",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 206,
-                    "start_column": 12,
-                    "end_line": 206,
-                    "end_column": 38
+                    "end_line": 268,
+                    "end_column": 40
                 }
             ]
         },
@@ -122,170 +52,100 @@
             ]
         },
         {
-            "id": 34,
-            "file": "src/click/core.py",
-            "function": "shell_complete",
+            "id": 93,
+            "file": "src/click/formatting.py",
+            "function": "write_usage",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1450,
-                    "start_column": 16,
-                    "end_line": 1454,
-                    "end_column": 17
-                }
-            ]
-        },
-        {
-            "id": 30,
-            "file": "src/click/core.py",
-            "function": "make_parser",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1305,
-                    "start_column": 8,
-                    "end_line": 1305,
-                    "end_column": 34
-                }
-            ]
-        },
-        {
-            "id": 32,
-            "file": "src/click/core.py",
-            "function": "parse_args",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1389,
+                    "start_line": 176,
                     "start_column": 12,
-                    "end_line": 1389,
-                    "end_column": 49
+                    "end_line": 176,
+                    "end_column": 75
                 }
             ]
         },
         {
-            "id": 106,
-            "file": "src/click/utils.py",
-            "function": "echo",
+            "id": 129,
+            "file": "src/click/_compat.py",
+            "function": "get_text_stdin",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 298,
-                    "start_column": 16,
-                    "end_line": 298,
-                    "end_column": 47
+                    "start_line": 345,
+                    "start_column": 4,
+                    "end_line": 345,
+                    "end_column": 65
                 }
             ]
         },
         {
-            "id": 126,
+            "id": 125,
             "file": "src/click/_termui_impl.py",
-            "function": "raw_terminal",
+            "function": "edit_file",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 687,
-                    "start_column": 8,
-                    "end_line": 692,
+                    "start_line": 499,
+                    "start_column": 12,
+                    "end_line": 501,
                     "end_column": 20
                 }
             ]
         },
         {
-            "id": 109,
-            "file": "src/click/utils.py",
-            "function": "get_text_stream",
+            "id": 14,
+            "file": "src/click/_winconsole.py",
+            "function": "_get_text_stderr",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 333,
+                    "start_line": 234,
                     "start_column": 4,
-                    "end_line": 333,
-                    "end_column": 35
+                    "end_line": 239,
+                    "end_column": 5
                 }
             ]
         },
         {
-            "id": 141,
-            "file": "src/click/parser.py",
-            "function": "_get_value_from_state",
+            "id": 131,
+            "file": "src/click/_compat.py",
+            "function": "get_text_stderr",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 471,
-                    "start_column": 16,
-                    "end_line": 478,
-                    "end_column": 17
-                }
-            ]
-        },
-        {
-            "id": 80,
-            "file": "src/click/termui.py",
-            "function": "pause",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 787,
-                    "start_column": 12,
-                    "end_line": 787,
-                    "end_column": 25
-                }
-            ]
-        },
-        {
-            "id": 58,
-            "file": "src/click/termui.py",
-            "function": "prompt_func",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 149,
-                    "start_column": 12,
-                    "end_line": 149,
-                    "end_column": 35
-                }
-            ]
-        },
-        {
-            "id": 111,
-            "file": "src/click/_termui_impl.py",
-            "function": "render_progress",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 220,
-                    "start_column": 16,
-                    "end_line": 220,
+                    "start_line": 363,
+                    "start_column": 4,
+                    "end_line": 363,
                     "end_column": 66
                 }
             ]
         },
         {
-            "id": 31,
-            "file": "src/click/core.py",
-            "function": "get_short_help_str",
+            "id": 105,
+            "file": "src/click/utils.py",
+            "function": "echo",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1326,
+                    "start_line": 295,
                     "start_column": 12,
-                    "end_line": 1326,
-                    "end_column": 60
+                    "end_line": 295,
+                    "end_column": 33
                 }
             ]
         },
         {
-            "id": 85,
-            "file": "src/click/decorators.py",
-            "function": "callback",
+            "id": 87,
+            "file": "src/click/formatting.py",
+            "function": "measure_table",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 509,
-                    "start_column": 8,
-                    "end_line": 513,
-                    "end_column": 9
+                    "start_line": 17,
+                    "start_column": 12,
+                    "end_line": 17,
+                    "end_column": 64
                 }
             ]
         }

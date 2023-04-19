@@ -1,0 +1,153 @@
+{
+    "name": "pallets_jinja",
+    "project_root": "GitHubProjects/pallets_jinja",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 68,
+            "file": "src/jinja2/lexer.py",
+            "function": "tokeniter",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 864,
+                    "start_column": 16,
+                    "end_line": 866,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 113,
+            "file": "src/jinja2/environment.py",
+            "function": "_filter_test_common",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 531,
+                    "start_column": 16,
+                    "end_line": 533,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "file": "src/jinja2/environment.py",
+            "function": "compile_expression",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 813,
+                    "start_column": 8,
+                    "end_line": 813,
+                    "end_column": 76
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "src/jinja2/loaders.py",
+            "function": "split_template_path",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 35,
+                    "start_column": 12,
+                    "end_line": 35,
+                    "end_column": 44
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "file": "src/jinja2/ext.py",
+            "function": "_make_node",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 538,
+                    "start_column": 8,
+                    "end_line": 538,
+                    "end_column": 63
+                }
+            ]
+        },
+        {
+            "id": 88,
+            "file": "src/jinja2/ext.py",
+            "function": "parse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 587,
+                    "start_column": 8,
+                    "end_line": 587,
+                    "end_column": 64
+                }
+            ]
+        },
+        {
+            "id": 119,
+            "file": "src/jinja2/environment.py",
+            "function": "compile_expression",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 806,
+                    "start_column": 16,
+                    "end_line": 808,
+                    "end_column": 17
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "file": "src/jinja2/filters.py",
+            "function": "do_urlencode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 163,
+                    "start_column": 8,
+                    "end_line": 163,
+                    "end_column": 31
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "src/jinja2/filters.py",
+            "function": "do_groupby",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1245,
+                    "start_column": 0,
+                    "end_line": 1268,
+                    "end_column": 14
+                }
+            ]
+        },
+        {
+            "id": 128,
+            "file": "src/jinja2/environment.py",
+            "function": "__str__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1547,
+                    "start_column": 8,
+                    "end_line": 1547,
+                    "end_column": 40
+                }
+            ]
+        }
+    ]
+}

@@ -10,34 +10,6 @@
             "remove": []
         },
         {
-            "id": 1,
-            "file": "flask_api/app.py",
-            "function": "handle_user_exception",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 97,
-                    "start_column": 8,
-                    "end_line": 106,
-                    "end_column": 37
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "file": "flask_api/renderers.py",
-            "function": "render",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 91,
-                    "start_column": 8,
-                    "end_line": 91,
-                    "end_column": 61
-                }
-            ]
-        },
-        {
             "id": 3,
             "file": "flask_api/renderers.py",
             "function": "render",
@@ -48,20 +20,6 @@
                     "start_column": 16,
                     "end_line": 108,
                     "end_column": 67
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "file": "flask_api/parsers.py",
-            "function": "parse",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 29,
-                    "start_column": 12,
-                    "end_line": 29,
-                    "end_column": 44
                 }
             ]
         },
@@ -80,44 +38,16 @@
             ]
         },
         {
-            "id": 6,
-            "file": "flask_api/parsers.py",
-            "function": "parse",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 60,
-                    "start_column": 12,
-                    "end_line": 60,
-                    "end_column": 44
-                }
-            ]
-        },
-        {
-            "id": 7,
+            "id": 10,
             "file": "flask_api/negotiation.py",
-            "function": "select_parser",
+            "function": "select_renderer",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 25,
+                    "start_line": 40,
                     "start_column": 8,
-                    "end_line": 25,
-                    "end_column": 58
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "file": "flask_api/negotiation.py",
-            "function": "select_parser",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 27,
-                    "start_column": 12,
-                    "end_line": 27,
-                    "end_column": 60
+                    "end_line": 48,
+                    "end_column": 64
                 }
             ]
         },
@@ -136,16 +66,16 @@
             ]
         },
         {
-            "id": 10,
+            "id": 8,
             "file": "flask_api/negotiation.py",
-            "function": "select_renderer",
+            "function": "select_parser",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 40,
-                    "start_column": 8,
-                    "end_line": 48,
-                    "end_column": 64
+                    "start_line": 27,
+                    "start_column": 12,
+                    "end_line": 27,
+                    "end_column": 60
                 }
             ]
         },
@@ -164,6 +94,20 @@
             ]
         },
         {
+            "id": 1,
+            "file": "flask_api/app.py",
+            "function": "handle_user_exception",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 97,
+                    "start_column": 8,
+                    "end_line": 106,
+                    "end_column": 37
+                }
+            ]
+        },
+        {
             "id": 12,
             "file": "flask_api/negotiation.py",
             "function": "select_renderer",
@@ -174,6 +118,34 @@
                     "start_column": 8,
                     "end_line": 50,
                     "end_column": 40
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "flask_api/negotiation.py",
+            "function": "select_parser",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 25,
+                    "start_column": 8,
+                    "end_line": 25,
+                    "end_column": 58
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "flask_api/parsers.py",
+            "function": "parse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 60,
+                    "start_column": 12,
+                    "end_line": 60,
+                    "end_column": 44
                 }
             ]
         }

@@ -1,0 +1,153 @@
+{
+    "name": "pallets-eco_blinker",
+    "project_root": "GitHubProjects/pallets-eco_blinker",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "file": "src/blinker/base.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 23,
+                    "start_column": 0,
+                    "end_line": 23,
+                    "end_column": 19
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "src/blinker/_utilities.py",
+            "function": "callable_reference",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 84,
+                    "start_column": 8,
+                    "end_line": 84,
+                    "end_column": 68
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "src/blinker/_utilities.py",
+            "function": "callable_reference",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 82,
+                    "start_column": 8,
+                    "end_line": 82,
+                    "end_column": 68
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "src/blinker/base.py",
+            "function": "disconnect",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 370,
+                    "start_column": 12,
+                    "end_line": 370,
+                    "end_column": 49
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "src/blinker/base.py",
+            "function": "connect",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 112,
+                    "start_column": 12,
+                    "end_line": 112,
+                    "end_column": 70
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "src/blinker/base.py",
+            "function": "connect",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 119,
+                    "start_column": 12,
+                    "end_line": 119,
+                    "end_column": 49
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "src/blinker/base.py",
+            "function": "connect",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 110,
+                    "start_column": 8,
+                    "end_line": 110,
+                    "end_column": 49
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "src/blinker/base.py",
+            "function": "disconnect",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 371,
+                    "start_column": 8,
+                    "end_line": 371,
+                    "end_column": 49
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "src/blinker/base.py",
+            "function": "receivers_for",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 341,
+                    "start_column": 12,
+                    "end_line": 341,
+                    "end_column": 49
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "src/blinker/base.py",
+            "function": "has_receivers_for",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 335,
+                    "start_column": 8,
+                    "end_line": 335,
+                    "end_column": 59
+                }
+            ]
+        }
+    ]
+}

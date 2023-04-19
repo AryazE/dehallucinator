@@ -10,170 +10,30 @@
             "remove": []
         },
         {
-            "id": 13,
-            "file": "grab/transport.py",
-            "function": "wrap_transport_error",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 75,
-                    "start_column": 12,
-                    "end_line": 75,
-                    "end_column": 66
-                }
-            ]
-        },
-        {
-            "id": 17,
-            "file": "grab/transport.py",
-            "function": "prepare_response",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 218,
-                    "start_column": 12,
-                    "end_line": 231,
-                    "end_column": 13
-                }
-            ]
-        },
-        {
-            "id": 21,
-            "file": "grab/extensions.py",
-            "function": "update",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 75,
-                    "start_column": 16,
-                    "end_line": 77,
-                    "end_column": 17
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "file": "grab/document.py",
-            "function": "choose_form",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 467,
-                    "start_column": 12,
-                    "end_line": 467,
-                    "end_column": 84
-                }
-            ]
-        },
-        {
-            "id": 42,
-            "file": "grab/spider/queue_backend/redis.py",
-            "function": "put",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 61,
-                    "start_column": 12,
-                    "end_line": 61,
-                    "end_column": 85
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "file": "grab/request.py",
-            "function": "_process_timeout_param",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 118,
-                    "start_column": 8,
-                    "end_line": 118,
-                    "end_column": 42
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "file": "grab/client.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 18,
-                    "start_column": 4,
-                    "end_line": 18,
-                    "end_column": 35
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "file": "grab/client.py",
-            "function": "request",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 43,
-                    "start_column": 4,
-                    "end_line": 43,
-                    "end_column": 67
-                }
-            ]
-        },
-        {
-            "id": 16,
-            "file": "grab/transport.py",
-            "function": "request",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 151,
-                    "start_column": 16,
-                    "end_line": 151,
-                    "end_column": 62
-                }
-            ]
-        },
-        {
-            "id": 41,
+            "id": 30,
             "file": "grab/spider/base.py",
-            "function": "srv_process_service_result",
+            "function": "setup_queue",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 629,
-                    "start_column": 12,
-                    "end_line": 629,
-                    "end_column": 84
+                    "start_line": 180,
+                    "start_column": 8,
+                    "end_line": 184,
+                    "end_column": 9
                 }
             ]
         },
         {
-            "id": 24,
-            "file": "grab/request.py",
-            "function": "_process_timeout_param",
+            "id": 36,
+            "file": "grab/spider/base.py",
+            "function": "create_grab_instance",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 117,
-                    "start_column": 12,
-                    "end_line": 117,
-                    "end_column": 28
-                }
-            ]
-        },
-        {
-            "id": 26,
-            "file": "grab/request.py",
-            "function": "compile_request_data",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 151,
-                    "start_column": 16,
-                    "end_line": 155,
-                    "end_column": 17
+                    "start_line": 330,
+                    "start_column": 8,
+                    "end_line": 330,
+                    "end_column": 60
                 }
             ]
         },
@@ -192,30 +52,86 @@
             ]
         },
         {
-            "id": 31,
-            "file": "grab/spider/base.py",
-            "function": "add_task",
+            "id": 1,
+            "file": "grab/document.py",
+            "function": "text_assert",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 207,
-                    "start_column": 16,
-                    "end_line": 207,
-                    "end_column": 38
+                    "start_line": 241,
+                    "start_column": 12,
+                    "end_line": 241,
+                    "end_column": 77
                 }
             ]
         },
         {
-            "id": 4,
-            "file": "grab/document.py",
-            "function": "rex_search",
+            "id": 9,
+            "file": "grab/client.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 290,
+                    "start_line": 18,
+                    "start_column": 4,
+                    "end_line": 18,
+                    "end_column": 35
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "grab/document.py",
+            "function": "choose_form",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 460,
                     "start_column": 12,
-                    "end_line": 290,
-                    "end_column": 68
+                    "end_line": 463,
+                    "end_column": 13
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "grab/transport.py",
+            "function": "wrap_transport_error",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 73,
+                    "start_column": 12,
+                    "end_line": 73,
+                    "end_column": 72
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "file": "grab/spider/base.py",
+            "function": "find_task_handler",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 421,
+                    "start_column": 12,
+                    "end_line": 423,
+                    "end_column": 21
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "grab/request.py",
+            "function": "_process_timeout_param",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 117,
+                    "start_column": 12,
+                    "end_line": 117,
+                    "end_column": 28
                 }
             ]
         },
@@ -230,62 +146,6 @@
                     "start_column": 12,
                     "end_line": 565,
                     "end_column": 85
-                }
-            ]
-        },
-        {
-            "id": 27,
-            "file": "grab/spider/task.py",
-            "function": "check_init_kwargs",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 132,
-                    "start_column": 12,
-                    "end_line": 132,
-                    "end_column": 74
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "file": "grab/document.py",
-            "function": "form",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 497,
-                    "start_column": 16,
-                    "end_line": 497,
-                    "end_column": 73
-                }
-            ]
-        },
-        {
-            "id": 18,
-            "file": "grab/grab.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 6,
-                    "start_column": 4,
-                    "end_line": 6,
-                    "end_column": 32
-                }
-            ]
-        },
-        {
-            "id": 19,
-            "file": "grab/extensions.py",
-            "function": "process_retry",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 44,
-                    "start_column": 16,
-                    "end_line": 44,
-                    "end_column": 49
                 }
             ]
         }

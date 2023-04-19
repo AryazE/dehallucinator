@@ -10,245 +10,63 @@
             "remove": []
         },
         {
-            "id": 216,
-            "file": "graphene/types/tests/test_dynamic.py",
-            "function": "test_list",
+            "id": 19,
+            "file": "graphene/relay/tests/test_connection.py",
+            "function": "__init_subclass_with_meta__",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 21,
-                    "start_column": 4,
-                    "end_line": 21,
-                    "end_column": 43
-                }
-            ]
-        },
-        {
-            "id": 563,
-            "file": "graphene/relay/tests/test_node.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 47,
-                    "start_column": 4,
-                    "end_line": 47,
-                    "end_column": 34
-                }
-            ]
-        },
-        {
-            "id": 193,
-            "file": "graphene/types/tests/test_type_map.py",
-            "function": "test_dynamic_objecttype",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 118,
-                    "start_column": 8,
-                    "end_line": 118,
-                    "end_column": 44
-                }
-            ]
-        },
-        {
-            "id": 548,
-            "file": "graphene/relay/tests/test_custom_global_id.py",
-            "function": "setup",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 38,
-                    "start_column": 8,
-                    "end_line": 38,
-                    "end_column": 59
-                }
-            ]
-        },
-        {
-            "id": 433,
-            "file": "graphene/types/tests/test_mutation.py",
-            "function": "test_mutation_custom_output_type",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 63,
+                    "start_line": 125,
                     "start_column": 12,
-                    "end_line": 63,
-                    "end_column": 27
-                }
-            ]
-        },
-        {
-            "id": 130,
-            "file": "graphene/types/tests/test_base64.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 15,
-                    "start_column": 4,
-                    "end_line": 15,
-                    "end_column": 31
-                }
-            ]
-        },
-        {
-            "id": 303,
-            "file": "graphene/types/tests/test_field.py",
-            "function": "test_field_not_source_and_resolver",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 96,
-                    "start_column": 8,
-                    "end_line": 96,
-                    "end_column": 60
-                }
-            ]
-        },
-        {
-            "id": 170,
-            "file": "graphene/types/tests/test_scalars_serialization.py",
-            "function": "test_serializes_output_boolean",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 47,
-                    "start_column": 4,
-                    "end_line": 47,
-                    "end_column": 41
-                }
-            ]
-        },
-        {
-            "id": 285,
-            "file": "graphene/types/tests/test_argument.py",
-            "function": "test_to_arguments_deprecated",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 59,
-                    "start_column": 4,
-                    "end_line": 63,
-                    "end_column": 5
-                }
-            ]
-        },
-        {
-            "id": 474,
-            "file": "graphene/types/tests/test_structures.py",
-            "function": "test_list_comparasion",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 110,
-                    "start_column": 4,
-                    "end_line": 110,
-                    "end_column": 49
-                }
-            ]
-        },
-        {
-            "id": 110,
-            "file": "graphene/types/field.py",
-            "function": "source_resolver",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 17,
-                    "start_column": 4,
-                    "end_line": 17,
-                    "end_column": 65
-                }
-            ]
-        },
-        {
-            "id": 185,
-            "file": "graphene/types/tests/test_interface.py",
-            "function": "test_resolve_type_custom_interferes",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 171,
-                    "start_column": 8,
-                    "end_line": 171,
-                    "end_column": 25
-                }
-            ]
-        },
-        {
-            "id": 55,
-            "file": "graphene/utils/tests/test_orderedtype.py",
-            "function": "test_orderedtype",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 5,
-                    "start_column": 4,
-                    "end_line": 5,
-                    "end_column": 23
-                }
-            ]
-        },
-        {
-            "id": 47,
-            "file": "graphene/utils/tests/test_deduplicator.py",
-            "function": "test_does_not_modify_input",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 80,
-                    "start_column": 4,
-                    "end_line": 80,
-                    "end_column": 21
-                }
-            ]
-        },
-        {
-            "id": 561,
-            "file": "graphene/relay/tests/test_node.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 45,
-                    "start_column": 4,
-                    "end_line": 45,
-                    "end_column": 20
-                }
-            ]
-        },
-        {
-            "id": 603,
-            "file": "graphene/relay/tests/test_mutation.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 24,
-                    "start_column": 4,
-                    "end_line": 24,
+                    "end_line": 138,
                     "end_column": 13
                 }
             ]
         },
         {
-            "id": 380,
-            "file": "graphene/types/tests/test_definition.py",
-            "function": "",
+            "id": 73,
+            "file": "graphene/types/tests/test_mountedtype.py",
+            "function": "test_mounted_type",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 24,
+                    "start_line": 12,
                     "start_column": 4,
-                    "end_line": 24,
-                    "end_column": 17
+                    "end_line": 12,
+                    "end_column": 24
                 }
             ]
         },
         {
-            "id": 488,
+            "id": 112,
+            "file": "graphene/utils/tests/test_str_converters.py",
+            "function": "test_snake_case",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 9,
+                    "start_column": 4,
+                    "end_line": 9,
+                    "end_column": 68
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "graphene/validation/disable_introspection.py",
+            "function": "enter_field",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 11,
+                    "start_column": 8,
+                    "end_line": 16,
+                    "end_column": 13
+                }
+            ]
+        },
+        {
+            "id": 147,
             "file": "graphene/types/tests/test_resolver.py",
             "function": "test_get_default_resolver_is_attr_resolver",
             "remove": [
@@ -262,30 +80,72 @@
             ]
         },
         {
-            "id": 153,
-            "file": "graphene/types/tests/test_scalars_serialization.py",
-            "function": "test_serializes_output_float",
+            "id": 59,
+            "file": "graphene/relay/tests/test_mutation.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 25,
+                    "start_column": 4,
+                    "end_line": 25,
+                    "end_column": 19
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "graphene/relay/tests/test_connection_async.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 26,
+                    "start_column": 4,
+                    "end_line": 26,
+                    "end_column": 58
+                }
+            ]
+        },
+        {
+            "id": 103,
+            "file": "graphene/types/tests/test_scalar.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 41,
+                    "start_column": 4,
+                    "end_line": 41,
+                    "end_column": 59
+                }
+            ]
+        },
+        {
+            "id": 141,
+            "file": "graphene/types/tests/test_resolver.py",
+            "function": "test_attr_resolver",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 21,
+                    "start_column": 4,
+                    "end_line": 21,
+                    "end_column": 66
+                }
+            ]
+        },
+        {
+            "id": 95,
+            "file": "graphene/types/tests/test_scalar.py",
+            "function": "test_ints",
             "remove": [
                 {
                     "description": "code",
                     "start_line": 24,
                     "start_column": 4,
                     "end_line": 24,
-                    "end_column": 36
-                }
-            ]
-        },
-        {
-            "id": 284,
-            "file": "graphene/types/tests/test_argument.py",
-            "function": "test_to_arguments_deprecated",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 58,
-                    "start_column": 4,
-                    "end_line": 58,
-                    "end_column": 32
+                    "end_column": 53
                 }
             ]
         }

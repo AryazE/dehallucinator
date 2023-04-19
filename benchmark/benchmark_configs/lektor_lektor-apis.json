@@ -1,0 +1,153 @@
+{
+    "name": "lektor_lektor",
+    "project_root": "GitHubProjects/lektor_lektor",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 36,
+            "file": "lektor/editor.py",
+            "function": "_save_impl",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 355,
+                    "start_column": 12,
+                    "end_line": 356,
+                    "end_column": 30
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "file": "lektor/types/primitives.py",
+            "function": "to_json",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 19,
+                    "start_column": 8,
+                    "end_line": 19,
+                    "end_column": 84
+                }
+            ]
+        },
+        {
+            "id": 89,
+            "file": "lektor/db.py",
+            "function": "_get_image_info",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 768,
+                    "start_column": 16,
+                    "end_line": 768,
+                    "end_column": 52
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "lektor/devserver.py",
+            "function": "run",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 49,
+                    "start_column": 8,
+                    "end_line": 54,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 54,
+            "file": "lektor/admin/webui.py",
+            "function": "make_app",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 59,
+                    "start_column": 4,
+                    "end_line": 61,
+                    "end_column": 5
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "lektor/markdown/mistune0.py",
+            "function": "meta",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 33,
+                    "start_column": 4,
+                    "end_line": 34,
+                    "end_column": 31
+                }
+            ]
+        },
+        {
+            "id": 68,
+            "file": "lektor/sourceobj.py",
+            "function": "_resolve_url",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 187,
+                    "start_column": 12,
+                    "end_line": 187,
+                    "end_column": 51
+                }
+            ]
+        },
+        {
+            "id": 99,
+            "file": "lektor/db.py",
+            "function": "to_fs_path",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1292,
+                    "start_column": 8,
+                    "end_line": 1292,
+                    "end_column": 86
+                }
+            ]
+        },
+        {
+            "id": 118,
+            "file": "lektor/markdown/mistune2.py",
+            "function": "resolve_plugin",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 107,
+                    "start_column": 16,
+                    "end_line": 107,
+                    "end_column": 84
+                }
+            ]
+        },
+        {
+            "id": 106,
+            "file": "lektor/db.py",
+            "function": "theme_asset_roots",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1688,
+                    "start_column": 12,
+                    "end_line": 1690,
+                    "end_column": 13
+                }
+            ]
+        }
+    ]
+}

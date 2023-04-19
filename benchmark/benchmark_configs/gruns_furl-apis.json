@@ -1,0 +1,153 @@
+{
+    "name": "gruns_furl",
+    "project_root": "GitHubProjects/gruns_furl",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 3,
+            "file": "furl/omdict1D.py",
+            "function": "_set",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 108,
+                    "start_column": 8,
+                    "end_line": 109,
+                    "end_column": 27
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "furl/furl.py",
+            "function": "remove",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 563,
+                    "start_column": 12,
+                    "end_line": 566,
+                    "end_column": 57
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "furl/furl.py",
+            "function": "_items",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1086,
+                    "start_column": 8,
+                    "end_line": 1101,
+                    "end_column": 31
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "furl/furl.py",
+            "function": "_items",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1088,
+                    "start_column": 8,
+                    "end_line": 1101,
+                    "end_column": 31
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "file": "furl/furl.py",
+            "function": "host",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1454,
+                    "start_column": 8,
+                    "end_line": 1455,
+                    "end_column": 36
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "furl/furl.py",
+            "function": "host",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1452,
+                    "start_column": 8,
+                    "end_line": 1453,
+                    "end_column": 31
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "furl/furl.py",
+            "function": "quacks_like_a_path_with_segments",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 445,
+                    "start_column": 4,
+                    "end_line": 447,
+                    "end_column": 49
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "furl/omdict1D.py",
+            "function": "_bin_update_items",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 79,
+                    "start_column": 12,
+                    "end_line": 79,
+                    "end_column": 66
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "furl/furl.py",
+            "function": "idna_decode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 126,
+                    "start_column": 4,
+                    "end_line": 127,
+                    "end_column": 37
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "furl/furl.py",
+            "function": "remove",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 948,
+                    "start_column": 8,
+                    "end_line": 952,
+                    "end_column": 25
+                }
+            ]
+        }
+    ]
+}

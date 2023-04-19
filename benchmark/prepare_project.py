@@ -109,16 +109,16 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
                         continue
                     if j['start_line'] - 1 <= l <= j['end_line'] - 1:
                         if j['start_line'] == j['end_line']:
-                            temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '') + code[l][j['end_column'] - 1:]
+                            temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '') + code[l][j['end_column']:]
                             pre_context = ''.join(new_code + [code[l][:j['start_column']]])
-                            post_context = code[l][j['end_column'] - 1:]
+                            post_context = code[l][j['end_column']:]
                         else:
                             if l == j['start_line'] - 1:
                                 temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '')
                                 pre_context = ''.join(new_code + [code[l][:j['start_column']]])
                             elif l == j['end_line'] - 1:
-                                temp = code[l][j['end_column'] - 1:]
-                                post_context = code[l][j['end_column'] - 1:]
+                                temp = code[l][j['end_column']:]
+                                post_context = code[l][j['end_column']:]
                             else:
                                 temp = None
                 if temp:
@@ -176,12 +176,12 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
                     continue
                 if j['start_line'] - 1 <= l <= j['end_line'] - 1:
                     if j['start_line'] == j['end_line']:
-                        temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '') + code[l][j['end_column'] - 1:]
+                        temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '') + code[l][j['end_column']:]
                     else:
                         if l == j['start_line'] - 1:
                             temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '')
                         elif l == j['end_line'] - 1:
-                            temp = code[l][j['end_column'] - 1:]
+                            temp = code[l][j['end_column']:]
                         else:
                             temp = None
             if temp:

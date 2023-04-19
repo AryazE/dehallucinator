@@ -1,0 +1,153 @@
+{
+    "name": "Alir3z4_html2text",
+    "project_root": "GitHubProjects/Alir3z4_html2text",
+    "tests_path": "test",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 13,
+            "file": "html2text/cli.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 284,
+                    "start_column": 4,
+                    "end_line": 284,
+                    "end_column": 34
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "html2text/utils.py",
+            "function": "escape_md_section",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 214,
+                    "start_column": 8,
+                    "end_line": 214,
+                    "end_column": 64
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "html2text/utils.py",
+            "function": "skipwrap",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 193,
+                    "start_column": 4,
+                    "end_line": 196,
+                    "end_column": 5
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "html2text/utils.py",
+            "function": "skipwrap",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 193,
+                    "start_column": 4,
+                    "end_line": 196,
+                    "end_column": 5
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "html2text/utils.py",
+            "function": "escape_md",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 204,
+                    "start_column": 4,
+                    "end_line": 204,
+                    "end_column": 56
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "html2text/utils.py",
+            "function": "skipwrap",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 167,
+                    "start_column": 4,
+                    "end_line": 168,
+                    "end_column": 19
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "html2text/utils.py",
+            "function": "escape_md_section",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 216,
+                    "start_column": 4,
+                    "end_line": 216,
+                    "end_column": 56
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "html2text/utils.py",
+            "function": "escape_md_section",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 211,
+                    "start_column": 4,
+                    "end_line": 211,
+                    "end_column": 60
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "file": "html2text/utils.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 6,
+                    "start_column": 0,
+                    "end_line": 10,
+                    "end_column": 1
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "html2text/__main__.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 3,
+                    "start_column": 0,
+                    "end_line": 3,
+                    "end_column": 6
+                }
+            ]
+        }
+    ]
+}

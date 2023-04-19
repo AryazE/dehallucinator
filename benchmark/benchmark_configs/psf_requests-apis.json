@@ -10,30 +10,16 @@
             "remove": []
         },
         {
-            "id": 80,
-            "file": "requests/utils.py",
-            "function": "get_unicode_from_response",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 624,
-                    "start_column": 8,
-                    "end_line": 624,
-                    "end_column": 57
-                }
-            ]
-        },
-        {
-            "id": 21,
+            "id": 5,
             "file": "requests/adapters.py",
-            "function": "send",
+            "function": "build_response",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 556,
-                    "start_column": 16,
-                    "end_line": 556,
-                    "end_column": 52
+                    "start_line": 312,
+                    "start_column": 8,
+                    "end_line": 312,
+                    "end_column": 76
                 }
             ]
         },
@@ -52,44 +38,16 @@
             ]
         },
         {
-            "id": 66,
+            "id": 65,
             "file": "requests/auth.py",
             "function": "_basic_auth_str",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 53,
+                    "start_line": 43,
                     "start_column": 8,
-                    "end_line": 53,
+                    "end_line": 43,
                     "end_column": 32
-                }
-            ]
-        },
-        {
-            "id": 129,
-            "file": "requests/models.py",
-            "function": "apparent_encoding",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 793,
-                    "start_column": 8,
-                    "end_line": 793,
-                    "end_column": 55
-                }
-            ]
-        },
-        {
-            "id": 137,
-            "file": "requests/models.py",
-            "function": "json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 957,
-                    "start_column": 12,
-                    "end_line": 957,
-                    "end_column": 51
                 }
             ]
         },
@@ -108,104 +66,6 @@
             ]
         },
         {
-            "id": 14,
-            "file": "requests/adapters.py",
-            "function": "request_url",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 392,
-                    "start_column": 12,
-                    "end_line": 392,
-                    "end_column": 57
-                }
-            ]
-        },
-        {
-            "id": 134,
-            "file": "requests/models.py",
-            "function": "iter_content",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 836,
-                    "start_column": 12,
-                    "end_line": 836,
-                    "end_column": 39
-                }
-            ]
-        },
-        {
-            "id": 133,
-            "file": "requests/models.py",
-            "function": "generate",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 824,
-                    "start_column": 20,
-                    "end_line": 824,
-                    "end_column": 45
-                }
-            ]
-        },
-        {
-            "id": 75,
-            "file": "requests/utils.py",
-            "function": "get_netrc_auth",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 230,
-                    "start_column": 8,
-                    "end_line": 230,
-                    "end_column": 26
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "file": "requests/adapters.py",
-            "function": "proxy_manager_for",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 216,
-                    "start_column": 12,
-                    "end_line": 216,
-                    "end_column": 57
-                }
-            ]
-        },
-        {
-            "id": 138,
-            "file": "requests/models.py",
-            "function": "json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 960,
-                    "start_column": 20,
-                    "end_line": 960,
-                    "end_column": 85
-                }
-            ]
-        },
-        {
-            "id": 78,
-            "file": "requests/utils.py",
-            "function": "add_dict_to_cookiejar",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 485,
-                    "start_column": 4,
-                    "end_line": 485,
-                    "end_column": 47
-                }
-            ]
-        },
-        {
             "id": 90,
             "file": "requests/utils.py",
             "function": "prepend_scheme_if_needed",
@@ -220,72 +80,72 @@
             ]
         },
         {
-            "id": 87,
-            "file": "requests/utils.py",
-            "function": "select_proxy",
+            "id": 103,
+            "file": "requests/cookies.py",
+            "function": "get_full_url",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 843,
-                    "start_column": 4,
-                    "end_line": 843,
-                    "end_column": 28
+                    "start_line": 56,
+                    "start_column": 8,
+                    "end_line": 56,
+                    "end_column": 38
                 }
             ]
         },
         {
-            "id": 10,
-            "file": "requests/adapters.py",
-            "function": "get_connection",
+            "id": 59,
+            "file": "requests/sessions.py",
+            "function": "send",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 348,
+                    "start_line": 708,
+                    "start_column": 8,
+                    "end_line": 708,
+                    "end_column": 57
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "requests/adapters.py",
+            "function": "cert_verify",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 260,
                     "start_column": 16,
-                    "end_line": 351,
-                    "end_column": 17
+                    "end_line": 260,
+                    "end_column": 71
                 }
             ]
         },
         {
-            "id": 17,
-            "file": "requests/adapters.py",
-            "function": "proxy_headers",
+            "id": 51,
+            "file": "requests/sessions.py",
+            "function": "rebuild_proxies",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 432,
+                    "start_line": 323,
                     "start_column": 12,
-                    "end_line": 432,
-                    "end_column": 80
+                    "end_line": 323,
+                    "end_column": 71
                 }
             ]
         },
         {
-            "id": 12,
+            "id": 13,
             "file": "requests/adapters.py",
             "function": "request_url",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 386,
+                    "start_line": 387,
                     "start_column": 8,
-                    "end_line": 386,
-                    "end_column": 50
-                }
-            ]
-        },
-        {
-            "id": 65,
-            "file": "requests/auth.py",
-            "function": "_basic_auth_str",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 43,
-                    "start_column": 8,
-                    "end_line": 43,
-                    "end_column": 32
+                    "end_line": 387,
+                    "end_column": 45
                 }
             ]
         }

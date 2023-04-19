@@ -38,20 +38,6 @@
             ]
         },
         {
-            "id": 3,
-            "file": "diskcache/fanout.py",
-            "function": "deque",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 630,
-                    "start_column": 12,
-                    "end_line": 630,
-                    "end_column": 42
-                }
-            ]
-        },
-        {
             "id": 4,
             "file": "diskcache/fanout.py",
             "function": "index",
@@ -62,6 +48,20 @@
                     "start_column": 12,
                     "end_line": 661,
                     "end_column": 63
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "diskcache/recipes.py",
+            "function": "__cache_key__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 465,
+                    "start_column": 12,
+                    "end_line": 465,
+                    "end_column": 65
                 }
             ]
         },
@@ -94,44 +94,16 @@
             ]
         },
         {
-            "id": 7,
-            "file": "diskcache/djangocache.py",
-            "function": "__cache_key__",
+            "id": 3,
+            "file": "diskcache/fanout.py",
+            "function": "deque",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 450,
-                    "start_column": 16,
-                    "end_line": 450,
-                    "end_column": 69
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "file": "diskcache/recipes.py",
-            "function": "decorator",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 271,
-                    "start_column": 8,
-                    "end_line": 271,
-                    "end_column": 55
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "file": "diskcache/recipes.py",
-            "function": "decorator",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 327,
-                    "start_column": 8,
-                    "end_line": 327,
-                    "end_column": 55
+                    "start_line": 630,
+                    "start_column": 12,
+                    "end_line": 630,
+                    "end_column": 42
                 }
             ]
         },
@@ -150,16 +122,30 @@
             ]
         },
         {
-            "id": 11,
+            "id": 9,
             "file": "diskcache/recipes.py",
+            "function": "decorator",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 327,
+                    "start_column": 8,
+                    "end_line": 327,
+                    "end_column": 55
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "diskcache/djangocache.py",
             "function": "__cache_key__",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 465,
-                    "start_column": 12,
-                    "end_line": 465,
-                    "end_column": 65
+                    "start_line": 450,
+                    "start_column": 16,
+                    "end_line": 450,
+                    "end_column": 69
                 }
             ]
         }

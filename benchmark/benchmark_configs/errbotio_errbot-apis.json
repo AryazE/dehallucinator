@@ -10,281 +10,141 @@
             "remove": []
         },
         {
-            "id": 82,
-            "file": "errbot/core_plugins/health.py",
-            "function": "status_gc",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 37,
-                    "start_column": 4,
-                    "end_line": 39,
-                    "end_column": 37
-                }
-            ]
-        },
-        {
-            "id": 40,
-            "file": "errbot/backends/irc.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 31,
-                    "start_column": 0,
-                    "end_line": 61,
-                    "end_column": 1
-                }
-            ]
-        },
-        {
-            "id": 51,
+            "id": 47,
             "file": "errbot/backends/xmpp.py",
-            "function": "occupants",
+            "function": "user_left_chat",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 270,
-                    "start_column": 12,
-                    "end_line": 270,
-                    "end_column": 84
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "file": "errbot/plugin_info.py",
-            "function": "parse",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 61,
-                    "start_column": 20,
-                    "end_line": 63,
-                    "end_column": 21
-                }
-            ]
-        },
-        {
-            "id": 43,
-            "file": "errbot/backends/irc.py",
-            "function": "topic",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 280,
-                    "start_column": 12,
-                    "end_line": 280,
-                    "end_column": 76
-                }
-            ]
-        },
-        {
-            "id": 64,
-            "file": "errbot/backends/text.py",
-            "function": "serve_forever",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 336,
-                    "start_column": 12,
-                    "end_line": 336,
-                    "end_column": 82
-                }
-            ]
-        },
-        {
-            "id": 50,
-            "file": "errbot/backends/xmpp.py",
-            "function": "topic",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 234,
-                    "start_column": 12,
-                    "end_line": 234,
-                    "end_column": 84
-                }
-            ]
-        },
-        {
-            "id": 94,
-            "file": "errbot/core_plugins/chatRoom.py",
-            "function": "room_join",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 64,
-                    "start_column": 4,
-                    "end_line": 91,
-                    "end_column": 46
-                }
-            ]
-        },
-        {
-            "id": 101,
-            "file": "errbot/core_plugins/webserver.py",
-            "function": "webhook_test",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 159,
-                    "start_column": 4,
-                    "end_line": 190,
-                    "end_column": 69
-                }
-            ]
-        },
-        {
-            "id": 22,
-            "file": "errbot/cli.py",
-            "function": "main",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 261,
-                    "start_column": 12,
-                    "end_line": 261,
-                    "end_column": 46
-                }
-            ]
-        },
-        {
-            "id": 23,
-            "file": "errbot/cli.py",
-            "function": "main",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 263,
-                    "start_column": 12,
-                    "end_line": 263,
-                    "end_column": 40
-                }
-            ]
-        },
-        {
-            "id": 65,
-            "file": "errbot/backends/text.py",
-            "function": "send_stream_request",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 474,
+                    "start_line": 540,
                     "start_column": 8,
-                    "end_line": 474,
-                    "end_column": 63
-                }
-            ]
-        },
-        {
-            "id": 75,
-            "file": "errbot/core_plugins/flows.py",
-            "function": "check_user",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 156,
-                    "start_column": 8,
-                    "end_line": 159,
-                    "end_column": 23
-                }
-            ]
-        },
-        {
-            "id": 39,
-            "file": "errbot/backends/test.py",
-            "function": "assertCommand",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 556,
-                    "start_column": 4,
-                    "end_line": 558,
-                    "end_column": 12
-                }
-            ]
-        },
-        {
-            "id": 34,
-            "file": "errbot/bootstrap.py",
-            "function": "setup_bot",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 187,
-                    "start_column": 8,
-                    "end_line": 194,
+                    "end_line": 542,
                     "end_column": 9
                 }
             ]
         },
         {
-            "id": 111,
-            "file": "errbot/core_plugins/plugins.py",
-            "function": "plugin_deactivate",
+            "id": 48,
+            "file": "errbot/backends/xmpp.py",
+            "function": "user_changed_status",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 279,
+                    "start_line": 560,
+                    "start_column": 8,
+                    "end_line": 566,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 64,
+            "file": "errbot/botplugin.py",
+            "function": "send_card",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 656,
+                    "start_column": 8,
+                    "end_line": 670,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "errbot/plugin_manager.py",
+            "function": "check_errbot_version",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 150,
                     "start_column": 4,
-                    "end_line": 299,
+                    "end_line": 150,
                     "end_column": 44
                 }
             ]
         },
         {
-            "id": 48,
-            "file": "errbot/backends/irc.py",
+            "id": 1,
+            "file": "errbot/backends/telegram_messenger.py",
             "function": "send_stream_request",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 515,
+                    "start_line": 486,
+                    "start_column": 12,
+                    "end_line": 486,
+                    "end_column": 73
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "file": "errbot/core_plugins/webserver.py",
+            "function": "webstatus",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 142,
+                    "start_column": 4,
+                    "end_line": 148,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "errbot/core_plugins/flows.py",
+            "function": "flows_start",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 61,
+                    "start_column": 4,
+                    "end_line": 80,
+                    "end_column": 50
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "errbot/core_plugins/flows.py",
+            "function": "flows_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 95,
+                    "start_column": 20,
+                    "end_line": 97,
+                    "end_column": 21
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "file": "errbot/core.py",
+            "function": "callback_stream",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 781,
                     "start_column": 8,
-                    "end_line": 515,
-                    "end_column": 69
+                    "end_line": 781,
+                    "end_column": 73
                 }
             ]
         },
         {
-            "id": 98,
-            "file": "errbot/core_plugins/chatRoom.py",
-            "function": "room_occupants",
+            "id": 58,
+            "file": "errbot/core.py",
+            "function": "inject_flows_from",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 169,
-                    "start_column": 4,
-                    "end_line": 191,
-                    "end_column": 62
-                }
-            ]
-        },
-        {
-            "id": 87,
-            "file": "errbot/core_plugins/health.py",
-            "function": "shutdown",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 102,
-                    "start_column": 4,
-                    "end_line": 117,
-                    "end_column": 47
-                }
-            ]
-        },
-        {
-            "id": 83,
-            "file": "errbot/core_plugins/health.py",
-            "function": "status_plugins",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 42,
-                    "start_column": 4,
-                    "end_line": 67,
+                    "start_line": 657,
+                    "start_column": 16,
+                    "end_line": 657,
                     "end_column": 53
                 }
             ]

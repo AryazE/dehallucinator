@@ -10,105 +10,105 @@
             "remove": []
         },
         {
-            "id": 34,
-            "file": "pudb/debugger.py",
-            "function": "cmdline_get_namespace",
+            "id": 33,
+            "file": "pudb/run.py",
+            "function": "main",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1755,
-                    "start_column": 12,
-                    "end_line": 1757,
-                    "end_column": 38
-                }
-            ]
-        },
-        {
-            "id": 23,
-            "file": "pudb/debugger.py",
-            "function": "insert_watch",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1162,
-                    "start_column": 16,
-                    "end_line": 1162,
-                    "end_column": 64
-                }
-            ]
-        },
-        {
-            "id": 24,
-            "file": "pudb/debugger.py",
-            "function": "examine_breakpoint",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1314,
-                    "start_column": 12,
-                    "end_line": 1322,
-                    "end_column": 19
-                }
-            ]
-        },
-        {
-            "id": 30,
-            "file": "pudb/debugger.py",
-            "function": "go_to_line",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1486,
-                    "start_column": 12,
-                    "end_line": 1501,
-                    "end_column": 49
-                }
-            ]
-        },
-        {
-            "id": 57,
-            "file": "pudb/var_view.py",
-            "function": "entries",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 74,
-                    "start_column": 12,
-                    "end_line": 76,
+                    "start_line": 100,
+                    "start_column": 8,
+                    "end_line": 100,
                     "end_column": 47
                 }
             ]
         },
         {
-            "id": 25,
-            "file": "pudb/debugger.py",
-            "function": "examine_breakpoint",
+            "id": 21,
+            "file": "pudb/var_view.py",
+            "function": "get_stringifier",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1314,
+                    "start_line": 484,
                     "start_column": 12,
-                    "end_line": 1322,
-                    "end_column": 19
+                    "end_line": 485,
+                    "end_column": 53
                 }
             ]
         },
         {
-            "id": 90,
-            "file": "pudb/lowlevel.py",
-            "function": "emit",
+            "id": 31,
+            "file": "pudb/run.py",
+            "function": "get_argparse_parser",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 62,
-                    "start_column": 16,
-                    "end_line": 62,
-                    "end_column": 37
+                    "start_line": 43,
+                    "start_column": 4,
+                    "end_line": 43,
+                    "end_column": 52
                 }
             ]
         },
         {
-            "id": 68,
+            "id": 12,
+            "file": "pudb/var_view.py",
+            "function": "render",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 332,
+                    "start_column": 20,
+                    "end_line": 335,
+                    "end_column": 25
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "file": "pudb/ipython.py",
+            "function": "pudb",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 34,
+                    "start_column": 4,
+                    "end_line": 34,
+                    "end_column": 25
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "file": "pudb/theme.py",
+            "function": "get_palette",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 903,
+                    "start_column": 12,
+                    "end_line": 903,
+                    "end_column": 59
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "pudb/var_view.py",
+            "function": "render",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 332,
+                    "start_column": 20,
+                    "end_line": 335,
+                    "end_column": 25
+                }
+            ]
+        },
+        {
+            "id": 14,
             "file": "pudb/var_view.py",
             "function": "render",
             "remove": [
@@ -122,91 +122,7 @@
             ]
         },
         {
-            "id": 38,
-            "file": "pudb/debugger.py",
-            "function": "grow_sidebar",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1998,
-                    "start_column": 16,
-                    "end_line": 1998,
-                    "end_column": 35
-                }
-            ]
-        },
-        {
-            "id": 73,
-            "file": "pudb/var_view.py",
-            "function": "default_stringifier",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 415,
-                    "start_column": 12,
-                    "end_line": 415,
-                    "end_column": 37
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "file": "pudb/debugger.py",
-            "function": "get_lines",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 669,
-                    "start_column": 8,
-                    "end_line": 684,
-                    "end_column": 17
-                }
-            ]
-        },
-        {
-            "id": 82,
-            "file": "pudb/b.py",
-            "function": "set_trace",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 19,
-                    "start_column": 4,
-                    "end_line": 19,
-                    "end_column": 27
-                }
-            ]
-        },
-        {
-            "id": 49,
-            "file": "pudb/debugger.py",
-            "function": "setup_palette",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 2374,
-                    "start_column": 8,
-                    "end_line": 2374,
-                    "end_column": 69
-                }
-            ]
-        },
-        {
-            "id": 99,
-            "file": "pudb/settings.py",
-            "function": "parse_breakpoints",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 557,
-                    "start_column": 8,
-                    "end_line": 558,
-                    "end_column": 73
-                }
-            ]
-        },
-        {
-            "id": 88,
+            "id": 34,
             "file": "pudb/run.py",
             "function": "main",
             "remove": [
@@ -220,72 +136,16 @@
             ]
         },
         {
-            "id": 93,
-            "file": "pudb/ipython.py",
-            "function": "debugger",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 53,
-                    "start_column": 8,
-                    "end_line": 53,
-                    "end_column": 12
-                }
-            ]
-        },
-        {
-            "id": 19,
-            "file": "pudb/debugger.py",
-            "function": "get_lines",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 726,
-                    "start_column": 12,
-                    "end_line": 727,
-                    "end_column": 62
-                }
-            ]
-        },
-        {
-            "id": 12,
-            "file": "pudb/debugger.py",
-            "function": "get_lines",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 669,
-                    "start_column": 8,
-                    "end_line": 684,
-                    "end_column": 17
-                }
-            ]
-        },
-        {
-            "id": 28,
-            "file": "pudb/debugger.py",
-            "function": "jump_to_cursor",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1455,
-                    "start_column": 16,
-                    "end_line": 1456,
-                    "end_column": 53
-                }
-            ]
-        },
-        {
-            "id": 77,
+            "id": 15,
             "file": "pudb/var_view.py",
-            "function": "get_stringifier",
+            "function": "render",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 492,
+                    "start_line": 346,
                     "start_column": 16,
-                    "end_line": 493,
-                    "end_column": 75
+                    "end_line": 349,
+                    "end_column": 26
                 }
             ]
         }

@@ -1,0 +1,153 @@
+{
+    "name": "scikit-learn_scikit-learn",
+    "project_root": "GitHubProjects/scikit-learn_scikit-learn",
+    "tests_path": "sklearn/tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 134,
+            "file": "sklearn/decomposition/_kernel_pca.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 228,
+                    "start_column": 4,
+                    "end_line": 260,
+                    "end_column": 5
+                }
+            ]
+        },
+        {
+            "id": 75,
+            "file": "sklearn/neighbors/_base.py",
+            "function": "radius_neighbors",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1216,
+                    "start_column": 16,
+                    "end_line": 1216,
+                    "end_column": 62
+                }
+            ]
+        },
+        {
+            "id": 216,
+            "file": "sklearn/preprocessing/_encoders.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1287,
+                    "start_column": 4,
+                    "end_line": 1293,
+                    "end_column": 5
+                }
+            ]
+        },
+        {
+            "id": 105,
+            "file": "sklearn/model_selection/_search.py",
+            "function": "fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 797,
+                    "start_column": 12,
+                    "end_line": 797,
+                    "end_column": 65
+                }
+            ]
+        },
+        {
+            "id": 98,
+            "file": "sklearn/model_selection/_search.py",
+            "function": "decision_function",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 568,
+                    "start_column": 4,
+                    "end_line": 588,
+                    "end_column": 56
+                }
+            ]
+        },
+        {
+            "id": 71,
+            "file": "sklearn/neighbors/_base.py",
+            "function": "radius_neighbors",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1139,
+                    "start_column": 8,
+                    "end_line": 1139,
+                    "end_column": 29
+                }
+            ]
+        },
+        {
+            "id": 88,
+            "file": "sklearn/model_selection/_search.py",
+            "function": "_more_tags",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 425,
+                    "start_column": 8,
+                    "end_line": 430,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 170,
+            "file": "sklearn/feature_selection/_univariate_selection.py",
+            "function": "chi2",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 238,
+                    "start_column": 4,
+                    "end_line": 238,
+                    "end_column": 38
+                }
+            ]
+        },
+        {
+            "id": 114,
+            "file": "sklearn/model_selection/_search.py",
+            "function": "evaluate_candidates",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 879,
+                    "start_column": 20,
+                    "end_line": 879,
+                    "end_column": 63
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "sklearn/naive_bayes.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 534,
+                    "start_column": 4,
+                    "end_line": 539,
+                    "end_column": 5
+                }
+            ]
+        }
+    ]
+}

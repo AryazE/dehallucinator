@@ -10,282 +10,142 @@
             "remove": []
         },
         {
-            "id": 36,
-            "file": "streamparse/cli/update_virtualenv.py",
-            "function": "subparser_hook",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 168,
-                    "start_column": 4,
-                    "end_line": 168,
-                    "end_column": 32
-                }
-            ]
-        },
-        {
-            "id": 82,
-            "file": "streamparse/cli/submit.py",
-            "function": "subparser_hook",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 307,
-                    "start_column": 4,
-                    "end_line": 307,
-                    "end_column": 25
-                }
-            ]
-        },
-        {
-            "id": 16,
-            "file": "streamparse/cli/kill.py",
-            "function": "subparser_hook",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 45,
-                    "start_column": 4,
-                    "end_line": 45,
-                    "end_column": 26
-                }
-            ]
-        },
-        {
-            "id": 58,
-            "file": "streamparse/cli/list.py",
-            "function": "list_topologies",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 21,
-                    "start_column": 8,
-                    "end_line": 23,
-                    "end_column": 9
-                }
-            ]
-        },
-        {
-            "id": 1,
-            "file": "streamparse/storm/bolt.py",
-            "function": "spec",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 69,
-                    "start_column": 8,
-                    "end_line": 79,
-                    "end_column": 9
-                }
-            ]
-        },
-        {
-            "id": 148,
-            "file": "streamparse/cli/stats.py",
-            "function": "_print_component_summary",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 212,
-                    "start_column": 4,
-                    "end_line": 212,
-                    "end_column": 67
-                }
-            ]
-        },
-        {
-            "id": 99,
-            "file": "streamparse/cli/remove_logs.py",
-            "function": "remove_logs",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 58,
-                    "start_column": 4,
-                    "end_line": 60,
-                    "end_column": 5
-                }
-            ]
-        },
-        {
-            "id": 54,
-            "file": "streamparse/cli/run.py",
-            "function": "subparser_hook",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 110,
-                    "start_column": 4,
-                    "end_line": 110,
-                    "end_column": 26
-                }
-            ]
-        },
-        {
-            "id": 187,
-            "file": "streamparse/dsl/util.py",
-            "function": "to_java_arg",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 21,
-                    "start_column": 8,
-                    "end_line": 21,
-                    "end_column": 48
-                }
-            ]
-        },
-        {
-            "id": 43,
-            "file": "streamparse/cli/run.py",
-            "function": "run_local_topology",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 44,
-                    "start_column": 4,
-                    "end_line": 44,
-                    "end_column": 58
-                }
-            ]
-        },
-        {
-            "id": 125,
-            "file": "streamparse/cli/slot_usage.py",
-            "function": "subparser_hook",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 20,
-                    "start_column": 4,
-                    "end_line": 20,
-                    "end_column": 30
-                }
-            ]
-        },
-        {
-            "id": 65,
-            "file": "streamparse/cli/submit.py",
-            "function": "is_safe_to_submit",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 77,
-                    "start_column": 4,
-                    "end_line": 77,
-                    "end_column": 48
-                }
-            ]
-        },
-        {
-            "id": 94,
-            "file": "streamparse/cli/submit.py",
-            "function": "subparser_hook",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 363,
-                    "start_column": 4,
-                    "end_line": 363,
-                    "end_column": 23
-                }
-            ]
-        },
-        {
-            "id": 173,
-            "file": "streamparse/dsl/stream.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 99,
-                    "start_column": 4,
-                    "end_line": 99,
-                    "end_column": 45
-                }
-            ]
-        },
-        {
-            "id": 71,
-            "file": "streamparse/cli/submit.py",
-            "function": "submit_topology",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 197,
-                    "start_column": 4,
-                    "end_line": 197,
-                    "end_column": 48
-                }
-            ]
-        },
-        {
-            "id": 23,
+            "id": 157,
             "file": "streamparse/cli/update_virtualenv.py",
             "function": "create_or_update_virtualenvs",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 106,
+                    "start_line": 112,
                     "start_column": 4,
-                    "end_line": 106,
-                    "end_column": 68
+                    "end_line": 112,
+                    "end_column": 76
                 }
             ]
         },
         {
-            "id": 32,
-            "file": "streamparse/cli/update_virtualenv.py",
-            "function": "subparser_hook",
+            "id": 59,
+            "file": "streamparse/cli/tail.py",
+            "function": "tail_topology",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 164,
+                    "start_line": 61,
                     "start_column": 4,
-                    "end_line": 164,
-                    "end_column": 30
+                    "end_line": 63,
+                    "end_column": 81
                 }
             ]
         },
         {
-            "id": 88,
-            "file": "streamparse/cli/submit.py",
+            "id": 173,
+            "file": "streamparse/dsl/component.py",
+            "function": "__getitem__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 188,
+                    "start_column": 8,
+                    "end_line": 188,
+                    "end_column": 72
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "streamparse/cli/remove_logs.py",
             "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 339,
+                    "start_line": 94,
                     "start_column": 4,
-                    "end_line": 339,
+                    "end_line": 94,
                     "end_column": 32
                 }
             ]
         },
         {
-            "id": 168,
-            "file": "streamparse/dsl/topology.py",
-            "function": "add_bolt_spec",
+            "id": 92,
+            "file": "streamparse/cli/kill.py",
+            "function": "kill_topology",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 84,
+                    "start_line": 29,
+                    "start_column": 4,
+                    "end_line": 29,
+                    "end_column": 76
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "streamparse/cli/submit.py",
+            "function": "submit_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 200,
+                    "start_column": 4,
+                    "end_line": 200,
+                    "end_column": 58
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "streamparse/dsl/util.py",
+            "function": "to_java_arg",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 19,
                     "start_column": 8,
-                    "end_line": 86,
+                    "end_line": 19,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 124,
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_spout_stats",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 274,
+                    "start_column": 4,
+                    "end_line": 274,
+                    "end_column": 79
+                }
+            ]
+        },
+        {
+            "id": 122,
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_input_stats",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 243,
+                    "start_column": 8,
+                    "end_line": 249,
                     "end_column": 9
                 }
             ]
         },
         {
-            "id": 87,
-            "file": "streamparse/cli/submit.py",
-            "function": "subparser_hook",
+            "id": 136,
+            "file": "streamparse/cli/run.py",
+            "function": "run_local_topology",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 338,
+                    "start_line": 46,
                     "start_column": 4,
-                    "end_line": 338,
-                    "end_column": 26
+                    "end_line": 46,
+                    "end_column": 63
                 }
             ]
         }

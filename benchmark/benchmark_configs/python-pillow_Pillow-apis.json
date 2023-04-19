@@ -10,282 +10,142 @@
             "remove": []
         },
         {
-            "id": 863,
-            "file": "src/PIL/MpoImagePlugin.py",
-            "function": "_open",
+            "id": 11,
+            "file": "src/PIL/BmpImagePlugin.py",
+            "function": "_bitmap",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 110,
-                    "start_column": 8,
-                    "end_line": 110,
-                    "end_column": 49
-                }
-            ]
-        },
-        {
-            "id": 562,
-            "file": "src/PIL/PngImagePlugin.py",
-            "function": "chunk_fdAT",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 689,
-                    "start_column": 8,
-                    "end_line": 689,
-                    "end_column": 44
-                }
-            ]
-        },
-        {
-            "id": 848,
-            "file": "src/PIL/GdImageFile.py",
-            "function": "_open",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 50,
-                    "start_column": 8,
-                    "end_line": 52,
-                    "end_column": 34
-                }
-            ]
-        },
-        {
-            "id": 478,
-            "file": "src/PIL/PcdImagePlugin.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 60,
-                    "start_column": 0,
-                    "end_line": 60,
-                    "end_column": 54
-                }
-            ]
-        },
-        {
-            "id": 152,
-            "file": "src/PIL/WalImageFile.py",
-            "function": "_open",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 39,
-                    "start_column": 8,
-                    "end_line": 39,
+                    "start_line": 90,
+                    "start_column": 12,
+                    "end_line": 90,
                     "end_column": 53
                 }
             ]
         },
         {
-            "id": 359,
+            "id": 77,
+            "file": "src/PIL/DdsImagePlugin.py",
+            "function": "_save",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 256,
+                    "start_column": 4,
+                    "end_line": 278,
+                    "end_column": 5
+                }
+            ]
+        },
+        {
+            "id": 139,
+            "file": "src/PIL/XpmImagePlugin.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 126,
+                    "start_column": 0,
+                    "end_line": 126,
+                    "end_column": 53
+                }
+            ]
+        },
+        {
+            "id": 150,
+            "file": "src/PIL/XVThumbImagePlugin.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 30,
+                    "start_column": 12,
+                    "end_line": 32,
+                    "end_column": 13
+                }
+            ]
+        },
+        {
+            "id": 121,
             "file": "src/PIL/FliImagePlugin.py",
-            "function": "_open",
+            "function": "_palette",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 55,
+                    "start_line": 110,
                     "start_column": 8,
-                    "end_line": 55,
-                    "end_column": 33
+                    "end_line": 122,
+                    "end_column": 22
                 }
             ]
         },
         {
-            "id": 861,
-            "file": "src/PIL/MpoImagePlugin.py",
-            "function": "_save_all",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 77,
-                    "start_column": 4,
-                    "end_line": 77,
-                    "end_column": 49
-                }
-            ]
-        },
-        {
-            "id": 426,
-            "file": "src/PIL/BmpImagePlugin.py",
-            "function": "_save",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 408,
-                    "start_column": 8,
-                    "end_line": 408,
-                    "end_column": 57
-                }
-            ]
-        },
-        {
-            "id": 291,
-            "file": "src/PIL/WmfImagePlugin.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 176,
-                    "start_column": 0,
-                    "end_line": 176,
-                    "end_column": 51
-                }
-            ]
-        },
-        {
-            "id": 93,
-            "file": "src/PIL/IptcImagePlugin.py",
-            "function": "i",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 36,
-                    "start_column": 4,
-                    "end_line": 36,
-                    "end_column": 30
-                }
-            ]
-        },
-        {
-            "id": 485,
+            "id": 129,
             "file": "src/PIL/WebPImagePlugin.py",
-            "function": "_save_all",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 244,
-                    "start_column": 4,
-                    "end_line": 254,
-                    "end_column": 5
-                }
-            ]
-        },
-        {
-            "id": 224,
-            "file": "src/PIL/MpegImagePlugin.py",
             "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 80,
+                    "start_line": 360,
                     "start_column": 0,
-                    "end_line": 80,
-                    "end_column": 66
+                    "end_line": 360,
+                    "end_column": 65
                 }
             ]
         },
         {
-            "id": 354,
-            "file": "src/PIL/BufrStubImagePlugin.py",
+            "id": 123,
+            "file": "src/PIL/FliImagePlugin.py",
             "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 70,
+                    "start_line": 169,
                     "start_column": 0,
-                    "end_line": 70,
-                    "end_column": 73
+                    "end_line": 169,
+                    "end_column": 63
                 }
             ]
         },
         {
-            "id": 519,
-            "file": "src/PIL/TiffImagePlugin.py",
-            "function": "_save",
+            "id": 174,
+            "file": "src/PIL/PsdImagePlugin.py",
+            "function": "_layerinfo",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1870,
+                    "start_line": 179,
                     "start_column": 8,
-                    "end_line": 1872,
-                    "end_column": 9
+                    "end_line": 179,
+                    "end_column": 25
                 }
             ]
         },
         {
-            "id": 104,
-            "file": "src/PIL/Jpeg2KImagePlugin.py",
-            "function": "_save",
+            "id": 141,
+            "file": "src/PIL/PcfFontFile.py",
+            "function": "_getformat",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 355,
-                    "start_column": 4,
-                    "end_line": 355,
-                    "end_column": 68
-                }
-            ]
-        },
-        {
-            "id": 819,
-            "file": "src/PIL/PpmImagePlugin.py",
-            "function": "decode",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 298,
-                    "start_column": 16,
-                    "end_line": 298,
-                    "end_column": 69
-                }
-            ]
-        },
-        {
-            "id": 381,
-            "file": "src/PIL/FpxImagePlugin.py",
-            "function": "_open_subimage",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 138,
+                    "start_line": 112,
                     "start_column": 8,
-                    "end_line": 138,
-                    "end_column": 35
+                    "end_line": 112,
+                    "end_column": 32
                 }
             ]
         },
         {
-            "id": 433,
-            "file": "src/PIL/BmpImagePlugin.py",
-            "function": "_save",
+            "id": 178,
+            "file": "src/PIL/PsdImagePlugin.py",
+            "function": "_layerinfo",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 430,
-                    "start_column": 4,
-                    "end_line": 442,
-                    "end_column": 5
-                }
-            ]
-        },
-        {
-            "id": 525,
-            "file": "src/PIL/PngImagePlugin.py",
-            "function": "__getattr__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 139,
-                    "start_column": 16,
-                    "end_line": 139,
-                    "end_column": 75
-                }
-            ]
-        },
-        {
-            "id": 101,
-            "file": "src/PIL/IptcImagePlugin.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 174,
-                    "start_column": 0,
-                    "end_line": 174,
-                    "end_column": 56
+                    "start_line": 186,
+                    "start_column": 8,
+                    "end_line": 186,
+                    "end_column": 31
                 }
             ]
         }

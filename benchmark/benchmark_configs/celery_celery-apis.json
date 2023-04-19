@@ -1,0 +1,153 @@
+{
+    "name": "celery_celery",
+    "project_root": "GitHubProjects/celery_celery",
+    "tests_path": "t",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 82,
+            "file": "celery/worker/strategy.py",
+            "function": "hybrid_to_proto2",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 32,
+                    "start_column": 8,
+                    "end_line": 32,
+                    "end_column": 67
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "celery/backends/base.py",
+            "function": "on_chord_part_return",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1057,
+                    "start_column": 16,
+                    "end_line": 1060,
+                    "end_column": 39
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "celery/app/control.py",
+            "function": "flatten_reply",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 56,
+                    "start_column": 8,
+                    "end_line": 60,
+                    "end_column": 10
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "celery/backends/base.py",
+            "function": "_call_task_errbacks",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 253,
+                    "start_column": 12,
+                    "end_line": 253,
+                    "end_column": 50
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "file": "celery/events/snapshot.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 29,
+                    "start_column": 4,
+                    "end_line": 29,
+                    "end_column": 50
+                }
+            ]
+        },
+        {
+            "id": 136,
+            "file": "celery/app/trace.py",
+            "function": "_signal_internal_error",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 620,
+                    "start_column": 8,
+                    "end_line": 629,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "file": "celery/backends/base.py",
+            "function": "_store_result",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 981,
+                    "start_column": 12,
+                    "end_line": 981,
+                    "end_column": 82
+                }
+            ]
+        },
+        {
+            "id": 67,
+            "file": "celery/app/log.py",
+            "function": "setup_task_loggers",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 167,
+                    "start_column": 8,
+                    "end_line": 171,
+                    "end_column": 9
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "file": "celery/beat.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 37,
+                    "start_column": 0,
+                    "end_line": 37,
+                    "end_column": 29
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "celery/backends/base.py",
+            "function": "on_chord_part_return",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1040,
+                    "start_column": 16,
+                    "end_line": 1043,
+                    "end_column": 17
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,153 @@
+{
+    "name": "marshmallow-code_marshmallow",
+    "project_root": "GitHubProjects/marshmallow-code_marshmallow",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 43,
+            "file": "src/marshmallow/fields.py",
+            "function": "_deserialize",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 903,
+                    "start_column": 12,
+                    "end_line": 903,
+                    "end_column": 48
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "src/marshmallow/validate.py",
+            "function": "__call__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 496,
+                    "start_column": 12,
+                    "end_line": 496,
+                    "end_column": 60
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "file": "src/marshmallow/fields.py",
+            "function": "_deserialize",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1778,
+                    "start_column": 12,
+                    "end_line": 1780,
+                    "end_column": 13
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "src/marshmallow/fields.py",
+            "function": "_deserialize",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 877,
+                    "start_column": 12,
+                    "end_line": 877,
+                    "end_column": 60
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "src/marshmallow/validate.py",
+            "function": "__call__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 229,
+                    "start_column": 12,
+                    "end_line": 229,
+                    "end_column": 42
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "src/marshmallow/validate.py",
+            "function": "__call__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 385,
+                    "start_column": 12,
+                    "end_line": 385,
+                    "end_column": 69
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "file": "src/marshmallow/fields.py",
+            "function": "_test_collection",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 651,
+                    "start_column": 8,
+                    "end_line": 652,
+                    "end_column": 85
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "src/marshmallow/validate.py",
+            "function": "__call__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 381,
+                    "start_column": 12,
+                    "end_line": 381,
+                    "end_column": 69
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "src/marshmallow/validate.py",
+            "function": "__call__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 240,
+                    "start_column": 16,
+                    "end_line": 240,
+                    "end_column": 46
+                }
+            ]
+        },
+        {
+            "id": 53,
+            "file": "src/marshmallow/fields.py",
+            "function": "_call_or_raise",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2055,
+                    "start_column": 8,
+                    "end_line": 2061,
+                    "end_column": 30
+                }
+            ]
+        }
+    ]
+}
