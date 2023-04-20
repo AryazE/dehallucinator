@@ -27,10 +27,10 @@ if __name__ == '__main__':
         ap_dicoder_better = 0
         abs_ng[mode] = [(0, 0)] * 4
         abs_ap[mode] = [(0, 0)] * 4
+        N = max(N, len(sub_res))
         for id, res in sub_res.items():
             if id == 0:
                 continue
-            N = max(N, len(res))
             ngram = [float(x[0]) for x in res]
             for i in range(len(ngram)):
                 abs_ng[mode][i] = (abs_ng[mode][i][0] + ngram[i], abs_ng[mode][i][1] + 1)
