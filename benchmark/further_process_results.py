@@ -27,6 +27,7 @@ if __name__ == '__main__':
         abs_ng[mode] = [(0, 0)] * 4
         abs_ap[mode] = [(0, 0)] * 4
         for id, res in sub_res.items():
+            print(id, res)
             if id == 0:
                 continue
             ngram = [float(x[0]) for x in res]
@@ -63,5 +64,5 @@ if __name__ == '__main__':
         if not mode.startswith('baseline'):
             print(f'N-gram improvement (dicoder better): {ng_dicoder_better}')
             print(f'API improvement (dicoder better): {ap_dicoder_better}')
-        print(f'N-gram similarity (absolute): {[i[0]/i[1] for i in abs_ng[mode]]}')
+        print(f'N-gram similarity (absolute): {[(i[0]/i[1]) if i[1] for i in abs_ng[mode]]}')
         print(f'API similarity (absolute): {[i[0]/i[1] for i in abs_ap[mode]]}')
