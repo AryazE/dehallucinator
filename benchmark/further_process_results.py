@@ -29,6 +29,7 @@ if __name__ == '__main__':
         for id, res in sub_res.items():
             if id == 0:
                 continue
+            N = len(res)
             ngram = [float(x[0]) for x in res]
             for i in range(len(ngram)):
                 abs_ng[mode][i] = (abs_ng[mode][i][0] + ngram[i], abs_ng[mode][i][1] + 1)
@@ -55,7 +56,7 @@ if __name__ == '__main__':
                 ng_it += 1
             if ap_count > 1:
                 ap_it += 1
-        print(f'For mode {mode}:')
+        print(f'For mode {mode} with {N} data points:')
         print(f'N-gram improvement: {ng_imp}')
         print(f'API improvement: {ap_imp}')
         print(f'N-gram improvement (iterative): {ng_it}')
