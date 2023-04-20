@@ -17,6 +17,7 @@ if __name__ == '__main__':
         if mode.startswith('baseline'):
             baseline = mode
             break
+    N = 0
     for mode, sub_res in results.items():
         ng_imp = 0
         ap_imp = 0
@@ -29,7 +30,7 @@ if __name__ == '__main__':
         for id, res in sub_res.items():
             if id == 0:
                 continue
-            N = len(res)
+            N = max(N, len(res))
             ngram = [float(x[0]) for x in res]
             for i in range(len(ngram)):
                 abs_ng[mode][i] = (abs_ng[mode][i][0] + ngram[i], abs_ng[mode][i][1] + 1)
