@@ -30,4 +30,3 @@ if __name__ == '__main__':
                 completions.append(content.split(f'\ncompletion {k}:\n```python\n')[1].split('\n```')[0].replace('\n', ' '))
             with open(here/'table.md', 'a') as f:
                 f.write(f'| {args.project} | {id} | {gt} | {completions[0]} | {completions[1]} | {completions[2]} | {completions[3]} |\n')
-                f.write('| --- | --- | --- | --- | --- | --- | --- |\n')
