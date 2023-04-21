@@ -100,50 +100,57 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         new_code = []
         pre_context = ''
         post_context = ''
-        if not noTests:
-            cursor = 'with open("' + str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'checkTest.txt') + '", "w") as f: f.write("here")\n'
-            for l in range(len(code)):
-                temp = code[l]
-                for j in i['remove']:
-                    if j['description'] == 'imports':
-                        continue
-                    if j['start_line'] - 1 <= l <= j['end_line'] - 1:
-                        if j['start_line'] == j['end_line']:
-                            temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '') + code[l][j['end_column']:]
+
+        new_code = []
+        cursor = CURSOR
+        for l in range(len(code)):
+            temp = code[l]
+            for j in i['remove']:
+                if j['description'] == 'imports':
+                    continue
+                if j['start_line'] - 1 <= l <= j['end_line'] - 1:
+                    if j['start_line'] == j['end_line']:
+                        temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '') + code[l][j['end_column']:]
+                        pre_context = ''.join(new_code + [code[l][:j['start_column']]])
+                        post_context = code[l][j['end_column']:]
+                    else:
+                        if l == j['start_line'] - 1:
+                            temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '')
                             pre_context = ''.join(new_code + [code[l][:j['start_column']]])
+                        elif l == j['end_line'] - 1:
+                            temp = code[l][j['end_column']:]
                             post_context = code[l][j['end_column']:]
                         else:
-                            if l == j['start_line'] - 1:
-                                temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '')
-                                pre_context = ''.join(new_code + [code[l][:j['start_column']]])
-                            elif l == j['end_line'] - 1:
-                                temp = code[l][j['end_column']:]
-                                post_context = code[l][j['end_column']:]
-                            else:
-                                temp = None
-                if temp:
-                    new_code.append(temp)
-            post_context = ''.join([post_context] + code[i['remove'][-1]['end_line']:])
-            ground_truth = orig_code[len(pre_context):-len(post_context)]
-            try:
-                gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
-                gt_apis = filter_external(gt_apis, project_apis)
-                if len(gt_apis) == 0:
-                    print('Function does not call any APIs')
-                    dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
-                    continue
-            except Exception as e:
-                pass
+                            temp = None
+            if temp:
+                new_code.append(temp)
+        post_context = ''.join([post_context] + code[i['remove'][-1]['end_line']:])
+        ground_truth = orig_code[len(pre_context):-len(post_context)]
 
-            init_comp = get_completion_safely(model, Completion(model=llm, tokenizer=llm_tok), pre_context, k=1)[0]
-            init_comp = postprocess(init_comp, mode=mode)
-            if init_comp.startswith(ground_truth):
-                print('Function is too easy to complete')
+        try:
+            gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
+            gt_apis = filter_external(gt_apis, project_apis)
+            if len(gt_apis) == 0:
+                print('Function does not call any APIs')
                 dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
                 continue
+        except Exception as e:
+            pass
+
+        init_comp = get_completion_safely(model, Completion(model=llm, tokenizer=llm_tok), pre_context, k=1)[0]
+        init_comp = postprocess(init_comp, mode=mode)
+        if init_comp.startswith(ground_truth):
+            print('Function is too easy to complete')
+            dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
+            continue
+
+        if not noTests:
+            cursor = 'with open("' + str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'checkTest.txt') + '", "w") as f: f.write("here")\n'
+
+            temp_new_code = new_code.replace(CURSOR, cursor)
             
             with open(temp_dir/i["file"], 'w') as f:
-                f.write(''.join(new_code))
+                f.write(''.join(temp_new_code))
             
             test_results = run_tests(config, i['id'], mode, env_session.interpreter.executable)
             try:
@@ -168,25 +175,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
                 dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
                 continue
             okay.append(i['id'])
-        new_code = []
-        cursor = CURSOR
-        for l in range(len(code)):
-            temp = code[l]
-            for j in i['remove']:
-                if j['description'] == 'imports':
-                    continue
-                if j['start_line'] - 1 <= l <= j['end_line'] - 1:
-                    if j['start_line'] == j['end_line']:
-                        temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '') + code[l][j['end_column']:]
-                    else:
-                        if l == j['start_line'] - 1:
-                            temp = code[l][:j['start_column']] + (cursor if j['description'] != 'imports' else '')
-                        elif l == j['end_line'] - 1:
-                            temp = code[l][j['end_column']:]
-                        else:
-                            temp = None
-            if temp:
-                new_code.append(temp)
+        
         with open(temp_dir/i["file"], 'w') as f:
             f.writelines(new_code)
 
