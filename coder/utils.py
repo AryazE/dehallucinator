@@ -67,17 +67,22 @@ def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
         return code.splitlines(True)[0]
     elif mode.endswith('api'):
         lines = code.splitlines(True)
-        ind = len(lines[0]) - len(lines[0].lstrip())
+        indents = [re.match('^\s*', i).group(0) for i in lines]
+        ind = ''
+        for i in indents:
+            if len(i) > 0 and len(ind) > len(i) and '\n' not in i:
+                ind = i
+        ded_lines = [lines[l][len(ind):] if len(indents[l]) >= len(ind) else lines[l] for l in range(len(lines))]
         curr = ''
         i = 0
         while i < len(lines):
-            curr += lines[i][ind:]
+            curr += ded_lines[i]
             try:
                 cst.parse_module(curr)
                 break
             except cst.ParserSyntaxError:
                 i += 1
-        return curr
+        return ''.join(lines[:i+1])
     if '\n' not in code or code.endswith('\n'):
         return code
     prefix = (indent_style * indent_count) + 'def foo():\n' + (indent_style * (indent_count+1))
@@ -121,7 +126,7 @@ def get_completion_safely(model: str, completor, prompt, k=4):
 def dedent(code):
     lines = code.splitlines(keepends=True)
     indents = [re.match('^\s*', i).group(0) for i in lines]
-    indent_style = ' '*10000
+    indent_style = ' '*100
     indent_count = 10000
     for i in range(len(indents)):
         if len(indents[i]) > 0 and len(indent_style) > len(indents[i]) and '\n' not in indents[i]:
@@ -145,7 +150,7 @@ def get_indentation(prompt):
         return '', 0
     lines = prompt.splitlines()
     indents = [re.match('^\s*', i).group(0) for i in lines]
-    indent_style = ' '*10000
+    indent_style = ' '*100
     indent_count = 0
     for i in range(1, len(indents)):
         if len(indents[i]) > 0 and len(indent_style) > len(indents[i]):

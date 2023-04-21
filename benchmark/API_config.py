@@ -68,8 +68,8 @@ def make_config(project, tests, package_name):
         'remove': []
     }]
     id = 1
-    if len(python_files) > 30:
-        python_files = random.sample(python_files, 30)
+    if len(python_files) > 50:
+        python_files = random.sample(python_files, 50)
     print(len(python_files))
     for f in python_files:
         try:
@@ -96,8 +96,8 @@ def make_config(project, tests, package_name):
     if len(evaluations) == 1:
         print(f'No APIs found in {package_name}')
         return
-    if len(evaluations) > 10:
-        evaluations = [evaluations[0]] + random.sample(evaluations[1:], 10)
+    if len(evaluations) > 50:
+        evaluations = [evaluations[0]] + random.sample(evaluations[1:], 50)
     project_name = project_path.as_posix().split('/')[-1]
     benchmark_dir = Path(__file__).resolve().parent
     config = {

@@ -12,7 +12,7 @@ import traceback
 import virtualenv
 from run_tests import run_tests
 from coder.utils import run_query, embeddings
-from coder.utils import get_completion_safely
+from coder.utils import get_completion_safely, postprocess
 from coder.backend import Completion
 from run_completion import filter_external, as_module
 import libcst as cst
@@ -136,6 +136,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
                 pass
 
             init_comp = get_completion_safely(model, Completion(model=llm, tokenizer=llm_tok), pre_context, k=1)[0]
+            init_comp = postprocess(init_comp, mode=mode)
             if init_comp.startswith(ground_truth):
                 print('Function is too easy to complete')
                 dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))

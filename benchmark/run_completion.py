@@ -4,6 +4,7 @@ from pathlib import Path
 import logging
 import json
 import traceback
+import Levenshtein
 import libcst as cst
 import libcst.matchers as matchers
 from distutils import dir_util
@@ -78,30 +79,31 @@ def API_similarity(ground_truth, completions, project_apis):
         print(e)
         print(traceback.format_exc())
     for i in range(len(completions)):
-        tmp_result = 0
-        try:
-            # apis = matchers.findall(cst.parse_module(as_module(completions[i])), matchers.Call() | matchers.Attribute())
-            apis = matchers.findall(cst.parse_module(as_statement(completions[i])), matchers.Call() | matchers.Attribute())
-            apis = filter_external(apis, project_apis)
-        except Exception as e:
-            apis = []
-            print(completions[i])
-            print(e)
-            print(traceback.format_exc())
-        copy_apis = gt_apis.copy()
-        for api in apis:
-            for ind in range(len(copy_apis)):
-                if equal_apis(api, copy_apis[ind]): #api.deep_equals(gt_api):
-                    tmp_result += 1
-                    copy_apis.pop(ind)
-                    break
-        if tmp_result == 0:
-            f1 = 0
-        else:
-            recall = tmp_result / len(gt_apis)
-            precision = tmp_result / len(apis)
-            f1 = 2 * recall * precision / (recall + precision)
-        result.append(f1)
+        # tmp_result = 0
+        # try:
+        #     # apis = matchers.findall(cst.parse_module(as_module(completions[i])), matchers.Call() | matchers.Attribute())
+        #     apis = matchers.findall(cst.parse_module(as_statement(completions[i])), matchers.Call() | matchers.Attribute())
+        #     apis = filter_external(apis, project_apis)
+        # except Exception as e:
+        #     apis = []
+        #     print(completions[i])
+        #     print(e)
+        #     print(traceback.format_exc())
+        # copy_apis = gt_apis.copy()
+        # for api in apis:
+        #     for ind in range(len(copy_apis)):
+        #         if equal_apis(api, copy_apis[ind]): #api.deep_equals(gt_api):
+        #             tmp_result += 1
+        #             copy_apis.pop(ind)
+        #             break
+        # if tmp_result == 0:
+        #     f1 = 0
+        # else:
+        #     recall = tmp_result / len(gt_apis)
+        #     precision = tmp_result / len(apis)
+        #     f1 = 2 * recall * precision / (recall + precision)
+        # result.append(f1)
+        result.append(Levenshtein.ratio(ground_truth, completions[i]))
     return result, len(gt_apis)
 
 def run_completion(model, config, id, mode, log_suffix='', k=4, t=0.5, c=4, llm=None, llm_tok=None):

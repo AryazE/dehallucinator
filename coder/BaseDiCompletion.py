@@ -80,7 +80,7 @@ class BaseDiCompletion:
         logger.info(f'indent_style: {self.indent_style}, indent_count: {self.indent_count}')
         completion = get_completion_safely(self.model, completor, prompt, k=1)[0]
         logger.info(f'completion w/o postprocessing:\n{completion}\n')
-        completion = postprocess(completion, self.indent_style, self.indent_count)
+        completion = postprocess(completion, self.indent_style, self.indent_count, self.mode)
         completions = [completion]
         logger.info(f'Initial prompt: \n{prompt}\n')
         logger.info(f'Initial completion:\n{completion}\n')
