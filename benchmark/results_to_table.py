@@ -21,7 +21,7 @@ if __name__ == '__main__':
         for id, res in sub_res.items():
             if id == 0:
                 continue
-            with open(res_dir/f'gt_{id}.md') as f:
+            with open(res_dir/f'gt-{id}.md') as f:
                 gt = f.read().split('\nground truth:\n```python\n')[1].split('\n```')[0].replace('\n', ' ')
             completions = []
             with open(res_dir/f'{mode}-{id}.md') as f:
