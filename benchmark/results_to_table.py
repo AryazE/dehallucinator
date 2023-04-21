@@ -27,7 +27,7 @@ if __name__ == '__main__':
             with open(res_dir/f'{mode}-{id}.md') as f:
                     content = f.read()
             for k in range(4):
-                completions.append(content.split(f'\ncompletion {k+1}:\n```python\n')[1].split('\n```')[0].replace('\n', ' '))
+                completions.append(content.split(f'\ncompletion {k}:\n```python\n')[1].split('\n```')[0].replace('\n', ' '))
             with open(here/'table.md', 'a') as f:
                 f.write(f'| {args.project} | {id} | {gt} | {completions[0]} | {completions[1]} | {completions[2]} | {completions[3]} |\n')
                 f.write('| --- | --- | --- | --- | --- | --- | --- |\n')
