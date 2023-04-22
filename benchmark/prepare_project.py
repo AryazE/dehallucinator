@@ -58,7 +58,10 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         dir_util.mkpath(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
         temp_dir = here/'experiment'/config['name']/mode/f'temp{i["id"]}'/config['project_root']
         dir_util.copy_tree(str(here/config['project_root']), str(temp_dir))
-        dir_util.remove_tree(str(temp_dir/config['tests_path']))
+        try:
+            dir_util.remove_tree(str(temp_dir/config['tests_path']))
+        except:
+            pass
         if i['id'] == 0 and not noTests:
             orig_results = run_tests(config, 0, mode, env_session.interpreter.executable)[0]
         if i['id'] == 0 and mode == 'base':
