@@ -50,7 +50,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         for line in csv_reader:
             project_apis.add(line['name'])
     for i in config['evaluations']:
-        if len(okay) >= 20:
+        if len(okay) >= 10:
             break
         if i['id'] > 0 and len(ids) > 0 and i['id'] not in ids:
             continue
@@ -175,20 +175,22 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
                 dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
                 continue
             okay.append(i['id'])
+        else:
+            okay.append(i['id'])
         
         with open(temp_dir/i["file"], 'w') as f:
             f.writelines(new_code)
 
-    # if len(okay) > 20:
-    #     sample = random.sample(okay, 20)
-    #     for id in okay:
-    #         if id not in sample:
-    #             dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{id}'))
-    # else:
-    #     sample = okay
-    # if len(okay) <= 21:
-    #     sample = okay
-    sample = okay
+    if len(okay) > 10:
+        sample = random.sample(okay, 10)
+        for id in okay:
+            if id not in sample:
+                dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{id}'))
+    else:
+        sample = okay
+    if len(okay) < 10:
+        sample = okay
+    # sample = okay
     return env_session.interpreter.executable, orig_results, sample
 
 if __name__ == '__main__':
