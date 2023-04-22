@@ -32,7 +32,7 @@ def main(project_root: str, prompt: str, mode: str,
     prompt = '\n'.join([l for l in prompt_lines if not is_local_import(l, file)])
     completor = Completion(model=llm, tokenizer=llm_tok)
     if mode.startswith('baseline'):
-        context, completions = baseline.completion(model, completor, prompt, k=k)
+        context, completions = baseline.completion(model, completor, prompt, k=k, mode=mode)
         with open(str(Path(project_root)/'..'/'..'/'artifact.md'), 'w') as f:
             f.write(f'prompt:\n```python\n{prompt}\n```\ncompletion:\n```python\n{DELIMITER.join(completions)}\n```\n')
     else:
