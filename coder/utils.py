@@ -66,7 +66,11 @@ def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
     if mode.endswith('l') or mode.endswith('line'):
         return code.splitlines(True)[0]
     elif mode.endswith('api'):
+        if code.startswith('"""') or code.startswith("'''"):
+            code = code[3:].split(code[:3])[1]
         lines = code.splitlines(True)
+        while len(lines) > 0 and lines[0].lstrip().startswith('#'):
+            lines.pop(0)
         indents = [re.match('^\s*', i).group(0) for i in lines]
         ind = ''
         for i in indents:
