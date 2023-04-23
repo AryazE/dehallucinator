@@ -37,7 +37,13 @@ class BaseDiCompletion:
         
         self.embeddings = dict()
         for k, v in self.additional_context.items():
-            self.embeddings[k] = embeddings(v + [k])
+            everything = v + [k]
+            if len(everything) > 20:
+                self.embeddings[k] = []
+                for e in everything:
+                    self.embeddings[k].extend(embeddings([e]))
+            else:
+                self.embeddings[k] = embeddings(v + [k])
         
         self.artifacts = self.project_root/'..'/'..'/'artifacts.md'
     
@@ -47,12 +53,12 @@ class BaseDiCompletion:
             for line in csv_reader:
                 if same_location(line, self.location) and line['name'] == self.func:
                     continue
-                if self.func == line['name']:
-                    print(f'Potentially wrong function: {self.func} {self.location} {line}')
                 if line['qualifiedName'] not in self.additional_context:
                     self.additional_context[line['qualifiedName']] = []
                 if '\nvariables\n' in line['docstring']:
                     tmp_context = [line['header']] + line['docstring'].split('\nvariables\n')[1].split('\n')
+                elif '\nfunctions\n' in line['docstring']:
+                    tmp_context = [line['header']] + line['docstring'].split('\nfunctions\n')[1].split('\n')
                 else:
                     tmp_context = [(line['header'] + ' # ' + line['docstring'][:100]) if len(line['docstring']) > 0 else line['header']]
                 self.additional_context[line['qualifiedName']].extend(tmp_context)
