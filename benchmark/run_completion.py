@@ -3,6 +3,7 @@ import argparse
 from pathlib import Path
 import logging
 import json
+import re
 import traceback
 import Levenshtein
 import libcst as cst
@@ -14,6 +15,8 @@ from crystalbleu import corpus_bleu, SmoothingFunction
 from coder.utils import clip_prompt, DELIMITER, dedent, equal_apis
 from coder.main import main
 
+API_regex = r'(\w+\.)*\w+\(.*\)'
+
 PROMPT_LIMIT = 1750
 logger = logging.getLogger(__name__)
 sm_func = SmoothingFunction().method1
@@ -24,10 +27,13 @@ with open(Path(__file__).resolve().parent/'python_top_500.json') as f:
 
 def similarity_evaluation(ground_truth, completions):
     result = []
-    tok_ground_truth = [t[1] for t in PythonLexer().get_tokens(ground_truth)]
+    # tok_ground_truth = [t[1] for t in PythonLexer().get_tokens(ground_truth)]
+    # for i in range(len(completions)):
+    #     tokenized = [t[1] for t in PythonLexer().get_tokens(completions[i])]
+    #     result.append(corpus_bleu([[tok_ground_truth]], [tokenized], ignoring=trivially_shared_ngrams, smoothing_function=sm_func))
+    # return result
     for i in range(len(completions)):
-        tokenized = [t[1] for t in PythonLexer().get_tokens(completions[i])]
-        result.append(corpus_bleu([[tok_ground_truth]], [tokenized], ignoring=trivially_shared_ngrams, smoothing_function=sm_func))
+        result.append(Levenshtein.ratio(ground_truth, completions[i]))
     return result
 
 def as_module(code: str) -> str:
@@ -68,17 +74,16 @@ def filter_external(apis, project_apis):
     return apis
 
 def API_similarity(ground_truth, completions, project_apis):
-    result = []
-    try:
-        # gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
-        gt_apis = matchers.findall(cst.parse_module(as_statement(ground_truth)), matchers.Call() | matchers.Attribute())
-        gt_apis = filter_external(gt_apis, project_apis)
-    except Exception as e:
-        gt_apis = []
-        print(ground_truth)
-        print(e)
-        print(traceback.format_exc())
-    for i in range(len(completions)):
+    # try:
+    #     # gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
+    #     gt_apis = matchers.findall(cst.parse_module(as_statement(ground_truth)), matchers.Call() | matchers.Attribute())
+    #     gt_apis = filter_external(gt_apis, project_apis)
+    # except Exception as e:
+    #     gt_apis = []
+    #     print(ground_truth)
+    #     print(e)
+    #     print(traceback.format_exc())
+    
         # tmp_result = 0
         # try:
         #     # apis = matchers.findall(cst.parse_module(as_module(completions[i])), matchers.Call() | matchers.Attribute())
@@ -103,8 +108,17 @@ def API_similarity(ground_truth, completions, project_apis):
         #     precision = tmp_result / len(apis)
         #     f1 = 2 * recall * precision / (recall + precision)
         # result.append(f1)
-        result.append(Levenshtein.ratio(ground_truth, completions[i]))
-    return result, len(gt_apis)
+        
+    gt_apis = re.findall(API_regex, ground_truth)
+    completion_apis = [re.findall(API_regex, c) for c in completions]
+    api_matches = []
+    for i in range(len(completion_apis)):
+        matches = 0
+        for j in range(len(gt_apis)):
+            if gt_apis[j] in completion_apis[i]:
+                matches += 1
+        api_matches.append(matches/len(gt_apis))
+    return api_matches, len(gt_apis)
 
 def run_completion(model, config, id, mode, log_suffix='', k=4, t=0.5, c=4, llm=None, llm_tok=None):
     global PROMPT_LIMIT

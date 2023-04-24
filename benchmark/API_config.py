@@ -32,8 +32,8 @@ class APIFinder(cst.CSTVisitor):
             if qname.source == cst.metadata.QualifiedNameSource.IMPORT:
                 if self.package_name in qname.name or qname.name.startswith('.'):
                     par = self.get_metadata(cst.metadata.ParentNodeProvider, node)
-                    while par and not (isinstance(par, cst.BaseSmallStatement) or isinstance(par, cst.BaseCompoundStatement)):
-                        par = self.get_metadata(cst.metadata.ParentNodeProvider, par)
+                    # while par and not (isinstance(par, cst.BaseSmallStatement) or isinstance(par, cst.BaseCompoundStatement)):
+                    #     par = self.get_metadata(cst.metadata.ParentNodeProvider, par)
                     pos = self.get_metadata(cst.metadata.PositionProvider, par)
                     start = pos.start
                     end = pos.end
@@ -87,9 +87,9 @@ def make_config(project, tests, package_name):
                 'remove': [{
                     'description': 'code',
                     'start_line': i.start_line,
-                    'start_column': i.start_column,
-                    'end_line': i.end_line,
-                    'end_column': i.end_column
+                    'start_column': 1,#i.start_column,
+                    'end_line': i.end_line+1,
+                    'end_column': 1#i.end_column
                 }]
             })
             id += 1
