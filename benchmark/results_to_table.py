@@ -17,6 +17,7 @@ if __name__ == '__main__':
             f.write('| --- | --- | --- | --- | --- | --- | --- |\n')
     for mode, sub_res in results.items():
         if mode.startswith('baseline'):
+            baseline = mode
             continue
         for id, res in sub_res.items():
             if id == 0:
@@ -29,4 +30,5 @@ if __name__ == '__main__':
             for k in range(4):
                 completions.append(content.split(f'\ncompletion {k}:\n```python\n')[1].split('\n```')[0].replace('\n', ' '))
             with open(here/'table.md', 'a') as f:
+                f.write(f'| {args.project} | {id} | {results[baseline][id][0]} | {res[0]} | {res[1]} | {res[2]} | {res[3]} |\n')
                 f.write(f'| {args.project} | {id} | {gt} | {completions[0]} | {completions[1]} | {completions[2]} | {completions[3]} |\n')
