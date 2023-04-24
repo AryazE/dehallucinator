@@ -66,27 +66,17 @@ def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
     if mode.endswith('l') or mode.endswith('line'):
         return code.splitlines(True)[0]
     elif mode.endswith('api'):
-        if code.startswith('"""') or code.startswith("'''"):
-            code = code[3:].split(code[:3])[1]
-        lines = code.splitlines(True)
-        while len(lines) > 0 and lines[0].lstrip().startswith('#'):
-            lines.pop(0)
-        indents = [re.match('^\s*', i).group(0) for i in lines]
-        ind = ''
-        for i in indents:
-            if len(i) > 0 and len(ind) > len(i) and '\n' not in i:
-                ind = i
-        ded_lines = [lines[l][len(ind):] if len(indents[l]) >= len(ind) else lines[l] for l in range(len(lines))]
-        curr = ''
-        i = 0
-        while i < len(lines):
-            curr += ded_lines[i]
-            try:
-                cst.parse_module(curr)
+        bracket = 0
+        res = 0
+        for ch in code:
+            res += 1
+            if ch == '(':
+                bracket += 1
+            elif ch == ')':
+                bracket -= 1
+            elif ch == '\n' and bracket == 0:
                 break
-            except cst.ParserSyntaxError:
-                i += 1
-        return ''.join(lines[:i+1])
+        return code[:res]
     if '\n' not in code or code.endswith('\n'):
         return code
     prefix = (indent_style * indent_count) + 'def foo():\n' + (indent_style * (indent_count+1))
