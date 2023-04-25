@@ -28,8 +28,8 @@ def main(project_root: str, prompt: str, mode: str,
         eLine: int, eCol: int, output: str, log: str, k=4, t=0.5, c=4, llm=None, llm_tok=None):
     logging.basicConfig(level=logging.INFO,filename=f'benchmark/{project_root.split("/")[-1]}-{mode}{log}.log', filemode='a')
     # prompt = prompt.replace('\\n', '\n')
-    prompt_lines = prompt.splitlines()
-    prompt = '\n'.join([l for l in prompt_lines if not is_local_import(l, file)])
+    # prompt_lines = prompt.splitlines()
+    # prompt = '\n'.join([l for l in prompt_lines if not is_local_import(l, file)])
     completor = Completion(model=llm, tokenizer=llm_tok)
     if mode.startswith('baseline'):
         context, completions = baseline.completion(model, completor, prompt, k=k, mode=mode)
