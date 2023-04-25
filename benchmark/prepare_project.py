@@ -22,7 +22,7 @@ from sklearn.neighbors import BallTree
 import pickle
 
 CURSOR = '<CURSOR>'
-API_regex = r'(\w+\.)*\w+\(.*\)'
+API_regex = r'(?:\w+\.)*\w+\(.*\)'
 
 def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_tok=None):
     global CURSOR

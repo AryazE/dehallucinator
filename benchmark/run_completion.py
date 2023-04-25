@@ -15,7 +15,7 @@ from crystalbleu import corpus_bleu, SmoothingFunction
 from coder.utils import clip_prompt, DELIMITER, dedent, equal_apis
 from coder.main import main
 
-API_regex = r'(\w+\.)*\w+\(.*\)'
+API_regex = r'(?:\w+\.)*\w+\(.*\)'
 
 PROMPT_LIMIT = 1750
 logger = logging.getLogger(__name__)
