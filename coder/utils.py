@@ -68,14 +68,22 @@ def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
     elif mode.endswith('api'):
         bracket = 0
         res = 0
-        for ch in code:
+        i = 0
+        while i < len(code):
+            ch = code[i]
             res += 1
-            if ch == '(':
+            i += 1
+            if ch == '#':
+                while i < len(code) and code[i] != '\n':
+                    i += 1
+                res = i
+            elif ch == '(':
                 bracket += 1
             elif ch == ')':
                 bracket -= 1
-            elif ch == '\n' and bracket == 0:
-                break
+            elif ch == '\n':
+                if bracket == 0:
+                    break
         return code[:res]
     if '\n' not in code or code.endswith('\n'):
         return code
