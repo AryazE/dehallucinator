@@ -143,11 +143,13 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
 
         init_comp = get_completion_safely(model, Completion(model=llm, tokenizer=llm_tok), pre_context, k=1)[0]
         init_comp = postprocess(init_comp, mode='api')
+        lev_sim = Levenshtein.ratio(init_comp, ground_truth)
+        print(f'Levenshtein similarity: {lev_sim}\n{ground_truth}\n{init_comp}')
         if init_comp.startswith(ground_truth):
             print('Function is too easy to complete')
             dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
             continue
-        elif len(init_comp) == 0 or Levenshtein.ratio(init_comp, ground_truth) < 0.1:
+        elif len(init_comp) == 0 or lev_sim < 0.1:
             print('Function is too hard to complete')
             dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
             continue
