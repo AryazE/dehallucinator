@@ -16,6 +16,9 @@ class APIFinder(cst.CSTVisitor):
         self.apis = []
         self.package_name = package_name
 
+    def visit_Decorator(self, node) -> Optional[bool]:
+        return False
+    
     def visit_FunctionDef(self, node):
         if len(self.apis) > 40:
             return False
@@ -87,9 +90,9 @@ def make_config(project, tests, package_name):
                 'remove': [{
                     'description': 'code',
                     'start_line': i.start_line,
-                    'start_column': 1,#i.start_column,
+                    'start_column': 0,#i.start_column,
                     'end_line': i.end_line+1,
-                    'end_column': 1#i.end_column
+                    'end_column': 0#i.end_column
                 }]
             })
             id += 1

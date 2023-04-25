@@ -2,7 +2,7 @@ import argparse
 import csv
 import time
 import json
-import os
+import Levenshtein
 import shutil
 import random
 import subprocess
@@ -22,6 +22,7 @@ from sklearn.neighbors import BallTree
 import pickle
 
 CURSOR = '<CURSOR>'
+API_regex = r'(\w+\.)*\w+\(.*\)'
 
 def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_tok=None):
     global CURSOR
@@ -64,31 +65,31 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
             pass
         if i['id'] == 0 and not noTests:
             orig_results = run_tests(config, 0, mode, env_session.interpreter.executable)[0]
-        if i['id'] == 0 and mode == 'base':
-            temp_dir = here/'experiment'/config['name']/mode/f'temp0'
-            start = time.process_time_ns()
-            all_py_files = sorted((temp_dir/config['project_root']).glob('**/*.py'))
-            embd = []
-            lens = []
-            for fi in all_py_files:
-                with open(fi, 'r') as f:
-                    content = f.read()
-                    lines = content.splitlines(keepends=True)
-                lens.append(len(lines))
-                windows = [''.join(lines[i:i+5]) for i in range(len(lines) - 4)]
-                embd.extend(embeddings(windows))
-                with open(temp_dir/'all.py', 'a') as f:
-                    f.write(content)
-                    if not content.endswith('\n'):
-                        f.write('\n')
-            with open(temp_dir/'all.files', 'w') as f:
-                f.write('\n'.join([f'{str(all_py_files[i])} {lens[i]}' for i in range(len(all_py_files))]))
-            tree = BallTree(np.array(embd))
-            with open(temp_dir/'tree.pkl', 'wb') as f:
-                pickle.dump(tree, f)
-            end = time.process_time_ns()
-            with open(temp_dir/'BallTree_time.txt', 'w') as f:
-                f.write(str((end - start)/1000))
+        # if i['id'] == 0 and mode == 'base':
+        #     temp_dir = here/'experiment'/config['name']/mode/f'temp0'
+        #     start = time.process_time_ns()
+        #     all_py_files = sorted((temp_dir/config['project_root']).glob('**/*.py'))
+        #     embd = []
+        #     lens = []
+        #     for fi in all_py_files:
+        #         with open(fi, 'r') as f:
+        #             content = f.read()
+        #             lines = content.splitlines(keepends=True)
+        #         lens.append(len(lines))
+        #         windows = [''.join(lines[i:i+5]) for i in range(len(lines) - 4)]
+        #         embd.extend(embeddings(windows))
+        #         with open(temp_dir/'all.py', 'a') as f:
+        #             f.write(content)
+        #             if not content.endswith('\n'):
+        #                 f.write('\n')
+        #     with open(temp_dir/'all.files', 'w') as f:
+        #         f.write('\n'.join([f'{str(all_py_files[i])} {lens[i]}' for i in range(len(all_py_files))]))
+        #     tree = BallTree(np.array(embd))
+        #     with open(temp_dir/'tree.pkl', 'wb') as f:
+        #         pickle.dump(tree, f)
+        #     end = time.process_time_ns()
+        #     with open(temp_dir/'BallTree_time.txt', 'w') as f:
+        #         f.write(str((end - start)/1000))
         if len(i['file']) == 0:
             continue
         # exclude = []
@@ -130,20 +131,24 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         post_context = ''.join([post_context] + code[i['remove'][-1]['end_line']:])
         ground_truth = orig_code[len(pre_context):-len(post_context)]
 
-        try:
-            gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
-            gt_apis = filter_external(gt_apis, project_apis)
-            if len(gt_apis) == 0:
-                print('Function does not call any APIs')
-                dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
-                continue
-        except Exception as e:
-            pass
+        # try:
+        #     gt_apis = matchers.findall(cst.parse_module(as_module(ground_truth)), matchers.Call() | matchers.Attribute())
+        #     gt_apis = filter_external(gt_apis, project_apis)
+        #     if len(gt_apis) == 0:
+        #         print('Function does not call any APIs')
+        #         dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
+        #         continue
+        # except Exception as e:
+        #     pass
 
         init_comp = get_completion_safely(model, Completion(model=llm, tokenizer=llm_tok), pre_context, k=1)[0]
-        init_comp = postprocess(init_comp, mode=mode)
+        init_comp = postprocess(init_comp, mode='api')
         if init_comp.startswith(ground_truth):
             print('Function is too easy to complete')
+            dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
+            continue
+        elif Levenshtein.ratio(init_comp, ground_truth) < 0.1:
+            print('Function is too hard to complete')
             dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
             continue
 
