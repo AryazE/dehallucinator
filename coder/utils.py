@@ -72,7 +72,6 @@ def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
         while i < len(code):
             ch = code[i]
             res += 1
-            i += 1
             if ch == '#':
                 while i < len(code) and code[i] != '\n':
                     i += 1
@@ -84,6 +83,7 @@ def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
             elif ch == '\n':
                 if bracket == 0:
                     break
+            i += 1
         return code[:res]
     if '\n' not in code or code.endswith('\n'):
         return code
