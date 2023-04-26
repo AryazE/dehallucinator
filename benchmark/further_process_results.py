@@ -36,13 +36,17 @@ if __name__ == '__main__':
             if id == 0:
                 continue
             ngram = [float(x[0]) for x in res]
+            best_temp = 0.0
             for i in range(len(ngram)):
                 abs_ng[mode][i] = (abs_ng[mode][i][0] + ngram[i], abs_ng[mode][i][1] + 1)
-                best_ng[mode] = max(best_ng[mode], ngram[i])
+                best_temp = max(best_temp, ngram[i])
+            best_ng[mode] += best_temp
             api = [float(x[1]) for x in res]
+            best_temp = 0.0
             for i in range(len(api)):
                 abs_ap[mode][i] = (abs_ap[mode][i][0] + api[i], abs_ap[mode][i][1] + 1)
-                best_ap[mode] = max(best_ap[mode], api[i])
+                best_temp = max(best_temp, api[i])
+            best_ap[mode] += best_temp
             ng_count = 0
             ap_count = 0
             for i in range(1, len(res)):
@@ -73,5 +77,5 @@ if __name__ == '__main__':
             print(f'API improvement (dicoder better): {ap_dicoder_better}')
         print(f'N-gram similarity (absolute): {[(i[0]/i[1]) if i[1] > 0 else 0 for i in abs_ng[mode]]}')
         print(f'API similarity (absolute): {[(i[0]/i[1]) if i[1] > 0 else 0 for i in abs_ap[mode]]}')
-        print(f'N-gram similarity (best): {best_ng[mode]}')
-        print(f'API similarity (best): {best_ap[mode]}')
+        print(f'N-gram similarity (best): {best_ng[mode]/N}')
+        print(f'API similarity (best): {best_ap[mode]/N}')
