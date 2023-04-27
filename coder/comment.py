@@ -14,7 +14,7 @@ class CommentCompletion(BaseDiCompletion):
         self.similarity_threshold = t
 
     def get_context(self, prompt: str, completion: str) -> List[Tuple[float, str]]:
-        code = prompt[prompt.rfind(f'def {self.func}'):] + completion #prompt + completion
+        code = completion #prompt[prompt.rfind(f'def {self.func}'):] + completion #prompt + completion
         lines = code.splitlines()
         new_context = []
         tmp = []
