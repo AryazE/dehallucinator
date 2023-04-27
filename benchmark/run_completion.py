@@ -110,6 +110,8 @@ def API_similarity(ground_truth, completions, project_apis):
         # result.append(f1)
         
     gt_apis = re.findall(API_regex, ground_truth)
+    if len(gt_apis) == 0:
+        return [0 for i in completions], 0
     completion_apis = [re.findall(API_regex, c) for c in completions]
     api_matches = []
     for i in range(len(completion_apis)):
