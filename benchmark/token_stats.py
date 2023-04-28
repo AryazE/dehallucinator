@@ -19,16 +19,17 @@ for line in lines:
             code = f.readlines()
         tokens = 0
         for i in range(len(code)):
-            if len(code[i]) > 2000:
+            if len(code[i]) > 1024:
                 for j in code[i].split(' '):
                     tokens += len(tokenizer(j)['input_ids'])
             else:
                 tokens += len(tokenizer(code[i])['input_ids'])
         # print(tokens)
         repo_tokens.append(tokens)
-    large_files = [f for f in repo_tokens if f > 8001]
+    large_files = [f for f in repo_tokens if f > 8192]
+    super_large_files = [f for f in repo_tokens if f > 32768]
     tmp = np.array(repo_tokens)
-    print(f'{owner}/{repo} {tmp.sum()} {tmp.mean()} {tmp.std()} {len(large_files)}')
+    print(f'{owner}/{repo} {tmp.sum()} {tmp.mean()} {tmp.std()} {len(large_files)} {len(super_large_files)}')
     # print('-----------------')
     total_tokens += tmp.sum()
 print(f'Total tokens: {total_tokens}')

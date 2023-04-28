@@ -79,3 +79,10 @@ if __name__ == '__main__':
         print(f'API similarity (absolute): {[(i[0]/i[1]) if i[1] > 0 else 0 for i in abs_ap[mode]]}')
         print(f'N-gram similarity (best): {best_ng[mode]/N}')
         print(f'API similarity (best): {best_ap[mode]/N}')
+        if mode.startswith('baseline'):
+            baseline_line = [str(best_ng[mode]/N), str(best_ap[mode]/N), str(N)]
+        else:
+            output_line = [mode, args.results.split('/')[-1]] + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ng[mode]] + [str(best_ng[mode]/N)] + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ap[mode]] + [str(best_ap[mode]/N)]
+    output_line = output_line[:7] + [baseline_line[0]] + output_line[7:] + baseline_line[1:]
+    with open(Path(args.results)/f'spreadsheet.csv', 'w') as f:
+        f.write(', '.join(output_line) + '\n')
