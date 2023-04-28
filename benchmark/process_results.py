@@ -12,7 +12,7 @@ if __name__ == '__main__':
     final = []
     results = dict()
     ids = set()
-    here = Path(__file__).resolve().parent
+    here = Path(__file__).resolve().parent.parent
     for mode in args.modes:
         test_result_path = here/args.project/mode/'test_results.json'
         with open(test_result_path, 'r') as f:
