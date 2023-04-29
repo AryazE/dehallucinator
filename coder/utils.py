@@ -205,7 +205,7 @@ def equal_apis(a: cst.CSTNode, b: cst.CSTNode) -> bool:
         return a.attr.deep_equals(b.attr)
     return False
 
-def parse_results_into_context(self, file) -> Dict[str, List[str]]:
+def parse_results_into_context(file) -> Dict[str, List[str]]:
     additional_context = {}
     with open(file, newline='') as csvfile:
         csv_reader = csv.DictReader(csvfile)
