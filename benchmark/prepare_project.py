@@ -54,10 +54,10 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
                         embds.extend(embeddings([e]))
                 else:
                     embds.extend(embeddings(v + [k]))
-            with open(temp_dir/'all.json', 'w') as f:
+            with open(here/'experiment'/config["name"]/'all.json', 'w') as f:
                 json.dump(everything, f)
             tree = BallTree(np.array(embds), metric='cosine')
-            with open(temp_dir/'tree.pkl', 'wb') as f:
+            with open(here/'experiment'/config["name"]/'tree.pkl', 'wb') as f:
                 pickle.dump(tree, f)
             end = time.process_time_ns()
             with open(str(here/'experiment'/config['name']/mode/'preprocessing_time.txt'), 'w') as f:

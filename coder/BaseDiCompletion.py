@@ -23,7 +23,7 @@ class BaseDiCompletion:
                 if cls:
                     self.self_name = cls.group('class')
                     break
-        saved_path = self.project_root/'..'/'..'/'..'/'..'/'base'/'temp0'
+        saved_path = self.project_root/'..'/'..'/'..'/'..'
         with open(saved_path/'tree.pkl', 'rb') as f:
             self.ball_tree = pickle.load(f)
         with open(saved_path/'all.json', 'r') as f:
