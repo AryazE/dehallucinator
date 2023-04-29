@@ -1,10 +1,10 @@
 from typing import Tuple, List, Set, Dict
-import csv
 from pathlib import Path
 import re
 import logging
-import pkgutil
-from .utils import same_location, embeddings, postprocess, get_completion_safely, get_indentation, merge
+import json
+import pickle
+from .utils import embeddings, postprocess, get_completion_safely, get_indentation, merge, parse_results_into_context
 
 logger = logging.getLogger(__name__)
 
@@ -23,45 +23,14 @@ class BaseDiCompletion:
                 if cls:
                     self.self_name = cls.group('class')
                     break
-
-        self.additional_context = dict()
-        self.parse_results_into_context(self.project_root/'..'/'..'/'..'/'..'/'functionRes.csv')
-        self.parse_results_into_context(self.project_root/'..'/'..'/'..'/'..'/'classRes.csv')
+        saved_path = self.project_root/'..'/'..'/'..'/'..'/'base'/'temp0'
+        with open(saved_path/'tree.pkl', 'rb') as f:
+            self.ball_tree = pickle.load(f)
+        with open(saved_path/'all.json', 'r') as f:
+            self.additional_context = json.load(f)
         self.model = model
-
-        # self.modules = set(i.name for i in pkgutil.iter_modules())
-        # for i in self.modules:
-        #     if i not in self.additional_context:
-        #         self.additional_context[i] = []
-        #     self.additional_context[i].append('package ' + i)
-        
-        self.embeddings = dict()
-        for k, v in self.additional_context.items():
-            everything = v + [k]
-            if len(everything) > 20:
-                self.embeddings[k] = []
-                for e in everything:
-                    self.embeddings[k].extend(embeddings([e]))
-            else:
-                self.embeddings[k] = embeddings(v + [k])
         
         self.artifacts = self.project_root/'..'/'..'/'artifacts.md'
-    
-    def parse_results_into_context(self, file):
-        with open(file, newline='') as csvfile:
-            csv_reader = csv.DictReader(csvfile)
-            for line in csv_reader:
-                if same_location(line, self.location) and line['name'] == self.func:
-                    continue
-                if line['qualifiedName'] not in self.additional_context:
-                    self.additional_context[line['qualifiedName']] = []
-                if '\nvariables\n' in line['docstring']:
-                    tmp_context = [line['header']] + line['docstring'].split('\nvariables\n')[1].split('\n')
-                elif '\nfunctions\n' in line['docstring']:
-                    tmp_context = [line['header']] + line['docstring'].split('\nfunctions\n')[1].split('\n')
-                else:
-                    tmp_context = [(line['header'] + ' # ' + line['docstring'][:100]) if len(line['docstring']) > 0 else line['header']]
-                self.additional_context[line['qualifiedName']].extend(tmp_context)
 
     def get_context(self, prompt: str, completion: str) -> List[str]:
         pass

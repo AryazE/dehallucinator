@@ -16,29 +16,18 @@ class CommentCompletion(BaseDiCompletion):
     def get_context(self, prompt: str, completion: str) -> List[Tuple[float, str]]:
         code = completion #prompt[prompt.rfind(f'def {self.func}'):] + completion #prompt + completion
         lines = code.splitlines()
-        new_context = []
-        tmp = []
-        tmp.extend(self.additional_context.keys())
         line_embeddings = embeddings(lines)
-        for i in tmp:
-            for l in range(len(lines)):
-                for j in range(len(self.embeddings[i])):
-                    if j >= len(self.additional_context[i]):
-                        jj = 0
+        dist, res = self.ball_tree.query(line_embeddings, k=self.context_size)
+        bests = {}
+        for i in range(len(res)):
+            for j in range(len(res[i])):
+                if dist[i][j] < 1 - self.similarity_threshold:
+                    if res[i][j] not in bests:
+                        bests[res[i][j]] = dist[i][j]
                     else:
-                        jj = j
-                    similarity = cos_sim(self.embeddings[i][j], line_embeddings[l])
-                    if similarity > self.similarity_threshold:
-                        found = False
-                        for m in range(len(new_context)):
-                            if new_context[m][1] == self.additional_context[i][jj]:
-                                found = True
-                                if new_context[m][0] < similarity:
-                                    new_context[m] = (similarity, self.additional_context[i][jj])
-                                break
-                        if not found:
-                            new_context.append((similarity, self.additional_context[i][jj]))
-        return sorted(new_context, key=lambda x: x[0], reverse=True)
+                        bests[res[i][j]] = min(bests[res[i][j]], dist[i][j])
+        indices = sorted([(dis, ind) for ind, dis in bests.items()], key=lambda x: x[0])
+        return [(dis, self.additional_context[ind]) for dis, ind in indices]
     
     def format_context(self, context: List[Tuple[float, str]]) -> str:
         if len(context) == 0:
@@ -64,8 +53,8 @@ class CommentCompletion(BaseDiCompletion):
         #         elif open_bracket == 0 and not ann:
         #             res += tmp[j]
         #     context[i] = (context[i][0], res)
-        context = ['# API Reference:'] + [i[1] for i in context]
-        return '\n# '.join(context[:self.context_size])
+        context = ['# API Reference:'] + [i[1] for i in context[:self.context_size]]
+        return '\n# '.join(context)
 
     def generate_new_prompt(self, prompt: str, context: Set[str], completion: str) -> Tuple[str, Set[str]]:
         start = time.process_time_ns()

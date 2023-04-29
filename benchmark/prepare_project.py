@@ -11,7 +11,7 @@ from pathlib import Path
 import traceback
 import virtualenv
 from run_tests import run_tests
-from coder.utils import run_query, embeddings
+from coder.utils import run_query, embeddings, parse_results_into_context
 from coder.utils import get_completion_safely, postprocess
 from coder.backend import Completion
 from run_completion import filter_external, as_module
@@ -38,12 +38,30 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         database = here/'experiment'/config['name']/'codeqldb'
         if not database.exists():
             dir_util.copy_tree(str(here/'CodeQLDBs'/config['name']/'codeql_db'), str(database/'..'/'codeqldb'))
-        start = time.process_time_ns()
-        run_query(database, 'functionContext.ql', 'functionRes.csv', str(database/'..'))
-        run_query(database, 'classContext.ql', 'classRes.csv', str(database/'..'))
-        end = time.process_time_ns()
-        with open(str(here/'experiment'/config['name']/mode/'preprocessing_time.txt'), 'w') as f:
-            f.write(f'{end - start} ns')
+            start = time.process_time_ns()
+            run_query(database, 'functionContext.ql', 'functionRes.csv', str(database/'..'))
+            run_query(database, 'classContext.ql', 'classRes.csv', str(database/'..'))
+            temp_dir = here/'experiment'/config['name']/mode/f'temp0'
+            additional_context = dict()
+            additional_context.update(parse_results_into_context(database/'..'/'functionRes.csv'))
+            additional_context.update(parse_results_into_context(database/'..'/'classRes.csv'))
+            embeddings = []
+            everything = []
+            for k, v in additional_context.items():
+                everything.extend(v + [k])
+                if len(everything) > 20:
+                    for e in v + [k]:
+                        embeddings.extend(embeddings([e]))
+                else:
+                    embeddings.extend(embeddings(v + [k]))
+            with open(temp_dir/'all.json', 'w') as f:
+                json.dump(everything, f)
+            tree = BallTree(np.array(embeddings), metric='cosine')
+            with open(temp_dir/'tree.pkl', 'wb') as f:
+                pickle.dump(tree, f)
+            end = time.process_time_ns()
+            with open(str(here/'experiment'/config['name']/mode/'preprocessing_time.txt'), 'w') as f:
+                f.write(f'{end - start} ns\n')
 
     project_apis = set()
     with open(here/'experiment'/config["name"]/'functionRes.csv', newline='') as f:
@@ -65,31 +83,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
             pass
         if i['id'] == 0 and not noTests:
             orig_results = run_tests(config, 0, mode, env_session.interpreter.executable)[0]
-        # if i['id'] == 0 and mode == 'base':
-        #     temp_dir = here/'experiment'/config['name']/mode/f'temp0'
-        #     start = time.process_time_ns()
-        #     all_py_files = sorted((temp_dir/config['project_root']).glob('**/*.py'))
-        #     embd = []
-        #     lens = []
-        #     for fi in all_py_files:
-        #         with open(fi, 'r') as f:
-        #             content = f.read()
-        #             lines = content.splitlines(keepends=True)
-        #         lens.append(len(lines))
-        #         windows = [''.join(lines[i:i+5]) for i in range(len(lines) - 4)]
-        #         embd.extend(embeddings(windows))
-        #         with open(temp_dir/'all.py', 'a') as f:
-        #             f.write(content)
-        #             if not content.endswith('\n'):
-        #                 f.write('\n')
-        #     with open(temp_dir/'all.files', 'w') as f:
-        #         f.write('\n'.join([f'{str(all_py_files[i])} {lens[i]}' for i in range(len(all_py_files))]))
-        #     tree = BallTree(np.array(embd))
-        #     with open(temp_dir/'tree.pkl', 'wb') as f:
-        #         pickle.dump(tree, f)
-        #     end = time.process_time_ns()
-        #     with open(temp_dir/'BallTree_time.txt', 'w') as f:
-        #         f.write(str((end - start)/1000))
+        
         if len(i['file']) == 0:
             continue
         # exclude = []

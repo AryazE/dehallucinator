@@ -84,5 +84,5 @@ if __name__ == '__main__':
         else:
             output_line = [mode, args.results.split('/')[-1]] + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ng[mode]] + [str(best_ng[mode]/N)] + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ap[mode]] + [str(best_ap[mode]/N)]
     output_line = output_line[:7] + [baseline_line[0]] + output_line[7:] + baseline_line[1:]
-    with open(Path(args.results)/f'spreadsheet.csv', 'w') as f:
+    with open(Path(args.results)/'spreadsheet.csv', 'w') as f:
         f.write(', '.join(output_line) + '\n')

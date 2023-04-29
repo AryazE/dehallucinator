@@ -1,6 +1,7 @@
 import subprocess
-from typing import List
+from typing import List, Dict
 from os import path
+import csv
 import ast
 import re
 from numpy import dot
@@ -203,3 +204,19 @@ def equal_apis(a: cst.CSTNode, b: cst.CSTNode) -> bool:
     elif (matchers.matches(a, matchers.Attribute()) and matchers.matches(b, matchers.Attribute())):
         return a.attr.deep_equals(b.attr)
     return False
+
+def parse_results_into_context(self, file) -> Dict[str, List[str]]:
+    additional_context = {}
+    with open(file, newline='') as csvfile:
+        csv_reader = csv.DictReader(csvfile)
+        for line in csv_reader:
+            if line['qualifiedName'] not in additional_context:
+                additional_context[line['qualifiedName']] = []
+            if '\nvariables\n' in line['docstring']:
+                tmp_context = [line['header']] + line['docstring'].split('\nvariables\n')[1].split('\n')
+            elif '\nfunctions\n' in line['docstring']:
+                tmp_context = [line['header']] + line['docstring'].split('\nfunctions\n')[1].split('\n')
+            else:
+                tmp_context = [(line['header'] + ' # ' + line['docstring'][:100]) if len(line['docstring']) > 0 else line['header']]
+            additional_context[line['qualifiedName']].extend(tmp_context)
+    return additional_context
