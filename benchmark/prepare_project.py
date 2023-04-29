@@ -45,18 +45,18 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
             additional_context = dict()
             additional_context.update(parse_results_into_context(database/'..'/'functionRes.csv'))
             additional_context.update(parse_results_into_context(database/'..'/'classRes.csv'))
-            embeddings = []
+            embds = []
             everything = []
             for k, v in additional_context.items():
                 everything.extend(v + [k])
                 if len(everything) > 20:
                     for e in v + [k]:
-                        embeddings.extend(embeddings([e]))
+                        embds.extend(embeddings([e]))
                 else:
-                    embeddings.extend(embeddings(v + [k]))
+                    embds.extend(embeddings(v + [k]))
             with open(temp_dir/'all.json', 'w') as f:
                 json.dump(everything, f)
-            tree = BallTree(np.array(embeddings), metric='cosine')
+            tree = BallTree(np.array(embds), metric='cosine')
             with open(temp_dir/'tree.pkl', 'wb') as f:
                 pickle.dump(tree, f)
             end = time.process_time_ns()
