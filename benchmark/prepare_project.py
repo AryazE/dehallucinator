@@ -44,7 +44,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
             embds = []
             everything = []
             for k, v in additional_context.items():
-                everything.extend(v)
+                everything.extend(v + v[:1])
                 if len(everything) > 20:
                     for e in v + [k]:
                         embds.extend(embeddings([e]))
