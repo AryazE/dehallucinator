@@ -1,6 +1,6 @@
 from typing import Tuple, List, Set, Dict
 import logging
-import re
+from sklearn.preprocessing import normalize
 import time
 from .utils import clip_prompt, embeddings, cos_sim
 from .BaseDiCompletion import BaseDiCompletion
@@ -16,7 +16,7 @@ class CommentCompletion(BaseDiCompletion):
     def get_context(self, prompt: str, completion: str) -> List[Tuple[float, str]]:
         code = completion #prompt[prompt.rfind(f'def {self.func}'):] + completion #prompt + completion
         lines = code.splitlines()
-        line_embeddings = embeddings(lines)
+        line_embeddings = normalize(embeddings(lines))
         dist, res = self.ball_tree.query(line_embeddings, k=self.context_size)
         bests = {}
         for i in range(len(res)):

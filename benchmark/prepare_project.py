@@ -3,9 +3,7 @@ import csv
 import time
 import json
 import Levenshtein
-import shutil
 import random
-import subprocess
 from distutils import dir_util
 from pathlib import Path
 import traceback
@@ -14,10 +12,8 @@ from run_tests import run_tests
 from coder.utils import run_query, embeddings, parse_results_into_context
 from coder.utils import get_completion_safely, postprocess
 from coder.backend import Completion
-from run_completion import filter_external, as_module
-import libcst as cst
-from libcst import matchers
 import numpy as np
+from sklearn.preprocessing import normalize
 from sklearn.neighbors import BallTree
 import pickle
 
@@ -56,7 +52,8 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
                     embds.extend(embeddings(v + [k]))
             with open(here/'experiment'/config["name"]/'all.json', 'w') as f:
                 json.dump(everything, f)
-            tree = BallTree(np.array(embds), metric='cosine')
+            embds = normalize(np.array(embds))
+            tree = BallTree(embds, metric='euclidean')
             with open(here/'experiment'/config["name"]/'tree.pkl', 'wb') as f:
                 pickle.dump(tree, f)
             end = time.process_time_ns()
