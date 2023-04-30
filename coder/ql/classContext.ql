@@ -51,7 +51,6 @@ string classHeader(Class c) {
 string classContext(Class c) {
     result = classHeader(c) +
         docStringContext(c) +
-        functionsContext(c) +
         memberContext(c)
 }
 

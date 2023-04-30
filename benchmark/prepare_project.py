@@ -44,12 +44,12 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
             embds = []
             everything = []
             for k, v in additional_context.items():
-                everything.extend(v + v[:1])
+                everything.extend(v)
                 if len(everything) > 20:
-                    for e in v + [k]:
+                    for e in v:
                         embds.extend(embeddings([e]))
                 else:
-                    embds.extend(embeddings(v + [k]))
+                    embds.extend(embeddings(v))
             with open(here/'experiment'/config["name"]/'all.json', 'w') as f:
                 json.dump(everything, f)
             embds = normalize(np.array(embds))
