@@ -27,7 +27,15 @@ class CommentCompletion(BaseDiCompletion):
                     else:
                         bests[res[i][j]] = min(bests[res[i][j]], dist[i][j])
         indices = sorted([(dis, ind) for ind, dis in bests.items()], key=lambda x: x[0])
-        return [(dis, self.additional_context[ind]) for dis, ind in indices]
+        contexts = [(dis, self.additional_context[ind]) for dis, ind in indices]
+        ignore = set()
+        used = set()
+        for i in range(len(contexts)):
+            if contexts[i][1] in used:
+                ignore.add(i)
+            else:
+                used.add(contexts[i][1])
+        return [contexts[i] for i in range(len(contexts)) if i not in ignore]
     
     def format_context(self, context: List[Tuple[float, str]]) -> str:
         if len(context) == 0:
