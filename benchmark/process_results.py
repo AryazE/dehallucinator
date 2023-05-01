@@ -99,8 +99,8 @@ if __name__ == '__main__':
         for k, v in report.items():
             f.write(f'{k},' + ','.join([f'{v[x][0]},{v[x][1]:.2f},{v[x][2]:.2f}' for x in range(len(v))]) + f',{v[-1][3]}\n')
 
-    try:
-        from grip import serve
-        serve(str(here/args.output), port=5000)
-    except ImportError:
-        print('Done! You can install grip to serve the report')
+    # try:
+    #     from grip import serve
+    #     serve(str(here/args.output), port=5000)
+    # except ImportError:
+    #     print('Done! You can install grip to serve the report')

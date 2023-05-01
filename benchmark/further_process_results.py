@@ -20,6 +20,7 @@ if __name__ == '__main__':
             baseline = mode
             break
     N = 0
+    K = 4
     for mode, sub_res in results.items():
         ng_imp = 0
         ap_imp = 0
@@ -27,10 +28,10 @@ if __name__ == '__main__':
         ap_it = 0
         ng_dicoder_better = 0
         ap_dicoder_better = 0
-        abs_ng[mode] = [(0, 0)] * 4
-        abs_ap[mode] = [(0, 0)] * 4
-        best_ng[mode] = 0.0
-        best_ap[mode] = 0.0
+        abs_ng[mode] = [(0, 0)] * K
+        abs_ap[mode] = [(0, 0)] * K
+        best_ng[mode] = [0.0] * K
+        best_ap[mode] = [0.0] * K
         N = max(N, len(sub_res))
         for id, res in sub_res.items():
             if id == 0:
@@ -40,13 +41,13 @@ if __name__ == '__main__':
             for i in range(len(ngram)):
                 abs_ng[mode][i] = (abs_ng[mode][i][0] + ngram[i], abs_ng[mode][i][1] + 1)
                 best_temp = max(best_temp, ngram[i])
-            best_ng[mode] += best_temp
+                best_ng[mode][i] += best_temp
             api = [float(x[1]) for x in res]
             best_temp = 0.0
             for i in range(len(api)):
                 abs_ap[mode][i] = (abs_ap[mode][i][0] + api[i], abs_ap[mode][i][1] + 1)
                 best_temp = max(best_temp, api[i])
-            best_ap[mode] += best_temp
+                best_ap[mode][i] += best_temp
             ng_count = 0
             ap_count = 0
             for i in range(1, len(res)):
@@ -77,12 +78,14 @@ if __name__ == '__main__':
             print(f'API improvement (dicoder better): {ap_dicoder_better}')
         print(f'N-gram similarity (absolute): {[(i[0]/i[1]) if i[1] > 0 else 0 for i in abs_ng[mode]]}')
         print(f'API similarity (absolute): {[(i[0]/i[1]) if i[1] > 0 else 0 for i in abs_ap[mode]]}')
-        print(f'N-gram similarity (best): {best_ng[mode]/N}')
-        print(f'API similarity (best): {best_ap[mode]/N}')
+        res_best_ng = [str(i/N) for i in best_ng[mode]]
+        res_best_ap = [str(i/N) for i in best_ap[mode]]
+        print(f'N-gram similarity (best): {res_best_ng}')
+        print(f'API similarity (best): {res_best_ap}')
         if mode.startswith('baseline'):
-            baseline_line = [str(best_ng[mode]/N), str(best_ap[mode]/N), str(N)]
+            baseline_line = res_best_ng + res_best_ap + [str(N)]
         else:
-            output_line = [mode, args.results.split('/')[-1]] + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ng[mode]] + [str(best_ng[mode]/N)] + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ap[mode]] + [str(best_ap[mode]/N)]
+            output_line = [mode, args.results.split('/')[-1]] + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ng[mode]] + res_best_ng + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ap[mode]] + res_best_ap
     output_line = output_line[:7] + [baseline_line[0]] + output_line[7:] + baseline_line[1:]
     with open(Path(args.results)/'spreadsheet.csv', 'w') as f:
         f.write(', '.join(output_line) + '\n')
