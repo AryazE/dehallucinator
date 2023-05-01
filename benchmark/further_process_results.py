@@ -83,7 +83,7 @@ if __name__ == '__main__':
         print(f'N-gram similarity (best): {res_best_ng}')
         print(f'API similarity (best): {res_best_ap}')
         if mode.startswith('baseline'):
-            baseline_line = res_best_ng + res_best_ap + [str(N)]
+            baseline_line = [res_best_ng[0], res_best_ap[0], str(N)]
         else:
             output_line = [mode, args.results.split('/')[-1]] + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ng[mode]] + res_best_ng + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ap[mode]] + res_best_ap
     output_line = output_line[:7] + [baseline_line[0]] + output_line[7:] + baseline_line[1:]
