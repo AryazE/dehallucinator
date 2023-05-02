@@ -5,14 +5,13 @@ import logging
 import json
 import re
 import traceback
-import Levenshtein
 import libcst as cst
 import libcst.matchers as matchers
 from distutils import dir_util
 from pygments.lexers.python import PythonLexer
 from crystalbleu import corpus_bleu, SmoothingFunction
 # from autoimport import fix_code
-from coder.utils import clip_prompt, DELIMITER, dedent, equal_apis
+from coder.utils import clip_prompt, DELIMITER, dedent, norm_edit_similarity
 from coder.main import main
 
 API_regex = r'(?:\w+\.)*\w+\(.*\)'
@@ -33,7 +32,7 @@ def similarity_evaluation(ground_truth, completions):
     #     result.append(corpus_bleu([[tok_ground_truth]], [tokenized], ignoring=trivially_shared_ngrams, smoothing_function=sm_func))
     # return result
     for i in range(len(completions)):
-        result.append(Levenshtein.ratio(ground_truth, completions[i]))
+        result.append(norm_edit_similarity(ground_truth, completions[i]))
     return result
 
 def as_module(code: str) -> str:
