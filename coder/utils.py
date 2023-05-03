@@ -6,6 +6,7 @@ import ast
 import re
 from numpy import dot
 from numpy.linalg import norm
+from nltk import edit_distance
 import libcst as cst
 import libcst.matchers as matchers
 import openai
@@ -220,3 +221,6 @@ def parse_results_into_context(file) -> Dict[str, List[str]]:
                 tmp_context = [(line['header'] + ' # ' + line['docstring'][:100]) if len(line['docstring']) > 0 else line['header']]
             additional_context[line['qualifiedName']].extend(tmp_context)
     return additional_context
+
+def norm_edit_similarity(a, b):
+    return 1 - edit_distance(a, b) / max(len(a), len(b))

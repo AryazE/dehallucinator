@@ -1,6 +1,8 @@
 from pathlib import Path
 import argparse
 import json
+from coder.utils import norm_edit_similarity
+from transformers import GPT2TokenizerFast
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -9,12 +11,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
     here = Path(__file__).parent.resolve()
     res_dir = Path(args.results).resolve()
+    tokenizer = GPT2TokenizerFast.from_pretrained("gpt2")
     with open(res_dir/'complete.json', 'r') as f:
         results = json.load(f)
-    if not (here/'table.md').exists():
-        with open(here/'table.md', 'w') as f:
-            f.write('| Project | ID | Ground Truth | Baseline | Iteration 1 | Iteration 2 | Iteration 3 |\n')
-            f.write('| --- | --- | --- | --- | --- | --- | --- |\n')
+    token_similarity = []
     for mode, sub_res in results.items():
         if mode.startswith('baseline'):
             baseline = mode
@@ -29,6 +29,11 @@ if __name__ == '__main__':
                     content = f.read()
             for k in range(len(res)):
                 completions.append(content.split(f'\ncompletion {k}:\n```python\n')[1].split('\n```')[0].replace('\n', ' '))
-            with open(here/'table.md', 'a') as f:
-                f.write(f'| {args.project} | {id} | {results[baseline][id][0]} | {res[0]} | {res[1]} | {res[2]} | {res[3]} |\n')
-                f.write(f'| {args.project} | {id} | {gt} | {completions[0]} | {completions[1]} | {completions[2]} | {completions[3]} |\n')
+            token_similarity.append([])
+            gt_tokens = tokenizer(gt)['input_ids']
+            for k in range(1, len(res)):
+                token_similarity[-1].append(norm_edit_similarity(gt_tokens, tokenizer(completions[k])['input_ids']))
+    avg = []
+    for j in range(len(token_similarity[0])):
+        avg.append(sum([x[j] for x in token_similarity]) / len(token_similarity))
+    print(' '.join([str(x) for x in avg]))
