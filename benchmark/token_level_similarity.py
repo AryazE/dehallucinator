@@ -31,7 +31,7 @@ if __name__ == '__main__':
                 completions.append(content.split(f'\ncompletion {k}:\n```python\n')[1].split('\n```')[0].replace('\n', ' '))
             token_similarity.append([])
             gt_tokens = tokenizer(gt)['input_ids']
-            for k in range(1, len(res)):
+            for k in range(len(res)):
                 token_similarity[-1].append(norm_edit_similarity(gt_tokens, tokenizer(completions[k])['input_ids']))
     avg = []
     best = []
