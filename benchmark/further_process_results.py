@@ -20,7 +20,7 @@ if __name__ == '__main__':
             baseline = mode
             break
     N = 0
-    K = 4
+    K = 5
     for mode, sub_res in results.items():
         ng_imp = 0
         ap_imp = 0
@@ -86,6 +86,6 @@ if __name__ == '__main__':
             baseline_line = [res_best_ng[0], res_best_ap[0], str(N)]
         else:
             output_line = [mode, args.results.split('/')[-1]] + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ng[mode]] + res_best_ng + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ap[mode]] + res_best_ap
-    output_line = output_line[:10] + [baseline_line[0]] + output_line[10:] + baseline_line[1:]
+    output_line = output_line[:2*K+2] + [baseline_line[0]] + output_line[2*K+2:] + baseline_line[1:]
     with open(Path(args.results)/'spreadsheet.csv', 'w') as f:
         f.write(', '.join(output_line) + '\n')
