@@ -38,5 +38,4 @@ if __name__ == '__main__':
     for j in range(len(token_similarity[0])):
         avg.append(sum([x[j] for x in token_similarity]) / len(token_similarity))
         best.append(sum([max(x[:j+1]) for x in token_similarity]) / len(token_similarity))
-    print('avg: ' + ' '.join([str(x) for x in avg]))
-    print('best: ' + ' '.join([str(x) for x in best]))
+    print(f'{args.results}' + ' '.join([str(x) for x in avg]) + ' ' + ' '.join([str(x) for x in best]))
