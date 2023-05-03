@@ -34,6 +34,9 @@ if __name__ == '__main__':
             for k in range(1, len(res)):
                 token_similarity[-1].append(norm_edit_similarity(gt_tokens, tokenizer(completions[k])['input_ids']))
     avg = []
+    best = []
     for j in range(len(token_similarity[0])):
         avg.append(sum([x[j] for x in token_similarity]) / len(token_similarity))
-    print(' '.join([str(x) for x in avg]))
+        best.append(sum([max(x[:j+1]) for x in token_similarity]) / len(token_similarity))
+    print('avg: ' + ' '.join([str(x) for x in avg]))
+    print('best: ' + ' '.join([str(x) for x in best]))
