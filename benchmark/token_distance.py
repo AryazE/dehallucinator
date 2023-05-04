@@ -1,7 +1,7 @@
 from pathlib import Path
 import argparse
 import json
-from coder.utils import norm_edit_similarity
+from nltk import edit_distance
 from transformers import GPT2TokenizerFast
 
 if __name__ == '__main__':
@@ -31,7 +31,7 @@ if __name__ == '__main__':
             token_similarity.append([])
             gt_tokens = tokenizer(gt)['input_ids']
             for k in range(len(res)):
-                token_similarity[-1].append(norm_edit_similarity(gt_tokens, tokenizer(completions[k])['input_ids']))
+                token_similarity[-1].append(edit_distance(gt_tokens, tokenizer(completions[k])['input_ids']))
     avg = []
     best = []
     for j in range(len(token_similarity[0])):
