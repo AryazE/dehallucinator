@@ -40,4 +40,4 @@ if __name__ == '__main__':
             if api[0] < max(api[1:]):
                 to_api.append(id)
     with open(Path(args.results)/'corrected.txt', 'w') as f:
-        f.write(f'{len(to_exact)} {len(to_api)}\n' + ' '.join([str(x) for x in to_exact]) + '\n' + ' '.join([str(x) for x in to_api]))
+        f.write(f'{len(to_exact)} {len(to_api)}\n' + ', '.join([str(x) for x in to_exact]) + '\n' + ', '.join([str(x) for x in to_api]))
