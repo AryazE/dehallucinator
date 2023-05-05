@@ -20,6 +20,9 @@ if __name__ == '__main__':
     to_exact = []
     to_api = []
     for mode, sub_res in results.items():
+        if mode.startswith('baseline'):
+            baseline = mode
+            continue
         N = max(N, len(sub_res))
         for id, res in sub_res.items():
             if id == 0:
