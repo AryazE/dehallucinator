@@ -10,142 +10,702 @@
             "remove": []
         },
         {
-            "id": 7,
-            "file": "thefuck/rules/systemctl.py",
+            "id": 30,
+            "file": "thefuck/rules/no_command.py",
+            "function": "_get_used_executables",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 16,
+                    "start_column": 0,
+                    "end_line": 18,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 69,
+            "file": "thefuck/types.py",
+            "function": "from_raw_script",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 81,
+                    "start_column": 0,
+                    "end_line": 82,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 53,
+            "file": "thefuck/rules/npm_run_script.py",
             "function": "match",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 10,
+                    "start_line": 11,
                     "start_column": 0,
-                    "end_line": 15,
-                    "end_column": 51
+                    "end_line": 12,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 27,
-            "file": "thefuck/rules/open.py",
+            "id": 83,
+            "file": "thefuck/rules/dirty_unzip.py",
             "function": "get_new_command",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 40,
-                    "start_column": 12,
-                    "end_line": 40,
-                    "end_column": 74
-                }
-            ]
-        },
-        {
-            "id": 20,
-            "file": "thefuck/rules/aws_cli.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 17,
-                    "start_column": 4,
-                    "end_line": 17,
-                    "end_column": 74
-                }
-            ]
-        },
-        {
-            "id": 24,
-            "file": "thefuck/rules/cpp11.py",
-            "function": "match",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 5,
+                    "start_line": 42,
                     "start_column": 0,
-                    "end_line": 8,
-                    "end_column": 51
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "file": "thefuck/rules/sudo_command_from_user_path.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 20,
-                    "start_column": 4,
-                    "end_line": 21,
-                    "end_column": 72
-                }
-            ]
-        },
-        {
-            "id": 12,
-            "file": "thefuck/ui.py",
-            "function": "select_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 73,
-                    "start_column": 8,
-                    "end_line": 74,
-                    "end_column": 41
-                }
-            ]
-        },
-        {
-            "id": 39,
-            "file": "thefuck/entrypoints/fix_command.py",
-            "function": "fix_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 43,
-                    "start_column": 8,
                     "end_line": 43,
-                    "end_column": 61
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 2,
-            "file": "thefuck/rules/sudo_command_from_user_path.py",
-            "function": "match",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 12,
-                    "start_column": 0,
-                    "end_line": 15,
-                    "end_column": 34
-                }
-            ]
-        },
-        {
-            "id": 6,
-            "file": "thefuck/rules/tsuru_not_command.py",
+            "id": 57,
+            "file": "thefuck/rules/npm_wrong_command.py",
             "function": "get_new_command",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 14,
-                    "start_column": 4,
-                    "end_line": 15,
-                    "end_column": 68
+                    "start_line": 41,
+                    "start_column": 0,
+                    "end_line": 42,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "thefuck/rules/choco_install.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 25,
+                    "start_column": 0,
+                    "end_line": 26,
+                    "end_column": 0
                 }
             ]
         },
         {
             "id": 31,
-            "file": "thefuck/entrypoints/fix_command.py",
-            "function": "_get_raw_command",
+            "file": "thefuck/rules/no_command.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 25,
+                    "start_column": 0,
+                    "end_line": 28,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "file": "thefuck/rules/yum_invalid_operation.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 0,
+                    "end_line": 30,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "file": "thefuck/corrector.py",
+            "function": "get_rules_import_paths",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 29,
+                    "start_column": 0,
+                    "end_line": 30,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "thefuck/rules/apt_invalid_operation.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 63,
+                    "start_column": 0,
+                    "end_line": 64,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "thefuck/entrypoints/not_configured.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 99,
+                    "start_column": 0,
+                    "end_line": 100,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "file": "thefuck/output_readers/shell_logger.py",
+            "function": "get_output",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 51,
+                    "start_column": 0,
+                    "end_line": 52,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 55,
+            "file": "thefuck/rules/git_fix_stash.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 30,
+                    "start_column": 0,
+                    "end_line": 31,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "file": "thefuck/rules/dirty_untar.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 36,
+                    "start_column": 0,
+                    "end_line": 37,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 37,
+            "file": "thefuck/corrector.py",
+            "function": "get_rules_import_paths",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 31,
+                    "start_column": 0,
+                    "end_line": 32,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 74,
+            "file": "thefuck/types.py",
+            "function": "from_path",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 153,
+                    "start_column": 0,
+                    "end_line": 154,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "file": "thefuck/rules/npm_wrong_command.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 42,
+                    "start_column": 0,
+                    "end_line": 43,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "file": "thefuck/rules/path_from_history.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 49,
+                    "start_column": 0,
+                    "end_line": 51,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 73,
+            "file": "thefuck/types.py",
+            "function": "from_path",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 146,
+                    "start_column": 0,
+                    "end_line": 147,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 67,
+            "file": "thefuck/types.py",
+            "function": "script_parts",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 42,
+                    "start_column": 0,
+                    "end_line": 44,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "file": "thefuck/specific/archlinux.py",
+            "function": "archlinux_env",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 41,
+                    "start_column": 0,
+                    "end_line": 45,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "thefuck/entrypoints/not_configured.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 4,
+                    "start_column": 0,
+                    "end_line": 5,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "thefuck/entrypoints/not_configured.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 114,
+                    "start_column": 0,
+                    "end_line": 115,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "file": "thefuck/specific/npm.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 5,
+                    "start_column": 0,
+                    "end_line": 6,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 70,
+            "file": "thefuck/types.py",
+            "function": "from_raw_script",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 82,
+                    "start_column": 0,
+                    "end_line": 83,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 77,
+            "file": "thefuck/types.py",
+            "function": "_get_script",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 241,
+                    "start_column": 0,
+                    "end_line": 242,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "file": "thefuck/types.py",
+            "function": "run",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 257,
+                    "start_column": 0,
+                    "end_line": 258,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "thefuck/entrypoints/not_configured.py",
+            "function": "_get_not_configured_usage_tracker_path",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 31,
+                    "start_column": 0,
+                    "end_line": 34,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "thefuck/specific/archlinux.py",
+            "function": "archlinux_env",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 37,
+                    "start_column": 0,
+                    "end_line": 45,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "thefuck/output_readers/shell_logger.py",
+            "function": "get_output",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 59,
+                    "start_column": 0,
+                    "end_line": 60,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "file": "thefuck/rules/vagrant_up.py",
+            "function": "get_new_command",
             "remove": [
                 {
                     "description": "code",
                     "start_line": 20,
-                    "start_column": 8,
-                    "end_line": 20,
-                    "end_column": 27
+                    "start_column": 0,
+                    "end_line": 21,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "file": "thefuck/rules/path_from_history.py",
+            "function": "_get_all_absolute_paths_from_history",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 32,
+                    "start_column": 0,
+                    "end_line": 33,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 75,
+            "file": "thefuck/types.py",
+            "function": "is_match",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 180,
+                    "start_column": 0,
+                    "end_line": 181,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "thefuck/rules/yum_invalid_operation.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 39,
+                    "start_column": 0,
+                    "end_line": 40,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "thefuck/entrypoints/not_configured.py",
+            "function": "_is_already_configured",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 77,
+                    "start_column": 0,
+                    "end_line": 78,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "thefuck/entrypoints/not_configured.py",
+            "function": "_configure",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 84,
+                    "start_column": 0,
+                    "end_line": 85,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "file": "thefuck/rules/git_push.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 43,
+                    "start_column": 0,
+                    "end_line": 45,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "file": "thefuck/rules/dirty_untar.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 37,
+                    "start_column": 0,
+                    "end_line": 39,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 82,
+            "file": "thefuck/rules/ifconfig_device_not_found.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 23,
+                    "start_column": 0,
+                    "end_line": 24,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "file": "thefuck/rules/path_from_history.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 0,
+                    "end_line": 51,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 78,
+            "file": "thefuck/types.py",
+            "function": "_get_script",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 243,
+                    "start_column": 0,
+                    "end_line": 244,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "thefuck/rules/brew_cask_dependency.py",
+            "function": "_get_script_for_brew_cask",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 23,
+                    "start_column": 0,
+                    "end_line": 24,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "file": "thefuck/rules/git_pull_clone.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 13,
+                    "start_column": 0,
+                    "end_line": 14,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 72,
+            "file": "thefuck/types.py",
+            "function": "from_path",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 142,
+                    "start_column": 0,
+                    "end_line": 143,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 68,
+            "file": "thefuck/types.py",
+            "function": "from_raw_script",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 77,
+                    "start_column": 0,
+                    "end_line": 78,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "thefuck/rules/yarn_alias.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 14,
+                    "start_column": 0,
+                    "end_line": 15,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "thefuck/entrypoints/not_configured.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 98,
+                    "start_column": 0,
+                    "end_line": 99,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 62,
+            "file": "thefuck/shells/fish.py",
+            "function": "put_to_history",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 118,
+                    "start_column": 0,
+                    "end_line": 119,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 76,
+            "file": "thefuck/types.py",
+            "function": "is_match",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 184,
+                    "start_column": 0,
+                    "end_line": 185,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 56,
+            "file": "thefuck/rules/git_fix_stash.py",
+            "function": "get_new_command",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 33,
+                    "start_column": 0,
+                    "end_line": 34,
+                    "end_column": 0
                 }
             ]
         }

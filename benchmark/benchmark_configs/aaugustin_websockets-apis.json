@@ -10,142 +10,702 @@
             "remove": []
         },
         {
-            "id": 69,
-            "file": "src/websockets/legacy/server.py",
-            "function": "handshake",
+            "id": 194,
+            "file": "example/tutorial/step2/app.py",
+            "function": "play",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 608,
-                    "start_column": 8,
-                    "end_line": 608,
-                    "end_column": 44
+                    "start_line": 74,
+                    "start_column": 0,
+                    "end_line": 75,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 119,
+            "id": 4,
+            "file": "example/quickstart/client_secure.py",
+            "function": "hello",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 14,
+                    "start_column": 0,
+                    "end_line": 15,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "example/django/notifications.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 67,
+                    "start_column": 0,
+                    "end_line": 68,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 99,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 89,
+                    "start_column": 0,
+                    "end_line": 90,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 156,
+            "file": "src/websockets/server.py",
+            "function": "reject",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 501,
+                    "start_column": 0,
+                    "end_line": 509,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 166,
+            "file": "src/websockets/legacy/client.py",
+            "function": "process_subprotocol",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 246,
+                    "start_column": 0,
+                    "end_line": 247,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 153,
+            "file": "src/websockets/server.py",
+            "function": "process_subprotocol",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 407,
+                    "start_column": 0,
+                    "end_line": 411,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 127,
+            "file": "src/websockets/headers.py",
+            "function": "parse_authorization_basic",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 561,
+                    "start_column": 0,
+                    "end_line": 565,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 159,
+            "file": "src/websockets/server.py",
+            "function": "parse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 547,
+                    "start_column": 0,
+                    "end_line": 550,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 103,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "build_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 119,
+                    "start_column": 0,
+                    "end_line": 120,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 109,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 160,
+                    "start_column": 0,
+                    "end_line": 163,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "file": "src/websockets/extensions/permessage_deflate.py",
+            "function": "process_response_params",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 415,
+                    "start_column": 0,
+                    "end_line": 416,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "file": "src/websockets/extensions/permessage_deflate.py",
+            "function": "decode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 131,
+                    "start_column": 0,
+                    "end_line": 132,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 82,
+            "file": "src/websockets/client.py",
+            "function": "process_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 183,
+                    "start_column": 0,
+                    "end_line": 184,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 138,
+            "file": "src/websockets/server.py",
+            "function": "process_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 227,
+                    "start_column": 0,
+                    "end_line": 230,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 182,
+            "file": "src/websockets/legacy/client.py",
+            "function": "__await_impl__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 682,
+                    "start_column": 0,
+                    "end_line": 683,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "file": "src/websockets/extensions/permessage_deflate.py",
+            "function": "process_response_params",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 399,
+                    "start_column": 0,
+                    "end_line": 400,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "file": "example/echo.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 11,
+                    "start_column": 0,
+                    "end_line": 12,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 157,
+            "file": "src/websockets/server.py",
+            "function": "reject",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 509,
+                    "start_column": 0,
+                    "end_line": 510,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 124,
+            "file": "src/websockets/headers.py",
+            "function": "parse_end",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 525,
+                    "start_column": 0,
+                    "end_line": 526,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 121,
+            "file": "src/websockets/headers.py",
+            "function": "parse_upgrade_protocol",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 279,
+                    "start_column": 0,
+                    "end_line": 282,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 160,
+            "file": "example/legacy/unix_server.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 20,
+                    "start_column": 0,
+                    "end_line": 21,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 66,
+            "file": "src/websockets/__main__.py",
+            "function": "run_client",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 103,
+                    "start_column": 0,
+                    "end_line": 104,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "compliance/test_client.py",
+            "function": "run_case",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 0,
+                    "end_line": 29,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 57,
+            "file": "src/websockets/extensions/permessage_deflate.py",
+            "function": "process_response_params",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 341,
+                    "start_column": 0,
+                    "end_line": 342,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 155,
+            "file": "src/websockets/server.py",
+            "function": "select_subprotocol",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 472,
+                    "start_column": 0,
+                    "end_line": 476,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 70,
+            "file": "src/websockets/client.py",
+            "function": "connect",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 112,
+                    "start_column": 0,
+                    "end_line": 113,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 158,
+            "file": "src/websockets/server.py",
+            "function": "reject",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 514,
+                    "start_column": 0,
+                    "end_line": 515,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 186,
+            "file": "experiments/authentication/app.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 194,
+                    "start_column": 0,
+                    "end_line": 200,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 176,
+            "file": "src/websockets/legacy/client.py",
+            "function": "handshake",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 325,
+                    "start_column": 0,
+                    "end_line": 326,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 132,
+            "file": "example/hello.py",
+            "function": "hello",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 7,
+                    "start_column": 0,
+                    "end_line": 8,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 92,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 59,
+                    "start_column": 0,
+                    "end_line": 60,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "file": "example/deployment/supervisor/app.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 20,
+                    "start_column": 0,
+                    "end_line": 26,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 94,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 66,
+                    "start_column": 0,
+                    "end_line": 67,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 192,
+            "file": "experiments/compression/server.py",
+            "function": "server",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 47,
+                    "start_column": 0,
+                    "end_line": 59,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "file": "src/websockets/headers.py",
+            "function": "parse_list",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 209,
+                    "start_column": 0,
+                    "end_line": 212,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "file": "src/websockets/extensions/permessage_deflate.py",
+            "function": "process_response_params",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 397,
+                    "start_column": 0,
+                    "end_line": 398,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "build_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 30,
+                    "start_column": 0,
+                    "end_line": 31,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 134,
+            "file": "experiments/broadcast/clients.py",
+            "function": "client",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 29,
+                    "start_column": 0,
+                    "end_line": 33,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "file": "src/websockets/http11.py",
+            "function": "parse_line",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 360,
+                    "start_column": 0,
+                    "end_line": 361,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 145,
+            "file": "src/websockets/server.py",
+            "function": "process_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 260,
+                    "start_column": 0,
+                    "end_line": 261,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "file": "example/faq/shutdown_client.py",
+            "function": "client",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 9,
+                    "start_column": 0,
+                    "end_line": 10,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 196,
+            "file": "example/tutorial/step2/app.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 185,
+                    "start_column": 0,
+                    "end_line": 186,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 125,
             "file": "src/websockets/headers.py",
             "function": "parse_authorization_basic",
             "remove": [
                 {
                     "description": "code",
                     "start_line": 546,
-                    "start_column": 8,
-                    "end_line": 549,
-                    "end_column": 9
+                    "start_column": 0,
+                    "end_line": 550,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 11,
-            "file": "src/websockets/legacy/protocol.py",
-            "function": "close",
+            "id": 44,
+            "file": "src/websockets/extensions/permessage_deflate.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 765,
-                    "start_column": 12,
-                    "end_line": 769,
-                    "end_column": 13
+                    "start_line": 31,
+                    "start_column": 0,
+                    "end_line": 32,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 27,
-            "file": "src/websockets/legacy/protocol.py",
-            "function": "wait_for_connection_lost",
+            "id": 136,
+            "file": "src/websockets/server.py",
+            "function": "accept",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1394,
-                    "start_column": 16,
-                    "end_line": 1398,
-                    "end_column": 17
+                    "start_line": 193,
+                    "start_column": 0,
+                    "end_line": 194,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 55,
-            "file": "experiments/broadcast/server.py",
-            "function": "broadcast",
+            "id": 53,
+            "file": "src/websockets/extensions/permessage_deflate.py",
+            "function": "_extract_parameters",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 92,
-                    "start_column": 12,
-                    "end_line": 92,
-                    "end_column": 50
+                    "start_line": 240,
+                    "start_column": 0,
+                    "end_line": 241,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 29,
-            "file": "src/websockets/legacy/protocol.py",
-            "function": "broadcast",
+            "id": 181,
+            "file": "src/websockets/legacy/client.py",
+            "function": "handle_redirect",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1617,
-                    "start_column": 4,
-                    "end_line": 1617,
-                    "end_column": 40
+                    "start_line": 564,
+                    "start_column": 0,
+                    "end_line": 565,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 12,
-            "file": "src/websockets/legacy/protocol.py",
-            "function": "close",
+            "id": 173,
+            "file": "src/websockets/legacy/client.py",
+            "function": "handshake",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 786,
-                    "start_column": 12,
-                    "end_line": 790,
-                    "end_column": 13
+                    "start_line": 299,
+                    "start_column": 0,
+                    "end_line": 300,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 56,
-            "file": "experiments/broadcast/server.py",
-            "function": "main",
+            "id": 43,
+            "file": "example/legacy/basic_auth_client.py",
+            "function": "hello",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 130,
-                    "start_column": 4,
-                    "end_line": 137,
-                    "end_column": 44
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "file": "src/websockets/legacy/protocol.py",
-            "function": "send",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 719,
-                    "start_column": 20,
-                    "end_line": 719,
-                    "end_column": 65
-                }
-            ]
-        },
-        {
-            "id": 52,
-            "file": "example/quickstart/show_time_2.py",
-            "function": "show_time",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 20,
-                    "start_column": 8,
-                    "end_line": 20,
-                    "end_column": 50
+                    "start_line": 10,
+                    "start_column": 0,
+                    "end_line": 11,
+                    "end_column": 0
                 }
             ]
         }

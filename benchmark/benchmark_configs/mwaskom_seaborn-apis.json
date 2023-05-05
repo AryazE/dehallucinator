@@ -10,142 +10,702 @@
             "remove": []
         },
         {
-            "id": 149,
-            "file": "seaborn/matrix.py",
-            "function": "plot",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 635,
-                    "start_column": 8,
-                    "end_line": 636,
-                    "end_column": 48
-                }
-            ]
-        },
-        {
-            "id": 103,
+            "id": 5,
             "file": "seaborn/widgets.py",
-            "function": "choose_light_palette_hls",
+            "function": "choose_sequential",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 291,
-                    "start_column": 16,
-                    "end_line": 291,
-                    "end_column": 28
+                    "start_line": 102,
+                    "start_column": 0,
+                    "end_line": 103,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 100,
-            "file": "seaborn/widgets.py",
-            "function": "choose_light_palette_rgb",
+            "id": 255,
+            "file": "seaborn/_core/groupby.py",
+            "function": "_get_groups",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 276,
-                    "start_column": 16,
-                    "end_line": 276,
-                    "end_column": 28
+                    "start_line": 57,
+                    "start_column": 0,
+                    "end_line": 58,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 6,
-            "file": "seaborn/regression.py",
-            "function": "fit_fast",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 240,
-                    "start_column": 8,
-                    "end_line": 244,
-                    "end_column": 53
-                }
-            ]
-        },
-        {
-            "id": 87,
-            "file": "seaborn/widgets.py",
-            "function": "choose_qualitative",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 135,
-                    "start_column": 12,
-                    "end_line": 135,
-                    "end_column": 50
-                }
-            ]
-        },
-        {
-            "id": 128,
+            "id": 83,
             "file": "seaborn/_core/plot.py",
-            "function": "_setup_figure",
+            "function": "_plot_layer",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1102,
-                    "start_column": 16,
-                    "end_line": 1102,
-                    "end_column": 60
+                    "start_line": 1466,
+                    "start_column": 0,
+                    "end_line": 1467,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 49,
+            "id": 218,
+            "file": "seaborn/axisgrid.py",
+            "function": "set_titles",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 978,
+                    "start_column": 0,
+                    "end_line": 979,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "file": "seaborn/_marks/dot.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 121,
+                    "start_column": 0,
+                    "end_line": 122,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 189,
+            "file": "seaborn/_marks/line.py",
+            "function": "_legend_artist",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 195,
+                    "start_column": 0,
+                    "end_line": 196,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "seaborn/widgets.py",
+            "function": "choose_dark_palette_rgb",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 186,
+                    "start_column": 0,
+                    "end_line": 187,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 275,
+            "file": "seaborn/_marks/bar.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 200,
+                    "start_column": 0,
+                    "end_line": 201,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 165,
+            "file": "seaborn/matrix.py",
+            "function": "plot_colors",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1058,
+                    "start_column": 0,
+                    "end_line": 1059,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 153,
+            "file": "seaborn/matrix.py",
+            "function": "_annotate_heatmap",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 258,
+                    "start_column": 0,
+                    "end_line": 259,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "file": "seaborn/distributions.py",
+            "function": "displot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2271,
+                    "start_column": 0,
+                    "end_line": 2272,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 220,
+            "file": "seaborn/axisgrid.py",
+            "function": "map_diag",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1467,
+                    "start_column": 0,
+                    "end_line": 1468,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 95,
+            "file": "seaborn/distributions.py",
+            "function": "_compute_univariate_density",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 313,
+                    "start_column": 0,
+                    "end_line": 314,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "file": "seaborn/distributions.py",
+            "function": "displot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2235,
+                    "start_column": 0,
+                    "end_line": 2236,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 97,
+            "file": "seaborn/distributions.py",
+            "function": "plot_univariate_histogram",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 404,
+                    "start_column": 0,
+                    "end_line": 405,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 251,
+            "file": "seaborn/_marks/area.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 157,
+                    "start_column": 0,
+                    "end_line": 158,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 53,
             "file": "seaborn/_marks/dot.py",
             "function": "_resolve_properties",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 189,
-                    "start_column": 8,
-                    "end_line": 189,
-                    "end_column": 73
+                    "start_line": 142,
+                    "start_column": 0,
+                    "end_line": 143,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 17,
-            "file": "seaborn/palettes.py",
-            "function": "dark_palette",
+            "id": 283,
+            "file": "seaborn/_statistics.py",
+            "function": "_validate_errorbar_arg",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 477,
-                    "start_column": 4,
-                    "end_line": 477,
-                    "end_column": 36
+                    "start_line": 550,
+                    "start_column": 0,
+                    "end_line": 551,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 18,
-            "file": "seaborn/palettes.py",
-            "function": "light_palette",
+            "id": 110,
+            "file": "seaborn/distributions.py",
+            "function": "displot",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 525,
-                    "start_column": 4,
-                    "end_line": 525,
-                    "end_column": 36
+                    "start_line": 2133,
+                    "start_column": 0,
+                    "end_line": 2134,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 55,
+            "id": 12,
+            "file": "seaborn/widgets.py",
+            "function": "choose_qualitative",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 136,
+                    "start_column": 0,
+                    "end_line": 137,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 126,
+            "file": "seaborn/regression.py",
+            "function": "fit_regression",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 225,
+                    "start_column": 0,
+                    "end_line": 226,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 147,
+            "file": "seaborn/_marks/text.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 38,
+                    "start_column": 0,
+                    "end_line": 39,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 241,
+            "file": "seaborn/_marks/area.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 105,
+                    "start_column": 0,
+                    "end_line": 106,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 183,
             "file": "seaborn/_marks/line.py",
             "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 40,
-                    "start_column": 4,
-                    "end_line": 40,
-                    "end_column": 56
+                    "start_line": 145,
+                    "start_column": 0,
+                    "end_line": 146,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 215,
+            "file": "seaborn/axisgrid.py",
+            "function": "map",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 739,
+                    "start_column": 0,
+                    "end_line": 740,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 74,
+            "file": "seaborn/_core/plot.py",
+            "function": "_default",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 165,
+                    "start_column": 0,
+                    "end_line": 166,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 128,
+            "file": "seaborn/regression.py",
+            "function": "fit_poly",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 258,
+                    "start_column": 0,
+                    "end_line": 263,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 131,
+            "file": "seaborn/regression.py",
+            "function": "lmplot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 598,
+                    "start_column": 0,
+                    "end_line": 605,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 140,
+            "file": "seaborn/_oldcore.py",
+            "function": "scale_categorical",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1397,
+                    "start_column": 0,
+                    "end_line": 1398,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 90,
+            "file": "seaborn/utils.py",
+            "function": "_version_predates",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 875,
+                    "start_column": 0,
+                    "end_line": 876,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "seaborn/widgets.py",
+            "function": "choose_sequential",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 107,
+                    "start_column": 0,
+                    "end_line": 108,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 184,
+            "file": "seaborn/_marks/line.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 146,
+                    "start_column": 0,
+                    "end_line": 147,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 254,
+            "file": "seaborn/_marks/area.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 160,
+                    "start_column": 0,
+                    "end_line": 161,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "file": "seaborn/_stats/counting.py",
+            "function": "__call__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 214,
+                    "start_column": 0,
+                    "end_line": 215,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 197,
+            "file": "seaborn/relational.py",
+            "function": "lineplot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 582,
+                    "start_column": 0,
+                    "end_line": 583,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 230,
+            "file": "seaborn/axisgrid.py",
+            "function": "jointplot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2306,
+                    "start_column": 0,
+                    "end_line": 2307,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 276,
+            "file": "seaborn/_marks/bar.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 201,
+                    "start_column": 0,
+                    "end_line": 202,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 102,
+            "file": "seaborn/distributions.py",
+            "function": "plot_univariate_density",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 927,
+                    "start_column": 0,
+                    "end_line": 928,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 137,
+            "file": "seaborn/_oldcore.py",
+            "function": "numeric_mapping",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 260,
+                    "start_column": 0,
+                    "end_line": 261,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "file": "seaborn/_marks/dot.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 183,
+                    "start_column": 0,
+                    "end_line": 184,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 177,
+            "file": "seaborn/_marks/line.py",
+            "function": "_plot",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 54,
+                    "start_column": 0,
+                    "end_line": 55,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 201,
+            "file": "seaborn/axisgrid.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 27,
+                    "start_column": 0,
+                    "end_line": 30,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "file": "seaborn/_marks/dot.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 180,
+                    "start_column": 0,
+                    "end_line": 181,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 186,
+            "file": "seaborn/_marks/line.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 148,
+                    "start_column": 0,
+                    "end_line": 149,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "seaborn/widgets.py",
+            "function": "choose_dark_palette_husl",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 221,
+                    "start_column": 0,
+                    "end_line": 222,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "seaborn/widgets.py",
+            "function": "choose_diverging",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 121,
+                    "start_column": 0,
+                    "end_line": 122,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "seaborn/_marks/dot.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 127,
+                    "start_column": 0,
+                    "end_line": 128,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 151,
+            "file": "doc/conf.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 110,
+                    "start_column": 0,
+                    "end_line": 112,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 171,
+            "file": "seaborn/_marks/line.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 41,
+                    "start_column": 0,
+                    "end_line": 42,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 278,
+            "file": "seaborn/_marks/bar.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 203,
+                    "start_column": 0,
+                    "end_line": 204,
+                    "end_column": 0
                 }
             ]
         }

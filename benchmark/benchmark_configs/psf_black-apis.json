@@ -10,63 +10,21 @@
             "remove": []
         },
         {
-            "id": 3,
+            "id": 25,
             "file": "src/black/report.py",
-            "function": "failed",
+            "function": "done",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 53,
-                    "start_column": 8,
-                    "end_line": 53,
-                    "end_column": 53
+                    "start_line": 48,
+                    "start_column": 0,
+                    "end_line": 49,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 30,
-            "file": "src/black/nodes.py",
-            "function": "is_multiline_string",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 716,
-                    "start_column": 4,
-                    "end_line": 716,
-                    "end_column": 63
-                }
-            ]
-        },
-        {
-            "id": 14,
-            "file": "src/black/lines.py",
-            "function": "append",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 82,
-                    "start_column": 12,
-                    "end_line": 84,
-                    "end_column": 13
-                }
-            ]
-        },
-        {
-            "id": 22,
-            "file": "src/black/lines.py",
-            "function": "has_magic_trailing_comma",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 340,
-                    "start_column": 12,
-                    "end_line": 349,
-                    "end_column": 13
-                }
-            ]
-        },
-        {
-            "id": 12,
+            "id": 1,
             "file": "src/black/__main__.py",
             "function": "",
             "remove": [
@@ -74,78 +32,680 @@
                     "description": "code",
                     "start_line": 3,
                     "start_column": 0,
-                    "end_line": 3,
-                    "end_column": 14
+                    "end_line": 4,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 26,
-            "file": "src/black/lines.py",
-            "function": "append_leaves",
+            "id": 56,
+            "file": "scripts/fuzz.py",
+            "function": "test_idempotent_any_syntatically_valid_python",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 745,
-                    "start_column": 8,
-                    "end_line": 745,
-                    "end_column": 41
+                    "start_line": 49,
+                    "start_column": 0,
+                    "end_line": 50,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "file": "src/blib2to3/pgen2/driver.py",
+            "function": "parse_stream_raw",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 194,
+                    "start_column": 0,
+                    "end_line": 195,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "file": "src/black/concurrency.py",
+            "function": "cancel",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 42,
+                    "start_column": 0,
+                    "end_line": 43,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "file": "src/black/lines.py",
+            "function": "append",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 82,
+                    "start_column": 0,
+                    "end_line": 85,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "src/black/debug.py",
+            "function": "visit_default",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 22,
+                    "start_column": 0,
+                    "end_line": 23,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "src/black/concurrency.py",
+            "function": "schedule_formatting",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 138,
+                    "start_column": 0,
+                    "end_line": 139,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "file": "src/blib2to3/pgen2/driver.py",
+            "function": "load_grammar",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 266,
+                    "start_column": 0,
+                    "end_line": 267,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 57,
+            "file": "scripts/fuzz.py",
+            "function": "test_idempotent_any_syntatically_valid_python",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 67,
+                    "start_column": 0,
+                    "end_line": 68,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "file": "src/black/lines.py",
+            "function": "is_import",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 125,
+                    "start_column": 0,
+                    "end_line": 126,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "src/blib2to3/pgen2/driver.py",
+            "function": "parse_tokens",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 131,
+                    "start_column": 0,
+                    "end_line": 132,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "file": "src/blib2to3/pgen2/driver.py",
+            "function": "parse_string",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 210,
+                    "start_column": 0,
+                    "end_line": 213,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 38,
+            "file": "src/black/lines.py",
+            "function": "has_magic_trailing_comma",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 343,
+                    "start_column": 0,
+                    "end_line": 349,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "file": "src/blib2to3/pytree.py",
+            "function": "__repr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 436,
+                    "start_column": 0,
+                    "end_line": 437,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "file": "src/black/debug.py",
+            "function": "show",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 46,
+                    "start_column": 0,
+                    "end_line": 47,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "file": "src/black/nodes.py",
+            "function": "is_multiline_string",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 716,
+                    "start_column": 0,
+                    "end_line": 717,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "src/black/files.py",
+            "function": "gen_python_files",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 373,
+                    "start_column": 0,
+                    "end_line": 376,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "file": "src/black/lines.py",
+            "function": "append_comment",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 384,
+                    "start_column": 0,
+                    "end_line": 385,
+                    "end_column": 0
                 }
             ]
         },
         {
             "id": 4,
-            "file": "src/black/report.py",
-            "function": "path_ignored",
+            "file": "src/black/files.py",
+            "function": "get_gitignore",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 58,
-                    "start_column": 12,
-                    "end_line": 58,
-                    "end_column": 57
+                    "start_line": 244,
+                    "start_column": 0,
+                    "end_line": 245,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 25,
-            "file": "src/black/lines.py",
-            "function": "is_complex_subscript",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 423,
-                    "start_column": 16,
-                    "end_line": 423,
-                    "end_column": 70
-                }
-            ]
-        },
-        {
-            "id": 11,
+            "id": 54,
             "file": "src/blib2to3/pgen2/driver.py",
             "function": "load_packaged_grammar",
             "remove": [
                 {
                     "description": "code",
                     "start_line": 307,
-                    "start_column": 4,
-                    "end_line": 307,
-                    "end_column": 25
+                    "start_column": 0,
+                    "end_line": 308,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 29,
-            "file": "src/black/handle_ipynb_magics.py",
-            "function": "jupyter_dependencies_are_installed",
+            "id": 34,
+            "file": "src/black/lines.py",
+            "function": "contains_uncollapsable_type_comments",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 69,
-                    "start_column": 12,
+                    "start_line": 254,
+                    "start_column": 0,
+                    "end_line": 255,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "file": "src/black/concurrency.py",
+            "function": "schedule_formatting",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 187,
+                    "start_column": 0,
+                    "end_line": 188,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "src/black/comments.py",
+            "function": "children_contains_fmt_on",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 317,
+                    "start_column": 0,
+                    "end_line": 318,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "src/black/concurrency.py",
+            "function": "schedule_formatting",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 137,
+                    "start_column": 0,
+                    "end_line": 138,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "src/black/debug.py",
+            "function": "visit_default",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 36,
+                    "start_column": 0,
+                    "end_line": 37,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "src/black/parsing.py",
+            "function": "get_grammars",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 72,
+                    "start_column": 0,
+                    "end_line": 73,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "file": "src/black/lines.py",
+            "function": "has_magic_trailing_comma",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 354,
+                    "start_column": 0,
+                    "end_line": 357,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "file": "src/black/report.py",
+            "function": "path_ignored",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 58,
+                    "start_column": 0,
+                    "end_line": 59,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "file": "src/black/lines.py",
+            "function": "append_leaves",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 745,
+                    "start_column": 0,
+                    "end_line": 746,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "file": "src/blib2to3/pygram.py",
+            "function": "initialize",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 181,
+                    "start_column": 0,
+                    "end_line": 182,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "src/black/comments.py",
+            "function": "convert_one_fmt_off_pair",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 161,
+                    "start_column": 0,
+                    "end_line": 162,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "file": "src/black/debug.py",
+            "function": "visit_default",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 0,
+                    "end_line": 29,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "src/black/comments.py",
+            "function": "generate_ignored_nodes",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 223,
+                    "start_column": 0,
+                    "end_line": 224,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "src/black/debug.py",
+            "function": "visit_default",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 31,
+                    "start_column": 0,
+                    "end_line": 32,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "file": "src/blib2to3/pygram.py",
+            "function": "initialize",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 215,
+                    "start_column": 0,
+                    "end_line": 218,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "src/black/lines.py",
+            "function": "contains_uncollapsable_type_comments",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 252,
+                    "start_column": 0,
+                    "end_line": 258,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "src/black/brackets.py",
+            "function": "is_split_before_delimiter",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 239,
+                    "start_column": 0,
+                    "end_line": 243,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "src/black/lines.py",
+            "function": "is_complex_subscript",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 423,
+                    "start_column": 0,
+                    "end_line": 424,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "file": "src/black/lines.py",
+            "function": "contains_unsplittable_type_ignore",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 291,
+                    "start_column": 0,
+                    "end_line": 293,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 55,
+            "file": "src/blackd/__main__.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 3,
+                    "start_column": 0,
+                    "end_line": 4,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "src/black/lines.py",
+            "function": "is_with_or_async_with_stmt",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 130,
+                    "start_column": 0,
+                    "end_line": 131,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "file": "src/black/lines.py",
+            "function": "can_omit_invisible_parens",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 952,
+                    "start_column": 0,
+                    "end_line": 956,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 36,
+            "file": "src/black/lines.py",
+            "function": "contains_multiline_strings",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 297,
+                    "start_column": 0,
+                    "end_line": 298,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "src/black/files.py",
+            "function": "parse_req_python_version",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 166,
+                    "start_column": 0,
+                    "end_line": 167,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "file": "scripts/fuzz.py",
+            "function": "test_idempotent_any_syntatically_valid_python",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 68,
+                    "start_column": 0,
                     "end_line": 69,
-                    "end_column": 20
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 43,
+            "file": "src/black/lines.py",
+            "function": "is_line_short_enough",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 822,
+                    "start_column": 0,
+                    "end_line": 834,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "src/black/comments.py",
+            "function": "convert_one_fmt_off_pair",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 206,
+                    "start_column": 0,
+                    "end_line": 207,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "src/black/files.py",
+            "function": "find_pyproject_toml",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 108,
+                    "start_column": 0,
+                    "end_line": 109,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "file": "src/black/report.py",
+            "function": "failed",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 53,
+                    "start_column": 0,
+                    "end_line": 54,
+                    "end_column": 0
                 }
             ]
         }

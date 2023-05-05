@@ -10,142 +10,702 @@
             "remove": []
         },
         {
-            "id": 36,
+            "id": 13,
+            "file": "lektor/admin/context.py",
+            "function": "tree",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 54,
+                    "start_column": 0,
+                    "end_line": 55,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 151,
             "file": "lektor/editor.py",
             "function": "_save_impl",
             "remove": [
                 {
                     "description": "code",
                     "start_line": 355,
-                    "start_column": 12,
-                    "end_line": 356,
-                    "end_column": 30
+                    "start_column": 0,
+                    "end_line": 357,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 59,
-            "file": "lektor/types/primitives.py",
+            "id": 35,
+            "file": "lektor/markdown/mistune2.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 23,
+                    "start_column": 0,
+                    "end_line": 24,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 124,
+            "file": "lektor/imagetools.py",
+            "function": "process_image",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 538,
+                    "start_column": 0,
+                    "end_line": 539,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 122,
+            "file": "lektor/context.py",
+            "function": "add_sub_artifact",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 228,
+                    "start_column": 0,
+                    "end_line": 229,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 127,
+            "file": "lektor/devserver.py",
+            "function": "build",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 34,
+                    "start_column": 0,
+                    "end_line": 35,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "file": "lektor/project.py",
+            "function": "from_file",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 44,
+                    "start_column": 0,
+                    "end_line": 45,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 131,
+            "file": "lektor/devserver.py",
+            "function": "run_server",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 87,
+                    "start_column": 0,
+                    "end_line": 88,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 97,
+            "file": "lektor/sourceobj.py",
+            "function": "url_to",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 160,
+                    "start_column": 0,
+                    "end_line": 161,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 174,
+            "file": "lektor/builder.py",
+            "function": "update_all_source_infos",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1281,
+                    "start_column": 0,
+                    "end_line": 1282,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 152,
+            "file": "lektor/admin/modules/api.py",
+            "function": "pass_lektor_context",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 46,
+                    "start_column": 0,
+                    "end_line": 47,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "lektor/devcli.py",
+            "function": "shell_cmd",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 65,
+                    "start_column": 0,
+                    "end_line": 66,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 76,
+            "file": "lektor/markdown/mistune0.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 24,
+                    "start_column": 0,
+                    "end_line": 25,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 138,
+            "file": "lektor/pluginsystem.py",
+            "function": "get_plugin",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 21,
+                    "start_column": 0,
+                    "end_line": 22,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 87,
+            "file": "lektor/cli.py",
+            "function": "project_info_cmd",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 397,
+                    "start_column": 0,
+                    "end_line": 398,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 144,
+            "file": "lektor/types/fake.py",
             "function": "to_json",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 19,
-                    "start_column": 8,
-                    "end_line": 19,
-                    "end_column": 84
+                    "start_line": 11,
+                    "start_column": 0,
+                    "end_line": 12,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 143,
+            "file": "lektor/__main__.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 4,
+                    "start_column": 0,
+                    "end_line": 5,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 158,
+            "file": "lektor/builder.py",
+            "function": "notify_failure",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 121,
+                    "start_column": 0,
+                    "end_line": 122,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 168,
+            "file": "lektor/builder.py",
+            "function": "prune",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1202,
+                    "start_column": 0,
+                    "end_line": 1203,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 84,
+            "file": "lektor/cli.py",
+            "function": "deploy_cmd",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 262,
+                    "start_column": 0,
+                    "end_line": 270,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 153,
+            "file": "lektor/admin/modules/api.py",
+            "function": "_is_valid_alt",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 66,
+                    "start_column": 0,
+                    "end_line": 67,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 132,
+            "file": "lektor/devserver.py",
+            "function": "run_server",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 105,
+                    "start_column": 0,
+                    "end_line": 114,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "lektor/admin/context.py",
+            "function": "cli_reporter",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 69,
+                    "start_column": 0,
+                    "end_line": 70,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 56,
+            "file": "lektor/db.py",
+            "function": "thumbnail",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 816,
+                    "start_column": 0,
+                    "end_line": 826,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 180,
+            "file": "lektor/cli_utils.py",
+            "function": "load_plugins",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 120,
+                    "start_column": 0,
+                    "end_line": 121,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 88,
+            "file": "lektor/cli.py",
+            "function": "fail",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 427,
+                    "start_column": 0,
+                    "end_line": 428,
+                    "end_column": 0
                 }
             ]
         },
         {
             "id": 89,
+            "file": "lektor/cli.py",
+            "function": "content_file_info_cmd",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 432,
+                    "start_column": 0,
+                    "end_line": 433,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 59,
             "file": "lektor/db.py",
-            "function": "_get_image_info",
+            "function": "_get_video_info",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 768,
-                    "start_column": 16,
-                    "end_line": 768,
-                    "end_column": 52
+                    "start_line": 854,
+                    "start_column": 0,
+                    "end_line": 855,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 48,
-            "file": "lektor/devserver.py",
-            "function": "run",
+            "id": 85,
+            "file": "lektor/cli.py",
+            "function": "deploy_cmd",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 49,
-                    "start_column": 8,
-                    "end_line": 54,
-                    "end_column": 36
+                    "start_line": 278,
+                    "start_column": 0,
+                    "end_line": 279,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 54,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
+            "id": 112,
+            "file": "lektor/datamodel.py",
+            "function": "deserialize_value",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 59,
-                    "start_column": 4,
-                    "end_line": 61,
-                    "end_column": 5
+                    "start_line": 212,
+                    "start_column": 0,
+                    "end_line": 213,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 3,
-            "file": "lektor/markdown/mistune0.py",
-            "function": "meta",
+            "id": 65,
+            "file": "lektor/db.py",
+            "function": "load_raw_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1321,
+                    "start_column": 0,
+                    "end_line": 1324,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 145,
+            "file": "lektor/types/fake.py",
+            "function": "to_json",
             "remove": [
                 {
                     "description": "code",
                     "start_line": 33,
-                    "start_column": 4,
+                    "start_column": 0,
                     "end_line": 34,
-                    "end_column": 31
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 68,
-            "file": "lektor/sourceobj.py",
-            "function": "_resolve_url",
+            "id": 29,
+            "file": "lektor/devcli.py",
+            "function": "shell_cmd",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 187,
-                    "start_column": 12,
-                    "end_line": 187,
-                    "end_column": 51
+                    "start_line": 67,
+                    "start_column": 0,
+                    "end_line": 70,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 99,
+            "id": 146,
+            "file": "lektor/editor.py",
+            "function": "make_editor_session",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 51,
+                    "start_column": 0,
+                    "end_line": 52,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 167,
+            "file": "lektor/builder.py",
+            "function": "prune",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1198,
+                    "start_column": 0,
+                    "end_line": 1199,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 64,
             "file": "lektor/db.py",
-            "function": "to_fs_path",
+            "function": "load_raw_data",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1292,
-                    "start_column": 8,
-                    "end_line": 1292,
-                    "end_column": 86
+                    "start_line": 1298,
+                    "start_column": 0,
+                    "end_line": 1299,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 118,
+            "id": 5,
+            "file": "lektor/databags.py",
+            "function": "lookup",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 69,
+                    "start_column": 0,
+                    "end_line": 75,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "file": "lektor/db.py",
+            "function": "thumbnail",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 936,
+                    "start_column": 0,
+                    "end_line": 947,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 163,
+            "file": "lektor/builder.py",
+            "function": "operation",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 900,
+                    "start_column": 0,
+                    "end_line": 901,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "lektor/databags.py",
+            "function": "load_databag",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 21,
+                    "start_column": 0,
+                    "end_line": 22,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "file": "lektor/types/flow.py",
+            "function": "to_json",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 226,
+                    "start_column": 0,
+                    "end_line": 227,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "lektor/types/formats.py",
+            "function": "__get__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 15,
+                    "start_column": 0,
+                    "end_line": 16,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 157,
+            "file": "lektor/types/special.py",
+            "function": "value_from_raw",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 33,
+                    "start_column": 0,
+                    "end_line": 34,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "lektor/videotools.py",
+            "function": "get_video_info",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 230,
+                    "start_column": 0,
+                    "end_line": 231,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 126,
+            "file": "lektor/imagetools.py",
+            "function": "make_image_thumbnail",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 596,
+                    "start_column": 0,
+                    "end_line": 599,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 134,
+            "file": "lektor/environment/config.py",
+            "function": "get_server",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 182,
+                    "start_column": 0,
+                    "end_line": 183,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 36,
             "file": "lektor/markdown/mistune2.py",
-            "function": "resolve_plugin",
+            "function": "make_parser",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 107,
-                    "start_column": 16,
-                    "end_line": 107,
-                    "end_column": 84
+                    "start_line": 88,
+                    "start_column": 0,
+                    "end_line": 89,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 106,
-            "file": "lektor/db.py",
-            "function": "theme_asset_roots",
+            "id": 110,
+            "file": "lektor/datamodel.py",
+            "function": "to_json",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1688,
-                    "start_column": 12,
-                    "end_line": 1690,
-                    "end_column": 13
+                    "start_line": 200,
+                    "start_column": 0,
+                    "end_line": 203,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 177,
+            "file": "lektor/cli_utils.py",
+            "function": "get_project",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 80,
+                    "start_column": 0,
+                    "end_line": 81,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "lektor/quickstart.py",
+            "function": "get_default_author_email",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 151,
+                    "start_column": 0,
+                    "end_line": 152,
+                    "end_column": 0
                 }
             ]
         }

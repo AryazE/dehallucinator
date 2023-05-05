@@ -10,142 +10,702 @@
             "remove": []
         },
         {
-            "id": 134,
-            "file": "sklearn/decomposition/_kernel_pca.py",
+            "id": 194,
+            "file": "sklearn/neural_network/_rbm.py",
+            "function": "gibbs",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 266,
+                    "start_column": 0,
+                    "end_line": 267,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 72,
+            "file": "sklearn/svm/_classes.py",
             "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 228,
-                    "start_column": 4,
-                    "end_line": 260,
-                    "end_column": 5
+                    "start_line": 197,
+                    "start_column": 0,
+                    "end_line": 198,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 86,
+            "file": "sklearn/svm/_classes.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1044,
+                    "start_column": 0,
+                    "end_line": 1045,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 122,
+            "file": "sklearn/datasets/_kddcup99.py",
+            "function": "fetch_kddcup99",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 224,
+                    "start_column": 0,
+                    "end_line": 225,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "sklearn/ensemble/_bagging.py",
+            "function": "_parallel_build_estimators",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 92,
+                    "start_column": 0,
+                    "end_line": 93,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 160,
+            "file": "sklearn/linear_model/_base.py",
+            "function": "decision_function",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 401,
+                    "start_column": 0,
+                    "end_line": 402,
+                    "end_column": 0
                 }
             ]
         },
         {
             "id": 75,
-            "file": "sklearn/neighbors/_base.py",
-            "function": "radius_neighbors",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1216,
-                    "start_column": 16,
-                    "end_line": 1216,
-                    "end_column": 62
-                }
-            ]
-        },
-        {
-            "id": 216,
-            "file": "sklearn/preprocessing/_encoders.py",
+            "file": "sklearn/svm/_classes.py",
             "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1287,
-                    "start_column": 4,
-                    "end_line": 1293,
-                    "end_column": 5
+                    "start_line": 201,
+                    "start_column": 0,
+                    "end_line": 202,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 105,
-            "file": "sklearn/model_selection/_search.py",
-            "function": "fit",
+            "id": 199,
+            "file": "sklearn/neural_network/_rbm.py",
+            "function": "score_samples",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 797,
-                    "start_column": 12,
-                    "end_line": 797,
-                    "end_column": 65
+                    "start_line": 381,
+                    "start_column": 0,
+                    "end_line": 382,
+                    "end_column": 0
                 }
             ]
         },
         {
             "id": 98,
-            "file": "sklearn/model_selection/_search.py",
-            "function": "decision_function",
+            "file": "sklearn/decomposition/_pca.py",
+            "function": "_fit_full",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 568,
-                    "start_column": 4,
-                    "end_line": 588,
-                    "end_column": 56
+                    "start_line": 558,
+                    "start_column": 0,
+                    "end_line": 559,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 71,
-            "file": "sklearn/neighbors/_base.py",
-            "function": "radius_neighbors",
+            "id": 217,
+            "file": "sklearn/datasets/_base.py",
+            "function": "load_linnerud",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1139,
-                    "start_column": 8,
-                    "end_line": 1139,
-                    "end_column": 29
+                    "start_line": 1160,
+                    "start_column": 0,
+                    "end_line": 1171,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 88,
-            "file": "sklearn/model_selection/_search.py",
-            "function": "_more_tags",
+            "id": 205,
+            "file": "sklearn/datasets/_base.py",
+            "function": "load_files",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 425,
-                    "start_column": 8,
-                    "end_line": 430,
-                    "end_column": 9
+                    "start_line": 268,
+                    "start_column": 0,
+                    "end_line": 271,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 170,
-            "file": "sklearn/feature_selection/_univariate_selection.py",
-            "function": "chi2",
+            "id": 44,
+            "file": "sklearn/ensemble/_bagging.py",
+            "function": "_fit",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 238,
-                    "start_column": 4,
-                    "end_line": 238,
-                    "end_column": 38
+                    "start_line": 461,
+                    "start_column": 0,
+                    "end_line": 464,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 143,
+            "file": "sklearn/cluster/_spectral.py",
+            "function": "fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 700,
+                    "start_column": 0,
+                    "end_line": 703,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 195,
+            "file": "sklearn/neural_network/_rbm.py",
+            "function": "partial_fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 296,
+                    "start_column": 0,
+                    "end_line": 297,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 101,
+            "file": "sklearn/decomposition/_pca.py",
+            "function": "_fit_truncated",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 615,
+                    "start_column": 0,
+                    "end_line": 616,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 121,
+            "file": "sklearn/datasets/_kddcup99.py",
+            "function": "fetch_kddcup99",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 222,
+                    "start_column": 0,
+                    "end_line": 223,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 95,
+            "file": "sklearn/decomposition/_pca.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 379,
+                    "start_column": 0,
+                    "end_line": 380,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 135,
+            "file": "sklearn/cluster/_spectral.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 599,
+                    "start_column": 0,
+                    "end_line": 603,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 45,
+            "file": "sklearn/ensemble/_bagging.py",
+            "function": "_fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 474,
+                    "start_column": 0,
+                    "end_line": 490,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 112,
+            "file": "sklearn/gaussian_process/_gpr.py",
+            "function": "fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 249,
+                    "start_column": 0,
+                    "end_line": 250,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 207,
+            "file": "sklearn/datasets/_base.py",
+            "function": "load_gzip_compressed_csv_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 392,
+                    "start_column": 0,
+                    "end_line": 393,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "sklearn/linear_model/_omp.py",
+            "function": "_omp_path_residues",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 865,
+                    "start_column": 0,
+                    "end_line": 866,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "file": "sklearn/ensemble/_bagging.py",
+            "function": "_generate_indices",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 42,
+                    "start_column": 0,
+                    "end_line": 45,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "sklearn/ensemble/_bagging.py",
+            "function": "_parallel_build_estimators",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 139,
+                    "start_column": 0,
+                    "end_line": 140,
+                    "end_column": 0
                 }
             ]
         },
         {
             "id": 114,
-            "file": "sklearn/model_selection/_search.py",
-            "function": "evaluate_candidates",
+            "file": "sklearn/gaussian_process/_gpr.py",
+            "function": "predict",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 879,
-                    "start_column": 20,
-                    "end_line": 879,
-                    "end_column": 63
+                    "start_line": 389,
+                    "start_column": 0,
+                    "end_line": 392,
+                    "end_column": 0
                 }
             ]
         },
         {
-            "id": 24,
-            "file": "sklearn/naive_bayes.py",
+            "id": 3,
+            "file": "asv_benchmarks/benchmarks/decomposition.py",
+            "function": "make_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 45,
+                    "start_column": 0,
+                    "end_line": 46,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 126,
+            "file": "sklearn/datasets/_kddcup99.py",
+            "function": "_fetch_brute_kddcup99",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 356,
+                    "start_column": 0,
+                    "end_line": 357,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "file": "sklearn/ensemble/_bagging.py",
+            "function": "decision_function",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 970,
+                    "start_column": 0,
+                    "end_line": 971,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 183,
+            "file": "sklearn/_loss/link.py",
+            "function": "inverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 249,
+                    "start_column": 0,
+                    "end_line": 250,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 117,
+            "file": "sklearn/datasets/_kddcup99.py",
             "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 534,
-                    "start_column": 4,
-                    "end_line": 539,
-                    "end_column": 5
+                    "start_line": 33,
+                    "start_column": 0,
+                    "end_line": 38,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 140,
+            "file": "sklearn/cluster/_spectral.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 610,
+                    "start_column": 0,
+                    "end_line": 611,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 164,
+            "file": "sklearn/linear_model/_base.py",
+            "function": "fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 652,
+                    "start_column": 0,
+                    "end_line": 655,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 178,
+            "file": "sklearn/decomposition/_factor_analysis.py",
+            "function": "transform",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 324,
+                    "start_column": 0,
+                    "end_line": 325,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 151,
+            "file": "sklearn/linear_model/_base.py",
+            "function": "_preprocess_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 244,
+                    "start_column": 0,
+                    "end_line": 251,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 165,
+            "file": "sklearn/linear_model/_base.py",
+            "function": "fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 672,
+                    "start_column": 0,
+                    "end_line": 675,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "file": "sklearn/linear_model/_omp.py",
+            "function": "fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1075,
+                    "start_column": 0,
+                    "end_line": 1088,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 179,
+            "file": "sklearn/decomposition/_factor_analysis.py",
+            "function": "get_covariance",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 348,
+                    "start_column": 0,
+                    "end_line": 349,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 82,
+            "file": "sklearn/svm/_classes.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 449,
+                    "start_column": 0,
+                    "end_line": 450,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "asv_benchmarks/benchmarks/decomposition.py",
+            "function": "make_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 79,
+                    "start_column": 0,
+                    "end_line": 80,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 153,
+            "file": "sklearn/linear_model/_base.py",
+            "function": "_preprocess_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 270,
+                    "start_column": 0,
+                    "end_line": 271,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 168,
+            "file": "sklearn/decomposition/_factor_analysis.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 166,
+                    "start_column": 0,
+                    "end_line": 167,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 90,
+            "file": "sklearn/decomposition/_pca.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 368,
+                    "start_column": 0,
+                    "end_line": 369,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "sklearn/linear_model/_omp.py",
+            "function": "_omp_path_residues",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 867,
+                    "start_column": 0,
+                    "end_line": 868,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 186,
+            "file": "sklearn/neural_network/_rbm.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 133,
+                    "start_column": 0,
+                    "end_line": 134,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "sklearn/feature_extraction/image.py",
+            "function": "transform",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 609,
+                    "start_column": 0,
+                    "end_line": 610,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 169,
+            "file": "sklearn/decomposition/_factor_analysis.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 168,
+                    "start_column": 0,
+                    "end_line": 169,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 210,
+            "file": "sklearn/datasets/_base.py",
+            "function": "load_iris",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 660,
+                    "start_column": 0,
+                    "end_line": 670,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 71,
+            "file": "sklearn/svm/_classes.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 195,
+                    "start_column": 0,
+                    "end_line": 196,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 113,
+            "file": "sklearn/gaussian_process/_gpr.py",
+            "function": "predict",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 389,
+                    "start_column": 0,
+                    "end_line": 392,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 154,
+            "file": "sklearn/linear_model/_base.py",
+            "function": "_rescale_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 322,
+                    "start_column": 0,
+                    "end_line": 323,
+                    "end_column": 0
                 }
             ]
         }
