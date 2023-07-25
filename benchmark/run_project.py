@@ -12,6 +12,7 @@ from run_tests import run_tests
 from read_test_results import read_test_results
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModel
 from dotenv import dotenv_values
+from huggingface_hub import login
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -28,6 +29,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     env_vars = dotenv_values('.env')
     hf_token = env_vars['hf-token']
+    login(token=hf_token)
     print(time.perf_counter())
     with open(args.config, 'r') as f:
         config = json.load(f)
