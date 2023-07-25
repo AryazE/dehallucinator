@@ -11,10 +11,8 @@ from distutils import dir_util
 from pygments.lexers.python import PythonLexer
 from crystalbleu import corpus_bleu, SmoothingFunction
 # from autoimport import fix_code
-from coder.utils import clip_prompt, DELIMITER, dedent, norm_edit_similarity
+from coder.utils import clip_prompt, DELIMITER, dedent, norm_edit_similarity, find_apis
 from coder.main import main
-
-API_regex = r'(?:\w+\.)*\w+\(.*\)'
 
 PROMPT_LIMIT = 1750
 logger = logging.getLogger(__name__)
@@ -108,10 +106,10 @@ def API_similarity(ground_truth, completions, project_apis):
         #     f1 = 2 * recall * precision / (recall + precision)
         # result.append(f1)
         
-    gt_apis = re.findall(API_regex, ground_truth)
+    gt_apis = find_apis(ground_truth)
     if len(gt_apis) == 0:
         return [0 for i in completions], 0
-    completion_apis = [re.findall(API_regex, c) for c in completions]
+    completion_apis = [find_apis(c) for c in completions]
     api_matches = []
     for i in range(len(completion_apis)):
         matches = 0

@@ -1,0 +1,223 @@
+{
+    "name": "pallets_click",
+    "project_root": "GitHubProjects/pallets_click",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "file": "src/click/exceptions.py",
+            "function": "show",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 78,
+                    "start_column": 0,
+                    "end_line": 83,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "src/click/types.py",
+            "function": "convert",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 705,
+                    "start_column": 0,
+                    "end_line": 708,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "src/click/types.py",
+            "function": "convert",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 714,
+                    "start_column": 0,
+                    "end_line": 717,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "src/click/parser.py",
+            "function": "process",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 230,
+                    "start_column": 0,
+                    "end_line": 235,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "src/click/parser.py",
+            "function": "_get_value_from_state",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 471,
+                    "start_column": 0,
+                    "end_line": 479,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "src/click/formatting.py",
+            "function": "wrap_text",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 57,
+                    "start_column": 0,
+                    "end_line": 63,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "src/click/termui.py",
+            "function": "progressbar",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 418,
+                    "start_column": 0,
+                    "end_line": 435,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "src/click/core.py",
+            "function": "shell_complete",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 976,
+                    "start_column": 0,
+                    "end_line": 979,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "src/click/core.py",
+            "function": "shell_complete",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1451,
+                    "start_column": 0,
+                    "end_line": 1454,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "src/click/core.py",
+            "function": "shell_complete",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1760,
+                    "start_column": 0,
+                    "end_line": 1764,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "src/click/core.py",
+            "function": "convert",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2307,
+                    "start_column": 0,
+                    "end_line": 2316,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "src/click/core.py",
+            "function": "get_help_record",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2786,
+                    "start_column": 0,
+                    "end_line": 2789,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "src/click/core.py",
+            "function": "prompt_for_value",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2860,
+                    "start_column": 0,
+                    "end_line": 2869,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "file": "src/click/utils.py",
+            "function": "open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 155,
+                    "start_column": 0,
+                    "end_line": 158,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "src/click/utils.py",
+            "function": "echo",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 294,
+                    "start_column": 0,
+                    "end_line": 301,
+                    "end_column": 0
+                }
+            ]
+        }
+    ]
+}

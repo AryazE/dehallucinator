@@ -1,0 +1,83 @@
+{
+    "name": "lorien_grab",
+    "project_root": "GitHubProjects/lorien_grab",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "file": "grab/transport.py",
+            "function": "prepare_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 228,
+                    "start_column": 0,
+                    "end_line": 231,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "grab/request.py",
+            "function": "compile_request_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 151,
+                    "start_column": 0,
+                    "end_line": 156,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "grab/document.py",
+            "function": "text_assert_any",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 246,
+                    "start_column": 0,
+                    "end_line": 249,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "grab/document.py",
+            "function": "choose_form",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 460,
+                    "start_column": 0,
+                    "end_line": 464,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "grab/spider/base.py",
+            "function": "find_task_handler",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 421,
+                    "start_column": 0,
+                    "end_line": 424,
+                    "end_column": 0
+                }
+            ]
+        }
+    ]
+}

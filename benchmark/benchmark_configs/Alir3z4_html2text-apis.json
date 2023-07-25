@@ -1,0 +1,27 @@
+{
+    "name": "Alir3z4_html2text",
+    "project_root": "GitHubProjects/Alir3z4_html2text",
+    "tests_path": "test",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "file": "html2text/utils.py",
+            "function": "skipwrap",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 194,
+                    "start_column": 0,
+                    "end_line": 196,
+                    "end_column": 0
+                }
+            ]
+        }
+    ]
+}

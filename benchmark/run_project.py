@@ -10,7 +10,7 @@ from prepare_project import prepare
 from run_completion import run_completion
 from run_tests import run_tests
 from read_test_results import read_test_results
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModel
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -39,8 +39,19 @@ if __name__ == '__main__':
     logger = logging.getLogger(__name__)
     here = Path(__file__).resolve().parent
     if args.model.startswith('l'):
-        llm_tok = AutoTokenizer.from_pretrained("Salesforce/codegen-2B-mono")
-        llm = AutoModelForCausalLM.from_pretrained("Salesforce/codegen-2B-mono", device_map='auto')
+        if args.model == 'lCodeGen':
+            llm_tok = AutoTokenizer.from_pretrained("Salesforce/codegen-2B-mono")
+            llm = AutoModelForCausalLM.from_pretrained("Salesforce/codegen-2B-mono", device_map='auto')
+        elif args.model == 'lCodeGen25':
+            llm_tok = AutoTokenizer.from_pretrained("Salesforce/codegen25-7b-mono", trust_remote_code=True)
+            llm = AutoModelForCausalLM.from_pretrained("Salesforce/codegen25-7b-mono", device_map='auto', load_in_4bit=True)
+        elif args.model =='lUniXcoder':
+            llm_tok = AutoTokenizer.from_pretrained("microsoft/unixcoder-base")
+            llm = AutoModel.from_pretrained("microsoft/unixcoder-base")
+        elif args.model == 'lStarCoderPlus':
+            llm_tok = AutoTokenizer.from_pretrained("bigcode/starcoderplus")
+            llm = AutoModelForCausalLM.from_pretrained("bigcode/starcoderplus", device_map='auto')
+
     if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in ids]):
         print('Base or some eval are missing. Creating...')
         print(time.perf_counter())

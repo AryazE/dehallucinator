@@ -1,0 +1,195 @@
+{
+    "name": "gruns_furl",
+    "project_root": "GitHubProjects/gruns_furl",
+    "tests_path": "tests",
+    "evaluations": [
+        {
+            "id": 0,
+            "file": "",
+            "function": "",
+            "remove": []
+        },
+        {
+            "id": 1,
+            "file": "furl/furl.py",
+            "function": "idna_encode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 120,
+                    "start_column": 0,
+                    "end_line": 122,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "furl/furl.py",
+            "function": "idna_decode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 126,
+                    "start_column": 0,
+                    "end_line": 128,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "furl/furl.py",
+            "function": "quacks_like_a_path_with_segments",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 446,
+                    "start_column": 0,
+                    "end_line": 448,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "furl/furl.py",
+            "function": "load",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 511,
+                    "start_column": 0,
+                    "end_line": 515,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "furl/furl.py",
+            "function": "add",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 537,
+                    "start_column": 0,
+                    "end_line": 541,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "file": "furl/furl.py",
+            "function": "remove",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 563,
+                    "start_column": 0,
+                    "end_line": 567,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "furl/furl.py",
+            "function": "remove",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 948,
+                    "start_column": 0,
+                    "end_line": 953,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "furl/furl.py",
+            "function": "_items",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1086,
+                    "start_column": 0,
+                    "end_line": 1102,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "furl/furl.py",
+            "function": "_items",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1088,
+                    "start_column": 0,
+                    "end_line": 1102,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "furl/furl.py",
+            "function": "_items",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1091,
+                    "start_column": 0,
+                    "end_line": 1102,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "furl/furl.py",
+            "function": "_items",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1093,
+                    "start_column": 0,
+                    "end_line": 1102,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "furl/furl.py",
+            "function": "scheme",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1424,
+                    "start_column": 0,
+                    "end_line": 1426,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "furl/furl.py",
+            "function": "host",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1452,
+                    "start_column": 0,
+                    "end_line": 1454,
+                    "end_column": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 {
-    "name": "nvbn_thefuck",
-    "project_root": "GitHubProjects/nvbn_thefuck",
+    "name": "PyFilesystem_pyfilesystem2",
+    "project_root": "GitHubProjects/PyFilesystem_pyfilesystem2",
     "tests_path": "tests",
     "evaluations": [
         {
@@ -11,96 +11,488 @@
         },
         {
             "id": 1,
-            "file": "thefuck/rules/fix_file.py",
-            "function": "get_new_command",
+            "file": "fs/tools.py",
+            "function": "get_intermediate_dirs",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 71,
+                    "start_line": 75,
                     "start_column": 0,
-                    "end_line": 75,
+                    "end_line": 84,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 2,
-            "file": "thefuck/rules/fix_file.py",
-            "function": "get_new_command",
+            "file": "fs/tempfs.py",
+            "function": "clean",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 76,
+                    "start_line": 133,
                     "start_column": 0,
-                    "end_line": 79,
+                    "end_line": 137,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 3,
-            "file": "thefuck/rules/tsuru_not_command.py",
-            "function": "get_new_command",
+            "file": "fs/move.py",
+            "function": "move_file",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 14,
+                    "start_line": 99,
                     "start_column": 0,
-                    "end_line": 16,
+                    "end_line": 106,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 4,
-            "file": "thefuck/utils.py",
-            "function": "get_all_executables",
+            "file": "fs/move.py",
+            "function": "move_dir",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 130,
+                    "start_line": 142,
                     "start_column": 0,
-                    "end_line": 132,
+                    "end_line": 150,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 5,
-            "file": "thefuck/utils.py",
-            "function": "get_value",
+            "file": "fs/_bulk.py",
+            "function": "copy",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 255,
+                    "start_line": 144,
                     "start_column": 0,
-                    "end_line": 257,
+                    "end_line": 147,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 6,
-            "file": "thefuck/output_readers/rerun.py",
-            "function": "_kill_process",
+            "file": "fs/tarfs.py",
+            "function": "write_tar",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 20,
+                    "start_line": 228,
                     "start_column": 0,
-                    "end_line": 22,
+                    "end_line": 234,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 7,
-            "file": "thefuck/output_readers/rerun.py",
-            "function": "get_output",
+            "file": "fs/zipfs.py",
+            "function": "write_zip",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 62,
+                    "start_line": 325,
+                    "start_column": 0,
+                    "end_line": 331,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "file": "fs/zipfs.py",
+            "function": "getinfo",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 424,
+                    "start_column": 0,
+                    "end_line": 427,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "fs/zipfs.py",
+            "function": "getinfo",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 438,
+                    "start_column": 0,
+                    "end_line": 441,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "fs/walk.py",
+            "function": "__repr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 186,
+                    "start_column": 0,
+                    "end_line": 199,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "fs/wrap.py",
+            "function": "openbin",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 212,
+                    "start_column": 0,
+                    "end_line": 214,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "file": "fs/wrap.py",
+            "function": "open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 286,
+                    "start_column": 0,
+                    "end_line": 288,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "fs/memoryfs.py",
+            "function": "_get_dir_entry",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 375,
+                    "start_column": 0,
+                    "end_line": 381,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "file": "fs/memoryfs.py",
+            "function": "movedir",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 490,
+                    "start_column": 0,
+                    "end_line": 492,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "fs/base.py",
+            "function": "copydir",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 466,
+                    "start_column": 0,
+                    "end_line": 468,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "fs/base.py",
+            "function": "movedir",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1103,
+                    "start_column": 0,
+                    "end_line": 1105,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "fs/base.py",
+            "function": "open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1248,
+                    "start_column": 0,
+                    "end_line": 1258,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "file": "fs/base.py",
+            "function": "match_glob",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1770,
+                    "start_column": 0,
+                    "end_line": 1773,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "file": "fs/glob.py",
+            "function": "_translate_glob",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 126,
+                    "start_column": 0,
+                    "end_line": 134,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "fs/glob.py",
+            "function": "__repr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 310,
+                    "start_column": 0,
+                    "end_line": 319,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "fs/copy.py",
+            "function": "copy_dir_if",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 448,
+                    "start_column": 0,
+                    "end_line": 451,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "file": "fs/copy.py",
+            "function": "copy_dir_if",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 453,
+                    "start_column": 0,
+                    "end_line": 456,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "file": "fs/ftpfs.py",
+            "function": "ftp_errors",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 79,
+                    "start_column": 0,
+                    "end_line": 82,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "fs/ftpfs.py",
+            "function": "ftp_errors",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 86,
+                    "start_column": 0,
+                    "end_line": 89,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "file": "fs/ftpfs.py",
+            "function": "readlines",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 259,
+                    "start_column": 0,
+                    "end_line": 264,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "file": "fs/ftpfs.py",
+            "function": "getinfo",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 664,
+                    "start_column": 0,
+                    "end_line": 670,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "file": "fs/osfs.py",
+            "function": "_to_sys_path",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 193,
+                    "start_column": 0,
+                    "end_line": 196,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "fs/osfs.py",
+            "function": "validatepath",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 684,
+                    "start_column": 0,
+                    "end_line": 689,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "file": "fs/appfs.py",
+            "function": "__repr__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 89,
+                    "start_column": 0,
+                    "end_line": 97,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "file": "fs/multifs.py",
+            "function": "which",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 183,
+                    "start_column": 0,
+                    "end_line": 185,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 31,
+            "file": "fs/multifs.py",
+            "function": "openbin",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 243,
+                    "start_column": 0,
+                    "end_line": 247,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "fs/multifs.py",
+            "function": "open",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 390,
+                    "start_column": 0,
+                    "end_line": 394,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "fs/mirror.py",
+            "function": "mirror",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 90,
+                    "start_column": 0,
+                    "end_line": 93,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "fs/opener/ftpfs.py",
+            "function": "open_fs",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 43,
+                    "start_column": 0,
+                    "end_line": 52,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 35,
+            "file": "fs/opener/appfs.py",
+            "function": "open_fs",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 60,
                     "start_column": 0,
                     "end_line": 64,
                     "end_column": 0
@@ -108,435 +500,43 @@
             ]
         },
         {
-            "id": 8,
-            "file": "thefuck/rules/missing_space_before_subcommand.py",
-            "function": "_get_executable",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 6,
-                    "start_column": 0,
-                    "end_line": 9,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "file": "thefuck/rules/workon_doesnt_exists.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 29,
-                    "start_column": 0,
-                    "end_line": 31,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "file": "thefuck/rules/chmod_x.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 13,
-                    "start_column": 0,
-                    "end_line": 16,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 11,
-            "file": "thefuck/conf.py",
-            "function": "_init_settings_file",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 41,
-                    "start_column": 0,
-                    "end_line": 43,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 12,
-            "file": "thefuck/conf.py",
-            "function": "_settings_from_file",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 71,
-                    "start_column": 0,
-                    "end_line": 74,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 13,
-            "file": "thefuck/conf.py",
-            "function": "_settings_from_env",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 111,
-                    "start_column": 0,
-                    "end_line": 114,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 14,
-            "file": "thefuck/rules/dirty_untar.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 37,
-                    "start_column": 0,
-                    "end_line": 39,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 15,
-            "file": "thefuck/entrypoints/alias.py",
-            "function": "_get_alias",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 10,
-                    "start_column": 0,
-                    "end_line": 12,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 16,
-            "file": "thefuck/rules/git_checkout.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 35,
-                    "start_column": 0,
-                    "end_line": 37,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 17,
-            "file": "thefuck/rules/git_checkout.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 46,
-                    "start_column": 0,
-                    "end_line": 48,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 18,
-            "file": "thefuck/rules/git_hook_bypass.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 21,
-                    "start_column": 0,
-                    "end_line": 24,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 19,
-            "file": "thefuck/rules/history.py",
-            "function": "match",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 6,
-                    "start_column": 0,
-                    "end_line": 8,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 20,
-            "file": "thefuck/rules/history.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 11,
-                    "start_column": 0,
-                    "end_line": 13,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 21,
-            "file": "thefuck/rules/go_unknown_command.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 27,
-                    "start_column": 0,
-                    "end_line": 29,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 22,
-            "file": "thefuck/rules/adb_unknown_command.py",
-            "function": "match",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 44,
-                    "start_column": 0,
-                    "end_line": 46,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 23,
-            "file": "thefuck/corrector.py",
-            "function": "get_rules_import_paths",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 34,
-                    "start_column": 0,
-                    "end_line": 38,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 24,
-            "file": "thefuck/corrector.py",
-            "function": "organize_commands",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 74,
-                    "start_column": 0,
-                    "end_line": 76,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "file": "thefuck/rules/git_push_pull.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 19,
-                    "start_column": 0,
-                    "end_line": 21,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 26,
-            "file": "thefuck/shells/powershell.py",
-            "function": "how_to_configure",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 26,
-                    "start_column": 0,
-                    "end_line": 31,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 27,
-            "file": "thefuck/rules/git_clone_missing.py",
-            "function": "match",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 22,
-                    "start_column": 0,
-                    "end_line": 27,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 28,
-            "file": "thefuck/rules/path_from_history.py",
-            "function": "_get_all_absolute_paths_from_history",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 31,
-                    "start_column": 0,
-                    "end_line": 40,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "file": "thefuck/rules/path_from_history.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 48,
-                    "start_column": 0,
-                    "end_line": 51,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 30,
-            "file": "thefuck/rules/path_from_history.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 49,
-                    "start_column": 0,
-                    "end_line": 51,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 31,
-            "file": "thefuck/rules/omnienv_no_such_command.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 29,
-                    "start_column": 0,
-                    "end_line": 31,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 32,
-            "file": "thefuck/types.py",
-            "function": "run",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 259,
-                    "start_column": 0,
-                    "end_line": 261,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 33,
-            "file": "thefuck/rules/git_branch_delete_checked_out.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 17,
-                    "start_column": 0,
-                    "end_line": 20,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 34,
-            "file": "thefuck/rules/git_add.py",
-            "function": "_get_missing_file",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 13,
-                    "start_column": 0,
-                    "end_line": 15,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 35,
-            "file": "thefuck/rules/sudo_command_from_user_path.py",
-            "function": "get_new_command",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 20,
-                    "start_column": 0,
-                    "end_line": 22,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
             "id": 36,
-            "file": "thefuck/rules/git_push.py",
-            "function": "get_new_command",
+            "file": "fs/opener/registry.py",
+            "function": "get_opener",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 43,
+                    "start_line": 117,
                     "start_column": 0,
-                    "end_line": 45,
+                    "end_line": 120,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 37,
-            "file": "thefuck/rules/mvn_unknown_lifecycle_phase.py",
-            "function": "get_new_command",
+            "file": "fs/opener/registry.py",
+            "function": "get_opener",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 26,
+                    "start_line": 126,
                     "start_column": 0,
-                    "end_line": 28,
+                    "end_line": 129,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 38,
-            "file": "thefuck/ui.py",
-            "function": "select_command",
+            "file": "fs/opener/registry.py",
+            "function": "get_opener",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 73,
+                    "start_line": 135,
                     "start_column": 0,
-                    "end_line": 75,
+                    "end_line": 138,
                     "end_column": 0
                 }
             ]

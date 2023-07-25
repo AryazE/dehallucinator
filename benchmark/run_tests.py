@@ -2,6 +2,7 @@ from typing import Dict, Any, List
 import os
 import sys
 from distutils import dir_util
+import shutil
 import subprocess
 import json
 import argparse
@@ -31,7 +32,10 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
     best = -1
     # temp_dir = here/'experiment'/config['name']/mode/f'temp{id}'/config['project_root']
     for temp_dir in temp_dirs:
-        dir_util.copy_tree(str(here/config['project_root']/config['tests_path']), str(temp_dir/config['project_root']/config['tests_path']))
+        if config["tests_path"].endswith(".py"):
+            shutil.copy(str(here/config['project_root']/config['tests_path']), str(temp_dir/config['project_root']/config['tests_path']))
+        else:
+            dir_util.copy_tree(str(here/config['project_root']/config['tests_path']), str(temp_dir/config['project_root']/config['tests_path']))
         
         if (temp_dir/config['project_root']/'requirements.txt').exists():
             res = subprocess.run([executable, '-m', 'pip', 'install', '-r', str(temp_dir/config['project_root']/'requirements.txt')], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -46,13 +50,13 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             # else:
             #     print(res.stdout.decode('utf-8'))
         try:
-            install_res = subprocess.run([executable, '-m', 'pip', 'install', str(temp_dir/config['project_root'])], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            install_res = subprocess.run([executable, '-m', 'pip', 'install', '-e', str(temp_dir/config['project_root'])], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             # if install_res.returncode != 0:
             #     print(install_res.stderr.decode('utf-8'))
             # else:
             #     print(install_res.stdout.decode('utf-8'))
         except subprocess.CalledProcessError as e:
-            subprocess.run([executable, '-m', 'pip', 'install', '--pre', str(temp_dir/config['project_root'])], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.run([executable, '-m', 'pip', 'install', '--pre', '-e', str(temp_dir/config['project_root'])], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         pytest_command = [
             '--tb=no', 
             '-q', 
@@ -76,24 +80,32 @@ def run_tests(config: Dict[str, Any], id: int, mode: str, executable: str) -> Li
             file = (file_parts[0] + 'temp0' + file_parts[1]).replace(f'/{mode}/', '/base/')
             tests_per_line = cov_data.contexts_by_lineno(file)
             tests = []
-            print(tests_per_line.keys())
-            if line not in tests_per_line:
+            print(tests_per_line.items())
+            if line not in tests_per_line or tests_per_line[line] == [""]:
                 print('No test covers this line.')
                 dontRun = True
             else:
                 dontRun = False
                 for t in tests_per_line[line]:
+                    if t == "":
+                        continue
                     parts = t.split('.')
                     test_id = ''
                     prev = temp_dir/config['project_root']/config['tests_path']
                     if (prev/'__init__.py').exists():
                         parts = parts[1:]
+                    if t.startswith(config["tests_path"].replace("/", ".")):
+                        parts = t[len(config["tests_path"]):].split(".")
                     i = 0
-                    while (prev/parts[i]).exists():
+                    while i < len(parts)-1 and (prev/parts[i]).exists():
                         prev = prev/parts[i]
                         i += 1
                     print(f'{t} {str(prev)} {i}')
-                    test_id += str(temp_dir/config['project_root']/config['tests_path']) + '/' + '/'.join(parts[:i]) + '/' + parts[i] + '.py' + '::' + parts[i+1] + (('::' + parts[i+2]) if len(parts) > i+2 else '')
+                    if config["tests_path"] == (parts[i] + ".py"):
+                        test_id += str(temp_dir/config['project_root']/config['tests_path']) + '::' + parts[i+1] + (('::' + parts[i+2]) if len(parts) > i+2 else '')
+                    else:
+                        test_id += str(temp_dir/config['project_root']/config['tests_path']) + '/' + '/'.join(parts[:i]) + '/' + parts[i] + '.py' + '::' + parts[i+1] + (('::' + parts[i+2]) if len(parts) > i+2 else '')
+                    # test_id += parts[i] + '.py' + '::' + parts[i+1] + (('::' + parts[i+2]) if len(parts) > i+2 else '')
                     tests.append(test_id)
             pytest_command += tests
         else:

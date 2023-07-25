@@ -1,7 +1,7 @@
 {
-    "name": "lektor_lektor",
-    "project_root": "GitHubProjects/lektor_lektor",
-    "tests_path": "tests",
+    "name": "dbader_schedule",
+    "project_root": "GitHubProjects/dbader_schedule",
+    "tests_path": "test_schedule.py",
     "evaluations": [
         {
             "id": 0,
@@ -11,126 +11,140 @@
         },
         {
             "id": 1,
-            "file": "lektor/pluginsystem.py",
-            "function": "_find_plugins",
+            "file": "test_schedule.py",
+            "function": "test_next_run_with_tag",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 129,
+                    "start_line": 203,
                     "start_column": 0,
-                    "end_line": 134,
+                    "end_line": 208,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 2,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
+            "file": "test_schedule.py",
+            "function": "test_until_time",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 816,
+                    "start_line": 293,
                     "start_column": 0,
-                    "end_line": 826,
+                    "end_line": 296,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 3,
-            "file": "lektor/db.py",
-            "function": "load_raw_data",
+            "file": "test_schedule.py",
+            "function": "test_until_time",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1321,
+                    "start_line": 296,
                     "start_column": 0,
-                    "end_line": 1324,
+                    "end_line": 299,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 4,
-            "file": "lektor/db.py",
-            "function": "asset_root",
+            "file": "test_schedule.py",
+            "function": "test_until_time",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1679,
+                    "start_line": 299,
                     "start_column": 0,
-                    "end_line": 1682,
+                    "end_line": 302,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 5,
-            "file": "lektor/db.py",
-            "function": "edit",
+            "file": "test_schedule.py",
+            "function": "test_until_time",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 2135,
+                    "start_line": 302,
                     "start_column": 0,
-                    "end_line": 2142,
+                    "end_line": 305,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 6,
-            "file": "lektor/imagetools.py",
-            "function": "make_image_thumbnail",
+            "file": "test_schedule.py",
+            "function": "test_until_time",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 596,
+                    "start_line": 306,
                     "start_column": 0,
-                    "end_line": 599,
+                    "end_line": 309,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 7,
-            "file": "lektor/editor.py",
-            "function": "_save_impl",
+            "file": "test_schedule.py",
+            "function": "test_until_time",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 355,
+                    "start_line": 316,
                     "start_column": 0,
-                    "end_line": 357,
+                    "end_line": 319,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 8,
-            "file": "lektor/types/flow.py",
-            "function": "value_from_raw",
+            "file": "test_schedule.py",
+            "function": "test_until_time",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 217,
+                    "start_line": 319,
                     "start_column": 0,
-                    "end_line": 219,
+                    "end_line": 322,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 9,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
+            "file": "test_schedule.py",
+            "function": "test_until_time",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 59,
+                    "start_line": 322,
                     "start_column": 0,
-                    "end_line": 62,
+                    "end_line": 325,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "file": "test_schedule.py",
+            "function": "test_clear_by_tag",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 875,
+                    "start_column": 0,
+                    "end_line": 878,
                     "end_column": 0
                 }
             ]

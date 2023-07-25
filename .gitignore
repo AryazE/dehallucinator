@@ -138,3 +138,6 @@ benchmark/res*/
 benchmark/logs/
 benchmark/CodeQLDBs/
 benchmark/benchmark.sh
+
+*.csv
+res_*/

@@ -4,6 +4,7 @@ import libcst as cst
 import libcst.matchers as m
 from typing import NamedTuple
 import json
+import random
 
 FunctionInfo = NamedTuple('FunctionInfo', [('function', str), ('start_line', int), ('start_column', int), ('end_line', int), ('end_column', int)])
 
@@ -75,6 +76,8 @@ def make_config(project, tests):
             print('-', end='', flush=True)
     project_name = project_path.as_posix().split('/')[-1]
     benchmark_dir = Path(__file__).resolve().parent
+    # if len(evaluations[1:]) > 5:
+    #     evaluations[1:] = random.sample(evaluations[1:], 5)
     config = {
         'name': project_name,
         'project_root': project_path.as_posix().lstrip(benchmark_dir.as_posix()),

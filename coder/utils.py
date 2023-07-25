@@ -224,3 +224,23 @@ def parse_results_into_context(file) -> Dict[str, List[str]]:
 
 def norm_edit_similarity(a, b):
     return 1 - edit_distance(a, b) / max(len(a), len(b))
+
+def find_apis(code):
+    res = []
+    stack = []
+    c = code.replace("\r\n", "").replace("\n", "")
+    for i in range(len(c)):
+        if c[i] == '(':
+            m = re.match("\w+(?:\.\w+)*", c[i-1::-1])
+            if m:
+                api_path = m.group(0)[::-1]
+                if api_path not in ["if", "for", "while", "with", "and", "or", "not", "in", "is", "del"]:
+                    stack.append(i-len(api_path))
+            else:
+                stack.append('(')
+        elif c[i] == ')':
+            if len(stack) > 0:
+                top = stack.pop()
+                if top != '(':
+                    res.append(c[top:i+1])
+    return res

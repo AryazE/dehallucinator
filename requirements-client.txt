@@ -12,3 +12,6 @@ sentence-transformers
 pygments
 crystalbleu
 nltk
+tiktoken
+accelerate
+bitsandbytes

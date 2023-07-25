@@ -10,147 +10,63 @@
             "remove": []
         },
         {
-            "id": 81,
-            "file": "supervisor/dispatchers.py",
-            "function": "handle_error",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 45,
-                    "start_column": 0,
-                    "end_line": 46,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 43,
+            "id": 1,
             "file": "supervisor/process.py",
-            "function": "_dispatchEvent",
+            "function": "get_execv_args",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 963,
+                    "start_line": 112,
                     "start_column": 0,
-                    "end_line": 964,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 125,
-            "file": "supervisor/http.py",
-            "function": "done",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 160,
-                    "start_column": 0,
-                    "end_line": 161,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 157,
-            "file": "supervisor/loggers.py",
-            "function": "asdict",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 288,
-                    "start_column": 0,
-                    "end_line": 289,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 33,
-            "file": "supervisor/process.py",
-            "function": "signal",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 506,
-                    "start_column": 0,
-                    "end_line": 507,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "file": "supervisor/process.py",
-            "function": "kill",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 428,
-                    "start_column": 0,
-                    "end_line": 429,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 34,
-            "file": "supervisor/process.py",
-            "function": "finish",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 541,
-                    "start_column": 0,
-                    "end_line": 542,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 75,
-            "file": "supervisor/xmlrpc.py",
-            "function": "continue_request",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 430,
-                    "start_column": 0,
-                    "end_line": 431,
+                    "end_line": 114,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 2,
-            "file": "supervisor/confecho.py",
-            "function": "main",
+            "file": "supervisor/xmlrpc.py",
+            "function": "getresponse",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 8,
+                    "start_line": 117,
                     "start_column": 0,
-                    "end_line": 9,
+                    "end_line": 119,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 144,
-            "file": "supervisor/http.py",
-            "function": "postbind",
+            "id": 3,
+            "file": "supervisor/xmlrpc.py",
+            "function": "getresponse",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 501,
+                    "start_line": 130,
                     "start_column": 0,
-                    "end_line": 502,
+                    "end_line": 137,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 82,
+            "id": 4,
+            "file": "supervisor/xmlrpc.py",
+            "function": "request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 539,
+                    "start_column": 0,
+                    "end_line": 543,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 5,
             "file": "supervisor/dispatchers.py",
             "function": "_init_normallog",
             "remove": [
@@ -164,203 +80,21 @@
             ]
         },
         {
-            "id": 61,
-            "file": "supervisor/childutils.py",
-            "function": "getRPCInterface",
+            "id": 6,
+            "file": "supervisor/dispatchers.py",
+            "function": "_init_normallog",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 21,
+                    "start_line": 139,
                     "start_column": 0,
-                    "end_line": 22,
+                    "end_line": 143,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 13,
-            "file": "supervisor/supervisord.py",
-            "function": "handle_signal",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 298,
-                    "start_column": 0,
-                    "end_line": 299,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 143,
-            "file": "supervisor/http.py",
-            "function": "postbind",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 500,
-                    "start_column": 0,
-                    "end_line": 501,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 154,
-            "file": "supervisor/http.py",
-            "function": "make_http_servers",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 838,
-                    "start_column": 0,
-                    "end_line": 839,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 213,
-            "file": "supervisor/medusa/http_server.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 43,
-                    "start_column": 0,
-                    "end_line": 44,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 155,
-            "file": "supervisor/http.py",
-            "function": "authorize",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 893,
-                    "start_column": 0,
-                    "end_line": 894,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 218,
-            "file": "supervisor/medusa/http_server.py",
-            "function": "done",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 337,
-                    "start_column": 0,
-                    "end_line": 338,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 52,
-            "file": "supervisor/events.py",
-            "function": "payload",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 45,
-                    "start_column": 0,
-                    "end_line": 46,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 138,
-            "file": "supervisor/http.py",
-            "function": "prebind",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 480,
-                    "start_column": 0,
-                    "end_line": 481,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 197,
-            "file": "supervisor/medusa/counter.py",
-            "function": "decrement",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 36,
-                    "start_column": 0,
-                    "end_line": 37,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "file": "supervisor/supervisord.py",
-            "function": "run",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 83,
-                    "start_column": 0,
-                    "end_line": 84,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 147,
-            "file": "supervisor/http.py",
-            "function": "handle_request",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 725,
-                    "start_column": 0,
-                    "end_line": 726,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 239,
-            "file": "supervisor/medusa/http_server.py",
-            "function": "profile_loop",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 858,
-                    "start_column": 0,
-                    "end_line": 859,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 119,
-            "file": "supervisor/web.py",
-            "function": "handle_request",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 613,
-                    "start_column": 0,
-                    "end_line": 614,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 84,
+            "id": 7,
             "file": "supervisor/dispatchers.py",
             "function": "_init_capturelog",
             "remove": [
@@ -374,287 +108,21 @@
             ]
         },
         {
-            "id": 41,
-            "file": "supervisor/process.py",
-            "function": "_acceptEvent",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 924,
-                    "start_column": 0,
-                    "end_line": 925,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 149,
-            "file": "supervisor/http.py",
-            "function": "handle_request",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 785,
-                    "start_column": 0,
-                    "end_line": 786,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 127,
-            "file": "supervisor/http.py",
-            "function": "cgi_environment",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 268,
-                    "start_column": 0,
-                    "end_line": 269,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 128,
-            "file": "supervisor/http.py",
-            "function": "get_server_url",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 318,
-                    "start_column": 0,
-                    "end_line": 319,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "file": "supervisor/supervisord.py",
-            "function": "shutdown_report",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 151,
-                    "start_column": 0,
-                    "end_line": 152,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 78,
-            "file": "supervisor/xmlrpc.py",
-            "function": "request",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 525,
-                    "start_column": 0,
-                    "end_line": 526,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 54,
-            "file": "supervisor/events.py",
-            "function": "payload",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 71,
-                    "start_column": 0,
-                    "end_line": 72,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 241,
-            "file": "supervisor/medusa/asynchat_25.py",
-            "function": "push",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 159,
-                    "start_column": 0,
-                    "end_line": 160,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 214,
-            "file": "supervisor/medusa/http_server.py",
-            "function": "build_reply_header",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 96,
-                    "start_column": 0,
-                    "end_line": 97,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 217,
-            "file": "supervisor/medusa/http_server.py",
-            "function": "error",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 286,
-                    "start_column": 0,
-                    "end_line": 287,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 124,
-            "file": "supervisor/http.py",
-            "function": "more",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 105,
-                    "start_column": 0,
-                    "end_line": 106,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 21,
-            "file": "supervisor/process.py",
-            "function": "change_state",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 177,
-                    "start_column": 0,
-                    "end_line": 178,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 146,
-            "file": "supervisor/http.py",
-            "function": "handle_request",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 709,
-                    "start_column": 0,
-                    "end_line": 710,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 136,
-            "file": "supervisor/http.py",
-            "function": "found_terminator",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 453,
-                    "start_column": 0,
-                    "end_line": 455,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 22,
-            "file": "supervisor/process.py",
-            "function": "_assertInState",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 181,
-                    "start_column": 0,
-                    "end_line": 182,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 37,
-            "file": "supervisor/process.py",
-            "function": "__repr__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 647,
-                    "start_column": 0,
-                    "end_line": 648,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 129,
-            "file": "supervisor/http.py",
-            "function": "writable",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 354,
-                    "start_column": 0,
-                    "end_line": 355,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 94,
+            "id": 8,
             "file": "supervisor/dispatchers.py",
-            "function": "_change_listener_state",
+            "function": "_log",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 471,
+                    "start_line": 194,
                     "start_column": 0,
-                    "end_line": 472,
+                    "end_line": 198,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 62,
-            "file": "supervisor/childutils.py",
-            "function": "get_asctime",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 34,
-                    "start_column": 0,
-                    "end_line": 35,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "file": "supervisor/supervisord.py",
-            "function": "add_process_group",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 118,
-                    "start_column": 0,
-                    "end_line": 119,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 86,
+            "id": 9,
             "file": "supervisor/dispatchers.py",
             "function": "_log",
             "remove": [
@@ -668,43 +136,253 @@
             ]
         },
         {
-            "id": 204,
-            "file": "supervisor/medusa/auth_handler.py",
-            "function": "status",
+            "id": 10,
+            "file": "supervisor/rpcinterface.py",
+            "function": "startProcess",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 112,
+                    "start_line": 304,
                     "start_column": 0,
-                    "end_line": 116,
+                    "end_line": 306,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 98,
+            "id": 11,
+            "file": "supervisor/rpcinterface.py",
+            "function": "sendRemoteCommEvent",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 924,
+                    "start_column": 0,
+                    "end_line": 927,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 12,
             "file": "supervisor/web.py",
             "function": "sendresponse",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 122,
+                    "start_line": 111,
                     "start_column": 0,
-                    "end_line": 125,
+                    "end_line": 113,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 140,
-            "file": "supervisor/http.py",
-            "function": "postbind",
+            "id": 13,
+            "file": "supervisor/web.py",
+            "function": "sendresponse",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 497,
+                    "start_line": 134,
                     "start_column": 0,
-                    "end_line": 498,
+                    "end_line": 136,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "file": "supervisor/web.py",
+            "function": "sendresponse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 140,
+                    "start_column": 0,
+                    "end_line": 147,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "file": "supervisor/web.py",
+            "function": "render",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 486,
+                    "start_column": 0,
+                    "end_line": 490,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "file": "supervisor/templating.py",
+            "function": "_write_declaration",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1129,
+                    "start_column": 0,
+                    "end_line": 1135,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "file": "supervisor/templating.py",
+            "function": "_write_doctype",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1145,
+                    "start_column": 0,
+                    "end_line": 1148,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "file": "supervisor/templating.py",
+            "function": "_write_doctype",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1145,
+                    "start_column": 0,
+                    "end_line": 1149,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "file": "supervisor/options.py",
+            "function": "process_groups_from_parser",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 761,
+                    "start_column": 0,
+                    "end_line": 763,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "supervisor/options.py",
+            "function": "parse_fcgi_socket",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 872,
+                    "start_column": 0,
+                    "end_line": 875,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "supervisor/options.py",
+            "function": "parse_fcgi_socket",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 884,
+                    "start_column": 0,
+                    "end_line": 886,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "file": "supervisor/options.py",
+            "function": "_processes_from_section",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 951,
+                    "start_column": 0,
+                    "end_line": 953,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "file": "supervisor/options.py",
+            "function": "_processes_from_section",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 972,
+                    "start_column": 0,
+                    "end_line": 974,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "file": "supervisor/options.py",
+            "function": "make_logger",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1494,
+                    "start_column": 0,
+                    "end_line": 1502,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "file": "supervisor/options.py",
+            "function": "read_string",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1778,
+                    "start_column": 0,
+                    "end_line": 1780,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "file": "supervisor/options.py",
+            "function": "make_dispatchers",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1958,
+                    "start_column": 0,
+                    "end_line": 1960,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "file": "supervisor/http_client.py",
+            "function": "get",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 85,
+                    "start_column": 0,
+                    "end_line": 87,
                     "end_column": 0
                 }
             ]

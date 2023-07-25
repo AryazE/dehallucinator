@@ -2,7 +2,6 @@ import argparse
 import csv
 import time
 import json
-import Levenshtein
 import random
 from distutils import dir_util
 from pathlib import Path
@@ -65,6 +64,9 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         csv_reader = csv.DictReader(f)
         for line in csv_reader:
             project_apis.add(line['name'])
+    easy_completions = 0
+    trivial_tests = 0
+    not_covered_by_tests = 0
     for i in config['evaluations']:
         if len(okay) >= 10:
             break
@@ -137,29 +139,37 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         if init_comp.startswith(ground_truth):
             print('Function is too easy to complete')
             dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
+            easy_completions += 1
             continue
 
         if not noTests:
-            cursor = 'with open("' + str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'checkTest.txt') + '", "w") as f: f.write("here")\n'
+            tab = ground_truth[:-len(ground_truth.lstrip())]
+            cursor = tab + 'bool(True)\n'
 
-            temp_new_code = new_code.replace(CURSOR, cursor)
+            temp_new_code = [(nc.replace(CURSOR, cursor) if CURSOR in nc else nc) for nc in new_code]
             
             with open(temp_dir/i["file"], 'w') as f:
                 f.write(''.join(temp_new_code))
             
             test_results = run_tests(config, i['id'], mode, env_session.interpreter.executable)
-            try:
-                with open(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'checkTest.txt'), 'r') as f:
-                    content = f.read()
-            except Exception as e:
-                print('Test not covering function')
-                print(traceback.format_exc())
-                dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
-                continue
-            if content != 'here':
-                print('Test not executing code in function')
-                dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
-                continue
+            # try:
+            #     with open(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'checkTest.txt'), 'r') as f:
+            #         content = f.read()
+            # except Exception as e:
+            #     with open(str(here/'experiment'/config['name']/mode/"removed_coverage_tests.txt"), "a") as f:
+            #         f.write(f"================\n{pre_context[-500:]}\n{ground_truth}\n")
+            #     print('Test not covering function')
+            #     print(traceback.format_exc())
+            #     dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
+            #     not_covered_by_tests += 1
+            #     continue
+            # if content != 'here':
+            #     with open(str(here/'experiment'/config['name']/mode/"removed_execution_tests.txt"), "a") as f:
+            #         f.write(f"================\n{pre_context[-500:]}\n{ground_truth}\n")
+            #     print('Test not executing code in function')
+            #     dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
+            #     not_covered_by_tests += 1
+            #     continue
             different = False
             for k, v in test_results[0].items():
                 if k not in orig_results or orig_results[k] != v:
@@ -168,6 +178,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
             if not different:
                 print('Test is trivial')
                 dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
+                trivial_tests += 1
                 continue
             okay.append(i['id'])
         else:
@@ -176,16 +187,18 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         with open(temp_dir/i["file"], 'w') as f:
             f.writelines(new_code)
 
-    if len(okay) > 10:
-        sample = random.sample(okay, 10)
+    if len(okay) > 50:
+        sample = random.sample(okay, 50)
         for id in okay:
             if id not in sample:
                 dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{id}'))
     else:
         sample = okay
-    if len(okay) < 10:
+    if len(okay) < 50:
         sample = okay
     # sample = okay
+    with open(str(here/'experiment'/config['name']/'dataset_report.txt'), "w") as f:
+        f.write(f"Easy completions: {easy_completions}\nNot covered by any test: {not_covered_by_tests}\nTrivial tests: {trivial_tests}\n")
     return env_session.interpreter.executable, orig_results, sample
 
 if __name__ == '__main__':
