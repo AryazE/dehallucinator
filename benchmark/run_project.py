@@ -11,6 +11,7 @@ from run_completion import run_completion
 from run_tests import run_tests
 from read_test_results import read_test_results
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModel
+from dotenv import dotenv_values
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -25,6 +26,8 @@ if __name__ == '__main__':
     parser.add_argument('--t', type=float, default=0.5)
     parser.add_argument('--c', type=int, default=4)
     args = parser.parse_args()
+    env_vars = dotenv_values('.env')
+    hf_token = env_vars['hf-token']
     print(time.perf_counter())
     with open(args.config, 'r') as f:
         config = json.load(f)
@@ -49,8 +52,8 @@ if __name__ == '__main__':
             llm_tok = AutoTokenizer.from_pretrained("microsoft/unixcoder-base")
             llm = AutoModel.from_pretrained("microsoft/unixcoder-base")
         elif args.model == 'lStarCoderPlus':
-            llm_tok = AutoTokenizer.from_pretrained("bigcode/starcoderplus")
-            llm = AutoModelForCausalLM.from_pretrained("bigcode/starcoderplus", device_map='auto')
+            llm_tok = AutoTokenizer.from_pretrained("bigcode/starcoderplus", token=hf_token)
+            llm = AutoModelForCausalLM.from_pretrained("bigcode/starcoderplus", token=hf_token, device_map='auto')
 
     if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in ids]):
         print('Base or some eval are missing. Creating...')
