@@ -55,7 +55,7 @@ if __name__ == '__main__':
             llm = AutoModel.from_pretrained("microsoft/unixcoder-base")
         elif args.model == 'lStarCoderPlus':
             llm_tok = AutoTokenizer.from_pretrained("bigcode/starcoderplus", token=hf_token)
-            llm = AutoModelForCausalLM.from_pretrained("bigcode/starcoderplus", token=hf_token, device_map='auto')
+            llm = AutoModelForCausalLM.from_pretrained("bigcode/starcoderplus", token=hf_token, device_map='auto', load_in_4bit=True)
 
     if not (here/'experiment'/config['name']/'base').exists() or any([not (here/'experiment'/config['name']/'base'/f'temp{i}').exists() for i in ids]):
         print('Base or some eval are missing. Creating...')

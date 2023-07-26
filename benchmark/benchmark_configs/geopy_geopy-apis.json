@@ -1,7 +1,7 @@
 {
-    "name": "lektor_lektor",
-    "project_root": "GitHubProjects/lektor_lektor",
-    "tests_path": "tests",
+    "name": "geopy_geopy",
+    "project_root": "GitHubProjects/geopy_geopy",
+    "tests_path": "test",
     "evaluations": [
         {
             "id": 0,
@@ -10,125 +10,321 @@
             "remove": []
         },
         {
-            "id": 43,
-            "file": "lektor/db.py",
-            "function": "_get_cache_key",
+            "id": 103,
+            "file": "geopy/geocoders/tomtom.py",
+            "function": "reverse",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 2158,
+                    "start_line": 173,
                     "start_column": 0,
-                    "end_line": 2159,
+                    "end_line": 174,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 154,
-            "file": "lektor/types/primitives.py",
-            "function": "to_json",
+            "id": 104,
+            "file": "geopy/geocoders/tomtom.py",
+            "function": "_parse_search_result",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 89,
+                    "start_line": 203,
                     "start_column": 0,
-                    "end_line": 90,
+                    "end_line": 205,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 34,
-            "file": "lektor/db.py",
-            "function": "track_record_dependency",
+            "id": 210,
+            "file": "geopy/geocoders/mapbox.py",
+            "function": "geocode",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1487,
+                    "start_line": 172,
                     "start_column": 0,
-                    "end_line": 1488,
+                    "end_line": 173,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 91,
-            "file": "lektor/project.py",
-            "function": "get_package_cache_path",
+            "id": 50,
+            "file": "geopy/point.py",
+            "function": "format_altitude",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 136,
+                    "start_line": 311,
                     "start_column": 0,
-                    "end_line": 137,
+                    "end_line": 312,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 162,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "resolve_plugin",
+            "id": 14,
+            "file": "geopy/distance.py",
+            "function": "measure",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 107,
+                    "start_line": 556,
                     "start_column": 0,
-                    "end_line": 108,
+                    "end_line": 557,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "file": "geopy/point.py",
+            "function": "format",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 240,
+                    "start_column": 0,
+                    "end_line": 243,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 170,
+            "file": "geopy/geocoders/ignfrance.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 181,
+                    "start_column": 0,
+                    "end_line": 183,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "geopy/point.py",
+            "function": "format",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 234,
+                    "start_column": 0,
+                    "end_line": 237,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 73,
+            "file": "geopy/geocoders/what3words.py",
+            "function": "parse_resource",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 363,
+                    "start_column": 0,
+                    "end_line": 364,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 42,
+            "file": "geopy/adapters.py",
+            "function": "_normalize_exceptions",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 593,
+                    "start_column": 0,
+                    "end_line": 594,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 78,
+            "file": "geopy/geocoders/google.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 274,
+                    "start_column": 0,
+                    "end_line": 275,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 148,
+            "file": "geopy/geocoders/geonames.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 236,
+                    "start_column": 0,
+                    "end_line": 237,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 208,
+            "file": "geopy/geocoders/mapbox.py",
+            "function": "parse_feature",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 91,
+                    "start_column": 0,
+                    "end_line": 92,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 220,
+            "file": "geopy/extra/rate_limiter.py",
+            "function": "_handle_exc",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 158,
+                    "start_column": 0,
+                    "end_line": 166,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 175,
+            "file": "geopy/geocoders/banfrance.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 116,
+                    "start_column": 0,
+                    "end_line": 117,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 168,
+            "file": "geopy/geocoders/bing.py",
+            "function": "parse_resource",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 259,
+                    "start_column": 0,
+                    "end_line": 260,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 128,
-            "file": "lektor/editor.py",
-            "function": "make_editor_session",
+            "file": "geopy/geocoders/here.py",
+            "function": "parse_resource",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 51,
+                    "start_line": 378,
                     "start_column": 0,
-                    "end_line": 52,
+                    "end_line": 379,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 101,
-            "file": "lektor/datamodel.py",
-            "function": "get_default_child_slug",
+            "id": 6,
+            "file": "geopy/distance.py",
+            "function": "measure",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 343,
+                    "start_line": 464,
                     "start_column": 0,
-                    "end_line": 344,
+                    "end_line": 465,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 173,
-            "file": "lektor/admin/context.py",
-            "function": "cli_reporter",
+            "id": 105,
+            "file": "geopy/geocoders/tomtom.py",
+            "function": "_parse_reverse_result",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 69,
+                    "start_line": 218,
                     "start_column": 0,
-                    "end_line": 70,
+                    "end_line": 220,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 94,
-            "file": "lektor/project.py",
-            "function": "included_assets",
+            "id": 108,
+            "file": "geopy/geocoders/algolia.py",
+            "function": "geocode",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 177,
+                    "start_line": 204,
+                    "start_column": 0,
+                    "end_line": 205,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 215,
+            "file": "geopy/geocoders/maptiler.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 196,
+                    "start_column": 0,
+                    "end_line": 197,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 114,
+            "file": "geopy/geocoders/base.py",
+            "function": "_adapter_error_handler",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 396,
+                    "start_column": 0,
+                    "end_line": 402,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 169,
+            "file": "geopy/geocoders/ignfrance.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 175,
                     "start_column": 0,
                     "end_line": 178,
                     "end_column": 0
@@ -136,457 +332,821 @@
             ]
         },
         {
-            "id": 78,
-            "file": "lektor/sourceobj.py",
-            "function": "url_to",
+            "id": 140,
+            "file": "geopy/geocoders/yandex.py",
+            "function": "geocode",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 160,
+                    "start_line": 114,
                     "start_column": 0,
-                    "end_line": 161,
+                    "end_line": 115,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 36,
-            "file": "lektor/db.py",
-            "function": "resolve_url_path",
+            "id": 139,
+            "file": "geopy/geocoders/geocodio.py",
+            "function": "_geocoder_exception_handler",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1633,
+                    "start_line": 227,
                     "start_column": 0,
-                    "end_line": 1634,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 59,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 900,
-                    "start_column": 0,
-                    "end_line": 901,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 32,
-            "file": "lektor/db.py",
-            "function": "load_raw_data",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1298,
-                    "start_column": 0,
-                    "end_line": 1299,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 95,
-            "file": "lektor/datamodel.py",
-            "function": "get_pagination_controller",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 135,
-                    "start_column": 0,
-                    "end_line": 136,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "file": "lektor/__main__.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 4,
-                    "start_column": 0,
-                    "end_line": 5,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 117,
-            "file": "lektor/cli.py",
-            "function": "deploy_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 278,
-                    "start_column": 0,
-                    "end_line": 279,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 82,
-            "file": "lektor/databags.py",
-            "function": "get_bag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 61,
-                    "start_column": 0,
-                    "end_line": 62,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 45,
-            "file": "lektor/publisher.py",
-            "function": "publish",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 796,
-                    "start_column": 0,
-                    "end_line": 797,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 58,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 874,
-                    "start_column": 0,
-                    "end_line": 875,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 816,
-                    "start_column": 0,
-                    "end_line": 826,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 131,
-            "file": "lektor/editor.py",
-            "function": "add_attachment",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 287,
-                    "start_column": 0,
-                    "end_line": 288,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 80,
-            "file": "lektor/databags.py",
-            "function": "load_databag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 21,
-                    "start_column": 0,
-                    "end_line": 22,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 144,
-            "file": "lektor/types/fake.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 33,
-                    "start_column": 0,
-                    "end_line": 34,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 107,
-            "file": "lektor/datamodel.py",
-            "function": "flowblock_data_from_ini",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 516,
-                    "start_column": 0,
-                    "end_line": 517,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 96,
-            "file": "lektor/datamodel.py",
-            "function": "get_pagination_query",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 142,
-                    "start_column": 0,
-                    "end_line": 143,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 71,
-            "file": "lektor/devserver.py",
-            "function": "build",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 34,
-                    "start_column": 0,
-                    "end_line": 35,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 126,
-            "file": "lektor/cli.py",
-            "function": "plugins_flush_cache_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 589,
-                    "start_column": 0,
-                    "end_line": 590,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 166,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 44,
-                    "start_column": 0,
-                    "end_line": 45,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 51,
-            "file": "lektor/cli_utils.py",
-            "function": "load_plugins",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 115,
-                    "start_column": 0,
-                    "end_line": 116,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 146,
-            "file": "lektor/types/flow.py",
-            "function": "__html__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 92,
-                    "start_column": 0,
-                    "end_line": 93,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 33,
-            "file": "lektor/db.py",
-            "function": "load_raw_data",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1321,
-                    "start_column": 0,
-                    "end_line": 1324,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 76,
-            "file": "lektor/devserver.py",
-            "function": "run_server",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 105,
-                    "start_column": 0,
-                    "end_line": 114,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 1,
-            "file": "lektor/quickstart.py",
-            "function": "get_default_author_email",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 151,
-                    "start_column": 0,
-                    "end_line": 152,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 171,
-            "file": "lektor/admin/context.py",
-            "function": "builder",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 62,
-                    "start_column": 0,
-                    "end_line": 63,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 936,
-                    "start_column": 0,
-                    "end_line": 947,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 57,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 810,
-                    "start_column": 0,
-                    "end_line": 811,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 170,
-            "file": "lektor/admin/context.py",
-            "function": "tree",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 54,
-                    "start_column": 0,
-                    "end_line": 55,
+                    "end_line": 228,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 12,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_config",
+            "file": "geopy/distance.py",
+            "function": "destination",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 97,
+                    "start_line": 487,
                     "start_column": 0,
-                    "end_line": 98,
+                    "end_line": 488,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 160,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "",
+            "id": 110,
+            "file": "geopy/geocoders/algolia.py",
+            "function": "_parse_feature",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 23,
+                    "start_line": 281,
                     "start_column": 0,
-                    "end_line": 24,
+                    "end_line": 282,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 142,
-            "file": "lektor/videotools.py",
-            "function": "make_video_thumbnail",
+            "id": 172,
+            "file": "geopy/geocoders/ignfrance.py",
+            "function": "reverse",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 371,
+                    "start_line": 291,
                     "start_column": 0,
-                    "end_line": 372,
+                    "end_line": 295,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 21,
-            "file": "lektor/db.py",
-            "function": "contents",
+            "id": 207,
+            "file": "geopy/geocoders/mapquest.py",
+            "function": "reverse",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 738,
+                    "start_line": 209,
                     "start_column": 0,
-                    "end_line": 739,
+                    "end_line": 210,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 54,
-            "file": "lektor/builder.py",
-            "function": "notify_failure",
+            "id": 133,
+            "file": "geopy/geocoders/here.py",
+            "function": "parse_resource",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 628,
+                    "start_column": 0,
+                    "end_line": 629,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 53,
+            "file": "geopy/point.py",
+            "function": "parse_altitude",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 372,
+                    "start_column": 0,
+                    "end_line": 373,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 166,
+            "file": "geopy/geocoders/bing.py",
+            "function": "parse_resource",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 250,
+                    "start_column": 0,
+                    "end_line": 251,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 88,
+            "file": "geopy/geocoders/google.py",
+            "function": "_check_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 444,
+                    "start_column": 0,
+                    "end_line": 445,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 39,
+            "file": "geopy/adapters.py",
+            "function": "_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 471,
+                    "start_column": 0,
+                    "end_line": 472,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 151,
+            "file": "geopy/geocoders/geonames.py",
+            "function": "_raise_for_error",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 304,
+                    "start_column": 0,
+                    "end_line": 305,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 197,
+            "file": "geopy/geocoders/baidu.py",
+            "function": "_check_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 234,
+                    "start_column": 0,
+                    "end_line": 237,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 100,
+            "file": "geopy/geocoders/arcgis.py",
+            "function": "_refresh_authentication_token",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 313,
+                    "start_column": 0,
+                    "end_line": 317,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "geopy/adapters.py",
+            "function": "get_json",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 554,
+                    "start_column": 0,
+                    "end_line": 558,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 98,
+            "file": "geopy/geocoders/arcgis.py",
+            "function": "_parse_reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 241,
+                    "start_column": 0,
+                    "end_line": 242,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 190,
+            "file": "geopy/geocoders/baidu.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 161,
+                    "start_column": 0,
+                    "end_line": 162,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "file": "geopy/distance.py",
+            "function": "measure",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 467,
+                    "start_column": 0,
+                    "end_line": 468,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 68,
+            "file": "geopy/geocoders/what3words.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 317,
+                    "start_column": 0,
+                    "end_line": 320,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "file": "geopy/distance.py",
+            "function": "nautical",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 433,
+                    "start_column": 0,
+                    "end_line": 434,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 155,
+            "file": "geopy/geocoders/geonames.py",
+            "function": "_parse_json_timezone",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 321,
+                    "start_column": 0,
+                    "end_line": 322,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 76,
+            "file": "geopy/geocoders/geolake.py",
+            "function": "_parse_json",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 167,
+                    "start_column": 0,
+                    "end_line": 168,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 161,
+            "file": "geopy/geocoders/bing.py",
+            "function": "_parse_json",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 224,
+                    "start_column": 0,
+                    "end_line": 225,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 189,
+            "file": "geopy/geocoders/baidu.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 128,
+                    "start_column": 0,
+                    "end_line": 129,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 117,
+            "file": "geopy/geocoders/base.py",
+            "function": "locked_async",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 466,
+                    "start_column": 0,
+                    "end_line": 467,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 171,
+            "file": "geopy/geocoders/ignfrance.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 223,
+                    "start_column": 0,
+                    "end_line": 224,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 138,
+            "file": "geopy/geocoders/geocodio.py",
+            "function": "_geocoder_exception_handler",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 221,
+                    "start_column": 0,
+                    "end_line": 222,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 115,
+            "file": "geopy/geocoders/base.py",
+            "function": "_adapter_error_handler",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 408,
+                    "start_column": 0,
+                    "end_line": 409,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 106,
+            "file": "geopy/geocoders/tomtom.py",
+            "function": "_geocoder_exception_handler",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 227,
+                    "start_column": 0,
+                    "end_line": 228,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 67,
+            "file": "geopy/geocoders/what3words.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 219,
+                    "start_column": 0,
+                    "end_line": 220,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "file": "geopy/geocoders/opencage.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 201,
+                    "start_column": 0,
+                    "end_line": 202,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 202,
+            "file": "geopy/geocoders/baidu.py",
+            "function": "_check_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 254,
+                    "start_column": 0,
+                    "end_line": 257,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 136,
+            "file": "geopy/geocoders/geocodio.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 179,
+                    "start_column": 0,
+                    "end_line": 180,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 80,
+            "file": "geopy/geocoders/google.py",
+            "function": "reverse_timezone",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 354,
+                    "start_column": 0,
+                    "end_line": 355,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "file": "geopy/geocoders/what3words.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 121,
+                    "start_column": 0,
+                    "end_line": 124,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 77,
+            "file": "geopy/geocoders/geolake.py",
+            "function": "_get_address",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 182,
+                    "start_column": 0,
+                    "end_line": 183,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 74,
+            "file": "geopy/geocoders/what3words.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 415,
+                    "start_column": 0,
+                    "end_line": 416,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 198,
+            "file": "geopy/geocoders/baidu.py",
+            "function": "_check_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 238,
+                    "start_column": 0,
+                    "end_line": 241,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 204,
+            "file": "geopy/geocoders/baidu.py",
+            "function": "_check_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 262,
+                    "start_column": 0,
+                    "end_line": 263,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 200,
+            "file": "geopy/geocoders/baidu.py",
+            "function": "_check_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 246,
+                    "start_column": 0,
+                    "end_line": 249,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 150,
+            "file": "geopy/geocoders/geonames.py",
+            "function": "reverse_timezone",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 294,
+                    "start_column": 0,
+                    "end_line": 295,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 66,
+            "file": "geopy/geocoders/what3words.py",
+            "function": "parse_resource",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 167,
+                    "start_column": 0,
+                    "end_line": 168,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 182,
+            "file": "geopy/geocoders/photon.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 216,
+                    "start_column": 0,
+                    "end_line": 217,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 101,
+            "file": "geopy/geocoders/arcgis.py",
+            "function": "cb",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 320,
+                    "start_column": 0,
+                    "end_line": 324,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 174,
+            "file": "geopy/geocoders/ignfrance.py",
+            "function": "_parse_place",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 484,
+                    "start_column": 0,
+                    "end_line": 485,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 221,
+            "file": "geopy/extra/rate_limiter.py",
+            "function": "_sleep",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 262,
+                    "start_column": 0,
+                    "end_line": 263,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 156,
+            "file": "geopy/geocoders/geonames.py",
+            "function": "_parse_json_timezone",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 323,
+                    "start_column": 0,
+                    "end_line": 324,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 199,
+            "file": "geopy/geocoders/baidu.py",
+            "function": "_check_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 242,
+                    "start_column": 0,
+                    "end_line": 245,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 209,
+            "file": "geopy/geocoders/mapbox.py",
+            "function": "geocode",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 163,
+                    "start_column": 0,
+                    "end_line": 164,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 109,
+            "file": "geopy/geocoders/algolia.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 264,
+                    "start_column": 0,
+                    "end_line": 265,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 33,
+            "file": "geopy/adapters.py",
+            "function": "_decode_page",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 360,
+                    "start_column": 0,
+                    "end_line": 361,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "file": "geopy/geocoders/smartystreets.py",
+            "function": "_geocoder_exception_handler",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 119,
+                    "start_column": 0,
+                    "end_line": 120,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "file": "geopy/geocoders/here.py",
+            "function": "_parse_json",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 340,
+                    "start_column": 0,
+                    "end_line": 341,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 154,
+            "file": "geopy/geocoders/geonames.py",
+            "function": "_raise_for_error",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 309,
+                    "start_column": 0,
+                    "end_line": 310,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "geopy/distance.py",
+            "function": "miles",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 429,
+                    "start_column": 0,
+                    "end_line": 430,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 141,
+            "file": "geopy/geocoders/yandex.py",
+            "function": "reverse",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 174,
+                    "start_column": 0,
+                    "end_line": 175,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 125,
+            "file": "geopy/geocoders/here.py",
+            "function": "parse_resource",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 370,
+                    "start_column": 0,
+                    "end_line": 371,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 83,
+            "file": "geopy/geocoders/google.py",
+            "function": "_normalize_timezone_at_time",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 391,
+                    "start_column": 0,
+                    "end_line": 394,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 92,
+            "file": "geopy/geocoders/smartystreets.py",
+            "function": "_geocoder_exception_handler",
             "remove": [
                 {
                     "description": "code",
@@ -598,121 +1158,9 @@
             ]
         },
         {
-            "id": 63,
-            "file": "lektor/builder.py",
-            "function": "prune",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1198,
-                    "start_column": 0,
-                    "end_line": 1199,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 121,
-            "file": "lektor/cli.py",
-            "function": "content_file_info_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 432,
-                    "start_column": 0,
-                    "end_line": 433,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 88,
-            "file": "lektor/imagetools.py",
-            "function": "make_image_thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 596,
-                    "start_column": 0,
-                    "end_line": 599,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 11,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_lektor_config",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 80,
-                    "start_column": 0,
-                    "end_line": 81,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 73,
-            "file": "lektor/devserver.py",
-            "function": "run",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 49,
-                    "start_column": 0,
-                    "end_line": 50,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 97,
-            "file": "lektor/datamodel.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 200,
-                    "start_column": 0,
-                    "end_line": 203,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 48,
-            "file": "lektor/cli_utils.py",
-            "function": "get_project",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 78,
-                    "start_column": 0,
-                    "end_line": 79,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 79,
-            "file": "lektor/sourceobj.py",
-            "function": "_resolve_url",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 187,
-                    "start_column": 0,
-                    "end_line": 188,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 135,
-            "file": "lektor/context.py",
-            "function": "add_sub_artifact",
+            "id": 163,
+            "file": "geopy/geocoders/bing.py",
+            "function": "_parse_json",
             "remove": [
                 {
                     "description": "code",
@@ -724,387 +1172,65 @@
             ]
         },
         {
-            "id": 10,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_plugin",
+            "id": 87,
+            "file": "geopy/geocoders/google.py",
+            "function": "_check_status",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 21,
+                    "start_line": 440,
                     "start_column": 0,
-                    "end_line": 22,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 64,
-            "file": "lektor/builder.py",
-            "function": "prune",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1202,
-                    "start_column": 0,
-                    "end_line": 1203,
+                    "end_line": 443,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 158,
-            "file": "lektor/types/multi.py",
-            "function": "to_json",
+            "file": "geopy/geocoders/bing.py",
+            "function": "geocode",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 123,
+                    "start_line": 160,
                     "start_column": 0,
-                    "end_line": 124,
+                    "end_line": 161,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 20,
-            "file": "lektor/db.py",
-            "function": "_siblings",
+            "id": 132,
+            "file": "geopy/geocoders/here.py",
+            "function": "reverse",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 683,
+                    "start_line": 610,
                     "start_column": 0,
-                    "end_line": 684,
+                    "end_line": 611,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 27,
-            "file": "lektor/db.py",
-            "function": "_get_video_info",
+            "id": 82,
+            "file": "geopy/geocoders/google.py",
+            "function": "_parse_json_timezone",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 854,
+                    "start_line": 381,
                     "start_column": 0,
-                    "end_line": 855,
+                    "end_line": 382,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 141,
-            "file": "lektor/videotools.py",
-            "function": "build_thumbnail_artifact",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 356,
-                    "start_column": 0,
-                    "end_line": 357,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "file": "lektor/devcli.py",
-            "function": "new_theme",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 115,
-                    "start_column": 0,
-                    "end_line": 116,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 129,
-            "file": "lektor/editor.py",
-            "function": "add_attachment",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 279,
-                    "start_column": 0,
-                    "end_line": 280,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 165,
-            "file": "lektor/markdown/controller.py",
-            "function": "get_cache_key",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 166,
-                    "start_column": 0,
-                    "end_line": 167,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 68,
-            "file": "lektor/builder.py",
-            "function": "build_all",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1263,
-                    "start_column": 0,
-                    "end_line": 1264,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 137,
-            "file": "lektor/videotools.py",
-            "function": "get_video_info",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 234,
-                    "start_column": 0,
-                    "end_line": 247,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 167,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 52,
-                    "start_column": 0,
-                    "end_line": 53,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 145,
-            "file": "lektor/types/flow.py",
-            "function": "__getitem__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 78,
-                    "start_column": 0,
-                    "end_line": 79,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 148,
-            "file": "lektor/types/flow.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 226,
-                    "start_column": 0,
-                    "end_line": 227,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 52,
-            "file": "lektor/cli_utils.py",
-            "function": "load_plugins",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 120,
-                    "start_column": 0,
-                    "end_line": 121,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 123,
-            "file": "lektor/cli.py",
-            "function": "plugins_add_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 493,
-                    "start_column": 0,
-                    "end_line": 494,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 164,
-            "file": "lektor/markdown/controller.py",
-            "function": "require_ctx",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 39,
-                    "start_column": 0,
-                    "end_line": 40,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 98,
-            "file": "lektor/datamodel.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 206,
-                    "start_column": 0,
-                    "end_line": 209,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 81,
-            "file": "lektor/databags.py",
-            "function": "get_bag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 55,
-                    "start_column": 0,
-                    "end_line": 56,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 157,
-            "file": "lektor/types/multi.py",
-            "function": "_parse_choices",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 30,
-                    "start_column": 0,
-                    "end_line": 31,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 85,
-            "file": "lektor/imagetools.py",
-            "function": "find_imagemagick",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 443,
-                    "start_column": 0,
-                    "end_line": 444,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 50,
-            "file": "lektor/cli_utils.py",
-            "function": "get_env",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 106,
-                    "start_column": 0,
-                    "end_line": 109,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 161,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "make_parser",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 88,
-                    "start_column": 0,
-                    "end_line": 89,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 122,
-            "file": "lektor/cli.py",
-            "function": "content_file_info_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 453,
-                    "start_column": 0,
-                    "end_line": 460,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 112,
-            "file": "lektor/cli.py",
-            "function": "build_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 144,
-                    "start_column": 0,
-                    "end_line": 145,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 184,
-            "file": "lektor/environment/config.py",
-            "function": "get_server",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 188,
-                    "start_column": 0,
-                    "end_line": 189,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 77,
-            "file": "lektor/sourceobj.py",
-            "function": "is_child_of",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 97,
-                    "start_column": 0,
-                    "end_line": 98,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 176,
-            "file": "lektor/admin/modules/api.py",
-            "function": "_is_valid_alt",
+            "id": 18,
+            "file": "geopy/format.py",
+            "function": "format_degrees",
             "remove": [
                 {
                     "description": "code",
@@ -1117,134 +1243,64 @@
         },
         {
             "id": 93,
-            "file": "lektor/project.py",
-            "function": "excluded_assets",
+            "file": "geopy/geocoders/smartystreets.py",
+            "function": "_format_structured_address",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 168,
+                    "start_line": 140,
                     "start_column": 0,
-                    "end_line": 169,
+                    "end_line": 145,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 113,
-            "file": "lektor/cli.py",
-            "function": "build_cmd",
+            "id": 129,
+            "file": "geopy/geocoders/here.py",
+            "function": "geocode",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 154,
+                    "start_line": 532,
                     "start_column": 0,
-                    "end_line": 158,
+                    "end_line": 533,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 108,
-            "file": "lektor/datamodel.py",
-            "function": "add_system_field",
+            "id": 55,
+            "file": "geopy/point.py",
+            "function": "parse_altitude",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 690,
+                    "start_line": 374,
                     "start_column": 0,
-                    "end_line": 691,
+                    "end_line": 375,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 106,
-            "file": "lektor/datamodel.py",
-            "function": "datamodel_data_from_ini",
+            "id": 23,
+            "file": "geopy/format.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 484,
+                    "start_line": 83,
                     "start_column": 0,
-                    "end_line": 485,
+                    "end_line": 84,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 177,
-            "file": "lektor/admin/modules/api.py",
-            "function": "add_new_record",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 364,
-                    "start_column": 0,
-                    "end_line": 365,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 6,
-            "file": "lektor/devcli.py",
-            "function": "shell_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 67,
-                    "start_column": 0,
-                    "end_line": 70,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 114,
-            "file": "lektor/cli.py",
-            "function": "clean_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 189,
-                    "start_column": 0,
-                    "end_line": 190,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 40,
-            "file": "lektor/db.py",
-            "function": "alt_exists",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1782,
-                    "start_column": 0,
-                    "end_line": 1783,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 14,
-            "file": "lektor/pluginsystem.py",
-            "function": "emit",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 206,
-                    "start_column": 0,
-                    "end_line": 207,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 180,
-            "file": "lektor/environment/config.py",
-            "function": "update_config_from_ini",
+            "id": 212,
+            "file": "geopy/geocoders/maptiler.py",
+            "function": "parse_feature",
             "remove": [
                 {
                     "description": "code",
@@ -1256,155 +1312,99 @@
             ]
         },
         {
-            "id": 19,
-            "file": "lektor/db.py",
-            "function": "get_siblings",
+            "id": 180,
+            "file": "geopy/geocoders/databc.py",
+            "function": "_parse_feature",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 672,
+                    "start_line": 140,
                     "start_column": 0,
-                    "end_line": 673,
+                    "end_line": 144,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 178,
-            "file": "lektor/admin/modules/api.py",
-            "function": "generator",
+            "id": 126,
+            "file": "geopy/geocoders/here.py",
+            "function": "parse_resource",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 452,
+                    "start_line": 371,
                     "start_column": 0,
-                    "end_line": 459,
+                    "end_line": 372,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 179,
-            "file": "lektor/admin/modules/serve.py",
-            "function": "serve_artifact",
+            "id": 194,
+            "file": "geopy/geocoders/baidu.py",
+            "function": "_check_status",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 218,
+                    "start_line": 222,
                     "start_column": 0,
-                    "end_line": 219,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 172,
-            "file": "lektor/admin/context.py",
-            "function": "failure_controller",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 66,
-                    "start_column": 0,
-                    "end_line": 67,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 119,
-            "file": "lektor/cli.py",
-            "function": "project_info_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 397,
-                    "start_column": 0,
-                    "end_line": 398,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 24,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 809,
-                    "start_column": 0,
-                    "end_line": 810,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 163,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "resolve_plugin",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 111,
-                    "start_column": 0,
-                    "end_line": 112,
+                    "end_line": 225,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 38,
-            "file": "lektor/db.py",
-            "function": "theme_asset_roots",
+            "file": "geopy/adapters.py",
+            "function": "_request",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1689,
+                    "start_line": 469,
                     "start_column": 0,
-                    "end_line": 1690,
+                    "end_line": 470,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 100,
-            "file": "lektor/datamodel.py",
-            "function": "format_record_label",
+            "id": 137,
+            "file": "geopy/geocoders/geocodio.py",
+            "function": "parse_place",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 325,
+                    "start_line": 195,
                     "start_column": 0,
-                    "end_line": 326,
+                    "end_line": 196,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 136,
-            "file": "lektor/videotools.py",
-            "function": "get_video_info",
+            "id": 84,
+            "file": "geopy/geocoders/google.py",
+            "function": "parse_place",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 230,
+                    "start_line": 409,
                     "start_column": 0,
-                    "end_line": 231,
+                    "end_line": 410,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 17,
-            "file": "lektor/db.py",
-            "function": "coerce",
+            "id": 205,
+            "file": "geopy/geocoders/mapquest.py",
+            "function": "parse_feature",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 105,
+                    "start_line": 113,
                     "start_column": 0,
-                    "end_line": 106,
+                    "end_line": 114,
                     "end_column": 0
                 }
             ]

@@ -74,8 +74,6 @@ def make_config(project, tests, package_name, with_tests=False):
         cov = Coverage(data_file=str(here/'temp_conf'/project_name/'.coverage'))
         cov.load()
         cov_data = cov.get_data()
-    else:
-        return
 
     files_to_ignore = set(tests_path.glob('**/*.py'))
     files_to_ignore.add(project_path/'setup.py')

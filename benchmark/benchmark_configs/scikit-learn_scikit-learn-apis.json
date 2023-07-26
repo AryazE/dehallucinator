@@ -1,7 +1,7 @@
 {
-    "name": "lektor_lektor",
-    "project_root": "GitHubProjects/lektor_lektor",
-    "tests_path": "tests",
+    "name": "scikit-learn_scikit-learn",
+    "project_root": "GitHubProjects/scikit-learn_scikit-learn",
+    "tests_path": "sklearn/tests",
     "evaluations": [
         {
             "id": 0,
@@ -10,587 +10,69 @@
             "remove": []
         },
         {
-            "id": 43,
-            "file": "lektor/db.py",
-            "function": "_get_cache_key",
+            "id": 1277,
+            "file": "sklearn/model_selection/_search_successive_halving.py",
+            "function": "_check_input_parameters",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 2158,
+                    "start_line": 164,
                     "start_column": 0,
-                    "end_line": 2159,
+                    "end_line": 165,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 154,
-            "file": "lektor/types/primitives.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 89,
-                    "start_column": 0,
-                    "end_line": 90,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 34,
-            "file": "lektor/db.py",
-            "function": "track_record_dependency",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1487,
-                    "start_column": 0,
-                    "end_line": 1488,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 91,
-            "file": "lektor/project.py",
-            "function": "get_package_cache_path",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 136,
-                    "start_column": 0,
-                    "end_line": 137,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 162,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "resolve_plugin",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 107,
-                    "start_column": 0,
-                    "end_line": 108,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 128,
-            "file": "lektor/editor.py",
-            "function": "make_editor_session",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 51,
-                    "start_column": 0,
-                    "end_line": 52,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 101,
-            "file": "lektor/datamodel.py",
-            "function": "get_default_child_slug",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 343,
-                    "start_column": 0,
-                    "end_line": 344,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 173,
-            "file": "lektor/admin/context.py",
-            "function": "cli_reporter",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 69,
-                    "start_column": 0,
-                    "end_line": 70,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 94,
-            "file": "lektor/project.py",
-            "function": "included_assets",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 177,
-                    "start_column": 0,
-                    "end_line": 178,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 78,
-            "file": "lektor/sourceobj.py",
-            "function": "url_to",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 160,
-                    "start_column": 0,
-                    "end_line": 161,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 36,
-            "file": "lektor/db.py",
-            "function": "resolve_url_path",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1633,
-                    "start_column": 0,
-                    "end_line": 1634,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 59,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 900,
-                    "start_column": 0,
-                    "end_line": 901,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 32,
-            "file": "lektor/db.py",
-            "function": "load_raw_data",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1298,
-                    "start_column": 0,
-                    "end_line": 1299,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 95,
-            "file": "lektor/datamodel.py",
-            "function": "get_pagination_controller",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 135,
-                    "start_column": 0,
-                    "end_line": 136,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "file": "lektor/__main__.py",
+            "id": 1052,
+            "file": "sklearn/preprocessing/_target_encoder.py",
             "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 4,
+                    "start_line": 156,
                     "start_column": 0,
-                    "end_line": 5,
+                    "end_line": 157,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 117,
-            "file": "lektor/cli.py",
-            "function": "deploy_cmd",
+            "id": 748,
+            "file": "sklearn/linear_model/_theil_sen.py",
+            "function": "fit",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 278,
+                    "start_line": 440,
                     "start_column": 0,
-                    "end_line": 279,
+                    "end_line": 444,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 82,
-            "file": "lektor/databags.py",
-            "function": "get_bag",
+            "id": 803,
+            "file": "sklearn/linear_model/_huber.py",
+            "function": "_huber_loss_and_gradient",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 61,
+                    "start_line": 108,
                     "start_column": 0,
-                    "end_line": 62,
+                    "end_line": 109,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 45,
-            "file": "lektor/publisher.py",
-            "function": "publish",
+            "id": 1044,
+            "file": "sklearn/metrics/_pairwise_distances_reduction/_dispatcher.py",
+            "function": "is_usable_for",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 796,
-                    "start_column": 0,
-                    "end_line": 797,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 58,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 874,
-                    "start_column": 0,
-                    "end_line": 875,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 816,
-                    "start_column": 0,
-                    "end_line": 826,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 131,
-            "file": "lektor/editor.py",
-            "function": "add_attachment",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 287,
-                    "start_column": 0,
-                    "end_line": 288,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 80,
-            "file": "lektor/databags.py",
-            "function": "load_databag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 21,
-                    "start_column": 0,
-                    "end_line": 22,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 144,
-            "file": "lektor/types/fake.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 33,
-                    "start_column": 0,
-                    "end_line": 34,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 107,
-            "file": "lektor/datamodel.py",
-            "function": "flowblock_data_from_ini",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 516,
-                    "start_column": 0,
-                    "end_line": 517,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 96,
-            "file": "lektor/datamodel.py",
-            "function": "get_pagination_query",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 142,
-                    "start_column": 0,
-                    "end_line": 143,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 71,
-            "file": "lektor/devserver.py",
-            "function": "build",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 34,
-                    "start_column": 0,
-                    "end_line": 35,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 126,
-            "file": "lektor/cli.py",
-            "function": "plugins_flush_cache_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 589,
-                    "start_column": 0,
-                    "end_line": 590,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 166,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 44,
-                    "start_column": 0,
-                    "end_line": 45,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 51,
-            "file": "lektor/cli_utils.py",
-            "function": "load_plugins",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 115,
-                    "start_column": 0,
-                    "end_line": 116,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 146,
-            "file": "lektor/types/flow.py",
-            "function": "__html__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 92,
-                    "start_column": 0,
-                    "end_line": 93,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 33,
-            "file": "lektor/db.py",
-            "function": "load_raw_data",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1321,
-                    "start_column": 0,
-                    "end_line": 1324,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 76,
-            "file": "lektor/devserver.py",
-            "function": "run_server",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 105,
-                    "start_column": 0,
-                    "end_line": 114,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 1,
-            "file": "lektor/quickstart.py",
-            "function": "get_default_author_email",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 151,
-                    "start_column": 0,
-                    "end_line": 152,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 171,
-            "file": "lektor/admin/context.py",
-            "function": "builder",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 62,
-                    "start_column": 0,
-                    "end_line": 63,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 936,
-                    "start_column": 0,
-                    "end_line": 947,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 57,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 810,
-                    "start_column": 0,
-                    "end_line": 811,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 170,
-            "file": "lektor/admin/context.py",
-            "function": "tree",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 54,
-                    "start_column": 0,
-                    "end_line": 55,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 12,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_config",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 97,
-                    "start_column": 0,
-                    "end_line": 98,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 160,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 23,
-                    "start_column": 0,
-                    "end_line": 24,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 142,
-            "file": "lektor/videotools.py",
-            "function": "make_video_thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 371,
-                    "start_column": 0,
-                    "end_line": 372,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 21,
-            "file": "lektor/db.py",
-            "function": "contents",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 738,
-                    "start_column": 0,
-                    "end_line": 739,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 54,
-            "file": "lektor/builder.py",
-            "function": "notify_failure",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 121,
+                    "start_line": 120,
                     "start_column": 0,
                     "end_line": 122,
                     "end_column": 0
@@ -598,65 +80,653 @@
             ]
         },
         {
-            "id": 63,
-            "file": "lektor/builder.py",
-            "function": "prune",
+            "id": 488,
+            "file": "sklearn/neural_network/_multilayer_perceptron.py",
+            "function": "_initialize",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1198,
+                    "start_line": 373,
                     "start_column": 0,
-                    "end_line": 1199,
+                    "end_line": 374,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 121,
-            "file": "lektor/cli.py",
-            "function": "content_file_info_cmd",
+            "id": 47,
+            "file": "sklearn/linear_model/_coordinate_descent.py",
+            "function": "_path_residuals",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 432,
+                    "start_line": 1400,
                     "start_column": 0,
-                    "end_line": 433,
+                    "end_line": 1401,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1275,
+            "file": "sklearn/model_selection/_search_successive_halving.py",
+            "function": "_check_input_parameters",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 130,
+                    "start_column": 0,
+                    "end_line": 131,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1240,
+            "file": "sklearn/svm/_classes.py",
+            "function": "fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 518,
+                    "start_column": 0,
+                    "end_line": 535,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 639,
+            "file": "sklearn/cluster/_agglomerative.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 922,
+                    "start_column": 0,
+                    "end_line": 923,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 762,
+            "file": "sklearn/model_selection/_split.py",
+            "function": "_iter_test_indices",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 257,
+                    "start_column": 0,
+                    "end_line": 258,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1094,
+            "file": "sklearn/multiclass.py",
+            "function": "partial_fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 761,
+                    "start_column": 0,
+                    "end_line": 767,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 573,
+            "file": "sklearn/calibration.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 260,
+                    "start_column": 0,
+                    "end_line": 261,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 182,
+            "file": "sklearn/metrics/_ranking.py",
+            "function": "_binary_clf_curve",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 771,
+                    "start_column": 0,
+                    "end_line": 772,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1080,
+            "file": "sklearn/multiclass.py",
+            "function": "partial_fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 407,
+                    "start_column": 0,
+                    "end_line": 411,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 907,
+            "file": "sklearn/decomposition/_lda.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 346,
+                    "start_column": 0,
+                    "end_line": 347,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 714,
+            "file": "sklearn/feature_selection/_sequential.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 163,
+                    "start_column": 0,
+                    "end_line": 164,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 66,
+            "file": "sklearn/covariance/_shrunk_covariance.py",
+            "function": "_oas",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 63,
+                    "start_column": 0,
+                    "end_line": 64,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 754,
+            "file": "asv_benchmarks/benchmarks/cluster.py",
+            "function": "make_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 74,
+                    "start_column": 0,
+                    "end_line": 75,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1140,
+            "file": "sklearn/decomposition/_dict_learning.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2090,
+                    "start_column": 0,
+                    "end_line": 2091,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1251,
+            "file": "sklearn/cluster/_birch.py",
+            "function": "predict",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 668,
+                    "start_column": 0,
+                    "end_line": 669,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 816,
+            "file": "sklearn/cluster/_spectral.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 595,
+                    "start_column": 0,
+                    "end_line": 596,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 223,
+            "file": "sklearn/cluster/_affinity_propagation.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 431,
+                    "start_column": 0,
+                    "end_line": 432,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1322,
+            "file": "sklearn/cluster/_optics.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 241,
+                    "start_column": 0,
+                    "end_line": 242,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1284,
+            "file": "sklearn/model_selection/_search_successive_halving.py",
+            "function": "_generate_candidate_params",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1078,
+                    "start_column": 0,
+                    "end_line": 1083,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1232,
+            "file": "sklearn/svm/_classes.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 205,
+                    "start_column": 0,
+                    "end_line": 206,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1144,
+            "file": "sklearn/decomposition/_dict_learning.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2099,
+                    "start_column": 0,
+                    "end_line": 2100,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 679,
+            "file": "sklearn/compose/_column_transformer.py",
+            "function": "_hstack",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 852,
+                    "start_column": 0,
+                    "end_line": 853,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 955,
+            "file": "sklearn/linear_model/_base.py",
+            "function": "_rescale_data",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 322,
+                    "start_column": 0,
+                    "end_line": 323,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 524,
+            "file": "sklearn/decomposition/_sparse_pca.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 27,
+                    "start_column": 0,
+                    "end_line": 28,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 58,
+            "file": "sklearn/linear_model/_coordinate_descent.py",
+            "function": "fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1649,
+                    "start_column": 0,
+                    "end_line": 1665,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1338,
+            "file": "sklearn/feature_selection/_base.py",
+            "function": "transform",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 93,
+                    "start_column": 0,
+                    "end_line": 94,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 910,
+            "file": "sklearn/decomposition/_lda.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 349,
+                    "start_column": 0,
+                    "end_line": 350,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 392,
+            "file": "sklearn/linear_model/_stochastic_gradient.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 2165,
+                    "start_column": 0,
+                    "end_line": 2166,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 282,
+            "file": "sklearn/linear_model/_least_angle.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1655,
+                    "start_column": 0,
+                    "end_line": 1656,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 646,
+            "file": "sklearn/cluster/_agglomerative.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1278,
+                    "start_column": 0,
+                    "end_line": 1279,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 521,
+            "file": "sklearn/decomposition/_sparse_pca.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 24,
+                    "start_column": 0,
+                    "end_line": 25,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 311,
+            "file": "sklearn/manifold/_mds.py",
+            "function": "smacof",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 294,
+                    "start_column": 0,
+                    "end_line": 295,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 490,
+            "file": "sklearn/neural_network/_multilayer_perceptron.py",
+            "function": "_fit_lbfgs",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 541,
+                    "start_column": 0,
+                    "end_line": 542,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 935,
+            "file": "sklearn/ensemble/_voting.py",
+            "function": "fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 342,
+                    "start_column": 0,
+                    "end_line": 343,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 191,
+            "file": "sklearn/metrics/_ranking.py",
+            "function": "_binary_clf_curve",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 811,
+                    "start_column": 0,
+                    "end_line": 812,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 88,
-            "file": "lektor/imagetools.py",
-            "function": "make_image_thumbnail",
+            "file": "sklearn/linear_model/_ransac.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 596,
+                    "start_line": 258,
                     "start_column": 0,
-                    "end_line": 599,
+                    "end_line": 259,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 11,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_lektor_config",
+            "id": 1241,
+            "file": "sklearn/svm/_classes.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 80,
+                    "start_line": 1044,
                     "start_column": 0,
-                    "end_line": 81,
+                    "end_line": 1045,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 73,
-            "file": "lektor/devserver.py",
-            "function": "run",
+            "id": 711,
+            "file": "sklearn/feature_selection/_sequential.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 159,
+                    "start_column": 0,
+                    "end_line": 160,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 670,
+            "file": "sklearn/compose/_column_transformer.py",
+            "function": "_iter",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 381,
+                    "start_column": 0,
+                    "end_line": 382,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 565,
+            "file": "sklearn/mixture/_base.py",
+            "function": "sample",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 425,
+                    "start_column": 0,
+                    "end_line": 426,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 745,
+            "file": "sklearn/linear_model/_theil_sen.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 331,
+                    "start_column": 0,
+                    "end_line": 332,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 492,
+            "file": "sklearn/neural_network/_multilayer_perceptron.py",
+            "function": "_fit_stochastic",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 569,
+                    "start_column": 0,
+                    "end_line": 576,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1274,
+            "file": "sklearn/model_selection/_search_successive_halving.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 85,
+                    "start_column": 0,
+                    "end_line": 86,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 810,
+            "file": "sklearn/linear_model/_huber.py",
+            "function": "fit",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 350,
+                    "start_column": 0,
+                    "end_line": 351,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 1034,
+            "file": "sklearn/preprocessing/_label.py",
+            "function": "transform",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 848,
+                    "start_column": 0,
+                    "end_line": 849,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 834,
+            "file": "sklearn/inspection/_permutation_importance.py",
+            "function": "_calculate_permutation_scores",
             "remove": [
                 {
                     "description": "code",
@@ -668,429 +738,373 @@
             ]
         },
         {
-            "id": 97,
-            "file": "lektor/datamodel.py",
-            "function": "to_json",
+            "id": 101,
+            "file": "sklearn/linear_model/_ransac.py",
+            "function": "score",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 200,
+                    "start_line": 606,
                     "start_column": 0,
-                    "end_line": 203,
+                    "end_line": 607,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 48,
-            "file": "lektor/cli_utils.py",
-            "function": "get_project",
+            "id": 609,
+            "file": "sklearn/calibration.py",
+            "function": "from_estimator",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 78,
+                    "start_line": 1267,
                     "start_column": 0,
-                    "end_line": 79,
+                    "end_line": 1268,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 79,
-            "file": "lektor/sourceobj.py",
-            "function": "_resolve_url",
+            "id": 515,
+            "file": "sklearn/decomposition/_incremental_pca.py",
+            "function": "partial_fit",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 187,
+                    "start_line": 322,
                     "start_column": 0,
-                    "end_line": 188,
+                    "end_line": 328,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 135,
-            "file": "lektor/context.py",
-            "function": "add_sub_artifact",
+            "id": 1177,
+            "file": "sklearn/ensemble/_forest.py",
+            "function": "_validate_y_class_weight",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 228,
+                    "start_line": 812,
                     "start_column": 0,
-                    "end_line": 229,
+                    "end_line": 813,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 10,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_plugin",
+            "id": 189,
+            "file": "sklearn/metrics/_ranking.py",
+            "function": "_binary_clf_curve",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 21,
+                    "start_line": 786,
                     "start_column": 0,
-                    "end_line": 22,
+                    "end_line": 787,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 64,
-            "file": "lektor/builder.py",
-            "function": "prune",
+            "id": 1059,
+            "file": "sklearn/preprocessing/_target_encoder.py",
+            "function": "_fit_encodings_all",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1202,
+                    "start_line": 292,
                     "start_column": 0,
-                    "end_line": 1203,
+                    "end_line": 293,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 158,
-            "file": "lektor/types/multi.py",
-            "function": "to_json",
+            "id": 1340,
+            "file": "sklearn/feature_selection/_base.py",
+            "function": "inverse_transform",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 123,
+                    "start_line": 143,
                     "start_column": 0,
-                    "end_line": 124,
+                    "end_line": 144,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 20,
-            "file": "lektor/db.py",
-            "function": "_siblings",
+            "id": 1071,
+            "file": "sklearn/multiclass.py",
+            "function": "decision_function",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 683,
+                    "start_line": 149,
                     "start_column": 0,
-                    "end_line": 684,
+                    "end_line": 150,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 27,
-            "file": "lektor/db.py",
-            "function": "_get_video_info",
+            "id": 581,
+            "file": "sklearn/calibration.py",
+            "function": "fit",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 854,
+                    "start_line": 391,
                     "start_column": 0,
-                    "end_line": 855,
+                    "end_line": 392,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 141,
-            "file": "lektor/videotools.py",
-            "function": "build_thumbnail_artifact",
+            "id": 188,
+            "file": "sklearn/metrics/_ranking.py",
+            "function": "_binary_clf_curve",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 356,
+                    "start_line": 780,
                     "start_column": 0,
-                    "end_line": 357,
+                    "end_line": 781,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 8,
-            "file": "lektor/devcli.py",
-            "function": "new_theme",
+            "id": 99,
+            "file": "sklearn/linear_model/_ransac.py",
+            "function": "fit",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 115,
+                    "start_line": 442,
                     "start_column": 0,
-                    "end_line": 116,
+                    "end_line": 445,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 129,
-            "file": "lektor/editor.py",
-            "function": "add_attachment",
+            "id": 1300,
+            "file": "sklearn/kernel_approximation.py",
+            "function": "fit",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 279,
+                    "start_line": 523,
                     "start_column": 0,
-                    "end_line": 280,
+                    "end_line": 524,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 165,
-            "file": "lektor/markdown/controller.py",
-            "function": "get_cache_key",
+            "id": 823,
+            "file": "sklearn/cluster/_spectral.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 166,
+                    "start_line": 610,
                     "start_column": 0,
-                    "end_line": 167,
+                    "end_line": 611,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 68,
-            "file": "lektor/builder.py",
-            "function": "build_all",
+            "id": 597,
+            "file": "sklearn/calibration.py",
+            "function": "_sigmoid_calibration",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1263,
+                    "start_line": 807,
                     "start_column": 0,
-                    "end_line": 1264,
+                    "end_line": 808,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 137,
-            "file": "lektor/videotools.py",
-            "function": "get_video_info",
+            "id": 323,
+            "file": "sklearn/neural_network/_rbm.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 234,
+                    "start_line": 133,
                     "start_column": 0,
-                    "end_line": 247,
+                    "end_line": 134,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 167,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
+            "id": 1179,
+            "file": "sklearn/ensemble/_forest.py",
+            "function": "predict_proba",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 52,
+                    "start_line": 882,
                     "start_column": 0,
-                    "end_line": 53,
+                    "end_line": 883,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 145,
-            "file": "lektor/types/flow.py",
-            "function": "__getitem__",
+            "id": 1234,
+            "file": "sklearn/svm/_classes.py",
+            "function": "fit",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 78,
+                    "start_line": 274,
                     "start_column": 0,
-                    "end_line": 79,
+                    "end_line": 291,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 148,
-            "file": "lektor/types/flow.py",
-            "function": "to_json",
+            "id": 222,
+            "file": "sklearn/cluster/_affinity_propagation.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 226,
+                    "start_line": 430,
                     "start_column": 0,
-                    "end_line": 227,
+                    "end_line": 431,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 52,
-            "file": "lektor/cli_utils.py",
-            "function": "load_plugins",
+            "id": 885,
+            "file": "sklearn/decomposition/_fastica.py",
+            "function": "transform",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 120,
+                    "start_line": 759,
                     "start_column": 0,
-                    "end_line": 121,
+                    "end_line": 760,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 123,
-            "file": "lektor/cli.py",
-            "function": "plugins_add_cmd",
+            "id": 516,
+            "file": "sklearn/decomposition/_incremental_pca.py",
+            "function": "partial_fit",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 493,
+                    "start_line": 350,
                     "start_column": 0,
-                    "end_line": 494,
+                    "end_line": 351,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 164,
-            "file": "lektor/markdown/controller.py",
-            "function": "require_ctx",
+            "id": 1180,
+            "file": "sklearn/ensemble/_forest.py",
+            "function": "predict_proba",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 39,
+                    "start_line": 890,
                     "start_column": 0,
-                    "end_line": 40,
+                    "end_line": 894,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 98,
-            "file": "lektor/datamodel.py",
-            "function": "to_json",
+            "id": 1228,
+            "file": "sklearn/svm/_classes.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 206,
+                    "start_line": 198,
                     "start_column": 0,
-                    "end_line": 209,
+                    "end_line": 199,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 81,
-            "file": "lektor/databags.py",
-            "function": "get_bag",
+            "id": 695,
+            "file": "sklearn/manifold/_locally_linear.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 55,
+                    "start_line": 693,
                     "start_column": 0,
-                    "end_line": 56,
+                    "end_line": 694,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 157,
-            "file": "lektor/types/multi.py",
-            "function": "_parse_choices",
+            "id": 306,
+            "file": "sklearn/inspection/_plot/partial_dependence.py",
+            "function": "plot",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 30,
+                    "start_line": 1271,
                     "start_column": 0,
-                    "end_line": 31,
+                    "end_line": 1272,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 85,
-            "file": "lektor/imagetools.py",
-            "function": "find_imagemagick",
+            "id": 570,
+            "file": "sklearn/calibration.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 443,
+                    "start_line": 253,
                     "start_column": 0,
-                    "end_line": 444,
+                    "end_line": 254,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 50,
-            "file": "lektor/cli_utils.py",
-            "function": "get_env",
+            "id": 440,
+            "file": "sklearn/preprocessing/_data.py",
+            "function": "fit",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 106,
+                    "start_line": 2634,
                     "start_column": 0,
-                    "end_line": 109,
+                    "end_line": 2635,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 161,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "make_parser",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 88,
-                    "start_column": 0,
-                    "end_line": 89,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 122,
-            "file": "lektor/cli.py",
-            "function": "content_file_info_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 453,
-                    "start_column": 0,
-                    "end_line": 460,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 112,
-            "file": "lektor/cli.py",
-            "function": "build_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 144,
-                    "start_column": 0,
-                    "end_line": 145,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 184,
-            "file": "lektor/environment/config.py",
-            "function": "get_server",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 188,
-                    "start_column": 0,
-                    "end_line": 189,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 77,
-            "file": "lektor/sourceobj.py",
-            "function": "is_child_of",
+            "id": 899,
+            "file": "sklearn/decomposition/_lda.py",
+            "function": "_update_doc_distribution",
             "remove": [
                 {
                     "description": "code",
@@ -1102,309 +1116,295 @@
             ]
         },
         {
-            "id": 176,
-            "file": "lektor/admin/modules/api.py",
-            "function": "_is_valid_alt",
+            "id": 124,
+            "file": "sklearn/feature_selection/_rfe.py",
+            "function": "predict",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 66,
+                    "start_line": 352,
                     "start_column": 0,
-                    "end_line": 67,
+                    "end_line": 353,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 93,
-            "file": "lektor/project.py",
-            "function": "excluded_assets",
+            "id": 761,
+            "file": "sklearn/model_selection/_split.py",
+            "function": "get_n_splits",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 168,
+                    "start_line": 192,
                     "start_column": 0,
-                    "end_line": 169,
+                    "end_line": 193,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 113,
-            "file": "lektor/cli.py",
-            "function": "build_cmd",
+            "id": 509,
+            "file": "sklearn/neural_network/_multilayer_perceptron.py",
+            "function": "_score",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 154,
+                    "start_line": 1611,
                     "start_column": 0,
-                    "end_line": 158,
+                    "end_line": 1612,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 108,
-            "file": "lektor/datamodel.py",
-            "function": "add_system_field",
+            "id": 462,
+            "file": "sklearn/covariance/_empirical_covariance.py",
+            "function": "mahalanobis",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 690,
+                    "start_line": 349,
                     "start_column": 0,
-                    "end_line": 691,
+                    "end_line": 350,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 106,
-            "file": "lektor/datamodel.py",
-            "function": "datamodel_data_from_ini",
+            "id": 807,
+            "file": "sklearn/linear_model/_huber.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 484,
+                    "start_line": 256,
                     "start_column": 0,
-                    "end_line": 485,
+                    "end_line": 257,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 177,
-            "file": "lektor/admin/modules/api.py",
-            "function": "add_new_record",
+            "id": 662,
+            "file": "sklearn/ensemble/_gb_losses.py",
+            "function": "init_estimator",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 364,
+                    "start_line": 781,
                     "start_column": 0,
-                    "end_line": 365,
+                    "end_line": 782,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 6,
-            "file": "lektor/devcli.py",
-            "function": "shell_cmd",
+            "id": 756,
+            "file": "asv_benchmarks/benchmarks/cluster.py",
+            "function": "make_scorers",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 67,
+                    "start_line": 100,
                     "start_column": 0,
-                    "end_line": 70,
+                    "end_line": 105,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 114,
-            "file": "lektor/cli.py",
-            "function": "clean_cmd",
+            "id": 406,
+            "file": "sklearn/preprocessing/_data.py",
+            "function": "partial_fit",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 189,
+                    "start_line": 900,
                     "start_column": 0,
-                    "end_line": 190,
+                    "end_line": 903,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 40,
-            "file": "lektor/db.py",
-            "function": "alt_exists",
+            "id": 533,
+            "file": "sklearn/decomposition/_sparse_pca.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1782,
+                    "start_line": 479,
                     "start_column": 0,
-                    "end_line": 1783,
+                    "end_line": 480,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 14,
-            "file": "lektor/pluginsystem.py",
-            "function": "emit",
+            "id": 342,
+            "file": "sklearn/cluster/_dbscan.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 206,
+                    "start_line": 314,
                     "start_column": 0,
-                    "end_line": 207,
+                    "end_line": 315,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 180,
-            "file": "lektor/environment/config.py",
-            "function": "update_config_from_ini",
+            "id": 605,
+            "file": "sklearn/calibration.py",
+            "function": "calibration_curve",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 84,
+                    "start_line": 980,
                     "start_column": 0,
-                    "end_line": 85,
+                    "end_line": 981,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 19,
-            "file": "lektor/db.py",
-            "function": "get_siblings",
+            "id": 956,
+            "file": "sklearn/linear_model/_base.py",
+            "function": "_rescale_data",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 672,
+                    "start_line": 323,
                     "start_column": 0,
-                    "end_line": 673,
+                    "end_line": 324,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 178,
-            "file": "lektor/admin/modules/api.py",
-            "function": "generator",
+            "id": 402,
+            "file": "sklearn/preprocessing/_data.py",
+            "function": "inverse_transform",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 452,
+                    "start_line": 535,
                     "start_column": 0,
-                    "end_line": 459,
+                    "end_line": 536,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 179,
-            "file": "lektor/admin/modules/serve.py",
-            "function": "serve_artifact",
+            "id": 142,
+            "file": "sklearn/ensemble/_base.py",
+            "function": "_validate_estimators",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 218,
+                    "start_line": 293,
                     "start_column": 0,
-                    "end_line": 219,
+                    "end_line": 294,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 172,
-            "file": "lektor/admin/context.py",
-            "function": "failure_controller",
+            "id": 396,
+            "file": "sklearn/linear_model/_stochastic_gradient.py",
+            "function": "decision_function",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 66,
+                    "start_line": 2520,
                     "start_column": 0,
-                    "end_line": 67,
+                    "end_line": 2521,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 119,
-            "file": "lektor/cli.py",
-            "function": "project_info_cmd",
+            "id": 1174,
+            "file": "sklearn/ensemble/_forest.py",
+            "function": "feature_importances_",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 397,
+                    "start_line": 639,
                     "start_column": 0,
-                    "end_line": 398,
+                    "end_line": 640,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 24,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
+            "id": 671,
+            "file": "sklearn/compose/_column_transformer.py",
+            "function": "_iter",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 809,
+                    "start_line": 387,
                     "start_column": 0,
-                    "end_line": 810,
+                    "end_line": 392,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 163,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "resolve_plugin",
+            "id": 1095,
+            "file": "sklearn/multiclass.py",
+            "function": "decision_function",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 111,
+                    "start_line": 820,
                     "start_column": 0,
-                    "end_line": 112,
+                    "end_line": 821,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 38,
-            "file": "lektor/db.py",
-            "function": "theme_asset_roots",
+            "id": 936,
+            "file": "sklearn/ensemble/_voting.py",
+            "function": "predict",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1689,
+                    "start_line": 361,
                     "start_column": 0,
-                    "end_line": 1690,
+                    "end_line": 362,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 100,
-            "file": "lektor/datamodel.py",
-            "function": "format_record_label",
+            "id": 449,
+            "file": "sklearn/semi_supervised/_label_propagation.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 325,
+                    "start_line": 114,
                     "start_column": 0,
-                    "end_line": 326,
+                    "end_line": 115,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 136,
-            "file": "lektor/videotools.py",
-            "function": "get_video_info",
+            "id": 634,
+            "file": "sklearn/cluster/_agglomerative.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 230,
+                    "start_line": 910,
                     "start_column": 0,
-                    "end_line": 231,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 17,
-            "file": "lektor/db.py",
-            "function": "coerce",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 105,
-                    "start_column": 0,
-                    "end_line": 106,
+                    "end_line": 911,
                     "end_column": 0
                 }
             ]

@@ -1,6 +1,6 @@
 {
-    "name": "lektor_lektor",
-    "project_root": "GitHubProjects/lektor_lektor",
+    "name": "aaugustin_websockets",
+    "project_root": "GitHubProjects/aaugustin_websockets",
     "tests_path": "tests",
     "evaluations": [
         {
@@ -10,1059 +10,65 @@
             "remove": []
         },
         {
-            "id": 43,
-            "file": "lektor/db.py",
-            "function": "_get_cache_key",
+            "id": 207,
+            "file": "src/websockets/legacy/client.py",
+            "function": "handle_redirect",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 2158,
+                    "start_line": 564,
                     "start_column": 0,
-                    "end_line": 2159,
+                    "end_line": 565,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 154,
-            "file": "lektor/types/primitives.py",
-            "function": "to_json",
+            "id": 133,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_request",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 89,
+                    "start_line": 96,
                     "start_column": 0,
-                    "end_line": 90,
+                    "end_line": 99,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 34,
-            "file": "lektor/db.py",
-            "function": "track_record_dependency",
+            "id": 284,
+            "file": "fuzzing/fuzz_http11_request_parser.py",
+            "function": "test_one_input",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1487,
+                    "start_line": 13,
                     "start_column": 0,
-                    "end_line": 1488,
+                    "end_line": 14,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 91,
-            "file": "lektor/project.py",
-            "function": "get_package_cache_path",
+            "id": 40,
+            "file": "src/websockets/protocol.py",
+            "function": "send_pong",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 136,
+                    "start_line": 399,
                     "start_column": 0,
-                    "end_line": 137,
+                    "end_line": 400,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 162,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "resolve_plugin",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 107,
-                    "start_column": 0,
-                    "end_line": 108,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 128,
-            "file": "lektor/editor.py",
-            "function": "make_editor_session",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 51,
-                    "start_column": 0,
-                    "end_line": 52,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 101,
-            "file": "lektor/datamodel.py",
-            "function": "get_default_child_slug",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 343,
-                    "start_column": 0,
-                    "end_line": 344,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 173,
-            "file": "lektor/admin/context.py",
-            "function": "cli_reporter",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 69,
-                    "start_column": 0,
-                    "end_line": 70,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 94,
-            "file": "lektor/project.py",
-            "function": "included_assets",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 177,
-                    "start_column": 0,
-                    "end_line": 178,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 78,
-            "file": "lektor/sourceobj.py",
-            "function": "url_to",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 160,
-                    "start_column": 0,
-                    "end_line": 161,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 36,
-            "file": "lektor/db.py",
-            "function": "resolve_url_path",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1633,
-                    "start_column": 0,
-                    "end_line": 1634,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 59,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 900,
-                    "start_column": 0,
-                    "end_line": 901,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 32,
-            "file": "lektor/db.py",
-            "function": "load_raw_data",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1298,
-                    "start_column": 0,
-                    "end_line": 1299,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 95,
-            "file": "lektor/datamodel.py",
-            "function": "get_pagination_controller",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 135,
-                    "start_column": 0,
-                    "end_line": 136,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "file": "lektor/__main__.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 4,
-                    "start_column": 0,
-                    "end_line": 5,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 117,
-            "file": "lektor/cli.py",
-            "function": "deploy_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 278,
-                    "start_column": 0,
-                    "end_line": 279,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 82,
-            "file": "lektor/databags.py",
-            "function": "get_bag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 61,
-                    "start_column": 0,
-                    "end_line": 62,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 45,
-            "file": "lektor/publisher.py",
-            "function": "publish",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 796,
-                    "start_column": 0,
-                    "end_line": 797,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 58,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 874,
-                    "start_column": 0,
-                    "end_line": 875,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 816,
-                    "start_column": 0,
-                    "end_line": 826,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 131,
-            "file": "lektor/editor.py",
-            "function": "add_attachment",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 287,
-                    "start_column": 0,
-                    "end_line": 288,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 80,
-            "file": "lektor/databags.py",
-            "function": "load_databag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 21,
-                    "start_column": 0,
-                    "end_line": 22,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 144,
-            "file": "lektor/types/fake.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 33,
-                    "start_column": 0,
-                    "end_line": 34,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 107,
-            "file": "lektor/datamodel.py",
-            "function": "flowblock_data_from_ini",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 516,
-                    "start_column": 0,
-                    "end_line": 517,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 96,
-            "file": "lektor/datamodel.py",
-            "function": "get_pagination_query",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 142,
-                    "start_column": 0,
-                    "end_line": 143,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 71,
-            "file": "lektor/devserver.py",
-            "function": "build",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 34,
-                    "start_column": 0,
-                    "end_line": 35,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 126,
-            "file": "lektor/cli.py",
-            "function": "plugins_flush_cache_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 589,
-                    "start_column": 0,
-                    "end_line": 590,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 166,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 44,
-                    "start_column": 0,
-                    "end_line": 45,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 51,
-            "file": "lektor/cli_utils.py",
-            "function": "load_plugins",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 115,
-                    "start_column": 0,
-                    "end_line": 116,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 146,
-            "file": "lektor/types/flow.py",
-            "function": "__html__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 92,
-                    "start_column": 0,
-                    "end_line": 93,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 33,
-            "file": "lektor/db.py",
-            "function": "load_raw_data",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1321,
-                    "start_column": 0,
-                    "end_line": 1324,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 76,
-            "file": "lektor/devserver.py",
-            "function": "run_server",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 105,
-                    "start_column": 0,
-                    "end_line": 114,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 1,
-            "file": "lektor/quickstart.py",
-            "function": "get_default_author_email",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 151,
-                    "start_column": 0,
-                    "end_line": 152,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 171,
-            "file": "lektor/admin/context.py",
-            "function": "builder",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 62,
-                    "start_column": 0,
-                    "end_line": 63,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 936,
-                    "start_column": 0,
-                    "end_line": 947,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 57,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 810,
-                    "start_column": 0,
-                    "end_line": 811,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 170,
-            "file": "lektor/admin/context.py",
-            "function": "tree",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 54,
-                    "start_column": 0,
-                    "end_line": 55,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 12,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_config",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 97,
-                    "start_column": 0,
-                    "end_line": 98,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 160,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 23,
-                    "start_column": 0,
-                    "end_line": 24,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 142,
-            "file": "lektor/videotools.py",
-            "function": "make_video_thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 371,
-                    "start_column": 0,
-                    "end_line": 372,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 21,
-            "file": "lektor/db.py",
-            "function": "contents",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 738,
-                    "start_column": 0,
-                    "end_line": 739,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 54,
-            "file": "lektor/builder.py",
-            "function": "notify_failure",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 121,
-                    "start_column": 0,
-                    "end_line": 122,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 63,
-            "file": "lektor/builder.py",
-            "function": "prune",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1198,
-                    "start_column": 0,
-                    "end_line": 1199,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 121,
-            "file": "lektor/cli.py",
-            "function": "content_file_info_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 432,
-                    "start_column": 0,
-                    "end_line": 433,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 88,
-            "file": "lektor/imagetools.py",
-            "function": "make_image_thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 596,
-                    "start_column": 0,
-                    "end_line": 599,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 11,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_lektor_config",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 80,
-                    "start_column": 0,
-                    "end_line": 81,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 73,
-            "file": "lektor/devserver.py",
-            "function": "run",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 49,
-                    "start_column": 0,
-                    "end_line": 50,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 97,
-            "file": "lektor/datamodel.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 200,
-                    "start_column": 0,
-                    "end_line": 203,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 48,
-            "file": "lektor/cli_utils.py",
-            "function": "get_project",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 78,
-                    "start_column": 0,
-                    "end_line": 79,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 79,
-            "file": "lektor/sourceobj.py",
-            "function": "_resolve_url",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 187,
-                    "start_column": 0,
-                    "end_line": 188,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 135,
-            "file": "lektor/context.py",
-            "function": "add_sub_artifact",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 228,
-                    "start_column": 0,
-                    "end_line": 229,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_plugin",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 21,
-                    "start_column": 0,
-                    "end_line": 22,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 64,
-            "file": "lektor/builder.py",
-            "function": "prune",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1202,
-                    "start_column": 0,
-                    "end_line": 1203,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 158,
-            "file": "lektor/types/multi.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 123,
-                    "start_column": 0,
-                    "end_line": 124,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 20,
-            "file": "lektor/db.py",
-            "function": "_siblings",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 683,
-                    "start_column": 0,
-                    "end_line": 684,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 27,
-            "file": "lektor/db.py",
-            "function": "_get_video_info",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 854,
-                    "start_column": 0,
-                    "end_line": 855,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 141,
-            "file": "lektor/videotools.py",
-            "function": "build_thumbnail_artifact",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 356,
-                    "start_column": 0,
-                    "end_line": 357,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "file": "lektor/devcli.py",
-            "function": "new_theme",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 115,
-                    "start_column": 0,
-                    "end_line": 116,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 129,
-            "file": "lektor/editor.py",
-            "function": "add_attachment",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 279,
-                    "start_column": 0,
-                    "end_line": 280,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 165,
-            "file": "lektor/markdown/controller.py",
-            "function": "get_cache_key",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 166,
-                    "start_column": 0,
-                    "end_line": 167,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 68,
-            "file": "lektor/builder.py",
-            "function": "build_all",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1263,
-                    "start_column": 0,
-                    "end_line": 1264,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 137,
-            "file": "lektor/videotools.py",
-            "function": "get_video_info",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 234,
-                    "start_column": 0,
-                    "end_line": 247,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 167,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 52,
-                    "start_column": 0,
-                    "end_line": 53,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 145,
-            "file": "lektor/types/flow.py",
-            "function": "__getitem__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 78,
-                    "start_column": 0,
-                    "end_line": 79,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 148,
-            "file": "lektor/types/flow.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 226,
-                    "start_column": 0,
-                    "end_line": 227,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 52,
-            "file": "lektor/cli_utils.py",
-            "function": "load_plugins",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 120,
-                    "start_column": 0,
-                    "end_line": 121,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 123,
-            "file": "lektor/cli.py",
-            "function": "plugins_add_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 493,
-                    "start_column": 0,
-                    "end_line": 494,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 164,
-            "file": "lektor/markdown/controller.py",
-            "function": "require_ctx",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 39,
-                    "start_column": 0,
-                    "end_line": 40,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 98,
-            "file": "lektor/datamodel.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 206,
-                    "start_column": 0,
-                    "end_line": 209,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 81,
-            "file": "lektor/databags.py",
-            "function": "get_bag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 55,
-                    "start_column": 0,
-                    "end_line": 56,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 157,
-            "file": "lektor/types/multi.py",
-            "function": "_parse_choices",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 30,
-                    "start_column": 0,
-                    "end_line": 31,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 85,
-            "file": "lektor/imagetools.py",
-            "function": "find_imagemagick",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 443,
-                    "start_column": 0,
-                    "end_line": 444,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 50,
-            "file": "lektor/cli_utils.py",
-            "function": "get_env",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 106,
-                    "start_column": 0,
-                    "end_line": 109,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 161,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "make_parser",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 88,
-                    "start_column": 0,
-                    "end_line": 89,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 122,
-            "file": "lektor/cli.py",
-            "function": "content_file_info_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 453,
-                    "start_column": 0,
-                    "end_line": 460,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 112,
-            "file": "lektor/cli.py",
-            "function": "build_cmd",
+            "id": 188,
+            "file": "src/websockets/legacy/client.py",
+            "function": "read_http_response",
             "remove": [
                 {
                     "description": "code",
@@ -1074,177 +80,961 @@
             ]
         },
         {
-            "id": 184,
-            "file": "lektor/environment/config.py",
-            "function": "get_server",
+            "id": 38,
+            "file": "src/websockets/protocol.py",
+            "function": "send_close",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 188,
+                    "start_line": 371,
                     "start_column": 0,
-                    "end_line": 189,
+                    "end_line": 372,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 77,
-            "file": "lektor/sourceobj.py",
-            "function": "is_child_of",
+            "id": 132,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_request",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 97,
+                    "start_line": 94,
                     "start_column": 0,
-                    "end_line": 98,
+                    "end_line": 95,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 176,
-            "file": "lektor/admin/modules/api.py",
-            "function": "_is_valid_alt",
+            "id": 276,
+            "file": "experiments/authentication/app.py",
+            "function": "main",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 66,
+                    "start_line": 194,
                     "start_column": 0,
-                    "end_line": 67,
+                    "end_line": 200,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 93,
-            "file": "lektor/project.py",
-            "function": "excluded_assets",
+            "id": 156,
+            "file": "src/websockets/legacy/protocol.py",
+            "function": "connection_closed_exc",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 168,
+                    "start_line": 907,
                     "start_column": 0,
-                    "end_line": 169,
+                    "end_line": 912,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 113,
-            "file": "lektor/cli.py",
-            "function": "build_cmd",
+            "id": 272,
+            "file": "example/quickstart/client_secure.py",
+            "function": "hello",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 154,
+                    "start_line": 14,
                     "start_column": 0,
-                    "end_line": 158,
+                    "end_line": 15,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 108,
-            "file": "lektor/datamodel.py",
-            "function": "add_system_field",
+            "id": 119,
+            "file": "src/websockets/legacy/server.py",
+            "function": "handshake",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 690,
+                    "start_line": 622,
                     "start_column": 0,
-                    "end_line": 691,
+                    "end_line": 623,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 85,
+            "file": "src/websockets/client.py",
+            "function": "process_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 159,
+                    "start_column": 0,
+                    "end_line": 162,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 278,
+            "file": "experiments/authentication/app.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 203,
+                    "start_column": 0,
+                    "end_line": 209,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "src/websockets/protocol.py",
+            "function": "send_continuation",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 297,
+                    "start_column": 0,
+                    "end_line": 298,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 130,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 87,
+                    "start_column": 0,
+                    "end_line": 88,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 234,
+            "file": "compliance/test_server.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 22,
+                    "start_column": 0,
+                    "end_line": 23,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 106,
-            "file": "lektor/datamodel.py",
-            "function": "datamodel_data_from_ini",
+            "file": "src/websockets/legacy/server.py",
+            "function": "handler",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 484,
+                    "start_line": 192,
                     "start_column": 0,
-                    "end_line": 485,
+                    "end_line": 193,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 177,
-            "file": "lektor/admin/modules/api.py",
-            "function": "add_new_record",
+            "id": 257,
+            "file": "example/deployment/heroku/app.py",
+            "function": "main",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 364,
+                    "start_line": 21,
                     "start_column": 0,
-                    "end_line": 365,
+                    "end_line": 26,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 6,
-            "file": "lektor/devcli.py",
-            "function": "shell_cmd",
+            "id": 161,
+            "file": "src/websockets/legacy/protocol.py",
+            "function": "read_message",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 67,
+                    "start_line": 1094,
                     "start_column": 0,
-                    "end_line": 70,
+                    "end_line": 1095,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 114,
-            "file": "lektor/cli.py",
-            "function": "clean_cmd",
+            "id": 279,
+            "file": "experiments/authentication/app.py",
+            "function": "main",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 189,
+                    "start_line": 208,
                     "start_column": 0,
-                    "end_line": 190,
+                    "end_line": 214,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 40,
-            "file": "lektor/db.py",
-            "function": "alt_exists",
+            "id": 19,
+            "file": "src/websockets/server.py",
+            "function": "process_extensions",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1782,
+                    "start_line": 358,
                     "start_column": 0,
-                    "end_line": 1783,
+                    "end_line": 359,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 14,
-            "file": "lektor/pluginsystem.py",
-            "function": "emit",
+            "id": 9,
+            "file": "src/websockets/server.py",
+            "function": "process_request",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 206,
+                    "start_line": 244,
                     "start_column": 0,
-                    "end_line": 207,
+                    "end_line": 245,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 180,
-            "file": "lektor/environment/config.py",
-            "function": "update_config_from_ini",
+            "id": 165,
+            "file": "src/websockets/legacy/protocol.py",
+            "function": "write_frame",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1207,
+                    "start_column": 0,
+                    "end_line": 1210,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 144,
+            "file": "src/websockets/legacy/protocol.py",
+            "function": "_drain",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 341,
+                    "start_column": 0,
+                    "end_line": 342,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 112,
+            "file": "src/websockets/legacy/server.py",
+            "function": "process_origin",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 394,
+                    "start_column": 0,
+                    "end_line": 395,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 206,
+            "file": "src/websockets/legacy/client.py",
+            "function": "handle_redirect",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 560,
+                    "start_column": 0,
+                    "end_line": 561,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 264,
+            "file": "example/quickstart/show_time_2.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 24,
+                    "start_column": 0,
+                    "end_line": 25,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 86,
+            "file": "src/websockets/client.py",
+            "function": "process_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 164,
+                    "start_column": 0,
+                    "end_line": 165,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 191,
+            "file": "src/websockets/legacy/client.py",
+            "function": "process_extensions",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 221,
+                    "start_column": 0,
+                    "end_line": 225,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 270,
+            "file": "example/quickstart/server_secure.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 22,
+                    "start_column": 0,
+                    "end_line": 23,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 59,
+            "file": "src/websockets/frames.py",
+            "function": "serialize",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 304,
+                    "start_column": 0,
+                    "end_line": 305,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 205,
+            "file": "src/websockets/legacy/client.py",
+            "function": "handshake",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 330,
+                    "start_column": 0,
+                    "end_line": 331,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 34,
+            "file": "src/websockets/protocol.py",
+            "function": "send_close",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 360,
+                    "start_column": 0,
+                    "end_line": 361,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 76,
+            "file": "src/websockets/http.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 12,
+                    "start_column": 0,
+                    "end_line": 24,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 160,
+            "file": "src/websockets/legacy/protocol.py",
+            "function": "read_message",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1092,
+                    "start_column": 0,
+                    "end_line": 1093,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 190,
+            "file": "src/websockets/legacy/client.py",
+            "function": "process_extensions",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 195,
+                    "start_column": 0,
+                    "end_line": 196,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 231,
+            "file": "compliance/test_client.py",
+            "function": "get_case_count",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 21,
+                    "start_column": 0,
+                    "end_line": 22,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 260,
+            "file": "example/deployment/supervisor/app.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 20,
+                    "start_column": 0,
+                    "end_line": 26,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 140,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 158,
+                    "start_column": 0,
+                    "end_line": 159,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "file": "src/websockets/server.py",
+            "function": "select_subprotocol",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 463,
+                    "start_column": 0,
+                    "end_line": 464,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 267,
+            "file": "example/quickstart/counter.py",
+            "function": "counter",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 36,
+                    "start_column": 0,
+                    "end_line": 37,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 288,
+            "file": "fuzzing/fuzz_http11_response_parser.py",
+            "function": "test_one_input",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 13,
+                    "start_column": 0,
+                    "end_line": 14,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "file": "src/websockets/protocol.py",
+            "function": "send_continuation",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 299,
+                    "start_column": 0,
+                    "end_line": 300,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 71,
+            "file": "src/websockets/headers.py",
+            "function": "parse_end",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 525,
+                    "start_column": 0,
+                    "end_line": 526,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 88,
+            "file": "src/websockets/client.py",
+            "function": "process_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 175,
+                    "start_column": 0,
+                    "end_line": 176,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 142,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 164,
+                    "start_column": 0,
+                    "end_line": 165,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 196,
+            "file": "src/websockets/legacy/client.py",
+            "function": "handshake",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 287,
+                    "start_column": 0,
+                    "end_line": 288,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 102,
+            "file": "src/websockets/http11.py",
+            "function": "parse_headers",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 311,
+                    "start_column": 0,
+                    "end_line": 312,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 239,
+            "file": "example/django/authentication.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 24,
+                    "start_column": 0,
+                    "end_line": 25,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "file": "src/websockets/server.py",
+            "function": "process_subprotocol",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 407,
+                    "start_column": 0,
+                    "end_line": 411,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "file": "src/websockets/server.py",
+            "function": "process_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 260,
+                    "start_column": 0,
+                    "end_line": 261,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 108,
+            "file": "src/websockets/legacy/server.py",
+            "function": "handler",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 212,
+                    "start_column": 0,
+                    "end_line": 213,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 44,
+            "file": "src/websockets/protocol.py",
+            "function": "recv_frame",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 611,
+                    "start_column": 0,
+                    "end_line": 612,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 237,
+            "file": "example/django/notifications.py",
+            "function": "process_events",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 63,
+                    "start_column": 0,
+                    "end_line": 64,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 139,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 153,
+                    "start_column": 0,
+                    "end_line": 154,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 289,
+            "file": "fuzzing/fuzz_http11_response_parser.py",
+            "function": "test_one_input",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 17,
+                    "start_column": 0,
+                    "end_line": 22,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 49,
+            "file": "src/websockets/protocol.py",
+            "function": "recv_frame",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 658,
+                    "start_column": 0,
+                    "end_line": 659,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 250,
+            "file": "example/tutorial/step1/app.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 60,
+                    "start_column": 0,
+                    "end_line": 61,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 247,
+            "file": "example/tutorial/step2/app.py",
+            "function": "play",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 74,
+                    "start_column": 0,
+                    "end_line": 75,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 227,
+            "file": "src/websockets/extensions/permessage_deflate.py",
+            "function": "process_response_params",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 424,
+                    "start_column": 0,
+                    "end_line": 425,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 116,
+            "file": "src/websockets/legacy/server.py",
+            "function": "handshake",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 606,
+                    "start_column": 0,
+                    "end_line": 607,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 89,
+            "file": "src/websockets/client.py",
+            "function": "process_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 177,
+                    "start_column": 0,
+                    "end_line": 181,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 149,
+            "file": "src/websockets/legacy/protocol.py",
+            "function": "send",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 708,
+                    "start_column": 0,
+                    "end_line": 709,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 275,
+            "file": "experiments/compression/client.py",
+            "function": "client",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 25,
+                    "start_column": 0,
+                    "end_line": 35,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 41,
+            "file": "src/websockets/protocol.py",
+            "function": "fail",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 422,
+                    "start_column": 0,
+                    "end_line": 423,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 155,
+            "file": "src/websockets/legacy/protocol.py",
+            "function": "pong",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 893,
+                    "start_column": 0,
+                    "end_line": 894,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 218,
+            "file": "src/websockets/extensions/permessage_deflate.py",
+            "function": "_extract_parameters",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 240,
+                    "start_column": 0,
+                    "end_line": 241,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 135,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "build_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 119,
+                    "start_column": 0,
+                    "end_line": 120,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 54,
+            "file": "src/websockets/uri.py",
+            "function": "parse_uri",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 93,
+                    "start_column": 0,
+                    "end_line": 94,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 268,
+            "file": "example/quickstart/counter.py",
+            "function": "counter",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 42,
+                    "start_column": 0,
+                    "end_line": 43,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 179,
+            "file": "src/websockets/legacy/framing.py",
+            "function": "serialize_close",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 173,
+                    "start_column": 0,
+                    "end_line": 174,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 129,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_request",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 80,
+                    "start_column": 0,
+                    "end_line": 83,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 157,
+            "file": "src/websockets/legacy/protocol.py",
+            "function": "connection_closed_exc",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 913,
+                    "start_column": 0,
+                    "end_line": 918,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 252,
+            "file": "example/tutorial/step3/app.py",
+            "function": "play",
             "remove": [
                 {
                     "description": "code",
@@ -1256,155 +1046,365 @@
             ]
         },
         {
-            "id": 19,
-            "file": "lektor/db.py",
-            "function": "get_siblings",
+            "id": 184,
+            "file": "src/websockets/legacy/http.py",
+            "function": "read_headers",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 672,
+                    "start_line": 157,
                     "start_column": 0,
-                    "end_line": 673,
+                    "end_line": 158,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 178,
-            "file": "lektor/admin/modules/api.py",
-            "function": "generator",
+            "id": 180,
+            "file": "src/websockets/legacy/auth.py",
+            "function": "process_request",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 452,
+                    "start_line": 92,
                     "start_column": 0,
-                    "end_line": 459,
+                    "end_line": 93,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 179,
-            "file": "lektor/admin/modules/serve.py",
-            "function": "serve_artifact",
+            "id": 176,
+            "file": "src/websockets/legacy/framing.py",
+            "function": "read",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 218,
+                    "start_line": 100,
                     "start_column": 0,
-                    "end_line": 219,
+                    "end_line": 101,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 172,
-            "file": "lektor/admin/context.py",
-            "function": "failure_controller",
+            "id": 195,
+            "file": "src/websockets/legacy/client.py",
+            "function": "process_subprotocol",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 66,
+                    "start_line": 259,
                     "start_column": 0,
-                    "end_line": 67,
+                    "end_line": 260,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 119,
-            "file": "lektor/cli.py",
-            "function": "project_info_cmd",
+            "id": 127,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_request",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 397,
+                    "start_line": 73,
                     "start_column": 0,
-                    "end_line": 398,
+                    "end_line": 74,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 24,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
+            "id": 146,
+            "file": "src/websockets/legacy/protocol.py",
+            "function": "send",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 809,
+                    "start_line": 644,
                     "start_column": 0,
-                    "end_line": 810,
+                    "end_line": 645,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 163,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "resolve_plugin",
+            "id": 193,
+            "file": "src/websockets/legacy/client.py",
+            "function": "process_subprotocol",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 111,
+                    "start_line": 249,
                     "start_column": 0,
-                    "end_line": 112,
+                    "end_line": 250,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 38,
-            "file": "lektor/db.py",
-            "function": "theme_asset_roots",
+            "id": 20,
+            "file": "src/websockets/server.py",
+            "function": "process_extensions",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1689,
+                    "start_line": 387,
                     "start_column": 0,
-                    "end_line": 1690,
+                    "end_line": 388,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 114,
+            "file": "src/websockets/legacy/server.py",
+            "function": "process_extensions",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 475,
+                    "start_column": 0,
+                    "end_line": 476,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 107,
+            "file": "src/websockets/legacy/server.py",
+            "function": "handler",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 205,
+                    "start_column": 0,
+                    "end_line": 206,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 187,
+            "file": "src/websockets/legacy/client.py",
+            "function": "read_http_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 138,
+                    "start_column": 0,
+                    "end_line": 139,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 32,
+            "file": "src/websockets/protocol.py",
+            "function": "send_binary",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 339,
+                    "start_column": 0,
+                    "end_line": 340,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "src/websockets/server.py",
+            "function": "accept",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 193,
+                    "start_column": 0,
+                    "end_line": 194,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 174,
+            "file": "src/websockets/legacy/framing.py",
+            "function": "read",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 83,
+                    "start_column": 0,
+                    "end_line": 84,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 242,
+            "file": "example/faq/health_check_server.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 16,
+                    "start_column": 0,
+                    "end_line": 20,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 162,
+            "file": "src/websockets/legacy/protocol.py",
+            "function": "read_data_frame",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 1116,
+                    "start_column": 0,
+                    "end_line": 1117,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 87,
+            "file": "src/websockets/client.py",
+            "function": "process_response",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 170,
+                    "start_column": 0,
+                    "end_line": 171,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 46,
+            "file": "src/websockets/protocol.py",
+            "function": "recv_frame",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 628,
+                    "start_column": 0,
+                    "end_line": 629,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "file": "src/websockets/server.py",
+            "function": "accept",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 178,
+                    "start_column": 0,
+                    "end_line": 179,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 266,
+            "file": "example/quickstart/counter.py",
+            "function": "counter",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 33,
+                    "start_column": 0,
+                    "end_line": 34,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 209,
+            "file": "src/websockets/extensions/permessage_deflate.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 31,
+                    "start_column": 0,
+                    "end_line": 32,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 100,
-            "file": "lektor/datamodel.py",
-            "function": "format_record_label",
+            "file": "src/websockets/http11.py",
+            "function": "parse",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 325,
+                    "start_line": 263,
                     "start_column": 0,
-                    "end_line": 326,
+                    "end_line": 266,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 136,
-            "file": "lektor/videotools.py",
-            "function": "get_video_info",
+            "id": 75,
+            "file": "src/websockets/headers.py",
+            "function": "parse_authorization_basic",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 230,
+                    "start_line": 568,
                     "start_column": 0,
-                    "end_line": 231,
+                    "end_line": 572,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 17,
-            "file": "lektor/db.py",
-            "function": "coerce",
+            "id": 125,
+            "file": "src/websockets/legacy/handshake.py",
+            "function": "check_request",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 105,
+                    "start_line": 63,
                     "start_column": 0,
-                    "end_line": 106,
+                    "end_line": 64,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 232,
+            "file": "compliance/test_client.py",
+            "function": "run_case",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 0,
+                    "end_line": 29,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 271,
+            "file": "example/quickstart/show_time.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 15,
+                    "start_column": 0,
+                    "end_line": 16,
                     "end_column": 0
                 }
             ]

@@ -1,7 +1,7 @@
 {
-    "name": "lektor_lektor",
-    "project_root": "GitHubProjects/lektor_lektor",
-    "tests_path": "tests",
+    "name": "graphql-python_graphene",
+    "project_root": "GitHubProjects/graphql-python_graphene",
+    "tests_path": "graphene/tests",
     "evaluations": [
         {
             "id": 0,
@@ -10,79 +10,79 @@
             "remove": []
         },
         {
-            "id": 43,
-            "file": "lektor/db.py",
-            "function": "_get_cache_key",
+            "id": 11,
+            "file": "graphene/relay/node.py",
+            "function": "wrap_resolve",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 2158,
+                    "start_line": 71,
                     "start_column": 0,
-                    "end_line": 2159,
+                    "end_line": 72,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 154,
-            "file": "lektor/types/primitives.py",
-            "function": "to_json",
+            "id": 318,
+            "file": "graphene/types/tests/test_query.py",
+            "function": "test_query_union",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 89,
+                    "start_line": 68,
                     "start_column": 0,
-                    "end_line": 90,
+                    "end_line": 69,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 34,
-            "file": "lektor/db.py",
-            "function": "track_record_dependency",
+            "id": 161,
+            "file": "graphene/types/tests/test_subscribe_async.py",
+            "function": "test_subscription_with_args",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1487,
+                    "start_line": 60,
                     "start_column": 0,
-                    "end_line": 1488,
+                    "end_line": 61,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 91,
-            "file": "lektor/project.py",
-            "function": "get_package_cache_path",
+            "id": 134,
+            "file": "graphene/types/field.py",
+            "function": "wrap_resolve",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 136,
+                    "start_line": 126,
                     "start_column": 0,
-                    "end_line": 137,
+                    "end_line": 129,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 162,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "resolve_plugin",
+            "id": 442,
+            "file": "graphene/types/tests/test_argument.py",
+            "function": "test_to_arguments_deprecated",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 107,
+                    "start_line": 58,
                     "start_column": 0,
-                    "end_line": 108,
+                    "end_line": 59,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 128,
-            "file": "lektor/editor.py",
-            "function": "make_editor_session",
+            "id": 210,
+            "file": "graphene/types/tests/test_scalars_serialization.py",
+            "function": "test_serializes_output_boolean",
             "remove": [
                 {
                     "description": "code",
@@ -94,891 +94,37 @@
             ]
         },
         {
-            "id": 101,
-            "file": "lektor/datamodel.py",
-            "function": "get_default_child_slug",
+            "id": 413,
+            "file": "graphene/types/tests/test_type_map.py",
+            "function": "test_objecttype_camelcase_disabled",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 343,
+                    "start_line": 258,
                     "start_column": 0,
-                    "end_line": 344,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 173,
-            "file": "lektor/admin/context.py",
-            "function": "cli_reporter",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 69,
-                    "start_column": 0,
-                    "end_line": 70,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 94,
-            "file": "lektor/project.py",
-            "function": "included_assets",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 177,
-                    "start_column": 0,
-                    "end_line": 178,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 78,
-            "file": "lektor/sourceobj.py",
-            "function": "url_to",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 160,
-                    "start_column": 0,
-                    "end_line": 161,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 36,
-            "file": "lektor/db.py",
-            "function": "resolve_url_path",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1633,
-                    "start_column": 0,
-                    "end_line": 1634,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 59,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 900,
-                    "start_column": 0,
-                    "end_line": 901,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 32,
-            "file": "lektor/db.py",
-            "function": "load_raw_data",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1298,
-                    "start_column": 0,
-                    "end_line": 1299,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 95,
-            "file": "lektor/datamodel.py",
-            "function": "get_pagination_controller",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 135,
-                    "start_column": 0,
-                    "end_line": 136,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "file": "lektor/__main__.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 4,
-                    "start_column": 0,
-                    "end_line": 5,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 117,
-            "file": "lektor/cli.py",
-            "function": "deploy_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 278,
-                    "start_column": 0,
-                    "end_line": 279,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 82,
-            "file": "lektor/databags.py",
-            "function": "get_bag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 61,
-                    "start_column": 0,
-                    "end_line": 62,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 45,
-            "file": "lektor/publisher.py",
-            "function": "publish",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 796,
-                    "start_column": 0,
-                    "end_line": 797,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 58,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 874,
-                    "start_column": 0,
-                    "end_line": 875,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 816,
-                    "start_column": 0,
-                    "end_line": 826,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 131,
-            "file": "lektor/editor.py",
-            "function": "add_attachment",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 287,
-                    "start_column": 0,
-                    "end_line": 288,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 80,
-            "file": "lektor/databags.py",
-            "function": "load_databag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 21,
-                    "start_column": 0,
-                    "end_line": 22,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 144,
-            "file": "lektor/types/fake.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 33,
-                    "start_column": 0,
-                    "end_line": 34,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 107,
-            "file": "lektor/datamodel.py",
-            "function": "flowblock_data_from_ini",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 516,
-                    "start_column": 0,
-                    "end_line": 517,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 96,
-            "file": "lektor/datamodel.py",
-            "function": "get_pagination_query",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 142,
-                    "start_column": 0,
-                    "end_line": 143,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 71,
-            "file": "lektor/devserver.py",
-            "function": "build",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 34,
-                    "start_column": 0,
-                    "end_line": 35,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 126,
-            "file": "lektor/cli.py",
-            "function": "plugins_flush_cache_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 589,
-                    "start_column": 0,
-                    "end_line": 590,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 166,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 44,
-                    "start_column": 0,
-                    "end_line": 45,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 51,
-            "file": "lektor/cli_utils.py",
-            "function": "load_plugins",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 115,
-                    "start_column": 0,
-                    "end_line": 116,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 146,
-            "file": "lektor/types/flow.py",
-            "function": "__html__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 92,
-                    "start_column": 0,
-                    "end_line": 93,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 33,
-            "file": "lektor/db.py",
-            "function": "load_raw_data",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1321,
-                    "start_column": 0,
-                    "end_line": 1324,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 76,
-            "file": "lektor/devserver.py",
-            "function": "run_server",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 105,
-                    "start_column": 0,
-                    "end_line": 114,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 1,
-            "file": "lektor/quickstart.py",
-            "function": "get_default_author_email",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 151,
-                    "start_column": 0,
-                    "end_line": 152,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 171,
-            "file": "lektor/admin/context.py",
-            "function": "builder",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 62,
-                    "start_column": 0,
-                    "end_line": 63,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 29,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 936,
-                    "start_column": 0,
-                    "end_line": 947,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 57,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 810,
-                    "start_column": 0,
-                    "end_line": 811,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 170,
-            "file": "lektor/admin/context.py",
-            "function": "tree",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 54,
-                    "start_column": 0,
-                    "end_line": 55,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 12,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_config",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 97,
-                    "start_column": 0,
-                    "end_line": 98,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 160,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 23,
-                    "start_column": 0,
-                    "end_line": 24,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 142,
-            "file": "lektor/videotools.py",
-            "function": "make_video_thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 371,
-                    "start_column": 0,
-                    "end_line": 372,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 21,
-            "file": "lektor/db.py",
-            "function": "contents",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 738,
-                    "start_column": 0,
-                    "end_line": 739,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 54,
-            "file": "lektor/builder.py",
-            "function": "notify_failure",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 121,
-                    "start_column": 0,
-                    "end_line": 122,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 63,
-            "file": "lektor/builder.py",
-            "function": "prune",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1198,
-                    "start_column": 0,
-                    "end_line": 1199,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 121,
-            "file": "lektor/cli.py",
-            "function": "content_file_info_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 432,
-                    "start_column": 0,
-                    "end_line": 433,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 88,
-            "file": "lektor/imagetools.py",
-            "function": "make_image_thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 596,
-                    "start_column": 0,
-                    "end_line": 599,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 11,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_lektor_config",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 80,
-                    "start_column": 0,
-                    "end_line": 81,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 73,
-            "file": "lektor/devserver.py",
-            "function": "run",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 49,
-                    "start_column": 0,
-                    "end_line": 50,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 97,
-            "file": "lektor/datamodel.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 200,
-                    "start_column": 0,
-                    "end_line": 203,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 48,
-            "file": "lektor/cli_utils.py",
-            "function": "get_project",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 78,
-                    "start_column": 0,
-                    "end_line": 79,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 79,
-            "file": "lektor/sourceobj.py",
-            "function": "_resolve_url",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 187,
-                    "start_column": 0,
-                    "end_line": 188,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 135,
-            "file": "lektor/context.py",
-            "function": "add_sub_artifact",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 228,
-                    "start_column": 0,
-                    "end_line": 229,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 10,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_plugin",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 21,
-                    "start_column": 0,
-                    "end_line": 22,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 64,
-            "file": "lektor/builder.py",
-            "function": "prune",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1202,
-                    "start_column": 0,
-                    "end_line": 1203,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 158,
-            "file": "lektor/types/multi.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 123,
-                    "start_column": 0,
-                    "end_line": 124,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 20,
-            "file": "lektor/db.py",
-            "function": "_siblings",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 683,
-                    "start_column": 0,
-                    "end_line": 684,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 27,
-            "file": "lektor/db.py",
-            "function": "_get_video_info",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 854,
-                    "start_column": 0,
-                    "end_line": 855,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 141,
-            "file": "lektor/videotools.py",
-            "function": "build_thumbnail_artifact",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 356,
-                    "start_column": 0,
-                    "end_line": 357,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "file": "lektor/devcli.py",
-            "function": "new_theme",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 115,
-                    "start_column": 0,
-                    "end_line": 116,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 129,
-            "file": "lektor/editor.py",
-            "function": "add_attachment",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 279,
-                    "start_column": 0,
-                    "end_line": 280,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 165,
-            "file": "lektor/markdown/controller.py",
-            "function": "get_cache_key",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 166,
-                    "start_column": 0,
-                    "end_line": 167,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 68,
-            "file": "lektor/builder.py",
-            "function": "build_all",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1263,
-                    "start_column": 0,
-                    "end_line": 1264,
+                    "end_line": 259,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 137,
-            "file": "lektor/videotools.py",
-            "function": "get_video_info",
+            "file": "graphene/types/objecttype.py",
+            "function": "__init_subclass_with_meta__",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 234,
+                    "start_line": 143,
                     "start_column": 0,
-                    "end_line": 247,
+                    "end_line": 144,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 167,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 52,
-                    "start_column": 0,
-                    "end_line": 53,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 145,
-            "file": "lektor/types/flow.py",
-            "function": "__getitem__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 78,
-                    "start_column": 0,
-                    "end_line": 79,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 148,
-            "file": "lektor/types/flow.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 226,
-                    "start_column": 0,
-                    "end_line": 227,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 52,
-            "file": "lektor/cli_utils.py",
-            "function": "load_plugins",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 120,
-                    "start_column": 0,
-                    "end_line": 121,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 123,
-            "file": "lektor/cli.py",
-            "function": "plugins_add_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 493,
-                    "start_column": 0,
-                    "end_line": 494,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 164,
-            "file": "lektor/markdown/controller.py",
-            "function": "require_ctx",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 39,
-                    "start_column": 0,
-                    "end_line": 40,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 98,
-            "file": "lektor/datamodel.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 206,
-                    "start_column": 0,
-                    "end_line": 209,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 81,
-            "file": "lektor/databags.py",
-            "function": "get_bag",
+            "id": 128,
+            "file": "graphene/relay/tests/test_global_id.py",
+            "function": "test_global_id_allows_setting_customer_parent_type",
             "remove": [
                 {
                     "description": "code",
@@ -990,107 +136,219 @@
             ]
         },
         {
-            "id": 157,
-            "file": "lektor/types/multi.py",
-            "function": "_parse_choices",
+            "id": 348,
+            "file": "graphene/types/tests/test_query.py",
+            "function": "test_query_middlewares",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 30,
+                    "start_line": 279,
                     "start_column": 0,
-                    "end_line": 31,
+                    "end_line": 280,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 85,
-            "file": "lektor/imagetools.py",
-            "function": "find_imagemagick",
+            "id": 577,
+            "file": "graphene/validation/tests/test_depth_limit_validator.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 443,
+                    "start_line": 52,
                     "start_column": 0,
-                    "end_line": 444,
+                    "end_line": 53,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 50,
-            "file": "lektor/cli_utils.py",
-            "function": "get_env",
+            "id": 226,
+            "file": "graphene/types/tests/test_scalar.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 106,
+                    "start_line": 43,
                     "start_column": 0,
-                    "end_line": 109,
+                    "end_line": 44,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 161,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "make_parser",
+            "id": 365,
+            "file": "graphene/types/tests/test_query.py",
+            "function": "test_big_list_of_containers_multiple_fields_query_benchmark",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 88,
+                    "start_line": 395,
                     "start_column": 0,
-                    "end_line": 89,
+                    "end_line": 396,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 122,
-            "file": "lektor/cli.py",
-            "function": "content_file_info_cmd",
+            "id": 138,
+            "file": "graphene/types/argument.py",
+            "function": "type",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 453,
+                    "start_line": 71,
                     "start_column": 0,
-                    "end_line": 460,
+                    "end_line": 72,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 112,
-            "file": "lektor/cli.py",
-            "function": "build_cmd",
+            "id": 107,
+            "file": "graphene/relay/tests/test_node.py",
+            "function": "test_node_field_only_type",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 144,
+                    "start_line": 139,
                     "start_column": 0,
-                    "end_line": 145,
+                    "end_line": 140,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 184,
-            "file": "lektor/environment/config.py",
-            "function": "get_server",
+            "id": 626,
+            "file": "graphene/utils/tests/test_orderedtype.py",
+            "function": "test_orderedtype_eq",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 188,
+                    "start_line": 13,
                     "start_column": 0,
-                    "end_line": 189,
+                    "end_line": 14,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 77,
-            "file": "lektor/sourceobj.py",
-            "function": "is_child_of",
+            "id": 146,
+            "file": "graphene/types/schema.py",
+            "function": "create_objecttype",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 225,
+                    "start_column": 0,
+                    "end_line": 233,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 394,
+            "file": "graphene/types/tests/test_field.py",
+            "function": "test_field_name_as_argument",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 124,
+                    "start_column": 0,
+                    "end_line": 125,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 433,
+            "file": "graphene/types/tests/test_argument.py",
+            "function": "test_argument_comparasion",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 28,
+                    "start_column": 0,
+                    "end_line": 35,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 637,
+            "file": "graphene/utils/tests/test_module_loading.py",
+            "function": "test_import_string_attributes",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 35,
+                    "start_column": 0,
+                    "end_line": 36,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 159,
+            "file": "graphene/types/tests/test_subscribe_async.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 14,
+                    "start_column": 0,
+                    "end_line": 15,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 126,
+            "file": "graphene/relay/tests/test_global_id.py",
+            "function": "test_global_id_allows_overriding_of_node_and_required",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 40,
+                    "start_column": 0,
+                    "end_line": 41,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 221,
+            "file": "graphene/types/tests/test_scalar.py",
+            "function": "test_ints",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 31,
+                    "start_column": 0,
+                    "end_line": 32,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 580,
+            "file": "graphene/validation/tests/test_depth_limit_validator.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 55,
+                    "start_column": 0,
+                    "end_line": 56,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 275,
+            "file": "graphene/types/tests/test_mutation.py",
+            "function": "test_mutation_execution",
             "remove": [
                 {
                     "description": "code",
@@ -1102,107 +360,359 @@
             ]
         },
         {
-            "id": 176,
-            "file": "lektor/admin/modules/api.py",
-            "function": "_is_valid_alt",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 66,
-                    "start_column": 0,
-                    "end_line": 67,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 93,
-            "file": "lektor/project.py",
-            "function": "excluded_assets",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 168,
-                    "start_column": 0,
-                    "end_line": 169,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 113,
-            "file": "lektor/cli.py",
-            "function": "build_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 154,
-                    "start_column": 0,
-                    "end_line": 158,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 108,
-            "file": "lektor/datamodel.py",
-            "function": "add_system_field",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 690,
-                    "start_column": 0,
-                    "end_line": 691,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 106,
-            "file": "lektor/datamodel.py",
-            "function": "datamodel_data_from_ini",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 484,
-                    "start_column": 0,
-                    "end_line": 485,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 177,
-            "file": "lektor/admin/modules/api.py",
-            "function": "add_new_record",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 364,
-                    "start_column": 0,
-                    "end_line": 365,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 6,
-            "file": "lektor/devcli.py",
-            "function": "shell_cmd",
+            "id": 641,
+            "file": "graphene/utils/tests/test_module_loading.py",
+            "function": "test_lazy_import",
             "remove": [
                 {
                     "description": "code",
                     "start_line": 67,
                     "start_column": 0,
-                    "end_line": 70,
+                    "end_line": 68,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 114,
-            "file": "lektor/cli.py",
-            "function": "clean_cmd",
+            "id": 446,
+            "file": "graphene/types/tests/test_argument.py",
+            "function": "test_to_arguments_raises_if_field",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 80,
+                    "start_column": 0,
+                    "end_line": 81,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 188,
+            "file": "graphene/types/tests/test_scalars_serialization.py",
+            "function": "test_serializes_output_int",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 20,
+                    "start_column": 0,
+                    "end_line": 21,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 144,
+            "file": "graphene/types/schema.py",
+            "function": "create_scalar",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 159,
+                    "start_column": 0,
+                    "end_line": 167,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 553,
+            "file": "graphene/types/tests/test_enum.py",
+            "function": "test_enum_resolver_invalid",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 393,
+                    "start_column": 0,
+                    "end_line": 394,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 638,
+            "file": "graphene/utils/tests/test_module_loading.py",
+            "function": "test_import_string_attributes",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 44,
+                    "start_column": 0,
+                    "end_line": 45,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 517,
+            "file": "graphene/types/tests/test_structures.py",
+            "function": "test_list_comparasion",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 107,
+                    "start_column": 0,
+                    "end_line": 108,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 253,
+            "file": "graphene/types/tests/test_interface.py",
+            "function": "test_resolve_type_default",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 110,
+                    "start_column": 0,
+                    "end_line": 111,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 477,
+            "file": "graphene/types/tests/test_definition.py",
+            "function": "test_includes_interfaces_thunk_subtypes_in_the_type_map",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 149,
+                    "start_column": 0,
+                    "end_line": 150,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 542,
+            "file": "graphene/types/tests/test_enum.py",
+            "function": "test_enum_from_python3_enum_uses_enum_doc",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 113,
+                    "start_column": 0,
+                    "end_line": 114,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 222,
+            "file": "graphene/types/tests/test_scalar.py",
+            "function": "test_ints",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 32,
+                    "start_column": 0,
+                    "end_line": 33,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 350,
+            "file": "graphene/types/tests/test_query.py",
+            "function": "test_objecttype_on_instances",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 305,
+                    "start_column": 0,
+                    "end_line": 306,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 620,
+            "file": "graphene/utils/tests/test_deprecated.py",
+            "function": "test_deprecated_decorator_text",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 52,
+                    "start_column": 0,
+                    "end_line": 55,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 250,
+            "file": "graphene/types/tests/test_interface.py",
+            "function": "test_ordered_fields_in_interface",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 52,
+                    "start_column": 0,
+                    "end_line": 53,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 254,
+            "file": "graphene/types/tests/test_interface.py",
+            "function": "test_resolve_type_default",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 115,
+                    "start_column": 0,
+                    "end_line": 116,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 570,
+            "file": "graphene/validation/tests/test_depth_limit_validator.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 33,
+                    "start_column": 0,
+                    "end_line": 34,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 530,
+            "file": "graphene/types/tests/test_resolver.py",
+            "function": "test_dict_or_attr_resolver",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 44,
+                    "start_column": 0,
+                    "end_line": 45,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 307,
+            "file": "graphene/types/tests/test_schema.py",
+            "function": "test_schema",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 22,
+                    "start_column": 0,
+                    "end_line": 23,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 296,
+            "file": "graphene/types/tests/test_base64.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 15,
+                    "start_column": 0,
+                    "end_line": 16,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 216,
+            "file": "graphene/types/tests/test_scalar.py",
+            "function": "test_ints",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 24,
+                    "start_column": 0,
+                    "end_line": 25,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 409,
+            "file": "graphene/types/tests/test_type_map.py",
+            "function": "test_inputobject",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 183,
+                    "start_column": 0,
+                    "end_line": 184,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 51,
+            "file": "graphene/relay/tests/test_connection_query.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 26,
+                    "start_column": 0,
+                    "end_line": 27,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 310,
+            "file": "graphene/types/tests/test_schema.py",
+            "function": "test_schema_str",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 46,
+                    "start_column": 0,
+                    "end_line": 47,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 347,
+            "file": "graphene/types/tests/test_query.py",
+            "function": "test_query_middlewares",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 278,
+                    "start_column": 0,
+                    "end_line": 279,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 233,
+            "file": "graphene/types/tests/test_objecttype.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 29,
+                    "start_column": 0,
+                    "end_line": 30,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 285,
+            "file": "graphene/types/tests/test_mutation.py",
+            "function": "test_mutation_as_subclass",
             "remove": [
                 {
                     "description": "code",
@@ -1214,197 +724,687 @@
             ]
         },
         {
-            "id": 40,
-            "file": "lektor/db.py",
-            "function": "alt_exists",
+            "id": 1,
+            "file": "graphene/relay/connection.py",
+            "function": "get_edge_class",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1782,
+                    "start_line": 21,
                     "start_column": 0,
-                    "end_line": 1783,
+                    "end_line": 22,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 14,
-            "file": "lektor/pluginsystem.py",
-            "function": "emit",
+            "id": 456,
+            "file": "graphene/types/tests/test_definition.py",
+            "function": "",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 206,
+                    "start_line": 25,
                     "start_column": 0,
-                    "end_line": 207,
+                    "end_line": 26,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 180,
-            "file": "lektor/environment/config.py",
-            "function": "update_config_from_ini",
+            "id": 389,
+            "file": "graphene/types/tests/test_field.py",
+            "function": "test_field_with_string_type",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 84,
+                    "start_line": 89,
                     "start_column": 0,
-                    "end_line": 85,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 19,
-            "file": "lektor/db.py",
-            "function": "get_siblings",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 672,
-                    "start_column": 0,
-                    "end_line": 673,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 178,
-            "file": "lektor/admin/modules/api.py",
-            "function": "generator",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 452,
-                    "start_column": 0,
-                    "end_line": 459,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 179,
-            "file": "lektor/admin/modules/serve.py",
-            "function": "serve_artifact",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 218,
-                    "start_column": 0,
-                    "end_line": 219,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 172,
-            "file": "lektor/admin/context.py",
-            "function": "failure_controller",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 66,
-                    "start_column": 0,
-                    "end_line": 67,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 119,
-            "file": "lektor/cli.py",
-            "function": "project_info_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 397,
-                    "start_column": 0,
-                    "end_line": 398,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 24,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 809,
-                    "start_column": 0,
-                    "end_line": 810,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 163,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "resolve_plugin",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 111,
-                    "start_column": 0,
-                    "end_line": 112,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 38,
-            "file": "lektor/db.py",
-            "function": "theme_asset_roots",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1689,
-                    "start_column": 0,
-                    "end_line": 1690,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 100,
-            "file": "lektor/datamodel.py",
-            "function": "format_record_label",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 325,
-                    "start_column": 0,
-                    "end_line": 326,
+                    "end_line": 90,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 136,
-            "file": "lektor/videotools.py",
-            "function": "get_video_info",
+            "file": "graphene/types/objecttype.py",
+            "function": "__new__",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 230,
+                    "start_line": 45,
                     "start_column": 0,
-                    "end_line": 231,
+                    "end_line": 46,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 17,
-            "file": "lektor/db.py",
-            "function": "coerce",
+            "id": 279,
+            "file": "graphene/types/tests/test_mutation.py",
+            "function": "test_mutation_allow_to_have_custom_args",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 140,
+                    "start_column": 0,
+                    "end_line": 141,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 74,
+            "file": "graphene/relay/tests/test_custom_global_id.py",
+            "function": "setup",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 97,
+                    "start_column": 0,
+                    "end_line": 98,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 523,
+            "file": "graphene/types/tests/test_structures.py",
+            "function": "test_nonnull_comparasion",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 123,
+                    "start_column": 0,
+                    "end_line": 124,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 62,
+            "file": "graphene/relay/tests/test_mutation.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 50,
+                    "start_column": 0,
+                    "end_line": 51,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 295,
+            "file": "graphene/types/tests/test_base64.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 14,
+                    "start_column": 0,
+                    "end_line": 15,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 239,
+            "file": "graphene/types/tests/test_objecttype.py",
+            "function": "test_ordered_fields_in_objecttype",
             "remove": [
                 {
                     "description": "code",
                     "start_line": 105,
                     "start_column": 0,
                     "end_line": 106,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 407,
+            "file": "graphene/types/tests/test_type_map.py",
+            "function": "test_inputobject",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 177,
+                    "start_column": 0,
+                    "end_line": 178,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 208,
+            "file": "graphene/types/tests/test_scalars_serialization.py",
+            "function": "test_serializes_output_boolean",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 49,
+                    "start_column": 0,
+                    "end_line": 50,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 484,
+            "file": "graphene/types/tests/test_definition.py",
+            "function": "test_maps_enum",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 183,
+                    "start_column": 0,
+                    "end_line": 184,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 574,
+            "file": "graphene/validation/tests/test_depth_limit_validator.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 43,
+                    "start_column": 0,
+                    "end_line": 44,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 391,
+            "file": "graphene/types/tests/test_field.py",
+            "function": "test_field_source_func",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 105,
+                    "start_column": 0,
+                    "end_line": 106,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 559,
+            "file": "graphene/types/tests/test_enum.py",
+            "function": "test_mutation_enum_input_type",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 507,
+                    "start_column": 0,
+                    "end_line": 508,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 472,
+            "file": "graphene/types/tests/test_definition.py",
+            "function": "test_includes_nested_input_objects_in_the_map",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 126,
+                    "start_column": 0,
+                    "end_line": 127,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 586,
+            "file": "graphene/utils/tests/test_str_converters.py",
+            "function": "test_snake_case",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 8,
+                    "start_column": 0,
+                    "end_line": 9,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 211,
+            "file": "graphene/types/tests/test_scalar.py",
+            "function": "test_ints",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 17,
+                    "start_column": 0,
+                    "end_line": 18,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 86,
+            "file": "graphene/relay/tests/test_connection_async.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 29,
+                    "start_column": 0,
+                    "end_line": 30,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 345,
+            "file": "graphene/types/tests/test_query.py",
+            "function": "test_query_input_field",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 252,
+                    "start_column": 0,
+                    "end_line": 253,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 642,
+            "file": "graphene/utils/tests/test_crunch.py",
+            "function": "test_crunch",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 51,
+                    "start_column": 0,
+                    "end_line": 52,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 154,
+            "file": "graphene/types/interface.py",
+            "function": "__init_subclass_with_meta__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 55,
+                    "start_column": 0,
+                    "end_line": 56,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 105,
+            "file": "graphene/relay/tests/test_node.py",
+            "function": "test_node_field_custom",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 121,
+                    "start_column": 0,
+                    "end_line": 122,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 243,
+            "file": "graphene/types/tests/test_objecttype.py",
+            "function": "test_objecttype_no_fields_output",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 257,
+                    "start_column": 0,
+                    "end_line": 258,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 141,
+            "file": "graphene/types/mutation.py",
+            "function": "__init_subclass_with_meta__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 104,
+                    "start_column": 0,
+                    "end_line": 105,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 366,
+            "file": "graphene/types/tests/test_query.py",
+            "function": "test_big_list_of_containers_multiple_fields_custom_resolvers_query_benchmark",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 411,
+                    "start_column": 0,
+                    "end_line": 412,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 204,
+            "file": "graphene/types/tests/test_scalars_serialization.py",
+            "function": "test_serializes_output_string",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 42,
+                    "start_column": 0,
+                    "end_line": 43,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 199,
+            "file": "graphene/types/tests/test_scalars_serialization.py",
+            "function": "test_serializes_output_string",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 37,
+                    "start_column": 0,
+                    "end_line": 38,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 157,
+            "file": "graphene/types/inputfield.py",
+            "function": "type",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 74,
+                    "start_column": 0,
+                    "end_line": 75,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 379,
+            "file": "graphene/types/tests/test_query.py",
+            "function": "test_default_as_kwarg_to_NonNull",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 489,
+                    "start_column": 0,
+                    "end_line": 490,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 546,
+            "file": "graphene/types/tests/test_enum.py",
+            "function": "test_enum_resolver",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 289,
+                    "start_column": 0,
+                    "end_line": 290,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 462,
+            "file": "graphene/types/tests/test_definition.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 34,
+                    "start_column": 0,
+                    "end_line": 35,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 311,
+            "file": "graphene/types/tests/test_schema.py",
+            "function": "test_schema_introspect",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 64,
+                    "start_column": 0,
+                    "end_line": 65,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 376,
+            "file": "graphene/types/tests/test_query.py",
+            "function": "test_query_annotated_resolvers",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 467,
+                    "start_column": 0,
+                    "end_line": 468,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "graphene/relay/tests/test_connection.py",
+            "function": "__init_subclass_with_meta__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 69,
+                    "start_column": 0,
+                    "end_line": 70,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 183,
+            "file": "graphene/types/tests/test_scalars_serialization.py",
+            "function": "test_serializes_output_int",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 15,
+                    "start_column": 0,
+                    "end_line": 16,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 140,
+            "file": "graphene/types/mutation.py",
+            "function": "__init_subclass_with_meta__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 98,
+                    "start_column": 0,
+                    "end_line": 104,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 438,
+            "file": "graphene/types/tests/test_argument.py",
+            "function": "test_to_arguments",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 0,
+                    "end_line": 49,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 96,
+            "file": "graphene/relay/tests/test_node.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 48,
+                    "start_column": 0,
+                    "end_line": 49,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "graphene/relay/tests/test_node_custom.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 52,
+                    "start_column": 0,
+                    "end_line": 53,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 416,
+            "file": "graphene/types/tests/test_type_map.py",
+            "function": "test_interface_with_interfaces",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 302,
+                    "start_column": 0,
+                    "end_line": 303,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 469,
+            "file": "graphene/types/tests/test_definition.py",
+            "function": "test_defines_a_mutation_schema",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 100,
+                    "start_column": 0,
+                    "end_line": 101,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 562,
+            "file": "graphene/types/tests/test_enum.py",
+            "function": "test_enum_description_member_not_interpreted_as_property",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 596,
+                    "start_column": 0,
+                    "end_line": 597,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 377,
+            "file": "graphene/types/tests/test_query.py",
+            "function": "test_default_as_kwarg_to_NonNull",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 485,
+                    "start_column": 0,
+                    "end_line": 486,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 81,
+            "file": "graphene/relay/tests/test_custom_global_id.py",
+            "function": "test_must_define_resolve_global_id",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 313,
+                    "start_column": 0,
+                    "end_line": 314,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 450,
+            "file": "graphene/types/tests/test_argument.py",
+            "function": "test_argument_with_lazy_type",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 105,
+                    "start_column": 0,
+                    "end_line": 106,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 429,
+            "file": "graphene/types/tests/test_inputfield.py",
+            "function": "test_inputfield_with_lazy_partial_type",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 41,
+                    "start_column": 0,
+                    "end_line": 42,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 457,
+            "file": "graphene/types/tests/test_definition.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 26,
+                    "start_column": 0,
+                    "end_line": 27,
                     "end_column": 0
                 }
             ]

@@ -1,0 +1,11 @@
+https://github.com/Supervisor/supervisor.git t supervisor/tests
+https://github.com/Parsely/streamparse.git rt test-requirements.txt test
+https://github.com/psf/black.git rt test_requirements.txt tests
+https://github.com/nvbn/thefuck.git rt requirements.txt tests
+https://github.com/arrow-py/arrow.git rt requirements/requirements-tests.txt tests
+https://github.com/mwaskom/seaborn.git t tests
+https://github.com/graphql-python/graphene.git t graphene/tests
+https://github.com/geopy/geopy.git t test
+https://github.com/scikit-learn/scikit-learn.git t sklearn/tests
+https://github.com/lektor/lektor.git t tests
+https://github.com/aaugustin/websockets.git t tests

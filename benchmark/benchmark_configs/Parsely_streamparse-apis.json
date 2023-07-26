@@ -1,7 +1,7 @@
 {
-    "name": "lektor_lektor",
-    "project_root": "GitHubProjects/lektor_lektor",
-    "tests_path": "tests",
+    "name": "Parsely_streamparse",
+    "project_root": "GitHubProjects/Parsely_streamparse",
+    "tests_path": "test",
     "evaluations": [
         {
             "id": 0,
@@ -10,471 +10,9 @@
             "remove": []
         },
         {
-            "id": 43,
-            "file": "lektor/db.py",
-            "function": "_get_cache_key",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 2158,
-                    "start_column": 0,
-                    "end_line": 2159,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 154,
-            "file": "lektor/types/primitives.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 89,
-                    "start_column": 0,
-                    "end_line": 90,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 34,
-            "file": "lektor/db.py",
-            "function": "track_record_dependency",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1487,
-                    "start_column": 0,
-                    "end_line": 1488,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 91,
-            "file": "lektor/project.py",
-            "function": "get_package_cache_path",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 136,
-                    "start_column": 0,
-                    "end_line": 137,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 162,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "resolve_plugin",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 107,
-                    "start_column": 0,
-                    "end_line": 108,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 128,
-            "file": "lektor/editor.py",
-            "function": "make_editor_session",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 51,
-                    "start_column": 0,
-                    "end_line": 52,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 101,
-            "file": "lektor/datamodel.py",
-            "function": "get_default_child_slug",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 343,
-                    "start_column": 0,
-                    "end_line": 344,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 173,
-            "file": "lektor/admin/context.py",
-            "function": "cli_reporter",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 69,
-                    "start_column": 0,
-                    "end_line": 70,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 94,
-            "file": "lektor/project.py",
-            "function": "included_assets",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 177,
-                    "start_column": 0,
-                    "end_line": 178,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 78,
-            "file": "lektor/sourceobj.py",
-            "function": "url_to",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 160,
-                    "start_column": 0,
-                    "end_line": 161,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 36,
-            "file": "lektor/db.py",
-            "function": "resolve_url_path",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1633,
-                    "start_column": 0,
-                    "end_line": 1634,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 59,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 900,
-                    "start_column": 0,
-                    "end_line": 901,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 32,
-            "file": "lektor/db.py",
-            "function": "load_raw_data",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1298,
-                    "start_column": 0,
-                    "end_line": 1299,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 95,
-            "file": "lektor/datamodel.py",
-            "function": "get_pagination_controller",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 135,
-                    "start_column": 0,
-                    "end_line": 136,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 9,
-            "file": "lektor/__main__.py",
-            "function": "",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 4,
-                    "start_column": 0,
-                    "end_line": 5,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 117,
-            "file": "lektor/cli.py",
-            "function": "deploy_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 278,
-                    "start_column": 0,
-                    "end_line": 279,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 82,
-            "file": "lektor/databags.py",
-            "function": "get_bag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 61,
-                    "start_column": 0,
-                    "end_line": 62,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 45,
-            "file": "lektor/publisher.py",
-            "function": "publish",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 796,
-                    "start_column": 0,
-                    "end_line": 797,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 58,
-            "file": "lektor/builder.py",
-            "function": "operation",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 874,
-                    "start_column": 0,
-                    "end_line": 875,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 25,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 816,
-                    "start_column": 0,
-                    "end_line": 826,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 131,
-            "file": "lektor/editor.py",
-            "function": "add_attachment",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 287,
-                    "start_column": 0,
-                    "end_line": 288,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 80,
-            "file": "lektor/databags.py",
-            "function": "load_databag",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 21,
-                    "start_column": 0,
-                    "end_line": 22,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 144,
-            "file": "lektor/types/fake.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 33,
-                    "start_column": 0,
-                    "end_line": 34,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 107,
-            "file": "lektor/datamodel.py",
-            "function": "flowblock_data_from_ini",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 516,
-                    "start_column": 0,
-                    "end_line": 517,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 96,
-            "file": "lektor/datamodel.py",
-            "function": "get_pagination_query",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 142,
-                    "start_column": 0,
-                    "end_line": 143,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 71,
-            "file": "lektor/devserver.py",
-            "function": "build",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 34,
-                    "start_column": 0,
-                    "end_line": 35,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 126,
-            "file": "lektor/cli.py",
-            "function": "plugins_flush_cache_cmd",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 589,
-                    "start_column": 0,
-                    "end_line": 590,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 166,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 44,
-                    "start_column": 0,
-                    "end_line": 45,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 51,
-            "file": "lektor/cli_utils.py",
-            "function": "load_plugins",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 115,
-                    "start_column": 0,
-                    "end_line": 116,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 146,
-            "file": "lektor/types/flow.py",
-            "function": "__html__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 92,
-                    "start_column": 0,
-                    "end_line": 93,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 33,
-            "file": "lektor/db.py",
-            "function": "load_raw_data",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1321,
-                    "start_column": 0,
-                    "end_line": 1324,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 76,
-            "file": "lektor/devserver.py",
-            "function": "run_server",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 105,
-                    "start_column": 0,
-                    "end_line": 114,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 1,
-            "file": "lektor/quickstart.py",
-            "function": "get_default_author_email",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 151,
-                    "start_column": 0,
-                    "end_line": 152,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 171,
-            "file": "lektor/admin/context.py",
-            "function": "builder",
+            "id": 137,
+            "file": "streamparse/cli/run.py",
+            "function": "run_local_topology",
             "remove": [
                 {
                     "description": "code",
@@ -486,177 +24,387 @@
             ]
         },
         {
-            "id": 29,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
+            "id": 144,
+            "file": "streamparse/cli/run.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 936,
+                    "start_line": 110,
                     "start_column": 0,
-                    "end_line": 947,
+                    "end_line": 111,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 57,
-            "file": "lektor/builder.py",
-            "function": "operation",
+            "id": 87,
+            "file": "streamparse/cli/list.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 810,
+                    "start_line": 56,
                     "start_column": 0,
-                    "end_line": 811,
+                    "end_line": 57,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 170,
-            "file": "lektor/admin/context.py",
-            "function": "tree",
+            "id": 3,
+            "file": "streamparse/dsl/util.py",
+            "function": "to_java_arg",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 54,
+                    "start_line": 17,
                     "start_column": 0,
-                    "end_line": 55,
+                    "end_line": 18,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 12,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_config",
+            "id": 168,
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_spout_executors",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 97,
+                    "start_line": 300,
                     "start_column": 0,
-                    "end_line": 98,
+                    "end_line": 303,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 160,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "",
+            "id": 123,
+            "file": "streamparse/cli/submit.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 23,
+                    "start_line": 342,
                     "start_column": 0,
-                    "end_line": 24,
+                    "end_line": 343,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 142,
-            "file": "lektor/videotools.py",
-            "function": "make_video_thumbnail",
+            "id": 1,
+            "file": "streamparse/dsl/util.py",
+            "function": "to_java_arg",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 371,
+                    "start_line": 11,
                     "start_column": 0,
-                    "end_line": 372,
+                    "end_line": 12,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 21,
-            "file": "lektor/db.py",
-            "function": "contents",
+            "id": 42,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "create_or_update_virtualenvs",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 738,
+                    "start_line": 133,
                     "start_column": 0,
-                    "end_line": 739,
+                    "end_line": 139,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 54,
-            "file": "lektor/builder.py",
-            "function": "notify_failure",
+            "id": 79,
+            "file": "streamparse/cli/tail.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 121,
+                    "start_line": 99,
                     "start_column": 0,
-                    "end_line": 122,
+                    "end_line": 100,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 63,
-            "file": "lektor/builder.py",
-            "function": "prune",
+            "id": 35,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "_create_or_update_virtualenv",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1198,
+                    "start_line": 70,
                     "start_column": 0,
-                    "end_line": 1199,
+                    "end_line": 71,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 121,
-            "file": "lektor/cli.py",
-            "function": "content_file_info_cmd",
+            "id": 43,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "create_or_update_virtualenvs",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 432,
+                    "start_line": 141,
                     "start_column": 0,
-                    "end_line": 433,
+                    "end_line": 142,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 88,
-            "file": "lektor/imagetools.py",
-            "function": "make_image_thumbnail",
+            "id": 167,
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_spout_output_stats",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 596,
+                    "start_line": 279,
                     "start_column": 0,
-                    "end_line": 599,
+                    "end_line": 286,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 11,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_lektor_config",
+            "id": 111,
+            "file": "streamparse/cli/submit.py",
+            "function": "submit_topology",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 80,
+                    "start_line": 273,
                     "start_column": 0,
-                    "end_line": 81,
+                    "end_line": 274,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 73,
-            "file": "lektor/devserver.py",
-            "function": "run",
+            "id": 14,
+            "file": "streamparse/dsl/topology.py",
+            "function": "_spec_to_flux_dict",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 246,
+                    "start_column": 0,
+                    "end_line": 247,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 83,
+            "file": "streamparse/cli/list.py",
+            "function": "list_topologies",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 20,
+                    "start_column": 0,
+                    "end_line": 21,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 184,
+            "file": "streamparse/storm/spout.py",
+            "function": "spec",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 104,
+                    "start_column": 0,
+                    "end_line": 113,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 132,
+            "file": "streamparse/cli/run.py",
+            "function": "run_local_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 43,
+                    "start_column": 0,
+                    "end_line": 44,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 128,
+            "file": "streamparse/cli/jar.py",
+            "function": "jar_for_deploy",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 18,
+                    "start_column": 0,
+                    "end_line": 19,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 172,
+            "file": "streamparse/cli/stats.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 327,
+                    "start_column": 0,
+                    "end_line": 328,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 185,
+            "file": "streamparse/storm/spout.py",
+            "function": "spec",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 150,
+                    "start_column": 0,
+                    "end_line": 159,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 151,
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_cluster_status",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 62,
+                    "start_column": 0,
+                    "end_line": 63,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 78,
+            "file": "streamparse/cli/tail.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 98,
+                    "start_column": 0,
+                    "end_line": 99,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 120,
+            "file": "streamparse/cli/submit.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 339,
+                    "start_column": 0,
+                    "end_line": 340,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 173,
+            "file": "streamparse/cli/stats.py",
+            "function": "main",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 332,
+                    "start_column": 0,
+                    "end_line": 333,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 141,
+            "file": "streamparse/cli/run.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 107,
+                    "start_column": 0,
+                    "end_line": 108,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 65,
+            "file": "streamparse/cli/remove_logs.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 94,
+                    "start_column": 0,
+                    "end_line": 95,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 165,
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_bolt_output_stats",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 255,
+                    "start_column": 0,
+                    "end_line": 262,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 99,
+            "file": "streamparse/cli/submit.py",
+            "function": "_submit_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 109,
+                    "start_column": 0,
+                    "end_line": 110,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 86,
+            "file": "streamparse/cli/list.py",
+            "function": "list_topologies",
             "remove": [
                 {
                     "description": "code",
@@ -668,261 +416,93 @@
             ]
         },
         {
-            "id": 97,
-            "file": "lektor/datamodel.py",
-            "function": "to_json",
+            "id": 55,
+            "file": "streamparse/cli/remove_logs.py",
+            "function": "_remove_logs",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 200,
+                    "start_line": 42,
                     "start_column": 0,
-                    "end_line": 203,
+                    "end_line": 43,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 48,
-            "file": "lektor/cli_utils.py",
-            "function": "get_project",
+            "id": 183,
+            "file": "streamparse/storm/spout.py",
+            "function": "spec",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 78,
+                    "start_line": 56,
                     "start_column": 0,
-                    "end_line": 79,
+                    "end_line": 66,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 79,
-            "file": "lektor/sourceobj.py",
-            "function": "_resolve_url",
+            "id": 187,
+            "file": "streamparse/storm/bolt.py",
+            "function": "spec",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 187,
+                    "start_line": 136,
                     "start_column": 0,
-                    "end_line": 188,
+                    "end_line": 146,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 135,
-            "file": "lektor/context.py",
-            "function": "add_sub_artifact",
+            "id": 24,
+            "file": "streamparse/cli/kill.py",
+            "function": "kill_topology",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 228,
+                    "start_line": 26,
                     "start_column": 0,
-                    "end_line": 229,
+                    "end_line": 29,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 10,
-            "file": "lektor/pluginsystem.py",
-            "function": "get_plugin",
+            "id": 140,
+            "file": "streamparse/cli/run.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 21,
+                    "start_line": 106,
                     "start_column": 0,
-                    "end_line": 22,
+                    "end_line": 107,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 64,
-            "file": "lektor/builder.py",
-            "function": "prune",
+            "id": 90,
+            "file": "streamparse/cli/slot_usage.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1202,
+                    "start_line": 19,
                     "start_column": 0,
-                    "end_line": 1203,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 158,
-            "file": "lektor/types/multi.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 123,
-                    "start_column": 0,
-                    "end_line": 124,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 20,
-            "file": "lektor/db.py",
-            "function": "_siblings",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 683,
-                    "start_column": 0,
-                    "end_line": 684,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 27,
-            "file": "lektor/db.py",
-            "function": "_get_video_info",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 854,
-                    "start_column": 0,
-                    "end_line": 855,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 141,
-            "file": "lektor/videotools.py",
-            "function": "build_thumbnail_artifact",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 356,
-                    "start_column": 0,
-                    "end_line": 357,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 8,
-            "file": "lektor/devcli.py",
-            "function": "new_theme",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 115,
-                    "start_column": 0,
-                    "end_line": 116,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 129,
-            "file": "lektor/editor.py",
-            "function": "add_attachment",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 279,
-                    "start_column": 0,
-                    "end_line": 280,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 165,
-            "file": "lektor/markdown/controller.py",
-            "function": "get_cache_key",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 166,
-                    "start_column": 0,
-                    "end_line": 167,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 68,
-            "file": "lektor/builder.py",
-            "function": "build_all",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 1263,
-                    "start_column": 0,
-                    "end_line": 1264,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 137,
-            "file": "lektor/videotools.py",
-            "function": "get_video_info",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 234,
-                    "start_column": 0,
-                    "end_line": 247,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 167,
-            "file": "lektor/admin/webui.py",
-            "function": "make_app",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 52,
-                    "start_column": 0,
-                    "end_line": 53,
+                    "end_line": 20,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 145,
-            "file": "lektor/types/flow.py",
-            "function": "__getitem__",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 78,
-                    "start_column": 0,
-                    "end_line": 79,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 148,
-            "file": "lektor/types/flow.py",
-            "function": "to_json",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 226,
-                    "start_column": 0,
-                    "end_line": 227,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 52,
-            "file": "lektor/cli_utils.py",
-            "function": "load_plugins",
+            "file": "streamparse/cli/run.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
@@ -934,191 +514,415 @@
             ]
         },
         {
-            "id": 123,
-            "file": "lektor/cli.py",
-            "function": "plugins_add_cmd",
+            "id": 70,
+            "file": "streamparse/cli/tail.py",
+            "function": "tail_topology",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 493,
+                    "start_line": 57,
                     "start_column": 0,
-                    "end_line": 494,
+                    "end_line": 60,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 164,
-            "file": "lektor/markdown/controller.py",
-            "function": "require_ctx",
+            "id": 22,
+            "file": "streamparse/cli/quickstart.py",
+            "function": "main",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 39,
+                    "start_line": 19,
                     "start_column": 0,
-                    "end_line": 40,
+                    "end_line": 20,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 98,
-            "file": "lektor/datamodel.py",
-            "function": "to_json",
+            "id": 46,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 206,
+                    "start_line": 164,
                     "start_column": 0,
-                    "end_line": 209,
+                    "end_line": 165,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 81,
-            "file": "lektor/databags.py",
-            "function": "get_bag",
+            "id": 177,
+            "file": "streamparse/cli/worker_uptime.py",
+            "function": "display_worker_uptime",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 55,
+                    "start_line": 31,
                     "start_column": 0,
-                    "end_line": 56,
+                    "end_line": 36,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 157,
-            "file": "lektor/types/multi.py",
-            "function": "_parse_choices",
+            "id": 174,
+            "file": "streamparse/cli/worker_uptime.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 30,
+                    "start_line": 17,
                     "start_column": 0,
-                    "end_line": 31,
+                    "end_line": 18,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 85,
-            "file": "lektor/imagetools.py",
-            "function": "find_imagemagick",
+            "id": 114,
+            "file": "streamparse/cli/submit.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 443,
+                    "start_line": 307,
                     "start_column": 0,
-                    "end_line": 444,
+                    "end_line": 308,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 50,
-            "file": "lektor/cli_utils.py",
-            "function": "get_env",
+            "id": 109,
+            "file": "streamparse/cli/submit.py",
+            "function": "submit_topology",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 106,
+                    "start_line": 211,
                     "start_column": 0,
-                    "end_line": 109,
+                    "end_line": 212,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 161,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "make_parser",
+            "id": 66,
+            "file": "streamparse/cli/remove_logs.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 88,
+                    "start_line": 95,
                     "start_column": 0,
-                    "end_line": 89,
+                    "end_line": 96,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 122,
-            "file": "lektor/cli.py",
-            "function": "content_file_info_cmd",
+            "id": 71,
+            "file": "streamparse/cli/tail.py",
+            "function": "tail_topology",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 453,
+                    "start_line": 60,
                     "start_column": 0,
-                    "end_line": 460,
+                    "end_line": 61,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 112,
-            "file": "lektor/cli.py",
-            "function": "build_cmd",
+            "id": 118,
+            "file": "streamparse/cli/submit.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 144,
+                    "start_line": 337,
                     "start_column": 0,
-                    "end_line": 145,
+                    "end_line": 338,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 184,
-            "file": "lektor/environment/config.py",
-            "function": "get_server",
+            "id": 143,
+            "file": "streamparse/cli/run.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 188,
+                    "start_line": 109,
                     "start_column": 0,
-                    "end_line": 189,
+                    "end_line": 110,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 77,
-            "file": "lektor/sourceobj.py",
-            "function": "is_child_of",
+            "id": 179,
+            "file": "streamparse/cli/worker_uptime.py",
+            "function": "display_worker_uptime",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 97,
+                    "start_line": 62,
                     "start_column": 0,
-                    "end_line": 98,
+                    "end_line": 68,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 176,
-            "file": "lektor/admin/modules/api.py",
-            "function": "_is_valid_alt",
+            "id": 162,
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_component_summary",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 66,
+                    "start_line": 212,
                     "start_column": 0,
-                    "end_line": 67,
+                    "end_line": 213,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 148,
+            "file": "streamparse/cli/visualize.py",
+            "function": "visualize_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 152,
+                    "start_column": 0,
+                    "end_line": 153,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 125,
+            "file": "streamparse/cli/submit.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 362,
+                    "start_column": 0,
+                    "end_line": 363,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 47,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 165,
+                    "start_column": 0,
+                    "end_line": 166,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 88,
+            "file": "streamparse/cli/list.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 57,
+                    "start_column": 0,
+                    "end_line": 58,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 93,
-            "file": "lektor/project.py",
-            "function": "excluded_assets",
+            "file": "streamparse/cli/slot_usage.py",
+            "function": "display_slot_usage",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 39,
+                    "start_column": 0,
+                    "end_line": 44,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "file": "streamparse/dsl/stream.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 104,
+                    "start_column": 0,
+                    "end_line": 105,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 166,
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_spout_stats",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 274,
+                    "start_column": 0,
+                    "end_line": 275,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "file": "streamparse/cli/kill.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 43,
+                    "start_column": 0,
+                    "end_line": 44,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "file": "streamparse/cli/kill.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 42,
+                    "start_column": 0,
+                    "end_line": 43,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 72,
+            "file": "streamparse/cli/tail.py",
+            "function": "tail_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 61,
+                    "start_column": 0,
+                    "end_line": 62,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "file": "streamparse/cli/kill.py",
+            "function": "_kill_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 16,
+                    "start_column": 0,
+                    "end_line": 17,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 171,
+            "file": "streamparse/cli/stats.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 326,
+                    "start_column": 0,
+                    "end_line": 327,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 105,
+            "file": "streamparse/cli/submit.py",
+            "function": "submit_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 199,
+                    "start_column": 0,
+                    "end_line": 200,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "file": "streamparse/cli/kill.py",
+            "function": "kill_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 29,
+                    "start_column": 0,
+                    "end_line": 30,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 134,
+            "file": "streamparse/cli/run.py",
+            "function": "run_local_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 46,
+                    "start_column": 0,
+                    "end_line": 47,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "file": "streamparse/dsl/util.py",
+            "function": "to_java_arg",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 19,
+                    "start_column": 0,
+                    "end_line": 20,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 50,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
@@ -1130,219 +934,401 @@
             ]
         },
         {
-            "id": 113,
-            "file": "lektor/cli.py",
-            "function": "build_cmd",
+            "id": 115,
+            "file": "streamparse/cli/submit.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 154,
+                    "start_line": 308,
                     "start_column": 0,
-                    "end_line": 158,
+                    "end_line": 309,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 108,
-            "file": "lektor/datamodel.py",
-            "function": "add_system_field",
+            "id": 147,
+            "file": "streamparse/cli/visualize.py",
+            "function": "visualize_topology",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 690,
+                    "start_line": 151,
                     "start_column": 0,
-                    "end_line": 691,
+                    "end_line": 152,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 106,
-            "file": "lektor/datamodel.py",
-            "function": "datamodel_data_from_ini",
+            "id": 104,
+            "file": "streamparse/cli/submit.py",
+            "function": "submit_topology",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 484,
+                    "start_line": 198,
                     "start_column": 0,
-                    "end_line": 485,
+                    "end_line": 199,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 177,
-            "file": "lektor/admin/modules/api.py",
-            "function": "add_new_record",
+            "id": 121,
+            "file": "streamparse/cli/submit.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 364,
+                    "start_line": 340,
                     "start_column": 0,
-                    "end_line": 365,
+                    "end_line": 341,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 6,
-            "file": "lektor/devcli.py",
-            "function": "shell_cmd",
+            "id": 61,
+            "file": "streamparse/cli/remove_logs.py",
+            "function": "remove_logs",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 67,
+                    "start_line": 64,
                     "start_column": 0,
-                    "end_line": 70,
+                    "end_line": 65,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 114,
-            "file": "lektor/cli.py",
-            "function": "clean_cmd",
+            "id": 153,
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_cluster_status",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 189,
+                    "start_line": 80,
                     "start_column": 0,
-                    "end_line": 190,
+                    "end_line": 87,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 40,
-            "file": "lektor/db.py",
-            "function": "alt_exists",
+            "id": 96,
+            "file": "streamparse/cli/slot_usage.py",
+            "function": "main",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1782,
+                    "start_line": 95,
                     "start_column": 0,
-                    "end_line": 1783,
+                    "end_line": 96,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 14,
-            "file": "lektor/pluginsystem.py",
-            "function": "emit",
+            "id": 152,
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_cluster_status",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 206,
+                    "start_line": 74,
                     "start_column": 0,
-                    "end_line": 207,
+                    "end_line": 77,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 180,
-            "file": "lektor/environment/config.py",
-            "function": "update_config_from_ini",
+            "id": 34,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "_create_or_update_virtualenv",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 84,
+                    "start_line": 56,
                     "start_column": 0,
-                    "end_line": 85,
+                    "end_line": 57,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 19,
-            "file": "lektor/db.py",
-            "function": "get_siblings",
+            "id": 149,
+            "file": "streamparse/cli/visualize.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 672,
+                    "start_line": 195,
                     "start_column": 0,
-                    "end_line": 673,
+                    "end_line": 196,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 178,
-            "file": "lektor/admin/modules/api.py",
-            "function": "generator",
+            "id": 62,
+            "file": "streamparse/cli/remove_logs.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 452,
+                    "start_line": 91,
                     "start_column": 0,
-                    "end_line": 459,
+                    "end_line": 92,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 179,
-            "file": "lektor/admin/modules/serve.py",
-            "function": "serve_artifact",
+            "id": 158,
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_topology_status",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 218,
+                    "start_line": 132,
                     "start_column": 0,
-                    "end_line": 219,
+                    "end_line": 135,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 172,
-            "file": "lektor/admin/context.py",
-            "function": "failure_controller",
+            "id": 176,
+            "file": "streamparse/cli/worker_uptime.py",
+            "function": "display_worker_uptime",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 66,
+                    "start_line": 25,
                     "start_column": 0,
-                    "end_line": 67,
+                    "end_line": 28,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 91,
+            "file": "streamparse/cli/slot_usage.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 20,
+                    "start_column": 0,
+                    "end_line": 21,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 119,
-            "file": "lektor/cli.py",
-            "function": "project_info_cmd",
+            "file": "streamparse/cli/submit.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 397,
+                    "start_line": 338,
                     "start_column": 0,
-                    "end_line": 398,
+                    "end_line": 339,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 24,
-            "file": "lektor/db.py",
-            "function": "thumbnail",
+            "id": 186,
+            "file": "streamparse/storm/bolt.py",
+            "function": "spec",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 809,
+                    "start_line": 69,
                     "start_column": 0,
-                    "end_line": 810,
+                    "end_line": 80,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "file": "streamparse/dsl/util.py",
+            "function": "to_java_arg",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 15,
+                    "start_column": 0,
+                    "end_line": 16,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "file": "streamparse/cli/kill.py",
+            "function": "kill_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 32,
+                    "start_column": 0,
+                    "end_line": 35,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 52,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 170,
+                    "start_column": 0,
+                    "end_line": 171,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 48,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 166,
+                    "start_column": 0,
+                    "end_line": 167,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 56,
+            "file": "streamparse/cli/remove_logs.py",
+            "function": "remove_logs",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 57,
+                    "start_column": 0,
+                    "end_line": 58,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 67,
+            "file": "streamparse/cli/remove_logs.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 96,
+                    "start_column": 0,
+                    "end_line": 97,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 60,
+            "file": "streamparse/cli/remove_logs.py",
+            "function": "remove_logs",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 63,
+                    "start_column": 0,
+                    "end_line": 64,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "file": "streamparse/dsl/stream.py",
+            "function": "",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 103,
+                    "start_column": 0,
+                    "end_line": 104,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "file": "streamparse/dsl/component.py",
+            "function": "__getitem__",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 188,
+                    "start_column": 0,
+                    "end_line": 189,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "file": "streamparse/dsl/topology.py",
+            "function": "add_bolt_spec",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 84,
+                    "start_column": 0,
+                    "end_line": 87,
                     "end_column": 0
                 }
             ]
         },
         {
             "id": 163,
-            "file": "lektor/markdown/mistune2.py",
-            "function": "resolve_plugin",
+            "file": "streamparse/cli/stats.py",
+            "function": "_print_bolt_stats",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 227,
+                    "start_column": 0,
+                    "end_line": 230,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 68,
+            "file": "streamparse/cli/remove_logs.py",
+            "function": "subparser_hook",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 97,
+                    "start_column": 0,
+                    "end_line": 98,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 40,
+            "file": "streamparse/cli/update_virtualenv.py",
+            "function": "create_or_update_virtualenvs",
             "remove": [
                 {
                     "description": "code",
@@ -1354,57 +1340,71 @@
             ]
         },
         {
-            "id": 38,
-            "file": "lektor/db.py",
-            "function": "theme_asset_roots",
+            "id": 154,
+            "file": "streamparse/cli/stats.py",
+            "function": "_get_topology_ui_detail",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 1689,
+                    "start_line": 90,
                     "start_column": 0,
-                    "end_line": 1690,
+                    "end_line": 91,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 100,
-            "file": "lektor/datamodel.py",
-            "function": "format_record_label",
+            "id": 108,
+            "file": "streamparse/cli/submit.py",
+            "function": "submit_topology",
             "remove": [
                 {
                     "description": "code",
-                    "start_line": 325,
+                    "start_line": 208,
                     "start_column": 0,
-                    "end_line": 326,
+                    "end_line": 209,
                     "end_column": 0
                 }
             ]
         },
         {
-            "id": 136,
-            "file": "lektor/videotools.py",
-            "function": "get_video_info",
-            "remove": [
-                {
-                    "description": "code",
-                    "start_line": 230,
-                    "start_column": 0,
-                    "end_line": 231,
-                    "end_column": 0
-                }
-            ]
-        },
-        {
-            "id": 17,
-            "file": "lektor/db.py",
-            "function": "coerce",
+            "id": 139,
+            "file": "streamparse/cli/run.py",
+            "function": "subparser_hook",
             "remove": [
                 {
                     "description": "code",
                     "start_line": 105,
                     "start_column": 0,
                     "end_line": 106,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 106,
+            "file": "streamparse/cli/submit.py",
+            "function": "submit_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 200,
+                    "start_column": 0,
+                    "end_line": 201,
+                    "end_column": 0
+                }
+            ]
+        },
+        {
+            "id": 73,
+            "file": "streamparse/cli/tail.py",
+            "function": "tail_topology",
+            "remove": [
+                {
+                    "description": "code",
+                    "start_line": 62,
+                    "start_column": 0,
+                    "end_line": 63,
                     "end_column": 0
                 }
             ]

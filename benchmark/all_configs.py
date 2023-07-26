@@ -12,4 +12,4 @@ for line in lines:
     repo = url.split('/')[-1][:-4]
     tests = parts[-1]
     # make_config.make_config(str(here/'GitHubProjects'/f'{owner}_{repo}'), str(here/'GitHubProjects'/f'{owner}_{repo}'/tests))
-    API_config.make_config(str(here/'GitHubProjects'/f'{owner}_{repo}'), str(here/'GitHubProjects'/f'{owner}_{repo}'/tests), repo.replace('-', '_'), with_tests=True)
+    API_config.make_config(str(here/'GitHubProjects'/f'{owner}_{repo}'), str(here/'GitHubProjects'/f'{owner}_{repo}'/tests), repo.replace('-', '_'), with_tests=False)
