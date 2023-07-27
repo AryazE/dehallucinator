@@ -67,6 +67,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
     easy_completions = 0
     trivial_tests = 0
     not_covered_by_tests = 0
+    other_issues = 0
     for i in config['evaluations']:
         if len(okay) >= 10:
             break
@@ -91,8 +92,14 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         # with open(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'/'exclude.csv'), 'w') as f:
         #     for j in exclude:
         #         f.write(','.join([str(k) for k in j]) + '\n')
-        with open(temp_dir/i["file"]) as f:
-            orig_code = f.read()
+        try:
+            with open(temp_dir/i["file"]) as f:
+                orig_code = f.read()
+        except:
+            print('Function has non-ASCII chars')
+            dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
+            other_issues += 1
+            continue
         code = orig_code.splitlines(keepends=True)
         new_code = []
         pre_context = ''
@@ -198,7 +205,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         sample = okay
     # sample = okay
     with open(str(here/'experiment'/config['name']/'dataset_report.txt'), "w") as f:
-        f.write(f"Easy completions: {easy_completions}\nNot covered by any test: {not_covered_by_tests}\nTrivial tests: {trivial_tests}\n")
+        f.write(f"Easy completions: {easy_completions}\nNot covered by any test: {not_covered_by_tests}\nTrivial tests: {trivial_tests}\nOther issues: {other_issues}\n")
     return env_session.interpreter.executable, orig_results, sample
 
 if __name__ == '__main__':
