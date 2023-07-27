@@ -10,7 +10,7 @@ from prepare_project import prepare
 from run_completion import run_completion
 from run_tests import run_tests
 from read_test_results import read_test_results
-from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModel
+from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModel, RobertaForCausalLM
 from dotenv import dotenv_values
 from huggingface_hub import login
 
@@ -50,9 +50,9 @@ if __name__ == '__main__':
         elif args.model == 'lCodeGen25':
             llm_tok = AutoTokenizer.from_pretrained("Salesforce/codegen25-7b-mono", trust_remote_code=True)
             llm = AutoModelForCausalLM.from_pretrained("Salesforce/codegen25-7b-mono", device_map='auto', load_in_4bit=True)
-        elif args.model =='lUniXcoder':
-            llm_tok = AutoTokenizer.from_pretrained("microsoft/unixcoder-base")
-            llm = AutoModel.from_pretrained("microsoft/unixcoder-base")
+        elif args.model =='lCodeT5p':
+            llm_tok = AutoTokenizer.from_pretrained("Salesforce/codet5p-6b")
+            llm = AutoModelForCausalLM.from_pretrained("Salesforce/codet5p-6b", device_map='auto', load_in_4bit=True)
         elif args.model == 'lStarCoderPlus':
             llm_tok = AutoTokenizer.from_pretrained("bigcode/starcoderplus", token=hf_token)
             llm = AutoModelForCausalLM.from_pretrained("bigcode/starcoderplus", token=hf_token, device_map='auto', load_in_4bit=True)
