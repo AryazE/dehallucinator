@@ -13,6 +13,7 @@ from read_test_results import read_test_results
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModel, RobertaForCausalLM
 from dotenv import dotenv_values
 from huggingface_hub import login
+import torch
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
