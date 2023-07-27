@@ -60,7 +60,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
                 f.write(f'{end - start} ns\n')
 
     project_apis = set()
-    with open(here/'experiment'/config["name"]/'functionRes.csv', newline='') as f:
+    with open(here/'experiment'/config["name"]/'functionRes.csv', newline='', encoding='utf-8') as f:
         csv_reader = csv.DictReader(f)
         for line in csv_reader:
             project_apis.add(line['name'])

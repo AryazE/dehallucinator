@@ -208,7 +208,7 @@ def equal_apis(a: cst.CSTNode, b: cst.CSTNode) -> bool:
 
 def parse_results_into_context(file) -> Dict[str, List[str]]:
     additional_context = {}
-    with open(file, newline='') as csvfile:
+    with open(file, newline='', encoding='utf-8') as csvfile:
         csv_reader = csv.DictReader(csvfile)
         for line in csv_reader:
             if line['qualifiedName'] not in additional_context:
