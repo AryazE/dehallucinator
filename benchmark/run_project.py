@@ -6,14 +6,15 @@ import json
 import logging
 import traceback
 import shutil
+import torch
 from prepare_project import prepare
 from run_completion import run_completion
 from run_tests import run_tests
 from read_test_results import read_test_results
-from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModel, RobertaForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModel, RobertaForCausalLM, AutoModelForSeq2SeqLM
 from dotenv import dotenv_values
 from huggingface_hub import login
-import torch
+from unixcoder import UniXcoder
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -57,9 +58,11 @@ if __name__ == '__main__':
         elif args.model == 'lCodeGen25':
             llm_tok = AutoTokenizer.from_pretrained("Salesforce/codegen25-7b-mono", trust_remote_code=True)
             llm = AutoModelForCausalLM.from_pretrained("Salesforce/codegen25-7b-mono", device_map='auto', quantization_config=quantization_config)
-        elif args.model =='lCodeT5p':
-            llm_tok = AutoTokenizer.from_pretrained("Salesforce/codet5p-6b")
-            llm = AutoModelForCausalLM.from_pretrained("Salesforce/codet5p-6b", device_map='auto', quantization_config=quantization_config)
+        elif args.model =='lUniXcoder':
+            llm_tok = AutoTokenizer.from_pretrained("microsoft/unixcoder-base", trust_remote_code=True)
+            #llm = AutoModel.from_pretrained("microsoft/unixcoder-base", device_map='auto')
+            llm = UniXcoder("microsoft/unixcoder-base")
+            llm.to("cuda")
         elif args.model == 'lStarCoderPlus':
             llm_tok = AutoTokenizer.from_pretrained("bigcode/starcoderplus", token=hf_token)
             llm = AutoModelForCausalLM.from_pretrained("bigcode/starcoderplus", token=hf_token, device_map='auto', quantization_config=quantization_config)

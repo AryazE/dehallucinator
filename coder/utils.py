@@ -10,6 +10,7 @@ from nltk import edit_distance
 import libcst as cst
 import libcst.matchers as matchers
 import openai
+import torch
 from sentence_transformers import SentenceTransformer
 from transformers import GPT2TokenizerFast
 
@@ -30,6 +31,8 @@ def clip_prompt(prompt: str, prompt_limit=1500):
         tokenized += len(tokenizer(prompt_line)['input_ids'])
     if tokenized > prompt_limit:
         new_len_prompt = len(prompt_lines) * prompt_limit / tokenized
+        if prompt_limit <= 0:
+            new_len_prompt = 1
         prompt = ''.join(prompt_lines[-int(new_len_prompt):])
     return prompt
 
@@ -109,6 +112,8 @@ def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
 def get_completion_safely(model: str, completor, prompt, k=4):
         if model == 'GPT3.5':
             prompt_size = 3500
+        elif model == 'lUniXcoder':
+            prompt_size = 750
         else:
             prompt_size = 1750
         clipped_prompt = prompt

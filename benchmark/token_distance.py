@@ -31,10 +31,14 @@ if __name__ == '__main__':
             token_similarity.append([])
             gt_tokens = tokenizer(gt)['input_ids']
             for k in range(len(res)):
-                token_similarity[-1].append(edit_distance(gt_tokens, tokenizer(completions[k])['input_ids']))
+                if len(completions[k]) > 2048:
+                    tokenized = tokenizer(completions[k][:1024])['input_ids']
+                    token_similarity[-1].append(edit_distance(gt_tokens, tokenized))
+                else:
+                    token_similarity[-1].append(edit_distance(gt_tokens, tokenizer(completions[k])['input_ids']))
     avg = []
     best = []
     for j in range(len(token_similarity[0])):
         avg.append(sum([x[j] for x in token_similarity]) / len(token_similarity))
         best.append(sum([min(x[:j+1]) for x in token_similarity]) / len(token_similarity))
-    print(f'{args.results} ' + ' '.join([str(x) for x in avg]) + ' ' + ' '.join([str(x) for x in best]))
+    print(f'{args.results}, ' + ', '.join([str(x) for x in avg]) + ', ' + ', '.join([str(x) for x in best]))
