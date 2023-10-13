@@ -206,8 +206,15 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         else:
             okay.append(i['id'])
         
-        with open(temp_dir/i["file"], 'w') as f:
-            f.writelines(new_code)
+        try:
+            with open(temp_dir/i["file"], 'w') as f:
+                f.writelines(new_code)
+        except UnicodeEncodeError:
+            okay.pop()
+            print('Non-ASCII completion')
+            dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
+            other_issues += 1
+            continue
 
     if len(okay) > 50:
         sample = random.sample(okay, 50)

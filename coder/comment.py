@@ -15,6 +15,8 @@ class CommentCompletion(BaseDiCompletion):
 
     def get_context(self, prompt: str, completion: str) -> List[Tuple[float, str]]:
         code = prompt + completion
+        if len(code) == 0:
+            return []
         lines = code.splitlines()
         line_embeddings = normalize(embeddings(lines))
         dist, res = self.ball_tree.query(line_embeddings, k=self.context_size)
@@ -79,7 +81,11 @@ class CommentCompletion(BaseDiCompletion):
         full_context = self.format_context(new_context)
         if self.model == 'GPT3.5':
             prompt_size = 3500
+        elif self.model == 'lUniXcoder':
+            prompt_size = 750
         else:
             prompt_size = 1750
+        if len(full_context) > 1750:
+            full_context = full_context[:1750]
         new_prompt = full_context + '\n' + clip_prompt(prompt, prompt_size - len(full_context)//2)
         return new_prompt, new_context

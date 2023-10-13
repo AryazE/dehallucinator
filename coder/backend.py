@@ -24,9 +24,18 @@ class Completion:
         """Get code completion from the model"""
         if model.startswith('l'):
             start = time.perf_counter_ns()
-            inputs = self.tokenizer(context, return_tensors="pt").to('cuda')
-            sample = self.model.generate(**inputs, max_new_tokens=256)
-            res = self.tokenizer.decode(sample[0][inputs.input_ids.shape[1]:], truncate_before_pattern=["\n\n\n", "def ", "class "])
+            if model == 'lUniXcoder':
+                import torch
+                device = 'cuda'
+                tokens_ids = self.model.tokenize([context], max_length=750, mode="<decoder-only>")
+                source_ids = torch.tensor(tokens_ids).to(device)
+                prediction_ids = self.model.generate(source_ids, decoder_only=True, beam_size=3, max_length=256)
+                res = self.model.decode(prediction_ids)[0][0]
+            else:
+                inputs = self.tokenizer(context, return_tensors="pt").to('cuda')
+                sample = self.model.generate(**inputs, max_new_tokens=256)
+                to_decode = sample[0][inputs.input_ids.shape[-1]:]
+                res = self.tokenizer.decode(to_decode, truncate_before_pattern=["\n\n\n", "def ", "class "])
             end = time.perf_counter_ns()
             with open(root/'PredictionTime.txt', 'r') as f:
                 t, n = f.read().split(' ')
