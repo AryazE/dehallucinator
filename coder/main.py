@@ -7,6 +7,7 @@ from .explicit import ExplicitCompletion
 from .cstSimple import CSTSimpleCompletion
 from .docstring import DocstringCompletion
 from .comment import CommentCompletion
+from .retrieval import RetrievalCompletion
 from .swSim import SWSim
 import logging
 from pathlib import Path
@@ -28,8 +29,8 @@ def main(project_root: str, prompt: str, mode: str,
         eLine: int, eCol: int, output: str, log: str, k=4, t=0.5, c=4, llm=None, llm_tok=None):
     logging.basicConfig(level=logging.INFO,filename=f'benchmark/{project_root.split("/")[-1]}-{mode}{log}.log', filemode='a')
     # prompt = prompt.replace('\\n', '\n')
-    # prompt_lines = prompt.splitlines()
-    # prompt = '\n'.join([l for l in prompt_lines if not is_local_import(l, file)])
+    prompt_lines = prompt.splitlines()
+    prompt = '\n'.join([l for l in prompt_lines if not is_local_import(l, file)])
     completor = Completion(model=llm, tokenizer=llm_tok)
     if mode.startswith('baseline'):
         context, completions = baseline.completion(model, completor, prompt, k=k, mode=mode)
@@ -53,6 +54,8 @@ def main(project_root: str, prompt: str, mode: str,
             completion_model = DocstringCompletion(project_root, model=model, func=func, location=loc, t=t, c=c, mode=mode)
         elif mode.startswith('comment'):
             completion_model = CommentCompletion(project_root, model=model, func=func, location=loc, t=t, c=c, mode=mode)
+        elif mode.startswith('retrieval'):
+            completion_model = RetrievalCompletion(project_root, model=model, func=func, location=loc, c=c, mode=mode)
         elif mode.startswith('sw'):
             completion_model = SWSim(project_root, model=model, func=func, location=loc, similarity_threshold=t, mode=mode)
         else:
