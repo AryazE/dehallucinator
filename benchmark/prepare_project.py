@@ -158,7 +158,7 @@ def prepare(config, mode, ids=[], noTests=False, model='GPT3.5', llm=None, llm_t
         prompt = '\n'.join([l for l in prompt_lines if not is_local_import(l, file)])
         init_comp = get_completion_safely(model, Completion(model=llm, tokenizer=llm_tok), prompt, k=1)[0]
         init_comp = postprocess(init_comp, mode='api')
-        if init_comp.startswith(ground_truth):
+        if init_comp in ground_truth or ground_truth in init_comp:
             print('Function is too easy to complete')
             dir_util.remove_tree(str(here/'experiment'/config['name']/mode/f'temp{i["id"]}'))
             easy_completions += 1
