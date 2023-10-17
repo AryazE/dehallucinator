@@ -15,13 +15,17 @@ if __name__ == '__main__':
     best_ng = {}
     best_ap = {}
     baseline = ''
-    for mode in results.keys():
+    modes = list(results.keys())
+    for mode in modes:
         if mode.startswith('baseline'):
             baseline = mode
             break
     N = 0
     K = 5
-    for mode, sub_res in results.items():
+    modes.remove(baseline)
+    modes = [baseline] + modes
+    for mode in modes:
+        sub_res = results[mode]
         ng_imp = 0
         ap_imp = 0
         ng_it = 0
@@ -39,12 +43,16 @@ if __name__ == '__main__':
             ngram = [float(x[0]) for x in res]
             best_temp = 0.0
             for i in range(len(ngram)):
+                if mode.startswith('retrieval'):
+                    ngram[i] = max(ngram[i], float(results[baseline][id][0][0]))
                 abs_ng[mode][i] = (abs_ng[mode][i][0] + ngram[i], abs_ng[mode][i][1] + 1)
                 best_temp = max(best_temp, ngram[i])
                 best_ng[mode][i] += best_temp
             api = [float(x[1]) for x in res]
             best_temp = 0.0
             for i in range(len(api)):
+                if mode.startswith('retrieval'):
+                    api[i] = max(api[i], float(results[baseline][id][0][1]))
                 abs_ap[mode][i] = (abs_ap[mode][i][0] + api[i], abs_ap[mode][i][1] + 1)
                 best_temp = max(best_temp, api[i])
                 best_ap[mode][i] += best_temp
@@ -86,6 +94,6 @@ if __name__ == '__main__':
             baseline_line = [res_best_ng[0], res_best_ap[0], str(N)]
         else:
             output_line = [mode, args.results.split('/')[-1]] + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ng[mode]] + res_best_ng + [str(i[0]/i[1]) if i[1] > 0 else '0' for i in abs_ap[mode]] + res_best_ap
-    output_line = output_line[:2*K+2] + [baseline_line[0]] + output_line[2*K+2:] + baseline_line[1:]
-    with open(Path(args.results)/'spreadsheet.csv', 'w') as f:
-        f.write(', '.join(output_line) + '\n')
+            output_line = output_line[:2*K+2] + [baseline_line[0]] + output_line[2*K+2:] + baseline_line[1:]
+            with open(Path(args.results)/f"spreadsheet_{mode}.csv", 'w') as f:
+                f.write(', '.join(output_line) + '\n')
