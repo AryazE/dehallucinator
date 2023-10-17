@@ -4,6 +4,7 @@ python-dotenv
 libcst
 openai
 numpy
+scipy
 pytest
 pytest-reportlog
 pytest-cov
