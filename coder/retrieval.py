@@ -81,13 +81,13 @@ class RetrievalCompletion:
         artifact = ''
         self.indent_style, self.indent_count = get_indentation(prompt)
         logger.info(f'indent_style: {self.indent_style}, indent_count: {self.indent_count}')
-        completion = get_completion_safely(self.model, completor, prompt, k=1)[0]
+        completion = get_completion_safely(self.model, completor, new_prompt, k=1)[0]
         logger.info(f'completion w/o postprocessing:\n{completion}\n')
         completion = postprocess(completion, self.indent_style, self.indent_count, self.mode)
         completions = [completion]
-        logger.info(f'Initial prompt with retrieved APIs: \n{prompt}\n')
+        logger.info(f'Initial prompt with retrieved APIs: \n{new_prompt}\n')
         logger.info(f'Initial completion:\n{completion}\n')
-        artifact += f'prompt {attempts}:\n```python\n{prompt}\n```\ncompletion {attempts}:\n```python\n{completion}\n```\n'
+        artifact += f'prompt {attempts}:\n```python\n{new_prompt}\n```\ncompletion {attempts}:\n```python\n{completion}\n```\n'
         with open(self.artifacts, 'w') as f:
             f.write(artifact)
         return new_prompt, completions

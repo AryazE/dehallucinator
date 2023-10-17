@@ -68,10 +68,14 @@ def same_location(line, location):
     return True
 
 def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
+    if '\n' not in code[:-1]:
+        return code
+
     if mode.endswith('l') or mode.endswith('line'):
         return code.splitlines(True)[0]
     elif mode.endswith('api'):
         bracket = 0
+        bracket_seen = False
         res = 0
         i = 0
         while i < len(code):
@@ -83,54 +87,55 @@ def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
                 res = i
             elif ch == '(':
                 bracket += 1
+                bracket_seen = True
             elif ch == ')':
                 bracket -= 1
+                bracket_seen = True
             elif ch == '\n':
-                if bracket == 0:
+                if bracket == 0 and bracket_seen:
                     break
             i += 1
         return code[:res]
-    if '\n' not in code or code.endswith('\n'):
-        return code
-    prefix = (indent_style * indent_count) + 'def foo():\n' + (indent_style * (indent_count+1))
-    extra = len(indent_style) * indent_count
-    code = prefix + code
-    temp_lines = code.splitlines()
-    for l in range(1, len(temp_lines)):
-        if (len(temp_lines[l]) - len(temp_lines[l].lstrip())) // len(indent_style) <= indent_count:
-            temp_lines = temp_lines[:l]
-            break
-    lines = [l[extra:] for l in temp_lines]
-    while len(lines) > 1:
-        try:
-            ast.parse('\n'.join(lines))
-            return lines[1][len(indent_style):] + '\n' + '\n'.join([(indent_style * indent_count)+l for l in lines[2:]])
-        except:
-            lines.pop()
-    return ''
+    else:
+        prefix = (indent_style * indent_count) + 'def foo():\n' + (indent_style * (indent_count+1))
+        extra = len(indent_style) * indent_count
+        code = prefix + code
+        temp_lines = code.splitlines()
+        for l in range(1, len(temp_lines)):
+            if (len(temp_lines[l]) - len(temp_lines[l].lstrip())) // len(indent_style) <= indent_count:
+                temp_lines = temp_lines[:l]
+                break
+        lines = [l[extra:] for l in temp_lines]
+        while len(lines) > 1:
+            try:
+                ast.parse('\n'.join(lines))
+                return lines[1][len(indent_style):] + '\n' + '\n'.join([(indent_style * indent_count)+l for l in lines[2:]])
+            except:
+                lines.pop()
+        return ''
 
 def get_completion_safely(model: str, completor, prompt, k=4):
-        if model == 'GPT3.5':
-            prompt_size = 3500
-        elif model == 'lUniXcoder':
-            prompt_size = 750
-        else:
-            prompt_size = 1750
-        clipped_prompt = prompt
-        while prompt_size > 0:
-            clipped_prompt = clip_prompt(clipped_prompt, prompt_size)
-            try:
-                completion = completor.get_completion(model, clipped_prompt, k=k)
-                break
-            except openai.error.InvalidRequestError as e:
-                print(e)
-                prompt_size -= 10
-                continue
-            except Exception as e:
-                print(e)
-                prompt_size -= 10
-                continue
-        return completion
+    if model == 'GPT3.5':
+        prompt_size = 3500
+    elif model == 'lUniXcoder':
+        prompt_size = 750
+    else:
+        prompt_size = 1750
+    clipped_prompt = prompt
+    while prompt_size > 0:
+        clipped_prompt = clip_prompt(clipped_prompt, prompt_size)
+        try:
+            completion = completor.get_completion(model, clipped_prompt, k=k)
+            break
+        except openai.error.InvalidRequestError as e:
+            print(e)
+            prompt_size -= 10
+            continue
+        except Exception as e:
+            print(e)
+            prompt_size -= 10
+            continue
+    return completion
 
 def dedent(code):
     lines = code.splitlines(keepends=True)
