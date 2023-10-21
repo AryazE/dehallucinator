@@ -1,0 +1,44 @@
+Easy completions: 3
+Not covered by any test: 0
+Trivial tests: 0
+Other issues: 0
+Easy completions: 0
+Not covered by any test: 0
+Trivial tests: 0
+Other issues: 0
+Easy completions: 6
+Not covered by any test: 0
+Trivial tests: 0
+Other issues: 0
+Easy completions: 8
+Not covered by any test: 0
+Trivial tests: 0
+Other issues: 0
+Easy completions: 8
+Not covered by any test: 0
+Trivial tests: 0
+Other issues: 0
+Easy completions: 7
+Not covered by any test: 0
+Trivial tests: 0
+Other issues: 0
+Easy completions: 2
+Not covered by any test: 0
+Trivial tests: 0
+Other issues: 0
+Easy completions: 7
+Not covered by any test: 0
+Trivial tests: 0
+Other issues: 0
+Easy completions: 9
+Not covered by any test: 0
+Trivial tests: 0
+Other issues: 0
+Easy completions: 6
+Not covered by any test: 0
+Trivial tests: 0
+Other issues: 0
+Easy completions: 5
+Not covered by any test: 0
+Trivial tests: 0
+Other issues: 0

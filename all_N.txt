@@ -1,0 +1,1083 @@
+CodeGen_aaugustin_websockets
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc2k5t01testsapi
+38, (0, 0.8867924528301887, 0.0, 2), (0, 0.8867924528301887, 0.0, 2)
+85, (0, 0.32258064516129037, 0.0, 2), (0, 0.47580645161290325, 0.0, 2)
+119, (0, 0.12534059945504084, 0.0, 1), (0, 0.14197530864197527, 0.0, 1)
+156, (0, 0.4720496894409938, 0.0, 1), (0, 0.4720496894409938, 0.0, 1)
+188, (0, 0.9759036144578314, 0.0, 1), (0, 0.9759036144578314, 0.0, 1)
+207, (0, 0.3414634146341463, 0.0, 1), (0, 0.3414634146341463, 0.0, 1)
+234, (0, 0.3026315789473685, 0.0, 1), (0, 0.3026315789473685, 0.0, 1)
+276, (0, 0.15850515463917525, 0.0, 1), (0, 0.15850515463917525, 0.0, 1)
+278, (0, 0.16352201257861632, 0.0, 1), (0, 0.16352201257861632, 0.0, 1)
+284, (0, 0.1785714285714286, 0.0, 1), (0, 0.1785714285714286, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.39273605907160797, 0, 0, 0, 0]
+API similarity (absolute): [0.0, 0, 0, 0, 0]
+N-gram similarity (best): ['0.39273605907160797', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc2k5t01testsapi with 10 data points:
+N-gram improvement: 3
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 2
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.39273605907160797, 0.37080887551044517, 0.36967276015103945, 0.3714835381791108, 0.3714835381791108]
+API similarity (absolute): [0.0, 0.0, 0.0, 0.0, 0.0]
+N-gram similarity (best): ['0.39273605907160797', '0.40972211063546277', '0.40972211063546277', '0.40972211063546277', '0.40972211063546277']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc10k5t01testsapi
+38, (0, 0.8867924528301887, 0.0, 2), (0, 0.8867924528301887, 0.0, 2)
+85, (0, 0.32258064516129037, 0.0, 2), (0, 0.32258064516129037, 0.0, 2)
+119, (0, 0.12534059945504084, 0.0, 1), (0, 0.272189349112426, 0.0, 1)
+156, (0, 0.4720496894409938, 0.0, 1), (0, 0.4720496894409938, 0.0, 1)
+188, (0, 0.9759036144578314, 0.0, 1), (0, 0.9759036144578314, 0.0, 1)
+207, (0, 0.3414634146341463, 0.0, 1), (0, 0.38842975206611574, 0.0, 1)
+234, (0, 0.3026315789473685, 0.0, 1), (0, 0.42105263157894735, 0.0, 1)
+276, (0, 0.15850515463917525, 0.0, 1), (0, 0.17105263157894735, 0.0, 1)
+278, (0, 0.16352201257861632, 0.0, 1), (0, 0.16352201257861632, 0.0, 1)
+284, (0, 0.1785714285714286, 0.0, 1), (0, 0.1785714285714286, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.39273605907160797, 0, 0, 0, 0]
+API similarity (absolute): [0.0, 0, 0, 0, 0]
+N-gram similarity (best): ['0.39273605907160797', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc10k5t01testsapi with 10 data points:
+N-gram improvement: 5
+API improvement: 0
+N-gram improvement (iterative): 3
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 2
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.39273605907160797, 0.34872277841913063, 0.33147510765492993, 0.34125132612666453, 0.3227038064923245]
+API similarity (absolute): [0.0, 0.0, 0.0, 0.0, 0.0]
+N-gram similarity (best): ['0.39273605907160797', '0.4248960706217577', '0.42521442073767857', '0.42521442073767857', '0.42521442073767857']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc40k5t01testsapi
+38, (0, 0.8867924528301887, 0.0, 2), (0, 0.8867924528301887, 0.0, 2)
+85, (0, 0.32258064516129037, 0.0, 2), (0, 0.32258064516129037, 0.0, 2)
+119, (0, 0.12534059945504084, 0.0, 1), (0, 0.23115577889447236, 0.0, 1)
+156, (0, 0.4720496894409938, 0.0, 1), (0, 0.4720496894409938, 0.0, 1)
+188, (0, 0.9759036144578314, 0.0, 1), (0, 0.9759036144578314, 0.0, 1)
+207, (0, 0.3414634146341463, 0.0, 1), (0, 0.3414634146341463, 0.0, 1)
+234, (0, 0.3026315789473685, 0.0, 1), (0, 0.3026315789473685, 0.0, 1)
+276, (0, 0.15850515463917525, 0.0, 1), (0, 0.17105263157894735, 0.0, 1)
+278, (0, 0.16352201257861632, 0.0, 1), (0, 0.16352201257861632, 0.0, 1)
+284, (0, 0.1785714285714286, 0.0, 1), (0, 0.1785714285714286, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.39273605907160797, 0, 0, 0, 0]
+API similarity (absolute): [0.0, 0, 0, 0, 0]
+N-gram similarity (best): ['0.39273605907160797', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc40k5t01testsapi with 10 data points:
+N-gram improvement: 5
+API improvement: 0
+N-gram improvement (iterative): 2
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 2
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.39273605907160797, 0.3291710044820831, 0.32558287454758333, 0.32892018847818205, 0.30957758354229237]
+API similarity (absolute): [0.0, 0.0, 0.0, 0.0, 0.0]
+N-gram similarity (best): ['0.39273605907160797', '0.4021774675408019', '0.40457232470952836', '0.40457232470952836', '0.40457232470952836']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+CodeGen_arrow-py_arrow
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc2k5t01testsapi
+2, (0, 0.5961538461538461, 0.0, 1), (0, 0.5961538461538461, 0.0, 1)
+6, (0, 0.3220338983050848, 0.0, 1), (0, 0.4358974358974359, 0.0, 1)
+7, (0, 0.2702702702702703, 0.0, 1), (0, 0.4054054054054054, 0.0, 1)
+9, (0, 0.7468354430379747, 0.0, 2), (0, 0.7468354430379747, 0.0, 2)
+11, (0, 0.6875, 0.0, 1), (0, 0.875, 0.0, 1)
+12, (0, 0.45945945945945943, 0.0, 1), (0, 0.45945945945945943, 0.0, 1)
+14, (0, 0.14163090128755362, 0.0, 4), (0, 0.14163090128755362, 0.0, 4)
+16, (0, 0.5692307692307692, 0.0, 2), (0, 0.5692307692307692, 0.0, 2)
+17, (0, 0.75, 0.5, 2), (0, 0.75, 0.5, 2)
+18, (0, 0.4852941176470589, 0.0, 1), (0, 0.4852941176470589, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5028408705392018, 0, 0, 0, 0]
+API similarity (absolute): [0.05, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5028408705392018', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.05', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc2k5t01testsapi with 10 data points:
+N-gram improvement: 4
+API improvement: 0
+N-gram improvement (iterative): 1
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 3
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.5028408705392018, 0.5433970923270005, 0.5464907378119503, 0.5433970923270005, 0.5464907378119503]
+API similarity (absolute): [0.05, 0.05, 0.05, 0.05, 0.05]
+N-gram similarity (best): ['0.5028408705392018', '0.5464907378119503', '0.5464907378119503', '0.5464907378119503', '0.5464907378119503']
+API similarity (best): ['0.05', '0.05', '0.05', '0.05', '0.05']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc10k5t01testsapi
+2, (0, 0.5961538461538461, 0.0, 1), (0, 0.5961538461538461, 0.0, 1)
+6, (0, 0.3220338983050848, 0.0, 1), (0, 0.4358974358974359, 0.0, 1)
+7, (0, 0.2702702702702703, 0.0, 1), (0, 0.4054054054054054, 0.0, 1)
+9, (0, 0.7468354430379747, 0.0, 2), (0, 0.7468354430379747, 0.0, 2)
+11, (0, 0.6875, 0.0, 1), (0, 0.6875, 0.0, 1)
+12, (0, 0.45945945945945943, 0.0, 1), (0, 0.868421052631579, 0.0, 1)
+14, (0, 0.14163090128755362, 0.0, 4), (0, 0.14163090128755362, 0.0, 4)
+16, (0, 0.5692307692307692, 0.0, 2), (0, 0.5692307692307692, 0.0, 2)
+17, (0, 0.75, 0.5, 2), (0, 0.75, 0.5, 2)
+18, (0, 0.4852941176470589, 0.0, 1), (0, 0.4852941176470589, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5028408705392018, 0, 0, 0, 0]
+API similarity (absolute): [0.05, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5028408705392018', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.05', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc10k5t01testsapi with 10 data points:
+N-gram improvement: 4
+API improvement: 0
+N-gram improvement (iterative): 2
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 2
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.5028408705392018, 0.5346344016177154, 0.5224944921564976, 0.5633906514737095, 0.5224944921564976]
+API similarity (absolute): [0.05, 0.05, 0.05, 0.05, 0.05]
+N-gram similarity (best): ['0.5028408705392018', '0.5578260863183515', '0.5686368971291623', '0.5686368971291623', '0.5686368971291623']
+API similarity (best): ['0.05', '0.05', '0.05', '0.05', '0.05']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc40k5t01testsapi
+2, (0, 0.5961538461538461, 0.0, 1), (0, 0.5961538461538461, 0.0, 1)
+6, (0, 0.3220338983050848, 0.0, 1), (0, 0.3220338983050848, 0.0, 1)
+7, (0, 0.2702702702702703, 0.0, 1), (0, 0.2702702702702703, 0.0, 1)
+9, (0, 0.7468354430379747, 0.0, 2), (0, 0.7468354430379747, 0.0, 2)
+11, (0, 0.6875, 0.0, 1), (0, 0.6875, 0.0, 1)
+12, (0, 0.45945945945945943, 0.0, 1), (0, 0.45945945945945943, 0.0, 1)
+14, (0, 0.14163090128755362, 0.0, 4), (0, 0.16309012875536477, 0.25, 4)
+16, (0, 0.5692307692307692, 0.0, 2), (0, 0.5692307692307692, 0.0, 2)
+17, (0, 0.75, 0.5, 2), (0, 0.75, 0.5, 2)
+18, (0, 0.4852941176470589, 0.0, 1), (0, 0.4852941176470589, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5028408705392018, 0, 0, 0, 0]
+API similarity (absolute): [0.05, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5028408705392018', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.05', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc40k5t01testsapi with 10 data points:
+N-gram improvement: 4
+API improvement: 2
+N-gram improvement (iterative): 2
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 1
+API improvement (dicoder better): 1
+N-gram similarity (absolute): [0.5028408705392018, 0.4635099459892458, 0.4686231569223465, 0.49873721871651855, 0.46975952055871006]
+API similarity (absolute): [0.05, 0.025, 0.025, 0.075, 0.025]
+N-gram similarity (best): ['0.5028408705392018', '0.5049867932859828', '0.5049867932859828', '0.5049867932859828', '0.5049867932859828']
+API similarity (best): ['0.05', '0.075', '0.075', '0.075', '0.075']
+CodeGen_geopy_geopy
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc2k5t01testsapi
+6, (0, 0.2647058823529411, 0.0, 2), (0, 0.2647058823529411, 0.0, 2)
+42, (0, 0.7166666666666667, 0.0, 1), (0, 0.7166666666666667, 0.0, 1)
+48, (0, 0.303448275862069, 0.0, 2), (0, 0.303448275862069, 0.0, 2)
+50, (0, 0.4035087719298246, 0.0, 1), (0, 0.4035087719298246, 0.0, 1)
+73, (0, 0.3285714285714286, 0.0, 1), (0, 0.3285714285714286, 0.0, 1)
+104, (0, 0.5641025641025641, 0.0, 1), (0, 0.5641025641025641, 0.0, 1)
+128, (0, 0.2535211267605634, 0.0, 1), (0, 0.3380281690140845, 0.0, 1)
+170, (0, 0.5066666666666666, 0.0, 1), (0, 0.5066666666666666, 0.0, 1)
+208, (0, 0.7285714285714286, 0.0, 1), (0, 0.7285714285714286, 0.0, 1)
+220, (0, 0.11956521739130432, 0.0, 2), (0, 0.11956521739130432, 0.0, 2)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.41893280288754575, 0, 0, 0, 0]
+API similarity (absolute): [0.0, 0, 0, 0, 0]
+N-gram similarity (best): ['0.41893280288754575', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc2k5t01testsapi with 10 data points:
+N-gram improvement: 1
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 1
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.41893280288754575, 0.42637670439180936, 0.42637670439180936, 0.42637670439180936, 0.42637670439180936]
+API similarity (absolute): [0.0, 0.0, 0.0, 0.0, 0.0]
+N-gram similarity (best): ['0.41893280288754575', '0.42738350711289785', '0.42738350711289785', '0.42738350711289785', '0.42738350711289785']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc10k5t01testsapi
+6, (0, 0.2647058823529411, 0.0, 2), (0, 0.2647058823529411, 0.0, 2)
+42, (0, 0.7166666666666667, 0.0, 1), (0, 0.7166666666666667, 0.0, 1)
+48, (0, 0.303448275862069, 0.0, 2), (0, 0.303448275862069, 0.0, 2)
+50, (0, 0.4035087719298246, 0.0, 1), (0, 0.4035087719298246, 0.0, 1)
+73, (0, 0.3285714285714286, 0.0, 1), (0, 0.3285714285714286, 0.0, 1)
+104, (0, 0.5641025641025641, 0.0, 1), (0, 1.0, 1.0, 1)
+128, (0, 0.2535211267605634, 0.0, 1), (0, 1.0, 1.0, 1)
+170, (0, 0.5066666666666666, 0.0, 1), (0, 0.5066666666666666, 0.0, 1)
+208, (0, 0.7285714285714286, 0.0, 1), (0, 0.7285714285714286, 0.0, 1)
+220, (0, 0.11956521739130432, 0.0, 2), (0, 0.11956521739130432, 0.0, 2)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.41893280288754575, 0, 0, 0, 0]
+API similarity (absolute): [0.0, 0, 0, 0, 0]
+N-gram similarity (best): ['0.41893280288754575', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc10k5t01testsapi with 10 data points:
+N-gram improvement: 3
+API improvement: 2
+N-gram improvement (iterative): 2
+API improvement (iterative): 1
+N-gram improvement (dicoder better): 1
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.41893280288754575, 0.5231426415748971, 0.41465256646077486, 0.4528075274418228, 0.41465256646077486]
+API similarity (absolute): [0.0, 0.2, 0.0, 0.1, 0.0]
+N-gram similarity (best): ['0.41893280288754575', '0.5371704338012331', '0.5371704338012331', '0.5371704338012331', '0.5371704338012331']
+API similarity (best): ['0.0', '0.2', '0.2', '0.2', '0.2']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc40k5t01testsapi
+6, (0, 0.2647058823529411, 0.0, 2), (0, 0.2647058823529411, 0.0, 2)
+42, (0, 0.7166666666666667, 0.0, 1), (0, 0.7166666666666667, 0.0, 1)
+48, (0, 0.303448275862069, 0.0, 2), (0, 0.303448275862069, 0.0, 2)
+50, (0, 0.4035087719298246, 0.0, 1), (0, 0.4035087719298246, 0.0, 1)
+73, (0, 0.3285714285714286, 0.0, 1), (0, 0.3285714285714286, 0.0, 1)
+104, (0, 0.5641025641025641, 0.0, 1), (0, 0.5641025641025641, 0.0, 1)
+128, (0, 0.2535211267605634, 0.0, 1), (0, 1.0, 1.0, 1)
+170, (0, 0.5066666666666666, 0.0, 1), (0, 0.5066666666666666, 0.0, 1)
+208, (0, 0.7285714285714286, 0.0, 1), (0, 1.0, 1.0, 1)
+220, (0, 0.11956521739130432, 0.0, 2), (0, 0.11956521739130432, 0.0, 2)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.41893280288754575, 0, 0, 0, 0]
+API similarity (absolute): [0.0, 0, 0, 0, 0]
+N-gram similarity (best): ['0.41893280288754575', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc40k5t01testsapi with 10 data points:
+N-gram improvement: 2
+API improvement: 2
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 2
+API improvement (dicoder better): 2
+N-gram similarity (absolute): [0.41893280288754575, 0.5092921488404055, 0.5092921488404055, 0.5092921488404055, 0.5092921488404055]
+API similarity (absolute): [0.0, 0.2, 0.2, 0.2, 0.2]
+N-gram similarity (best): ['0.41893280288754575', '0.5207235473543466', '0.5207235473543466', '0.5207235473543466', '0.5207235473543466']
+API similarity (best): ['0.0', '0.2', '0.2', '0.2', '0.2']
+CodeGen_graphql-python_graphene
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc2k5t01testsapi
+11, (0, 0.4620253164556962, 0.0, 2), (0, 0.4620253164556962, 0.0, 2)
+107, (0, 0.7816091954022988, 0.5, 2), (0, 0.7816091954022988, 0.5, 2)
+128, (0, 0.6216216216216216, 0.0, 1), (0, 0.6216216216216216, 0.0, 1)
+134, (0, 0.3191489361702128, 0.0, 1), (0, 0.3191489361702128, 0.0, 1)
+137, (0, 0.4078947368421053, 0.0, 2), (0, 0.4078947368421053, 0.0, 2)
+146, (0, 0.1097560975609756, 0.0, 2), (0, 0.6224256292906178, 0.0, 2)
+226, (0, 0.6610169491525424, 0.0, 2), (0, 0.6610169491525424, 0.0, 2)
+348, (0, 0.8, 1.0, 1), (0, 0.8, 1.0, 1)
+413, (0, 0.9534883720930233, 1.0, 2), (0, 0.9534883720930233, 1.0, 2)
+577, (0, 0.4, 0.0, 1), (0, 0.4, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5516561225298476, 0, 0, 0, 0]
+API similarity (absolute): [0.25, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5516561225298476', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.25', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc2k5t01testsapi with 10 data points:
+N-gram improvement: 1
+API improvement: 0
+N-gram improvement (iterative): 1
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 1
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.5516561225298476, 0.6022857188475028, 0.6029230757028119, 0.6029230757028119, 0.6029230757028119]
+API similarity (absolute): [0.25, 0.25, 0.25, 0.25, 0.25]
+N-gram similarity (best): ['0.5516561225298476', '0.6022857188475028', '0.6029230757028119', '0.6029230757028119', '0.6029230757028119']
+API similarity (best): ['0.25', '0.25', '0.25', '0.25', '0.25']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc10k5t01testsapi
+11, (0, 0.4620253164556962, 0.0, 2), (0, 0.4620253164556962, 0.0, 2)
+107, (0, 0.7816091954022988, 0.5, 2), (0, 0.7816091954022988, 0.5, 2)
+128, (0, 0.6216216216216216, 0.0, 1), (0, 1.0, 1.0, 1)
+134, (0, 0.3191489361702128, 0.0, 1), (0, 0.3191489361702128, 0.0, 1)
+137, (0, 0.4078947368421053, 0.0, 2), (0, 0.5263157894736843, 0.0, 2)
+146, (0, 0.1097560975609756, 0.0, 2), (0, 0.616052060737527, 0.0, 2)
+226, (0, 0.6610169491525424, 0.0, 2), (0, 0.6610169491525424, 0.0, 2)
+348, (0, 0.8, 1.0, 1), (0, 0.8, 1.0, 1)
+413, (0, 0.9534883720930233, 1.0, 2), (0, 0.9534883720930233, 1.0, 2)
+577, (0, 0.4, 0.0, 1), (0, 0.4, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5516561225298476, 0, 0, 0, 0]
+API similarity (absolute): [0.25, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5516561225298476', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.25', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc10k5t01testsapi with 10 data points:
+N-gram improvement: 4
+API improvement: 2
+N-gram improvement (iterative): 2
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 3
+API improvement (dicoder better): 1
+N-gram similarity (absolute): [0.5516561225298476, 0.5423568709251789, 0.620795929216808, 0.6290658719909941, 0.611754264926162]
+API similarity (absolute): [0.25, 0.25, 0.25, 0.35, 0.25]
+N-gram similarity (best): ['0.5516561225298476', '0.589798838416466', '0.6519656619484985', '0.6519656619484985', '0.6519656619484985']
+API similarity (best): ['0.25', '0.35', '0.35', '0.35', '0.35']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc40k5t01testsapi
+11, (0, 0.4620253164556962, 0.0, 2), (0, 0.4620253164556962, 0.0, 2)
+107, (0, 0.7816091954022988, 0.5, 2), (0, 0.8620689655172413, 0.5, 2)
+128, (0, 0.6216216216216216, 0.0, 1), (0, 0.6216216216216216, 0.0, 1)
+134, (0, 0.3191489361702128, 0.0, 1), (0, 0.3191489361702128, 0.0, 1)
+137, (0, 0.4078947368421053, 0.0, 2), (0, 0.5263157894736843, 0.0, 2)
+146, (0, 0.1097560975609756, 0.0, 2), (0, 0.125, 0.0, 2)
+226, (0, 0.6610169491525424, 0.0, 2), (0, 0.6610169491525424, 0.0, 2)
+348, (0, 0.8, 1.0, 1), (0, 0.8, 1.0, 1)
+413, (0, 0.9534883720930233, 1.0, 2), (0, 0.9534883720930233, 1.0, 2)
+577, (0, 0.4, 0.0, 1), (0, 0.5526315789473684, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5516561225298476, 0, 0, 0, 0]
+API similarity (absolute): [0.25, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5516561225298476', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.25', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc40k5t01testsapi with 10 data points:
+N-gram improvement: 5
+API improvement: 1
+N-gram improvement (iterative): 2
+API improvement (iterative): 1
+N-gram improvement (dicoder better): 2
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.5516561225298476, 0.45932581570580294, 0.5455179482731194, 0.46209340222588446, 0.5288809854958056]
+API similarity (absolute): [0.25, 0.1, 0.15, 0.1, 0.15]
+N-gram similarity (best): ['0.5516561225298476', '0.565022618036908', '0.5883317529431389', '0.5883317529431389', '0.5883317529431389']
+API similarity (best): ['0.25', '0.25', '0.25', '0.25', '0.25']
+CodeGen_lektor_lektor
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc2k5t01testsapi
+34, (0, 0.31818181818181823, 0.0, 1), (0, 0.31818181818181823, 0.0, 1)
+36, (0, 0.25531914893617025, 0.0, 2), (0, 0.46031746031746035, 0.0, 2)
+43, (0, 0.5342465753424658, 0.0, 1), (0, 0.5342465753424658, 0.0, 1)
+59, (0, 0.3392857142857143, 0.0, 1), (0, 0.3392857142857143, 0.0, 1)
+78, (0, 0.3035714285714286, 0.0, 1), (0, 0.3035714285714286, 0.0, 1)
+91, (0, 0.38, 0.3333333333333333, 3), (0, 0.38, 0.6666666666666666, 3)
+94, (0, 0.7843137254901961, 0.6666666666666666, 3), (0, 1.0, 1.0, 3)
+101, (0, 0.8142857142857143, 0.0, 1), (0, 0.9047619047619048, 0.0, 1)
+162, (0, 0.5555555555555556, 0.0, 1), (0, 0.583941605839416, 0.0, 1)
+173, (0, 0.6349206349206349, 0.0, 1), (0, 0.7887323943661972, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.4919680315569698, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.4919680315569698', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc2k5t01testsapi with 10 data points:
+N-gram improvement: 6
+API improvement: 2
+N-gram improvement (iterative): 1
+API improvement (iterative): 1
+N-gram improvement (dicoder better): 5
+API improvement (dicoder better): 1
+N-gram similarity (absolute): [0.4919680315569698, 0.5534925694119236, 0.5560212132132002, 0.5492672172992477, 0.5560212132132002]
+API similarity (absolute): [0.1, 0.16666666666666666, 0.13333333333333333, 0.16666666666666666, 0.13333333333333333]
+N-gram similarity (best): ['0.4919680315569698', '0.5613038901666406', '0.5613038901666406', '0.5613038901666406', '0.5613038901666406']
+API similarity (best): ['0.1', '0.16666666666666666', '0.16666666666666666', '0.16666666666666666', '0.16666666666666666']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc10k5t01testsapi
+34, (0, 0.31818181818181823, 0.0, 1), (0, 0.31818181818181823, 0.0, 1)
+36, (0, 0.25531914893617025, 0.0, 2), (0, 0.46031746031746035, 0.0, 2)
+43, (0, 0.5342465753424658, 0.0, 1), (0, 0.5342465753424658, 0.0, 1)
+59, (0, 0.3392857142857143, 0.0, 1), (0, 0.3392857142857143, 0.0, 1)
+78, (0, 0.3035714285714286, 0.0, 1), (0, 0.3035714285714286, 0.0, 1)
+91, (0, 0.38, 0.3333333333333333, 3), (0, 0.38, 0.3333333333333333, 3)
+94, (0, 0.7843137254901961, 0.6666666666666666, 3), (0, 1.0, 1.0, 3)
+101, (0, 0.8142857142857143, 0.0, 1), (0, 0.8142857142857143, 0.0, 1)
+162, (0, 0.5555555555555556, 0.0, 1), (0, 0.583941605839416, 0.0, 1)
+173, (0, 0.6349206349206349, 0.0, 1), (0, 0.7464788732394366, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.4919680315569698, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.4919680315569698', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc10k5t01testsapi with 10 data points:
+N-gram improvement: 4
+API improvement: 1
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 4
+API improvement (dicoder better): 1
+N-gram similarity (absolute): [0.4919680315569698, 0.5459023014576311, 0.5353968712153587, 0.5353968712153587, 0.5353968712153587]
+API similarity (absolute): [0.1, 0.13333333333333333, 0.13333333333333333, 0.13333333333333333, 0.13333333333333333]
+N-gram similarity (best): ['0.4919680315569698', '0.5480309190063455', '0.5480309190063455', '0.5480309190063455', '0.5480309190063455']
+API similarity (best): ['0.1', '0.13333333333333333', '0.13333333333333333', '0.13333333333333333', '0.13333333333333333']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc40k5t01testsapi
+34, (0, 0.31818181818181823, 0.0, 1), (0, 0.31818181818181823, 0.0, 1)
+36, (0, 0.25531914893617025, 0.0, 2), (0, 0.4126984126984127, 0.0, 2)
+43, (0, 0.5342465753424658, 0.0, 1), (0, 0.5342465753424658, 0.0, 1)
+59, (0, 0.3392857142857143, 0.0, 1), (0, 0.4444444444444444, 0.0, 1)
+78, (0, 0.3035714285714286, 0.0, 1), (0, 0.3571428571428571, 0.0, 1)
+91, (0, 0.38, 0.3333333333333333, 3), (0, 0.875, 0.6666666666666666, 3)
+94, (0, 0.7843137254901961, 0.6666666666666666, 3), (0, 0.7843137254901961, 0.6666666666666666, 3)
+101, (0, 0.8142857142857143, 0.0, 1), (0, 1.0, 1.0, 1)
+162, (0, 0.5555555555555556, 0.0, 1), (0, 0.6722689075630253, 0.0, 1)
+173, (0, 0.6349206349206349, 0.0, 1), (0, 0.8412698412698413, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.4919680315569698, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.4919680315569698', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc40k5t01testsapi with 10 data points:
+N-gram improvement: 9
+API improvement: 3
+N-gram improvement (iterative): 4
+API improvement (iterative): 1
+N-gram improvement (dicoder better): 5
+API improvement (dicoder better): 1
+N-gram similarity (absolute): [0.4919680315569698, 0.5777081187337577, 0.5700740294042067, 0.6207099049665528, 0.5708066709456717]
+API similarity (absolute): [0.1, 0.13333333333333333, 0.03333333333333333, 0.2333333333333333, 0.06666666666666667]
+N-gram similarity (best): ['0.4919680315569698', '0.5808598881985984', '0.6182748400314878', '0.623956658213306', '0.623956658213306']
+API similarity (best): ['0.1', '0.2', '0.2', '0.2333333333333333', '0.2333333333333333']
+CodeGen_mwaskom_seaborn
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc2k5t01testsapi
+11, (0, 0.2894736842105263, 0.0, 1), (0, 0.2894736842105263, 0.0, 1)
+14, (0, 0.23717948717948723, 0.0, 1), (0, 0.4871794871794872, 0.0, 1)
+164, (0, 0.1923076923076923, 0.0, 2), (0, 0.1923076923076923, 0.0, 2)
+214, (0, 0.36986301369863017, 0.0, 2), (0, 0.36986301369863017, 0.0, 2)
+228, (0, 0.21212121212121215, 0.0, 1), (0, 0.21212121212121215, 0.0, 1)
+276, (0, 0.3076923076923077, 0.0, 1), (0, 0.3076923076923077, 0.0, 1)
+348, (0, 0.2295081967213115, 0.0, 1), (0, 0.2295081967213115, 0.0, 1)
+372, (0, 0.71875, 0.0, 1), (0, 0.71875, 0.0, 1)
+405, (0, 0.90625, 0.0, 1), (0, 0.90625, 0.0, 1)
+427, (0, 0.33333333333333337, 0.0, 2), (0, 0.3802816901408451, 0.0, 2)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.37964789272645005, 0, 0, 0, 0]
+API similarity (absolute): [0.0, 0, 0, 0, 0]
+N-gram similarity (best): ['0.37964789272645005', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc2k5t01testsapi with 10 data points:
+N-gram improvement: 3
+API improvement: 0
+N-gram improvement (iterative): 2
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 1
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.37964789272645005, 0.383198770414839, 0.4014427645213218, 0.383198770414839, 0.4014427645213218]
+API similarity (absolute): [0.0, 0.0, 0.0, 0.0, 0.0]
+N-gram similarity (best): ['0.37964789272645005', '0.4093427284072012', '0.4093427284072012', '0.4093427284072012', '0.4093427284072012']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc10k5t01testsapi
+11, (0, 0.2894736842105263, 0.0, 1), (0, 0.2894736842105263, 0.0, 1)
+14, (0, 0.23717948717948723, 0.0, 1), (0, 0.4871794871794872, 0.0, 1)
+164, (0, 0.1923076923076923, 0.0, 2), (0, 0.1923076923076923, 0.0, 2)
+214, (0, 0.36986301369863017, 0.0, 2), (0, 0.36986301369863017, 0.0, 2)
+228, (0, 0.21212121212121215, 0.0, 1), (0, 0.21212121212121215, 0.0, 1)
+276, (0, 0.3076923076923077, 0.0, 1), (0, 0.3076923076923077, 0.0, 1)
+348, (0, 0.2295081967213115, 0.0, 1), (0, 0.2295081967213115, 0.0, 1)
+372, (0, 0.71875, 0.0, 1), (0, 0.71875, 0.0, 1)
+405, (0, 0.90625, 0.0, 1), (0, 0.90625, 0.0, 1)
+427, (0, 0.33333333333333337, 0.0, 2), (0, 0.3802816901408451, 0.0, 2)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.37964789272645005, 0, 0, 0, 0]
+API similarity (absolute): [0.0, 0, 0, 0, 0]
+N-gram similarity (best): ['0.37964789272645005', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc10k5t01testsapi with 10 data points:
+N-gram improvement: 4
+API improvement: 0
+N-gram improvement (iterative): 3
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 2
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.37964789272645005, 0.3837353986053711, 0.3976519064327403, 0.4014427645213218, 0.3884302342861222]
+API similarity (absolute): [0.0, 0.0, 0.0, 0.0, 0.0]
+N-gram similarity (best): ['0.37964789272645005', '0.40464789272645', '0.4093427284072012', '0.4093427284072012', '0.4093427284072012']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc40k5t01testsapi
+11, (0, 0.2894736842105263, 0.0, 1), (0, 0.2894736842105263, 0.0, 1)
+14, (0, 0.23717948717948723, 0.0, 1), (0, 0.4871794871794872, 0.0, 1)
+164, (0, 0.1923076923076923, 0.0, 2), (0, 0.28205128205128205, 0.0, 2)
+214, (0, 0.36986301369863017, 0.0, 2), (0, 0.36986301369863017, 0.0, 2)
+228, (0, 0.21212121212121215, 0.0, 1), (0, 0.21212121212121215, 0.0, 1)
+276, (0, 0.3076923076923077, 0.0, 1), (0, 0.32692307692307687, 0.0, 1)
+348, (0, 0.2295081967213115, 0.0, 1), (0, 0.2295081967213115, 0.0, 1)
+372, (0, 0.71875, 0.0, 1), (0, 0.71875, 0.0, 1)
+405, (0, 0.90625, 0.0, 1), (0, 1.0, 1.0, 1)
+427, (0, 0.33333333333333337, 0.0, 2), (0, 0.3484848484848485, 0.0, 2)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.37964789272645005, 0, 0, 0, 0]
+API similarity (absolute): [0.0, 0, 0, 0, 0]
+N-gram similarity (best): ['0.37964789272645005', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.0', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc40k5t01testsapi with 10 data points:
+N-gram improvement: 7
+API improvement: 1
+N-gram improvement (iterative): 1
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 4
+API improvement (dicoder better): 1
+N-gram similarity (absolute): [0.37964789272645005, 0.38849166741673435, 0.38963490807337353, 0.38420922791439577, 0.37809644653491203]
+API similarity (absolute): [0.0, 0.1, 0.1, 0.1, 0.1]
+N-gram similarity (best): ['0.37964789272645005', '0.4245124032159606', '0.42643548013903754', '0.42643548013903754', '0.42643548013903754']
+API similarity (best): ['0.0', '0.1', '0.1', '0.1', '0.1']
+CodeGen_nvbn_thefuck
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc2k5t01testsapi
+14, (0, 0.125, 0.0, 3), (0, 0.16249999999999998, 0.0, 3)
+38, (0, 0.8761904761904762, 0.5, 2), (0, 0.8761904761904762, 0.5, 2)
+41, (0, 0.16176470588235292, 0.0, 1), (0, 0.16176470588235292, 0.0, 1)
+73, (0, 0.30000000000000004, 0.0, 1), (0, 0.30000000000000004, 0.0, 1)
+129, (0, 0.7169811320754718, 0.0, 1), (0, 0.7169811320754718, 0.0, 1)
+169, (0, 0.09999999999999998, 0.0, 1), (0, 0.09999999999999998, 0.0, 1)
+171, (0, 0.28260869565217395, 0.0, 1), (0, 0.28260869565217395, 0.0, 1)
+174, (0, 0.2857142857142857, 0.0, 1), (0, 0.2857142857142857, 0.0, 1)
+177, (0, 0.6909090909090909, 0.0, 1), (0, 0.6909090909090909, 0.0, 1)
+234, (0, 0.27941176470588236, 0.0, 3), (0, 0.27941176470588236, 0.0, 3)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.38185801511297335, 0, 0, 0, 0]
+API similarity (absolute): [0.05, 0, 0, 0, 0]
+N-gram similarity (best): ['0.38185801511297335', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.05', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc2k5t01testsapi with 10 data points:
+N-gram improvement: 1
+API improvement: 0
+N-gram improvement (iterative): 1
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 1
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.38185801511297335, 0.3767945172900416, 0.37554451729004157, 0.37554451729004157, 0.3792945172900416]
+API similarity (absolute): [0.05, 0.05, 0.05, 0.05, 0.05]
+N-gram similarity (best): ['0.38185801511297335', '0.3831080151129734', '0.3831080151129734', '0.3831080151129734', '0.3856080151129734']
+API similarity (best): ['0.05', '0.05', '0.05', '0.05', '0.05']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc10k5t01testsapi
+14, (0, 0.125, 0.0, 3), (0, 0.125, 0.0, 3)
+38, (0, 0.8761904761904762, 0.5, 2), (0, 0.8761904761904762, 0.5, 2)
+41, (0, 0.16176470588235292, 0.0, 1), (0, 0.16176470588235292, 0.0, 1)
+73, (0, 0.30000000000000004, 0.0, 1), (0, 0.6666666666666667, 0.0, 1)
+129, (0, 0.7169811320754718, 0.0, 1), (0, 0.7169811320754718, 0.0, 1)
+169, (0, 0.09999999999999998, 0.0, 1), (0, 0.09999999999999998, 0.0, 1)
+171, (0, 0.28260869565217395, 0.0, 1), (0, 0.30952380952380953, 0.0, 1)
+174, (0, 0.2857142857142857, 0.0, 1), (0, 0.2857142857142857, 0.0, 1)
+177, (0, 0.6909090909090909, 0.0, 1), (0, 0.6909090909090909, 0.0, 1)
+234, (0, 0.27941176470588236, 0.0, 3), (0, 0.27941176470588236, 0.0, 3)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.38185801511297335, 0, 0, 0, 0]
+API similarity (absolute): [0.05, 0, 0, 0, 0]
+N-gram similarity (best): ['0.38185801511297335', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.05', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc10k5t01testsapi with 10 data points:
+N-gram improvement: 3
+API improvement: 1
+N-gram improvement (iterative): 1
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 1
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.38185801511297335, 0.3805445172900416, 0.37617108370608165, 0.4149026953438718, 0.377853005902878]
+API similarity (absolute): [0.05, 0.0, 0.0, 0.05, 0.0]
+N-gram similarity (best): ['0.38185801511297335', '0.4212161931668036', '0.4212161931668036', '0.4212161931668036', '0.4212161931668036']
+API similarity (best): ['0.05', '0.05', '0.05', '0.05', '0.05']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc40k5t01testsapi
+14, (0, 0.125, 0.0, 3), (0, 0.1875, 0.0, 3)
+38, (0, 0.8761904761904762, 0.5, 2), (0, 0.8761904761904762, 0.5, 2)
+41, (0, 0.16176470588235292, 0.0, 1), (0, 0.16176470588235292, 0.0, 1)
+73, (0, 0.30000000000000004, 0.0, 1), (0, 0.30000000000000004, 0.0, 1)
+129, (0, 0.7169811320754718, 0.0, 1), (0, 0.8653846153846154, 0.0, 1)
+169, (0, 0.09999999999999998, 0.0, 1), (0, 0.09999999999999998, 0.0, 1)
+171, (0, 0.28260869565217395, 0.0, 1), (0, 0.30952380952380953, 0.0, 1)
+174, (0, 0.2857142857142857, 0.0, 1), (0, 0.2857142857142857, 0.0, 1)
+177, (0, 0.6909090909090909, 0.0, 1), (0, 0.6909090909090909, 0.0, 1)
+234, (0, 0.27941176470588236, 0.0, 3), (0, 0.27941176470588236, 0.0, 3)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.38185801511297335, 0, 0, 0, 0]
+API similarity (absolute): [0.05, 0, 0, 0, 0]
+N-gram similarity (best): ['0.38185801511297335', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.05', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc40k5t01testsapi with 10 data points:
+N-gram improvement: 5
+API improvement: 1
+N-gram improvement (iterative): 5
+API improvement (iterative): 1
+N-gram improvement (dicoder better): 0
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.38185801511297335, 0.3639483634438877, 0.38185801511297335, 0.3639483634438877, 0.38185801511297335]
+API similarity (absolute): [0.05, 0.0, 0.05, 0.0, 0.05]
+N-gram similarity (best): ['0.38185801511297335', '0.40563987483105135', '0.40563987483105135', '0.40563987483105135', '0.40563987483105135']
+API similarity (best): ['0.05', '0.05', '0.05', '0.05', '0.05']
+CodeGen_psf_black
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc2k5t01testsapi
+12, (0, 0.17592592592592593, 0.0, 1), (0, 0.17592592592592593, 0.0, 1)
+16, (0, 0.2094240837696335, 0.0, 1), (0, 0.5538461538461539, 0.0, 1)
+26, (0, 0.3063063063063063, 0.0, 1), (0, 0.3125, 0.0, 1)
+39, (0, 0.547945205479452, 0.0, 1), (0, 0.6727272727272727, 0.0, 1)
+92, (0, 0.8541666666666666, 0.0, 1), (0, 0.8541666666666666, 0.0, 1)
+119, (0, 0.15714285714285714, 0.0, 2), (0, 0.15714285714285714, 0.0, 2)
+155, (0, 0.8936170212765957, 1.0, 1), (0, 0.8936170212765957, 1.0, 1)
+178, (0, 0.5, 0.0, 1), (0, 0.5, 0.0, 1)
+190, (0, 0.625, 1.0, 1), (0, 0.625, 1.0, 1)
+203, (0, 0.75, 0.0, 1), (0, 0.75, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5019528066567437, 0, 0, 0, 0]
+API similarity (absolute): [0.2, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5019528066567437', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.2', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc2k5t01testsapi with 10 data points:
+N-gram improvement: 3
+API improvement: 0
+N-gram improvement (iterative): 1
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 3
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.5019528066567437, 0.5372923262539359, 0.5470491508445201, 0.5348488873399087, 0.5470491508445201]
+API similarity (absolute): [0.2, 0.2, 0.2, 0.2, 0.2]
+N-gram similarity (best): ['0.5019528066567437', '0.5372923262539359', '0.5494925897585472', '0.5494925897585472', '0.5494925897585472']
+API similarity (best): ['0.2', '0.2', '0.2', '0.2', '0.2']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc10k5t01testsapi
+12, (0, 0.17592592592592593, 0.0, 1), (0, 0.17592592592592593, 0.0, 1)
+16, (0, 0.2094240837696335, 0.0, 1), (0, 0.7076923076923076, 0.0, 1)
+26, (0, 0.3063063063063063, 0.0, 1), (0, 0.3142857142857143, 0.0, 1)
+39, (0, 0.547945205479452, 0.0, 1), (0, 0.7551020408163265, 0.0, 1)
+92, (0, 0.8541666666666666, 0.0, 1), (0, 1.0, 1.0, 1)
+119, (0, 0.15714285714285714, 0.0, 2), (0, 0.15714285714285714, 0.0, 2)
+155, (0, 0.8936170212765957, 1.0, 1), (0, 0.8936170212765957, 1.0, 1)
+178, (0, 0.5, 0.0, 1), (0, 0.5, 0.0, 1)
+190, (0, 0.625, 1.0, 1), (0, 0.625, 1.0, 1)
+203, (0, 0.75, 0.0, 1), (0, 0.75, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5019528066567437, 0, 0, 0, 0]
+API similarity (absolute): [0.2, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5019528066567437', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.2', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc10k5t01testsapi with 10 data points:
+N-gram improvement: 4
+API improvement: 1
+N-gram improvement (iterative): 2
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 3
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.5019528066567437, 0.47320791456142325, 0.5176753483238798, 0.4392069784194411, 0.5176753483238798]
+API similarity (absolute): [0.2, 0.3, 0.2, 0.2, 0.2]
+N-gram similarity (best): ['0.5019528066567437', '0.5493328488816427', '0.5878765867139728', '0.5878765867139728', '0.5878765867139728']
+API similarity (best): ['0.2', '0.3', '0.3', '0.3', '0.3']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc40k5t01testsapi
+12, (0, 0.17592592592592593, 0.0, 1), (0, 0.17592592592592593, 0.0, 1)
+16, (0, 0.2094240837696335, 0.0, 1), (0, 0.4864864864864865, 0.0, 1)
+26, (0, 0.3063063063063063, 0.0, 1), (0, 0.31707317073170727, 0.0, 1)
+39, (0, 0.547945205479452, 0.0, 1), (0, 1.0, 1.0, 1)
+92, (0, 0.8541666666666666, 0.0, 1), (0, 0.8541666666666666, 0.0, 1)
+119, (0, 0.15714285714285714, 0.0, 2), (0, 0.15714285714285714, 0.0, 2)
+155, (0, 0.8936170212765957, 1.0, 1), (0, 0.8936170212765957, 1.0, 1)
+178, (0, 0.5, 0.0, 1), (0, 0.5, 0.0, 1)
+190, (0, 0.625, 1.0, 1), (0, 0.625, 1.0, 1)
+203, (0, 0.75, 0.0, 1), (0, 0.75, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5019528066567437, 0, 0, 0, 0]
+API similarity (absolute): [0.2, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5019528066567437', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.2', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc40k5t01testsapi with 10 data points:
+N-gram improvement: 4
+API improvement: 1
+N-gram improvement (iterative): 2
+API improvement (iterative): 1
+N-gram improvement (dicoder better): 1
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.5019528066567437, 0.5291463410281521, 0.4805966405968638, 0.5260650152944452, 0.48080497307435516]
+API similarity (absolute): [0.2, 0.3, 0.2, 0.3, 0.2]
+N-gram similarity (best): ['0.5019528066567437', '0.5759412128230239', '0.5759412128230239', '0.5759412128230239', '0.5759412128230239']
+API similarity (best): ['0.2', '0.3', '0.3', '0.3', '0.3']
+CodeGen_scikit-learn_scikit-learn
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc2k5t01testsapi
+573, (0, 0.20833333333333337, 0.0, 2), (0, 0.20833333333333337, 0.0, 2)
+639, (0, 0.34426229508196726, 0.0, 3), (0, 0.34426229508196726, 0.0, 3)
+803, (0, 0.6547619047619048, 0.0, 1), (0, 0.6547619047619048, 0.0, 1)
+1044, (0, 0.28148148148148144, 0.0, 4), (0, 0.28148148148148144, 0.0, 4)
+1052, (0, 0.46478873239436624, 0.0, 1), (0, 0.5352112676056338, 0.0, 1)
+1080, (0, 0.9, 0.6666666666666666, 3), (0, 0.9, 0.6666666666666666, 3)
+1094, (0, 0.7079646017699115, 0.3333333333333333, 3), (0, 0.7079646017699115, 0.3333333333333333, 3)
+1240, (0, 0.5409429280397022, 0.0, 1), (0, 0.8809523809523809, 0.0, 1)
+1275, (0, 0.24242424242424243, 0.0, 1), (0, 0.4285714285714286, 0.0, 1)
+1277, (0, 0.24806201550387597, 0.0, 1), (0, 0.24806201550387597, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.45930215347907843, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.45930215347907843', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc2k5t01testsapi with 10 data points:
+N-gram improvement: 4
+API improvement: 0
+N-gram improvement (iterative): 3
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 3
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.45930215347907843, 0.509922928153032, 0.49747379641553857, 0.4875419757720797, 0.49895527789702]
+API similarity (absolute): [0.1, 0.1, 0.1, 0.1, 0.1]
+N-gram similarity (best): ['0.45930215347907843', '0.5173727693188903', '0.5189600709061919', '0.5189600709061919', '0.5189600709061919']
+API similarity (best): ['0.1', '0.1', '0.1', '0.1', '0.1']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc10k5t01testsapi
+573, (0, 0.20833333333333337, 0.0, 2), (0, 0.20833333333333337, 0.0, 2)
+639, (0, 0.34426229508196726, 0.0, 3), (0, 0.4426229508196722, 0.0, 3)
+803, (0, 0.6547619047619048, 0.0, 1), (0, 0.6785714285714286, 0.0, 1)
+1044, (0, 0.28148148148148144, 0.0, 4), (0, 0.28888888888888886, 0.0, 4)
+1052, (0, 0.46478873239436624, 0.0, 1), (0, 0.5352112676056338, 0.0, 1)
+1080, (0, 0.9, 0.6666666666666666, 3), (0, 0.9, 0.6666666666666666, 3)
+1094, (0, 0.7079646017699115, 0.3333333333333333, 3), (0, 0.8592592592592593, 0.6666666666666666, 3)
+1240, (0, 0.5409429280397022, 0.0, 1), (0, 0.8593073593073592, 0.0, 1)
+1275, (0, 0.24242424242424243, 0.0, 1), (0, 0.46031746031746035, 0.0, 1)
+1277, (0, 0.24806201550387597, 0.0, 1), (0, 0.5593220338983051, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.45930215347907843, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.45930215347907843', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc10k5t01testsapi with 10 data points:
+N-gram improvement: 9
+API improvement: 2
+N-gram improvement (iterative): 3
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 8
+API improvement (dicoder better): 1
+N-gram similarity (absolute): [0.45930215347907843, 0.48032190188101065, 0.5175673809881919, 0.4688373380599982, 0.516652155857571]
+API similarity (absolute): [0.1, 0.06666666666666667, 0.13333333333333333, 0.06666666666666667, 0.06666666666666667]
+N-gram similarity (best): ['0.45930215347907843', '0.5473166556199505', '0.5487831097039205', '0.5487831097039205', '0.579183398200134']
+API similarity (best): ['0.1', '0.13333333333333333', '0.13333333333333333', '0.13333333333333333', '0.13333333333333333']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc40k5t01testsapi
+573, (0, 0.20833333333333337, 0.0, 2), (0, 0.20833333333333337, 0.0, 2)
+639, (0, 0.34426229508196726, 0.0, 3), (0, 0.4426229508196722, 0.0, 3)
+803, (0, 0.6547619047619048, 0.0, 1), (0, 0.6785714285714286, 1.0, 1)
+1044, (0, 0.28148148148148144, 0.0, 4), (0, 0.31851851851851853, 0.0, 4)
+1052, (0, 0.46478873239436624, 0.0, 1), (0, 0.5633802816901409, 0.0, 1)
+1080, (0, 0.9, 0.6666666666666666, 3), (0, 0.9, 0.6666666666666666, 3)
+1094, (0, 0.7079646017699115, 0.3333333333333333, 3), (0, 0.7079646017699115, 0.6666666666666666, 3)
+1240, (0, 0.5409429280397022, 0.0, 1), (0, 0.8933601609657947, 0.0, 1)
+1275, (0, 0.24242424242424243, 0.0, 1), (0, 0.46031746031746035, 0.0, 1)
+1277, (0, 0.24806201550387597, 0.0, 1), (0, 0.5178571428571428, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.45930215347907843, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.45930215347907843', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc40k5t01testsapi with 10 data points:
+N-gram improvement: 8
+API improvement: 2
+N-gram improvement (iterative): 2
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 7
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.45930215347907843, 0.47810026886650475, 0.49018530556221745, 0.48639216932808316, 0.4807669435514354]
+API similarity (absolute): [0.1, 0.16666666666666666, 0.06666666666666667, 0.03333333333333333, 0.0]
+N-gram similarity (best): ['0.45930215347907843', '0.5396892317204207', '0.5668703656621181', '0.5668703656621181', '0.5690925878843404']
+API similarity (best): ['0.1', '0.2333333333333333', '0.2333333333333333', '0.2333333333333333', '0.2333333333333333']
+CodeGen_Parsely_streamparse
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc2k5t01testsapi
+1, (0, 0.6382978723404256, 0.0, 1), (0, 0.6382978723404256, 0.0, 1)
+3, (0, 0.8979591836734694, 0.0, 1), (0, 0.8979591836734694, 0.0, 1)
+35, (0, 0.5357142857142857, 0.0, 1), (0, 0.5357142857142857, 0.0, 1)
+42, (0, 0.40174672489082974, 0.0, 2), (0, 0.40174672489082974, 0.0, 2)
+43, (0, 0.13636363636363635, 0.0, 1), (0, 0.13636363636363635, 0.0, 1)
+111, (0, 0.31746031746031744, 0.0, 1), (0, 0.7301587301587302, 1.0, 1)
+123, (0, 0.65625, 0.0, 1), (0, 0.65625, 0.0, 1)
+137, (0, 0.7954545454545454, 1.0, 1), (0, 0.7954545454545454, 1.0, 1)
+167, (0, 0.20915032679738566, 0.0, 1), (0, 0.20915032679738566, 0.0, 1)
+168, (0, 0.5874125874125874, 0.0, 1), (0, 0.5874125874125874, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5175809480107482, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5175809480107482', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc2k5t01testsapi with 10 data points:
+N-gram improvement: 2
+API improvement: 1
+N-gram improvement (iterative): 2
+API improvement (iterative): 1
+N-gram improvement (dicoder better): 1
+API improvement (dicoder better): 1
+N-gram similarity (absolute): [0.5175809480107482, 0.5227681957511875, 0.49719699276062973, 0.48149835448134615, 0.5567231297061215]
+API similarity (absolute): [0.1, 0.2, 0.1, 0.1, 0.2]
+N-gram similarity (best): ['0.5175809480107482', '0.5588507892805895', '0.5588507892805895', '0.5588507892805895', '0.5588507892805895']
+API similarity (best): ['0.1', '0.2', '0.2', '0.2', '0.2']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc10k5t01testsapi
+1, (0, 0.6382978723404256, 0.0, 1), (0, 0.6382978723404256, 0.0, 1)
+3, (0, 0.8979591836734694, 0.0, 1), (0, 0.8979591836734694, 0.0, 1)
+35, (0, 0.5357142857142857, 0.0, 1), (0, 0.5357142857142857, 0.0, 1)
+42, (0, 0.40174672489082974, 0.0, 2), (0, 0.537117903930131, 0.0, 2)
+43, (0, 0.13636363636363635, 0.0, 1), (0, 0.1477272727272727, 0.0, 1)
+111, (0, 0.31746031746031744, 0.0, 1), (0, 0.7301587301587302, 1.0, 1)
+123, (0, 0.65625, 0.0, 1), (0, 1.0, 1.0, 1)
+137, (0, 0.7954545454545454, 1.0, 1), (0, 0.7954545454545454, 1.0, 1)
+167, (0, 0.20915032679738566, 0.0, 1), (0, 0.20915032679738566, 0.0, 1)
+168, (0, 0.5874125874125874, 0.0, 1), (0, 0.5874125874125874, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5175809480107482, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5175809480107482', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc10k5t01testsapi with 10 data points:
+N-gram improvement: 5
+API improvement: 2
+N-gram improvement (iterative): 3
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 3
+API improvement (dicoder better): 1
+N-gram similarity (absolute): [0.5175809480107482, 0.5286523062982637, 0.5623070219125864, 0.5739443368659494, 0.571788159709772]
+API similarity (absolute): [0.1, 0.2, 0.2, 0.3, 0.2]
+N-gram similarity (best): ['0.5175809480107482', '0.5626072402531976', '0.5688572402531976', '0.6078992708208834', '0.6078992708208834']
+API similarity (best): ['0.1', '0.2', '0.2', '0.3', '0.3']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc40k5t01testsapi
+1, (0, 0.6382978723404256, 0.0, 1), (0, 0.6382978723404256, 0.0, 1)
+3, (0, 0.8979591836734694, 0.0, 1), (0, 0.8979591836734694, 0.0, 1)
+35, (0, 0.5357142857142857, 0.0, 1), (0, 0.5833333333333333, 0.0, 1)
+42, (0, 0.40174672489082974, 0.0, 2), (0, 0.4279475982532751, 0.0, 2)
+43, (0, 0.13636363636363635, 0.0, 1), (0, 0.13636363636363635, 0.0, 1)
+111, (0, 0.31746031746031744, 0.0, 1), (0, 0.7301587301587302, 1.0, 1)
+123, (0, 0.65625, 0.0, 1), (0, 0.71875, 0.0, 1)
+137, (0, 0.7954545454545454, 1.0, 1), (0, 0.8571428571428572, 1.0, 1)
+167, (0, 0.20915032679738566, 0.0, 1), (0, 0.20915032679738566, 0.0, 1)
+168, (0, 0.5874125874125874, 0.0, 1), (0, 0.5874125874125874, 0.0, 1)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5175809480107482, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5175809480107482', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc40k5t01testsapi with 10 data points:
+N-gram improvement: 7
+API improvement: 1
+N-gram improvement (iterative): 3
+API improvement (iterative): 1
+N-gram improvement (dicoder better): 4
+API improvement (dicoder better): 1
+N-gram similarity (absolute): [0.5175809480107482, 0.41892155716588125, 0.3525566898751144, 0.5642476751517475, 0.4123995599068322]
+API similarity (absolute): [0.1, 0.2, 0.1, 0.2, 0.2]
+N-gram similarity (best): ['0.5175809480107482', '0.57552661254757', '0.57552661254757', '0.57865161254757', '0.57865161254757']
+API similarity (best): ['0.1', '0.2', '0.2', '0.2', '0.2']
+CodeGen_Supervisor_supervisor
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc2k5t01testsapi
+14, (0, 0.34347826086956523, 1.0, 1), (0, 0.34347826086956523, 1.0, 1)
+37, (0, 0.4833333333333333, 0.0, 2), (0, 0.4833333333333333, 0.0, 2)
+80, (0, 0.3548387096774194, 0.0, 1), (0, 0.375, 0.0, 1)
+193, (0, 0.6363636363636364, 0.0, 1), (0, 0.6363636363636364, 0.0, 1)
+196, (0, 0.962962962962963, 0.0, 1), (0, 0.962962962962963, 0.0, 1)
+229, (0, 0.6083333333333334, 0.0, 1), (0, 0.6083333333333334, 0.0, 1)
+254, (0, 0.6129032258064516, 0.0, 1), (0, 0.6129032258064516, 0.0, 1)
+345, (0, 0.423728813559322, 0.0, 1), (0, 0.4363636363636364, 0.0, 1)
+351, (0, 0.32608695652173914, 0.0, 1), (0, 0.32608695652173914, 0.0, 1)
+417, (0, 0.7142857142857143, 0.0, 0), (0, 0.7346938775510203, 0.0, 0)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5466314946713478, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5466314946713478', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc2k5t01testsapi with 10 data points:
+N-gram improvement: 4
+API improvement: 0
+N-gram improvement (iterative): 3
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 1
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.5466314946713478, 0.4911420956445685, 0.5426630660055826, 0.5185588518207231, 0.5426630660055826]
+API similarity (absolute): [0.1, 0.1, 0.1, 0.1, 0.1]
+N-gram similarity (best): ['0.5466314946713478', '0.5499111059840374', '0.551951922310568', '0.551951922310568', '0.551951922310568']
+API similarity (best): ['0.1', '0.1', '0.1', '0.1', '0.1']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc10k5t01testsapi
+14, (0, 0.34347826086956523, 1.0, 1), (0, 0.34347826086956523, 1.0, 1)
+37, (0, 0.4833333333333333, 0.0, 2), (0, 0.4833333333333333, 0.0, 2)
+80, (0, 0.3548387096774194, 0.0, 1), (0, 0.3548387096774194, 0.0, 1)
+193, (0, 0.6363636363636364, 0.0, 1), (0, 0.6363636363636364, 0.0, 1)
+196, (0, 0.962962962962963, 0.0, 1), (0, 0.962962962962963, 0.0, 1)
+229, (0, 0.6083333333333334, 0.0, 1), (0, 0.6083333333333334, 0.0, 1)
+254, (0, 0.6129032258064516, 0.0, 1), (0, 0.6129032258064516, 0.0, 1)
+345, (0, 0.423728813559322, 0.0, 1), (0, 0.4363636363636364, 0.0, 1)
+351, (0, 0.32608695652173914, 0.0, 1), (0, 0.32608695652173914, 0.0, 1)
+417, (0, 0.7142857142857143, 0.0, 0), (0, 0.9215686274509804, 0.0, 0)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5466314946713478, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5466314946713478', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc10k5t01testsapi with 10 data points:
+N-gram improvement: 3
+API improvement: 0
+N-gram improvement (iterative): 1
+API improvement (iterative): 0
+N-gram improvement (dicoder better): 1
+API improvement (dicoder better): 0
+N-gram similarity (absolute): [0.5466314946713478, 0.49042069361213825, 0.4857112260402057, 0.4934136396327614, 0.4971389221186372]
+API similarity (absolute): [0.1, 0.1, 0.1, 0.1, 0.1]
+N-gram similarity (best): ['0.5466314946713478', '0.5478949769517792', '0.5499039055232078', '0.5686232682683059', '0.5686232682683059']
+API similarity (best): ['0.1', '0.1', '0.1', '0.1', '0.1']
+id, baselineCodeGenc20k5t01testsapi, commentCodeGenc40k5t01testsapi
+14, (0, 0.34347826086956523, 1.0, 1), (0, 0.34347826086956523, 1.0, 1)
+37, (0, 0.4833333333333333, 0.0, 2), (0, 0.55, 0.0, 2)
+80, (0, 0.3548387096774194, 0.0, 1), (0, 0.4838709677419355, 0.0, 1)
+193, (0, 0.6363636363636364, 0.0, 1), (0, 0.6363636363636364, 0.0, 1)
+196, (0, 0.962962962962963, 0.0, 1), (0, 0.962962962962963, 0.0, 1)
+229, (0, 0.6083333333333334, 0.0, 1), (0, 0.725, 1.0, 1)
+254, (0, 0.6129032258064516, 0.0, 1), (0, 0.6129032258064516, 0.0, 1)
+345, (0, 0.423728813559322, 0.0, 1), (0, 0.4363636363636364, 0.0, 1)
+351, (0, 0.32608695652173914, 0.0, 1), (0, 0.32608695652173914, 0.0, 1)
+417, (0, 0.7142857142857143, 0.0, 0), (0, 0.8, 0.0, 0)
+For mode baselineCodeGenc20k5t01testsapi with 10 data points:
+N-gram improvement: 0
+API improvement: 0
+N-gram improvement (iterative): 0
+API improvement (iterative): 0
+N-gram similarity (absolute): [0.5466314946713478, 0, 0, 0, 0]
+API similarity (absolute): [0.1, 0, 0, 0, 0]
+N-gram similarity (best): ['0.5466314946713478', '0.0', '0.0', '0.0', '0.0']
+API similarity (best): ['0.1', '0.0', '0.0', '0.0', '0.0']
+For mode commentCodeGenc40k5t01testsapi with 10 data points:
+N-gram improvement: 6
+API improvement: 1
+N-gram improvement (iterative): 4
+API improvement (iterative): 1
+N-gram improvement (dicoder better): 5
+API improvement (dicoder better): 1
+N-gram similarity (absolute): [0.5466314946713478, 0.477959562903462, 0.5828642549855734, 0.5477420653472548, 0.5724126420823475]
+API similarity (absolute): [0.1, 0.1, 0.2, 0.1, 0.2]
+N-gram similarity (best): ['0.5466314946713478', '0.5629755806928533', '0.5877029646629928', '0.5877029646629928', '0.5877029646629928']
+API similarity (best): ['0.1', '0.1', '0.2', '0.2', '0.2']
+CodeGen--------------------------------
+commentCodeGenc2k5t01testsapi, res_Parsely_streamparse_CodeGenc2k5t01testsapi, 0.5175809480107482, 0.5227681957511875, 0.49719699276062973, 0.48149835448134615, 0.5567231297061215, 0.5175809480107482, 0.5588507892805895, 0.5588507892805895, 0.5588507892805895, 0.5588507892805895, 0.5175809480107482, 0.1, 0.2, 0.1, 0.1, 0.2, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 10
+commentCodeGenc2k5t01testsapi, res_Supervisor_supervisor_CodeGenc2k5t01testsapi, 0.5466314946713478, 0.4911420956445685, 0.5426630660055826, 0.5185588518207231, 0.5426630660055826, 0.5466314946713478, 0.5499111059840374, 0.551951922310568, 0.551951922310568, 0.551951922310568, 0.5466314946713478, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 10
+commentCodeGenc2k5t01testsapi, res_aaugustin_websockets_CodeGenc2k5t01testsapi, 0.39273605907160797, 0.37080887551044517, 0.36967276015103945, 0.3714835381791108, 0.3714835381791108, 0.39273605907160797, 0.40972211063546277, 0.40972211063546277, 0.40972211063546277, 0.40972211063546277, 0.39273605907160797, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10
+commentCodeGenc2k5t01testsapi, res_arrow-py_arrow_CodeGenc2k5t01testsapi, 0.5028408705392018, 0.5433970923270005, 0.5464907378119503, 0.5433970923270005, 0.5464907378119503, 0.5028408705392018, 0.5464907378119503, 0.5464907378119503, 0.5464907378119503, 0.5464907378119503, 0.5028408705392018, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 10
+commentCodeGenc2k5t01testsapi, res_geopy_geopy_CodeGenc2k5t01testsapi, 0.41893280288754575, 0.42637670439180936, 0.42637670439180936, 0.42637670439180936, 0.42637670439180936, 0.41893280288754575, 0.42738350711289785, 0.42738350711289785, 0.42738350711289785, 0.42738350711289785, 0.41893280288754575, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10
+commentCodeGenc2k5t01testsapi, res_graphql-python_graphene_CodeGenc2k5t01testsapi, 0.5516561225298476, 0.6022857188475028, 0.6029230757028119, 0.6029230757028119, 0.6029230757028119, 0.5516561225298476, 0.6022857188475028, 0.6029230757028119, 0.6029230757028119, 0.6029230757028119, 0.5516561225298476, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 10
+commentCodeGenc2k5t01testsapi, res_lektor_lektor_CodeGenc2k5t01testsapi, 0.4919680315569698, 0.5534925694119236, 0.5560212132132002, 0.5492672172992477, 0.5560212132132002, 0.4919680315569698, 0.5613038901666406, 0.5613038901666406, 0.5613038901666406, 0.5613038901666406, 0.4919680315569698, 0.1, 0.16666666666666666, 0.13333333333333333, 0.16666666666666666, 0.13333333333333333, 0.1, 0.16666666666666666, 0.16666666666666666, 0.16666666666666666, 0.16666666666666666, 0.1, 10
+commentCodeGenc2k5t01testsapi, res_mwaskom_seaborn_CodeGenc2k5t01testsapi, 0.37964789272645005, 0.383198770414839, 0.4014427645213218, 0.383198770414839, 0.4014427645213218, 0.37964789272645005, 0.4093427284072012, 0.4093427284072012, 0.4093427284072012, 0.4093427284072012, 0.37964789272645005, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10
+commentCodeGenc2k5t01testsapi, res_nvbn_thefuck_CodeGenc2k5t01testsapi, 0.38185801511297335, 0.3767945172900416, 0.37554451729004157, 0.37554451729004157, 0.3792945172900416, 0.38185801511297335, 0.3831080151129734, 0.3831080151129734, 0.3831080151129734, 0.3856080151129734, 0.38185801511297335, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 10
+commentCodeGenc2k5t01testsapi, res_psf_black_CodeGenc2k5t01testsapi, 0.5019528066567437, 0.5372923262539359, 0.5470491508445201, 0.5348488873399087, 0.5470491508445201, 0.5019528066567437, 0.5372923262539359, 0.5494925897585472, 0.5494925897585472, 0.5494925897585472, 0.5019528066567437, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 10
+commentCodeGenc2k5t01testsapi, res_scikit-learn_scikit-learn_CodeGenc2k5t01testsapi, 0.45930215347907843, 0.509922928153032, 0.49747379641553857, 0.4875419757720797, 0.49895527789702, 0.45930215347907843, 0.5173727693188903, 0.5189600709061919, 0.5189600709061919, 0.5189600709061919, 0.45930215347907843, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 10
+------------------------------
+commentCodeGenc10k5t01testsapi, res_Parsely_streamparse_CodeGenc10k5t01testsapi, 0.5175809480107482, 0.5286523062982637, 0.5623070219125864, 0.5739443368659494, 0.571788159709772, 0.5175809480107482, 0.5626072402531976, 0.5688572402531976, 0.6078992708208834, 0.6078992708208834, 0.5175809480107482, 0.1, 0.2, 0.2, 0.3, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.1, 10
+commentCodeGenc10k5t01testsapi, res_Supervisor_supervisor_CodeGenc10k5t01testsapi, 0.5466314946713478, 0.49042069361213825, 0.4857112260402057, 0.4934136396327614, 0.4971389221186372, 0.5466314946713478, 0.5478949769517792, 0.5499039055232078, 0.5686232682683059, 0.5686232682683059, 0.5466314946713478, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 10
+commentCodeGenc10k5t01testsapi, res_aaugustin_websockets_CodeGenc10k5t01testsapi, 0.39273605907160797, 0.34872277841913063, 0.33147510765492993, 0.34125132612666453, 0.3227038064923245, 0.39273605907160797, 0.4248960706217577, 0.42521442073767857, 0.42521442073767857, 0.42521442073767857, 0.39273605907160797, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10
+commentCodeGenc10k5t01testsapi, res_arrow-py_arrow_CodeGenc10k5t01testsapi, 0.5028408705392018, 0.5346344016177154, 0.5224944921564976, 0.5633906514737095, 0.5224944921564976, 0.5028408705392018, 0.5578260863183515, 0.5686368971291623, 0.5686368971291623, 0.5686368971291623, 0.5028408705392018, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 10
+commentCodeGenc10k5t01testsapi, res_geopy_geopy_CodeGenc10k5t01testsapi, 0.41893280288754575, 0.5231426415748971, 0.41465256646077486, 0.4528075274418228, 0.41465256646077486, 0.41893280288754575, 0.5371704338012331, 0.5371704338012331, 0.5371704338012331, 0.5371704338012331, 0.41893280288754575, 0.0, 0.2, 0.0, 0.1, 0.0, 0.0, 0.2, 0.2, 0.2, 0.2, 0.0, 10
+commentCodeGenc10k5t01testsapi, res_graphql-python_graphene_CodeGenc10k5t01testsapi, 0.5516561225298476, 0.5423568709251789, 0.620795929216808, 0.6290658719909941, 0.611754264926162, 0.5516561225298476, 0.589798838416466, 0.6519656619484985, 0.6519656619484985, 0.6519656619484985, 0.5516561225298476, 0.25, 0.25, 0.25, 0.35, 0.25, 0.25, 0.35, 0.35, 0.35, 0.35, 0.25, 10
+commentCodeGenc10k5t01testsapi, res_lektor_lektor_CodeGenc10k5t01testsapi, 0.4919680315569698, 0.5459023014576311, 0.5353968712153587, 0.5353968712153587, 0.5353968712153587, 0.4919680315569698, 0.5480309190063455, 0.5480309190063455, 0.5480309190063455, 0.5480309190063455, 0.4919680315569698, 0.1, 0.13333333333333333, 0.13333333333333333, 0.13333333333333333, 0.13333333333333333, 0.1, 0.13333333333333333, 0.13333333333333333, 0.13333333333333333, 0.13333333333333333, 0.1, 10
+commentCodeGenc10k5t01testsapi, res_mwaskom_seaborn_CodeGenc10k5t01testsapi, 0.37964789272645005, 0.3837353986053711, 0.3976519064327403, 0.4014427645213218, 0.3884302342861222, 0.37964789272645005, 0.40464789272645, 0.4093427284072012, 0.4093427284072012, 0.4093427284072012, 0.37964789272645005, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10
+commentCodeGenc10k5t01testsapi, res_nvbn_thefuck_CodeGenc10k5t01testsapi, 0.38185801511297335, 0.3805445172900416, 0.37617108370608165, 0.4149026953438718, 0.377853005902878, 0.38185801511297335, 0.4212161931668036, 0.4212161931668036, 0.4212161931668036, 0.4212161931668036, 0.38185801511297335, 0.05, 0.0, 0.0, 0.05, 0.0, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 10
+commentCodeGenc10k5t01testsapi, res_psf_black_CodeGenc10k5t01testsapi, 0.5019528066567437, 0.47320791456142325, 0.5176753483238798, 0.4392069784194411, 0.5176753483238798, 0.5019528066567437, 0.5493328488816427, 0.5878765867139728, 0.5878765867139728, 0.5878765867139728, 0.5019528066567437, 0.2, 0.3, 0.2, 0.2, 0.2, 0.2, 0.3, 0.3, 0.3, 0.3, 0.2, 10
+commentCodeGenc10k5t01testsapi, res_scikit-learn_scikit-learn_CodeGenc10k5t01testsapi, 0.45930215347907843, 0.48032190188101065, 0.5175673809881919, 0.4688373380599982, 0.516652155857571, 0.45930215347907843, 0.5473166556199505, 0.5487831097039205, 0.5487831097039205, 0.579183398200134, 0.45930215347907843, 0.1, 0.06666666666666667, 0.13333333333333333, 0.06666666666666667, 0.06666666666666667, 0.1, 0.13333333333333333, 0.13333333333333333, 0.13333333333333333, 0.13333333333333333, 0.1, 10
+------------------------------
+commentCodeGenc20k5t01testsapi, res_Parsely_streamparse_CodeGenc20k5t01testsapi, 0.5175809480107482, 0.5287762842783807, 0.5266797711966058, 0.5612962529711902, 0.5365900563899937, 0.5175809480107482, 0.5648588778077828, 0.5679838778077828, 0.6007976499193957, 0.6007976499193957, 0.5175809480107482, 0.1, 0.2, 0.2, 0.3, 0.2, 0.1, 0.2, 0.2, 0.3, 0.3, 0.1, 10
+commentCodeGenc20k5t01testsapi, res_Supervisor_supervisor_CodeGenc20k5t01testsapi, 0.5466314946713478, 0.5471210427446653, 0.5313367290191751, 0.53173642736005, 0.5467446986586438, 0.5466314946713478, 0.5644206103176064, 0.5644206103176064, 0.5644206103176064, 0.5644206103176064, 0.5466314946713478, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 10
+commentCodeGenc20k5t01testsapi, res_aaugustin_websockets_CodeGenc20k5t01testsapi, 0.39273605907160797, 0.3499061115913288, 0.33821127591966393, 0.33250543959226764, 0.33331399352198243, 0.39273605907160797, 0.42276109464616807, 0.4261772437144911, 0.4261772437144911, 0.4261772437144911, 0.39273605907160797, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10
+commentCodeGenc20k5t01testsapi, res_arrow-py_arrow_CodeGenc20k5t01testsapi, 0.5028408705392018, 0.5317120037155888, 0.49777208395886063, 0.5513264711241739, 0.495069381256158, 0.5028408705392018, 0.5825765803154596, 0.6021910477240446, 0.6021910477240446, 0.6021910477240446, 0.5028408705392018, 0.05, 0.075, 0.025, 0.075, 0.025, 0.05, 0.125, 0.125, 0.125, 0.125, 0.05, 10
+commentCodeGenc20k5t01testsapi, res_geopy_geopy_CodeGenc20k5t01testsapi, 0.41893280288754575, 0.4924500042489903, 0.5293203537598689, 0.5358278692329016, 0.5293203537598689, 0.41893280288754575, 0.4988915895787745, 0.5714943293048018, 0.5721839844772156, 0.5721839844772156, 0.41893280288754575, 0.0, 0.1, 0.2, 0.2, 0.2, 0.0, 0.1, 0.2, 0.2, 0.2, 0.0, 10
+commentCodeGenc20k5t01testsapi, res_graphql-python_graphene_CodeGenc20k5t01testsapi, 0.5516561225298476, 0.5514988951091773, 0.5270649570763959, 0.5098179572090492, 0.5596545233868925, 0.5516561225298476, 0.6059872284215411, 0.6171529150966161, 0.6171529150966161, 0.6171529150966161, 0.5516561225298476, 0.25, 0.3, 0.2, 0.2, 0.25, 0.25, 0.35, 0.35, 0.35, 0.35, 0.25, 10
+commentCodeGenc20k5t01testsapi, res_lektor_lektor_CodeGenc20k5t01testsapi, 0.4919680315569698, 0.5353644979569457, 0.5385084920162685, 0.5288277983743335, 0.5385084920162685, 0.4919680315569698, 0.546102516439645, 0.5532021804933965, 0.5532021804933965, 0.5532021804933965, 0.4919680315569698, 0.1, 0.2333333333333333, 0.13333333333333333, 0.13333333333333333, 0.13333333333333333, 0.1, 0.2333333333333333, 0.2333333333333333, 0.2333333333333333, 0.2333333333333333, 0.1, 10
+commentCodeGenc20k5t01testsapi, res_mwaskom_seaborn_CodeGenc20k5t01testsapi, 0.37964789272645005, 0.3739384589515268, 0.37450489024330164, 0.37257310161389773, 0.37907218514579205, 0.37964789272645005, 0.4061630442416016, 0.4061630442416016, 0.4061630442416016, 0.4061630442416016, 0.37964789272645005, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10
+commentCodeGenc20k5t01testsapi, res_nvbn_thefuck_CodeGenc20k5t01testsapi, 0.38185801511297335, 0.3497594262495104, 0.38185801511297335, 0.3497594262495104, 0.38185801511297335, 0.38185801511297335, 0.38579952650013694, 0.38579952650013694, 0.38579952650013694, 0.38579952650013694, 0.38185801511297335, 0.05, 0.0, 0.05, 0.0, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 10
+commentCodeGenc20k5t01testsapi, res_psf_black_CodeGenc20k5t01testsapi, 0.5019528066567437, 0.418364281327975, 0.4934783879425947, 0.422489776660417, 0.5336528065472458, 0.5019528066567437, 0.5237070274932635, 0.5409958402786517, 0.5409958402786517, 0.5834958402786516, 0.5019528066567437, 0.2, 0.1, 0.2, 0.1, 0.3, 0.2, 0.2, 0.3, 0.3, 0.4, 0.2, 10
+commentCodeGenc20k5t01testsapi, res_scikit-learn_scikit-learn_CodeGenc20k5t01testsapi, 0.45930215347907843, 0.4453163191170642, 0.4571747994479535, 0.4325287043044196, 0.44260458095484656, 0.45930215347907843, 0.5346506669987574, 0.5542835484626247, 0.564507857278483, 0.564507857278483, 0.45930215347907843, 0.1, 0.03333333333333333, 0.03333333333333333, 0.0, 0.06666666666666667, 0.1, 0.1, 0.1, 0.1, 0.13333333333333333, 0.1, 10
+------------------------------
+commentCodeGenc40k5t01testsapi, res_Parsely_streamparse_CodeGenc40k5t01testsapi, 0.5175809480107482, 0.41892155716588125, 0.3525566898751144, 0.5642476751517475, 0.4123995599068322, 0.5175809480107482, 0.57552661254757, 0.57552661254757, 0.57865161254757, 0.57865161254757, 0.5175809480107482, 0.1, 0.2, 0.1, 0.2, 0.2, 0.1, 0.2, 0.2, 0.2, 0.2, 0.1, 10
+commentCodeGenc40k5t01testsapi, res_Supervisor_supervisor_CodeGenc40k5t01testsapi, 0.5466314946713478, 0.477959562903462, 0.5828642549855734, 0.5477420653472548, 0.5724126420823475, 0.5466314946713478, 0.5629755806928533, 0.5877029646629928, 0.5877029646629928, 0.5877029646629928, 0.5466314946713478, 0.1, 0.1, 0.2, 0.1, 0.2, 0.1, 0.1, 0.2, 0.2, 0.2, 0.1, 10
+commentCodeGenc40k5t01testsapi, res_aaugustin_websockets_CodeGenc40k5t01testsapi, 0.39273605907160797, 0.3291710044820831, 0.32558287454758333, 0.32892018847818205, 0.30957758354229237, 0.39273605907160797, 0.4021774675408019, 0.40457232470952836, 0.40457232470952836, 0.40457232470952836, 0.39273605907160797, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10
+commentCodeGenc40k5t01testsapi, res_arrow-py_arrow_CodeGenc40k5t01testsapi, 0.5028408705392018, 0.4635099459892458, 0.4686231569223465, 0.49873721871651855, 0.46975952055871006, 0.5028408705392018, 0.5049867932859828, 0.5049867932859828, 0.5049867932859828, 0.5049867932859828, 0.5028408705392018, 0.05, 0.025, 0.025, 0.075, 0.025, 0.05, 0.075, 0.075, 0.075, 0.075, 0.05, 10
+commentCodeGenc40k5t01testsapi, res_geopy_geopy_CodeGenc40k5t01testsapi, 0.41893280288754575, 0.5092921488404055, 0.5092921488404055, 0.5092921488404055, 0.5092921488404055, 0.41893280288754575, 0.5207235473543466, 0.5207235473543466, 0.5207235473543466, 0.5207235473543466, 0.41893280288754575, 0.0, 0.2, 0.2, 0.2, 0.2, 0.0, 0.2, 0.2, 0.2, 0.2, 0.0, 10
+commentCodeGenc40k5t01testsapi, res_graphql-python_graphene_CodeGenc40k5t01testsapi, 0.5516561225298476, 0.45932581570580294, 0.5455179482731194, 0.46209340222588446, 0.5288809854958056, 0.5516561225298476, 0.565022618036908, 0.5883317529431389, 0.5883317529431389, 0.5883317529431389, 0.5516561225298476, 0.25, 0.1, 0.15, 0.1, 0.15, 0.25, 0.25, 0.25, 0.25, 0.25, 0.25, 10
+commentCodeGenc40k5t01testsapi, res_lektor_lektor_CodeGenc40k5t01testsapi, 0.4919680315569698, 0.5777081187337577, 0.5700740294042067, 0.6207099049665528, 0.5708066709456717, 0.4919680315569698, 0.5808598881985984, 0.6182748400314878, 0.623956658213306, 0.623956658213306, 0.4919680315569698, 0.1, 0.13333333333333333, 0.03333333333333333, 0.2333333333333333, 0.06666666666666667, 0.1, 0.2, 0.2, 0.2333333333333333, 0.2333333333333333, 0.1, 10
+commentCodeGenc40k5t01testsapi, res_mwaskom_seaborn_CodeGenc40k5t01testsapi, 0.37964789272645005, 0.38849166741673435, 0.38963490807337353, 0.38420922791439577, 0.37809644653491203, 0.37964789272645005, 0.4245124032159606, 0.42643548013903754, 0.42643548013903754, 0.42643548013903754, 0.37964789272645005, 0.0, 0.1, 0.1, 0.1, 0.1, 0.0, 0.1, 0.1, 0.1, 0.1, 0.0, 10
+commentCodeGenc40k5t01testsapi, res_nvbn_thefuck_CodeGenc40k5t01testsapi, 0.38185801511297335, 0.3639483634438877, 0.38185801511297335, 0.3639483634438877, 0.38185801511297335, 0.38185801511297335, 0.40563987483105135, 0.40563987483105135, 0.40563987483105135, 0.40563987483105135, 0.38185801511297335, 0.05, 0.0, 0.05, 0.0, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 0.05, 10
+commentCodeGenc40k5t01testsapi, res_psf_black_CodeGenc40k5t01testsapi, 0.5019528066567437, 0.5291463410281521, 0.4805966405968638, 0.5260650152944452, 0.48080497307435516, 0.5019528066567437, 0.5759412128230239, 0.5759412128230239, 0.5759412128230239, 0.5759412128230239, 0.5019528066567437, 0.2, 0.3, 0.2, 0.3, 0.2, 0.2, 0.3, 0.3, 0.3, 0.3, 0.2, 10
+commentCodeGenc40k5t01testsapi, res_scikit-learn_scikit-learn_CodeGenc40k5t01testsapi, 0.45930215347907843, 0.47810026886650475, 0.49018530556221745, 0.48639216932808316, 0.4807669435514354, 0.45930215347907843, 0.5396892317204207, 0.5668703656621181, 0.5668703656621181, 0.5690925878843404, 0.45930215347907843, 0.1, 0.16666666666666666, 0.06666666666666667, 0.03333333333333333, 0.0, 0.1, 0.2333333333333333, 0.2333333333333333, 0.2333333333333333, 0.2333333333333333, 0.1, 10
+------------------------------
