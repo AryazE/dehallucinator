@@ -110,7 +110,7 @@ fig.set_figheight(9)
 # margin left
 plt.subplots_adjust(left=0.15, right=0.99)
 # reduce margin top and bottom
-plt.subplots_adjust(top=0.99, bottom=0.12)
+plt.subplots_adjust(top=0.99, bottom=0.14)
 # larger font size
 plt.rcParams.update({"font.size": 14})
 # set label for all y axes to Relative Improvement
@@ -132,7 +132,7 @@ ax3.set_ylabel("Exact API Match")
 plt.xticks(
     [0, 1, 2, 3, 4, 5],
     [
-        "Baseline",
+        "Type 1 (Baseline)",
         "Type 2",
         "Type 3 (k=2)",
         "Type 3 (k=3)",

@@ -16,64 +16,97 @@ from transformers import GPT2TokenizerFast
 
 tokenizer = GPT2TokenizerFast.from_pretrained("gpt2")
 
-similarity_model = SentenceTransformer('flax-sentence-embeddings/st-codesearch-distilroberta-base')
+similarity_model = SentenceTransformer(
+    "flax-sentence-embeddings/st-codesearch-distilroberta-base"
+)
+
 
 def embeddings(batch: List[str]) -> List[List[float]]:
     return similarity_model.encode(batch, show_progress_bar=False)
 
+
 def clip_prompt(prompt: str, prompt_limit=1500):
-    '''
+    """
     Clip prompt from the beginning to fit in prompt_limit.
-    '''
+    """
     prompt_lines = prompt.splitlines(keepends=True)
     tokenized = 0
     for prompt_line in prompt_lines:
-        tokenized += len(tokenizer(prompt_line)['input_ids'])
+        tokenized += len(tokenizer(prompt_line)["input_ids"])
     if tokenized > prompt_limit:
         new_len_prompt = len(prompt_lines) * prompt_limit / tokenized
         if prompt_limit <= 0:
             new_len_prompt = 1
-        prompt = ''.join(prompt_lines[-int(new_len_prompt):])
+        prompt = "".join(prompt_lines[-int(new_len_prompt) :])
     return prompt
 
+
 def run_query(database, ql_file, res_file, tmp_dir):
-    subprocess.run(['codeql', 'query', 'run',
-        f'--database={database}',
-        f'--output={path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}',
-        '--', f'{path.join(path.dirname(__file__), "ql", ql_file)}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    subprocess.run(['codeql', 'bqrs', 'decode',
-        '--format=csv',
-        f'--output={path.join(tmp_dir, res_file)}',
-        '--result-set=#select',
-        '--', f'{path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}'], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    subprocess.run(
+        [
+            "codeql",
+            "query",
+            "run",
+            f"--database={database}",
+            f'--output={path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}',
+            "--",
+            f'{path.join(path.dirname(__file__), "ql", ql_file)}',
+        ],
+        check=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    subprocess.run(
+        [
+            "codeql",
+            "bqrs",
+            "decode",
+            "--format=csv",
+            f"--output={path.join(tmp_dir, res_file)}",
+            "--result-set=#select",
+            "--",
+            f'{path.join(tmp_dir, res_file.split(".")[0] + ".bqrs")}',
+        ],
+        check=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+
 
 def same_location(line, location):
-    if len(location['file']) == 0:
+    if len(location["file"]) == 0:
         return False
-    for i in ['start_line', 'end_line', 'start_column', 'end_column']:
+    for i in ["start_line", "end_line", "start_column", "end_column"]:
         if location[i] == -1:
             return False
-    line_parts = line['file'].split('/')
-    location_parts = location['file'].split('/')
+    line_parts = line["file"].split("/")
+    location_parts = location["file"].split("/")
     if line_parts[-2:] != location_parts[-2:]:
         return False
-    if int(line['start_line']) > location['end_line']:
+    if int(line["start_line"]) > location["end_line"]:
         return False
-    if int(line['end_line']) < location['start_line']-10:
+    if int(line["end_line"]) < location["start_line"] - 10:
         return False
-    if int(line['start_line']) == location['end_line'] and int(line['start_column']) > location['end_column']:
+    if (
+        int(line["start_line"]) == location["end_line"]
+        and int(line["start_column"]) > location["end_column"]
+    ):
         return False
-    if int(line['end_line']) == location['start_line'] and int(line['end_column']) < location['start_column']:
+    if (
+        int(line["end_line"]) == location["start_line"]
+        and int(line["end_column"]) < location["start_column"]
+    ):
         return False
     return True
 
-def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
-    if '\n' not in code[:-1]:
+
+def postprocess(code, indent_style="\t", indent_count=0, mode=""):
+    if "\n" not in code[:-1]:
         return code
 
-    if mode.endswith('l') or mode.endswith('line'):
+    if mode.endswith("l") or mode.endswith("line"):
         return code.splitlines(True)[0]
-    elif mode.endswith('api'):
+    elif mode.endswith("api"):
         bracket = 0
         bracket_seen = False
         res = 0
@@ -81,43 +114,54 @@ def postprocess(code, indent_style='\t', indent_count=0, mode = ''):
         while i < len(code):
             ch = code[i]
             res += 1
-            if ch == '#':
-                while i < len(code) and code[i] != '\n':
+            if ch == "#":
+                while i < len(code) and code[i] != "\n":
                     i += 1
                 res = i
-            elif ch == '(':
+            elif ch == "(":
                 bracket += 1
                 bracket_seen = True
-            elif ch == ')':
+            elif ch == ")":
                 bracket -= 1
                 bracket_seen = True
-            elif ch == '\n':
+            elif ch == "\n":
                 if bracket == 0 and bracket_seen:
                     break
             i += 1
         return code[:res]
     else:
-        prefix = (indent_style * indent_count) + 'def foo():\n' + (indent_style * (indent_count+1))
+        prefix = (
+            (indent_style * indent_count)
+            + "def foo():\n"
+            + (indent_style * (indent_count + 1))
+        )
         extra = len(indent_style) * indent_count
         code = prefix + code
         temp_lines = code.splitlines()
         for l in range(1, len(temp_lines)):
-            if (len(temp_lines[l]) - len(temp_lines[l].lstrip())) // len(indent_style) <= indent_count:
+            if (len(temp_lines[l]) - len(temp_lines[l].lstrip())) // len(
+                indent_style
+            ) <= indent_count:
                 temp_lines = temp_lines[:l]
                 break
         lines = [l[extra:] for l in temp_lines]
         while len(lines) > 1:
             try:
-                ast.parse('\n'.join(lines))
-                return lines[1][len(indent_style):] + '\n' + '\n'.join([(indent_style * indent_count)+l for l in lines[2:]])
+                ast.parse("\n".join(lines))
+                return (
+                    lines[1][len(indent_style) :]
+                    + "\n"
+                    + "\n".join([(indent_style * indent_count) + l for l in lines[2:]])
+                )
             except:
                 lines.pop()
-        return ''
+        return ""
+
 
 def get_completion_safely(model: str, completor, prompt, k=4):
-    if model == 'GPT3.5':
+    if model == "GPT3.5":
         prompt_size = 3500
-    elif model == 'lUniXcoder':
+    elif model == "lUniXcoder":
         prompt_size = 750
     else:
         prompt_size = 1750
@@ -137,67 +181,110 @@ def get_completion_safely(model: str, completor, prompt, k=4):
             continue
     return completion
 
+
 def dedent(code):
     lines = code.splitlines(keepends=True)
-    indents = [re.match('^\s*', i).group(0) for i in lines]
-    indent_style = ' '*100
+    indents = [re.match("^\s*", i).group(0) for i in lines]
+    indent_style = " " * 100
     indent_count = 10000
     for i in range(len(indents)):
-        if len(indents[i]) > 0 and len(indent_style) > len(indents[i]) and '\n' not in indents[i]:
+        if (
+            len(indents[i]) > 0
+            and len(indent_style) > len(indents[i])
+            and "\n" not in indents[i]
+        ):
             indent_style = indents[i]
     for i in range(1, len(indents)):
-        if len(lines[i]) - len(indents[i]) == 0 or len(lines[i-1]) - len(indents[i-1]) == 0:
+        if (
+            len(lines[i]) - len(indents[i]) == 0
+            or len(lines[i - 1]) - len(indents[i - 1]) == 0
+        ):
             continue
-        if len(lines[i-1]) > 0 and len(indents[i]) > len(indents[i - 1]) and not re.match('^\s*#', lines[i]) and not re.match('^\s*#', lines[i-1]):
-            if len(indent_style) > len(indents[i][len(indents[i - 1]):]) and '\n' not in indents[i]:
-                indent_style = indents[i][len(indents[i - 1]):]
-        elif len(lines[i]) > 0 and len(indents[i]) < len(indents[i - 1]) and not re.match('^\s*#', lines[i]) and not re.match('^\s*#', lines[i-1]):
-            if len(indent_style) > len(indents[i-1][len(indents[i]):]) and '\n' not in indents[i-1]:
-                indent_style = indents[i-1][len(indents[i]):]
+        if (
+            len(lines[i - 1]) > 0
+            and len(indents[i]) > len(indents[i - 1])
+            and not re.match("^\s*#", lines[i])
+            and not re.match("^\s*#", lines[i - 1])
+        ):
+            if (
+                len(indent_style) > len(indents[i][len(indents[i - 1]) :])
+                and "\n" not in indents[i]
+            ):
+                indent_style = indents[i][len(indents[i - 1]) :]
+        elif (
+            len(lines[i]) > 0
+            and len(indents[i]) < len(indents[i - 1])
+            and not re.match("^\s*#", lines[i])
+            and not re.match("^\s*#", lines[i - 1])
+        ):
+            if (
+                len(indent_style) > len(indents[i - 1][len(indents[i]) :])
+                and "\n" not in indents[i - 1]
+            ):
+                indent_style = indents[i - 1][len(indents[i]) :]
     for i in range(len(indents)):
-        if '\n' not in indents[i]:
+        if "\n" not in indents[i]:
             indent_count = min(indent_count, len(indents[i]) // len(indent_style))
-    return ''.join([l[len(indent_style)*indent_count:] for l in lines])
+    return "".join([l[len(indent_style) * indent_count :] for l in lines])
+
 
 def get_indentation(prompt):
     if len(prompt) == 0:
-        return '', 0
+        return "", 0
     lines = prompt.splitlines()
-    indents = [re.match('^\s*', i).group(0) for i in lines]
-    indent_style = ' '*100
+    indents = [re.match("^\s*", i).group(0) for i in lines]
+    indent_style = " " * 100
     indent_count = 0
     for i in range(1, len(indents)):
         if len(indents[i]) > 0 and len(indent_style) > len(indents[i]):
             indent_style = indents[i]
     for i in range(1, len(indents)):
-        if len(lines[i-1]) > 0 and len(indents[i]) > len(indents[i - 1]) and not re.match('^\s*#', lines[i]) and not re.match('^\s*#', lines[i-1]):
-            if len(indent_style) > len(indents[i][len(indents[i - 1]):]):
-                indent_style = indents[i][len(indents[i - 1]):]
-        elif len(lines[i]) > 0 and len(indents[i]) < len(indents[i - 1]) and not re.match('^\s*#', lines[i]) and not re.match('^\s*#', lines[i-1]):
-            if len(indent_style) > len(indents[i-1][len(indents[i]):]):
-                indent_style = indents[i-1][len(indents[i]):]
+        if (
+            len(lines[i - 1]) > 0
+            and len(indents[i]) > len(indents[i - 1])
+            and not re.match("^\s*#", lines[i])
+            and not re.match("^\s*#", lines[i - 1])
+        ):
+            if len(indent_style) > len(indents[i][len(indents[i - 1]) :]):
+                indent_style = indents[i][len(indents[i - 1]) :]
+        elif (
+            len(lines[i]) > 0
+            and len(indents[i]) < len(indents[i - 1])
+            and not re.match("^\s*#", lines[i])
+            and not re.match("^\s*#", lines[i - 1])
+        ):
+            if len(indent_style) > len(indents[i - 1][len(indents[i]) :]):
+                indent_style = indents[i - 1][len(indents[i]) :]
     indent_count = len(indents[-1]) // len(indent_style) - 1
     return indent_style, indent_count
+
 
 def cos_sim(emb_a: List[float], emb_b: List[float]) -> float:
     return dot(emb_a, emb_b) / (norm(emb_a) * norm(emb_b))
 
+
 def merge(project_root: str, file: str) -> str:
-    p_r = project_root.split('/')
-    f = file.split('/')
+    p_r = project_root.split("/")
+    f = file.split("/")
     max_common = 0
     for i in range(1, min(len(p_r), len(f))):
-        if '/'.join(p_r[-i:]) == '/'.join(f[:i]):
+        if "/".join(p_r[-i:]) == "/".join(f[:i]):
             max_common = i
-    return '/'.join(p_r[:-max_common] + f)
+    return "/".join(p_r[:-max_common] + f)
 
-DELIMITER = '--------=======DiCoder=======--------'
+
+DELIMITER = "--------=======DeHallucinator=======--------"
+
 
 def equal_apis(a: cst.CSTNode, b: cst.CSTNode) -> bool:
-    if (matchers.matches(a, matchers.Call()) and matchers.matches(b, matchers.Call())):
-        if (matchers.matches(a.func, matchers.Attribute()) and matchers.matches(b.func, matchers.Attribute())):
+    if matchers.matches(a, matchers.Call()) and matchers.matches(b, matchers.Call()):
+        if matchers.matches(a.func, matchers.Attribute()) and matchers.matches(
+            b.func, matchers.Attribute()
+        ):
             result = a.func.attr.deep_equals(b.func.attr)
-        elif (matchers.matches(a.func, matchers.Name()) and matchers.matches(b.func, matchers.Name())):
+        elif matchers.matches(a.func, matchers.Name()) and matchers.matches(
+            b.func, matchers.Name()
+        ):
             result = a.func.value == b.func.value
         else:
             result = a.func.deep_equals(b.func)
@@ -205,52 +292,76 @@ def equal_apis(a: cst.CSTNode, b: cst.CSTNode) -> bool:
             return False
         if len(a.args) != len(b.args):
             return False
-        comparison = lambda x: x.keyword.value if x.keyword is not None else ''
+        comparison = lambda x: x.keyword.value if x.keyword is not None else ""
         a_args = sorted(a.args, key=comparison)
         b_args = sorted(b.args, key=comparison)
         for i in range(len(a_args)):
             if type(a_args[i].value) is not type(b_args[i].value):
                 return False
         return True
-    elif (matchers.matches(a, matchers.Attribute()) and matchers.matches(b, matchers.Attribute())):
+    elif matchers.matches(a, matchers.Attribute()) and matchers.matches(
+        b, matchers.Attribute()
+    ):
         return a.attr.deep_equals(b.attr)
     return False
 
+
 def parse_results_into_context(file) -> Dict[str, List[str]]:
     additional_context = {}
-    with open(file, newline='', encoding='utf-8') as csvfile:
+    with open(file, newline="", encoding="utf-8") as csvfile:
         csv_reader = csv.DictReader(csvfile)
         for line in csv_reader:
-            if line['qualifiedName'] not in additional_context:
-                additional_context[line['qualifiedName']] = []
-            if '\nvariables\n' in line['docstring']:
-                tmp_context = [line['header']] + line['docstring'].split('\nvariables\n')[1].split('\n')
-            elif '\nfunctions\n' in line['docstring']:
-                tmp_context = [line['header']] + line['docstring'].split('\nfunctions\n')[1].split('\n')
+            if line["qualifiedName"] not in additional_context:
+                additional_context[line["qualifiedName"]] = []
+            if "\nvariables\n" in line["docstring"]:
+                tmp_context = [line["header"]] + line["docstring"].split(
+                    "\nvariables\n"
+                )[1].split("\n")
+            elif "\nfunctions\n" in line["docstring"]:
+                tmp_context = [line["header"]] + line["docstring"].split(
+                    "\nfunctions\n"
+                )[1].split("\n")
             else:
-                tmp_context = [(line['header'] + ' # ' + line['docstring'][:100]) if len(line['docstring']) > 0 else line['header']]
-            additional_context[line['qualifiedName']].extend(tmp_context)
+                tmp_context = [
+                    (line["header"] + " # " + line["docstring"][:100])
+                    if len(line["docstring"]) > 0
+                    else line["header"]
+                ]
+            additional_context[line["qualifiedName"]].extend(tmp_context)
     return additional_context
+
 
 def norm_edit_similarity(a, b):
     return 1 - edit_distance(a, b) / max(len(a), len(b))
+
 
 def find_apis(code):
     res = []
     stack = []
     c = code.replace("\r\n", "").replace("\n", "")
     for i in range(len(c)):
-        if c[i] == '(':
-            m = re.match("\w+(?:\.\w+)*", c[i-1::-1])
+        if c[i] == "(":
+            m = re.match("\w+(?:\.\w+)*", c[i - 1 :: -1])
             if m:
                 api_path = m.group(0)[::-1]
-                if api_path not in ["if", "for", "while", "with", "and", "or", "not", "in", "is", "del"]:
-                    stack.append(i-len(api_path))
+                if api_path not in [
+                    "if",
+                    "for",
+                    "while",
+                    "with",
+                    "and",
+                    "or",
+                    "not",
+                    "in",
+                    "is",
+                    "del",
+                ]:
+                    stack.append(i - len(api_path))
             else:
-                stack.append('(')
-        elif c[i] == ')':
+                stack.append("(")
+        elif c[i] == ")":
             if len(stack) > 0:
                 top = stack.pop()
-                if top != '(':
-                    res.append(c[top:i+1])
+                if top != "(":
+                    res.append(c[top : i + 1])
     return res
