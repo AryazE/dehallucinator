@@ -104,53 +104,53 @@ APIexactmatch = [
 ]
 
 # three stacked plots sharing x axis for edit similarity, edit distance and API exact match
-fig, (ax1, ax2, ax3) = plt.subplots(3, sharex=True)
+# fig, (ax1, ax2, ax3) = plt.subplots(3, sharex=True)
+fig, ax3 = plt.subplots()
 # increase the height of the figure
-fig.set_figheight(9)
+fig.set_figheight(3.5)
 # margin left
-plt.subplots_adjust(left=0.15, right=0.99)
+plt.subplots_adjust(left=0.11, right=0.96)
 # reduce margin top and bottom
-plt.subplots_adjust(top=0.99, bottom=0.14)
+plt.subplots_adjust(top=0.99, bottom=0.20)
 # larger font size
-plt.rcParams.update({"font.size": 14})
+# plt.rcParams.update({"font.size": 14})
 # set label for all y axes to Relative Improvement
-fig.text(0.01, 0.5, "Relative Improvement", va="center", rotation="vertical")
+# fig.text(0.01, 0.5, "Relative Improvement", va="center", rotation="vertical")
 # smaller font size
 plt.rcParams.update({"font.size": 10})
 # align y labels
 fig.align_ylabels()
 markers = ["X", "o", "D", "*"]
-for i, ed in enumerate(Editdistance):
-    ax1.plot(ed, marker=markers[i])
-ax1.set_ylabel("Edit Distance")
-for i, es in enumerate(Editsimilarity):
-    ax2.plot(es, marker=markers[i])
-ax2.set_ylabel("Normalized Edit Similarity")
+# for i, ed in enumerate(Editdistance):
+#     ax1.plot(ed, marker=markers[i])
+# ax1.set_ylabel("Edit Distance")
+# for i, es in enumerate(Editsimilarity):
+#     ax2.plot(es, marker=markers[i])
+# ax2.set_ylabel("Normalized Edit Similarity")
 for i, api in enumerate(APIexactmatch):
-    ax3.plot(api, marker=markers[i])
-ax3.set_ylabel("Exact API Match")
+    ax3.plot(api[:-1], marker=markers[i])
+ax3.set_ylabel("Relative improvement of\nexact API match")
 plt.xticks(
-    [0, 1, 2, 3, 4, 5],
+    [0, 1, 2, 3, 4],
     [
-        "Type 1 (Baseline)",
-        "Type 2",
-        "Type 3 (k=2)",
-        "Type 3 (k=3)",
-        "Type 3 (k=4)",
-        "Type 3 (k=5)",
+        "Initial",
+        "RAG",
+        "Iterative (k=1)",
+        "Iterative (k=2)",
+        "Iterative (k=3)",
     ],
 )
-plt.xticks(rotation=60)
+plt.xticks(rotation=30)
 # draw grids for all subplots
-ax1.grid()
-ax2.grid()
+# ax1.grid()
+# ax2.grid()
 ax3.grid()
 # start all y at 0
-ax1.set_ylim(bottom=0)
-ax2.set_ylim(bottom=0)
+# ax1.set_ylim(bottom=0)
+# ax2.set_ylim(bottom=0)
 ax3.set_ylim(bottom=0)
 # legend
-ax1.legend(["UniXcoder", "CodeGen v1", "CodeGen v2.5", "StarCoder+"], loc="lower right")
+ax3.legend(["UniXcoder", "CodeGen v1", "CodeGen v2.5", "StarCoder+"], loc="lower right")
 # save as pdf
 plt.savefig("plot_k.pdf")
 plt.show()
